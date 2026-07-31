@@ -44,6 +44,32 @@ function clamp(v, lo, hi) {
   return Math.max(lo, Math.min(hi, v));
 }
 
+// ── Per-pool memoization ─────────────────────────────────────────────────────
+// scorePlayerPool() (and several DAX-ported measures below) recompute population-wide
+// normalization arrays via nested pool.map(...) calls — e.g. gGOAL's PrimedScore_II
+// normalization re-derives FinalMatchupScore/PressureScore/FinalBossScore_v3 for every
+// player in the pool, and those measures each do their own internal pool.map() calls.
+// Without caching, that nests into O(n^3)-O(n^4) work and made scorePlayerPool()
+// unusably slow against a real ~200-player pool (see slap-shot-build.md task log).
+// memoize2() caches each wrapped function's result per (pool, player) pair, so repeated
+// calls across the nested DAX-derived formulas below become O(1) lookups instead of
+// re-walking the whole pool every time. Call sites and math are unchanged — this only
+// removes redundant recomputation of the exact same value.
+function memoize2(fn) {
+  const byPool = new WeakMap();
+  return (p, pool, ...rest) => {
+    let byPlayer = byPool.get(pool);
+    if (!byPlayer) {
+      byPlayer = new Map();
+      byPool.set(pool, byPlayer);
+    }
+    if (byPlayer.has(p)) return byPlayer.get(p);
+    const val = fn(p, pool, ...rest);
+    byPlayer.set(p, val);
+    return val;
+  };
+}
+
 // factShots::IntentScore — per-shot avg, approximated here from season/recent aggregates
 // since per-shot rows aren't part of this input shape (see aggregatePlayerFromShots() below
 // for the true per-shot version once raw shot data is wired in).
@@ -110,13 +136,13 @@ function hdcfShare(p) {
 }
 
 // zz_Measures::FinisherScore / PlaymakerScore / FinisherPlaymakerIndex_Norm
-function finisherScore(p, pool) {
+const finisherScore = memoize2(function finisherScoreRaw(p, pool) {
   const gpi = minMaxNorm(goalsPerICF(p), pool.map(goalsPerICF), 10);
   const gpx = minMaxNorm(goalsPerxG(p), pool.map(goalsPerxG), 10);
   const hds = minMaxNorm(hdcfShare(p), pool.map(hdcfShare), 10);
   return gpi * 0.4 + gpx * 0.35 + hds * 0.25;
-}
-function playmakerScore(p, pool) {
+});
+const playmakerScore = memoize2(function playmakerScoreRaw(p, pool) {
   const icfN = minMaxNorm(p.ICF || 0, pool.map((x) => x.ICF || 0), 10);
   const primaryAN = minMaxNorm(
     p.I_F_primaryAssists || 0,
@@ -125,7 +151,10 @@ function playmakerScore(p, pool) {
   );
   const hdcfN = minMaxNorm(p.HDCF || 0, pool.map((x) => x.HDCF || 0), 10);
   return icfN * 0.4 + primaryAN * 0.35 + hdcfN * 0.25;
-}
+});
+const fpIndex = memoize2(function fpIndexRaw(p, pool) {
+  return finisherScore(p, pool) - playmakerScore(p, pool);
+});
 
 // zz_Measures::iSCF_G_Norm / iHDCF_G_Norm / ShotSelection_Norm (0-1 population min-max)
 function iscfPerGame(p) {
@@ -138,8 +167,7 @@ function ihdcfPerGame(p) {
 // Snipe Score — quality-of-opportunity component (network doc §1.1 item 3 / Boom-equivalent).
 // zz_Measures::FinisherPlaymakerIndex_Norm + iSCF_G_Norm + iHDCF_G_Norm + ShotSelection_Norm, 0-100 scale.
 export function computeSnipeScore(p, pool) {
-  const fpIndex = (x) => finisherScore(x, pool) - playmakerScore(x, pool);
-  const fpIndexN = minMaxNorm(fpIndex(p), pool.map(fpIndex), 10);
+  const fpIndexN = minMaxNorm(fpIndex(p, pool), pool.map((x) => fpIndex(x, pool)), 10);
   const iscfGN = minMaxNorm(iscfPerGame(p), pool.map(iscfPerGame), 1);
   const ihdcfGN = minMaxNorm(ihdcfPerGame(p), pool.map(ihdcfPerGame), 1);
   const shotSelN = 1 - minMaxNorm(p.AvgShotDistance || 0, pool.map((x) => x.AvgShotDistance || 0), 1);
@@ -186,37 +214,36 @@ export function computeBreakawayScore(p, pool, { restDaysMultiplier = 1 } = {}) 
 }
 
 // zz_Measures::PressureScore (needs SOG/ShotAttempts per-game, population-normalized 0-1)
-function pressureScore(p, pool) {
+const pressureScore = memoize2(function pressureScoreRaw(p, pool) {
   const iscfGN = minMaxNorm(iscfPerGame(p), pool.map(iscfPerGame), 1);
   const sogGN = minMaxNorm(p.ShotsOnGoalPerGame || 0, pool.map((x) => x.ShotsOnGoalPerGame || 0), 1);
   const shotAttGN = minMaxNorm(p.ShotAttemptsPerGame || 0, pool.map((x) => x.ShotAttemptsPerGame || 0), 1);
   return iscfGN * 0.4 + sogGN * 0.35 + shotAttGN * 0.25;
-}
+});
 
 // zz_Measures::FinalMatchupScore — real DAX reads SkaterVsDefenseTeamScore/SkaterVsGoalieScore_Selected,
 // whose own expressions weren't recoverable from the report layout (context-dependent measures, not
 // referenced directly by any visual). Approximated here as the opponent-weakness signals this module
 // already computes (team defense + goalie matchup), same 50/50 blend, same HomeIceAdjustment gate —
 // flagged as an approximation, not a verified 1:1 port, unlike everything else in this file.
-function finalMatchupScoreApprox(p, pool) {
+const finalMatchupScoreApprox = memoize2(function finalMatchupScoreApproxRaw(p, pool) {
   const teamDefN = minMaxNorm(teamDefensiveMatchupScore(p), pool.map(teamDefensiveMatchupScore), 1);
   const goalieN = minMaxNorm(goalieMatchupScore(p), pool.map(goalieMatchupScore), 1);
   return (teamDefN * 0.5 + goalieN * 0.5) * 20 * homeIceAdjustment(p); // ×20 to sit in the model's ~0-20 real range (scored_v3.xlsx Matchup Score column)
-}
+});
 
 // zz_Measures::FinalBossScore_v3 — kept only as PrimedScore's minor (5%) input, per the real
 // dependency graph, NOT exposed as a competing final score (user confirmed 2026-07-30: PrimedScore
 // -> GoalProbabilityScore is the canonical Slap Score lineage, since it's the branch that actually
 // drives TargetPoolRank's real historical labels in scored_v3.xlsx).
-function finalBossScoreV3(p, pool) {
+const finalBossScoreV3 = memoize2(function finalBossScoreV3Raw(p, pool) {
   const pressureN = minMaxNorm(pressureScore(p, pool), pool.map((x) => pressureScore(x, pool)), 1);
   const matchupN = minMaxNorm(
     finalMatchupScoreApprox(p, pool),
     pool.map((x) => finalMatchupScoreApprox(x, pool)),
     1
   );
-  const fpIndex = (x) => finisherScore(x, pool) - playmakerScore(x, pool);
-  const fpIndexN = minMaxNorm(fpIndex(p), pool.map(fpIndex), 1);
+  const fpIndexN = minMaxNorm(fpIndex(p, pool), pool.map((x) => fpIndex(x, pool)), 1);
   const icfN = minMaxNorm(p.ICF || 0, pool.map((x) => x.ICF || 0), 1);
   const iscfGN = minMaxNorm(iscfPerGame(p), pool.map(iscfPerGame), 1);
   const ihdcfGN = minMaxNorm(ihdcfPerGame(p), pool.map(ihdcfPerGame), 1);
@@ -238,12 +265,12 @@ function finalBossScoreV3(p, pool) {
     0.04 * oppDefN
     // 0.02 * game-state term dropped — no live score-differential data in this input shape yet
   );
-}
+});
 
 // zz_Measures::PP_Impact / PrimedScore / PrimedScore_II / PrimedScore_III / TrendScore /
 // FinishingEfficiency / GoalDroughtScore / GoalProbabilityScore — the confirmed "production"
 // lineage. This IS gGOAL: the composite probability component (network doc §1.1 item 2).
-export function computeGGoal(p, pool) {
+const primedScoreII = memoize2(function primedScoreIIRaw(p, pool) {
   const matchupN = minMaxNorm(
     finalMatchupScoreApprox(p, pool),
     pool.map((x) => finalMatchupScoreApprox(x, pool)),
@@ -261,9 +288,13 @@ export function computeGGoal(p, pool) {
     (0.35 * matchupN + 0.2 * (icfN10 / 10) + 0.15 * (hdcfN10 / 10) + 0.15 * pressureN + 0.1 * ppImpact + 0.05 * bossV3N);
 
   const toi = toiScore(p, pool);
-  const primedScoreII = primedScore * (1 + toi * 0.1);
+  return { primedScore, primedScoreII: primedScore * (1 + toi * 0.1) };
+});
 
-  const intentLast5 = (p) => ((p.iSCF_5G || 0) + (p.iHDCF_5G || 0)) / 2;
+export function computeGGoal(p, pool) {
+  const { primedScore, primedScoreII: primedScoreIIVal } = primedScoreII(p, pool);
+
+  const intentLast5 = (x) => ((x.iSCF_5G || 0) + (x.iHDCF_5G || 0)) / 2;
   const intentLast5N = minMaxNorm(intentLast5(p), pool.map(intentLast5), 1);
   const goalsLast5N = minMaxNorm(p.Goals_Last5 || 0, pool.map((x) => x.Goals_Last5 || 0), 1);
   const trendScore = 0.7 * intentLast5N + 0.3 * goalsLast5N;
@@ -282,19 +313,8 @@ export function computeGGoal(p, pool) {
   const goalDroughtScore = toiSinceLastGoal / maxToiSinceLastGoal;
 
   const primedScoreIIN = minMaxNorm(
-    primedScoreII,
-    pool.map((x) => {
-      // recompute primedScoreII inline for each pool member for population bounds
-      const m = finalMatchupScoreApprox(x, pool);
-      const mN = minMaxNorm(m, pool.map((y) => finalMatchupScoreApprox(y, pool)), 1);
-      const i10 = minMaxNorm(x.ICF || 0, pool.map((y) => y.ICF || 0), 10);
-      const h10 = minMaxNorm(x.HDCF || 0, pool.map((y) => y.HDCF || 0), 10);
-      const pN = minMaxNorm(pressureScore(x, pool), pool.map((y) => pressureScore(y, pool)), 1);
-      const bN = minMaxNorm(finalBossScoreV3(x, pool), pool.map((y) => finalBossScoreV3(y, pool)), 1);
-      const ppI = 0.3 * bN + 0.25 * (i10 / 10) + 0.2 * (h10 / 10) + 0.25 * mN;
-      const ps = 100 * (0.35 * mN + 0.2 * (i10 / 10) + 0.15 * (h10 / 10) + 0.15 * pN + 0.1 * ppI + 0.05 * bN);
-      return ps * (1 + toiScore(x, pool) * 0.1);
-    }),
+    primedScoreIIVal,
+    pool.map((x) => primedScoreII(x, pool).primedScoreII),
     1
   );
 
@@ -333,8 +353,9 @@ export function scorePlayerPool(players, opts = {}) {
     const iceSig = computeIceSig(p, players);
     const snipeScore = computeSnipeScore(p, players);
     const breakawayScore = computeBreakawayScore(p, players, opts);
-    const { score: gGoal } = computeGGoal(p, players);
-    const { slapScore, tier } = computeSlapScore(p, players);
+    const { score: gGoal, _primedScore, _finalMatchupScore } = computeGGoal(p, players);
+    const slapScore = Math.round(clamp(gGoal, 0, 99));
+    const tier = tierLabel(_primedScore, _finalMatchupScore);
 
     return {
       ...p,

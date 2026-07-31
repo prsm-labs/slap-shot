@@ -1,0 +1,609 @@
+{
+  "_meta": {
+    "note": "Real gap-based clustering over output/shots_2025.csv's actual goal events (period + in-period time converted to game-elapsed seconds), same clustering pattern as Going Yard/Six Points' live-play themes. 180s window is an unvalidated placeholder \u2014 not checked against a real completed-game replay yet (slap-shot-build.md \u00a711).",
+    "gapSeconds": 180,
+    "count": 836
+  },
+  "flurries": [
+    {
+      "gameId": 20331,
+      "team": "BUF",
+      "period": 2,
+      "goals": [
+        "Ryan McLeod",
+        "Mattias Samuelsson"
+      ],
+      "gapSeconds": 8
+    },
+    {
+      "gameId": 20520,
+      "team": "TOR",
+      "period": 3,
+      "goals": [
+        "Auston Matthews",
+        "Dakota Joshua"
+      ],
+      "gapSeconds": 8
+    },
+    {
+      "gameId": 20722,
+      "team": "EDM",
+      "period": 3,
+      "goals": [
+        "Evan Bouchard",
+        "Leon Draisaitl"
+      ],
+      "gapSeconds": 8
+    },
+    {
+      "gameId": 20744,
+      "team": "WPG",
+      "period": 1,
+      "goals": [
+        "Tanner Pearson",
+        "Josh Morrissey"
+      ],
+      "gapSeconds": 8
+    },
+    {
+      "gameId": 21251,
+      "team": "PIT",
+      "period": 2,
+      "goals": [
+        "Tommy Novak",
+        "Egor Chinakhov"
+      ],
+      "gapSeconds": 9
+    },
+    {
+      "gameId": 20638,
+      "team": "SEA",
+      "period": 1,
+      "goals": [
+        "Jamie Oleksiak",
+        "Matty Beniers"
+      ],
+      "gapSeconds": 10
+    },
+    {
+      "gameId": 21165,
+      "team": "CGY",
+      "period": 2,
+      "goals": [
+        "Olli Maatta",
+        "Morgan Frost"
+      ],
+      "gapSeconds": 11
+    },
+    {
+      "gameId": 20356,
+      "team": "WSH",
+      "period": 2,
+      "goals": [
+        "Jakob Chychrun",
+        "John Carlson"
+      ],
+      "gapSeconds": 12
+    },
+    {
+      "gameId": 20750,
+      "team": "CAR",
+      "period": 3,
+      "goals": [
+        "Taylor Hall",
+        "Eric Robinson"
+      ],
+      "gapSeconds": 12
+    },
+    {
+      "gameId": 20812,
+      "team": "BOS",
+      "period": 3,
+      "goals": [
+        "Fraser Minten",
+        "Morgan Geekie"
+      ],
+      "gapSeconds": 12
+    },
+    {
+      "gameId": 21234,
+      "team": "OTT",
+      "period": 3,
+      "goals": [
+        "Tim Stutzle",
+        "Jake Sanderson"
+      ],
+      "gapSeconds": 13
+    },
+    {
+      "gameId": 20185,
+      "team": "DAL",
+      "period": 2,
+      "goals": [
+        "Wyatt Johnston",
+        "Justin Hryckowian"
+      ],
+      "gapSeconds": 14
+    },
+    {
+      "gameId": 20524,
+      "team": "EDM",
+      "period": 1,
+      "goals": [
+        "Zach Hyman",
+        "Connor McDavid"
+      ],
+      "gapSeconds": 14
+    },
+    {
+      "gameId": 20665,
+      "team": "SEA",
+      "period": 3,
+      "goals": [
+        "Frederick Gaudreau",
+        "Matty Beniers"
+      ],
+      "gapSeconds": 14
+    },
+    {
+      "gameId": 20263,
+      "team": "WPG",
+      "period": 1,
+      "goals": [
+        "Josh Morrissey",
+        "Nino Niederreiter"
+      ],
+      "gapSeconds": 15
+    },
+    {
+      "gameId": 20361,
+      "team": "NSH",
+      "period": 3,
+      "goals": [
+        "Nick Blankenburg",
+        "Roman Josi"
+      ],
+      "gapSeconds": 15
+    },
+    {
+      "gameId": 20408,
+      "team": "BUF",
+      "period": 1,
+      "goals": [
+        "Jason Zucker",
+        "Bowen Byram"
+      ],
+      "gapSeconds": 15
+    },
+    {
+      "gameId": 20465,
+      "team": "MIN",
+      "period": 3,
+      "goals": [
+        "Kirill Kaprizov",
+        "Vladimir Tarasenko"
+      ],
+      "gapSeconds": 15
+    },
+    {
+      "gameId": 20509,
+      "team": "UTA",
+      "period": 3,
+      "goals": [
+        "Nate Schmidt",
+        "Michael Carcone"
+      ],
+      "gapSeconds": 15
+    },
+    {
+      "gameId": 20674,
+      "team": "NSH",
+      "period": 3,
+      "goals": [
+        "Ryan O'Reilly",
+        "Nick Blankenburg"
+      ],
+      "gapSeconds": 15
+    },
+    {
+      "gameId": 20725,
+      "team": "OTT",
+      "period": 1,
+      "goals": [
+        "Artem Zub",
+        "Jordan Spence"
+      ],
+      "gapSeconds": 15
+    },
+    {
+      "gameId": 20148,
+      "team": "PIT",
+      "period": 1,
+      "goals": [
+        "Bryan Rust",
+        "Anthony Mantha"
+      ],
+      "gapSeconds": 16
+    },
+    {
+      "gameId": 20821,
+      "team": "OTT",
+      "period": 2,
+      "goals": [
+        "Dylan Cozens",
+        "Jordan Spence"
+      ],
+      "gapSeconds": 16
+    },
+    {
+      "gameId": 20434,
+      "team": "EDM",
+      "period": 1,
+      "goals": [
+        "Connor McDavid",
+        "Vasily Podkolzin"
+      ],
+      "gapSeconds": 17
+    },
+    {
+      "gameId": 20820,
+      "team": "SEA",
+      "period": 3,
+      "goals": [
+        "Matty Beniers",
+        "Berkly Catton"
+      ],
+      "gapSeconds": 18
+    },
+    {
+      "gameId": 20969,
+      "team": "MTL",
+      "period": 3,
+      "goals": [
+        "Ivan Demidov",
+        "Alex Newhook"
+      ],
+      "gapSeconds": 18
+    },
+    {
+      "gameId": 20142,
+      "team": "SJS",
+      "period": 2,
+      "goals": [
+        "William Eklund",
+        "Ryan Reaves"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 20300,
+      "team": "COL",
+      "period": 3,
+      "goals": [
+        "Martin Necas",
+        "Brock Nelson"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 20327,
+      "team": "VGK",
+      "period": 2,
+      "goals": [
+        "Jack Eichel",
+        "Ben Hutton"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 20515,
+      "team": "ANA",
+      "period": 3,
+      "goals": [
+        "Cutter Gauthier",
+        "Pavel Mintyukov"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 20525,
+      "team": "CBJ",
+      "period": 2,
+      "goals": [
+        "Zach Werenski",
+        "Boone Jenner"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 20564,
+      "team": "OTT",
+      "period": 2,
+      "goals": [
+        "Tim Sttzle",
+        "Dylan Cozens"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 21171,
+      "team": "NJD",
+      "period": 3,
+      "goals": [
+        "Dougie Hamilton",
+        "Jack Hughes"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 21211,
+      "team": "PIT",
+      "period": 2,
+      "goals": [
+        "Rickard Rakell",
+        "Ryan Shea"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 21249,
+      "team": "OTT",
+      "period": 3,
+      "goals": [
+        "Claude Giroux",
+        "Fabian Zetterlund"
+      ],
+      "gapSeconds": 19
+    },
+    {
+      "gameId": 20002,
+      "team": "PIT",
+      "period": 3,
+      "goals": [
+        "Justin Brazeau",
+        "Blake Lizotte"
+      ],
+      "gapSeconds": 20
+    },
+    {
+      "gameId": 20148,
+      "team": "PIT",
+      "period": 3,
+      "goals": [
+        "Sidney Crosby",
+        "Evgeni Malkin"
+      ],
+      "gapSeconds": 20
+    },
+    {
+      "gameId": 20234,
+      "team": "BOS",
+      "period": 1,
+      "goals": [
+        "Morgan Geekie",
+        "Viktor Arvidsson"
+      ],
+      "gapSeconds": 20
+    },
+    {
+      "gameId": 20720,
+      "team": "MTL",
+      "period": 2,
+      "goals": [
+        "Alexandre Carrier",
+        "Alexandre Carrier"
+      ],
+      "gapSeconds": 20
+    },
+    {
+      "gameId": 20861,
+      "team": "PIT",
+      "period": 3,
+      "goals": [
+        "Rickard Rakell",
+        "Noel Acciari"
+      ],
+      "gapSeconds": 20
+    },
+    {
+      "gameId": 21008,
+      "team": "NYR",
+      "period": 2,
+      "goals": [
+        "Mika Zibanejad",
+        "Tye Kartye"
+      ],
+      "gapSeconds": 20
+    },
+    {
+      "gameId": 20363,
+      "team": "PHI",
+      "period": 3,
+      "goals": [
+        "Tyson Foerster",
+        "Sean Couturier"
+      ],
+      "gapSeconds": 21
+    },
+    {
+      "gameId": 20157,
+      "team": "WPG",
+      "period": 1,
+      "goals": [
+        "Gabriel Vilardi",
+        "Vladislav Namestnikov"
+      ],
+      "gapSeconds": 22
+    },
+    {
+      "gameId": 20381,
+      "team": "PHI",
+      "period": 1,
+      "goals": [
+        "Tyson Foerster",
+        "Sean Couturier"
+      ],
+      "gapSeconds": 22
+    },
+    {
+      "gameId": 20937,
+      "team": "NYI",
+      "period": 2,
+      "goals": [
+        "Anders Lee",
+        "Jean-Gabriel Pageau"
+      ],
+      "gapSeconds": 22
+    },
+    {
+      "gameId": 21046,
+      "team": "NYR",
+      "period": 2,
+      "goals": [
+        "Jaroslav Chmelar",
+        "Vincent Trocheck"
+      ],
+      "gapSeconds": 22
+    },
+    {
+      "gameId": 21076,
+      "team": "TBL",
+      "period": 3,
+      "goals": [
+        "Brandon Hagel",
+        "Nikita Kucherov"
+      ],
+      "gapSeconds": 22
+    },
+    {
+      "gameId": 20120,
+      "team": "SEA",
+      "period": 3,
+      "goals": [
+        "Jaden Schwartz",
+        "Jordan Eberle"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 20487,
+      "team": "NSH",
+      "period": 2,
+      "goals": [
+        "Filip Forsberg",
+        "Steven Stamkos"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 20549,
+      "team": "PHI",
+      "period": 2,
+      "goals": [
+        "Travis Sanheim",
+        "Owen Tippett"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 20636,
+      "team": "MTL",
+      "period": 2,
+      "goals": [
+        "Cole Caufield",
+        "Josh Anderson"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 20873,
+      "team": "TBL",
+      "period": 2,
+      "goals": [
+        "Darren Raddysh",
+        "Nick Paul"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 20925,
+      "team": "STL",
+      "period": 2,
+      "goals": [
+        "Jordan Kyrou",
+        "Dylan Holloway"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 21009,
+      "team": "WSH",
+      "period": 3,
+      "goals": [
+        "Connor McMichael",
+        "Justin Sourdif"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 21060,
+      "team": "MIN",
+      "period": 3,
+      "goals": [
+        "Vladimir Tarasenko",
+        "Vladimir Tarasenko"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 21078,
+      "team": "PIT",
+      "period": 3,
+      "goals": [
+        "Erik Karlsson",
+        "Ben Kindel"
+      ],
+      "gapSeconds": 23
+    },
+    {
+      "gameId": 20303,
+      "team": "VAN",
+      "period": 1,
+      "goals": [
+        "Drew O'Connor",
+        "Jake DeBrusk"
+      ],
+      "gapSeconds": 24
+    },
+    {
+      "gameId": 20953,
+      "team": "NYR",
+      "period": 3,
+      "goals": [
+        "Vladislav Gavrikov",
+        "Gabe Perreault"
+      ],
+      "gapSeconds": 24
+    },
+    {
+      "gameId": 20985,
+      "team": "VAN",
+      "period": 1,
+      "goals": [
+        "Drew O'Connor",
+        "Jake DeBrusk"
+      ],
+      "gapSeconds": 24
+    },
+    {
+      "gameId": 20111,
+      "team": "BOS",
+      "period": 3,
+      "goals": [
+        "David Pastrnak",
+        "Morgan Geekie"
+      ],
+      "gapSeconds": 25
+    }
+  ]
+}
