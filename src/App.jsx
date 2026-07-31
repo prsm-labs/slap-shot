@@ -18,7 +18,7 @@ const styles = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --bg:#080c10;--surface:#0d1318;--surface2:#131b22;--border:#1e2d3a;
-  --accent:#e8411a;--accent2:#f5a623;--ice:#38b8f2;--green:#27c97a;
+  --accent:#2f7dae;--accent2:#4a9fd4;--green:#27c97a;
   --text:#e8edf2;--muted:#5a7080;
 }
 body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-height:100vh;}
