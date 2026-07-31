@@ -166,6 +166,29 @@ table.data-table tr.clickable{cursor:pointer;}
 
 .grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
 
+/* ── Signal Board — ported from Going Yard's real Barrel Lab/On Base stat-tile row ──────── */
+.signal-board{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;}
+.signal-tile{
+  flex:0 0 auto;min-width:118px;background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:10px 12px;
+}
+.signal-tile .lbl{font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;font-family:'DM Mono',monospace;}
+.signal-tile .val{font-family:'Oswald',sans-serif;font-weight:800;font-size:22px;margin-top:3px;color:var(--text);}
+.signal-tile .sub{font-size:9px;color:var(--muted);margin-top:2px;font-family:'DM Mono',monospace;}
+
+/* ── Top Reads — horizontal card strip ───────────────────────────────────────────────── */
+.top-reads{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;}
+.read-card{
+  flex:0 0 220px;background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:12px;cursor:pointer;transition:border-color .15s;
+}
+.read-card.signal{border-color:var(--accent);background:rgba(47,125,174,.06);}
+.read-card:hover{border-color:var(--accent2);}
+.signal-star{color:var(--accent2);}
+
+/* ── Row/table signal styling ────────────────────────────────────────────────────────── */
+tr.signal-row td{background:rgba(47,125,174,.05);}
+
 /* ── Slideout ──────────────────────────────────────────────────────── */
 .slide-backdrop{
   position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:899;

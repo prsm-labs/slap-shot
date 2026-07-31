@@ -4,6 +4,7 @@ import logoMark from "./assets/logo-flame-puck.png";
 import PlayerSlideout from "./components/PlayerSlideout.jsx";
 import GoalTicker from "./components/GoalTicker.jsx";
 import DashboardTab from "./tabs/DashboardTab.jsx";
+import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import AllMatchupsTab from "./tabs/AllMatchupsTab.jsx";
 import LampLabTab from "./tabs/LampLabTab.jsx";
 import AppleLabTab from "./tabs/AppleLabTab.jsx";
@@ -21,6 +22,7 @@ const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
 // superseded assets in this repo (not deleted without being asked).
 const TABS = [
   { key: "dashboard", label: "📊 Dashboard", Component: DashboardTab },
+  { key: "goals", label: "🚨 Goal Tracker", Component: GoalTrackerTab },
   { key: "board", label: "🏒 All Matchups", Component: AllMatchupsTab },
   { key: "lamp", label: "💡 Lamp Lab", Component: LampLabTab },
   { key: "apple", label: "🍎 Apple Lab", Component: AppleLabTab },
@@ -53,7 +55,7 @@ export default function App() {
         </div>
       </header>
 
-      <GoalTicker onClick={() => setTab("board")} />
+      <GoalTicker onClick={() => setTab("goals")} />
 
       <nav className="tabs">
         {TABS.map((t) => (

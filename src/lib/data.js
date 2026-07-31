@@ -39,6 +39,15 @@ function parseCsv(text) {
   });
 }
 
+let goalsLogCache = null;
+export async function fetchGoalsLog() {
+  if (goalsLogCache) return goalsLogCache;
+  const res = await fetch("/data/goals_log.json");
+  const data = await res.json();
+  goalsLogCache = { meta: data._meta, goals: data.goals };
+  return goalsLogCache;
+}
+
 let trackRecordCache = null;
 export async function fetchTrackRecord() {
   if (trackRecordCache) return trackRecordCache;

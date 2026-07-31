@@ -1,18 +1,42 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
+import { isPointSignal } from "../lib/signals.js";
 
+// Structural port of Going Yard's real OnBaseTab (mlb_project/going-yard/src/App.jsx:
+// 33607-34567) — parallel structure to Barrel Lab/Lamp Lab with its own score field and its own
+// signal threshold (their real On Base swaps SimHR%>=12 for SimTB2%>=30, same shape); see
+// LampLabTab.jsx for the shared reasoning on what's intentionally not ported (weather, live
+// lineup confirmation, arsenal-fit columns — no data source for any of that yet).
 function isRoleEligible(p) {
   return p.isEligible !== false && (p.games_played || 0) >= 10;
+}
+
+function exportCsv(rows, filename) {
+  const header = ["name", "team", "opponentGoalie", "goalieGrade", "anytimePointPct", "plus3SogPct", "slapScore", "signal"];
+  const lines = [header.join(",")];
+  for (const p of rows) {
+    lines.push([
+      p.name, p.team, p.opponentGoalie || "", p.goalieGrade?.letter || "", p.anytimePointPct, p.plus3SogPct, p.slapScore, isPointSignal(p) ? "Y" : "N",
+    ].map((v) => `"${v}"`).join(","));
+  }
+  const blob = new Blob([lines.join("\n")], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 export default function AppleLabTab() {
   const [pool, setPool] = useState(null);
   const [results, setResults] = useState(null);
   const [running, setRunning] = useState(false);
+  const [team, setTeam] = useState(null);
   const workerRef = useRef(null);
 
   useEffect(() => {
@@ -35,26 +59,104 @@ export default function AppleLabTab() {
     workerRef.current.postMessage({ players: pool });
   }
 
-  const merged = results
-    ? results.map((r) => ({ ...r, ...pool.find((p) => p.playerId === r.playerId) }))
-    : null;
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(merged || [], "anytimePointPct", "desc");
+  useEffect(() => {
+    if (pool && !results && !running) runSim();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pool]);
+
+  const merged = useMemo(() => {
+    if (!results || !pool) return null;
+    return results.map((r) => ({ ...r, ...pool.find((p) => p.playerId === r.playerId) }));
+  }, [results, pool]);
+
+  const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
+  const filtered = useMemo(() => (merged && team ? merged.filter((p) => p.team === team) : merged) || [], [merged, team]);
+
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimePointPct", "desc");
+  const sortedWithSignalFirst = useMemo(
+    () => [...sorted].sort((a, b) => (isPointSignal(b) ? 1 : 0) - (isPointSignal(a) ? 1 : 0)),
+    [sorted]
+  );
+
+  const board = useMemo(() => {
+    if (!filtered.length) return null;
+    const signals = filtered.filter(isPointSignal);
+    const expected = filtered.reduce((s, p) => s + (p.anytimePointPct || 0) / 100, 0);
+    const topSlap = Math.max(...filtered.map((p) => p.slapScore));
+    const topSim = Math.max(...filtered.map((p) => p.anytimePointPct || 0));
+    const topSog = Math.max(...filtered.map((p) => p.plus3SogPct || 0));
+    return { signals: signals.length, expected, topSlap, topSim, topSog };
+  }, [filtered]);
+
+  const topReads = useMemo(
+    () => [...filtered].sort((a, b) => b.anytimePointPct - a.anytimePointPct).slice(0, 5),
+    [filtered]
+  );
 
   return (
     <div>
       <div className="section-header">
         <div className="section-title">🍎 Apple Lab</div>
-        <div className="section-sub">Anytime-point odds vs. the actual goalie faced, plus a +3 SOG readout from the same sim</div>
+        <div className="section-sub">Anytime-point Monte Carlo + a +3 SOG readout from the same sim, vs. the actual goalie faced</div>
       </div>
 
-      <div className="note">ℹ️ "An apple" = hockey slang for an assist — right now this reads goals only until assist data is wired up.</div>
+      <div className="note">
+        ℹ️ "An apple" = an assist. Point% = Goal% right now (no assist data yet). ★ Point Signal = Slap Score ≥65 AND Breakaway Score ≥55 AND simulated +3 SOG% ≥40%.
+      </div>
 
-      <button className="btn primary" onClick={runSim} disabled={!pool || running}>
-        {running ? "Simulating…" : "▶ Run 10,000-Iteration Sim"}
-      </button>
+      <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+        {teams.length > 0 && (
+          <div className="pill-row" style={{ flexWrap: "wrap" }}>
+            <button className={`pill-btn ${!team ? "active" : ""}`} onClick={() => setTeam(null)}>All</button>
+            {teams.map((t) => (
+              <button key={t} className={`pill-btn ${team === t ? "active" : ""}`} onClick={() => setTeam(t)}>{t}</button>
+            ))}
+          </div>
+        )}
+        <div style={{ flex: 1 }} />
+        <button className="btn" onClick={runSim} disabled={!pool || running}>
+          {running ? "Simulating…" : "⟳ Refresh"}
+        </button>
+        <button className="btn" onClick={() => exportCsv(sortedWithSignalFirst, "apple-lab.csv")} disabled={!sorted.length}>⬇ CSV</button>
+      </div>
 
-      {sorted.length > 0 && (
-        <div className="table-wrap" style={{ marginTop: 14 }}>
+      {running && (
+        <div className="note" style={{ textAlign: "center" }}>
+          Running 10,000 Monte Carlo simulations… · {pool?.length ?? 0} skaters
+        </div>
+      )}
+
+      {board && (
+        <div className="signal-board">
+          <div className="signal-tile"><div className="lbl">Top Slap Score</div><div className="val">{board.topSlap}</div></div>
+          <div className="signal-tile"><div className="lbl">Point Signals</div><div className="val">{board.signals}</div></div>
+          <div className="signal-tile"><div className="lbl">Top Sim Point %</div><div className="val">{board.topSim}%</div></div>
+          <div className="signal-tile"><div className="lbl">Pre-Game Exp. Points</div><div className="val">{board.expected.toFixed(1)}</div></div>
+          <div className="signal-tile"><div className="lbl">Top +3 SOG %</div><div className="val">{board.topSog}%</div></div>
+        </div>
+      )}
+
+      {topReads.length > 0 && (
+        <div className="top-reads">
+          {topReads.map((p) => (
+            <div key={p.playerId} className={`read-card ${isPointSignal(p) ? "signal" : ""}`} onClick={() => openSkaterSlide(p)}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={36} />
+                <div>
+                  <div className="mono" style={{ fontSize: 12, fontWeight: 700 }}>{p.name}</div>
+                  <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} vs {p.opponentGoalie || "—"}</div>
+                </div>
+              </div>
+              {isPointSignal(p) && <div className="mono" style={{ fontSize: 10, marginBottom: 6 }}><span className="signal-star">★</span> Point Signal</div>}
+              <div style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 800, fontSize: 24 }}>{p.anytimePointPct}%</div>
+              <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>+3 SOG {p.plus3SogPct}% · Slap {p.slapScore}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {sortedWithSignalFirst.length > 0 && (
+        <div className="table-wrap">
           <table className="data-table">
             <thead>
               <tr>
@@ -62,15 +164,17 @@ export default function AppleLabTab() {
                 <th>Opp Goalie</th>
                 <th className={sortKey === "anytimePointPct" ? "sorted" : ""} onClick={() => toggleSort("anytimePointPct")}>Anytime Point %{sortKey === "anytimePointPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "plus3SogPct" ? "sorted" : ""} onClick={() => toggleSort("plus3SogPct")}>+3 SOG %{sortKey === "plus3SogPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
               </tr>
             </thead>
             <tbody>
-              {sorted.slice(0, 40).map((p) => (
-                <tr key={p.playerId}>
+              {sortedWithSignalFirst.slice(0, 50).map((p) => (
+                <tr key={p.playerId} className={isPointSignal(p) ? "signal-row" : ""}>
                   <td className="clickable" onClick={() => openSkaterSlide(p)}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
+                        {isPointSignal(p) && <span className="signal-star">★ </span>}
                         <span className="player-name-link">{p.name}</span>
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team}</div>
                       </div>
@@ -79,6 +183,7 @@ export default function AppleLabTab() {
                   <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimePointPct}%</td>
                   <td>{p.plus3SogPct}%</td>
+                  <td>{p.slapScore}</td>
                 </tr>
               ))}
             </tbody>
