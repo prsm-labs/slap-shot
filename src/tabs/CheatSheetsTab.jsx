@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
+import PlayerAvatar from "../components/PlayerAvatar.jsx";
+import GradeBadge from "../components/GradeBadge.jsx";
 
 // Top-5 opinionated lists driven directly off the already-scored pool — no separate data
 // model, per slap-shot-build.md §8.
-function ListCard({ title, sub, items, renderRow, onClick }) {
+function ListCard({ title, sub, items, renderRow, onClick, showOpp }) {
   return (
     <div className="card">
       <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 2 }}>{title}</div>
@@ -13,11 +15,20 @@ function ListCard({ title, sub, items, renderRow, onClick }) {
         <div
           key={i}
           className="clickable"
-          style={{ display: "flex", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid rgba(255,255,255,.05)", cursor: "pointer" }}
+          style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid rgba(255,255,255,.05)", cursor: "pointer", gap: 8 }}
           onClick={() => onClick(item)}
         >
-          <span className="mono" style={{ fontSize: 12 }}><span style={{ color: "var(--muted)" }}>{i + 1}.</span> {item.name} <span style={{ color: "var(--muted)" }}>({item.team})</span></span>
-          <span className="mono" style={{ fontWeight: 700, fontSize: 12 }}>{renderRow(item)}</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
+            <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{i + 1}.</span>
+            <PlayerAvatar playerId={item.playerId} name={item.name} team={item.team} size={26} />
+            <div style={{ minWidth: 0 }}>
+              <div className="mono" style={{ fontSize: 12 }}>{item.name} <span style={{ color: "var(--muted)" }}>({item.team})</span></div>
+              {showOpp && item.opponentGoalie && (
+                <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>vs {item.opponentGoalie} <GradeBadge grade={item.goalieGrade} /></div>
+              )}
+            </div>
+          </div>
+          <span className="mono" style={{ fontWeight: 700, fontSize: 12, flexShrink: 0 }}>{renderRow(item)}</span>
         </div>
       ))}
     </div>
@@ -29,8 +40,7 @@ export default function CheatSheetsTab() {
   const [goalies, setGoalies] = useState(null);
 
   useEffect(() => {
-    fetchScoredPool().then(({ players }) => setPlayers(players));
-    fetch("/data/todays_pool.json").then((r) => r.json()).then((d) => setGoalies(d.goalies));
+    fetchScoredPool().then(({ players, goalies }) => { setPlayers(players); setGoalies(goalies); });
   }, []);
 
   if (!players || !goalies) {
@@ -65,6 +75,7 @@ export default function CheatSheetsTab() {
           items={goalCandidates}
           renderRow={(p) => `${p.gGoal}`}
           onClick={openSkaterSlide}
+          showOpp
         />
         <ListCard
           title="🎯 Point Candidates"
@@ -72,12 +83,13 @@ export default function CheatSheetsTab() {
           items={pointCandidates}
           renderRow={(p) => `${Math.round(p._pointBlend)}`}
           onClick={openSkaterSlide}
+          showOpp
         />
         <ListCard
           title="🔓 Most Attackable Goalies This Week"
           sub="Worst real save% among qualified starters"
           items={attackableGoalies}
-          renderRow={(g) => g.savePct.toFixed(3)}
+          renderRow={(g) => <GradeBadge grade={g.grade} />}
           onClick={openGoalieSlide}
         />
       </div>

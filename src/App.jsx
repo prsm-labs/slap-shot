@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import "./App.css";
 import logoMark from "./assets/logo-flame-puck.png";
 import PlayerSlideout from "./components/PlayerSlideout.jsx";
+import GoalTicker from "./components/GoalTicker.jsx";
 import DashboardTab from "./tabs/DashboardTab.jsx";
 import AllMatchupsTab from "./tabs/AllMatchupsTab.jsx";
 import LampLabTab from "./tabs/LampLabTab.jsx";
@@ -11,11 +12,13 @@ import LiveThemesTab from "./tabs/LiveThemesTab.jsx";
 import SplitsTab from "./tabs/SplitsTab.jsx";
 import CheatSheetsTab from "./tabs/CheatSheetsTab.jsx";
 import MatchupLookupTab from "./tabs/MatchupLookupTab.jsx";
-import OddsCalculatorTab from "./tabs/OddsCalculatorTab.jsx";
 import AboutTab from "./tabs/AboutTab.jsx";
 
-const BUILD_TIMESTAMP = "2026-07-31 00:31 ET";
+const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
 
+// Odds Calculator removed per direct user feedback ("we don't need the odds calculator") —
+// OddsCalculatorTab.jsx / lib/odds.js are left on disk, unreferenced, same convention as other
+// superseded assets in this repo (not deleted without being asked).
 const TABS = [
   { key: "dashboard", label: "📊 Dashboard", Component: DashboardTab },
   { key: "board", label: "🏒 All Matchups", Component: AllMatchupsTab },
@@ -26,7 +29,6 @@ const TABS = [
   { key: "splits", label: "📊 Splits", Component: SplitsTab },
   { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab },
   { key: "lookup", label: "🔍 Matchup Lookup", Component: MatchupLookupTab },
-  { key: "odds", label: "🧮 Odds Calc", Component: OddsCalculatorTab },
   { key: "about", label: "📌 About", Component: AboutTab },
 ];
 
@@ -50,6 +52,8 @@ export default function App() {
           <div className="badge">PRSM LABS</div>
         </div>
       </header>
+
+      <GoalTicker onClick={() => setTab("board")} />
 
       <nav className="tabs">
         {TABS.map((t) => (

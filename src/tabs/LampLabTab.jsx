@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
+import PlayerAvatar from "../components/PlayerAvatar.jsx";
+import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 
 // Eligibility pre-filter mirrors Paydirt Lab's role-gated eligibility (slap-shot-build.md §4.1):
 // real ice time / role, not just any roster player. isEligible is scoring.js's hard gate
@@ -46,15 +48,10 @@ export default function LampLabTab() {
     <div>
       <div className="section-header">
         <div className="section-title">💡 Lamp Lab</div>
-        <div className="section-sub">Anytime-goal Monte Carlo — 10,000 iterations, real per-player shot rate + shooting% + matchup gate</div>
+        <div className="section-sub">Anytime-goal odds, simulated against the actual goalie each skater is facing</div>
       </div>
 
-      <div className="note">
-        ℹ️ "Light the lamp" = score a goal. Each trial draws a Poisson shot count around the player's real
-        season ShotAttemptsPerGame, then a Bernoulli goal draw per shot at their real shooting% — both scaled by
-        Ice Sig (usage) and Breakaway Score (matchup). Same methodology as predict_goal_scorers.py's real
-        Poisson-lambda approach, run client-side in a Web Worker (public/lampWorker.js), not server-computed.
-      </div>
+      <div className="note">ℹ️ "Light the lamp" = score a goal — 10,000 simulated games per skater, run in your browser.</div>
 
       <button className="btn primary" onClick={runSim} disabled={!pool || running}>
         {running ? "Simulating…" : "▶ Run 10,000-Iteration Sim"}
@@ -65,17 +62,25 @@ export default function LampLabTab() {
           <table className="data-table">
             <thead>
               <tr>
-                <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Player{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th>Team</th>
+                <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th>Opp Goalie</th>
                 <th className={sortKey === "anytimeGoalPct" ? "sorted" : ""} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
               </tr>
             </thead>
             <tbody>
               {sorted.slice(0, 40).map((p) => (
-                <tr key={p.playerId} className="clickable" onClick={() => openSkaterSlide(p)}>
-                  <td><span className="player-name-link">{p.name}</span></td>
-                  <td>{p.team}</td>
+                <tr key={p.playerId}>
+                  <td className="clickable" onClick={() => openSkaterSlide(p)}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
+                      <div>
+                        <span className="player-name-link">{p.name}</span>
+                        <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimeGoalPct}%</td>
                   <td>{p.slapScore}</td>
                 </tr>

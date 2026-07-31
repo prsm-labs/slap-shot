@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
+import PlayerAvatar from "../components/PlayerAvatar.jsx";
+import GradeBadge from "../components/GradeBadge.jsx";
 
 // Standalone lookup: any skater vs any goalie, not just today's slate — mirrors Going Yard's
 // BvPTab any-pair-not-just-todays-matchups framing (slap-shot-build.md §8/§11).
@@ -10,13 +12,11 @@ export default function MatchupLookupTab() {
   const [goalieId, setGoalieId] = useState(null);
 
   useEffect(() => {
-    fetchScoredPool().then(({ players }) => {
+    fetchScoredPool().then(({ players, goalies }) => {
       setPlayers(players);
       setSkaterId(players[0]?.playerId);
-    });
-    fetch("/data/todays_pool.json").then((r) => r.json()).then((d) => {
-      setGoalies(d.goalies);
-      setGoalieId(d.goalies[0]?.playerId);
+      setGoalies(goalies);
+      setGoalieId(goalies[0]?.playerId);
     });
   }, []);
 
@@ -63,19 +63,27 @@ export default function MatchupLookupTab() {
       <div className="grid-cards">
         {skater && (
           <div className="card">
-            <div style={{ fontWeight: 700, marginBottom: 8 }}>{skater.name} <span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>{skater.team}</span></div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+              <PlayerAvatar playerId={skater.playerId} name={skater.name} team={skater.team} size={40} />
+              <div style={{ fontWeight: 700 }}>{skater.name} <span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>{skater.team}</span></div>
+            </div>
             <Stat label="Season Goals" value={skater.TotalGoals} />
             <Stat label="Shooting %" value={`${(shootingPct * 100).toFixed(1)}%`} />
             <Stat label="Shots/GP" value={skater.ShotAttemptsPerGame} />
+            <Stat label="Own Grade" value={<GradeBadge grade={skater.baseGrade} />} />
             <Stat label="Slap Score" value={skater.slapScore} />
           </div>
         )}
         {goalie && (
           <div className="card">
-            <div style={{ fontWeight: 700, marginBottom: 8 }}>{goalie.name} <span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>{goalie.team}</span></div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+              <PlayerAvatar playerId={goalie.playerId} name={goalie.name} team={goalie.team} size={40} />
+              <div style={{ fontWeight: 700 }}>{goalie.name} <span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>{goalie.team}</span></div>
+            </div>
             <Stat label="Save %" value={goalie.savePct?.toFixed(3) ?? "—"} />
             <Stat label="GA60 (real)" value={goalie.GA60_proxy} />
             <Stat label="xGA60 (real)" value={goalie.xGA60_proxy} />
+            <Stat label="Grade" value={<GradeBadge grade={goalie.grade} />} />
             <Stat label="Form (GA60/xGA60)" value={goalieForm != null ? `${goalieForm.toFixed(2)}${goalieForm < 1 ? " (hot)" : goalieForm > 1.1 ? " (cold)" : ""}` : "—"} />
           </div>
         )}

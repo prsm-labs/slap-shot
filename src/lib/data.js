@@ -2,6 +2,7 @@
 // slap-shot-build.md §4/§5/§13 — no live pipeline/API is wired up yet, this reads the
 // real historical/aggregated JSON+CSV produced by the one-off scripts documented there).
 import { scorePlayerPool } from "../scoring.js";
+import { computeBaseGrade, computeGoalieGrades, computeEffectiveGrade } from "./grades.js";
 
 let poolCache = null;
 export async function fetchScoredPool() {
@@ -9,7 +10,17 @@ export async function fetchScoredPool() {
   const res = await fetch("/data/todays_pool.json");
   const data = await res.json();
   const scored = scorePlayerPool(data.players);
-  poolCache = { meta: data._meta, players: scored };
+
+  const goalieGrades = computeGoalieGrades(data.goalies);
+  const players = scored.map((p) => {
+    const baseGrade = computeBaseGrade(p);
+    const goalieGrade = p.opponentGoalieId != null ? goalieGrades[p.opponentGoalieId] : null;
+    const effectiveGrade = computeEffectiveGrade(baseGrade, goalieGrade);
+    return { ...p, baseGrade, goalieGrade, effectiveGrade };
+  });
+  const goalies = data.goalies.map((g) => ({ ...g, grade: goalieGrades[g.playerId] || null }));
+
+  poolCache = { meta: data._meta, players, goalies };
   return poolCache;
 }
 

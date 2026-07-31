@@ -54,6 +54,26 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
 .tab:hover{color:var(--text);}
 .tab.active{color:var(--text);border-bottom-color:var(--accent);}
 
+/* ── Goal Ticker marquee — ported from Going Yard's real HRTicker ─────────────────────── */
+.ticker-wrap{
+  display:flex;align-items:center;background:var(--surface);border-bottom:1px solid var(--border);
+  overflow:hidden;cursor:pointer;height:34px;
+}
+.ticker-label{
+  flex-shrink:0;background:var(--accent);color:#fff;font-family:'DM Mono',monospace;font-weight:700;
+  font-size:10px;letter-spacing:1px;padding:0 12px;height:100%;display:flex;align-items:center;
+}
+.ticker-viewport{flex:1;overflow:hidden;position:relative;height:100%;}
+.ticker-loading{padding:0 14px;font-size:11px;color:var(--muted);line-height:34px;}
+.ticker-track{
+  display:inline-flex;white-space:nowrap;align-items:center;height:100%;
+  animation-name:ticker-scroll;animation-timing-function:linear;animation-iteration-count:infinite;
+}
+.ticker-track:hover{animation-play-state:paused;}
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-size:11px;color:var(--text);padding:0 2px;}
+.ticker-sep{color:var(--accent2);}
+
 .content{flex:1;padding:22px;max-width:1440px;margin:0 auto;width:100%;}
 .section-header{margin-bottom:16px;}
 .section-title{
