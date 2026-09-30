@@ -5,7 +5,7 @@ import { useState } from "react";
 // uses the exact same component for batters AND pitchers (no separate logic per role); this does
 // the same for skaters and goalies. Rounded-square (not circle), portrait aspect ratio, crops
 // toward the top of the image for face framing — same visual language as the reference.
-const NHL_SEASON_ID = "20252026"; // matches shots_2025.csv's season field (the 2025-26 season)
+const NHL_SEASON_ID = "20262027"; // current season, so players who changed teams get this year's photo
 
 function headshotUrl(playerId, team) {
   if (!playerId || !team) return null;

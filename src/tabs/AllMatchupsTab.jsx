@@ -24,13 +24,51 @@ const COLUMNS = [
   ["tier", "Tier"],
 ];
 
+function startTime(utc) {
+  return new Date(utc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+}
+
+function slateHeading(meta) {
+  const day = new Date(`${meta.slateDate}T12:00:00`).toLocaleDateString([], { weekday: "long", month: "short", day: "numeric" });
+  const later = meta.requestedDate && meta.slateDate !== meta.requestedDate ? " (next day with games)" : "";
+  return `${day}${later} · ${meta.slate.length} games`;
+}
+
+function SlateStrip({ meta }) {
+  if (!meta?.slate?.length) return null;
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6, letterSpacing: 0.5 }}>
+        {slateHeading(meta).toUpperCase()}
+      </div>
+      <div className="grid-cards">
+        {meta.slate.map((g) => (
+          <div className="card" key={g.gameId} style={{ padding: "10px 12px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+              <span style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 700, fontSize: 16 }}>{g.away} @ {g.home}</span>
+              <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{startTime(g.startTimeUTC)}</span>
+            </div>
+            <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginTop: 4 }}>
+              {g.awayGoalie || "—"} ({g.awayGoalieStatus}) vs {g.homeGoalie || "—"} ({g.homeGoalieStatus})
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function AllMatchupsTab() {
   const [players, setPlayers] = useState(null);
+  const [meta, setMeta] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchScoredPool()
-      .then(({ players }) => setPlayers(players))
+      .then(({ players, meta }) => {
+        setPlayers(players);
+        setMeta(meta);
+      })
       .catch((e) => setError(String(e)));
   }, []);
 
@@ -45,7 +83,9 @@ export default function AllMatchupsTab() {
 
       <div className="note">
         ℹ️ Ranked by Slap Score, a single 0-99 score blending recent form, shot quality, and this specific goalie matchup.
+        Goalies marked Projected are not yet confirmed starters.
       </div>
+      <SlateStrip meta={meta} />
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Failed to load pool: {error}</div>}
       {!players && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
 

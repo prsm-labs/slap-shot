@@ -86,7 +86,7 @@ export default function GoalTrackerTab() {
     <div>
       <div className="section-header">
         <div className="section-title">🚨 Goal Tracker</div>
-        <div className="section-sub">Every real goal from the 2025-26 season shot log — who scored, against who, when</div>
+        <div className="section-sub">Every real goal from the {(meta.seasons || []).join(" and ")} shot logs — who scored, against who, when</div>
       </div>
 
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
