@@ -4,6 +4,7 @@ import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import BoxScore from "../components/BoxScore.jsx";
 import { matchupKey, toggleMatchup, setMatchup, useMatchup } from "../lib/matchupFilter.js";
+import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
 
 // Live games + in-game "Heating Up" board (TopCheese-style), fed by /api/live (api/live.js),
 // which reads the NHL's play-by-play and scores every skater's night so far. Polls while any
@@ -150,6 +151,11 @@ export default function LiveTab() {
   }, [date]);
 
   const poolById = useMemo(() => new Map((pool || []).map((p) => [p.playerId, p])), [pool]);
+  // gameId -> scorerId of that game's first goal
+  const firstScorer = useMemo(
+    () => new Map([...firstGoalsByGame(data?.goals).entries()].map(([gid, g]) => [gid, g.scorerId])),
+    [data]
+  );
 
   const gameKeys = useMemo(
     () => new Map((data?.games || []).map((g) => [g.gameId, matchupKey(g.away.abbrev, g.home.abbrev)])),
@@ -258,6 +264,7 @@ export default function LiveTab() {
                           <div>
                             <span className="player-name-link">{s.name}</span>
                             {s.goals > 0 && <span title="Scored tonight"> 🚨</span>}
+                            {firstScorer.get(s.gameId) === s.playerId && <span title="Scored the first goal of the game"> {FIRST_GOAL}</span>}
                             <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{s.team} vs {s.opp} · {s.position}</div>
                           </div>
                         </div>

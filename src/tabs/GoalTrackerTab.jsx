@@ -6,6 +6,7 @@ import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import { useMatchup } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
+import { FASTEST_GOAL, FIRST_GOAL, fastestGoal, firstGoalsByGame, gameClock, isFirstGoal } from "../lib/goalBadges.js";
 
 // Ported from Going Yard's real HRTrackerTab (mlb_project/going-yard/src/App.jsx:11821-12176):
 // a flat, sortable table of every real event for a selected date, native <input type="date">
@@ -124,8 +125,11 @@ export default function GoalTrackerTab() {
     const scorerCounts = {};
     for (const g of dayGoals) scorerCounts[g.scorerName] = (scorerCounts[g.scorerName] || 0) + 1;
     const hatTricks = Object.values(scorerCounts).filter((c) => c >= 3).length;
-    return { total: dayGoals.length, avgDist, longest, hatTricks };
+    return { total: dayGoals.length, avgDist, longest, hatTricks, fastest: fastestGoal(dayGoals) };
   }, [dayGoals]);
+
+  // 🥇 = the first goal of its game (from all of the day's goals, not just the filtered rows).
+  const firstByGame = useMemo(() => firstGoalsByGame(dayGoals), [dayGoals]);
 
   if (!all || !meta || !date) {
     return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading goal log…</div>;
@@ -189,11 +193,15 @@ export default function GoalTrackerTab() {
         <div className="grid-cards" style={{ marginBottom: 14 }}>
           <div className="card"><div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>GOALS THIS DATE</div><div style={{ fontSize: 22, fontWeight: 800, fontFamily: "'Oswald',sans-serif" }}>{stats.total}</div></div>
           <div className="card"><div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>AVG DISTANCE</div><div style={{ fontSize: 22, fontWeight: 800, fontFamily: "'Oswald',sans-serif" }}>{stats.avgDist ? stats.avgDist.toFixed(1) : "—"} ft</div></div>
+          <div className="card"><div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{FASTEST_GOAL} FASTEST GOAL</div><div style={{ fontSize: 14, fontWeight: 700 }}>{stats.fastest ? `${stats.fastest.scorerName} — ${gameClock(stats.fastest.elapsedSeconds)} into ${stats.fastest.matchup.replace("@", " @ ")}` : "—"}</div></div>
           <div className="card"><div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>LONGEST GOAL</div><div style={{ fontSize: 14, fontWeight: 700 }}>{stats.longest ? `${stats.longest.scorerName} — ${stats.longest.shotDistance}ft` : "—"}</div></div>
           <div className="card"><div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>HAT TRICKS</div><div style={{ fontSize: 22, fontWeight: 800, fontFamily: "'Oswald',sans-serif" }}>{stats.hatTricks}</div></div>
         </div>
       )}
 
+      <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6 }}>
+        {FIRST_GOAL} first goal of the game · {FASTEST_GOAL} fastest goal of the day (time from opening puck drop)
+      </div>
       <div className="table-wrap">
         <table className="data-table">
           <thead>
@@ -217,6 +225,8 @@ export default function GoalTrackerTab() {
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                     <PlayerAvatar playerId={g.scorerId} name={g.scorerName} team={g.scorerTeam} size={24} />
                     <span className="player-name-link">{g.scorerName}</span>
+                    {isFirstGoal(g, firstByGame) && <span title="First goal of the game">{FIRST_GOAL}</span>}
+                    {stats?.fastest === g && <span title="Fastest goal of the day">{FASTEST_GOAL}</span>}
                     <span className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{g.scorerTeam}</span>
                   </div>
                 </td>

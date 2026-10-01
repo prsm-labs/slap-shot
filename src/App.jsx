@@ -7,6 +7,7 @@ import DashboardTab from "./tabs/DashboardTab.jsx";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
 import AllMatchupsTab from "./tabs/AllMatchupsTab.jsx";
+import FirstGoalTab from "./tabs/FirstGoalTab.jsx";
 import LampLabTab from "./tabs/LampLabTab.jsx";
 import AppleLabTab from "./tabs/AppleLabTab.jsx";
 import TrackRecordTab from "./tabs/TrackRecordTab.jsx";
@@ -26,11 +27,11 @@ const TABS = [
   { key: "livegames", label: "🔴 Live", Component: LiveTab },
   { key: "goals", label: "🚨 Goal Tracker", Component: GoalTrackerTab },
   { key: "board", label: "🏒 All Matchups", Component: AllMatchupsTab },
+  { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab },
   { key: "lamp", label: "💡 Lamp Lab", Component: LampLabTab },
   { key: "apple", label: "🍎 Apple Lab", Component: AppleLabTab },
   { key: "track", label: "📈 Track Record", Component: TrackRecordTab },
-  // Label only: this is last season's goal-flurry replay, not live — renamed so it isn't
-  // confused with the real 🔴 Live tab.
+  // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".
   { key: "live", label: "⚡ Goal Flurries", Component: LiveThemesTab },
   { key: "splits", label: "📊 Splits", Component: SplitsTab },
   { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab },
