@@ -67,6 +67,7 @@ export function analyzeGame(pbp) {
   const plays = pbp.plays || [];
   const now = plays.length ? Math.max(...plays.map(elapsedSeconds)) : 0;
   const skaters = {};
+  const goals = [];
   const pressure = { home: 0, away: 0 };
 
   const line = (pid) => {
@@ -86,6 +87,7 @@ export function analyzeGame(pbp) {
 
     if (play.typeDescKey === "goal") {
       for (const a of [d.assist1PlayerId, d.assist2PlayerId]) if (a) line(a).assists += 1;
+      goals.push(goalRow(pbp, play, teams, roster));
     }
     if (!SHOT_EVENTS.has(play.typeDescKey)) continue;
 
@@ -119,12 +121,43 @@ export function analyzeGame(pbp) {
   const total = pressure.home + pressure.away;
   return {
     skaters: lines,
+    goals,
     pressure: {
       windowMinutes: PRESSURE_WINDOW / 60,
       homeAttempts: pressure.home,
       awayAttempts: pressure.away,
       homeShare: total ? Math.round((pressure.home / total) * 100) : 50,
     },
+  };
+}
+
+// NHL feed shot types -> MoneyPuck's codes, so live rows read like the nightly log.
+const SHOT_TYPES = { backhand: "BACK", "tip-in": "TIP", deflected: "DEFL", "wrap-around": "WRAP" };
+
+// Same row shape as public/data/goals_log.json (build_goals_log.py), so the Goal Tracker and
+// ticker can show tonight's goals alongside the nightly MoneyPuck log.
+function goalRow(pbp, play, teams, roster) {
+  const d = play.details || {};
+  const team = teams[d.eventOwnerTeamId] || {};
+  const dist = shotDistance(play, team.isHome);
+  const [m, s] = (play.timeInPeriod || "0:0").split(":").map(Number);
+  return {
+    date: pbp.gameDate,
+    gameId: pbp.id,
+    period: play.periodDescriptor.number,
+    timeInPeriod: `${m}:${String(s).padStart(2, "0")}`,
+    elapsedSeconds: elapsedSeconds(play),
+    scorerId: d.scoringPlayerId,
+    scorerName: roster[d.scoringPlayerId]?.name || "",
+    scorerTeam: team.abbrev,
+    seasonGoalNum: d.scoringPlayerTotal ?? null,
+    goalieId: d.goalieInNetId || 0,
+    goalieName: d.goalieInNetId ? roster[d.goalieInNetId]?.name || "" : "Empty Net",
+    oppTeam: team.isHome ? pbp.awayTeam.abbrev : pbp.homeTeam.abbrev,
+    shotType: d.shotType ? SHOT_TYPES[d.shotType] || d.shotType.toUpperCase() : null,
+    shotDistance: dist != null ? Math.round(dist * 10) / 10 : null,
+    matchup: `${pbp.awayTeam.abbrev}@${pbp.homeTeam.abbrev}`,
+    live: true,
   };
 }
 
@@ -152,19 +185,22 @@ export async function buildLive(date) {
   const games = (score.games || []).filter((g) => g.gameType === 2 || g.gameType === 3).map(summarizeGame);
 
   const skaters = [];
+  const goals = [];
   await Promise.all(
     games.filter((g) => STARTED.has(g.state)).map(async (g) => {
       try {
-        const { skaters: lines, pressure } = analyzeGame(await getJson(`${NHL}/gamecenter/${g.gameId}/play-by-play`));
+        const { skaters: lines, goals: gameGoals, pressure } = analyzeGame(await getJson(`${NHL}/gamecenter/${g.gameId}/play-by-play`));
         g.pressure = pressure;
         skaters.push(...lines);
+        goals.push(...gameGoals);
       } catch (e) {
         g.error = e.message;
       }
     })
   );
 
-  return { date: score.currentDate || date, generated: new Date().toISOString(), games, skaters };
+  goals.sort((a, b) => b.elapsedSeconds - a.elapsedSeconds);
+  return { date: score.currentDate || date, generated: new Date().toISOString(), games, skaters, goals };
 }
 
 export default async function handler(req, res) {

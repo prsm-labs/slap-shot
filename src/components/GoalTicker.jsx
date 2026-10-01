@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchGoalsLog } from "../lib/data.js";
+import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 
 // Ported from Going Yard's real HRTicker (mlb_project/going-yard/src/App.jsx:11730-11779, CSS
 // at 344-352): a CSS-only infinite-scroll marquee, mounted once between the header and the tab
@@ -15,12 +16,28 @@ import { fetchGoalsLog } from "../lib/data.js";
 export default function GoalTicker({ onClick }) {
   const [items, setItems] = useState(null);
 
+  // Tonight's goals from the live feed once any have been scored; until then, the latest day in
+  // the nightly log. Re-checks every 30s while games are on.
   useEffect(() => {
-    fetchGoalsLog().then(({ goals, meta }) => {
-      const latestDate = meta.dateRange[1];
-      const todays = goals.filter((g) => g.date === latestDate);
-      setItems(todays);
-    });
+    let cancelled = false;
+    let timer = null;
+    async function load() {
+      const { goals, meta } = await fetchGoalsLog();
+      const logged = goals.filter((g) => g.date === meta.dateRange[1]);
+      try {
+        const live = await fetchLiveGoals(easternToday());
+        if (cancelled) return;
+        setItems(live.goals.length ? live.goals : logged);
+        timer = setTimeout(load, live.started && live.unfinished ? LIVE_POLL_MS : 5 * 60_000);
+      } catch {
+        if (!cancelled) setItems(logged);
+      }
+    }
+    load();
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
   }, []);
 
   if (items && items.length === 0) return null;

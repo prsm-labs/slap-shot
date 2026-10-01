@@ -5,6 +5,7 @@ import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import { useMatchup } from "../lib/matchupFilter.js";
+import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 
 // Ported from Going Yard's real HRTrackerTab (mlb_project/going-yard/src/App.jsx:11821-12176):
 // a flat, sortable table of every real event for a selected date, native <input type="date">
@@ -36,20 +37,59 @@ function exportCsv(rows, date) {
 export default function GoalTrackerTab() {
   const [all, setAll] = useState(null);
   const [meta, setMeta] = useState(null);
-  const [date, setDate] = useState(null);
+  const [picked, setDate] = useState(null);
   const [team, setTeam] = useState(null);
   const [search, setSearch] = useState("");
   const selected = useMatchup();
+  const [live, setLive] = useState(null);
+  const today = easternToday();
 
   useEffect(() => {
     fetchGoalsLog().then(({ goals, meta }) => {
       setAll(goals);
       setMeta(meta);
-      setDate(meta.dateRange[1]);
     });
   }, []);
 
-  const dayGoals = useMemo(() => (all && date ? all.filter((g) => g.date === date) : []), [all, date]);
+  // Today's goals come from the NHL live feed (the nightly log only has finished days). Polls
+  // every 30s while tonight's games are on; otherwise re-checks every 5 minutes.
+  useEffect(() => {
+    let cancelled = false;
+    let timer = null;
+    async function load() {
+      try {
+        const result = await fetchLiveGoals(today);
+        if (cancelled) return;
+        setLive(result);
+        timer = setTimeout(load, result.started && result.unfinished ? LIVE_POLL_MS : 5 * 60_000);
+      } catch {
+        if (cancelled) return;
+        setLive((prev) => prev || { goals: [], started: false, unfinished: false });
+        timer = setTimeout(load, LIVE_POLL_MS);
+      }
+    }
+    load();
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [today]);
+
+  const liveToday = Boolean(live?.started);
+  const dates = useMemo(() => {
+    if (!meta) return [];
+    return liveToday && !meta.availableDates.includes(today) ? [...meta.availableDates, today] : meta.availableDates;
+  }, [meta, liveToday, today]);
+  const latest = dates[dates.length - 1];
+
+  // Until a date is picked: today once tonight's first game has started, else the latest logged day.
+  const date = picked ?? (meta && live ? latest : null);
+
+  const dayGoals = useMemo(() => {
+    if (!date) return [];
+    if (date === today && liveToday) return live.goals;
+    return all ? all.filter((g) => g.date === date) : [];
+  }, [all, date, today, liveToday, live]);
   const teams = useMemo(() => [...new Set(dayGoals.map((g) => g.scorerTeam))].sort(), [dayGoals]);
   const dayGames = useMemo(
     () => [...new Set(dayGoals.map((g) => g.matchup))].sort().map((m) => ({ away: m.split("@")[0], home: m.split("@")[1] })),
@@ -71,8 +111,8 @@ export default function GoalTrackerTab() {
 
   function stepDate(delta) {
     if (!meta) return;
-    const idx = meta.availableDates.indexOf(date);
-    const next = meta.availableDates[idx + delta];
+    const idx = dates.indexOf(date);
+    const next = dates[idx + delta];
     if (next) setDate(next);
   }
 
@@ -87,7 +127,7 @@ export default function GoalTrackerTab() {
     return { total: dayGoals.length, avgDist, longest, hatTricks };
   }, [dayGoals]);
 
-  if (!all || !meta) {
+  if (!all || !meta || !date) {
     return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading goal log…</div>;
   }
 
@@ -98,24 +138,30 @@ export default function GoalTrackerTab() {
         <div className="section-sub">Every real goal from the {(meta.seasons || []).join(" and ")} shot logs — who scored, against who, when</div>
       </div>
 
+      {date === today && liveToday && (
+        <div className="note">
+          🔴 Today's goals come straight from the NHL live feed{live.unfinished ? ` and refresh every ${LIVE_POLL_MS / 1000}s` : ""}.
+        </div>
+      )}
+
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-        <button className="btn" onClick={() => stepDate(-1)} disabled={meta.availableDates.indexOf(date) <= 0}>◀</button>
+        <button className="btn" onClick={() => stepDate(-1)} disabled={dates.indexOf(date) <= 0}>◀</button>
         <input
           type="date"
           value={date || ""}
-          min={meta.dateRange[0]}
-          max={meta.dateRange[1]}
+          min={dates[0]}
+          max={latest}
           onChange={(e) => {
             // snap to nearest real available date on or before the picked one
             const picked = e.target.value;
-            const candidate = [...meta.availableDates].reverse().find((d) => d <= picked) || meta.availableDates[0];
+            const candidate = [...dates].reverse().find((d) => d <= picked) || dates[0];
             setDate(candidate);
           }}
           className="mono"
           style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 9px", fontSize: 12 }}
         />
-        <button className="btn" onClick={() => stepDate(1)} disabled={meta.availableDates.indexOf(date) >= meta.availableDates.length - 1}>▶</button>
-        <button className="btn" onClick={() => setDate(meta.dateRange[1])}>↩ Latest</button>
+        <button className="btn" onClick={() => stepDate(1)} disabled={dates.indexOf(date) >= dates.length - 1}>▶</button>
+        <button className="btn" onClick={() => setDate(latest)}>↩ Latest</button>
         <input
           className="mono"
           placeholder="Search scorer or goalie…"
