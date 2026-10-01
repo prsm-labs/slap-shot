@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchTrackRecord } from "../lib/data.js";
+import TrackRecordLive from "./TrackRecordLive.jsx";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -62,7 +63,8 @@ function DrillDown({ tier, rows }) {
   );
 }
 
-export default function TrackRecordTab() {
+// March 2026 backtest of the old Power BI model (output/scored_v3.xlsx), kept as the second view.
+function PbixBacktest() {
   const [rows, setRows] = useState(null);
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState(null);
@@ -80,9 +82,8 @@ export default function TrackRecordTab() {
 
   return (
     <div>
-      <div className="section-header">
-        <div className="section-title">📈 Track Record</div>
-        <div className="section-sub">Real hit rate per tier, backed by the actual graded games — click a tier to see them</div>
+      <div className="note">
+        ℹ️ The Power BI model's own tiers, graded March 1-21, 2026 (before Slap Shot existed) — click a tier to see the games.
       </div>
 
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Failed to load: {error}</div>}
@@ -122,6 +123,23 @@ export default function TrackRecordTab() {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+export default function TrackRecordTab() {
+  const [view, setView] = useState("live");
+  return (
+    <div>
+      <div className="section-header">
+        <div className="section-title">📈 Track Record</div>
+        <div className="section-sub">What we projected before each game vs. what actually happened — who scored, their box score, and how they were graded</div>
+      </div>
+      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
+        <button className={`pill-btn ${view === "live" ? "active" : ""}`} onClick={() => setView("live")}>2026-27 Slap Shot</button>
+        <button className={`pill-btn ${view === "pbix" ? "active" : ""}`} onClick={() => setView("pbix")}>Mar 2026 backtest (Power BI model)</button>
+      </div>
+      {view === "live" ? <TrackRecordLive /> : <PbixBacktest />}
     </div>
   );
 }

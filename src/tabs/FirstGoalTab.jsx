@@ -6,6 +6,7 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import { matchupKey, playerMatchupKey, useMatchup } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
+import { firstGoalRate as rate } from "../lib/projections.js";
 
 // First goal projection. Every skater on tonight's rosters is a scoring "clock" running at their
 // goals-per-game rate; whoever's clock rings first scores the game's first goal, so each player's
@@ -18,12 +19,7 @@ import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
 // the time (model said 6.7% on average; picking at random would hit 2.8%), a top-3 pick 19.2%,
 // a top-5 pick 30.2%. Tonight's pool uses full rosters, not confirmed lineups, so scratched
 // players still take a share — expect slightly worse than the backtest.
-const PRIOR_GAMES = 20;
-const PRIOR_RATE = 0.17;
-
-function rate(p) {
-  return ((p.TotalGoals || 0) + PRIOR_GAMES * PRIOR_RATE) / ((p.games_played || 0) + PRIOR_GAMES);
-}
+// (rate formula lives in lib/projections.js so the Track Record snapshot uses the same one)
 
 function fairOdds(prob) {
   if (!prob || prob <= 0) return "—";
