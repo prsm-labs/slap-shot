@@ -8,7 +8,7 @@
       {
         "gameId": 2026020006,
         "startTimeUTC": "2026-09-30T23:30:00Z",
-        "gameState": "FUT",
+        "gameState": "LIVE",
         "away": "PIT",
         "home": "PHI",
         "awayGoalieId": 8481668,
@@ -21,7 +21,7 @@
       {
         "gameId": 2026020008,
         "startTimeUTC": "2026-09-30T23:30:00Z",
-        "gameState": "FUT",
+        "gameState": "LIVE",
         "away": "NYI",
         "home": "TOR",
         "awayGoalieId": 8478009,
@@ -49,7 +49,7 @@
       2025,
       2026
     ],
-    "generated": "2026-09-30 13:42",
+    "generated": "2026-09-30 19:54",
     "player_count": 128,
     "goalie_count": 60,
     "skipped_no_history": 2
@@ -18184,6 +18184,9 @@
       "last7": [
         {
           "gameId": 2025021203,
+          "date": "2026-04-02",
+          "opp": "SEA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 27,
           "savePct": 0.926,
@@ -18192,6 +18195,9 @@
         },
         {
           "gameId": 2025021216,
+          "date": "2026-04-04",
+          "opp": "VAN",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 23,
           "savePct": 0.826,
@@ -18200,6 +18206,9 @@
         },
         {
           "gameId": 2025021241,
+          "date": "2026-04-07",
+          "opp": "EDM",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 26,
           "savePct": 0.808,
@@ -18208,6 +18217,9 @@
         },
         {
           "gameId": 2025021257,
+          "date": "2026-04-09",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 30,
           "savePct": 0.967,
@@ -18216,6 +18228,9 @@
         },
         {
           "gameId": 2025021269,
+          "date": "2026-04-11",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 29,
           "savePct": 0.897,
@@ -18224,6 +18239,9 @@
         },
         {
           "gameId": 2025021297,
+          "date": "2026-04-14",
+          "opp": "WPG",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 24,
           "savePct": 0.875,
@@ -18232,6 +18250,9 @@
         },
         {
           "gameId": 2025021309,
+          "date": "2026-04-16",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 18,
           "savePct": 0.833,
@@ -18259,6 +18280,9 @@
       "last7": [
         {
           "gameId": 2025021129,
+          "date": "2026-03-24",
+          "opp": "SJS",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 30,
           "savePct": 0.9,
@@ -18267,6 +18291,9 @@
         },
         {
           "gameId": 2025021161,
+          "date": "2026-03-28",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 32,
           "savePct": 0.875,
@@ -18275,6 +18302,9 @@
         },
         {
           "gameId": 2025021204,
+          "date": "2026-04-02",
+          "opp": "LAK",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 33,
           "savePct": 0.879,
@@ -18283,6 +18313,9 @@
         },
         {
           "gameId": 2025021220,
+          "date": "2026-04-04",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 27,
           "savePct": 0.889,
@@ -18291,6 +18324,9 @@
         },
         {
           "gameId": 2025021232,
+          "date": "2026-04-06",
+          "opp": "LAK",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 28,
           "savePct": 0.929,
@@ -18299,6 +18335,9 @@
         },
         {
           "gameId": 2025021257,
+          "date": "2026-04-09",
+          "opp": "UTA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 27,
           "savePct": 0.852,
@@ -18307,6 +18346,9 @@
         },
         {
           "gameId": 2025021307,
+          "date": "2026-04-16",
+          "opp": "ANA",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 40,
           "savePct": 0.875,
@@ -18334,6 +18376,9 @@
       "last7": [
         {
           "gameId": 2025021170,
+          "date": "2026-03-29",
+          "opp": "CBJ",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 25,
           "savePct": 0.88,
@@ -18342,6 +18387,9 @@
         },
         {
           "gameId": 2025021193,
+          "date": "2026-04-02",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 24,
           "savePct": 0.917,
@@ -18350,6 +18398,9 @@
         },
         {
           "gameId": 2025021210,
+          "date": "2026-04-04",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -18358,6 +18409,9 @@
         },
         {
           "gameId": 2025021237,
+          "date": "2026-04-07",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 23,
           "savePct": 0.783,
@@ -18366,6 +18420,9 @@
         },
         {
           "gameId": 2025021261,
+          "date": "2026-04-11",
+          "opp": "TBL",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 24,
           "savePct": 0.917,
@@ -18374,6 +18431,9 @@
         },
         {
           "gameId": 2025021292,
+          "date": "2026-04-14",
+          "opp": "NJD",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 21,
           "savePct": 1.0,
@@ -18382,6 +18442,9 @@
         },
         {
           "gameId": 2026020003,
+          "date": "2026-09-29",
+          "opp": "NYR",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 24,
           "savePct": 1.0,
@@ -18409,6 +18472,9 @@
       "last7": [
         {
           "gameId": 2025021166,
+          "date": "2026-03-28",
+          "opp": "VGK",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 29,
           "savePct": 0.862,
@@ -18417,6 +18483,9 @@
         },
         {
           "gameId": 2025021184,
+          "date": "2026-03-31",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 24,
           "savePct": 0.833,
@@ -18425,6 +18494,9 @@
         },
         {
           "gameId": 2025021194,
+          "date": "2026-04-02",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 7,
           "sogFaced": 29,
           "savePct": 0.759,
@@ -18433,6 +18505,9 @@
         },
         {
           "gameId": 2025021213,
+          "date": "2026-04-04",
+          "opp": "BUF",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 39,
           "savePct": 0.949,
@@ -18441,6 +18516,9 @@
         },
         {
           "gameId": 2025021245,
+          "date": "2026-04-08",
+          "opp": "TOR",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 21,
           "savePct": 1.0,
@@ -18449,6 +18527,9 @@
         },
         {
           "gameId": 2025021263,
+          "date": "2026-04-11",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 10,
           "savePct": 0.7,
@@ -18457,6 +18538,9 @@
         },
         {
           "gameId": 2025021276,
+          "date": "2026-04-12",
+          "opp": "PIT",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 24,
           "savePct": 1.0,
@@ -18484,6 +18568,9 @@
       "last7": [
         {
           "gameId": 2025021186,
+          "date": "2026-03-31",
+          "opp": "WPG",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 24,
           "savePct": 0.833,
@@ -18492,6 +18579,9 @@
         },
         {
           "gameId": 2025021200,
+          "date": "2026-04-02",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 32,
           "savePct": 0.969,
@@ -18500,6 +18590,9 @@
         },
         {
           "gameId": 2025021231,
+          "date": "2026-04-06",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 23,
           "savePct": 0.87,
@@ -18508,6 +18601,9 @@
         },
         {
           "gameId": 2025021255,
+          "date": "2026-04-09",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 7,
           "sogFaced": 22,
           "savePct": 0.682,
@@ -18516,6 +18612,9 @@
         },
         {
           "gameId": 2025021288,
+          "date": "2026-04-13",
+          "opp": "BUF",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 26,
           "savePct": 0.808,
@@ -18524,6 +18623,9 @@
         },
         {
           "gameId": 2025021305,
+          "date": "2026-04-15",
+          "opp": "SJS",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 17,
           "savePct": 0.882,
@@ -18532,6 +18634,9 @@
         },
         {
           "gameId": 2026020005,
+          "date": "2026-09-29",
+          "opp": "VGK",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 36,
           "savePct": 0.889,
@@ -18559,6 +18664,9 @@
       "last7": [
         {
           "gameId": 2025021185,
+          "date": "2026-03-31",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 30,
           "savePct": 0.867,
@@ -18567,6 +18675,9 @@
         },
         {
           "gameId": 2025021215,
+          "date": "2026-04-04",
+          "opp": "WPG",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 25,
           "savePct": 0.92,
@@ -18575,6 +18686,9 @@
         },
         {
           "gameId": 2025021235,
+          "date": "2026-04-07",
+          "opp": "DET",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 37,
           "savePct": 0.919,
@@ -18583,6 +18697,9 @@
         },
         {
           "gameId": 2025021247,
+          "date": "2026-04-09",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 23,
           "savePct": 0.826,
@@ -18591,6 +18708,9 @@
         },
         {
           "gameId": 2025021271,
+          "date": "2026-04-11",
+          "opp": "MTL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -18599,6 +18719,9 @@
         },
         {
           "gameId": 2025021278,
+          "date": "2026-04-12",
+          "opp": "BOS",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 22,
           "savePct": 0.864,
@@ -18607,6 +18730,9 @@
         },
         {
           "gameId": 2025021295,
+          "date": "2026-04-14",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 21,
           "savePct": 0.905,
@@ -18634,6 +18760,9 @@
       "last7": [
         {
           "gameId": 2025021186,
+          "date": "2026-03-31",
+          "opp": "CHI",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 21,
           "savePct": 0.857,
@@ -18642,6 +18771,9 @@
         },
         {
           "gameId": 2025021198,
+          "date": "2026-04-02",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 21,
           "savePct": 0.857,
@@ -18650,6 +18782,9 @@
         },
         {
           "gameId": 2025021215,
+          "date": "2026-04-04",
+          "opp": "CBJ",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 16,
           "savePct": 0.938,
@@ -18658,6 +18793,9 @@
         },
         {
           "gameId": 2025021230,
+          "date": "2026-04-06",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 24,
           "savePct": 0.917,
@@ -18666,6 +18804,9 @@
         },
         {
           "gameId": 2025021253,
+          "date": "2026-04-09",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -18674,6 +18815,9 @@
         },
         {
           "gameId": 2025021272,
+          "date": "2026-04-11",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 20,
           "savePct": 0.75,
@@ -18682,6 +18826,9 @@
         },
         {
           "gameId": 2025021290,
+          "date": "2026-04-13",
+          "opp": "VGK",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 38,
           "savePct": 0.842,
@@ -18709,6 +18856,9 @@
       "last7": [
         {
           "gameId": 2025021154,
+          "date": "2026-03-28",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -18717,6 +18867,9 @@
         },
         {
           "gameId": 2025021190,
+          "date": "2026-04-01",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 21,
           "savePct": 0.81,
@@ -18725,6 +18878,9 @@
         },
         {
           "gameId": 2025021206,
+          "date": "2026-04-03",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 29,
           "savePct": 0.793,
@@ -18733,6 +18889,9 @@
         },
         {
           "gameId": 2025021243,
+          "date": "2026-04-07",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 25,
           "savePct": 0.8,
@@ -18741,6 +18900,9 @@
         },
         {
           "gameId": 2025021258,
+          "date": "2026-04-09",
+          "opp": "SJS",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 19,
           "savePct": 0.947,
@@ -18749,6 +18911,9 @@
         },
         {
           "gameId": 2025021280,
+          "date": "2026-04-12",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 26,
           "savePct": 0.846,
@@ -18757,6 +18922,9 @@
         },
         {
           "gameId": 2025021296,
+          "date": "2026-04-14",
+          "opp": "MIN",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 20,
           "savePct": 0.85,
@@ -18784,6 +18952,9 @@
       "last7": [
         {
           "gameId": 2025021173,
+          "date": "2026-03-30",
+          "opp": "PIT",
+          "home": true,
           "goalsAllowed": 7,
           "sogFaced": 28,
           "savePct": 0.75,
@@ -18792,6 +18963,9 @@
         },
         {
           "gameId": 2025021179,
+          "date": "2026-03-31",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 32,
           "savePct": 0.906,
@@ -18800,6 +18974,9 @@
         },
         {
           "gameId": 2025021205,
+          "date": "2026-04-03",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 21,
           "savePct": 0.81,
@@ -18808,6 +18985,9 @@
         },
         {
           "gameId": 2025021214,
+          "date": "2026-04-04",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 40,
           "savePct": 0.9,
@@ -18816,6 +18996,9 @@
         },
         {
           "gameId": 2025021252,
+          "date": "2026-04-09",
+          "opp": "TOR",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 16,
           "savePct": 0.812,
@@ -18824,6 +19007,9 @@
         },
         {
           "gameId": 2025021262,
+          "date": "2026-04-11",
+          "opp": "OTT",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 15,
           "savePct": 0.867,
@@ -18832,6 +19018,9 @@
         },
         {
           "gameId": 2025021277,
+          "date": "2026-04-12",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 22,
           "savePct": 0.818,
@@ -18859,6 +19048,9 @@
       "last7": [
         {
           "gameId": 2025021133,
+          "date": "2026-03-24",
+          "opp": "LAK",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 25,
           "savePct": 0.92,
@@ -18867,6 +19059,9 @@
         },
         {
           "gameId": 2025021165,
+          "date": "2026-03-28",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 34,
           "savePct": 0.912,
@@ -18875,6 +19070,9 @@
         },
         {
           "gameId": 2025021174,
+          "date": "2026-03-30",
+          "opp": "COL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 16,
           "savePct": 0.75,
@@ -18883,6 +19081,9 @@
         },
         {
           "gameId": 2025021201,
+          "date": "2026-04-02",
+          "opp": "VGK",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 34,
           "savePct": 0.824,
@@ -18891,6 +19092,9 @@
         },
         {
           "gameId": 2025021256,
+          "date": "2026-04-09",
+          "opp": "COL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 40,
           "savePct": 0.95,
@@ -18899,6 +19103,9 @@
         },
         {
           "gameId": 2025021281,
+          "date": "2026-04-12",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 29,
           "savePct": 0.966,
@@ -18907,6 +19114,9 @@
         },
         {
           "gameId": 2025021298,
+          "date": "2026-04-14",
+          "opp": "COL",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 38,
           "savePct": 0.947,
@@ -18934,6 +19144,9 @@
       "last7": [
         {
           "gameId": 2025021183,
+          "date": "2026-03-31",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 14,
           "savePct": 0.786,
@@ -18942,6 +19155,9 @@
         },
         {
           "gameId": 2025021196,
+          "date": "2026-04-02",
+          "opp": "PHI",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 34,
           "savePct": 0.941,
@@ -18950,6 +19166,9 @@
         },
         {
           "gameId": 2025021207,
+          "date": "2026-04-04",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 20,
           "savePct": 0.85,
@@ -18958,6 +19177,9 @@
         },
         {
           "gameId": 2025021235,
+          "date": "2026-04-07",
+          "opp": "CBJ",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 35,
           "savePct": 0.914,
@@ -18966,6 +19188,9 @@
         },
         {
           "gameId": 2025021250,
+          "date": "2026-04-09",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 15,
           "savePct": 0.867,
@@ -18974,6 +19199,9 @@
         },
         {
           "gameId": 2025021265,
+          "date": "2026-04-11",
+          "opp": "NJD",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 31,
           "savePct": 0.871,
@@ -18982,6 +19210,9 @@
         },
         {
           "gameId": 2025021303,
+          "date": "2026-04-15",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 15,
           "savePct": 0.733,
@@ -19009,6 +19240,9 @@
       "last7": [
         {
           "gameId": 2025021180,
+          "date": "2026-03-31",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 22,
           "savePct": 0.864,
@@ -19017,6 +19251,9 @@
         },
         {
           "gameId": 2025021192,
+          "date": "2026-04-02",
+          "opp": "PIT",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 24,
           "savePct": 0.875,
@@ -19025,6 +19262,9 @@
         },
         {
           "gameId": 2025021210,
+          "date": "2026-04-04",
+          "opp": "BOS",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 22,
           "savePct": 0.955,
@@ -19033,6 +19273,9 @@
         },
         {
           "gameId": 2025021229,
+          "date": "2026-04-06",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 28,
           "savePct": 0.893,
@@ -19041,6 +19284,9 @@
         },
         {
           "gameId": 2025021248,
+          "date": "2026-04-09",
+          "opp": "MTL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 21,
           "savePct": 0.905,
@@ -19049,6 +19295,9 @@
         },
         {
           "gameId": 2025021261,
+          "date": "2026-04-11",
+          "opp": "BOS",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 20,
           "savePct": 0.95,
@@ -19057,6 +19306,9 @@
         },
         {
           "gameId": 2025021282,
+          "date": "2026-04-13",
+          "opp": "DET",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 30,
           "savePct": 0.9,
@@ -19084,6 +19336,9 @@
       "last7": [
         {
           "gameId": 2025021167,
+          "date": "2026-03-29",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 28,
           "savePct": 0.964,
@@ -19092,6 +19347,9 @@
         },
         {
           "gameId": 2025021182,
+          "date": "2026-03-31",
+          "opp": "NJD",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 23,
           "savePct": 0.957,
@@ -19100,6 +19358,9 @@
         },
         {
           "gameId": 2025021195,
+          "date": "2026-04-02",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 25,
           "savePct": 0.88,
@@ -19108,6 +19369,9 @@
         },
         {
           "gameId": 2025021227,
+          "date": "2026-04-05",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 21,
           "savePct": 0.952,
@@ -19116,6 +19380,9 @@
         },
         {
           "gameId": 2025021244,
+          "date": "2026-04-08",
+          "opp": "BUF",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 26,
           "savePct": 0.808,
@@ -19124,6 +19391,9 @@
         },
         {
           "gameId": 2025021268,
+          "date": "2026-04-11",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 18,
           "savePct": 0.944,
@@ -19132,6 +19402,9 @@
         },
         {
           "gameId": 2026020003,
+          "date": "2026-09-29",
+          "opp": "BOS",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -19159,6 +19432,9 @@
       "last7": [
         {
           "gameId": 2025021101,
+          "date": "2026-03-21",
+          "opp": "DAL",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 29,
           "savePct": 0.966,
@@ -19167,6 +19443,9 @@
         },
         {
           "gameId": 2025021127,
+          "date": "2026-03-24",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 23,
           "savePct": 0.826,
@@ -19175,6 +19454,9 @@
         },
         {
           "gameId": 2025021155,
+          "date": "2026-03-28",
+          "opp": "BOS",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 30,
           "savePct": 0.833,
@@ -19183,6 +19465,9 @@
         },
         {
           "gameId": 2025021199,
+          "date": "2026-04-02",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 32,
           "savePct": 0.938,
@@ -19191,6 +19476,9 @@
         },
         {
           "gameId": 2025021222,
+          "date": "2026-04-05",
+          "opp": "DET",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 22,
           "savePct": 0.818,
@@ -19199,6 +19487,9 @@
         },
         {
           "gameId": 2025021254,
+          "date": "2026-04-09",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 20,
           "savePct": 0.75,
@@ -19207,6 +19498,9 @@
         },
         {
           "gameId": 2025021286,
+          "date": "2026-04-13",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 21,
           "savePct": 0.762,
@@ -19234,6 +19528,9 @@
       "last7": [
         {
           "gameId": 2025021156,
+          "date": "2026-03-28",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 12,
           "savePct": 0.75,
@@ -19242,6 +19539,9 @@
         },
         {
           "gameId": 2025021178,
+          "date": "2026-03-31",
+          "opp": "BOS",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 21,
           "savePct": 0.81,
@@ -19250,6 +19550,9 @@
         },
         {
           "gameId": 2025021198,
+          "date": "2026-04-02",
+          "opp": "WPG",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 23,
           "savePct": 1.0,
@@ -19258,6 +19561,9 @@
         },
         {
           "gameId": 2025021239,
+          "date": "2026-04-07",
+          "opp": "CGY",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 20,
           "savePct": 0.85,
@@ -19266,6 +19572,9 @@
         },
         {
           "gameId": 2025021254,
+          "date": "2026-04-09",
+          "opp": "MIN",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 31,
           "savePct": 0.871,
@@ -19274,6 +19583,9 @@
         },
         {
           "gameId": 2025021268,
+          "date": "2026-04-11",
+          "opp": "NYR",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 22,
           "savePct": 1.0,
@@ -19282,6 +19594,9 @@
         },
         {
           "gameId": 2025021301,
+          "date": "2026-04-15",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 24,
           "savePct": 0.875,
@@ -19309,6 +19624,9 @@
       "last7": [
         {
           "gameId": 2025021087,
+          "date": "2026-03-19",
+          "opp": "NSH",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 26,
           "savePct": 0.923,
@@ -19317,6 +19635,9 @@
         },
         {
           "gameId": 2025021104,
+          "date": "2026-03-21",
+          "opp": "CBJ",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 27,
           "savePct": 0.852,
@@ -19325,6 +19646,9 @@
         },
         {
           "gameId": 2025021123,
+          "date": "2026-03-24",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 25,
           "savePct": 0.84,
@@ -19333,6 +19657,9 @@
         },
         {
           "gameId": 2025021203,
+          "date": "2026-04-02",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 31,
           "savePct": 0.806,
@@ -19341,6 +19668,9 @@
         },
         {
           "gameId": 2025021230,
+          "date": "2026-04-06",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 13,
           "savePct": 0.769,
@@ -19349,6 +19679,9 @@
         },
         {
           "gameId": 2025021240,
+          "date": "2026-04-07",
+          "opp": "MIN",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 28,
           "savePct": 0.857,
@@ -19357,6 +19690,9 @@
         },
         {
           "gameId": 2025021259,
+          "date": "2026-04-09",
+          "opp": "VGK",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 34,
           "savePct": 0.912,
@@ -19384,6 +19720,9 @@
       "last7": [
         {
           "gameId": 2025021138,
+          "date": "2026-03-26",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 29,
           "savePct": 0.897,
@@ -19392,6 +19731,9 @@
         },
         {
           "gameId": 2025021156,
+          "date": "2026-03-28",
+          "opp": "DAL",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 24,
           "savePct": 0.792,
@@ -19400,6 +19742,9 @@
         },
         {
           "gameId": 2025021183,
+          "date": "2026-03-31",
+          "opp": "DET",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 23,
           "savePct": 0.957,
@@ -19408,6 +19753,9 @@
         },
         {
           "gameId": 2025021192,
+          "date": "2026-04-02",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 32,
           "savePct": 0.844,
@@ -19416,6 +19764,9 @@
         },
         {
           "gameId": 2025021251,
+          "date": "2026-04-09",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 21,
           "savePct": 0.905,
@@ -19424,6 +19775,9 @@
         },
         {
           "gameId": 2025021276,
+          "date": "2026-04-12",
+          "opp": "WSH",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 25,
           "savePct": 0.92,
@@ -19432,6 +19786,9 @@
         },
         {
           "gameId": 2025021299,
+          "date": "2026-04-14",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 21,
           "savePct": 0.81,
@@ -19459,6 +19816,9 @@
       "last7": [
         {
           "gameId": 2025021184,
+          "date": "2026-03-31",
+          "opp": "WSH",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 17,
           "savePct": 0.706,
@@ -19467,6 +19827,9 @@
         },
         {
           "gameId": 2025021205,
+          "date": "2026-04-03",
+          "opp": "NYI",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 21,
           "savePct": 0.952,
@@ -19475,6 +19838,9 @@
         },
         {
           "gameId": 2025021224,
+          "date": "2026-04-05",
+          "opp": "BOS",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 19,
           "savePct": 0.947,
@@ -19483,6 +19849,9 @@
         },
         {
           "gameId": 2025021236,
+          "date": "2026-04-07",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 24,
           "savePct": 0.958,
@@ -19491,6 +19860,9 @@
         },
         {
           "gameId": 2025021250,
+          "date": "2026-04-09",
+          "opp": "DET",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 8,
           "savePct": 0.5,
@@ -19499,6 +19871,9 @@
         },
         {
           "gameId": 2025021272,
+          "date": "2026-04-11",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 28,
           "savePct": 0.964,
@@ -19507,6 +19882,9 @@
         },
         {
           "gameId": 2025021284,
+          "date": "2026-04-13",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 26,
           "savePct": 0.923,
@@ -19534,6 +19912,9 @@
       "last7": [
         {
           "gameId": 2025021143,
+          "date": "2026-03-26",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 11,
           "savePct": 1.0,
@@ -19542,6 +19923,9 @@
         },
         {
           "gameId": 2025021177,
+          "date": "2026-03-30",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 26,
           "savePct": 0.846,
@@ -19550,6 +19934,9 @@
         },
         {
           "gameId": 2025021190,
+          "date": "2026-04-01",
+          "opp": "ANA",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 31,
           "savePct": 0.903,
@@ -19558,6 +19945,9 @@
         },
         {
           "gameId": 2025021220,
+          "date": "2026-04-04",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
@@ -19566,6 +19956,9 @@
         },
         {
           "gameId": 2025021258,
+          "date": "2026-04-09",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 30,
           "savePct": 0.8,
@@ -19574,6 +19967,9 @@
         },
         {
           "gameId": 2025021275,
+          "date": "2026-04-11",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 41,
           "savePct": 0.927,
@@ -19582,6 +19978,9 @@
         },
         {
           "gameId": 2025021305,
+          "date": "2026-04-15",
+          "opp": "CHI",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 23,
           "savePct": 0.783,
@@ -19609,6 +20008,9 @@
       "last7": [
         {
           "gameId": 2025021165,
+          "date": "2026-03-28",
+          "opp": "CGY",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 12,
           "savePct": 0.75,
@@ -19617,6 +20019,9 @@
         },
         {
           "gameId": 2025021175,
+          "date": "2026-03-30",
+          "opp": "VGK",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -19625,6 +20030,9 @@
         },
         {
           "gameId": 2025021188,
+          "date": "2026-04-01",
+          "opp": "COL",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 30,
           "savePct": 0.8,
@@ -19633,6 +20041,9 @@
         },
         {
           "gameId": 2025021275,
+          "date": "2026-04-11",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 31,
           "savePct": 0.903,
@@ -19641,6 +20052,9 @@
         },
         {
           "gameId": 2025021300,
+          "date": "2026-04-14",
+          "opp": "LAK",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 34,
           "savePct": 0.912,
@@ -19649,6 +20063,9 @@
         },
         {
           "gameId": 2025021311,
+          "date": "2026-04-16",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 35,
           "savePct": 0.829,
@@ -19657,6 +20074,9 @@
         },
         {
           "gameId": 2026020004,
+          "date": "2026-09-29",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 37,
           "savePct": 0.865,
@@ -19684,6 +20104,9 @@
       "last7": [
         {
           "gameId": 2025021089,
+          "date": "2026-03-19",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 21,
           "savePct": 1.0,
@@ -19692,6 +20115,9 @@
         },
         {
           "gameId": 2025021123,
+          "date": "2026-03-24",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 26,
           "savePct": 0.846,
@@ -19700,6 +20126,9 @@
         },
         {
           "gameId": 2025021167,
+          "date": "2026-03-29",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 21,
           "savePct": 0.857,
@@ -19708,6 +20137,9 @@
         },
         {
           "gameId": 2025021193,
+          "date": "2026-04-02",
+          "opp": "BOS",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 29,
           "savePct": 0.966,
@@ -19716,6 +20148,9 @@
         },
         {
           "gameId": 2025021211,
+          "date": "2026-04-04",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 19,
           "savePct": 0.684,
@@ -19724,6 +20159,9 @@
         },
         {
           "gameId": 2025021249,
+          "date": "2026-04-09",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 26,
           "savePct": 0.846,
@@ -19732,6 +20170,9 @@
         },
         {
           "gameId": 2026020002,
+          "date": "2026-09-29",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 24,
           "savePct": 0.875,
@@ -19759,6 +20200,9 @@
       "last7": [
         {
           "gameId": 2025021177,
+          "date": "2026-03-30",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 29,
           "savePct": 0.828,
@@ -19767,6 +20211,9 @@
         },
         {
           "gameId": 2025021206,
+          "date": "2026-04-03",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 27,
           "savePct": 0.926,
@@ -19775,6 +20222,9 @@
         },
         {
           "gameId": 2025021228,
+          "date": "2026-04-05",
+          "opp": "COL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 28,
           "savePct": 0.929,
@@ -19783,6 +20233,9 @@
         },
         {
           "gameId": 2025021238,
+          "date": "2026-04-07",
+          "opp": "COL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 37,
           "savePct": 0.919,
@@ -19791,6 +20244,9 @@
         },
         {
           "gameId": 2025021266,
+          "date": "2026-04-11",
+          "opp": "CHI",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 35,
           "savePct": 0.914,
@@ -19799,6 +20255,9 @@
         },
         {
           "gameId": 2025021286,
+          "date": "2026-04-13",
+          "opp": "MIN",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 31,
           "savePct": 0.903,
@@ -19807,6 +20266,9 @@
         },
         {
           "gameId": 2025021309,
+          "date": "2026-04-16",
+          "opp": "UTA",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 23,
           "savePct": 0.87,
@@ -19834,6 +20296,9 @@
       "last7": [
         {
           "gameId": 2025021118,
+          "date": "2026-03-22",
+          "opp": "UTA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 34,
           "savePct": 0.882,
@@ -19842,6 +20307,9 @@
         },
         {
           "gameId": 2025021133,
+          "date": "2026-03-24",
+          "opp": "CGY",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 23,
           "savePct": 0.913,
@@ -19850,6 +20318,9 @@
         },
         {
           "gameId": 2025021149,
+          "date": "2026-03-26",
+          "opp": "VAN",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 19,
           "savePct": 1.0,
@@ -19858,6 +20329,9 @@
         },
         {
           "gameId": 2025021164,
+          "date": "2026-03-28",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 16,
           "savePct": 0.688,
@@ -19866,6 +20340,9 @@
         },
         {
           "gameId": 2025021204,
+          "date": "2026-04-02",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 33,
           "savePct": 0.879,
@@ -19874,6 +20351,9 @@
         },
         {
           "gameId": 2025021217,
+          "date": "2026-04-04",
+          "opp": "TOR",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 20,
           "savePct": 0.7,
@@ -19882,6 +20362,9 @@
         },
         {
           "gameId": 2025021300,
+          "date": "2026-04-14",
+          "opp": "VAN",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 25,
           "savePct": 0.84,
@@ -19909,6 +20392,9 @@
       "last7": [
         {
           "gameId": 2025021180,
+          "date": "2026-03-31",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 37,
           "savePct": 0.973,
@@ -19917,6 +20403,9 @@
         },
         {
           "gameId": 2025021212,
+          "date": "2026-04-04",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 38,
           "savePct": 0.921,
@@ -19925,6 +20414,9 @@
         },
         {
           "gameId": 2025021233,
+          "date": "2026-04-07",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -19933,6 +20425,9 @@
         },
         {
           "gameId": 2025021248,
+          "date": "2026-04-09",
+          "opp": "TBL",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 18,
           "savePct": 0.944,
@@ -19941,6 +20436,9 @@
         },
         {
           "gameId": 2025021271,
+          "date": "2026-04-11",
+          "opp": "CBJ",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
@@ -19949,6 +20447,9 @@
         },
         {
           "gameId": 2025021294,
+          "date": "2026-04-14",
+          "opp": "PHI",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 25,
           "savePct": 0.84,
@@ -19957,6 +20458,9 @@
         },
         {
           "gameId": 2026020002,
+          "date": "2026-09-29",
+          "opp": "TOR",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 27,
           "savePct": 0.926,
@@ -19984,6 +20488,9 @@
       "last7": [
         {
           "gameId": 2025021094,
+          "date": "2026-03-20",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 35,
           "savePct": 0.914,
@@ -19992,6 +20499,9 @@
         },
         {
           "gameId": 2025021106,
+          "date": "2026-03-21",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 44,
           "savePct": 0.886,
@@ -20000,6 +20510,9 @@
         },
         {
           "gameId": 2025021136,
+          "date": "2026-03-25",
+          "opp": "NYR",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 43,
           "savePct": 0.93,
@@ -20008,6 +20521,9 @@
         },
         {
           "gameId": 2025021160,
+          "date": "2026-03-28",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 38,
           "savePct": 0.868,
@@ -20016,6 +20532,9 @@
         },
         {
           "gameId": 2025021217,
+          "date": "2026-04-04",
+          "opp": "LAK",
+          "home": false,
           "goalsAllowed": 7,
           "sogFaced": 40,
           "savePct": 0.825,
@@ -20024,6 +20543,9 @@
         },
         {
           "gameId": 2025021245,
+          "date": "2026-04-08",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 17,
           "savePct": 0.824,
@@ -20032,6 +20554,9 @@
         },
         {
           "gameId": 2025021270,
+          "date": "2026-04-11",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 24,
           "savePct": 0.75,
@@ -20059,6 +20584,9 @@
       "last7": [
         {
           "gameId": 2025021181,
+          "date": "2026-03-31",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 16,
           "savePct": 0.688,
@@ -20067,6 +20595,9 @@
         },
         {
           "gameId": 2025021191,
+          "date": "2026-04-02",
+          "opp": "BUF",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 22,
           "savePct": 0.955,
@@ -20075,6 +20606,9 @@
         },
         {
           "gameId": 2025021208,
+          "date": "2026-04-04",
+          "opp": "MIN",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 23,
           "savePct": 0.826,
@@ -20083,6 +20617,9 @@
         },
         {
           "gameId": 2025021225,
+          "date": "2026-04-05",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 28,
           "savePct": 0.893,
@@ -20091,6 +20628,9 @@
         },
         {
           "gameId": 2025021234,
+          "date": "2026-04-07",
+          "opp": "TBL",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 30,
           "savePct": 0.933,
@@ -20099,6 +20639,9 @@
         },
         {
           "gameId": 2025021249,
+          "date": "2026-04-09",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 22,
           "savePct": 0.955,
@@ -20107,6 +20650,9 @@
         },
         {
           "gameId": 2025021262,
+          "date": "2026-04-11",
+          "opp": "NYI",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 23,
           "savePct": 1.0,
@@ -20134,6 +20680,9 @@
       "last7": [
         {
           "gameId": 2025021077,
+          "date": "2026-03-18",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 17,
           "savePct": 0.824,
@@ -20142,6 +20691,9 @@
         },
         {
           "gameId": 2025021144,
+          "date": "2026-03-26",
+          "opp": "NSH",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 18,
           "savePct": 0.889,
@@ -20150,6 +20702,9 @@
         },
         {
           "gameId": 2025021157,
+          "date": "2026-03-28",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 33,
           "savePct": 0.879,
@@ -20158,6 +20713,9 @@
         },
         {
           "gameId": 2025021182,
+          "date": "2026-03-31",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 23,
           "savePct": 0.826,
@@ -20166,6 +20724,9 @@
         },
         {
           "gameId": 2025021226,
+          "date": "2026-04-05",
+          "opp": "MTL",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 18,
           "savePct": 1.0,
@@ -20174,6 +20735,9 @@
         },
         {
           "gameId": 2025021236,
+          "date": "2026-04-07",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 19,
           "savePct": 0.737,
@@ -20182,6 +20746,9 @@
         },
         {
           "gameId": 2026020001,
+          "date": "2026-09-29",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 15,
           "savePct": 1.0,
@@ -20209,6 +20776,9 @@
       "last7": [
         {
           "gameId": 2025021126,
+          "date": "2026-03-24",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 32,
           "savePct": 0.938,
@@ -20217,6 +20787,9 @@
         },
         {
           "gameId": 2025021174,
+          "date": "2026-03-30",
+          "opp": "CGY",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 29,
           "savePct": 0.931,
@@ -20225,6 +20798,9 @@
         },
         {
           "gameId": 2025021188,
+          "date": "2026-04-01",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 6,
           "savePct": 0.833,
@@ -20233,6 +20809,9 @@
         },
         {
           "gameId": 2025021209,
+          "date": "2026-04-04",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 18,
           "savePct": 1.0,
@@ -20241,6 +20820,9 @@
         },
         {
           "gameId": 2025021238,
+          "date": "2026-04-07",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 19,
           "savePct": 0.947,
@@ -20249,6 +20831,9 @@
         },
         {
           "gameId": 2025021289,
+          "date": "2026-04-13",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 31,
           "savePct": 0.968,
@@ -20257,6 +20842,9 @@
         },
         {
           "gameId": 2025021312,
+          "date": "2026-04-16",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 22,
           "savePct": 1.0,
@@ -20284,6 +20872,9 @@
       "last7": [
         {
           "gameId": 2025021099,
+          "date": "2026-03-21",
+          "opp": "WPG",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 25,
           "savePct": 0.84,
@@ -20292,6 +20883,9 @@
         },
         {
           "gameId": 2025021126,
+          "date": "2026-03-24",
+          "opp": "COL",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 30,
           "savePct": 0.8,
@@ -20300,6 +20894,9 @@
         },
         {
           "gameId": 2025021173,
+          "date": "2026-03-30",
+          "opp": "NYI",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 23,
           "savePct": 0.87,
@@ -20308,6 +20905,9 @@
         },
         {
           "gameId": 2025021211,
+          "date": "2026-04-04",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 23,
           "savePct": 0.826,
@@ -20316,6 +20916,9 @@
         },
         {
           "gameId": 2025021223,
+          "date": "2026-04-05",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 31,
           "savePct": 0.935,
@@ -20324,6 +20927,9 @@
         },
         {
           "gameId": 2025021263,
+          "date": "2026-04-11",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 30,
           "savePct": 0.833,
@@ -20332,6 +20938,9 @@
         },
         {
           "gameId": 2025021299,
+          "date": "2026-04-14",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 9,
           "savePct": 0.778,
@@ -20359,6 +20968,9 @@
       "last7": [
         {
           "gameId": 2025021095,
+          "date": "2026-03-20",
+          "opp": "WSH",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 26,
           "savePct": 0.962,
@@ -20367,6 +20979,9 @@
         },
         {
           "gameId": 2025021130,
+          "date": "2026-03-24",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 27,
           "savePct": 0.852,
@@ -20375,6 +20990,9 @@
         },
         {
           "gameId": 2025021171,
+          "date": "2026-03-29",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 30,
           "savePct": 0.9,
@@ -20383,6 +21001,9 @@
         },
         {
           "gameId": 2025021194,
+          "date": "2026-04-02",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -20391,6 +21012,9 @@
         },
         {
           "gameId": 2025021212,
+          "date": "2026-04-04",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 29,
           "savePct": 0.897,
@@ -20399,6 +21023,9 @@
         },
         {
           "gameId": 2025021251,
+          "date": "2026-04-09",
+          "opp": "PIT",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 29,
           "savePct": 0.862,
@@ -20407,6 +21034,9 @@
         },
         {
           "gameId": 2025021265,
+          "date": "2026-04-11",
+          "opp": "DET",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 28,
           "savePct": 0.893,
@@ -20434,6 +21064,9 @@
       "last7": [
         {
           "gameId": 2025021143,
+          "date": "2026-03-26",
+          "opp": "STL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 12,
           "savePct": 0.833,
@@ -20442,6 +21075,9 @@
         },
         {
           "gameId": 2025021158,
+          "date": "2026-03-28",
+          "opp": "CBJ",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 24,
           "savePct": 0.917,
@@ -20450,6 +21086,9 @@
         },
         {
           "gameId": 2025021202,
+          "date": "2026-04-02",
+          "opp": "TOR",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 19,
           "savePct": 0.947,
@@ -20458,6 +21097,9 @@
         },
         {
           "gameId": 2025021231,
+          "date": "2026-04-06",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 29,
           "savePct": 0.931,
@@ -20466,6 +21108,9 @@
         },
         {
           "gameId": 2025021246,
+          "date": "2026-04-08",
+          "opp": "EDM",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 26,
           "savePct": 0.808,
@@ -20474,6 +21119,9 @@
         },
         {
           "gameId": 2025021287,
+          "date": "2026-04-13",
+          "opp": "NSH",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 27,
           "savePct": 0.926,
@@ -20482,6 +21130,9 @@
         },
         {
           "gameId": 2025021308,
+          "date": "2026-04-16",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 26,
           "savePct": 0.962,
@@ -20509,6 +21160,9 @@
       "last7": [
         {
           "gameId": 2025021072,
+          "date": "2026-03-17",
+          "opp": "CHI",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 2,
           "savePct": 1.0,
@@ -20517,6 +21171,9 @@
         },
         {
           "gameId": 2025021088,
+          "date": "2026-03-19",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 26,
           "savePct": 0.923,
@@ -20525,6 +21182,9 @@
         },
         {
           "gameId": 2025021140,
+          "date": "2026-03-26",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 20,
           "savePct": 0.9,
@@ -20533,6 +21193,9 @@
         },
         {
           "gameId": 2025021208,
+          "date": "2026-04-04",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 34,
           "savePct": 0.971,
@@ -20541,6 +21204,9 @@
         },
         {
           "gameId": 2025021240,
+          "date": "2026-04-07",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 27,
           "savePct": 0.926,
@@ -20549,6 +21215,9 @@
         },
         {
           "gameId": 2025021267,
+          "date": "2026-04-11",
+          "opp": "NSH",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -20557,6 +21226,9 @@
         },
         {
           "gameId": 2025021296,
+          "date": "2026-04-14",
+          "opp": "ANA",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 37,
           "savePct": 0.946,
@@ -20584,6 +21256,9 @@
       "last7": [
         {
           "gameId": 2025020992,
+          "date": "2026-03-07",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 25,
           "savePct": 0.92,
@@ -20592,6 +21267,9 @@
         },
         {
           "gameId": 2025021013,
+          "date": "2026-03-10",
+          "opp": "SJS",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 21,
           "savePct": 0.857,
@@ -20600,6 +21278,9 @@
         },
         {
           "gameId": 2025021047,
+          "date": "2026-03-14",
+          "opp": "TOR",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 18,
           "savePct": 0.889,
@@ -20608,6 +21289,9 @@
         },
         {
           "gameId": 2025021092,
+          "date": "2026-03-19",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 23,
           "savePct": 1.0,
@@ -20616,6 +21300,9 @@
         },
         {
           "gameId": 2025021117,
+          "date": "2026-03-22",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 33,
           "savePct": 0.818,
@@ -20624,6 +21311,9 @@
         },
         {
           "gameId": 2025021150,
+          "date": "2026-03-27",
+          "opp": "DET",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 20,
           "savePct": 0.75,
@@ -20632,6 +21322,9 @@
         },
         {
           "gameId": 2025021213,
+          "date": "2026-04-04",
+          "opp": "WSH",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 5,
           "savePct": 0.4,
@@ -20659,6 +21352,9 @@
       "last7": [
         {
           "gameId": 2025021033,
+          "date": "2026-03-12",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 32,
           "savePct": 0.969,
@@ -20667,6 +21363,9 @@
         },
         {
           "gameId": 2025021057,
+          "date": "2026-03-15",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 16,
           "savePct": 0.812,
@@ -20675,6 +21374,9 @@
         },
         {
           "gameId": 2025021107,
+          "date": "2026-03-21",
+          "opp": "VAN",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 15,
           "savePct": 0.933,
@@ -20683,6 +21385,9 @@
         },
         {
           "gameId": 2025021160,
+          "date": "2026-03-28",
+          "opp": "TOR",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 13,
           "savePct": 0.923,
@@ -20691,6 +21396,9 @@
         },
         {
           "gameId": 2025021189,
+          "date": "2026-04-01",
+          "opp": "LAK",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 26,
           "savePct": 0.923,
@@ -20699,6 +21407,9 @@
         },
         {
           "gameId": 2025021253,
+          "date": "2026-04-09",
+          "opp": "WPG",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 34,
           "savePct": 0.912,
@@ -20707,6 +21418,9 @@
         },
         {
           "gameId": 2025021299,
+          "date": "2026-04-14",
+          "opp": "PIT",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 23,
           "savePct": 0.783,
@@ -20734,6 +21448,9 @@
       "last7": [
         {
           "gameId": 2025021164,
+          "date": "2026-03-28",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 11,
           "savePct": 1.0,
@@ -20742,6 +21459,9 @@
         },
         {
           "gameId": 2025021189,
+          "date": "2026-04-01",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 24,
           "savePct": 0.958,
@@ -20750,6 +21470,9 @@
         },
         {
           "gameId": 2025021232,
+          "date": "2026-04-06",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 31,
           "savePct": 0.935,
@@ -20758,6 +21481,9 @@
         },
         {
           "gameId": 2025021260,
+          "date": "2026-04-09",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 25,
           "savePct": 0.96,
@@ -20766,6 +21492,9 @@
         },
         {
           "gameId": 2025021264,
+          "date": "2026-04-11",
+          "opp": "EDM",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 27,
           "savePct": 1.0,
@@ -20774,6 +21503,9 @@
         },
         {
           "gameId": 2025021291,
+          "date": "2026-04-13",
+          "opp": "SEA",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 31,
           "savePct": 0.903,
@@ -20782,6 +21514,9 @@
         },
         {
           "gameId": 2025021310,
+          "date": "2026-04-16",
+          "opp": "CGY",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 20,
           "savePct": 0.9,
@@ -20809,6 +21544,9 @@
       "last7": [
         {
           "gameId": 2025021145,
+          "date": "2026-03-26",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 24,
           "savePct": 0.917,
@@ -20817,6 +21555,9 @@
         },
         {
           "gameId": 2025021162,
+          "date": "2026-03-28",
+          "opp": "WPG",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 21,
           "savePct": 0.81,
@@ -20825,6 +21566,9 @@
         },
         {
           "gameId": 2025021188,
+          "date": "2026-04-01",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 19,
           "savePct": 0.684,
@@ -20833,6 +21577,9 @@
         },
         {
           "gameId": 2025021228,
+          "date": "2026-04-05",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 28,
           "savePct": 0.893,
@@ -20841,6 +21588,9 @@
         },
         {
           "gameId": 2025021256,
+          "date": "2026-04-09",
+          "opp": "CGY",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 29,
           "savePct": 0.966,
@@ -20849,6 +21599,9 @@
         },
         {
           "gameId": 2025021274,
+          "date": "2026-04-11",
+          "opp": "VGK",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 29,
           "savePct": 0.897,
@@ -20857,6 +21610,9 @@
         },
         {
           "gameId": 2025021298,
+          "date": "2026-04-14",
+          "opp": "CGY",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 31,
           "savePct": 0.968,
@@ -20884,6 +21640,9 @@
       "last7": [
         {
           "gameId": 2025021135,
+          "date": "2026-03-25",
+          "opp": "BOS",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 31,
           "savePct": 0.871,
@@ -20892,6 +21651,9 @@
         },
         {
           "gameId": 2025021159,
+          "date": "2026-03-28",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 34,
           "savePct": 0.941,
@@ -20900,6 +21662,9 @@
         },
         {
           "gameId": 2025021179,
+          "date": "2026-03-31",
+          "opp": "NYI",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 27,
           "savePct": 0.889,
@@ -20908,6 +21673,9 @@
         },
         {
           "gameId": 2025021191,
+          "date": "2026-04-02",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -20916,6 +21684,9 @@
         },
         {
           "gameId": 2025021229,
+          "date": "2026-04-06",
+          "opp": "TBL",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 25,
           "savePct": 0.92,
@@ -20924,6 +21695,9 @@
         },
         {
           "gameId": 2025021244,
+          "date": "2026-04-08",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 20,
           "savePct": 0.85,
@@ -20932,6 +21706,9 @@
         },
         {
           "gameId": 2025021288,
+          "date": "2026-04-13",
+          "opp": "CHI",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 16,
           "savePct": 0.938,
@@ -20959,6 +21736,9 @@
       "last7": [
         {
           "gameId": 2025021181,
+          "date": "2026-03-31",
+          "opp": "OTT",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 26,
           "savePct": 0.885,
@@ -20967,6 +21747,9 @@
         },
         {
           "gameId": 2025021211,
+          "date": "2026-04-04",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 12,
           "savePct": 0.75,
@@ -20975,6 +21758,9 @@
         },
         {
           "gameId": 2025021223,
+          "date": "2026-04-05",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 23,
           "savePct": 0.783,
@@ -20983,6 +21769,9 @@
         },
         {
           "gameId": 2025021233,
+          "date": "2026-04-07",
+          "opp": "MTL",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 32,
           "savePct": 0.906,
@@ -20991,6 +21780,9 @@
         },
         {
           "gameId": 2025021270,
+          "date": "2026-04-11",
+          "opp": "TOR",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 19,
           "savePct": 0.895,
@@ -20999,6 +21791,9 @@
         },
         {
           "gameId": 2025021283,
+          "date": "2026-04-13",
+          "opp": "NYR",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 26,
           "savePct": 0.923,
@@ -21007,6 +21802,9 @@
         },
         {
           "gameId": 2025021303,
+          "date": "2026-04-15",
+          "opp": "DET",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 25,
           "savePct": 0.96,
@@ -21034,6 +21832,9 @@
       "last7": [
         {
           "gameId": 2025021157,
+          "date": "2026-03-28",
+          "opp": "NJD",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 19,
           "savePct": 0.895,
@@ -21042,6 +21843,9 @@
         },
         {
           "gameId": 2025021185,
+          "date": "2026-03-31",
+          "opp": "CBJ",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 25,
           "savePct": 0.92,
@@ -21050,6 +21854,9 @@
         },
         {
           "gameId": 2025021214,
+          "date": "2026-04-04",
+          "opp": "NYI",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 15,
           "savePct": 0.8,
@@ -21058,6 +21865,9 @@
         },
         {
           "gameId": 2025021237,
+          "date": "2026-04-07",
+          "opp": "BOS",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 21,
           "savePct": 0.762,
@@ -21066,6 +21876,9 @@
         },
         {
           "gameId": 2025021284,
+          "date": "2026-04-13",
+          "opp": "PHI",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 20,
           "savePct": 0.9,
@@ -21074,6 +21887,9 @@
         },
         {
           "gameId": 2025021293,
+          "date": "2026-04-14",
+          "opp": "NYI",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 29,
           "savePct": 0.966,
@@ -21082,6 +21898,9 @@
         },
         {
           "gameId": 2026020001,
+          "date": "2026-09-29",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 20,
           "savePct": 0.95,
@@ -21109,6 +21928,9 @@
       "last7": [
         {
           "gameId": 2025021023,
+          "date": "2026-03-10",
+          "opp": "COL",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 12,
           "savePct": 0.917,
@@ -21117,6 +21939,9 @@
         },
         {
           "gameId": 2025021034,
+          "date": "2026-03-12",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 7,
           "sogFaced": 27,
           "savePct": 0.741,
@@ -21125,6 +21950,9 @@
         },
         {
           "gameId": 2025021132,
+          "date": "2026-03-24",
+          "opp": "UTA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 18,
           "savePct": 0.889,
@@ -21133,6 +21961,9 @@
         },
         {
           "gameId": 2025021200,
+          "date": "2026-04-02",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 18,
           "savePct": 0.944,
@@ -21141,6 +21972,9 @@
         },
         {
           "gameId": 2025021241,
+          "date": "2026-04-07",
+          "opp": "UTA",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 31,
           "savePct": 0.806,
@@ -21149,6 +21983,9 @@
         },
         {
           "gameId": 2025021246,
+          "date": "2026-04-08",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 4,
           "savePct": 1.0,
@@ -21157,6 +21994,9 @@
         },
         {
           "gameId": 2026020004,
+          "date": "2026-09-29",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 23,
           "savePct": 0.739,
@@ -21184,6 +22024,9 @@
       "last7": [
         {
           "gameId": 2025021055,
+          "date": "2026-03-14",
+          "opp": "VAN",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 34,
           "savePct": 0.941,
@@ -21192,6 +22035,9 @@
         },
         {
           "gameId": 2025021076,
+          "date": "2026-03-17",
+          "opp": "TBL",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 24,
           "savePct": 0.792,
@@ -21200,6 +22046,9 @@
         },
         {
           "gameId": 2025021139,
+          "date": "2026-03-26",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -21208,6 +22057,9 @@
         },
         {
           "gameId": 2025021159,
+          "date": "2026-03-28",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 36,
           "savePct": 0.944,
@@ -21216,6 +22068,9 @@
         },
         {
           "gameId": 2025021187,
+          "date": "2026-03-31",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 23,
           "savePct": 0.913,
@@ -21224,6 +22079,9 @@
         },
         {
           "gameId": 2025021221,
+          "date": "2026-04-04",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 30,
           "savePct": 0.9,
@@ -21232,6 +22090,9 @@
         },
         {
           "gameId": 2025021230,
+          "date": "2026-04-06",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 18,
           "savePct": 0.833,
@@ -21259,6 +22120,9 @@
       "last7": [
         {
           "gameId": 2025021112,
+          "date": "2026-03-22",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 19,
           "savePct": 0.947,
@@ -21267,6 +22131,9 @@
         },
         {
           "gameId": 2025021121,
+          "date": "2026-03-24",
+          "opp": "MTL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 18,
           "savePct": 0.778,
@@ -21275,6 +22142,9 @@
         },
         {
           "gameId": 2025021169,
+          "date": "2026-03-29",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 18,
           "savePct": 0.833,
@@ -21283,6 +22153,9 @@
         },
         {
           "gameId": 2025021197,
+          "date": "2026-04-02",
+          "opp": "CBJ",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 11,
           "savePct": 0.909,
@@ -21291,6 +22164,9 @@
         },
         {
           "gameId": 2025021225,
+          "date": "2026-04-05",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 30,
           "savePct": 0.833,
@@ -21299,6 +22175,9 @@
         },
         {
           "gameId": 2025021255,
+          "date": "2026-04-09",
+          "opp": "CHI",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 25,
           "savePct": 0.92,
@@ -21307,6 +22186,9 @@
         },
         {
           "gameId": 2025021269,
+          "date": "2026-04-11",
+          "opp": "UTA",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 27,
           "savePct": 0.963,
@@ -21334,6 +22216,9 @@
       "last7": [
         {
           "gameId": 2025021081,
+          "date": "2026-03-18",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 27,
           "savePct": 0.963,
@@ -21342,6 +22227,9 @@
         },
         {
           "gameId": 2025021116,
+          "date": "2026-03-22",
+          "opp": "TBL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 35,
           "savePct": 0.914,
@@ -21350,6 +22238,9 @@
         },
         {
           "gameId": 2025021147,
+          "date": "2026-03-26",
+          "opp": "ANA",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -21358,6 +22249,9 @@
         },
         {
           "gameId": 2025021174,
+          "date": "2026-03-30",
+          "opp": "COL",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
@@ -21366,6 +22260,9 @@
         },
         {
           "gameId": 2025021219,
+          "date": "2026-04-04",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 39,
           "savePct": 0.923,
@@ -21374,6 +22271,9 @@
         },
         {
           "gameId": 2025021239,
+          "date": "2026-04-07",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 25,
           "savePct": 0.84,
@@ -21382,6 +22282,9 @@
         },
         {
           "gameId": 2025021273,
+          "date": "2026-04-11",
+          "opp": "SEA",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 19,
           "savePct": 0.842,
@@ -21409,6 +22312,9 @@
       "last7": [
         {
           "gameId": 2025020872,
+          "date": "2026-01-31",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 23,
           "savePct": 0.87,
@@ -21417,6 +22323,9 @@
         },
         {
           "gameId": 2025020901,
+          "date": "2026-02-04",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 23,
           "savePct": 0.913,
@@ -21425,6 +22334,9 @@
         },
         {
           "gameId": 2025020931,
+          "date": "2026-02-27",
+          "opp": "WSH",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 29,
           "savePct": 0.897,
@@ -21433,6 +22345,9 @@
         },
         {
           "gameId": 2025020960,
+          "date": "2026-03-03",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 28,
           "savePct": 0.893,
@@ -21441,6 +22356,9 @@
         },
         {
           "gameId": 2025020988,
+          "date": "2026-03-06",
+          "opp": "MIN",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 24,
           "savePct": 0.833,
@@ -21449,6 +22367,9 @@
         },
         {
           "gameId": 2025021091,
+          "date": "2026-03-19",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 14,
           "savePct": 1.0,
@@ -21457,6 +22378,9 @@
         },
         {
           "gameId": 2025021100,
+          "date": "2026-03-21",
+          "opp": "NSH",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 20,
           "savePct": 0.8,
@@ -21484,6 +22408,9 @@
       "last7": [
         {
           "gameId": 2025021002,
+          "date": "2026-03-08",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 39,
           "savePct": 0.872,
@@ -21492,6 +22419,9 @@
         },
         {
           "gameId": 2025021064,
+          "date": "2026-03-16",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 34,
           "savePct": 0.882,
@@ -21500,6 +22430,9 @@
         },
         {
           "gameId": 2025021135,
+          "date": "2026-03-25",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 25,
           "savePct": 0.88,
@@ -21508,6 +22441,9 @@
         },
         {
           "gameId": 2025021178,
+          "date": "2026-03-31",
+          "opp": "DAL",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 16,
           "savePct": 0.812,
@@ -21516,6 +22452,9 @@
         },
         {
           "gameId": 2025021224,
+          "date": "2026-04-05",
+          "opp": "PHI",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 31,
           "savePct": 0.935,
@@ -21524,6 +22463,9 @@
         },
         {
           "gameId": 2025021237,
+          "date": "2026-04-07",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 17,
           "savePct": 0.941,
@@ -21532,6 +22474,9 @@
         },
         {
           "gameId": 2025021278,
+          "date": "2026-04-12",
+          "opp": "CBJ",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 37,
           "savePct": 0.946,
@@ -21559,6 +22504,9 @@
       "last7": [
         {
           "gameId": 2025020963,
+          "date": "2026-03-03",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 2,
           "savePct": 1.0,
@@ -21567,6 +22515,9 @@
         },
         {
           "gameId": 2025020995,
+          "date": "2026-03-07",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 23,
           "savePct": 0.783,
@@ -21575,6 +22526,9 @@
         },
         {
           "gameId": 2025021015,
+          "date": "2026-03-10",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 18,
           "savePct": 0.889,
@@ -21583,6 +22537,9 @@
         },
         {
           "gameId": 2025021031,
+          "date": "2026-03-12",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 21,
           "savePct": 0.905,
@@ -21591,6 +22548,9 @@
         },
         {
           "gameId": 2025021104,
+          "date": "2026-03-21",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 17,
           "savePct": 0.882,
@@ -21599,6 +22559,9 @@
         },
         {
           "gameId": 2025021158,
+          "date": "2026-03-28",
+          "opp": "SJS",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 36,
           "savePct": 0.917,
@@ -21607,6 +22570,9 @@
         },
         {
           "gameId": 2025021197,
+          "date": "2026-04-02",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 21,
           "savePct": 0.762,
@@ -21634,6 +22600,9 @@
       "last7": [
         {
           "gameId": 2025021005,
+          "date": "2026-03-08",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 9,
           "savePct": 1.0,
@@ -21642,6 +22611,9 @@
         },
         {
           "gameId": 2025021163,
+          "date": "2026-03-28",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 4,
           "savePct": 1.0,
@@ -21650,6 +22622,9 @@
         },
         {
           "gameId": 2025021183,
+          "date": "2026-03-31",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 17,
           "savePct": 0.882,
@@ -21658,6 +22633,9 @@
         },
         {
           "gameId": 2025021222,
+          "date": "2026-04-05",
+          "opp": "MIN",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 20,
           "savePct": 0.75,
@@ -21666,6 +22644,9 @@
         },
         {
           "gameId": 2025021250,
+          "date": "2026-04-09",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 11,
           "savePct": 0.909,
@@ -21674,6 +22655,9 @@
         },
         {
           "gameId": 2025021282,
+          "date": "2026-04-13",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 22,
           "savePct": 0.818,
@@ -21682,6 +22666,9 @@
         },
         {
           "gameId": 2025021303,
+          "date": "2026-04-15",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 12,
           "savePct": 0.667,
@@ -21709,6 +22696,9 @@
       "last7": [
         {
           "gameId": 2025021026,
+          "date": "2026-03-11",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 22,
           "savePct": 0.955,
@@ -21717,6 +22707,9 @@
         },
         {
           "gameId": 2025021093,
+          "date": "2026-03-19",
+          "opp": "LAK",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 25,
           "savePct": 0.88,
@@ -21725,6 +22718,9 @@
         },
         {
           "gameId": 2025021142,
+          "date": "2026-03-26",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 26,
           "savePct": 0.962,
@@ -21733,6 +22729,9 @@
         },
         {
           "gameId": 2025021172,
+          "date": "2026-03-29",
+          "opp": "DAL",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 18,
           "savePct": 0.944,
@@ -21741,6 +22740,9 @@
         },
         {
           "gameId": 2025021196,
+          "date": "2026-04-02",
+          "opp": "DET",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 19,
           "savePct": 0.789,
@@ -21749,6 +22751,9 @@
         },
         {
           "gameId": 2025021250,
+          "date": "2026-04-09",
+          "opp": "DET",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 15,
           "savePct": 0.867,
@@ -21757,6 +22762,9 @@
         },
         {
           "gameId": 2025021294,
+          "date": "2026-04-14",
+          "opp": "MTL",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 29,
           "savePct": 0.931,
@@ -21784,6 +22792,9 @@
       "last7": [
         {
           "gameId": 2025021154,
+          "date": "2026-03-28",
+          "opp": "ANA",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 29,
           "savePct": 0.931,
@@ -21792,6 +22803,9 @@
         },
         {
           "gameId": 2025021187,
+          "date": "2026-03-31",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 27,
           "savePct": 1.0,
@@ -21800,6 +22814,9 @@
         },
         {
           "gameId": 2025021218,
+          "date": "2026-04-04",
+          "opp": "VGK",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
@@ -21808,6 +22825,9 @@
         },
         {
           "gameId": 2025021246,
+          "date": "2026-04-08",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 10,
           "savePct": 0.8,
@@ -21816,6 +22836,9 @@
         },
         {
           "gameId": 2025021264,
+          "date": "2026-04-11",
+          "opp": "LAK",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 20,
           "savePct": 0.95,
@@ -21824,6 +22847,9 @@
         },
         {
           "gameId": 2025021289,
+          "date": "2026-04-13",
+          "opp": "COL",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 31,
           "savePct": 0.968,
@@ -21832,6 +22858,9 @@
         },
         {
           "gameId": 2025021311,
+          "date": "2026-04-16",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 12,
           "savePct": 0.917,
@@ -21859,6 +22888,9 @@
       "last7": [
         {
           "gameId": 2025021004,
+          "date": "2026-03-08",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 15,
           "savePct": 0.8,
@@ -21867,6 +22899,9 @@
         },
         {
           "gameId": 2025021066,
+          "date": "2026-03-16",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 21,
           "savePct": 0.762,
@@ -21875,6 +22910,9 @@
         },
         {
           "gameId": 2025021115,
+          "date": "2026-03-22",
+          "opp": "VGK",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -21883,6 +22921,9 @@
         },
         {
           "gameId": 2025021130,
+          "date": "2026-03-24",
+          "opp": "NJD",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 16,
           "savePct": 0.938,
@@ -21891,6 +22932,9 @@
         },
         {
           "gameId": 2025021172,
+          "date": "2026-03-29",
+          "opp": "PHI",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 30,
           "savePct": 0.933,
@@ -21899,6 +22943,9 @@
         },
         {
           "gameId": 2025021209,
+          "date": "2026-04-04",
+          "opp": "COL",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -21907,6 +22954,9 @@
         },
         {
           "gameId": 2025021285,
+          "date": "2026-04-13",
+          "opp": "TOR",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 27,
           "savePct": 0.815,
@@ -21934,6 +22984,9 @@
       "last7": [
         {
           "gameId": 2025020948,
+          "date": "2026-03-01",
+          "opp": "FLA",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 33,
           "savePct": 0.879,
@@ -21942,6 +22995,9 @@
         },
         {
           "gameId": 2025020973,
+          "date": "2026-03-04",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 25,
           "savePct": 0.84,
@@ -21950,6 +23006,9 @@
         },
         {
           "gameId": 2025021051,
+          "date": "2026-03-14",
+          "opp": "CGY",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 32,
           "savePct": 0.938,
@@ -21958,6 +23017,9 @@
         },
         {
           "gameId": 2025021105,
+          "date": "2026-03-21",
+          "opp": "MTL",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 4,
           "savePct": 0.75,
@@ -21966,6 +23028,9 @@
         },
         {
           "gameId": 2025021124,
+          "date": "2026-03-24",
+          "opp": "CHI",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 12,
           "savePct": 0.75,
@@ -21974,6 +23039,9 @@
         },
         {
           "gameId": 2025021173,
+          "date": "2026-03-30",
+          "opp": "PIT",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 3,
           "savePct": 0.667,
@@ -21982,6 +23050,9 @@
         },
         {
           "gameId": 2025021293,
+          "date": "2026-04-14",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 21,
           "savePct": 0.905,
@@ -22009,6 +23080,9 @@
       "last7": [
         {
           "gameId": 2025021004,
+          "date": "2026-03-08",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 32,
           "savePct": 0.875,
@@ -22017,6 +23091,9 @@
         },
         {
           "gameId": 2025021096,
+          "date": "2026-03-20",
+          "opp": "COL",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 49,
           "savePct": 0.918,
@@ -22025,6 +23102,9 @@
         },
         {
           "gameId": 2025021124,
+          "date": "2026-03-24",
+          "opp": "NYI",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 47,
           "savePct": 0.936,
@@ -22033,6 +23113,9 @@
         },
         {
           "gameId": 2025021151,
+          "date": "2026-03-27",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 39,
           "savePct": 0.846,
@@ -22041,6 +23124,9 @@
         },
         {
           "gameId": 2025021200,
+          "date": "2026-04-02",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 5,
           "savePct": 0.8,
@@ -22049,6 +23135,9 @@
         },
         {
           "gameId": 2025021221,
+          "date": "2026-04-04",
+          "opp": "SEA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 27,
           "savePct": 0.926,
@@ -22057,6 +23146,9 @@
         },
         {
           "gameId": 2025021266,
+          "date": "2026-04-11",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 5,
           "sogFaced": 28,
           "savePct": 0.821,
@@ -22084,6 +23176,9 @@
       "last7": [
         {
           "gameId": 2025021087,
+          "date": "2026-03-19",
+          "opp": "SEA",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 26,
           "savePct": 0.962,
@@ -22092,6 +23187,9 @@
         },
         {
           "gameId": 2025021100,
+          "date": "2026-03-21",
+          "opp": "VGK",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 40,
           "savePct": 0.975,
@@ -22100,6 +23198,9 @@
         },
         {
           "gameId": 2025021144,
+          "date": "2026-03-26",
+          "opp": "NJD",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 29,
           "savePct": 0.897,
@@ -22108,6 +23209,9 @@
         },
         {
           "gameId": 2025021168,
+          "date": "2026-03-29",
+          "opp": "TBL",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 28,
           "savePct": 0.893,
@@ -22116,6 +23220,9 @@
         },
         {
           "gameId": 2025021243,
+          "date": "2026-04-07",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 0,
           "sogFaced": 43,
           "savePct": 1.0,
@@ -22124,6 +23231,9 @@
         },
         {
           "gameId": 2025021267,
+          "date": "2026-04-11",
+          "opp": "MIN",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 22,
           "savePct": 0.955,
@@ -22132,6 +23242,9 @@
         },
         {
           "gameId": 2025021287,
+          "date": "2026-04-13",
+          "opp": "SJS",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 22,
           "savePct": 0.909,
@@ -22159,6 +23272,9 @@
       "last7": [
         {
           "gameId": 2025020971,
+          "date": "2026-03-04",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 47,
           "savePct": 0.936,
@@ -22167,6 +23283,9 @@
         },
         {
           "gameId": 2025020994,
+          "date": "2026-03-07",
+          "opp": "TBL",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 32,
           "savePct": 0.875,
@@ -22175,6 +23294,9 @@
         },
         {
           "gameId": 2025021060,
+          "date": "2026-03-15",
+          "opp": "MIN",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 38,
           "savePct": 0.947,
@@ -22183,6 +23305,9 @@
         },
         {
           "gameId": 2025021120,
+          "date": "2026-03-24",
+          "opp": "BOS",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 20,
           "savePct": 0.9,
@@ -22191,6 +23316,9 @@
         },
         {
           "gameId": 2025021176,
+          "date": "2026-03-30",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 32,
           "savePct": 0.875,
@@ -22199,6 +23327,9 @@
         },
         {
           "gameId": 2025021202,
+          "date": "2026-04-02",
+          "opp": "SJS",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 24,
           "savePct": 0.875,
@@ -22207,6 +23338,9 @@
         },
         {
           "gameId": 2025021245,
+          "date": "2026-04-08",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 2,
           "savePct": 1.0,
@@ -22234,6 +23368,9 @@
       "last7": [
         {
           "gameId": 2025020861,
+          "date": "2026-01-31",
+          "opp": "PIT",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
@@ -22242,6 +23379,9 @@
         },
         {
           "gameId": 2025020906,
+          "date": "2026-02-05",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 43,
           "savePct": 0.953,
@@ -22250,6 +23390,9 @@
         },
         {
           "gameId": 2025020991,
+          "date": "2026-03-07",
+          "opp": "NJD",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 34,
           "savePct": 0.853,
@@ -22258,6 +23401,9 @@
         },
         {
           "gameId": 2025021017,
+          "date": "2026-03-10",
+          "opp": "CGY",
+          "home": true,
           "goalsAllowed": 0,
           "sogFaced": 21,
           "savePct": 1.0,
@@ -22266,6 +23412,9 @@
         },
         {
           "gameId": 2025021077,
+          "date": "2026-03-18",
+          "opp": "NJD",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 39,
           "savePct": 0.846,
@@ -22274,6 +23423,9 @@
         },
         {
           "gameId": 2025021207,
+          "date": "2026-04-04",
+          "opp": "DET",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 32,
           "savePct": 0.969,
@@ -22282,6 +23434,9 @@
         },
         {
           "gameId": 2025021283,
+          "date": "2026-04-13",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 16,
           "savePct": 0.875,
@@ -22309,6 +23464,9 @@
       "last7": [
         {
           "gameId": 2025020862,
+          "date": "2026-01-31",
+          "opp": "FLA",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 28,
           "savePct": 0.964,
@@ -22317,6 +23475,9 @@
         },
         {
           "gameId": 2025020915,
+          "date": "2026-02-25",
+          "opp": "VAN",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 23,
           "savePct": 0.913,
@@ -22325,6 +23486,9 @@
         },
         {
           "gameId": 2025021057,
+          "date": "2026-03-15",
+          "opp": "STL",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 31,
           "savePct": 0.935,
@@ -22333,6 +23497,9 @@
         },
         {
           "gameId": 2025021110,
+          "date": "2026-03-22",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 29,
           "savePct": 0.931,
@@ -22341,6 +23508,9 @@
         },
         {
           "gameId": 2025021272,
+          "date": "2026-04-11",
+          "opp": "PHI",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 3,
           "savePct": 0.333,
@@ -22349,6 +23519,9 @@
         },
         {
           "gameId": 2025021297,
+          "date": "2026-04-14",
+          "opp": "UTA",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 35,
           "savePct": 0.886,
@@ -22357,6 +23530,9 @@
         },
         {
           "gameId": 2025021308,
+          "date": "2026-04-16",
+          "opp": "SJS",
+          "home": true,
           "goalsAllowed": 6,
           "sogFaced": 33,
           "savePct": 0.818,
@@ -22384,6 +23560,9 @@
       "last7": [
         {
           "gameId": 2025020814,
+          "date": "2026-01-24",
+          "opp": "CBJ",
+          "home": false,
           "goalsAllowed": 7,
           "sogFaced": 31,
           "savePct": 0.774,
@@ -22392,6 +23571,9 @@
         },
         {
           "gameId": 2025020923,
+          "date": "2026-02-26",
+          "opp": "CAR",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
@@ -22400,6 +23582,9 @@
         },
         {
           "gameId": 2025020941,
+          "date": "2026-02-28",
+          "opp": "BUF",
+          "home": true,
           "goalsAllowed": 1,
           "sogFaced": 21,
           "savePct": 0.952,
@@ -22408,6 +23593,9 @@
         },
         {
           "gameId": 2025021003,
+          "date": "2026-03-08",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 8,
           "sogFaced": 42,
           "savePct": 0.81,
@@ -22416,6 +23604,9 @@
         },
         {
           "gameId": 2025021116,
+          "date": "2026-03-22",
+          "opp": "CGY",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 29,
           "savePct": 0.862,
@@ -22424,6 +23615,9 @@
         },
         {
           "gameId": 2025021168,
+          "date": "2026-03-29",
+          "opp": "NSH",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 31,
           "savePct": 0.935,
@@ -22432,6 +23626,9 @@
         },
         {
           "gameId": 2025021234,
+          "date": "2026-04-07",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 30,
           "savePct": 0.833,
@@ -22459,6 +23656,9 @@
       "last7": [
         {
           "gameId": 2025020727,
+          "date": "2026-01-13",
+          "opp": "WSH",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 43,
           "savePct": 0.93,
@@ -22467,6 +23667,9 @@
         },
         {
           "gameId": 2025020758,
+          "date": "2026-01-17",
+          "opp": "OTT",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 34,
           "savePct": 0.853,
@@ -22475,6 +23678,9 @@
         },
         {
           "gameId": 2025020795,
+          "date": "2026-01-22",
+          "opp": "BUF",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 16,
           "savePct": 0.812,
@@ -22483,6 +23689,9 @@
         },
         {
           "gameId": 2025020812,
+          "date": "2026-01-24",
+          "opp": "BOS",
+          "home": false,
           "goalsAllowed": 4,
           "sogFaced": 21,
           "savePct": 0.81,
@@ -22491,6 +23700,9 @@
         },
         {
           "gameId": 2025020895,
+          "date": "2026-02-04",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 37,
           "savePct": 0.973,
@@ -22499,6 +23711,9 @@
         },
         {
           "gameId": 2025020919,
+          "date": "2026-02-26",
+          "opp": "NYI",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 26,
           "savePct": 0.846,
@@ -22507,6 +23722,9 @@
         },
         {
           "gameId": 2025020987,
+          "date": "2026-03-06",
+          "opp": "ANA",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
@@ -22534,6 +23752,9 @@
       "last7": [
         {
           "gameId": 2025021091,
+          "date": "2026-03-19",
+          "opp": "UTA",
+          "home": true,
           "goalsAllowed": 3,
           "sogFaced": 3,
           "savePct": 0.0,
@@ -22542,6 +23763,9 @@
         },
         {
           "gameId": 2025021115,
+          "date": "2026-03-22",
+          "opp": "DAL",
+          "home": false,
           "goalsAllowed": 2,
           "sogFaced": 16,
           "savePct": 0.875,
@@ -22550,6 +23774,9 @@
         },
         {
           "gameId": 2025021131,
+          "date": "2026-03-24",
+          "opp": "WPG",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 20,
           "savePct": 0.85,
@@ -22558,6 +23785,9 @@
         },
         {
           "gameId": 2025021148,
+          "date": "2026-03-26",
+          "opp": "EDM",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 29,
           "savePct": 0.862,
@@ -22566,6 +23796,9 @@
         },
         {
           "gameId": 2025021166,
+          "date": "2026-03-28",
+          "opp": "WSH",
+          "home": true,
           "goalsAllowed": 4,
           "sogFaced": 21,
           "savePct": 0.81,
@@ -22574,6 +23807,9 @@
         },
         {
           "gameId": 2025021175,
+          "date": "2026-03-30",
+          "opp": "VAN",
+          "home": true,
           "goalsAllowed": 2,
           "sogFaced": 24,
           "savePct": 0.917,
@@ -22582,6 +23818,9 @@
         },
         {
           "gameId": 2025021259,
+          "date": "2026-04-09",
+          "opp": "SEA",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 33,
           "savePct": 0.909,
@@ -22609,6 +23848,9 @@
       "last7": [
         {
           "gameId": 2025020713,
+          "date": "2026-01-11",
+          "opp": "NSH",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 21,
           "savePct": 0.857,
@@ -22617,6 +23859,9 @@
         },
         {
           "gameId": 2025020771,
+          "date": "2026-01-19",
+          "opp": "COL",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 43,
           "savePct": 0.884,
@@ -22625,6 +23870,9 @@
         },
         {
           "gameId": 2025020818,
+          "date": "2026-01-24",
+          "opp": "EDM",
+          "home": false,
           "goalsAllowed": 6,
           "sogFaced": 40,
           "savePct": 0.85,
@@ -22633,6 +23881,9 @@
         },
         {
           "gameId": 2025020846,
+          "date": "2026-01-29",
+          "opp": "DET",
+          "home": false,
           "goalsAllowed": 3,
           "sogFaced": 21,
           "savePct": 0.857,
@@ -22641,6 +23892,9 @@
         },
         {
           "gameId": 2025020940,
+          "date": "2026-02-28",
+          "opp": "MTL",
+          "home": false,
           "goalsAllowed": 5,
           "sogFaced": 24,
           "savePct": 0.792,
@@ -22649,6 +23903,9 @@
         },
         {
           "gameId": 2025021028,
+          "date": "2026-03-12",
+          "opp": "BUF",
+          "home": false,
           "goalsAllowed": 1,
           "sogFaced": 30,
           "savePct": 0.967,
@@ -22657,6 +23914,9 @@
         },
         {
           "gameId": 2025021227,
+          "date": "2026-04-05",
+          "opp": "NYR",
+          "home": false,
           "goalsAllowed": 8,
           "sogFaced": 32,
           "savePct": 0.75,

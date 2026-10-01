@@ -7,9 +7,20 @@ import { useState } from "react";
 // against a real season distribution.
 const SKATER_VIEWS = [
   ["goal", "🚨 Goal", (g) => g.goals || 0, 1],
-  ["point", "🎯 Point", (g) => g.goals || 0, 1], // == goals here: no assist events in shots_2025.csv (see build_player_pool.py)
+  ["point", "🎯 Point", (g) => g.points ?? g.goals ?? 0, 1], // real points from MoneyPuck's game lines
   ["sog3", "⚡ 3+ SOG", (g) => g.sog || 0, 3],
 ];
+
+// "9/29" and "@CAR" / "vs CAR" under each bar.
+function barDate(g) {
+  if (!g.date) return "";
+  const [, m, d] = g.date.split("-");
+  return `${Number(m)}/${Number(d)}`;
+}
+function barOpp(g) {
+  if (!g.opp) return "";
+  return g.home ? `vs ${g.opp}` : `@${g.opp}`;
+}
 const GOALIE_VIEWS = [
   ["win", "🏆 Win", (g) => (g.win ? 1 : 0), 1],
   ["sv900", "🧤 SV%≥.900", (g) => (g.savePct != null && g.savePct >= 0.9 ? 1 : 0), 1],
@@ -65,11 +76,14 @@ export default function L7Chart({ games, role = "skater" }) {
           );
         })}
       </div>
-      {role === "skater" && viewKey === "point" && (
-        <div className="mono" style={{ fontSize: 9, color: "var(--muted)", marginTop: 8 }}>
-          Assist data isn't in the current pipeline output yet — "Point" shows goals only until wired up (slap-shot-build.md §3).
-        </div>
-      )}
+      <div style={{ display: "flex", gap: 4, marginTop: 4 }}>
+        {g7.map((g, i) => (
+          <div key={i} className="mono" style={{ flex: 1, textAlign: "center", fontSize: 9, lineHeight: 1.3, color: "var(--muted)", minWidth: 0 }}>
+            <div>{barDate(g)}</div>
+            <div style={{ color: "var(--text)", whiteSpace: "nowrap" }}>{barOpp(g)}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

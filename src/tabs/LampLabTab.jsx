@@ -4,6 +4,8 @@ import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
+import MatchupFilter from "../components/MatchupFilter.jsx";
+import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { isGoalSignal } from "../lib/signals.js";
 
 // Structural port of Going Yard's real BarrelLabTab (mlb_project/going-yard/src/App.jsx:
@@ -43,6 +45,7 @@ export default function LampLabTab() {
   const [results, setResults] = useState(null);
   const [running, setRunning] = useState(false);
   const [team, setTeam] = useState(null);
+  const selected = useMatchup();
   const workerRef = useRef(null);
 
   useEffect(() => {
@@ -78,7 +81,10 @@ export default function LampLabTab() {
   }, [results, pool]);
 
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
-  const filtered = useMemo(() => (merged && team ? merged.filter((p) => p.team === team) : merged) || [], [merged, team]);
+  const filtered = useMemo(() => {
+    const inGame = filterPlayers(merged, selected);
+    return (inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [];
+  }, [merged, team, selected]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimeGoalPct", "desc");
   const sortedWithSignalFirst = useMemo(
@@ -112,6 +118,7 @@ export default function LampLabTab() {
 
       <div className="note">ℹ️ "Light the lamp" = score a goal. ★ Goal Signal = Slap Score ≥70 AND Breakaway Score ≥60 AND simulated goal% ≥30%.</div>
 
+      <MatchupFilter />
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
         {teams.length > 0 && (
           <div className="pill-row" style={{ flexWrap: "wrap" }}>

@@ -5,6 +5,7 @@ import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
+import { filterPlayers, matchupKey, setMatchup, toggleMatchup, useMatchup } from "../lib/matchupFilter.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -35,15 +36,29 @@ function slateHeading(meta) {
 }
 
 function SlateStrip({ meta }) {
+  const selected = useMatchup();
   if (!meta?.slate?.length) return null;
   return (
     <div style={{ marginBottom: 14 }}>
       <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6, letterSpacing: 0.5 }}>
-        {slateHeading(meta).toUpperCase()}
+        {slateHeading(meta).toUpperCase()} · CLICK A GAME TO SHOW ONLY THAT MATCHUP
+        {selected && (
+          <button className="pill-btn active" style={{ marginLeft: 8 }} onClick={() => setMatchup(null)}>
+            {selected.replace("@", " @ ")} ✕
+          </button>
+        )}
       </div>
       <div className="grid-cards">
-        {meta.slate.map((g) => (
-          <div className="card" key={g.gameId} style={{ padding: "10px 12px" }}>
+        {meta.slate.map((g) => {
+          const key = matchupKey(g.away, g.home);
+          const on = selected === key;
+          return (
+          <div
+            className="card"
+            key={g.gameId}
+            onClick={() => toggleMatchup(key)}
+            style={{ padding: "10px 12px", cursor: "pointer", borderColor: on ? "var(--accent2)" : undefined, opacity: selected && !on ? 0.55 : 1 }}
+          >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
               <span style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 700, fontSize: 16 }}>{g.away} @ {g.home}</span>
               <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{startTime(g.startTimeUTC)}</span>
@@ -52,7 +67,8 @@ function SlateStrip({ meta }) {
               {g.awayGoalie || "—"} ({g.awayGoalieStatus}) vs {g.homeGoalie || "—"} ({g.homeGoalieStatus})
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -62,6 +78,7 @@ export default function AllMatchupsTab() {
   const [players, setPlayers] = useState(null);
   const [meta, setMeta] = useState(null);
   const [error, setError] = useState(null);
+  const selected = useMatchup();
 
   useEffect(() => {
     fetchScoredPool()
@@ -72,7 +89,7 @@ export default function AllMatchupsTab() {
       .catch((e) => setError(String(e)));
   }, []);
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(players || [], "slapScore", "desc");
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filterPlayers(players, selected) || [], "slapScore", "desc");
 
   return (
     <div>

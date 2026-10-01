@@ -3,6 +3,8 @@ import { fetchScoredPool } from "../lib/data.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
+import MatchupFilter from "../components/MatchupFilter.jsx";
+import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 
 // Top-5 opinionated lists driven directly off the already-scored pool — no separate data
 // model, per slap-shot-build.md §8.
@@ -38,6 +40,7 @@ function ListCard({ title, sub, items, renderRow, onClick, showOpp }) {
 export default function CheatSheetsTab() {
   const [players, setPlayers] = useState(null);
   const [goalies, setGoalies] = useState(null);
+  const selected = useMatchup();
 
   useEffect(() => {
     fetchScoredPool().then(({ players, goalies }) => { setPlayers(players); setGoalies(goalies); });
@@ -47,16 +50,17 @@ export default function CheatSheetsTab() {
     return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>;
   }
 
-  const goalCandidates = [...players].sort((a, b) => b.gGoal - a.gGoal).slice(0, 5);
+  const inGame = filterPlayers(players, selected);
+  const goalCandidates = [...inGame].sort((a, b) => b.gGoal - a.gGoal).slice(0, 5);
   // Point Candidates: blend of Ice Sig (usage/opportunity) + gGOAL — a broader "gets on the
   // scoresheet" list than the pure finishing-probability Goal Candidates list.
-  const pointCandidates = [...players]
+  const pointCandidates = [...inGame]
     .map((p) => ({ ...p, _pointBlend: p.iceSig * 0.5 + p.gGoal * 0.5 }))
     .sort((a, b) => b._pointBlend - a._pointBlend)
     .slice(0, 5);
   // Most Attackable Goalies: inverse-sort of the same goalieMatchupScore inputs scoring.js
   // already computes for Breakaway Score — worst real save% / highest GA60 = best matchup target.
-  const attackableGoalies = [...goalies]
+  const attackableGoalies = [...filterByTeam(goalies, selected)]
     .filter((g) => g.savePct != null)
     .sort((a, b) => a.savePct - b.savePct)
     .slice(0, 5);
@@ -68,6 +72,7 @@ export default function CheatSheetsTab() {
         <div className="section-sub">Top-5 opinionated lists, read directly off the scored pool — no separate model</div>
       </div>
 
+      <MatchupFilter />
       <div className="grid-cards">
         <ListCard
           title="🥅 Goal Candidates"

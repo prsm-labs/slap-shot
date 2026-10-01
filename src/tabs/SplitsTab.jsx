@@ -4,10 +4,13 @@ import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
+import MatchupFilter from "../components/MatchupFilter.jsx";
+import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 
 const SKATER_COLS = [
   ["name", "Player"], ["team", "Team"], ["TotalGoals", "Goals"],
-  ["ShotsOnGoalPerGame", "SOG/GP"], ["baseGrade", "Grade"], ["slapScore", "Slap Score"],
+  ["ShotsOnGoalPerGame", "SOG/GP"], ["ICF", "ICF"], ["HDCF", "HDCF"],
+  ["baseGrade", "Grade"], ["slapScore", "Slap Score"],
 ];
 const GOALIE_COLS = [
   ["name", "Goalie"], ["team", "Team"], ["wins", "Wins"], ["shutouts", "Shutouts"],
@@ -18,12 +21,13 @@ export default function SplitsTab() {
   const [role, setRole] = useState("skater");
   const [skaters, setSkaters] = useState(null);
   const [goalies, setGoalies] = useState(null);
+  const selected = useMatchup();
 
   useEffect(() => {
     fetchScoredPool().then(({ players, goalies }) => { setSkaters(players); setGoalies(goalies); });
   }, []);
 
-  const rows = role === "goalie" ? goalies : skaters;
+  const rows = role === "goalie" ? filterByTeam(goalies, selected) : filterPlayers(skaters, selected);
   const cols = role === "goalie" ? GOALIE_COLS : SKATER_COLS;
   const defaultKey = role === "goalie" ? "savePct" : "slapScore";
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows || [], defaultKey, "desc");
@@ -39,6 +43,12 @@ export default function SplitsTab() {
         <button className={`pill-btn ${role === "skater" ? "active" : ""}`} onClick={() => setRole("skater")}>Skaters</button>
         <button className={`pill-btn ${role === "goalie" ? "active" : ""}`} onClick={() => setRole("goalie")}>Goalies</button>
       </div>
+
+      <div className="note">
+        ℹ️ ICF = individual unblocked shot attempts; HDCF = those from within 20 ft. Both are season totals
+        (last season + this season) and feed Snipe Score and gGOAL.
+      </div>
+      <MatchupFilter />
 
       {!rows && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>}
 

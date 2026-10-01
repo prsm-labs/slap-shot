@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
+import BoxScore from "../components/BoxScore.jsx";
+import { matchupKey, toggleMatchup, setMatchup, useMatchup } from "../lib/matchupFilter.js";
 
 // Live games + in-game "Heating Up" board (TopCheese-style), fed by /api/live (api/live.js),
 // which reads the NHL's play-by-play and scores every skater's night so far. Polls while any
@@ -70,7 +72,7 @@ function PressureBar({ g }) {
   );
 }
 
-function GameCard({ g, selected, onSelect }) {
+function GameCard({ g, selected, onSelect, onBox, boxOpen }) {
   const live = LIVE.has(g.state);
   const started = live || DONE.has(g.state);
   return (
@@ -92,6 +94,15 @@ function GameCard({ g, selected, onSelect }) {
         </div>
       ))}
       <PressureBar g={g} />
+      {started && (
+        <button
+          className={`pill-btn ${boxOpen ? "active" : ""}`}
+          style={{ marginTop: 8, width: "100%" }}
+          onClick={(e) => { e.stopPropagation(); onBox(); }}
+        >
+          📋 Box score
+        </button>
+      )}
       {g.error && <div className="mono" style={{ fontSize: 9, color: "var(--red)", marginTop: 6 }}>Feed error: {g.error}</div>}
     </div>
   );
@@ -102,7 +113,8 @@ export default function LiveTab() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [pool, setPool] = useState(null);
-  const [gameFilter, setGameFilter] = useState(null);
+  const selected = useMatchup();
+  const [boxGame, setBoxGame] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
@@ -129,7 +141,7 @@ export default function LiveTab() {
       }
     }
     setData(null);
-    setGameFilter(null);
+    setBoxGame(null);
     load();
     return () => {
       cancelled = true;
@@ -139,14 +151,21 @@ export default function LiveTab() {
 
   const poolById = useMemo(() => new Map((pool || []).map((p) => [p.playerId, p])), [pool]);
 
+  const gameKeys = useMemo(
+    () => new Map((data?.games || []).map((g) => [g.gameId, matchupKey(g.away.abbrev, g.home.abbrev)])),
+    [data]
+  );
+  // The shared matchup filter only applies if that game is on this date's list.
+  const gameFilter = selected && [...gameKeys.values()].includes(selected) ? selected : null;
+
   const rows = useMemo(() => {
     if (!data) return [];
     return data.skaters
-      .filter((s) => !gameFilter || s.gameId === gameFilter)
+      .filter((s) => !gameFilter || gameKeys.get(s.gameId) === gameFilter)
       .filter((s) => showAll || s.heat.points >= 5)
       .map((s) => ({ ...s, pre: poolById.get(s.playerId) }))
       .sort((a, b) => b.heat.points - a.heat.points || b.sog - a.sog || b.hd - a.hd);
-  }, [data, gameFilter, showAll, poolById]);
+  }, [data, gameFilter, gameKeys, showAll, poolById]);
 
   const anyStarted = data?.games.some((g) => LIVE.has(g.state) || DONE.has(g.state));
   const anyLive = data?.games.some((g) => LIVE.has(g.state));
@@ -185,12 +204,16 @@ export default function LiveTab() {
             <GameCard
               key={g.gameId}
               g={g}
-              selected={gameFilter === g.gameId}
-              onSelect={() => setGameFilter(gameFilter === g.gameId ? null : g.gameId)}
+              selected={gameFilter === gameKeys.get(g.gameId)}
+              onSelect={() => toggleMatchup(gameKeys.get(g.gameId))}
+              onBox={() => setBoxGame(boxGame === g.gameId ? null : g.gameId)}
+              boxOpen={boxGame === g.gameId}
             />
           ))}
         </div>
       )}
+
+      {boxGame && <BoxScore gameId={boxGame} poolById={poolById} onClose={() => setBoxGame(null)} />}
 
       {data && data.games.length > 0 && (
         <>
@@ -200,12 +223,12 @@ export default function LiveTab() {
               <button className={`pill-btn ${!showAll ? "active" : ""}`} onClick={() => setShowAll(false)}>Heating Up +</button>
               <button className={`pill-btn ${showAll ? "active" : ""}`} onClick={() => setShowAll(true)}>All skaters</button>
             </div>
-            {gameFilter && <button className="btn" onClick={() => setGameFilter(null)}>All games</button>}
+            {gameFilter && <button className="btn" onClick={() => setMatchup(null)}>All games</button>}
           </div>
           <div className="note">
             ℹ️ Heat (0-10) = shots on goal tonight + high-danger attempts (within 20 ft) + attempts in the last 10 minutes
             of game time. 5+ is Heating Up, 8+ is On Fire — the same scale Going Yard uses for hitters, not yet
-            checked against hockey results. Click a game card to filter.
+            checked against hockey results. Click a game card to filter to that matchup; 📋 opens its box score.
           </div>
 
           {!anyStarted && <div className="note">No game has started yet — the board fills in once the puck drops.</div>}

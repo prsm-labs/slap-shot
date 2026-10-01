@@ -3,6 +3,8 @@ import { fetchGoalsLog } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
+import MatchupFilter from "../components/MatchupFilter.jsx";
+import { useMatchup } from "../lib/matchupFilter.js";
 
 // Ported from Going Yard's real HRTrackerTab (mlb_project/going-yard/src/App.jsx:11821-12176):
 // a flat, sortable table of every real event for a selected date, native <input type="date">
@@ -37,6 +39,7 @@ export default function GoalTrackerTab() {
   const [date, setDate] = useState(null);
   const [team, setTeam] = useState(null);
   const [search, setSearch] = useState("");
+  const selected = useMatchup();
 
   useEffect(() => {
     fetchGoalsLog().then(({ goals, meta }) => {
@@ -48,15 +51,21 @@ export default function GoalTrackerTab() {
 
   const dayGoals = useMemo(() => (all && date ? all.filter((g) => g.date === date) : []), [all, date]);
   const teams = useMemo(() => [...new Set(dayGoals.map((g) => g.scorerTeam))].sort(), [dayGoals]);
+  const dayGames = useMemo(
+    () => [...new Set(dayGoals.map((g) => g.matchup))].sort().map((m) => ({ away: m.split("@")[0], home: m.split("@")[1] })),
+    [dayGoals]
+  );
+  // The shared matchup filter only applies if that game was played on this date.
+  const gameFilter = selected && dayGoals.some((g) => g.matchup === selected) ? selected : null;
   const filtered = useMemo(() => {
-    let rows = dayGoals;
+    let rows = gameFilter ? dayGoals.filter((g) => g.matchup === gameFilter) : dayGoals;
     if (team) rows = rows.filter((g) => g.scorerTeam === team || g.oppTeam === team);
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       rows = rows.filter((g) => g.scorerName.toLowerCase().includes(q) || g.goalieName.toLowerCase().includes(q));
     }
     return rows;
-  }, [dayGoals, team, search]);
+  }, [dayGoals, team, search, gameFilter]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "elapsedSeconds", "desc");
 
@@ -115,6 +124,10 @@ export default function GoalTrackerTab() {
           style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 9px", fontSize: 12, flex: 1, minWidth: 160 }}
         />
         <button className="btn" onClick={() => exportCsv(sorted, date)} disabled={!sorted.length}>⬇ Export CSV</button>
+      </div>
+
+      <div style={{ marginTop: 10 }}>
+        <MatchupFilter games={dayGames} />
       </div>
 
       {teams.length > 0 && (
