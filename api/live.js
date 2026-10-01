@@ -180,6 +180,53 @@ async function getJson(url) {
   return res.json();
 }
 
+// Real time of day for each goal: the NHL feed only has game-clock time, ESPN's public feed
+// stamps every play with a UTC wallclock (same lookup as nhl_project/espn_wallclock.py).
+const ESPN = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl";
+const ESPN_TO_NHL = { LA: "LAK", NJ: "NJD", SJ: "SJS", TB: "TBL", UTAH: "UTA" };
+const clockKey = (period, mmss) => {
+  const [m, sec] = String(mmss).split(":").map(Number);
+  return `${period}|${m}:${String(sec).padStart(2, "0")}`;
+};
+
+async function espnWallclocks(date, games) {
+  const out = new Map();
+  try {
+    const board = await getJson(`${ESPN}/scoreboard?dates=${date.replace(/-/g, "")}`);
+    const ids = new Map();
+    for (const ev of board.events || []) {
+      const side = {};
+      for (const c of ev.competitions[0].competitors) side[c.homeAway] = ESPN_TO_NHL[c.team.abbreviation] || c.team.abbreviation;
+      ids.set(`${side.away}@${side.home}`, ev.id);
+    }
+    await Promise.all(games.map(async (g) => {
+      const id = ids.get(`${g.away.abbrev}@${g.home.abbrev}`);
+      if (!id) return;
+      const summary = await getJson(`${ESPN}/summary?event=${id}`);
+      const times = {};
+      for (const p of summary.plays || []) {
+        if (p.scoringPlay && p.wallclock && p.clock?.displayValue) times[clockKey(p.period.number, p.clock.displayValue)] = p.wallclock;
+      }
+      out.set(g.gameId, times);
+    }));
+  } catch (e) {
+    console.error("[live] ESPN wallclock lookup failed:", e.message);
+  }
+  return out;
+}
+
+function attachWallclock(goal, times) {
+  if (!times) return null;
+  const [m, sec] = goal.timeInPeriod.split(":").map(Number);
+  for (const delta of [0, -1, 1, -2, 2]) {
+    const t = m * 60 + sec + delta;
+    if (t < 0) continue;
+    const hit = times[clockKey(goal.period, `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`)];
+    if (hit) return hit;
+  }
+  return null;
+}
+
 export async function buildLive(date) {
   const score = await getJson(`${NHL}/score/${date}`);
   const games = (score.games || []).filter((g) => g.gameType === 2 || g.gameType === 3).map(summarizeGame);
@@ -199,7 +246,13 @@ export async function buildLive(date) {
     })
   );
 
-  goals.sort((a, b) => b.elapsedSeconds - a.elapsedSeconds);
+  if (goals.length) {
+    const scoredGames = games.filter((g) => goals.some((x) => x.gameId === g.gameId));
+    const clocks = await espnWallclocks(date, scoredGames);
+    for (const goal of goals) goal.wallclock = attachWallclock(goal, clocks.get(goal.gameId));
+  }
+  // Last goal of the night first (game clock as the fallback when ESPN has no time yet).
+  goals.sort((a, b) => (b.wallclock || "").localeCompare(a.wallclock || "") || b.elapsedSeconds - a.elapsedSeconds);
   return { date: score.currentDate || date, generated: new Date().toISOString(), games, skaters, goals };
 }
 

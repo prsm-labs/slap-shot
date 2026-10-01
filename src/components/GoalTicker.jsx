@@ -23,6 +23,7 @@ export default function GoalTicker({ onClick }) {
     let timer = null;
     async function load() {
       const { goals, meta } = await fetchGoalsLog();
+      // Latest goal first (both sources are already ordered last-goal-of-the-night first).
       const logged = goals.filter((g) => g.date === meta.dateRange[1]);
       try {
         const live = await fetchLiveGoals(easternToday());

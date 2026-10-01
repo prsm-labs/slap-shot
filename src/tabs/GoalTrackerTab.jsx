@@ -13,6 +13,12 @@ import { FASTEST_GOAL, FIRST_GOAL, fastestGoal, firstGoalsByGame, gameClock, isF
 // filter bounded to the real available date range, prev/next-day steppers, team-chip filter,
 // search, mini stat cards, CSV export, row click -> player slideout. Adapted field-for-field per
 // this session's research: batter/pitcher/inning -> scorer/goalie/period+time-in-period.
+// Time of day the goal was scored, Eastern ("10:42 PM ET"), from the goal's ESPN wallclock.
+function etTime(iso) {
+  if (!iso) return "—";
+  return new Date(iso).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
+}
+
 function distanceColor(d) {
   if (d == null) return "var(--text)";
   if (d <= 10) return "var(--green)";
@@ -21,7 +27,7 @@ function distanceColor(d) {
 }
 
 function exportCsv(rows, date) {
-  const header = ["date", "period", "timeInPeriod", "scorerName", "scorerTeam", "seasonGoalNum", "shotType", "shotDistance", "goalieName", "matchup"];
+  const header = ["date", "wallclock", "period", "timeInPeriod", "scorerName", "scorerTeam", "seasonGoalNum", "shotType", "shotDistance", "goalieName", "matchup"];
   const lines = [header.join(",")];
   for (const g of rows) {
     lines.push(header.map((h) => `"${g[h] ?? ""}"`).join(","));
@@ -108,7 +114,8 @@ export default function GoalTrackerTab() {
     return rows;
   }, [dayGoals, team, search, gameFilter]);
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "elapsedSeconds", "desc");
+  // Default: last goal of the night at the top (real time of day, Eastern).
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "wallclock", "desc");
 
   function stepDate(delta) {
     if (!meta) return;
@@ -206,7 +213,8 @@ export default function GoalTrackerTab() {
         <table className="data-table">
           <thead>
             <tr>
-              <th className={sortKey === "elapsedSeconds" ? "sorted" : ""} onClick={() => toggleSort("elapsedSeconds")}>Time{sortKey === "elapsedSeconds" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+              <th className={sortKey === "wallclock" ? "sorted" : ""} onClick={() => toggleSort("wallclock")}>Scored (ET){sortKey === "wallclock" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+              <th className={sortKey === "elapsedSeconds" ? "sorted" : ""} onClick={() => toggleSort("elapsedSeconds")}>Game time{sortKey === "elapsedSeconds" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
               <th className={sortKey === "period" ? "sorted" : ""} onClick={() => toggleSort("period")}>Per</th>
               <th className={sortKey === "scorerName" ? "sorted" : ""} onClick={() => toggleSort("scorerName")}>Scorer</th>
               <th className={sortKey === "seasonGoalNum" ? "sorted" : ""} onClick={() => toggleSort("seasonGoalNum")}>G#</th>
@@ -219,6 +227,7 @@ export default function GoalTrackerTab() {
           <tbody>
             {sorted.map((g, i) => (
               <tr key={i}>
+                <td className="mono">{etTime(g.wallclock)}</td>
                 <td>P{g.period} {g.timeInPeriod}</td>
                 <td>{g.period}</td>
                 <td className="clickable" onClick={() => openSkaterSlide({ playerId: g.scorerId, name: g.scorerName, team: g.scorerTeam })}>
