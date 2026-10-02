@@ -72,7 +72,7 @@ export default function LiveThemesTab() {
         timer = setTimeout(load, result.started && result.unfinished ? LIVE_POLL_MS : 5 * 60_000);
       } catch {
         if (cancelled) return;
-        setLive((prev) => prev || { goals: [], started: false, unfinished: false });
+        setLive((prev) => prev || { goals: [], hasGames: false, started: false, unfinished: false });
         timer = setTimeout(load, LIVE_POLL_MS);
       }
     }
@@ -83,7 +83,7 @@ export default function LiveThemesTab() {
     };
   }, [today]);
 
-  const liveToday = Boolean(live?.started);
+  const liveToday = Boolean(live?.hasGames);
   const dates = useMemo(() => {
     if (!meta) return [];
     return liveToday && !meta.availableDates.includes(today) ? [...meta.availableDates, today] : meta.availableDates;

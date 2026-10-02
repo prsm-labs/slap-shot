@@ -9,14 +9,16 @@ export function easternToday() {
   return new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
 }
 
-// { goals, started, unfinished } for one date.
+// { goals, hasGames, started, unfinished, firstPuck } for one date.
 export async function fetchLiveGoals(date) {
   const res = await fetch(`/api/live?date=${date}`);
   const body = await res.json();
   if (!res.ok) throw new Error(body.error || res.status);
   return {
     goals: body.goals || [],
+    hasGames: body.games.length > 0,
     started: body.games.some((g) => STARTED.has(g.state)),
+    firstPuck: body.games.length ? body.games.map((g) => g.startTimeUTC).sort()[0] : null,
     unfinished: body.games.some((g) => !DONE.has(g.state)),
   };
 }

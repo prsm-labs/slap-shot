@@ -71,7 +71,7 @@ export default function GoalTrackerTab() {
         timer = setTimeout(load, result.started && result.unfinished ? LIVE_POLL_MS : 5 * 60_000);
       } catch {
         if (cancelled) return;
-        setLive((prev) => prev || { goals: [], started: false, unfinished: false });
+        setLive((prev) => prev || { goals: [], hasGames: false, started: false, unfinished: false });
         timer = setTimeout(load, LIVE_POLL_MS);
       }
     }
@@ -82,14 +82,15 @@ export default function GoalTrackerTab() {
     };
   }, [today]);
 
-  const liveToday = Boolean(live?.started);
+  const liveToday = Boolean(live?.hasGames);
   const dates = useMemo(() => {
     if (!meta) return [];
     return liveToday && !meta.availableDates.includes(today) ? [...meta.availableDates, today] : meta.availableDates;
   }, [meta, liveToday, today]);
   const latest = dates[dates.length - 1];
 
-  // Until a date is picked: today once tonight's first game has started, else the latest logged day.
+  // Until a date is picked: today whenever there are games today (empty until the first goal),
+  // otherwise the latest logged day.
   const date = picked ?? (meta && live ? latest : null);
 
   const dayGoals = useMemo(() => {
@@ -151,7 +152,7 @@ export default function GoalTrackerTab() {
 
       {date === today && liveToday && (
         <div className="note">
-          🔴 Today's goals come straight from the NHL live feed{live.unfinished ? ` and refresh every ${LIVE_POLL_MS / 1000}s` : ""}.
+          🔴 Today's goals come straight from the NHL live feed{live.started && live.unfinished ? ` and refresh every ${LIVE_POLL_MS / 1000}s` : ""}.
         </div>
       )}
 
@@ -251,7 +252,13 @@ export default function GoalTrackerTab() {
           </tbody>
         </table>
       </div>
-      {sorted.length === 0 && <div className="mono" style={{ color: "var(--muted)", fontSize: 12, padding: 12 }}>No goals match this filter.</div>}
+      {sorted.length === 0 && (
+        <div className="mono" style={{ color: "var(--muted)", fontSize: 12, padding: 12 }}>
+          {date === today && liveToday && dayGoals.length === 0
+            ? `No goals yet today — first puck drop ${live.firstPuck ? new Date(live.firstPuck).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "later today"}. Goals appear here as they're scored.`
+            : "No goals match this filter."}
+        </div>
+      )}
     </div>
   );
 }
