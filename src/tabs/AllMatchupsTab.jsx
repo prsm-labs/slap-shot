@@ -5,6 +5,9 @@ import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
+import PositionFilter from "../components/PositionFilter.jsx";
+import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
+import { fmtToi } from "../lib/toi.js";
 import { filterPlayers, matchupKey, setMatchup, toggleMatchup, useMatchup } from "../lib/matchupFilter.js";
 
 const TIER_CLASS = {
@@ -20,6 +23,7 @@ const TIER_CLASS = {
 const COLUMNS = [
   ["name", "Skater"],
   ["opponentGoalie", "Opp Goalie"],
+  ["estToi", "Est. TOI"],
   ["effectiveGrade", "Eff. Grade"],
   ["slapScore", "Slap Score"],
   ["tier", "Tier"],
@@ -79,6 +83,7 @@ export default function AllMatchupsTab() {
   const [meta, setMeta] = useState(null);
   const [error, setError] = useState(null);
   const selected = useMatchup();
+  const position = usePosition();
 
   useEffect(() => {
     fetchScoredPool()
@@ -89,7 +94,7 @@ export default function AllMatchupsTab() {
       .catch((e) => setError(String(e)));
   }, []);
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filterPlayers(players, selected) || [], "slapScore", "desc");
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filterPositions(filterPlayers(players, selected), position) || [], "slapScore", "desc");
 
   return (
     <div>
@@ -103,6 +108,7 @@ export default function AllMatchupsTab() {
         Goalies marked Projected are not yet confirmed starters.
       </div>
       <SlateStrip meta={meta} />
+      <PositionFilter />
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Failed to load pool: {error}</div>}
       {!players && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
 
@@ -126,11 +132,12 @@ export default function AllMatchupsTab() {
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
                         <span className="player-name-link">{p.name}</span>
-                        <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team}</div>
+                        <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
+                  <td className="mono">{fmtToi(p.estToi)}</td>
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>
                   <td><span className={`tier-pill ${TIER_CLASS[p.tier] || "tier-ignore"}`}>{p.tier}</span></td>

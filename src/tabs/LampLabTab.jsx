@@ -5,6 +5,9 @@ import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import PositionFilter from "../components/PositionFilter.jsx";
+import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
+import { fmtToi } from "../lib/toi.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { isGoalSignal } from "../lib/signals.js";
 
@@ -46,6 +49,7 @@ export default function LampLabTab() {
   const [running, setRunning] = useState(false);
   const [team, setTeam] = useState(null);
   const selected = useMatchup();
+  const position = usePosition();
   const workerRef = useRef(null);
 
   useEffect(() => {
@@ -82,9 +86,9 @@ export default function LampLabTab() {
 
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
   const filtered = useMemo(() => {
-    const inGame = filterPlayers(merged, selected);
+    const inGame = filterPositions(filterPlayers(merged, selected), position);
     return (inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [];
-  }, [merged, team, selected]);
+  }, [merged, team, selected, position]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimeGoalPct", "desc");
   const sortedWithSignalFirst = useMemo(
@@ -118,6 +122,7 @@ export default function LampLabTab() {
 
       <div className="note">ℹ️ "Light the lamp" = score a goal. ★ Goal Signal = Slap Score ≥70 AND Breakaway Score ≥60 AND simulated goal% ≥30%.</div>
 
+      <PositionFilter />
       <MatchupFilter />
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
         {teams.length > 0 && (
@@ -181,6 +186,7 @@ export default function LampLabTab() {
                 <th className={sortKey === "anytimeGoalPct" ? "sorted" : ""} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "breakawayScore" ? "sorted" : ""} onClick={() => toggleSort("breakawayScore")}>Breakaway{sortKey === "breakawayScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
               </tr>
             </thead>
             <tbody>
@@ -192,7 +198,7 @@ export default function LampLabTab() {
                       <div>
                         {isGoalSignal(p) && <span className="signal-star">★ </span>}
                         <span className="player-name-link">{p.name}</span>
-                        <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team}</div>
+                        <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>
                   </td>
@@ -200,6 +206,7 @@ export default function LampLabTab() {
                   <td>{p.anytimeGoalPct}%</td>
                   <td>{p.slapScore}</td>
                   <td>{p.breakawayScore}</td>
+                  <td className="mono">{fmtToi(p.estToi)}</td>
                 </tr>
               ))}
             </tbody>

@@ -5,10 +5,13 @@ import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import PositionFilter from "../components/PositionFilter.jsx";
+import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
+import { fmtToi } from "../lib/toi.js";
 import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 
 const SKATER_COLS = [
-  ["name", "Player"], ["team", "Team"], ["TotalGoals", "Goals"],
+  ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"],
   ["ShotsOnGoalPerGame", "SOG/GP"], ["ICF", "ICF"], ["HDCF", "HDCF"],
   ["baseGrade", "Grade"], ["slapScore", "Slap Score"],
 ];
@@ -22,12 +25,13 @@ export default function SplitsTab() {
   const [skaters, setSkaters] = useState(null);
   const [goalies, setGoalies] = useState(null);
   const selected = useMatchup();
+  const position = usePosition();
 
   useEffect(() => {
     fetchScoredPool().then(({ players, goalies }) => { setSkaters(players); setGoalies(goalies); });
   }, []);
 
-  const rows = role === "goalie" ? filterByTeam(goalies, selected) : filterPlayers(skaters, selected);
+  const rows = role === "goalie" ? filterByTeam(goalies, selected) : filterPositions(filterPlayers(skaters, selected), position);
   const cols = role === "goalie" ? GOALIE_COLS : SKATER_COLS;
   const defaultKey = role === "goalie" ? "savePct" : "slapScore";
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows || [], defaultKey, "desc");
@@ -48,6 +52,7 @@ export default function SplitsTab() {
         ℹ️ ICF = individual unblocked shot attempts; HDCF = those from within 20 ft. Both are season totals
         (last season + this season) and feed Snipe Score and gGOAL.
       </div>
+      {role === "skater" && <PositionFilter />}
       <MatchupFilter />
 
       {!rows && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>}
@@ -78,6 +83,8 @@ export default function SplitsTab() {
                     <td key={key}>
                       {key === "baseGrade" || key === "grade"
                         ? <GradeBadge grade={p[key]} />
+                        : key === "position" ? positionLabel(p.position)
+                        : key === "estToi" || key === "ppToi" ? fmtToi(p[key])
                         : (p[key] ?? "—")}
                     </td>
                   ))}

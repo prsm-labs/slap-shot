@@ -4,6 +4,8 @@ import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import PositionFilter from "../components/PositionFilter.jsx";
+import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { useMatchup } from "../lib/matchupFilter.js";
 import { FIRST_GOAL } from "../lib/goalBadges.js";
 
@@ -95,6 +97,7 @@ export default function TrackRecordLive() {
   const [showDnp, setShowDnp] = useState(false);
   const [search, setSearch] = useState("");
   const selected = useMatchup();
+  const position = usePosition();
 
   useEffect(() => {
     fetch("/data/track_record_2026.json")
@@ -114,7 +117,10 @@ export default function TrackRecordLive() {
     [date, dayRows]
   );
   const gameFilter = date && selected && dayGames.some((g) => `${g.away}@${g.home}` === selected) ? selected : null;
-  const scope = useMemo(() => (gameFilter ? dayRows.filter((r) => r.matchup === gameFilter) : dayRows), [dayRows, gameFilter]);
+  const scope = useMemo(
+    () => filterPositions(gameFilter ? dayRows.filter((r) => r.matchup === gameFilter) : dayRows, position),
+    [dayRows, gameFilter, position]
+  );
   const s = useMemo(() => summarize(scope), [scope]);
 
   const tableRows = useMemo(() => {
@@ -167,6 +173,7 @@ export default function TrackRecordLive() {
         {dates[0] === "2026-09-29" ? " Opening night (9/29) was rebuilt afterwards from data known before it, since snapshots started 9/30." : ""}
       </div>
 
+      <PositionFilter />
       {date && <MatchupFilter games={dayGames} />}
 
       <div className="signal-board" style={{ flexWrap: "wrap" }}>
@@ -274,7 +281,7 @@ export default function TrackRecordLive() {
                       <span className="player-name-link">{r.name}</span>
                       {(r.goalSignal || r.pointSignal) && <span className="signal-star" title={r.goalSignal ? "Goal Signal" : "Point Signal"}> ★</span>}
                       {r.firstGoal && <span title="First goal of the game"> {FIRST_GOAL}</span>}
-                      <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{r.team} vs {r.opp} · {r.position}</div>
+                      <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{r.team} vs {r.opp} · {positionLabel(r.position)}</div>
                     </div>
                   </div>
                 </td>

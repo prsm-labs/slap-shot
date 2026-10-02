@@ -3,6 +3,9 @@ import { fetchScoredPool } from "../lib/data.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import PositionFilter from "../components/PositionFilter.jsx";
+import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
+import { fmtToi } from "../lib/toi.js";
 import { matchupKey, playerMatchupKey, useMatchup } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
@@ -36,6 +39,7 @@ export default function FirstGoalTab() {
   const [meta, setMeta] = useState(null);
   const [live, setLive] = useState(null);
   const selected = useMatchup();
+  const position = usePosition();
 
   useEffect(() => {
     fetchScoredPool().then(({ players, meta }) => {
@@ -81,8 +85,8 @@ export default function FirstGoalTab() {
   const actualFirst = useMemo(() => firstGoalsByGame(live?.goals), [live]);
   const shown = selected ? games.filter((g) => g.key === selected) : games;
   const slateTop = useMemo(
-    () => shown.flatMap((g) => g.ranked.map((p) => ({ ...p, game: g }))).sort((a, b) => b.firstGoalP - a.firstGoalP).slice(0, 15),
-    [shown]
+    () => filterPositions(shown.flatMap((g) => g.ranked.map((p) => ({ ...p, game: g }))), position).sort((a, b) => b.firstGoalP - a.firstGoalP).slice(0, 15),
+    [shown, position]
   );
 
   if (!pool || !meta) return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>;
@@ -100,6 +104,7 @@ export default function FirstGoalTab() {
         Uses full rosters — scratches aren't removed yet. {FIRST_GOAL} marks the actual first scorer once a game starts.
       </div>
 
+      <PositionFilter />
       <MatchupFilter />
 
       <div className="grid-cards" style={{ marginBottom: 14 }}>
@@ -120,7 +125,7 @@ export default function FirstGoalTab() {
                   <span style={{ color: "var(--muted)" }}> — our #{actualRank || "—"} of {g.ranked.length}</span>
                 </div>
               )}
-              {g.ranked.slice(0, 5).map((p, i) => (
+              {filterPositions(g.ranked, position).slice(0, 5).map((p, i) => (
                 <div
                   key={p.playerId}
                   className="clickable"
@@ -130,7 +135,7 @@ export default function FirstGoalTab() {
                   <span className="mono" style={{ fontSize: 10, color: "var(--muted)", width: 14 }}>{i + 1}.</span>
                   <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={24} />
                   <span className="mono" style={{ fontSize: 12, flex: 1, minWidth: 0 }}>
-                    {p.name} <span style={{ color: "var(--muted)" }}>{p.team}</span>
+                    {p.name} <span style={{ color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)}</span>
                     {actual?.scorerId === p.playerId && <span> {FIRST_GOAL}</span>}
                   </span>
                   <span className="mono" style={{ fontSize: 12, fontWeight: 700 }}>{pct(p.firstGoalP)}</span>
@@ -163,7 +168,7 @@ export default function FirstGoalTab() {
                     <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
                     <span className="player-name-link">{p.name}</span>
                     {actualFirst.get(p.game.gameId)?.scorerId === p.playerId && <span>{FIRST_GOAL}</span>}
-                    <span className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team}</span>
+                    <span className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)}</span>
                   </div>
                 </td>
                 <td>{p.game.away} @ {p.game.home}</td>

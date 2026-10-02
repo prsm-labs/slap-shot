@@ -1,3 +1,5 @@
+import { fmtToi } from "../lib/toi.js";
+import { positionLabel } from "../lib/positionFilter.js";
 import { useEffect, useState } from "react";
 import { registerSlide, closeAllSlides, openGoalieSlide } from "../slideouts.js";
 import L7Chart from "./L7Chart.jsx";
@@ -60,6 +62,9 @@ function SkaterStats({ p }) {
   return (
     <div className="card">
       <StatRow label="Team" value={p.team} />
+      <StatRow label="Position" value={positionLabel(p.position)} />
+      <StatRow label="Est. TOI tonight" value={fmtToi(p.estToi)} />
+      <StatRow label="PP TOI / game" value={fmtToi(p.ppToi)} />
       <StatRow label="Games Played" value={p.games_played} />
       <StatRow label="Goals" value={p.TotalGoals} />
       <StatRow label="Shots on Goal" value={p.ShotsOnGoalPerGame != null ? `${p.ShotsOnGoalPerGame}/gm` : "—"} />

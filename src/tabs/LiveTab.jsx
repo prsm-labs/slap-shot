@@ -3,6 +3,8 @@ import { fetchScoredPool } from "../lib/data.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import BoxScore from "../components/BoxScore.jsx";
+import PositionFilter from "../components/PositionFilter.jsx";
+import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { matchupKey, toggleMatchup, setMatchup, useMatchup } from "../lib/matchupFilter.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
 
@@ -117,6 +119,7 @@ export default function LiveTab() {
   const selected = useMatchup();
   const [boxGame, setBoxGame] = useState(null);
   const [showAll, setShowAll] = useState(false);
+  const position = usePosition();
 
   useEffect(() => {
     fetchScoredPool().then(({ players }) => setPool(players)).catch(() => setPool([]));
@@ -169,9 +172,10 @@ export default function LiveTab() {
     return data.skaters
       .filter((s) => !gameFilter || gameKeys.get(s.gameId) === gameFilter)
       .filter((s) => showAll || s.heat.points >= 5)
+      .filter((s) => filterPositions([s], position).length > 0)
       .map((s) => ({ ...s, pre: poolById.get(s.playerId) }))
       .sort((a, b) => b.heat.points - a.heat.points || b.sog - a.sog || b.hd - a.hd);
-  }, [data, gameFilter, gameKeys, showAll, poolById]);
+  }, [data, gameFilter, gameKeys, showAll, poolById, position]);
 
   const anyStarted = data?.games.some((g) => LIVE.has(g.state) || DONE.has(g.state));
   const anyLive = data?.games.some((g) => LIVE.has(g.state));
@@ -265,7 +269,7 @@ export default function LiveTab() {
                             <span className="player-name-link">{s.name}</span>
                             {s.goals > 0 && <span title="Scored tonight"> 🚨</span>}
                             {firstScorer.get(s.gameId) === s.playerId && <span title="Scored the first goal of the game"> {FIRST_GOAL}</span>}
-                            <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{s.team} vs {s.opp} · {s.position}</div>
+                            <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{s.team} vs {s.opp} · {positionLabel(s.position)}</div>
                           </div>
                         </div>
                       </td>

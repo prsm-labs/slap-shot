@@ -4,6 +4,8 @@ import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import PositionFilter from "../components/PositionFilter.jsx";
+import { filterPositions, usePosition } from "../lib/positionFilter.js";
 import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 
 // Top-5 opinionated lists driven directly off the already-scored pool — no separate data
@@ -41,6 +43,7 @@ export default function CheatSheetsTab() {
   const [players, setPlayers] = useState(null);
   const [goalies, setGoalies] = useState(null);
   const selected = useMatchup();
+  const position = usePosition();
 
   useEffect(() => {
     fetchScoredPool().then(({ players, goalies }) => { setPlayers(players); setGoalies(goalies); });
@@ -50,7 +53,7 @@ export default function CheatSheetsTab() {
     return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>;
   }
 
-  const inGame = filterPlayers(players, selected);
+  const inGame = filterPositions(filterPlayers(players, selected), position);
   const goalCandidates = [...inGame].sort((a, b) => b.gGoal - a.gGoal).slice(0, 5);
   // Point Candidates: blend of Ice Sig (usage/opportunity) + gGOAL — a broader "gets on the
   // scoresheet" list than the pure finishing-probability Goal Candidates list.
@@ -72,6 +75,7 @@ export default function CheatSheetsTab() {
         <div className="section-sub">Top-5 opinionated lists, read directly off the scored pool — no separate model</div>
       </div>
 
+      <PositionFilter />
       <MatchupFilter />
       <div className="grid-cards">
         <ListCard
