@@ -24,8 +24,8 @@ const TABS = [
   { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab },
   { key: "livegames", label: "🔴 Live", Component: LiveTab },
   { key: "goals", label: "🚨 Goal Tracker", Component: GoalTrackerTab },
-  // All Matchups holds the matchup board plus Lamp / Apple / Crease Lab as in-page buttons.
-  { key: "board", label: "🏒 All Matchups", Component: MatchupsHubTab },
+  // Scouting holds All Matchups (default) plus Lamp / Apple / Crease Lab as in-page buttons.
+  { key: "board", label: "🎯 Scouting", Component: MatchupsHubTab },
   { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab },
   { key: "track", label: "📈 Track Record", Component: TrackRecordTab },
   // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".

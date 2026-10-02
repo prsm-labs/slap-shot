@@ -4,10 +4,10 @@ import LampLabTab from "./LampLabTab.jsx";
 import AppleLabTab from "./AppleLabTab.jsx";
 import CreaseLabTab from "./CreaseLabTab.jsx";
 
-// "All Matchups" top-level tab: the matchup board plus every lab, switched by a button row in the
+// "Scouting" top-level tab: All Matchups (the default view) plus every lab, switched by a button row in the
 // page itself instead of one top-level tab each.
 const VIEWS = [
-  { key: "board", label: "🏒 Matchups", Component: AllMatchupsTab },
+  { key: "board", label: "🏒 All Matchups", Component: AllMatchupsTab },
   { key: "lamp", label: "💡 Lamp Lab", Component: LampLabTab },
   { key: "apple", label: "🍎 Apple Lab", Component: AppleLabTab },
   { key: "crease", label: "🥅 Crease Lab", Component: CreaseLabTab },
