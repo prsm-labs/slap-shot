@@ -8,7 +8,7 @@ import PositionFilter from "../components/PositionFilter.jsx";
 import LineupBadge from "../components/LineupBadge.jsx";
 import { filterPositions, usePosition } from "../lib/positionFilter.js";
 import { filterPlayers, matchupKey, useMatchup } from "../lib/matchupFilter.js";
-import { lineupMaps, startingGoalie, useLineups } from "../lib/lineups.js";
+import { lineupMaps, skaterStatus, startingGoalie, useLineups } from "../lib/lineups.js";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -107,7 +107,7 @@ export default function CheatSheetsTab() {
     return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>;
   }
 
-  const statusOf = (p) => maps.skaters.get(p.playerId);
+  const statusOf = (p) => skaterStatus(maps, p);
   const oppGoalieOf = (p) => startingGoalie(p.opponentTeam, slateByTeam.get(p.team), maps);
   const passesLineup = (p) => {
     const st = statusOf(p);

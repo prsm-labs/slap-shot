@@ -24,7 +24,7 @@ const COLUMNS = [
   ["name", "Skater"],
   ["opponentGoalie", "Opp Goalie"],
   ["estToi", "Est. TOI"],
-  ["effectiveGrade", "Eff. Grade"],
+  ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
   ["tier", "Tier"],
 ];

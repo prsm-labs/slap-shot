@@ -45,10 +45,20 @@ export function useLineups(date) {
 //   skaters: playerId -> { dressed, pp: 1|2|null, out: "IR"|"DTD"|...|null }
 //   goalies: team -> { name, playerId, status }   (RotoWire's starter)
 //   officialTeams: teams whose dressed lineup is in
+const normName = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, "");
+
+// Lineup status for a pool skater: by NHL id first, then by team + name — injured players are
+// often dropped from the NHL's active roster, so RotoWire's injury list can't always be matched
+// to an id.
+export function skaterStatus(maps, p) {
+  return maps.skaters.get(p.playerId) || maps.outByName.get(`${p.team}|${normName(p.name)}`) || null;
+}
+
 export function lineupMaps(data) {
   const skaters = new Map();
   const goalies = new Map();
   const officialTeams = new Set();
+  const outByName = new Map();
   for (const g of data?.games || []) {
     for (const [team, t] of Object.entries(g.teams)) {
       const entry = (id) => {
@@ -59,11 +69,14 @@ export function lineupMaps(data) {
       for (const p of t.dressed) entry(p.playerId).dressed = true;
       for (const p of t.pp1) if (p.playerId) entry(p.playerId).pp = 1;
       for (const p of t.pp2) if (p.playerId) entry(p.playerId).pp ??= 2;
-      for (const p of t.injuries) if (p.playerId) entry(p.playerId).out = p.tag || "OUT";
+      for (const p of t.injuries) {
+        if (p.playerId) entry(p.playerId).out = p.tag || "OUT";
+        outByName.set(`${team}|${normName(p.name)}`, { dressed: false, pp: null, out: p.tag || "OUT" });
+      }
       if (t.goalie) goalies.set(team, t.goalie);
     }
   }
-  return { skaters, goalies, officialTeams };
+  return { skaters, goalies, officialTeams, outByName };
 }
 
 // Starting goalie for a team tonight, best source first: a Confirmed report from RotoWire or

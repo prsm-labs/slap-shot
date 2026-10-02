@@ -13,7 +13,7 @@ import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js
 const SKATER_COLS = [
   ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"],
   ["ShotsOnGoalPerGame", "SOG/GP"], ["ICF", "ICF"], ["HDCF", "HDCF"],
-  ["baseGrade", "Grade"], ["slapScore", "Slap Score"],
+  ["gradeScore", "Grade"], ["slapScore", "Slap Score"],
 ];
 const GOALIE_COLS = [
   ["name", "Goalie"], ["team", "Team"], ["wins", "Wins"], ["shutouts", "Shutouts"],
@@ -81,7 +81,8 @@ export default function SplitsTab() {
                   </td>
                   {cols.slice(1).map(([key]) => (
                     <td key={key}>
-                      {key === "baseGrade" || key === "grade"
+                      {key === "gradeScore" ? <GradeBadge grade={p.effectiveGrade} />
+                        : key === "grade"
                         ? <GradeBadge grade={p[key]} />
                         : key === "position" ? positionLabel(p.position)
                         : key === "estToi" || key === "ppToi" ? fmtToi(p[key])

@@ -64,6 +64,12 @@ function SkaterStats({ p }) {
       <StatRow label="Team" value={p.team} />
       <StatRow label="Position" value={positionLabel(p.position)} />
       <StatRow label="Est. TOI tonight" value={fmtToi(p.estToi)} />
+      {p.modelProbs && (
+        <StatRow
+          label="Grade model: goal / assist / point / 3+ SOG"
+          value={["goal", "assist", "point", "sog3"].map((k) => `${Math.round(p.modelProbs[k] * 100)}%`).join(" / ")}
+        />
+      )}
       <StatRow label="PP TOI / game" value={fmtToi(p.ppToi)} />
       <StatRow label="Games Played" value={p.games_played} />
       <StatRow label="Goals" value={p.TotalGoals} />

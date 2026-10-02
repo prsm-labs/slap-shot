@@ -12,7 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { scorePlayerPool } from "../src/scoring.js";
-import { computeBaseGrade, computeGoalieGrades, computeEffectiveGrade } from "../src/lib/grades.js";
+import { computeGoalieGrades, gradeSlate } from "../src/lib/grades.js";
 import { isGoalSignal, isPointSignal } from "../src/lib/signals.js";
 import { simOdds, firstGoalProbs } from "../src/lib/projections.js";
 
@@ -39,10 +39,12 @@ for (const g of meta.slate) {
 }
 
 const goalieGrades = computeGoalieGrades(pool.goalies);
-const scored = scorePlayerPool(pool.players).map((p) => {
-  const baseGrade = computeBaseGrade(p);
+const scoredRaw = scorePlayerPool(pool.players);
+const grades = gradeSlate(scoredRaw);
+const scored = scoredRaw.map((p) => {
+  const grade = grades.get(p.playerId);
   const goalieGrade = p.opponentGoalieId != null ? goalieGrades[p.opponentGoalieId] : null;
-  return { ...p, ...simOdds(p), baseGrade, goalieGrade, effectiveGrade: computeEffectiveGrade(baseGrade, goalieGrade) };
+  return { ...p, ...simOdds(p), grade, goalieGrade };
 });
 const firstGoal = firstGoalProbs(scored, (p) => gameOf.get(p.team)?.key);
 const bySlap = [...scored].sort((a, b) => b.slapScore - a.slapScore);
@@ -62,8 +64,13 @@ const players = scored.map((p) => {
     opponentGoalie: p.opponentGoalie,
     opponentGoalieId: p.opponentGoalieId,
     goalieGrade: p.goalieGrade?.letter ?? null,
-    baseGrade: p.baseGrade.letter,
-    effectiveGrade: p.effectiveGrade.letter,
+    baseGrade: p.grade.letter,
+    effectiveGrade: p.grade.letter,
+    gradeScore: p.grade.score,
+    modelGoalPct: Math.round(p.grade.probs.goal * 1000) / 10,
+    modelAssistPct: Math.round(p.grade.probs.assist * 1000) / 10,
+    modelPointPct: Math.round(p.grade.probs.point * 1000) / 10,
+    modelSog3Pct: Math.round(p.grade.probs.sog3 * 1000) / 10,
     slapScore: p.slapScore,
     slapRank: slapRank.get(p.playerId),
     gGoal: p.gGoal,

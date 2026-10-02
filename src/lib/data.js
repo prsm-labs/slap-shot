@@ -2,7 +2,7 @@
 // slap-shot-build.md §4/§5/§13 — no live pipeline/API is wired up yet, this reads the
 // real historical/aggregated JSON+CSV produced by the one-off scripts documented there).
 import { scorePlayerPool } from "../scoring.js";
-import { computeBaseGrade, computeGoalieGrades, computeEffectiveGrade } from "./grades.js";
+import { computeGoalieGrades, gradeSlate } from "./grades.js";
 import { estimatedToi, ppToiPerGame } from "./toi.js";
 
 let poolCache = null;
@@ -13,11 +13,15 @@ export async function fetchScoredPool() {
   const scored = scorePlayerPool(data.players);
 
   const goalieGrades = computeGoalieGrades(data.goalies);
+  const grades = gradeSlate(scored);
   const players = scored.map((p) => {
-    const baseGrade = computeBaseGrade(p);
     const goalieGrade = p.opponentGoalieId != null ? goalieGrades[p.opponentGoalieId] : null;
-    const effectiveGrade = computeEffectiveGrade(baseGrade, goalieGrade);
-    return { ...p, baseGrade, goalieGrade, effectiveGrade, estToi: estimatedToi(p), ppToi: ppToiPerGame(p) };
+    // One grade per skater (lib/grades.js gradeSlate); baseGrade kept as an alias for older views.
+    const grade = grades.get(p.playerId);
+    return {
+      ...p, goalieGrade, effectiveGrade: grade, baseGrade: grade, gradeScore: grade?.score ?? null,
+      modelProbs: grade?.probs ?? null, estToi: estimatedToi(p), ppToi: ppToiPerGame(p),
+    };
   });
   const goalies = data.goalies.map((g) => ({ ...g, grade: goalieGrades[g.playerId] || null }));
 
