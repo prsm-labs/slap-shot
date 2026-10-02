@@ -3,6 +3,7 @@ import { fetchScoredPool } from "../lib/data.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import BoxScore from "../components/BoxScore.jsx";
+import LineupsView from "../components/LineupsView.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { matchupKey, toggleMatchup, setMatchup, useMatchup } from "../lib/matchupFilter.js";
@@ -119,6 +120,7 @@ export default function LiveTab() {
   const selected = useMatchup();
   const [boxGame, setBoxGame] = useState(null);
   const [showAll, setShowAll] = useState(false);
+  const [view, setView] = useState("games"); // "games" | "lineups"
   const position = usePosition();
 
   useEffect(() => {
@@ -188,6 +190,11 @@ export default function LiveTab() {
         <div className="section-sub">Tonight's games and who's heating up — built from every real shot in the NHL's live feed</div>
       </div>
 
+      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
+        <button className={`pill-btn ${view === "games" ? "active" : ""}`} onClick={() => setView("games")}>🔴 Games & Heating Up</button>
+        <button className={`pill-btn ${view === "lineups" ? "active" : ""}`} onClick={() => setView("lineups")}>📋 Lineups</button>
+      </div>
+
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
         <button className="btn" onClick={() => setDate(shiftDate(date, -1))}>◀</button>
         <span className="mono" style={{ fontSize: 12 }}>
@@ -206,9 +213,11 @@ export default function LiveTab() {
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Live feed error: {error}</div>}
       {!data && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading live feed…</div>}
 
-      {data && data.games.length === 0 && <div className="note">No NHL games on this date.</div>}
+      {view === "lineups" && <LineupsView date={date} />}
 
-      {data && data.games.length > 0 && (
+      {view === "games" && data && data.games.length === 0 && <div className="note">No NHL games on this date.</div>}
+
+      {view === "games" && data && data.games.length > 0 && (
         <div className="grid-cards" style={{ marginBottom: 14 }}>
           {data.games.map((g) => (
             <GameCard
@@ -225,7 +234,7 @@ export default function LiveTab() {
 
       {boxGame && <BoxScore gameId={boxGame} poolById={poolById} onClose={() => setBoxGame(null)} />}
 
-      {data && data.games.length > 0 && (
+      {view === "games" && data && data.games.length > 0 && (
         <>
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 8 }}>
             <div className="section-title" style={{ fontSize: 18 }}>🔥 Heating Up</div>

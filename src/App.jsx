@@ -23,7 +23,7 @@ const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
 // OddsCalculatorTab.jsx / lib/odds.js are left on disk, unreferenced, same convention as other
 // superseded assets in this repo (not deleted without being asked).
 const TABS = [
-  { key: "dashboard", label: "📊 Dashboard", Component: DashboardTab },
+  { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab },
   { key: "livegames", label: "🔴 Live", Component: LiveTab },
   { key: "goals", label: "🚨 Goal Tracker", Component: GoalTrackerTab },
   { key: "board", label: "🏒 All Matchups", Component: AllMatchupsTab },
@@ -34,13 +34,13 @@ const TABS = [
   // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".
   { key: "live", label: "⚡ Goal Flurries", Component: LiveThemesTab },
   { key: "splits", label: "📊 Splits", Component: SplitsTab },
-  { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab },
+  { key: "dashboard", label: "📊 Dashboard", Component: DashboardTab },
   { key: "lookup", label: "🔍 Matchup Lookup", Component: MatchupLookupTab },
   { key: "about", label: "📌 About", Component: AboutTab },
 ];
 
 export default function App() {
-  const [tab, setTab] = useState("dashboard");
+  const [tab, setTab] = useState("cheat");
   const active = useMemo(() => TABS.find((t) => t.key === tab) || TABS[0], [tab]);
   const ActiveComponent = active.Component;
 
