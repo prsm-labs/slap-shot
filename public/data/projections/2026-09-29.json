@@ -55,7 +55,9 @@
     "homeGoalieStatus": "Projected"
    }
   ],
-  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates."
+  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates.",
+  "goaliesAddedAt": "2026-10-03T09:23:36.694Z",
+  "goaliesBackfilled": true
  },
  "players": [
   {
@@ -5646,6 +5648,238 @@
    "firstGoalPct": 1,
    "goalSignal": false,
    "pointSignal": false
+  }
+ ],
+ "goalies": [
+  {
+   "gameId": 2026020001,
+   "matchup": "FLA@CAR",
+   "team": "FLA",
+   "opp": "CAR",
+   "isHome": false,
+   "goalieId": 8474593,
+   "goalie": "Jacob Markstrom",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 29.9,
+   "saves": 26.5,
+   "goalsAllowed": 3.43,
+   "savePct": 0.8851,
+   "lines": {
+    "20": 87.4,
+    "25": 62.6,
+    "30": 30.8,
+    "35": 9.2
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020001,
+   "matchup": "FLA@CAR",
+   "team": "CAR",
+   "opp": "FLA",
+   "isHome": true,
+   "goalieId": 8483548,
+   "goalie": "Brandon Bussi",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 24.6,
+   "saves": 22,
+   "goalsAllowed": 2.62,
+   "savePct": 0.8935,
+   "lines": {
+    "20": 65.9,
+    "25": 33.9,
+    "30": 10.8,
+    "35": 2
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020002,
+   "matchup": "MTL@TOR",
+   "team": "MTL",
+   "opp": "TOR",
+   "isHome": false,
+   "goalieId": 8482487,
+   "goalie": "Jakub Dobes",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 26.4,
+   "saves": 23.7,
+   "goalsAllowed": 2.66,
+   "savePct": 0.8994,
+   "lines": {
+    "20": 75.7,
+    "25": 45,
+    "30": 17.1,
+    "35": 3.8
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020002,
+   "matchup": "MTL@TOR",
+   "team": "TOR",
+   "opp": "MTL",
+   "isHome": true,
+   "goalieId": 8475683,
+   "goalie": "Sergei Bobrovsky",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 29.9,
+   "saves": 26.3,
+   "goalsAllowed": 3.55,
+   "savePct": 0.8813,
+   "lines": {
+    "20": 87,
+    "25": 61.9,
+    "30": 30.1,
+    "35": 8.9
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020003,
+   "matchup": "NYR@BOS",
+   "team": "NYR",
+   "opp": "BOS",
+   "isHome": false,
+   "goalieId": 8478048,
+   "goalie": "Igor Shesterkin",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 27.6,
+   "saves": 25.1,
+   "goalsAllowed": 2.59,
+   "savePct": 0.9065,
+   "lines": {
+    "20": 82,
+    "25": 53.7,
+    "30": 23.2,
+    "35": 6
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020003,
+   "matchup": "NYR@BOS",
+   "team": "BOS",
+   "opp": "NYR",
+   "isHome": true,
+   "goalieId": 8480280,
+   "goalie": "Jeremy Swayman",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 26.9,
+   "saves": 24.3,
+   "goalsAllowed": 2.61,
+   "savePct": 0.903,
+   "lines": {
+    "20": 78.4,
+    "25": 48.5,
+    "30": 19.5,
+    "35": 4.6
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020004,
+   "matchup": "VAN@EDM",
+   "team": "VAN",
+   "opp": "EDM",
+   "isHome": false,
+   "goalieId": 8477967,
+   "goalie": "Thatcher Demko",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 30.7,
+   "saves": 27.5,
+   "goalsAllowed": 3.22,
+   "savePct": 0.895,
+   "lines": {
+    "20": 90.5,
+    "25": 68.8,
+    "30": 36.9,
+    "35": 12.3
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020004,
+   "matchup": "VAN@EDM",
+   "team": "EDM",
+   "opp": "VAN",
+   "isHome": true,
+   "goalieId": 8475883,
+   "goalie": "Frederik Andersen",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 25.3,
+   "saves": 22.3,
+   "goalsAllowed": 2.99,
+   "savePct": 0.8817,
+   "lines": {
+    "20": 67.7,
+    "25": 35.8,
+    "30": 11.7,
+    "35": 2.2
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020005,
+   "matchup": "CHI@VGK",
+   "team": "CHI",
+   "opp": "VGK",
+   "isHome": false,
+   "goalieId": 8481519,
+   "goalie": "Spencer Knight",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 30.4,
+   "saves": 27.4,
+   "goalsAllowed": 3.03,
+   "savePct": 0.9002,
+   "lines": {
+    "20": 90.2,
+    "25": 68.1,
+    "30": 36.2,
+    "35": 12
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020005,
+   "matchup": "CHI@VGK",
+   "team": "VGK",
+   "opp": "CHI",
+   "isHome": true,
+   "goalieId": 8478499,
+   "goalie": "Adin Hill",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 22.6,
+   "saves": 20,
+   "goalsAllowed": 2.68,
+   "savePct": 0.8817,
+   "lines": {
+    "20": 53,
+    "25": 22.7,
+    "30": 5.8,
+    "35": 0.8
+   },
+   "teamsDataPresent": true
   }
  ]
 }

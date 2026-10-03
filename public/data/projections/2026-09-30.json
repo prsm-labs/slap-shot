@@ -35,7 +35,9 @@
     "homeGoalieStatus": "Projected"
    }
   ],
-  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates."
+  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates.",
+  "goaliesAddedAt": "2026-10-03T09:23:37.513Z",
+  "goaliesBackfilled": true
  },
  "players": [
   {
@@ -3493,6 +3495,146 @@
    "firstGoalPct": 1,
    "goalSignal": false,
    "pointSignal": false
+  }
+ ],
+ "goalies": [
+  {
+   "gameId": 2026020006,
+   "matchup": "PIT@PHI",
+   "team": "PIT",
+   "opp": "PHI",
+   "isHome": false,
+   "goalieId": 8481668,
+   "goalie": "Arturs Silovs",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 25.2,
+   "saves": 22.4,
+   "goalsAllowed": 2.78,
+   "savePct": 0.8896,
+   "lines": {
+    "20": 68.6,
+    "25": 36.7,
+    "30": 12.2,
+    "35": 2.3
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020006,
+   "matchup": "PIT@PHI",
+   "team": "PHI",
+   "opp": "PIT",
+   "isHome": true,
+   "goalieId": 8478435,
+   "goalie": "Dan Vladar",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 26.2,
+   "saves": 23.6,
+   "goalsAllowed": 2.58,
+   "savePct": 0.9014,
+   "lines": {
+    "20": 75.2,
+    "25": 44.3,
+    "30": 16.7,
+    "35": 3.7
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020008,
+   "matchup": "NYI@TOR",
+   "team": "NYI",
+   "opp": "TOR",
+   "isHome": false,
+   "goalieId": 8478009,
+   "goalie": "Ilya Sorokin",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 26.2,
+   "saves": 23.7,
+   "goalsAllowed": 2.55,
+   "savePct": 0.9028,
+   "lines": {
+    "20": 75.4,
+    "25": 44.6,
+    "30": 16.9,
+    "35": 3.7
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020008,
+   "matchup": "NYI@TOR",
+   "team": "TOR",
+   "opp": "NYI",
+   "isHome": true,
+   "goalieId": 8475683,
+   "goalie": "Sergei Bobrovsky",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 31.6,
+   "saves": 27.8,
+   "goalsAllowed": 3.75,
+   "savePct": 0.8812,
+   "lines": {
+    "20": 91.5,
+    "25": 70.9,
+    "30": 39.2,
+    "35": 13.6
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020007,
+   "matchup": "LAK@COL",
+   "team": "LAK",
+   "opp": "COL",
+   "isHome": false,
+   "goalieId": 8475311,
+   "goalie": "Darcy Kuemper",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 31.6,
+   "saves": 28.2,
+   "goalsAllowed": 3.41,
+   "savePct": 0.8923,
+   "lines": {
+    "20": 92.5,
+    "25": 73,
+    "30": 41.7,
+    "35": 15.1
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020007,
+   "matchup": "LAK@COL",
+   "team": "COL",
+   "opp": "LAK",
+   "isHome": true,
+   "goalieId": 8475809,
+   "goalie": "Scott Wedgewood",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 26.5,
+   "saves": 24.2,
+   "goalsAllowed": 2.32,
+   "savePct": 0.9126,
+   "lines": {
+    "20": 78.1,
+    "25": 48.1,
+    "30": 19.2,
+    "35": 4.5
+   },
+   "teamsDataPresent": true
   }
  ]
 }

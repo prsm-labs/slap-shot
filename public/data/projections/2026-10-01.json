@@ -85,7 +85,9 @@
     "homeGoalieStatus": "Projected"
    }
   ],
-  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates."
+  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates.",
+  "goaliesAddedAt": "2026-10-03T09:23:38.478Z",
+  "goaliesBackfilled": true
  },
  "players": [
   {
@@ -9564,6 +9566,376 @@
    "firstGoalPct": 1.8,
    "goalSignal": false,
    "pointSignal": false
+  }
+ ],
+ "goalies": [
+  {
+   "gameId": 2026020009,
+   "matchup": "PHI@NJD",
+   "team": "PHI",
+   "opp": "NJD",
+   "isHome": false,
+   "goalieId": 8478435,
+   "goalie": "Dan Vladar",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 27.1,
+   "saves": 24.4,
+   "goalsAllowed": 2.72,
+   "savePct": 0.8996,
+   "lines": {
+    "20": 79.1,
+    "25": 49.4,
+    "30": 20.1,
+    "35": 4.8
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020009,
+   "matchup": "PHI@NJD",
+   "team": "NJD",
+   "opp": "PHI",
+   "isHome": true,
+   "goalieId": 8474596,
+   "goalie": "Jake Allen",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 25.3,
+   "saves": 22.7,
+   "goalsAllowed": 2.53,
+   "savePct": 0.8998,
+   "lines": {
+    "20": 70.2,
+    "25": 38.5,
+    "30": 13.2,
+    "35": 2.6
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020010,
+   "matchup": "TBL@NYR",
+   "team": "TBL",
+   "opp": "NYR",
+   "isHome": false,
+   "goalieId": 8476883,
+   "goalie": "Andrei Vasilevskiy",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 24.7,
+   "saves": 22.3,
+   "goalsAllowed": 2.31,
+   "savePct": 0.9061,
+   "lines": {
+    "20": 68.1,
+    "25": 36.2,
+    "30": 11.9,
+    "35": 2.3
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020010,
+   "matchup": "TBL@NYR",
+   "team": "NYR",
+   "opp": "TBL",
+   "isHome": true,
+   "goalieId": 8478048,
+   "goalie": "Igor Shesterkin",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 28.4,
+   "saves": 25.8,
+   "goalsAllowed": 2.66,
+   "savePct": 0.9065,
+   "lines": {
+    "20": 84.9,
+    "25": 58.2,
+    "30": 26.9,
+    "35": 7.5
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020011,
+   "matchup": "BUF@CBJ",
+   "team": "BUF",
+   "opp": "CBJ",
+   "isHome": false,
+   "goalieId": 8480045,
+   "goalie": "Ukko-Pekka Luukkonen",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 29.9,
+   "saves": 27,
+   "goalsAllowed": 2.89,
+   "savePct": 0.9033,
+   "lines": {
+    "20": 89.1,
+    "25": 65.8,
+    "30": 33.8,
+    "35": 10.7
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020011,
+   "matchup": "BUF@CBJ",
+   "team": "CBJ",
+   "opp": "BUF",
+   "isHome": true,
+   "goalieId": 8482982,
+   "goalie": "Jet Greaves",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 28.4,
+   "saves": 25.7,
+   "goalsAllowed": 2.73,
+   "savePct": 0.9041,
+   "lines": {
+    "20": 84.7,
+    "25": 58,
+    "30": 26.7,
+    "35": 7.4
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020012,
+   "matchup": "MIN@NSH",
+   "team": "MIN",
+   "opp": "NSH",
+   "isHome": false,
+   "goalieId": 8482661,
+   "goalie": "Jesper Wallstedt",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 28.9,
+   "saves": 26.3,
+   "goalsAllowed": 2.65,
+   "savePct": 0.9082,
+   "lines": {
+    "20": 86.7,
+    "25": 61.4,
+    "30": 29.7,
+    "35": 8.7
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020012,
+   "matchup": "MIN@NSH",
+   "team": "NSH",
+   "opp": "MIN",
+   "isHome": true,
+   "goalieId": 8477424,
+   "goalie": "Juuse Saros",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 30.1,
+   "saves": 27,
+   "goalsAllowed": 3.19,
+   "savePct": 0.8941,
+   "lines": {
+    "20": 89,
+    "25": 65.7,
+    "30": 33.7,
+    "35": 10.7
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020014,
+   "matchup": "SEA@CGY",
+   "team": "SEA",
+   "opp": "CGY",
+   "isHome": false,
+   "goalieId": 8475831,
+   "goalie": "Philipp Grubauer",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 29.1,
+   "saves": 26.3,
+   "goalsAllowed": 2.79,
+   "savePct": 0.9041,
+   "lines": {
+    "20": 86.9,
+    "25": 61.8,
+    "30": 30,
+    "35": 8.9
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020014,
+   "matchup": "SEA@CGY",
+   "team": "CGY",
+   "opp": "SEA",
+   "isHome": true,
+   "goalieId": 8482445,
+   "goalie": "Devin Cooley",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 27.3,
+   "saves": 24.7,
+   "goalsAllowed": 2.63,
+   "savePct": 0.9038,
+   "lines": {
+    "20": 80.4,
+    "25": 51.3,
+    "30": 21.5,
+    "35": 5.3
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020013,
+   "matchup": "CHI@UTA",
+   "team": "CHI",
+   "opp": "UTA",
+   "isHome": false,
+   "goalieId": 8481519,
+   "goalie": "Spencer Knight",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 29.2,
+   "saves": 26.3,
+   "goalsAllowed": 2.92,
+   "savePct": 0.9,
+   "lines": {
+    "20": 86.9,
+    "25": 61.7,
+    "30": 29.9,
+    "35": 8.8
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020013,
+   "matchup": "CHI@UTA",
+   "team": "UTA",
+   "opp": "CHI",
+   "isHome": true,
+   "goalieId": 8478872,
+   "goalie": "Karel Vejmelka",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 23.9,
+   "saves": 21.4,
+   "goalsAllowed": 2.49,
+   "savePct": 0.8956,
+   "lines": {
+    "20": 62.3,
+    "25": 30.5,
+    "30": 9.1,
+    "35": 1.5
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020015,
+   "matchup": "EDM@VAN",
+   "team": "EDM",
+   "opp": "VAN",
+   "isHome": false,
+   "goalieId": 8477465,
+   "goalie": "Tristan Jarry",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 25.2,
+   "saves": 22.3,
+   "goalsAllowed": 2.92,
+   "savePct": 0.8843,
+   "lines": {
+    "20": 67.8,
+    "25": 35.9,
+    "30": 11.8,
+    "35": 2.2
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020015,
+   "matchup": "EDM@VAN",
+   "team": "VAN",
+   "opp": "EDM",
+   "isHome": true,
+   "goalieId": 8480947,
+   "goalie": "Kevin Lankinen",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 30.9,
+   "saves": 27.2,
+   "goalsAllowed": 3.69,
+   "savePct": 0.8803,
+   "lines": {
+    "20": 89.7,
+    "25": 66.9,
+    "30": 35,
+    "35": 11.3
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020016,
+   "matchup": "FLA@SJS",
+   "team": "FLA",
+   "opp": "SJS",
+   "isHome": false,
+   "goalieId": 8474593,
+   "goalie": "Jacob Markstrom",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 25,
+   "saves": 22.2,
+   "goalsAllowed": 2.85,
+   "savePct": 0.8862,
+   "lines": {
+    "20": 67,
+    "25": 35,
+    "30": 11.4,
+    "35": 2.1
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020016,
+   "matchup": "FLA@SJS",
+   "team": "SJS",
+   "opp": "FLA",
+   "isHome": true,
+   "goalieId": 8477968,
+   "goalie": "Alex Nedeljkovic",
+   "confirmed": false,
+   "status": "Projected",
+   "source": "DailyFaceoff / projected",
+   "shots": 29.2,
+   "saves": 26.1,
+   "goalsAllowed": 3.06,
+   "savePct": 0.895,
+   "lines": {
+    "20": 86.2,
+    "25": 60.5,
+    "30": 28.9,
+    "35": 8.4
+   },
+   "teamsDataPresent": true
   }
  ]
 }

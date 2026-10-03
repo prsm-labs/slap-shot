@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchTrackRecord } from "../lib/data.js";
 import TrackRecordLive from "./TrackRecordLive.jsx";
+import TrackRecordGoalies from "./TrackRecordGoalies.jsx";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -136,10 +137,11 @@ export default function TrackRecordTab() {
         <div className="section-sub">What we projected before each game vs. what actually happened — who scored, their box score, and how they were graded</div>
       </div>
       <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
-        <button className={`pill-btn ${view === "live" ? "active" : ""}`} onClick={() => setView("live")}>2026-27 Slap Shot</button>
+        <button className={`pill-btn ${view === "live" ? "active" : ""}`} onClick={() => setView("live")}>2026-27 Skaters</button>
+        <button className={`pill-btn ${view === "goalies" ? "active" : ""}`} onClick={() => setView("goalies")}>🥅 2026-27 Goalies (Crease Lab)</button>
         <button className={`pill-btn ${view === "pbix" ? "active" : ""}`} onClick={() => setView("pbix")}>Mar 2026 backtest (Power BI model)</button>
       </div>
-      {view === "live" ? <TrackRecordLive /> : <PbixBacktest />}
+      {view === "live" ? <TrackRecordLive /> : view === "goalies" ? <TrackRecordGoalies /> : <PbixBacktest />}
     </div>
   );
 }

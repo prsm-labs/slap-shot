@@ -5,6 +5,8 @@
 //   node scripts/snapshot_projections.mjs                       # public/data/todays_pool.json
 //   node scripts/snapshot_projections.mjs path/to/pool.json     # a backfilled pool
 //   ... --force                                                  # overwrite after puck drop
+//   ... --goalies-only   # add/replace only the Crease Lab goalie section of an existing snapshot
+//                          (used to backfill days snapshotted before goalies were tracked)
 //
 // A snapshot is locked once the slate's first game has started: later runs leave it alone, so
 // the record always reflects what was shown before the games, never a re-run after the fact.
@@ -15,10 +17,14 @@ import { scorePlayerPool } from "../src/scoring.js";
 import { computeGoalieGrades, gradeSlate } from "../src/lib/grades.js";
 import { isGoalSignal, isPointSignal } from "../src/lib/signals.js";
 import { simOdds, firstGoalProbs } from "../src/lib/projections.js";
+import { projectGoalie } from "../src/lib/crease.js";
+import { lineupMaps, startingGoalie } from "../src/lib/lineups.js";
+import { buildLineups } from "../api/lineups.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const force = args.includes("--force");
+const goaliesOnly = args.includes("--goalies-only");
 const poolPath = args.find((a) => !a.startsWith("--")) || path.join(root, "public/data/todays_pool.json");
 const outDir = path.join(root, "public/data/projections");
 
@@ -26,7 +32,47 @@ const pool = JSON.parse(fs.readFileSync(poolPath, "utf8"));
 const meta = pool._meta;
 const outPath = path.join(outDir, `${meta.slateDate}.json`);
 
+// Crease Lab projections for every team's starter, exactly as the Crease Lab tab computes them:
+// starter = RotoWire / DailyFaceoff confirmed first, then expected (lib/lineups.js startingGoalie).
+// RotoWire only covers the upcoming slate, so a backfilled past day uses the pool's own starter.
+async function goalieSection() {
+  const lineups = await buildLineups(meta.slateDate).catch(() => null);
+  const maps = lineupMaps(lineups);
+  const byId = new Map(pool.goalies.map((g) => [g.playerId, g]));
+  return meta.slate.flatMap((game) => [game.away, game.home].map((team) => {
+    const opp = team === game.away ? game.home : game.away;
+    const s = startingGoalie(team, game, maps);
+    const stats = s ? byId.get(s.playerId) : null;
+    const proj = projectGoalie(stats, team, opp, meta);
+    return {
+      gameId: game.gameId, matchup: `${game.away}@${game.home}`, team, opp, isHome: team === game.home,
+      goalieId: s?.playerId ?? null, goalie: stats?.name || s?.name || null,
+      confirmed: Boolean(s?.confirmed), status: s?.status || null, source: s?.source || null,
+      shots: proj.shots, saves: proj.saves, goalsAllowed: proj.goalsAllowed,
+      savePct: Math.round(proj.savePct * 10000) / 10000, lines: proj.lines,
+      teamsDataPresent: Boolean(meta.teams),
+    };
+  }));
+}
+
 const firstPuck = Math.min(...meta.slate.map((g) => Date.parse(g.startTimeUTC)));
+if (goaliesOnly) {
+  if (!fs.existsSync(outPath)) {
+    console.log(`No ${meta.slateDate} snapshot to add goalies to.`);
+    process.exit(1);
+  }
+  const existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
+  if (existing.goalies && Date.now() >= firstPuck && !force) {
+    console.log(`Locked: ${meta.slateDate} already has goalie projections and the first game has started.`);
+    process.exit(0);
+  }
+  existing.goalies = await goalieSection();
+  existing._meta.goaliesAddedAt = new Date().toISOString();
+  existing._meta.goaliesBackfilled = Date.now() >= firstPuck;
+  fs.writeFileSync(outPath, JSON.stringify(existing, null, 1));
+  console.log(`Added ${existing.goalies.length} goalie projections to ${outPath}${existing._meta.goaliesBackfilled ? " (backfilled after puck drop)" : ""}`);
+  process.exit(0);
+}
 if (fs.existsSync(outPath) && Date.now() >= firstPuck && !force) {
   console.log(`Locked: ${meta.slateDate} snapshot already exists and the first game has started — left unchanged.`);
   process.exit(0);
@@ -99,6 +145,7 @@ const snapshot = {
     note: "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates.",
   },
   players,
+  goalies: await goalieSection(),
 };
 
 fs.mkdirSync(outDir, { recursive: true });
@@ -108,4 +155,4 @@ fs.writeFileSync(outPath, JSON.stringify(snapshot, null, 1));
 const dates = fs.readdirSync(outDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map((f) => f.slice(0, 10)).sort();
 fs.writeFileSync(path.join(outDir, "index.json"), JSON.stringify({ dates }, null, 1));
 
-console.log(`Wrote ${outPath}: ${players.length} skaters, ${meta.slate.length} games (${dates.length} snapshot dates total)`);
+console.log(`Wrote ${outPath}: ${players.length} skaters, ${snapshot.goalies.length} goalies, ${meta.slate.length} games (${dates.length} snapshot dates total)`);

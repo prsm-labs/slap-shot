@@ -55,7 +55,9 @@
     "homeGoalieStatus": "Confirmed"
    }
   ],
-  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates."
+  "note": "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates.",
+  "goaliesAddedAt": "2026-10-03T09:23:38.762Z",
+  "goaliesBackfilled": true
  },
  "players": [
   {
@@ -6585,6 +6587,238 @@
    "firstGoalPct": 0.9,
    "goalSignal": false,
    "pointSignal": false
+  }
+ ],
+ "goalies": [
+  {
+   "gameId": 2026020017,
+   "matchup": "NYR@DET",
+   "team": "NYR",
+   "opp": "DET",
+   "isHome": false,
+   "goalieId": 8482193,
+   "goalie": "Dylan Garand",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 28.5,
+   "saves": 25.7,
+   "goalsAllowed": 2.75,
+   "savePct": 0.9034,
+   "lines": {
+    "20": 84.7,
+    "25": 57.9,
+    "30": 26.6,
+    "35": 7.4
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020017,
+   "matchup": "NYR@DET",
+   "team": "DET",
+   "opp": "NYR",
+   "isHome": true,
+   "goalieId": 8476434,
+   "goalie": "John Gibson",
+   "confirmed": false,
+   "status": "Likely",
+   "source": "DailyFaceoff / projected",
+   "shots": 25.4,
+   "saves": 22.8,
+   "goalsAllowed": 2.55,
+   "savePct": 0.8996,
+   "lines": {
+    "20": 70.7,
+    "25": 39.1,
+    "30": 13.5,
+    "35": 2.7
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020018,
+   "matchup": "WSH@CAR",
+   "team": "WSH",
+   "opp": "CAR",
+   "isHome": false,
+   "goalieId": 8480313,
+   "goalie": "Logan Thompson",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 31.1,
+   "saves": 28.2,
+   "goalsAllowed": 2.92,
+   "savePct": 0.9063,
+   "lines": {
+    "20": 92.4,
+    "25": 72.9,
+    "30": 41.5,
+    "35": 15
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020018,
+   "matchup": "WSH@CAR",
+   "team": "CAR",
+   "opp": "WSH",
+   "isHome": true,
+   "goalieId": 8483548,
+   "goalie": "Brandon Bussi",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 24.5,
+   "saves": 21.9,
+   "goalsAllowed": 2.59,
+   "savePct": 0.8942,
+   "lines": {
+    "20": 65.3,
+    "25": 33.4,
+    "30": 10.5,
+    "35": 1.9
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020019,
+   "matchup": "BOS@WPG",
+   "team": "BOS",
+   "opp": "WPG",
+   "isHome": false,
+   "goalieId": 8480280,
+   "goalie": "Jeremy Swayman",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 27.8,
+   "saves": 25.2,
+   "goalsAllowed": 2.67,
+   "savePct": 0.9041,
+   "lines": {
+    "20": 82.5,
+    "25": 54.4,
+    "30": 23.8,
+    "35": 6.2
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020019,
+   "matchup": "BOS@WPG",
+   "team": "WPG",
+   "opp": "BOS",
+   "isHome": true,
+   "goalieId": 8479973,
+   "goalie": "Stuart Skinner",
+   "confirmed": false,
+   "status": "Likely",
+   "source": "DailyFaceoff / projected",
+   "shots": 26.9,
+   "saves": 23.9,
+   "goalsAllowed": 3,
+   "savePct": 0.8887,
+   "lines": {
+    "20": 76.7,
+    "25": 46.3,
+    "30": 18,
+    "35": 4.1
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020020,
+   "matchup": "STL@DAL",
+   "team": "STL",
+   "opp": "DAL",
+   "isHome": false,
+   "goalieId": 8480981,
+   "goalie": "Joel Hofer",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 25.7,
+   "saves": 23.2,
+   "goalsAllowed": 2.44,
+   "savePct": 0.9048,
+   "lines": {
+    "20": 73,
+    "25": 41.7,
+    "30": 15.1,
+    "35": 3.2
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020020,
+   "matchup": "STL@DAL",
+   "team": "DAL",
+   "opp": "STL",
+   "isHome": true,
+   "goalieId": 8479979,
+   "goalie": "Jake Oettinger",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 24.5,
+   "saves": 22,
+   "goalsAllowed": 2.5,
+   "savePct": 0.8977,
+   "lines": {
+    "20": 65.7,
+    "25": 33.7,
+    "30": 10.7,
+    "35": 1.9
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020021,
+   "matchup": "ANA@VGK",
+   "team": "ANA",
+   "opp": "VGK",
+   "isHome": false,
+   "goalieId": 8480843,
+   "goalie": "Lukas Dostal",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 29.1,
+   "saves": 25.9,
+   "goalsAllowed": 3.22,
+   "savePct": 0.8894,
+   "lines": {
+    "20": 85.4,
+    "25": 59,
+    "30": 27.6,
+    "35": 7.8
+   },
+   "teamsDataPresent": true
+  },
+  {
+   "gameId": 2026020021,
+   "matchup": "ANA@VGK",
+   "team": "VGK",
+   "opp": "ANA",
+   "isHome": true,
+   "goalieId": 8479394,
+   "goalie": "Carter Hart",
+   "confirmed": true,
+   "status": "Confirmed",
+   "source": "DailyFaceoff",
+   "shots": 27,
+   "saves": 24.1,
+   "goalsAllowed": 2.87,
+   "savePct": 0.8937,
+   "lines": {
+    "20": 77.7,
+    "25": 47.6,
+    "30": 18.8,
+    "35": 4.4
+   },
+   "teamsDataPresent": true
   }
  ]
 }
