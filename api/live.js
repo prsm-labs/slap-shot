@@ -227,19 +227,45 @@ function attachWallclock(goal, times) {
   return null;
 }
 
+// Every goalie who has played tonight, from the NHL boxscore: shots against, saves, goals
+// against, TOI (the Crease Lab "Live" view and its 👑 saves leader).
+function goalieLines(box, game) {
+  const out = [];
+  for (const side of ["awayTeam", "homeTeam"]) {
+    const team = box[side].abbrev;
+    const opp = box[side === "awayTeam" ? "homeTeam" : "awayTeam"].abbrev;
+    for (const g of box.playerByGameStats?.[side]?.goalies || []) {
+      const [m, s] = String(g.toi || "0:0").split(":").map(Number);
+      if (!(m * 60 + s)) continue;
+      out.push({
+        gameId: game.gameId, team, opp, isHome: side === "homeTeam", state: game.state,
+        playerId: g.playerId, name: g.name?.default || "", starter: Boolean(g.starter),
+        shotsAgainst: g.shotsAgainst ?? 0, saves: g.saves ?? 0, goalsAgainst: g.goalsAgainst ?? 0, toi: g.toi,
+      });
+    }
+  }
+  return out;
+}
+
 export async function buildLive(date) {
   const score = await getJson(`${NHL}/score/${date}`);
   const games = (score.games || []).filter((g) => g.gameType === 2 || g.gameType === 3).map(summarizeGame);
 
   const skaters = [];
   const goals = [];
+  const goalies = [];
   await Promise.all(
     games.filter((g) => STARTED.has(g.state)).map(async (g) => {
       try {
-        const { skaters: lines, goals: gameGoals, pressure } = analyzeGame(await getJson(`${NHL}/gamecenter/${g.gameId}/play-by-play`));
+        const [pbp, box] = await Promise.all([
+          getJson(`${NHL}/gamecenter/${g.gameId}/play-by-play`),
+          getJson(`${NHL}/gamecenter/${g.gameId}/boxscore`).catch(() => null),
+        ]);
+        const { skaters: lines, goals: gameGoals, pressure } = analyzeGame(pbp);
         g.pressure = pressure;
         skaters.push(...lines);
         goals.push(...gameGoals);
+        if (box) goalies.push(...goalieLines(box, g));
       } catch (e) {
         g.error = e.message;
       }
@@ -253,7 +279,7 @@ export async function buildLive(date) {
   }
   // Last goal of the night first (game clock as the fallback when ESPN has no time yet).
   goals.sort((a, b) => (b.wallclock || "").localeCompare(a.wallclock || "") || b.elapsedSeconds - a.elapsedSeconds);
-  return { date: score.currentDate || date, generated: new Date().toISOString(), games, skaters, goals };
+  return { date: score.currentDate || date, generated: new Date().toISOString(), games, skaters, goals, goalies };
 }
 
 export default async function handler(req, res) {

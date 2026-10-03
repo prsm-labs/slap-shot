@@ -8,6 +8,7 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import { matchupKey, useMatchup } from "../lib/matchupFilter.js";
 import { lineupMaps, startingGoalie, useLineups } from "../lib/lineups.js";
 import { projectGoalie, SAVE_LINES } from "../lib/crease.js";
+import CreaseLabLive from "../components/CreaseLabLive.jsx";
 
 // Crease Lab — tonight's starting goalies with projected shots against, saves and goals allowed
 // (lib/crease.js, backtested on 2025-26), most projected saves first.
@@ -17,6 +18,7 @@ const sv = (v) => (v == null ? "—" : v.toFixed(3).replace(/^0/, ""));
 export default function CreaseLabTab() {
   const [pool, setPool] = useState(null);
   const [confirmedOnly, setConfirmedOnly] = useState(false);
+  const [view, setView] = useState("projected");
   const selected = useMatchup();
   const lineups = useLineups(pool?.meta?.slateDate);
 
@@ -65,8 +67,19 @@ export default function CreaseLabTab() {
     <div>
       <div className="section-header">
         <div className="section-title">🥅 Crease Lab</div>
-        <div className="section-sub">Tonight's starting goalies — projected shots against, saves and goals allowed, most saves first</div>
+        <div className="section-sub">
+          {view === "live"
+            ? "Tonight's goalies live — ranked by saves, projection in parentheses"
+            : "Tonight's starting goalies — projected shots against, saves and goals allowed, most saves first"}
+        </div>
       </div>
+
+      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
+        <button className={`pill-btn ${view === "projected" ? "active" : ""}`} onClick={() => setView("projected")}>📋 Projected</button>
+        <button className={`pill-btn ${view === "live" ? "active" : ""}`} onClick={() => setView("live")}>🔴 Live (actual)</button>
+      </div>
+
+      {view === "live" ? <CreaseLabLive date={pool.meta.slateDate} fallback={rows} /> : <>
 
       <div className="note">
         ℹ️ Shots against = opponent's shots per game × this team's shots allowed per game ÷ league average,
@@ -145,6 +158,7 @@ export default function CreaseLabTab() {
         </table>
       </div>
       {sorted.length === 0 && <div className="mono" style={{ color: "var(--muted)", fontSize: 12, padding: 12 }}>No starters match these filters yet.</div>}
+      </>}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import { useMatchup } from "../lib/matchupFilter.js";
 import { SAVE_LINES } from "../lib/crease.js";
+import { RankCell } from "../components/CreaseLabLive.jsx";
 
 // Track Record — Goalies: each night's Crease Lab projection (saved before puck drop by
 // scripts/snapshot_projections.mjs) against the real starter's box line (build_track_record.py
@@ -25,6 +26,7 @@ function flatten(g) {
     actGoalie: a.goalie, actSaves: a.saves ?? null, actShots: a.shotsAgainst ?? null, actGA: a.goalsAgainst ?? null,
     actSv, pulled: Boolean(a.pulled), teamShots: a.teamShotsAgainst ?? null,
     savesDiff: a.saves != null ? a.saves - g.proj.saves : null,
+    rank: a.rank ?? null, slateGoalies: a.slateGoalies ?? null,
   };
 }
 
@@ -56,7 +58,14 @@ export default function TrackRecordGoalies() {
       .catch((e) => setError(String(e.message || e)));
   }, []);
 
-  const all = useMemo(() => (data?.goalieRows || []).filter((g) => g.actual).map(flatten), [data]);
+  const all = useMemo(() => {
+    const rows = (data?.goalieRows || []).filter((g) => g.actual).map(flatten);
+    // projRank = where the pre-game projection had this starter in saves that night.
+    for (const r of rows) {
+      r.projRank = 1 + rows.filter((o) => o.date === r.date && o.projSaves > r.projSaves).length;
+    }
+    return rows;
+  }, [data]);
   const dates = useMemo(() => [...new Set(all.map((g) => g.date))].sort(), [all]);
   const dayRows = useMemo(() => (date ? all.filter((g) => g.date === date) : all), [all, date]);
   const dayGames = useMemo(
@@ -68,7 +77,7 @@ export default function TrackRecordGoalies() {
     () => dayRows.filter((g) => (!gameFilter || g.matchup === gameFilter) && (!rightStarterOnly || g.sameGoalie)),
     [dayRows, gameFilter, rightStarterOnly]
   );
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(scope, "projSaves", "desc");
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(scope, "rank", "asc");
 
   const stats = useMemo(() => {
     const right = scope.filter((g) => g.sameGoalie);
@@ -101,6 +110,7 @@ export default function TrackRecordGoalies() {
       {label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}
     </th>
   );
+  const leaders = scope.filter((g) => g.rank === 1);
   const backfilled = [...new Set(all.filter((g) => g.backfilled).map((g) => shortDate(g.date)))];
 
   return (
@@ -122,12 +132,18 @@ export default function TrackRecordGoalies() {
       <div className="note">
         ℹ️ Each team's Crease Lab projection, saved before puck drop, against the goalie who actually started.
         Saves, shots and goals against are the starter's own (if he was pulled, his partial line).
+        Rank = place in saves among every goalie who played that night (👑 = most saves; the same ranking
+        Crease Lab's Live view shows during the games). Proj rank = where the projection had him.
         {backfilled.length ? ` ${backfilled.join(", ")} were rebuilt the next morning from data known before those games (goalie tracking started 10/3), using the starter we projected at the time.` : ""}
       </div>
 
       {date && <MatchupFilter games={dayGames} />}
 
       <div className="signal-board" style={{ flexWrap: "wrap" }}>
+        {date && leaders.map((g) => (
+          <Tile key={g.key} label="👑 Saves leader" value={`${g.actGoalie} · ${g.actSaves}`}
+            sub={`${g.team} ${g.isHome ? "vs" : "@"} ${g.opp} · projected #${g.projRank} (${fmt(g.projSaves)} saves)`} />
+        ))}
         <Tile label="Starter picked right" value={stats.n ? `${Math.round((100 * stats.starterRight) / stats.n)}%` : "—"} sub={`${stats.starterRight}/${stats.n}`} />
         <Tile label="Saves: avg miss" value={fmt(stats.savesMae)} sub={`projected ${fmt(stats.projSavesAvg)} vs actual ${fmt(stats.actSavesAvg)} per game`} />
         <Tile label="Saves: bias" value={stats.savesBias == null ? "—" : `${stats.savesBias > 0 ? "+" : ""}${fmt(stats.savesBias)}`} sub="+ = projected too high" />
@@ -148,6 +164,8 @@ export default function TrackRecordGoalies() {
           <thead>
             <tr>
               {!date && th("date", "Date")}
+              {th("rank", "Rank")}
+              {th("projRank", "Proj rank")}
               <th>Projected goalie</th>
               <th>Actual starter</th>
               {th("projSaves", "Proj saves")}
@@ -166,6 +184,8 @@ export default function TrackRecordGoalies() {
             {sorted.map((g) => (
               <tr key={g.key}>
                 {!date && <td className="mono">{shortDate(g.date)}</td>}
+                <RankCell rank={g.rank} of={g.slateGoalies} />
+                <td className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>{g.projRank}</td>
                 <td className="clickable" onClick={() => g.proj.goalieId && openGoalieSlide({ playerId: g.proj.goalieId, name: g.projGoalie, team: g.team })}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <PlayerAvatar playerId={g.proj.goalieId} name={g.projGoalie} team={g.team} size={26} />
