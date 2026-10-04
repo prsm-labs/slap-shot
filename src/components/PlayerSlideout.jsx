@@ -5,6 +5,7 @@ import { registerSlide, closeAllSlides, openGoalieSlide } from "../slideouts.js"
 import L7Chart from "./L7Chart.jsx";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import GradeBadge from "./GradeBadge.jsx";
+import GoalieProfile from "./GoalieProfile.jsx";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -82,22 +83,6 @@ function SkaterStats({ p }) {
   );
 }
 
-// Goaltending is famously streaky — weight recency more heavily than a skater's shrinkage-
-// toward-season stat line (per §6): last-7 save% shown alongside season, not smoothed into it.
-function GoalieStats({ p }) {
-  return (
-    <div className="card">
-      <StatRow label="Team" value={p.team} />
-      <StatRow label="Games Played" value={p.games_played} />
-      <StatRow label="Wins" value={p.wins} />
-      <StatRow label="Shutouts" value={p.shutouts} />
-      <StatRow label="Save %" value={p.savePct != null ? p.savePct.toFixed(3) : "—"} />
-      <StatRow label="Shots Faced" value={p.shotsFaced} />
-      <StatRow label="Goals Allowed" value={p.goalsAllowed} />
-    </div>
-  );
-}
-
 export default function PlayerSlideout() {
   const [skater, setSkater] = useState(null);
   const [goalie, setGoalie] = useState(null);
@@ -136,9 +121,15 @@ export default function PlayerSlideout() {
 
             {role === "skater" && <MatchupCard p={player} />}
 
-            {role === "goalie" ? <GoalieStats p={player} /> : <SkaterStats p={player} />}
-
-            <L7Chart games={player.last7} role={role} />
+            {role === "goalie" ? (
+              // Season lines, recent games chart and tonight's projection — for any goalie, however it was opened.
+              <GoalieProfile goalie={player} />
+            ) : (
+              <>
+                <SkaterStats p={player} />
+                <L7Chart games={player.last7} role={role} />
+              </>
+            )}
           </div>
         )}
       </div>
