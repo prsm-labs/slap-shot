@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 
 // Full box score for one game, from /api/boxscore (api/boxscore.js). Refreshes every 30s while
@@ -104,9 +104,10 @@ function GoalieTable({ t }) {
   );
 }
 
-export default function BoxScore({ gameId, poolById, onClose }) {
+export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0 }) {
   const [box, setBox] = useState(null);
   const [error, setError] = useState(null);
+  const shownGame = useRef(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -124,13 +125,17 @@ export default function BoxScore({ gameId, poolById, onClose }) {
         if (!cancelled) setError(String(e.message || e));
       }
     }
-    setBox(null);
+    // A different game starts blank; the Live tab's ⟳ Refresh (refreshKey) reloads in place.
+    if (shownGame.current !== gameId) {
+      shownGame.current = gameId;
+      setBox(null);
+    }
     load();
     return () => {
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [gameId]);
+  }, [gameId, refreshKey]);
 
   return (
     <div className="card" style={{ marginBottom: 14 }}>

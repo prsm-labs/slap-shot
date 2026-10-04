@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -121,6 +121,13 @@ export default function LiveTab() {
   const [boxGame, setBoxGame] = useState(null);
   const [showAll, setShowAll] = useState(false);
   const [view, setView] = useState("games"); // "games" | "lineups"
+  // Manual refresh: reloads now and restarts the 30s timer. /api/live and /api/boxscore are cached
+  // for 15s at Vercel's edge, so extra clicks never reach the NHL more often than that; the button
+  // also rests 10s after each click.
+  const [refreshKey, setRefreshKey] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
+  const [coolingDown, setCoolingDown] = useState(false);
+  const shownDate = useRef(null);
   const position = usePosition();
 
   useEffect(() => {
@@ -138,22 +145,36 @@ export default function LiveTab() {
         if (cancelled) return;
         setData(body);
         setError(null);
+        setRefreshing(false);
         const unfinished = body.games.some((g) => !DONE.has(g.state));
         if (unfinished) timer = setTimeout(load, POLL_MS);
       } catch (e) {
         if (cancelled) return;
         setError(String(e.message || e));
+        setRefreshing(false);
         timer = setTimeout(load, POLL_MS);
       }
     }
-    setData(null);
-    setBoxGame(null);
+    // A new date starts blank; a refresh keeps the current numbers on screen until new ones arrive.
+    if (shownDate.current !== date) {
+      shownDate.current = date;
+      setData(null);
+      setBoxGame(null);
+    }
     load();
     return () => {
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [date]);
+  }, [date, refreshKey]);
+
+  function refreshNow() {
+    if (refreshing || coolingDown) return;
+    setRefreshing(true);
+    setCoolingDown(true);
+    setTimeout(() => setCoolingDown(false), 10_000);
+    setRefreshKey((k) => k + 1);
+  }
 
   const poolById = useMemo(() => new Map((pool || []).map((p) => [p.playerId, p])), [pool]);
   // gameId -> scorerId of that game's first goal
@@ -208,6 +229,9 @@ export default function LiveTab() {
             {anyLive ? `Live · refreshes every ${POLL_MS / 1000}s · ` : ""}updated {new Date(data.generated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" })}
           </span>
         )}
+        <button className="btn" onClick={refreshNow} disabled={!data || refreshing || coolingDown} title="Reload the live feed now">
+          {refreshing ? "Refreshing…" : "⟳ Refresh"}
+        </button>
       </div>
 
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Live feed error: {error}</div>}
@@ -232,7 +256,7 @@ export default function LiveTab() {
         </div>
       )}
 
-      {boxGame && <BoxScore gameId={boxGame} poolById={poolById} onClose={() => setBoxGame(null)} />}
+      {boxGame && <BoxScore gameId={boxGame} poolById={poolById} refreshKey={refreshKey} onClose={() => setBoxGame(null)} />}
 
       {view === "games" && data && data.games.length > 0 && (
         <>
