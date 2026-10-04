@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
+import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -192,7 +193,7 @@ export default function AppleLabTab() {
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
                         {isPointSignal(p) && <span className="signal-star">★ </span>}
-                        <span className="player-name-link">{p.name}</span>
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>

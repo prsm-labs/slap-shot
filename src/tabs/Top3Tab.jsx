@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { refreshPool, useScoredPool } from "../lib/data.js";
 import { eligibleForTop3, pickRecord, selectTop3, TIERS } from "../lib/top3.js";
 import { openGoalieSlide, openSkaterSlide } from "../slideouts.js";
+import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 
@@ -80,7 +81,10 @@ function Top3Card({ pick, flipped, onFlip, poolById }) {
                 {pick.tier === "mid" && <Pill color={c}>{p.fallback ? "Fallback — didn't meet the bar" : "✓ Trend + soft matchup"}</Pill>}
               </div>
               <div style={{ fontSize: 11, lineHeight: 1.45, color: "var(--text)", flex: 1, overflow: "hidden" }}>{p.why}</div>
-              <button className="btn" style={{ alignSelf: "center", borderColor: c }} onClick={openSkater}>Open player</button>
+              <div style={{ display: "flex", gap: 8, justifyContent: "center", alignItems: "center" }}>
+                <PickButton player={{ playerId: p.playerId, name: p.name, team: p.team }} size="lg" />
+                <button className="btn" style={{ borderColor: c }} onClick={openSkater}>Open player</button>
+              </div>
             </>
           )}
         </div>

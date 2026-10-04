@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
+import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -75,6 +76,7 @@ export default function SplitsTab() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
                       <span className="player-name-link">{p.name}</span>
+                      {role !== "goalie" && <PickButton player={p} />}
                     </div>
                   </td>
                   {cols.slice(1).map(([key]) => (

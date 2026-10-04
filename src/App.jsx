@@ -13,6 +13,7 @@ import LiveThemesTab from "./tabs/LiveThemesTab.jsx";
 import SplitsTab from "./tabs/SplitsTab.jsx";
 import CheatSheetsTab from "./tabs/CheatSheetsTab.jsx";
 import Top3Tab from "./tabs/Top3Tab.jsx";
+import MyPicksTab from "./tabs/MyPicksTab.jsx";
 import MatchupLookupTab from "./tabs/MatchupLookupTab.jsx";
 import AboutTab from "./tabs/AboutTab.jsx";
 
@@ -24,6 +25,7 @@ const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
 const TABS = [
   { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab },
   { key: "top3", label: "🏆 Top 3 Tonight", Component: Top3Tab },
+  { key: "picks", label: "⭐ My Picks", Component: MyPicksTab },
   { key: "livegames", label: "🔴 Live", Component: LiveTab },
   { key: "goals", label: "🚨 Goal Tracker", Component: GoalTrackerTab },
   // Scouting holds All Matchups (default) plus Lamp / Apple / Crease Lab as in-page buttons.

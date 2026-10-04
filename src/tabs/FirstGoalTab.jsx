@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import SlateStatus from "../components/SlateStatus.jsx";
 import { openSkaterSlide } from "../slideouts.js";
+import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
@@ -167,6 +168,7 @@ export default function FirstGoalTab() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
                     <span className="player-name-link">{p.name}</span>
+                    <PickButton player={p} />
                     {actualFirst.get(p.game.gameId)?.scorerId === p.playerId && <span>{FIRST_GOAL}</span>}
                     <span className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)}</span>
                   </div>
