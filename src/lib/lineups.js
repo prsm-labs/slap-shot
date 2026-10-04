@@ -45,6 +45,8 @@ export function useLineups(date) {
 //   skaters: playerId -> { dressed, pp: 1|2|null, out: "IR"|"DTD"|...|null }
 //   goalies: team -> { name, playerId, status }   (RotoWire's starter)
 //   officialTeams: teams whose dressed lineup is in
+//   inNet: team -> { name, playerId }   (the goalie who actually started, once the game is on)
+//   gameState: team -> NHL game state (FUT, PRE, LIVE, CRIT, FINAL, OFF)
 const normName = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, "");
 
 // Lineup status for a pool skater: by NHL id first, then by team + name — injured players are
@@ -59,7 +61,11 @@ export function lineupMaps(data) {
   const goalies = new Map();
   const officialTeams = new Set();
   const outByName = new Map();
+  const inNet = new Map();
+  const gameState = new Map();
   for (const g of data?.games || []) {
+    gameState.set(g.away, g.state);
+    gameState.set(g.home, g.state);
     for (const [team, t] of Object.entries(g.teams)) {
       const entry = (id) => {
         if (!skaters.has(id)) skaters.set(id, { dressed: false, pp: null, out: null });
@@ -74,14 +80,18 @@ export function lineupMaps(data) {
         outByName.set(`${team}|${normName(p.name)}`, { dressed: false, pp: null, out: p.tag || "OUT" });
       }
       if (t.goalie) goalies.set(team, t.goalie);
+      if (t.inNet) inNet.set(team, t.inNet);
     }
   }
-  return { skaters, goalies, officialTeams, outByName };
+  return { skaters, goalies, officialTeams, outByName, inNet, gameState };
 }
 
-// Starting goalie for a team tonight, best source first: a Confirmed report from RotoWire or
-// DailyFaceoff (carried in the pool's slate), then RotoWire's expected starter, then ours.
+// Starting goalie for a team tonight, best source first: the goalie actually in net once the game
+// has started (NHL boxscore), a Confirmed report from RotoWire or DailyFaceoff (carried in the
+// pool's slate), then RotoWire's expected starter, then ours.
 export function startingGoalie(team, slateGame, maps) {
+  const actual = maps.inNet?.get(team);
+  if (actual) return { ...actual, status: "In net", confirmed: true, source: "NHL boxscore" };
   const rw = maps.goalies.get(team);
   const side = slateGame && (slateGame.away === team ? "away" : slateGame.home === team ? "home" : null);
   const dfo = side

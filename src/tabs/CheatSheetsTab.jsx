@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
-import { fetchScoredPool } from "../lib/data.js";
+import { useMemo, useState } from "react";
+import { useScoredPool } from "../lib/data.js";
+import SlateStatus from "../components/SlateStatus.jsx";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
@@ -64,21 +65,16 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
 }
 
 export default function CheatSheetsTab() {
-  const [players, setPlayers] = useState(null);
-  const [goalies, setGoalies] = useState(null);
-  const [meta, setMeta] = useState(null);
+  // Live slate pool (lib/data.js): opposing goalies, scratches and scores follow lineup news, and
+  // games already under way drop off while "upcoming games only" is on.
+  const pool = useScoredPool();
+  const players = pool?.players ?? null;
+  const goalies = pool?.goalies ?? null;
+  const meta = pool?.meta ?? null;
   const [lineupFilter, setLineupFilter] = useState("notOut");
   const selected = useMatchup();
   const position = usePosition();
   const lineups = useLineups(meta?.slateDate);
-
-  useEffect(() => {
-    fetchScoredPool().then(({ players, goalies, meta }) => {
-      setPlayers(players);
-      setGoalies(goalies);
-      setMeta(meta);
-    });
-  }, []);
 
   const maps = useMemo(() => lineupMaps(lineups), [lineups]);
   const slateByTeam = useMemo(() => {
@@ -139,6 +135,8 @@ export default function CheatSheetsTab() {
         <div className="section-title">📋 Cheat Sheets</div>
         <div className="section-sub">Tonight's quick reads — top candidates and the goalies worth attacking, with lineup status</div>
       </div>
+
+      <SlateStatus />
 
       <div className="note">
         ℹ️ ✅ = in tonight's official lineup (posted by the NHL around warmups) or a confirmed starting goalie.

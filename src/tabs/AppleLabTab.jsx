@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { fetchScoredPool } from "../lib/data.js";
+import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -38,42 +38,46 @@ function exportCsv(rows, filename) {
 }
 
 export default function AppleLabTab() {
-  const [pool, setPool] = useState(null);
+  // Live slate pool (lib/data.js) — re-simulated whenever lineup news changes it.
+  const live = useScoredPool();
+  const pool = useMemo(() => (live ? live.players.filter(isRoleEligible) : null), [live]);
   const [results, setResults] = useState(null);
-  const [running, setRunning] = useState(false);
+  const [resultsFor, setResultsFor] = useState(null); // the pool the shown results were simulated from
+  const sentRef = useRef(null);
   const [team, setTeam] = useState(null);
   const selected = useMatchup();
   const position = usePosition();
   const workerRef = useRef(null);
 
   useEffect(() => {
-    fetchScoredPool().then(({ players }) => setPool(players.filter(isRoleEligible)));
-  }, []);
-
-  useEffect(() => {
     workerRef.current = new Worker("/appleWorker.js");
     workerRef.current.onmessage = (e) => {
       setResults(e.data.results);
-      setRunning(false);
+      setResultsFor(sentRef.current);
     };
     return () => workerRef.current?.terminate();
   }, []);
 
+  const running = Boolean(pool) && resultsFor !== pool;
   function runSim() {
     if (!pool || running) return;
-    setRunning(true);
     setResults(null);
+    setResultsFor(null);
+    sentRef.current = pool;
     workerRef.current.postMessage({ players: pool });
   }
 
   useEffect(() => {
-    if (pool && !results && !running) runSim();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (!pool || !workerRef.current) return;
+    sentRef.current = pool;
+    workerRef.current.postMessage({ players: pool });
   }, [pool]);
 
   const merged = useMemo(() => {
     if (!results || !pool) return null;
-    return results.map((r) => ({ ...r, ...pool.find((p) => p.playerId === r.playerId) }));
+    // Results from the previous run can include skaters since scratched — keep only the current slate.
+    const byId = new Map(pool.map((p) => [p.playerId, p]));
+    return results.filter((r) => byId.has(r.playerId)).map((r) => ({ ...r, ...byId.get(r.playerId) }));
   }, [results, pool]);
 
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);

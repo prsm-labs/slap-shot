@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { fetchScoredPool } from "../lib/data.js";
+import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -28,6 +27,8 @@ const COLUMNS = [
   ["slapScore", "Slap Score"],
   ["tier", "Tier"],
 ];
+
+const STARTED_TAG = { LIVE: "LIVE", CRIT: "LIVE", FINAL: "FINAL", OFF: "FINAL" };
 
 function startTime(utc) {
   return new Date(utc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
@@ -65,7 +66,9 @@ function SlateStrip({ meta }) {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
               <span style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 700, fontSize: 16 }}>{g.away} @ {g.home}</span>
-              <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{startTime(g.startTimeUTC)}</span>
+              <span className="mono" style={{ fontSize: 10, color: STARTED_TAG[g.state] === "LIVE" ? "var(--green)" : "var(--muted)" }}>
+                {STARTED_TAG[g.state] || startTime(g.startTimeUTC)}
+              </span>
             </div>
             <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginTop: 4 }}>
               {g.awayGoalie || "—"} ({g.awayGoalieStatus}) vs {g.homeGoalie || "—"} ({g.homeGoalieStatus})
@@ -79,20 +82,12 @@ function SlateStrip({ meta }) {
 }
 
 export default function AllMatchupsTab() {
-  const [players, setPlayers] = useState(null);
-  const [meta, setMeta] = useState(null);
-  const [error, setError] = useState(null);
+  // Live slate pool (lib/data.js): goalies, scratches and scores follow lineup news.
+  const pool = useScoredPool();
+  const players = pool?.players ?? null;
+  const meta = pool?.meta ?? null;
   const selected = useMatchup();
   const position = usePosition();
-
-  useEffect(() => {
-    fetchScoredPool()
-      .then(({ players, meta }) => {
-        setPlayers(players);
-        setMeta(meta);
-      })
-      .catch((e) => setError(String(e)));
-  }, []);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filterPositions(filterPlayers(players, selected), position) || [], "slapScore", "desc");
 
@@ -105,12 +100,11 @@ export default function AllMatchupsTab() {
 
       <div className="note">
         ℹ️ Ranked by Slap Score, a single 0-99 score blending recent form, shot quality, and this specific goalie matchup.
-        Goalies marked Projected are not yet confirmed starters.
+        Goalies and scratches update as lineups are confirmed (✅ = confirmed or in net); Projected / Expected are not yet confirmed.
       </div>
       <SlateStrip meta={meta} />
       <PositionFilter />
-      {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Failed to load pool: {error}</div>}
-      {!players && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
+      {!players && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
 
       {players && (
         <div className="table-wrap">

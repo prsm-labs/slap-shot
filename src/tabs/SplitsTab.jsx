@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { fetchScoredPool } from "../lib/data.js";
+import { useState } from "react";
+import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -22,14 +22,12 @@ const GOALIE_COLS = [
 
 export default function SplitsTab() {
   const [role, setRole] = useState("skater");
-  const [skaters, setSkaters] = useState(null);
-  const [goalies, setGoalies] = useState(null);
+  // Season numbers — every game on the slate stays listed (scratched / ruled-out skaters are dropped).
+  const pool = useScoredPool({ includeStarted: true });
+  const skaters = pool?.players ?? null;
+  const goalies = pool?.goalies ?? null;
   const selected = useMatchup();
   const position = usePosition();
-
-  useEffect(() => {
-    fetchScoredPool().then(({ players, goalies }) => { setSkaters(players); setGoalies(goalies); });
-  }, []);
 
   const rows = role === "goalie" ? filterByTeam(goalies, selected) : filterPositions(filterPlayers(skaters, selected), position);
   const cols = role === "goalie" ? GOALIE_COLS : SKATER_COLS;

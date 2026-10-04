@@ -3,6 +3,7 @@ import AllMatchupsTab from "./AllMatchupsTab.jsx";
 import LampLabTab from "./LampLabTab.jsx";
 import AppleLabTab from "./AppleLabTab.jsx";
 import CreaseLabTab from "./CreaseLabTab.jsx";
+import SlateStatus from "../components/SlateStatus.jsx";
 
 // "Scouting" top-level tab: All Matchups (the default view) plus every lab, switched by a button row in the
 // page itself instead of one top-level tab each.
@@ -25,6 +26,7 @@ export default function MatchupsHubTab() {
           </button>
         ))}
       </div>
+      <SlateStatus />
       <Active />
     </div>
   );

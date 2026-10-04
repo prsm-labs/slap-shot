@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { fetchScoredPool } from "../lib/data.js";
+import { useScoredPool } from "../lib/data.js";
+import SlateStatus from "../components/SlateStatus.jsx";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -35,27 +36,24 @@ function pct(p) {
 }
 
 export default function FirstGoalTab() {
-  const [pool, setPool] = useState(null);
-  const [meta, setMeta] = useState(null);
+  // Live slate pool (lib/data.js), started games included — this tab grades tonight's first goals.
+  // Scratched / ruled-out skaters are already removed, so each game's shares cover who is playing.
+  const livePool = useScoredPool({ includeStarted: true });
+  const pool = livePool?.players ?? null;
+  const meta = livePool?.meta ?? null;
+  const slateDate = meta?.slateDate;
   const [live, setLive] = useState(null);
   const selected = useMatchup();
   const position = usePosition();
 
-  useEffect(() => {
-    fetchScoredPool().then(({ players, meta }) => {
-      setPool(players);
-      setMeta(meta);
-    });
-  }, []);
-
   // Tonight's actual first goals, to grade the projection as games go.
   useEffect(() => {
-    if (!meta?.slateDate || meta.slateDate !== easternToday()) return undefined;
+    if (!slateDate || slateDate !== easternToday()) return undefined;
     let cancelled = false;
     let timer = null;
     async function load() {
       try {
-        const result = await fetchLiveGoals(meta.slateDate);
+        const result = await fetchLiveGoals(slateDate);
         if (cancelled) return;
         setLive(result);
         timer = setTimeout(load, result.unfinished ? LIVE_POLL_MS : 5 * 60_000);
@@ -68,7 +66,7 @@ export default function FirstGoalTab() {
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [meta]);
+  }, [slateDate]);
 
   const games = useMemo(() => {
     if (!pool || !meta?.slate) return [];
@@ -97,6 +95,8 @@ export default function FirstGoalTab() {
         <div className="section-title">{FIRST_GOAL} First Goal</div>
         <div className="section-sub">Who scores the first goal of each game tonight — with fair odds to compare against the book</div>
       </div>
+
+      <SlateStatus />
 
       <div className="note">
         ℹ️ Each skater's chance = their goals-per-game rate ÷ every skater's rate in that game (rates shrunk toward league average).

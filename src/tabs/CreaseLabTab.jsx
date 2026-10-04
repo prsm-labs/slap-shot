@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { fetchScoredPool } from "../lib/data.js";
+import { useMemo, useState } from "react";
+import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -16,15 +16,12 @@ const fmtPct = (v) => (v == null ? "—" : `${v}%`);
 const sv = (v) => (v == null ? "—" : v.toFixed(3).replace(/^0/, ""));
 
 export default function CreaseLabTab() {
-  const [pool, setPool] = useState(null);
+  // Live slate pool (lib/data.js); games already under way drop off while "upcoming only" is on.
+  const pool = useScoredPool();
   const [confirmedOnly, setConfirmedOnly] = useState(false);
   const [view, setView] = useState("projected");
   const selected = useMatchup();
   const lineups = useLineups(pool?.meta?.slateDate);
-
-  useEffect(() => {
-    fetchScoredPool().then(setPool);
-  }, []);
 
   const rows = useMemo(() => {
     if (!pool) return [];

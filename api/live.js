@@ -7,6 +7,8 @@
 // One /score call for the day, then one play-by-play call per game that has started. Everything
 // the Live tab shows is computed here from real shot events; nothing is estimated.
 
+import { startersFromPbp } from "./lineups.js";
+
 const NHL = "https://api-web.nhle.com/v1";
 const HD_MAX_FEET = 20;          // same "high danger" line the pool uses (build_player_pool.py)
 const RECENT_WINDOW = 10 * 60;   // seconds of game time for a skater's "recent" attempts
@@ -229,7 +231,7 @@ function attachWallclock(goal, times) {
 
 // Every goalie who has played tonight, from the NHL boxscore: shots against, saves, goals
 // against, TOI (the Crease Lab "Live" view and its 👑 saves leader).
-function goalieLines(box, game) {
+function goalieLines(box, game, starters = {}) {
   const out = [];
   for (const side of ["awayTeam", "homeTeam"]) {
     const team = box[side].abbrev;
@@ -239,7 +241,8 @@ function goalieLines(box, game) {
       if (!(m * 60 + s)) continue;
       out.push({
         gameId: game.gameId, team, opp, isHome: side === "homeTeam", state: game.state,
-        playerId: g.playerId, name: g.name?.default || "", starter: Boolean(g.starter),
+        // The boxscore's starter flag is empty until the game is closed out; the play-by-play knows sooner.
+        playerId: g.playerId, name: g.name?.default || "", starter: Boolean(g.starter) || starters[team]?.playerId === g.playerId,
         shotsAgainst: g.shotsAgainst ?? 0, saves: g.saves ?? 0, goalsAgainst: g.goalsAgainst ?? 0, toi: g.toi,
       });
     }
@@ -265,7 +268,7 @@ export async function buildLive(date) {
         g.pressure = pressure;
         skaters.push(...lines);
         goals.push(...gameGoals);
-        if (box) goalies.push(...goalieLines(box, g));
+        if (box) goalies.push(...goalieLines(box, g, startersFromPbp(pbp)));
       } catch (e) {
         g.error = e.message;
       }

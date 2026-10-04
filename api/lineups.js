@@ -11,6 +11,7 @@
 
 const NHL = "https://api-web.nhle.com/v1";
 const ROTOWIRE = "https://www.rotowire.com/hockey/nhl-lineups.php";
+const STARTED = new Set(["LIVE", "CRIT", "FINAL", "OFF"]);
 const RW_TO_NHL = { LA: "LAK", NJ: "NJD", SJ: "SJS", TB: "TBL", UTAH: "UTA", MON: "MTL", WAS: "WSH" };
 
 async function getJson(url) {
@@ -58,7 +59,39 @@ function parseRotowire(html) {
   return out;
 }
 
+// Each team's starting goalie from a game's play-by-play: the goalie in net for the first shot
+// the team faced. (The boxscore's "starter" flag stays empty until the game is closed out.)
+//   -> { TEAM: { playerId, name } }
+export function startersFromPbp(pbp) {
+  const abbrev = { [pbp.awayTeam.id]: pbp.awayTeam.abbrev, [pbp.homeTeam.id]: pbp.homeTeam.abbrev };
+  const names = new Map((pbp.rosterSpots || []).map((r) => [r.playerId, `${r.firstName.default} ${r.lastName.default}`]));
+  const out = {};
+  for (const play of pbp.plays || []) {
+    const d = play.details || {};
+    if (!d.goalieInNetId || !d.eventOwnerTeamId) continue;
+    const defending = d.eventOwnerTeamId === pbp.awayTeam.id ? pbp.homeTeam.id : pbp.awayTeam.id;
+    const team = abbrev[defending];
+    if (team && !out[team]) out[team] = { playerId: d.goalieInNetId, name: names.get(d.goalieInNetId) || "" };
+  }
+  return out;
+}
+
+// Kept in memory while the function instance is warm, to stay well under the NHL API's rate limit:
+// rosters for 30 minutes, and a finished game's dressed list + starting goalies for good.
+const ROSTER_TTL_MS = 30 * 60_000;
+const rosterCache = new Map(); // team -> { at, find }
+const finishedGames = new Map(); // gameId -> { dressed, inNet }
+const DONE = new Set(["FINAL", "OFF"]);
+
 async function rosterIndex(team) {
+  const hit = rosterCache.get(team);
+  if (hit && Date.now() - hit.at < ROSTER_TTL_MS) return hit.find;
+  const find = await loadRosterIndex(team);
+  rosterCache.set(team, { at: Date.now(), find });
+  return find;
+}
+
+async function loadRosterIndex(team) {
   const r = await getJson(`${NHL}/roster/${team}/current`);
   const players = ["forwards", "defensemen", "goalies"].flatMap((k) => r[k] || []).map((p) => ({
     id: p.id,
@@ -102,9 +135,13 @@ export async function buildLineups(date) {
     const home = g.homeTeam.abbrev;
     const key = `${away}@${home}`;
     const rwGame = rw[key] || {};
-    let dressed = {};
-    try {
+    const done = finishedGames.get(g.id);
+    let dressed = done?.dressed || {};
+    // Once a game has started, the goalie actually in net beats any pre-game report.
+    let inNet = done?.inNet || {};
+    if (!done) try {
       const pbp = await getJson(`${NHL}/gamecenter/${g.id}/play-by-play`);
+      if (STARTED.has(g.gameState)) inNet = startersFromPbp(pbp);
       for (const r of pbp.rosterSpots || []) {
         const team = r.teamId === pbp.homeTeam.id ? home : away;
         (dressed[team] ||= []).push({
@@ -116,11 +153,16 @@ export async function buildLineups(date) {
       }
     } catch {
       dressed = {};
+      inNet = {};
+    }
+    if (!done && DONE.has(g.gameState) && Object.keys(dressed).length && Object.keys(inNet).length === 2) {
+      finishedGames.set(g.id, { dressed, inNet });
     }
     const teams = {};
     for (const team of [away, home]) {
-      const find = await rosterIndex(team).catch(() => () => null);
       const t = rwGame[team] || { goalie: null, pp1: [], pp2: [], injuries: [] };
+      // Roster lookups only matter for RotoWire names.
+      const find = rwGame[team] ? await rosterIndex(team).catch(() => () => null) : () => null;
       const withId = (list) => list.map((p) => ({ ...p, playerId: find(p.name) }));
       teams[team] = {
         goalie: t.goalie ? { ...t.goalie, playerId: find(t.goalie.name) } : null,
@@ -128,6 +170,7 @@ export async function buildLineups(date) {
         pp2: withId(t.pp2),
         injuries: withId(t.injuries),
         dressed: dressed[team] || [],
+        inNet: inNet[team] || null,
       };
     }
     return {
