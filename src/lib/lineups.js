@@ -89,14 +89,21 @@ export function lineupMaps(data) {
 // Starting goalie for a team tonight, best source first: the goalie actually in net once the game
 // has started (NHL boxscore), a Confirmed report from RotoWire or DailyFaceoff (carried in the
 // pool's slate), then RotoWire's expected starter, then ours.
+const lastName = (s) => normName(String(s || "").trim().split(/\s+/).pop());
+
 export function startingGoalie(team, slateGame, maps) {
   const actual = maps.inNet?.get(team);
   if (actual) return { ...actual, status: "In net", confirmed: true, source: "NHL boxscore" };
-  const rw = maps.goalies.get(team);
   const side = slateGame && (slateGame.away === team ? "away" : slateGame.home === team ? "home" : null);
   const dfo = side
     ? { name: slateGame[`${side}Goalie`], playerId: slateGame[`${side}GoalieId`], status: slateGame[`${side}GoalieStatus`] }
     : null;
+  let rw = maps.goalies.get(team);
+  // RotoWire's name couldn't be matched to an NHL id (e.g. the roster lookup failed that run):
+  // borrow the id from DailyFaceoff / the pool when it's the same goalie by last name.
+  if (rw && rw.playerId == null && dfo?.playerId != null && lastName(rw.name) === lastName(dfo.name)) {
+    rw = { ...rw, playerId: dfo.playerId };
+  }
   if (rw?.status === "Confirmed") return { ...rw, confirmed: true, source: "RotoWire" };
   if (dfo?.status === "Confirmed") return { ...dfo, confirmed: true, source: "DailyFaceoff" };
   if (rw) return { ...rw, confirmed: false, source: "RotoWire" };

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import SlateStatus from "../components/SlateStatus.jsx";
+import BreakoutTab from "./BreakoutTab.jsx";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -65,7 +66,7 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
   );
 }
 
-export default function CheatSheetsTab() {
+function CheatSheetMain() {
   // Live slate pool (lib/data.js): opposing goalies, scratches and scores follow lineup news, and
   // games already under way drop off while "upcoming games only" is on.
   const pool = useScoredPool();
@@ -132,11 +133,6 @@ export default function CheatSheetsTab() {
 
   return (
     <div>
-      <div className="section-header">
-        <div className="section-title">📋 Cheat Sheets</div>
-        <div className="section-sub">Tonight's quick reads — top candidates and the goalies worth attacking, with lineup status</div>
-      </div>
-
       <SlateStatus />
 
       <div className="note">
@@ -192,6 +188,29 @@ export default function CheatSheetsTab() {
           ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+// Cheat Sheets has two pages: the usual quick reads, and Breakout Watch (rising shot quality into a
+// soft matchup — lib/breakout.js).
+export default function CheatSheetsTab() {
+  const [view, setView] = useState("main");
+  return (
+    <div>
+      <div className="section-header">
+        <div className="section-title">📋 Cheat Sheets</div>
+        <div className="section-sub">
+          {view === "main"
+            ? "Tonight's quick reads — top candidates and the goalies worth attacking, with lineup status"
+            : "The honest best looks beyond the usual scorers — rising shot quality into a soft matchup"}
+        </div>
+      </div>
+      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
+        <button className={`pill-btn ${view === "main" ? "active" : ""}`} onClick={() => setView("main")}>📋 Quick reads</button>
+        <button className={`pill-btn ${view === "breakout" ? "active" : ""}`} onClick={() => setView("breakout")}>🚀 Breakout Watch</button>
+      </div>
+      {view === "main" ? <CheatSheetMain /> : <><SlateStatus /><BreakoutTab /></>}
     </div>
   );
 }
