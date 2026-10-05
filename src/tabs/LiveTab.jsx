@@ -177,6 +177,7 @@ export default function LiveTab() {
   }
 
   const poolById = useMemo(() => new Map((pool || []).map((p) => [p.playerId, p])), [pool]);
+  const heatById = useMemo(() => new Map((data?.skaters || []).map((s) => [s.playerId, s.heat?.label])), [data]);
   // gameId -> scorerId of that game's first goal
   const firstScorer = useMemo(
     () => new Map([...firstGoalsByGame(data?.goals).entries()].map(([gid, g]) => [gid, g.scorerId])),
@@ -256,7 +257,7 @@ export default function LiveTab() {
         </div>
       )}
 
-      {boxGame && <BoxScore gameId={boxGame} poolById={poolById} refreshKey={refreshKey} onClose={() => setBoxGame(null)} />}
+      {boxGame && <BoxScore gameId={boxGame} poolById={poolById} heatById={heatById} refreshKey={refreshKey} onClose={() => setBoxGame(null)} />}
 
       {view === "games" && data && data.games.length > 0 && (
         <>

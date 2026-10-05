@@ -24,7 +24,7 @@ function skaterLine(p) {
   return {
     playerId: p.playerId, number: p.sweaterNumber, name: text(p.name), position: p.position,
     goals: p.goals, assists: p.assists, points: p.points, plusMinus: p.plusMinus, sog: p.sog,
-    hits: p.hits, blocks: p.blockedShots, pim: p.pim, toi: p.toi, ppGoals: p.powerPlayGoals,
+    hits: p.hits, blocks: p.blockedShots, pim: p.pim, toi: p.toi, shifts: p.shifts ?? null, ppGoals: p.powerPlayGoals,
     faceoffPct: p.faceoffWinningPctg,
   };
 }
@@ -77,7 +77,16 @@ export async function buildBoxscore(gameId) {
     gameId: box.id,
     state: box.gameState,
     period: periodLabel(box.periodDescriptor),
-    clock: box.clock ? { timeRemaining: box.clock.timeRemaining, inIntermission: box.clock.inIntermission } : null,
+    clock: box.clock ? {
+      timeRemaining: box.clock.timeRemaining, secondsRemaining: box.clock.secondsRemaining ?? null,
+      running: Boolean(box.clock.running), inIntermission: box.clock.inIntermission,
+    } : null,
+    periodNumber: box.periodDescriptor?.number ?? null,
+    // Skaters on the ice per side right now (e.g. 5 vs 4 on a power play) — sizes the on-ice guess.
+    situation: landing?.situation ? {
+      code: landing.situation.situationCode || null,
+      away: landing.situation.awayTeam?.strength ?? null, home: landing.situation.homeTeam?.strength ?? null,
+    } : null,
     away, home, periods, scoring,
     threeStars: (landing?.summary?.threeStars || []).map((s) => ({
       star: s.star, playerId: s.playerId, team: s.teamAbbrev, name: text(s.name),

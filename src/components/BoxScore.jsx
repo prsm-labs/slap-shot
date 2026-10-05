@@ -1,9 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
+import { batchFromBox, estimateOnIce, sameBatch } from "../lib/onIce.js";
 
-// Full box score for one game, from /api/boxscore (api/boxscore.js). Refreshes every 30s while
-// the game is live.
-const POLL_MS = 30_000;
+// Full box score for one game, from /api/boxscore (api/boxscore.js). Refreshes every 15s while
+// the game is live (the endpoint is cached 15s at the edge). Skater rows are tinted tan when the
+// player is estimated to be on the ice (lib/onIce.js) and dark red when the Live tab's heat scale
+// has them Heating Up or On Fire.
+const POLL_MS = 15_000;
+const HOT = new Set(["Heating Up", "On Fire"]);
+const ON_ICE = "#d9b46a";
+const rowStyle = (onIce, hot) => ({
+  background: hot ? "rgba(150,24,24,.42)" : onIce ? "rgba(217,180,106,.20)" : undefined,
+  boxShadow: onIce ? `inset 3px 0 0 ${ON_ICE}` : undefined,
+});
 const LIVE = new Set(["LIVE", "CRIT"]);
 
 const cell = { padding: "5px 8px", textAlign: "right" };
@@ -35,7 +44,7 @@ function Linescore({ box }) {
   );
 }
 
-function SkaterTable({ t, poolById }) {
+function SkaterTable({ t, poolById, onIce, heatById }) {
   const rows = [...t.skaters].sort((a, b) => b.points - a.points || b.goals - a.goals || b.sog - a.sog);
   return (
     <div className="table-wrap" style={{ marginTop: 6 }}>
@@ -47,15 +56,20 @@ function SkaterTable({ t, poolById }) {
           </tr>
         </thead>
         <tbody>
-          {rows.map((p) => (
-            <tr key={p.playerId}>
+          {rows.map((p) => {
+            const on = onIce?.has(p.playerId);
+            const heat = heatById?.get(p.playerId);
+            return (
+            <tr key={p.playerId} style={rowStyle(on, HOT.has(heat))}>
               <td
                 className="clickable"
                 style={left}
                 onClick={() => openSkaterSlide(poolById?.get(p.playerId) || { playerId: p.playerId, name: p.name, team: t.abbrev })}
               >
+                {on && <span title="On the ice now (estimated)" style={{ color: ON_ICE }}>● </span>}
                 <span className="mono" style={{ color: "var(--muted)", fontSize: 10 }}>#{p.number} {p.position} </span>
                 <span className="player-name-link">{p.name}</span>
+                {HOT.has(heat) && <span className="mono" style={{ fontSize: 9, marginLeft: 6, color: "#ff8a7a" }}>{heat === "On Fire" ? "🔥 ON FIRE" : "HEATING UP"}</span>}
               </td>
               <td style={cell}>{p.goals}</td>
               <td style={cell}>{p.assists}</td>
@@ -67,7 +81,8 @@ function SkaterTable({ t, poolById }) {
               <td style={cell}>{p.pim}</td>
               <td style={cell} className="mono">{p.toi}</td>
             </tr>
-          ))}
+            );
+          })}
         </tbody>
       </table>
     </div>
@@ -104,10 +119,13 @@ function GoalieTable({ t }) {
   );
 }
 
-export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0 }) {
+export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, heatById }) {
   const [box, setBox] = useState(null);
   const [error, setError] = useState(null);
   const shownGame = useRef(null);
+  // The last two distinct batches of skater ice time, for the on-ice estimate.
+  const batches = useRef({ prev: null, cur: null });
+  const [onIce, setOnIce] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -120,14 +138,30 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0 }) 
         if (cancelled) return;
         setBox(body);
         setError(null);
+        trackOnIce(body);
         if (LIVE.has(body.state)) timer = setTimeout(load, POLL_MS);
       } catch (e) {
         if (!cancelled) setError(String(e.message || e));
       }
     }
+    function trackOnIce(body) {
+      if (!LIVE.has(body.state) || body.clock?.inIntermission) {
+        setOnIce(null);
+        return;
+      }
+      const b = batchFromBox(body);
+      const { cur } = batches.current;
+      if (cur && sameBatch(cur, b)) return;
+      batches.current = { prev: cur, cur: b };
+      if (!cur) return;
+      const skaters = body.situation ? { [body.away.abbrev]: body.situation.away, [body.home.abbrev]: body.situation.home } : {};
+      setOnIce(estimateOnIce(cur, b, skaters));
+    }
     // A different game starts blank; the Live tab's ⟳ Refresh (refreshKey) reloads in place.
     if (shownGame.current !== gameId) {
       shownGame.current = gameId;
+      batches.current = { prev: null, cur: null };
+      setOnIce(null);
       setBox(null);
     }
     load();
@@ -175,9 +209,16 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0 }) 
             </div>
           )}
 
+          {LIVE.has(box.state) && (
+            <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginTop: 12, display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <span><span style={{ color: ON_ICE }}>●</span> tan row = on the ice now {onIce ? "" : "(appears after the next box score update)"}</span>
+              <span><span style={{ color: "#ff8a7a" }}>■</span> dark red = Heating Up / On Fire</span>
+              <span>On-ice is estimated from the live box score's ice time and can trail a line change by ~30s.</span>
+            </div>
+          )}
           {["away", "home"].map((side) => (
             <div key={side} style={{ marginTop: 12 }}>
-              <SkaterTable t={box[side]} poolById={poolById} />
+              <SkaterTable t={box[side]} poolById={poolById} onIce={onIce} heatById={heatById} />
               <GoalieTable t={box[side]} />
             </div>
           ))}
