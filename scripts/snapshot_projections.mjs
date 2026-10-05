@@ -17,6 +17,7 @@ import { scorePlayerPool } from "../src/scoring.js";
 import { computeGoalieGrades, gradeSlate } from "../src/lib/grades.js";
 import { isGoalSignal, isPointSignal } from "../src/lib/signals.js";
 import { simOdds, firstGoalProbs } from "../src/lib/projections.js";
+import { applySlateScores } from "../src/lib/slapScore.js";
 import { projectGoalie } from "../src/lib/crease.js";
 import { lineupMaps, startingGoalie } from "../src/lib/lineups.js";
 import { buildLineups } from "../api/lineups.js";
@@ -87,11 +88,13 @@ for (const g of meta.slate) {
 const goalieGrades = computeGoalieGrades(pool.goalies);
 const scoredRaw = scorePlayerPool(pool.players);
 const grades = gradeSlate(scoredRaw);
-const scored = scoredRaw.map((p) => {
+// Slap Score v2 (lib/slapScore.js): Slap Score, tier, gGOAL and goal / point % from the grade model,
+// exactly as the app shows them. The 3+ SOG % still comes from the shot sim (lib/projections.js).
+const scored = applySlateScores(scoredRaw.map((p) => {
   const grade = grades.get(p.playerId);
   const goalieGrade = p.opponentGoalieId != null ? goalieGrades[p.opponentGoalieId] : null;
-  return { ...p, ...simOdds(p), grade, goalieGrade };
-});
+  return { ...p, plus3SogPct: simOdds(p).plus3SogPct, grade, goalieGrade, modelProbs: grade?.probs ?? null };
+}));
 const firstGoal = firstGoalProbs(scored, (p) => gameOf.get(p.team)?.key);
 const bySlap = [...scored].sort((a, b) => b.slapScore - a.slapScore);
 const slapRank = new Map(bySlap.map((p, i) => [p.playerId, i + 1]));
@@ -125,6 +128,7 @@ const players = scored.map((p) => {
     snipeScore: p.snipeScore,
     breakawayScore: p.breakawayScore,
     anytimeGoalPct: p.anytimeGoalPct,
+    anytimePointPct: p.anytimePointPct,
     plus3SogPct: p.plus3SogPct,
     firstGoalPct: Math.round((firstGoal.get(p.playerId) || 0) * 1000) / 10,
     goalSignal: isGoalSignal(p),
@@ -142,7 +146,8 @@ const snapshot = {
       awayGoalie: g.awayGoalie, awayGoalieStatus: g.awayGoalieStatus,
       homeGoalie: g.homeGoalie, homeGoalieStatus: g.homeGoalieStatus,
     })),
-    note: "Pre-game projections as shown in the app. Sim % are the exact odds the Lamp/Apple Lab Monte Carlo estimates.",
+    scoreVersion: 2,
+    note: "Pre-game projections as shown in the app. Slap Score v2: goal / point % from the grade model adjusted for the opponent (lib/slapScore.js); 3+ SOG % from the shot sim.",
   },
   players,
   goalies: await goalieSection(),

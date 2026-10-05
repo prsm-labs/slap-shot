@@ -177,7 +177,7 @@ export default function TrackRecordLive() {
       {date && <MatchupFilter games={dayGames} />}
 
       <div className="signal-board" style={{ flexWrap: "wrap" }}>
-        <StatCard label="Scorers / expected" value={`${s.scorers.length} / ${s.expectedScorers.toFixed(1)}`} sub="actual vs sum of sim goal %" />
+        <StatCard label="Scorers / expected" value={`${s.scorers.length} / ${s.expectedScorers.toFixed(1)}`} sub="actual vs sum of projected goal %" />
         {TIERS.map((t) => (
           <StatCard key={t} label={`${t} goal rate`} value={rate(s.tier[t].hits, s.tier[t].n)} sub={`${s.tier[t].hits}/${s.tier[t].n}`} />
         ))}
@@ -194,7 +194,7 @@ export default function TrackRecordLive() {
 
       <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 14 }}>
         <div className="card" style={{ flex: "1 1 320px" }}>
-          <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6 }}>SIM CHECK — did skaters score as often as the sim said?</div>
+          <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6 }}>GOAL % CHECK — did skaters score as often as projected? (Through 10/4 this was the old shot sim, which ran low; from 10/5 Slap Score v2 — the grade model's matchup-adjusted goal %, with tiers by slate rank.)</div>
           <table className="data-table">
             <thead><tr><th>Sim goal %</th><th>Skaters</th><th>Sim said</th><th>Actually scored</th></tr></thead>
             <tbody>
@@ -213,7 +213,7 @@ export default function TrackRecordLive() {
           <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6 }}>🚨 WHO SCORED — and what we said before the game</div>
           {s.upset && (
             <div className="mono" style={{ fontSize: 11, marginBottom: 6, color: "var(--accent2)" }}>
-              Biggest upset: {s.upset.name} ({s.upset.team}) — sim {s.upset.simGoal}%, Slap #{s.upset.slapRank}
+              Biggest upset: {s.upset.name} ({s.upset.team}) — projected {s.upset.simGoal}%, Slap #{s.upset.slapRank}
             </div>
           )}
           <div style={{ maxHeight: 260, overflowY: "auto" }}>
@@ -221,7 +221,7 @@ export default function TrackRecordLive() {
               <div key={`${r.date}-${r.playerId}`} className="mono" style={{ fontSize: 11, padding: "3px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
                 {"🚨".repeat(Math.min(r.g, 3))}{r.firstGoal ? ` ${FIRST_GOAL}` : ""} <b>{r.name}</b> <span style={{ color: "var(--muted)" }}>{r.team}{!date ? ` · ${shortDate(r.date)}` : ""}</span>
                 <span style={{ color: "var(--muted)" }}>
-                  {" "}— {r.inPool ? `Slap ${r.slapScore} (#${r.slapRank}) · ${r.tier} · sim ${r.simGoal}%` : "not in the projections (no NHL history)"}
+                  {" "}— {r.inPool ? `Slap ${r.slapScore} (#${r.slapRank}) · ${r.tier} · goal ${r.simGoal}%` : "not in the projections (no NHL history)"}
                 </span>
               </div>
             ))}
@@ -259,7 +259,7 @@ export default function TrackRecordLive() {
               {th("grade", "Grade")}
               {th("slapScore", "Slap")}
               {th("tier", "Tier")}
-              {th("simGoal", "Sim G%")}
+              {th("simGoal", "Goal %")}
               {th("sim3Sog", "Sim 3+SOG")}
               {th("firstGoalPct", `${FIRST_GOAL}%`)}
               {th("g", "G")}

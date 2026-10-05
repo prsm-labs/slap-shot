@@ -15,14 +15,17 @@
 // itself one of the sim's own inputs, so tougher matchups that raise breakawayScore's population
 // rank also suppress the simulated goal probability -- the three legs pull against each other).
 // 30% left the signal permanently empty; 25% actually fires against real sim output.
+// v2 (2026-10-05): the signals now run on Slap Score v2 (lib/slapScore.js — the grade model's
+// matchup-adjusted odds). Breakaway is out (its scale was misread and it showed no predictive value);
+// the comments above describe the retired v1 thresholds.
+//   Goal Signal  = Slap Score >= 85 (top 15% tonight) AND opponent in the softer half by xGA allowed.
+//                  2025-26 backtest of that pool: 32% scored (base ~15%); 10/2-10/4: top 15% scored 27%.
+//   Point Signal = point % in tonight's top 15% AND simulated 3+ SOG >= 40%. 10/2-10/4: 66% got a point
+//                  (59 of 89; base 35%).
 export function isGoalSignal(p) {
-  return p.slapScore >= 70 && p.breakawayScore >= 7 && (p.anytimeGoalPct ?? 0) >= 25;
+  return (p.slapScore ?? 0) >= 85 && (p.oppSoftPct ?? 0) >= 0.5;
 }
 
-// Point == Goal in our current data (no assist events, see scoring.js/build doc's flagged gap),
-// so using anytimePointPct here would just duplicate the Goal Signal. +3 SOG is a genuinely
-// broader/more-common signal (same "lower bar, cumulative" shape as Going Yard's TB2+ vs HR),
-// so that's the sim% leg instead.
 export function isPointSignal(p) {
-  return p.slapScore >= 65 && p.breakawayScore >= 6 && (p.plus3SogPct ?? 0) >= 40;
+  return (p.pointPct ?? 0) >= 0.85 && (p.plus3SogPct ?? 0) >= 40;
 }

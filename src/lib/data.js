@@ -4,6 +4,7 @@
 import { useSyncExternalStore } from "react";
 import { scorePlayerPool } from "../scoring.js";
 import { computeGoalieGrades, gradeSlate } from "./grades.js";
+import { applySlateScores } from "./slapScore.js";
 import { estimatedToi, ppToiPerGame } from "./toi.js";
 import { fetchLineups } from "./lineups.js";
 import { applyLineups, STARTED } from "./slateOverlay.js";
@@ -52,7 +53,7 @@ function build() {
   const scored = scorePlayerPool(active);
   const goalieGrades = computeGoalieGrades(raw.goalies);
   const grades = gradeSlate(scored);
-  const players = scored.map((p) => {
+  const graded = scored.map((p) => {
     const goalieGrade = p.opponentGoalieId != null ? goalieGrades[p.opponentGoalieId] : null;
     // One grade per skater (lib/grades.js gradeSlate); baseGrade kept as an alias for older views.
     const grade = grades.get(p.playerId);
@@ -61,6 +62,8 @@ function build() {
       modelProbs: grade?.probs ?? null, estToi: estimatedToi(p), ppToi: ppToiPerGame(p),
     };
   });
+  // Slap Score / tiers / goal % / point % from the grade model (lib/slapScore.js).
+  const players = applySlateScores(graded);
   const goalies = raw.goalies.map((g) => ({ ...g, grade: goalieGrades[g.playerId] || null }));
 
   currentSig = sig;

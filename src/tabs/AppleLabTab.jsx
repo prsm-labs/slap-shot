@@ -112,11 +112,13 @@ export default function AppleLabTab() {
     <div>
       <div className="section-header">
         <div className="section-title">🍎 Apple Lab</div>
-        <div className="section-sub">Anytime-point Monte Carlo + a +3 SOG readout from the same sim, vs. the actual goalie faced</div>
+        <div className="section-sub">Anytime-point chance from the calibrated grade model, plus a 3+ shots-on-goal sim</div>
       </div>
 
       <div className="note">
-        ℹ️ "An apple" = an assist. Point% = Goal% right now (no assist data yet). ★ Point Signal = Slap Score ≥65 AND Breakaway Score ≥55 AND simulated +3 SOG% ≥40%.
+        ℹ️ "An apple" = an assist. Point % = the grade model's chance of a goal or assist (first week: 35.5% said vs 33.9% happened),
+        nudged for tonight's opponent. +3 SOG % comes from a 10,000-run shot simulation (first week: 21.0% said vs 22.1% happened).
+        ★ Point Signal = point % in tonight's top 15% AND +3 SOG ≥40% — 66% of those got a point over the first week (base 35%).
       </div>
 
       <PositionFilter />
@@ -147,7 +149,7 @@ export default function AppleLabTab() {
         <div className="signal-board">
           <div className="signal-tile"><div className="lbl">Top Slap Score</div><div className="val">{board.topSlap}</div></div>
           <div className="signal-tile"><div className="lbl">Point Signals</div><div className="val">{board.signals}</div></div>
-          <div className="signal-tile"><div className="lbl">Top Sim Point %</div><div className="val">{board.topSim}%</div></div>
+          <div className="signal-tile"><div className="lbl">Top Point %</div><div className="val">{board.topSim}%</div></div>
           <div className="signal-tile"><div className="lbl">Pre-Game Exp. Points</div><div className="val">{board.expected.toFixed(1)}</div></div>
           <div className="signal-tile"><div className="lbl">Top +3 SOG %</div><div className="val">{board.topSog}%</div></div>
         </div>

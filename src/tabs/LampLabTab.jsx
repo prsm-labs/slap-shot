@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
@@ -28,11 +28,11 @@ function isRoleEligible(p) {
 }
 
 function exportCsv(rows, filename) {
-  const header = ["name", "team", "opponentGoalie", "goalieGrade", "anytimeGoalPct", "slapScore", "breakawayScore", "signal"];
+  const header = ["name", "team", "opponentGoalie", "goalieGrade", "anytimeGoalPct", "slapScore", "tier", "signal"];
   const lines = [header.join(",")];
   for (const p of rows) {
     lines.push([
-      p.name, p.team, p.opponentGoalie || "", p.goalieGrade?.letter || "", p.anytimeGoalPct, p.slapScore, p.breakawayScore, isGoalSignal(p) ? "Y" : "N",
+      p.name, p.team, p.opponentGoalie || "", p.goalieGrade?.letter || "", p.anytimeGoalPct, p.slapScore, p.tier, isGoalSignal(p) ? "Y" : "N",
     ].map((v) => `"${v}"`).join(","));
   }
   const blob = new Blob([lines.join("\n")], { type: "text/csv" });
@@ -45,49 +45,13 @@ function exportCsv(rows, filename) {
 }
 
 export default function LampLabTab() {
-  // Live slate pool (lib/data.js) — re-simulated whenever lineup news changes it.
+  // Live slate pool (lib/data.js). Goal % = Slap Score v2's calibrated, matchup-adjusted goal chance
+  // (lib/slapScore.js). The old 10,000-run sim (public/lampWorker.js, left on disk) ran a third low.
   const live = useScoredPool();
-  const pool = useMemo(() => (live ? live.players.filter(isRoleEligible) : null), [live]);
-  const [results, setResults] = useState(null);
-  const [resultsFor, setResultsFor] = useState(null); // the pool the shown results were simulated from
-  const sentRef = useRef(null);
+  const merged = useMemo(() => (live ? live.players.filter(isRoleEligible) : null), [live]);
   const [team, setTeam] = useState(null);
   const selected = useMatchup();
   const position = usePosition();
-  const workerRef = useRef(null);
-
-  useEffect(() => {
-    workerRef.current = new Worker("/lampWorker.js");
-    workerRef.current.onmessage = (e) => {
-      setResults(e.data.results);
-      setResultsFor(sentRef.current);
-    };
-    return () => workerRef.current?.terminate();
-  }, []);
-
-  const running = Boolean(pool) && resultsFor !== pool;
-  function runSim() {
-    if (!pool || running) return;
-    setResults(null);
-    setResultsFor(null);
-    sentRef.current = pool;
-    workerRef.current.postMessage({ players: pool });
-  }
-
-  // Auto-run once the pool loads — same "auto-fires on load/refresh" behavior as
-  // BarrelLabTab's useEffect on selGame/simTrigger (App.jsx:32550-32557), not a manual-only button.
-  useEffect(() => {
-    if (!pool || !workerRef.current) return;
-    sentRef.current = pool;
-    workerRef.current.postMessage({ players: pool });
-  }, [pool]);
-
-  const merged = useMemo(() => {
-    if (!results || !pool) return null;
-    // Results from the previous run can include skaters since scratched — keep only the current slate.
-    const byId = new Map(pool.map((p) => [p.playerId, p]));
-    return results.filter((r) => byId.has(r.playerId)).map((r) => ({ ...r, ...byId.get(r.playerId) }));
-  }, [results, pool]);
 
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
   const filtered = useMemo(() => {
@@ -105,12 +69,11 @@ export default function LampLabTab() {
     if (!filtered.length) return null;
     const signals = filtered.filter(isGoalSignal);
     const expected = filtered.reduce((s, p) => s + (p.anytimeGoalPct || 0) / 100, 0);
-    // breakawayScore's real range tops out ~9-11, not 100 -- see signals.js's calibration note.
-    const eliteMatchups = filtered.filter((p) => p.breakawayScore >= 7).length;
+    const softMatchups = filtered.filter((p) => (p.oppSoftPct ?? 0) >= 0.67).length;
     const toughGoalies = filtered.filter((p) => ["A+", "A"].includes(p.goalieGrade?.letter)).length;
     const topSlap = Math.max(...filtered.map((p) => p.slapScore));
     const topSim = Math.max(...filtered.map((p) => p.anytimeGoalPct || 0));
-    return { signals: signals.length, expected, eliteMatchups, toughGoalies, topSlap, topSim };
+    return { signals: signals.length, expected, softMatchups, toughGoalies, topSlap, topSim };
   }, [filtered]);
 
   const topReads = useMemo(
@@ -122,10 +85,14 @@ export default function LampLabTab() {
     <div>
       <div className="section-header">
         <div className="section-title">💡 Lamp Lab</div>
-        <div className="section-sub">Anytime-goal Monte Carlo — 10,000 iterations per skater, vs. the actual goalie faced</div>
+        <div className="section-sub">Anytime-goal chance — the calibrated grade model, adjusted for tonight's opponent</div>
       </div>
 
-      <div className="note">ℹ️ "Light the lamp" = score a goal. ★ Goal Signal = Slap Score ≥70 AND Breakaway Score ≥60 AND simulated goal% ≥30%.</div>
+      <div className="note">
+        ℹ️ "Light the lamp" = score a goal. Goal % is the grade model's chance to score (its odds matched reality over the first week:
+        15.7% said vs 14.7% happened), nudged for how many expected goals tonight's opponent allows. ★ Goal Signal = Slap Score ≥85
+        (top 15% tonight) AND an opponent in the softer half — that group scored 32% of the time in last season's backtest.
+      </div>
 
       <PositionFilter />
       <MatchupFilter />
@@ -139,25 +106,16 @@ export default function LampLabTab() {
           </div>
         )}
         <div style={{ flex: 1 }} />
-        <button className="btn" onClick={runSim} disabled={!pool || running}>
-          {running ? "Simulating…" : "⟳ Refresh"}
-        </button>
         <button className="btn" onClick={() => exportCsv(sortedWithSignalFirst, "lamp-lab.csv")} disabled={!sorted.length}>⬇ CSV</button>
       </div>
-
-      {running && (
-        <div className="note" style={{ textAlign: "center" }}>
-          Running 10,000 Monte Carlo simulations… · {pool?.length ?? 0} skaters · real shot rate + shooting% + matchup gate applied
-        </div>
-      )}
 
       {board && (
         <div className="signal-board">
           <div className="signal-tile"><div className="lbl">Top Slap Score</div><div className="val">{board.topSlap}</div></div>
           <div className="signal-tile"><div className="lbl">Goal Signals</div><div className="val">{board.signals}</div></div>
-          <div className="signal-tile"><div className="lbl">Top Sim Goal %</div><div className="val">{board.topSim}%</div></div>
+          <div className="signal-tile"><div className="lbl">Top Goal %</div><div className="val">{board.topSim}%</div></div>
           <div className="signal-tile"><div className="lbl">Pre-Game Exp. Goals</div><div className="val">{board.expected.toFixed(1)}</div></div>
-          <div className="signal-tile"><div className="lbl">Elite Matchups</div><div className="val">{board.eliteMatchups}</div></div>
+          <div className="signal-tile"><div className="lbl">Soft Matchups</div><div className="val">{board.softMatchups}</div></div>
           <div className="signal-tile"><div className="lbl">Tough Goalies Faced</div><div className="val">{board.toughGoalies}</div></div>
         </div>
       )}
@@ -175,7 +133,7 @@ export default function LampLabTab() {
               </div>
               {isGoalSignal(p) && <div className="mono" style={{ fontSize: 10, marginBottom: 6 }}><span className="signal-star">★</span> Goal Signal</div>}
               <div style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 800, fontSize: 24 }}>{p.anytimeGoalPct}%</div>
-              <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>Slap {p.slapScore} · Breakaway {p.breakawayScore}</div>
+              <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>Slap {p.slapScore} · {p.tier}</div>
             </div>
           ))}
         </div>
@@ -190,7 +148,7 @@ export default function LampLabTab() {
                 <th>Opp Goalie</th>
                 <th className={sortKey === "anytimeGoalPct" ? "sorted" : ""} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th className={sortKey === "breakawayScore" ? "sorted" : ""} onClick={() => toggleSort("breakawayScore")}>Breakaway{sortKey === "breakawayScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={sortKey === "tier" ? "sorted" : ""} onClick={() => toggleSort("tier")}>Tier{sortKey === "tier" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
               </tr>
             </thead>
@@ -210,7 +168,7 @@ export default function LampLabTab() {
                   <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimeGoalPct}%</td>
                   <td>{p.slapScore}</td>
-                  <td>{p.breakawayScore}</td>
+                  <td>{p.tier}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>
                 </tr>
               ))}

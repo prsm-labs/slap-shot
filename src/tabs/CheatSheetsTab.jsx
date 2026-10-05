@@ -115,11 +115,10 @@ function CheatSheetMain() {
   };
 
   const inGame = filterPositions(filterPlayers(players, selected), position).filter(passesLineup);
-  const goalCandidates = [...inGame].sort((a, b) => b.gGoal - a.gGoal).slice(0, 5);
-  // Point Candidates: Ice Sig (usage/opportunity) + gGOAL — a broader "gets on the scoresheet" list.
+  // Goal / point odds from Slap Score v2 (lib/slapScore.js): the grade model, adjusted for the opponent.
+  const goalCandidates = [...inGame].sort((a, b) => (b.anytimeGoalPct ?? 0) - (a.anytimeGoalPct ?? 0)).slice(0, 5);
   const pointCandidates = [...inGame]
-    .map((p) => ({ ...p, _pointBlend: p.iceSig * 0.5 + p.gGoal * 0.5 }))
-    .sort((a, b) => b._pointBlend - a._pointBlend)
+    .sort((a, b) => (b.anytimePointPct ?? 0) - (a.anytimePointPct ?? 0))
     .slice(0, 5);
   const shotCandidates = [...inGame].sort((a, b) => (b.ShotsOnGoalPerGame || 0) - (a.ShotsOnGoalPerGame || 0)).slice(0, 5);
 
@@ -150,10 +149,10 @@ function CheatSheetMain() {
       <MatchupFilter />
 
       <div className="grid-cards">
-        <ListCard title="🥅 Goal Candidates" sub="Top 5 by gGOAL" items={goalCandidates} renderRow={(p) => `${p.gGoal}`}
+        <ListCard title="🥅 Goal Candidates" sub="Top 5 by chance to score" items={goalCandidates} renderRow={(p) => `${p.anytimeGoalPct}%`}
           onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
-        <ListCard title="🎯 Point Candidates" sub="Top 5 by Ice Sig + gGOAL blend" items={pointCandidates}
-          renderRow={(p) => `${Math.round(p._pointBlend)}`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+        <ListCard title="🎯 Point Candidates" sub="Top 5 by chance of a point" items={pointCandidates}
+          renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
         <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates}
           renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
 

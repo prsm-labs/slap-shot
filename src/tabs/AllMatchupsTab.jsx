@@ -100,7 +100,7 @@ export default function AllMatchupsTab() {
       </div>
 
       <div className="note">
-        ℹ️ Ranked by Slap Score, a single 0-99 score blending recent form, shot quality, and this specific goalie matchup.
+        ℹ️ Ranked by Slap Score (0-99): where each skater's chance to score ranks on tonight's slate — the calibrated grade model, adjusted for the opponent's defense. Tiers: Elite Add-On 90+, Core Target 70-89, Value Upside 50-69.
         Goalies and scratches update as lineups are confirmed (✅ = confirmed or in net); Projected / Expected are not yet confirmed.
       </div>
       <SlateStrip meta={meta} />

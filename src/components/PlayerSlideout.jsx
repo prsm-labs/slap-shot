@@ -115,7 +115,7 @@ export default function PlayerSlideout() {
               <div style={{ display: "flex", gap: 10, margin: "12px 0", flexWrap: "wrap" }}>
                 <span className={`tier-pill ${TIER_CLASS[player.tier] || "tier-ignore"}`}>{player.tier}</span>
                 <div className="score-box"><span className="num mono">{player.slapScore}</span><span className="lbl">Slap Score</span></div>
-                <div className="score-box"><span className="num mono">{player.gGoal}</span><span className="lbl">gGOAL</span></div>
+                <div className="score-box"><span className="num mono">{player.gGoal != null ? `${player.gGoal}%` : "—"}</span><span className="lbl">Goal chance</span></div>
               </div>
             )}
 
