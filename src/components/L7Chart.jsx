@@ -12,10 +12,10 @@ const SKATER_VIEWS = [
 ];
 
 // "9/29" and "@CAR" / "vs CAR" under each bar.
-function barDate(g) {
+function barDate(g, showYear) {
   if (!g.date) return "";
-  const [, m, d] = g.date.split("-");
-  return `${Number(m)}/${Number(d)}`;
+  const [y, m, d] = g.date.split("-");
+  return showYear ? `${Number(m)}/${Number(d)}/${y.slice(2)}` : `${Number(m)}/${Number(d)}`;
 }
 function barOpp(g) {
   if (!g.opp) return "";
@@ -27,14 +27,15 @@ const GOALIE_VIEWS = [
   ["shutout", "🥅 Shutout", (g) => (g.shutout ? 1 : 0), 1],
 ];
 
-export default function L7Chart({ games, role = "skater" }) {
-  const views = role === "goalie" ? GOALIE_VIEWS : SKATER_VIEWS;
+// views / showYear / emptyText: optional, for the H2H views in the skater slideout.
+export default function L7Chart({ games, role = "skater", views: customViews, showYear = false, emptyText }) {
+  const views = customViews || (role === "goalie" ? GOALIE_VIEWS : SKATER_VIEWS);
   const [viewKey, setViewKey] = useState(views[0][0]);
   const view = views.find((v) => v[0] === viewKey) || views[0];
   const [, , getValue, threshold] = view;
 
   if (!games || games.length === 0) {
-    return <div className="mono" style={{ fontSize: 11, color: "var(--muted)", padding: "8px 0" }}>No recent game log available.</div>;
+    return <div className="mono" style={{ fontSize: 11, color: "var(--muted)", padding: "8px 0" }}>{emptyText || "No recent game log available."}</div>;
   }
 
   const g7 = games.slice(-7);
@@ -79,7 +80,7 @@ export default function L7Chart({ games, role = "skater" }) {
       <div style={{ display: "flex", gap: 4, marginTop: 4 }}>
         {g7.map((g, i) => (
           <div key={i} className="mono" style={{ flex: 1, textAlign: "center", fontSize: 9, lineHeight: 1.3, color: "var(--muted)", minWidth: 0 }}>
-            <div>{barDate(g)}</div>
+            <div>{barDate(g, showYear)}</div>
             <div style={{ color: "var(--text)", whiteSpace: "nowrap" }}>{barOpp(g)}</div>
           </div>
         ))}

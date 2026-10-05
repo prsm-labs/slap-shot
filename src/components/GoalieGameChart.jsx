@@ -12,10 +12,10 @@ const VIEWS = [
 const BAR_H = 110;
 const SV_FLOOR = 0.8; // save % bars start at .800 so differences are visible
 
-const dateLabel = (d) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}`;
+const dateLabel = (d, showYear) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}${showYear ? `/${d.slice(2, 4)}` : ""}`;
 const seasonLabel = (s) => `${String(s).slice(0, 4)}-${String(s).slice(6, 8)}`;
 
-export default function GoalieGameChart({ games }) {
+export default function GoalieGameChart({ games, showYear = false }) {
   const [key, setKey] = useState("saves");
   const view = VIEWS.find((v) => v.key === key);
   if (!games?.length) return <div className="mono" style={{ fontSize: 11, color: "var(--muted)", padding: "8px 0" }}>No NHL games yet.</div>;
@@ -68,7 +68,7 @@ export default function GoalieGameChart({ games }) {
       <div style={{ display: "flex", gap: 4, marginTop: 4 }}>
         {games.map((g) => (
           <div key={g.gameId} className="mono" style={{ flex: 1, textAlign: "center", fontSize: 9, lineHeight: 1.3, color: "var(--muted)", minWidth: 0 }}>
-            <div>{dateLabel(g.date)}</div>
+            <div>{dateLabel(g.date, showYear)}</div>
             <div style={{ color: "var(--text)", whiteSpace: "nowrap" }}>{g.home ? "vs" : "@"}{g.opp}</div>
             <div>{g.started ? g.decision || "—" : "relief"}</div>
           </div>

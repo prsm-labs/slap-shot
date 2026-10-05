@@ -2,7 +2,7 @@ import { fmtToi } from "../lib/toi.js";
 import { positionLabel } from "../lib/positionFilter.js";
 import { useEffect, useState } from "react";
 import { registerSlide, closeAllSlides, openGoalieSlide } from "../slideouts.js";
-import L7Chart from "./L7Chart.jsx";
+import SkaterCharts from "./SkaterCharts.jsx";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import GradeBadge from "./GradeBadge.jsx";
 import GoalieProfile from "./GoalieProfile.jsx";
@@ -127,7 +127,7 @@ export default function PlayerSlideout() {
             ) : (
               <>
                 <SkaterStats p={player} />
-                <L7Chart games={player.last7} role={role} />
+                <SkaterCharts player={player} />
               </>
             )}
           </div>

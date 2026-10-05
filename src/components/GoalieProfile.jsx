@@ -3,6 +3,7 @@ import { useScoredPool } from "../lib/data.js";
 import { projectGoalie } from "../lib/crease.js";
 import GradeBadge from "./GradeBadge.jsx";
 import GoalieGameChart from "./GoalieGameChart.jsx";
+import { nhlSeason, useH2H } from "../lib/h2h.js";
 
 // The goalie slideout body. Real NHL season lines (this season + last season as the historical
 // snapshot) and recent games come from /api/player (api/player.js), so every goalie gets the same
@@ -102,6 +103,8 @@ function Tonight({ goalie, pool }) {
 export default function GoalieProfile({ goalie }) {
   const pool = useScoredPool({ includeStarted: true });
   const [data, setData] = useState({ id: null, player: null, error: null });
+  const [chart, setChart] = useState("recent"); // "recent" | "h2h"
+  const h2h = useH2H()?.goalies?.[String(goalie.playerId)]?.vsTeam || null;
 
   useEffect(() => {
     let cancelled = false;
@@ -149,7 +152,24 @@ export default function GoalieProfile({ goalie }) {
         </div>
       )}
 
-      {loaded && <GoalieGameChart games={player ? player.games : fallbackGames} />}
+      {loaded && h2h && (
+        <div className="pill-row" style={{ display: "inline-flex", marginTop: 12 }}>
+          <button className={`pill-btn ${chart === "recent" ? "active" : ""}`} onClick={() => setChart("recent")}>Recent games</button>
+          <button className={`pill-btn ${chart === "h2h" ? "active" : ""}`} onClick={() => setChart("h2h")}>H2H vs {h2h.opp}</button>
+        </div>
+      )}
+      {loaded && chart === "h2h" && h2h ? (
+        <>
+          <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginTop: 6 }}>
+            vs {h2h.opp} since 2022-23: {h2h.totals.games} games, {h2h.totals.sa - h2h.totals.ga} saves on {h2h.totals.sa} shots
+            ({h2h.totals.svPct != null ? h2h.totals.svPct.toFixed(3).replace(/^0/, "") : "—"}), {h2h.totals.ga} goals allowed
+            {h2h.games.some((g) => g.po) ? " (includes playoffs)" : ""}. Small sample — context only, not used in any score.
+          </div>
+          <GoalieGameChart games={h2h.games.map((g) => ({ ...g, season: nhlSeason(g.season) }))} showYear />
+        </>
+      ) : (
+        loaded && <GoalieGameChart games={player ? player.games : fallbackGames} />
+      )}
     </div>
   );
 }
