@@ -1,16 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import { refreshPool, useScoredPool } from "../lib/data.js";
-import { eligibleForTop3, pickRecord, selectTop3, TIERS } from "../lib/top3.js";
+import { eligibleForTop3, LEGACY_TIERS, pickRecord, selectTop3, TIER_INFO, TIERS } from "../lib/top3.js";
 import { openGoalieSlide, openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 
-// Top 3 Tonight — the best real matchup per tier (Chalk / Mid-Tier / Longshot), deterministic, no
+// Top 3 Tonight — the best real matchup per tier (Chalk / Mid-Tier / Breakout), deterministic, no
 // randomness, modeled on Going Yard's "Top 4 Tonight". Picks are computed live (lib/top3.js on the
 // live slate pool) until the 5:30 PM ET pipeline run freezes them into public/data/top3/<date>.json
 // (scripts/lock_top3.mjs); after that every visit shows that file and nothing is recomputed.
-const TIER = Object.fromEntries(TIERS.map((t) => [t.key, t]));
+const TIER = TIER_INFO; // current tiers + retired ones that still appear on locked nights
 const LOCK_CHECK_MS = 5 * 60_000;
 const timeOf = (iso) => new Date(iso).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
@@ -78,6 +78,7 @@ function Top3Card({ pick, flipped, onFlip, poolById }) {
                 <Pill color={c} title="Chance to score adjusted for the opponent's defense">To score {p.adjGoalPct}%</Pill>
                 <Pill color={c} title="Opponent's expected goals allowed per game, ranked softest first">#{p.softRank} soft D</Pill>
                 {p.sogL5 != null && <Pill color={c} title="Shots on goal per game: last 5 / season">SOG {p.sogL5} / {p.sogPg}</Pill>}
+                {p.xgTrend != null && <Pill color={c} title="Expected goals per game, last 5 vs usual">xG {p.xgTrend}x</Pill>}
                 {pick.tier === "mid" && <Pill color={c}>{p.fallback ? "Fallback — didn't meet the bar" : "✓ Trend + soft matchup"}</Pill>}
               </div>
               <div style={{ fontSize: 11, lineHeight: 1.45, color: "var(--text)", flex: 1, overflow: "hidden" }}>{p.why}</div>
@@ -95,8 +96,9 @@ function Top3Card({ pick, flipped, onFlip, poolById }) {
 
 function RecentResults({ rows }) {
   if (!rows?.length) return null;
-  const recent = [...rows].sort((a, b) => b.date.localeCompare(a.date) || TIERS.findIndex((t) => t.key === a.tier) - TIERS.findIndex((t) => t.key === b.tier));
-  const byTier = TIERS.map((t) => {
+  const order = [...TIERS, ...LEGACY_TIERS];
+  const recent = [...rows].sort((a, b) => b.date.localeCompare(a.date) || order.findIndex((t) => t.key === a.tier) - order.findIndex((t) => t.key === b.tier));
+  const byTier = order.filter((t) => TIERS.includes(t) || rows.some((r) => r.tier === t.key)).map((t) => {
     const r = rows.filter((x) => x.tier === t.key && x.actual?.played);
     return { ...t, n: r.length, goals: r.filter((x) => x.actual.g > 0).length, expected: r.reduce((s, x) => s + x.adjGoalPct / 100, 0) };
   });
@@ -235,12 +237,15 @@ export default function Top3Tab() {
           matchup-adjusted chance, and no skater appears twice.<br />
           🎯 <b>Chalk</b>: top 15% of the slate by the model, facing a defense in the softer half. ⚖️ <b>Mid-Tier</b>: 50th-85th percentile,
           and it must clear an extra bar — a defense in the softest third AND shots on goal over the last 5 games at least 1.2x the season rate.
-          🎲 <b>Longshot</b>: below the slate median, facing one of the softest quarter of defenses.<br />
+          🚀 <b>Breakout</b>: the best Breakout Watch skater — outside the model's top 15%, expected goals over the last 5 games at least
+          1.3x their usual, into one of the softest third of defenses, with at least 13 minutes of estimated ice time. At most one pick per team.<br />
           <b>Why Mid-Tier has an extra bar:</b> backtested on 2025-26, that combination scored 14-24% more often than the model expected, in both
           halves of the season. If nobody clears it, the card shows the best mid-tier chance and says it's a fallback.<br />
           <b>What didn't make it:</b> goalie-specific weak spots (by shot type, distance, rush/rebound) didn't repeat from one half of last
           season to the other, and neither the opposing goalie's save % nor "scored last game" changed the odds once the model and the
-          opponent's defense were counted — so none of them are used. Longshots scored about 8% of the time last season: a long shot, not a hidden edge.<br />
+          opponent's defense were counted — so none of them are used. The old Longshot card (below the median + softest defenses, ~8% scoring
+          last season with no edge) was replaced by Breakout on 10/6; earlier locked nights still show it.<br />
+          <b>Why Breakout:</b> rising expected goals into a soft defense scored 20-29% more often than the model expected in both halves of last season.<br />
           <b>When it locks:</b> picks update live with lineup and goalie news until the 5:30 PM ET pipeline run, which freezes them for the
           day. After that every visit shows the same three, and the Track Record grades exactly those.<br />
           <b>Not a random pick:</b> every card is the literal top of its tier — the same inputs always give the same three.
