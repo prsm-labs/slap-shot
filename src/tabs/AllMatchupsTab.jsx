@@ -5,6 +5,8 @@ import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
+import ListFilters from "../components/ListFilters.jsx";
+import { applyListFilters, useListFilters } from "../lib/listFilters.js";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { fmtToi } from "../lib/toi.js";
@@ -90,7 +92,9 @@ export default function AllMatchupsTab() {
   const selected = useMatchup();
   const position = usePosition();
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filterPositions(filterPlayers(players, selected), position) || [], "slapScore", "desc");
+  const listFilters = useListFilters();
+  const shown = applyListFilters(filterPositions(filterPlayers(players, selected), position), listFilters, { slate: players, signal: "goal" });
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(shown || [], "slapScore", "desc");
 
   return (
     <div>
@@ -105,6 +109,7 @@ export default function AllMatchupsTab() {
       </div>
       <SlateStrip meta={meta} />
       <PositionFilter />
+      <ListFilters signalLabel="★ Goal Signals only" shown={shown?.length} total={players?.length} />
       {!players && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
 
       {players && (
