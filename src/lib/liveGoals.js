@@ -20,5 +20,6 @@ export async function fetchLiveGoals(date) {
     started: body.games.some((g) => STARTED.has(g.state)),
     firstPuck: body.games.length ? body.games.map((g) => g.startTimeUTC).sort()[0] : null,
     unfinished: body.games.some((g) => !DONE.has(g.state)),
+    games: body.games, // gameId, state, period, clock — for hat watch (2 goals in a game still on)
   };
 }

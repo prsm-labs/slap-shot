@@ -44,7 +44,7 @@ function Linescore({ box }) {
   );
 }
 
-function SkaterTable({ t, poolById, onIce, heatById }) {
+function SkaterTable({ t, poolById, onIce, heatById, live }) {
   const rows = [...t.skaters].sort((a, b) => b.points - a.points || b.goals - a.goals || b.sog - a.sog);
   return (
     <div className="table-wrap" style={{ marginTop: 6 }}>
@@ -69,6 +69,8 @@ function SkaterTable({ t, poolById, onIce, heatById }) {
                 {on && <span title="On the ice now (estimated)" style={{ color: ON_ICE }}>● </span>}
                 <span className="mono" style={{ color: "var(--muted)", fontSize: 10 }}>#{p.number} {p.position} </span>
                 <span className="player-name-link">{p.name}</span>
+                {p.goals >= 3 && <span className="mono" style={{ fontSize: 9, marginLeft: 6, fontWeight: 800 }}>🎩 HAT TRICK</span>}
+                {p.goals === 2 && live && <span className="mono" style={{ fontSize: 9, marginLeft: 6, fontWeight: 800, color: "#ffb020" }}>👀 HAT WATCH</span>}
                 {HOT.has(heat) && <span className="mono" style={{ fontSize: 9, marginLeft: 6, color: "#ff8a7a" }}>{heat === "On Fire" ? "🔥 ON FIRE" : "HEATING UP"}</span>}
               </td>
               <td style={cell}>{p.goals}</td>
@@ -218,7 +220,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
           )}
           {["away", "home"].map((side) => (
             <div key={side} style={{ marginTop: 12 }}>
-              <SkaterTable t={box[side]} poolById={poolById} onIce={onIce} heatById={heatById} />
+              <SkaterTable t={box[side]} poolById={poolById} onIce={onIce} heatById={heatById} live={LIVE.has(box.state)} />
               <GoalieTable t={box[side]} />
             </div>
           ))}

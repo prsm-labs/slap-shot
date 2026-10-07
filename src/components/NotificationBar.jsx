@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { dismissAlert, markAlertsRead, pushAlert, setAlertPref, useAlerts } from "../lib/alerts.js";
-import { fetchLiveGoals, easternToday } from "../lib/liveGoals.js";
+import { useTodayGoals } from "../lib/todayGoals.js";
 import { useScoredPool } from "../lib/data.js";
 import { usePicks } from "../lib/picks.js";
 import { openSkaterSlide } from "../slideouts.js";
@@ -8,49 +8,41 @@ import PlayerAvatar from "./PlayerAvatar.jsx";
 
 // Drop-down notification bar (like a phone banner) + the header bell. Mounted once in App.jsx, so the
 // watchers run on every tab while the site is open:
-//   goals   — /api/live every 20s while today's games are on (the feed itself is cached 15s, so a
-//             goal shows up roughly 15-45s after it's scored)
+//   goals   — lib/todayGoals.js (/api/live every 20s while today's games are on; the feed itself is
+//             cached 15s, so a goal shows up roughly 15-45s after it's scored), incl. hat watch / hat trick
 //   lineups — the live slate pool (lib/data.js, lineup check every 3 min): a starting goalie
 //             confirmed or changed, a team's official lineup posted (with scratches)
 // Nothing fires for what was already true when the page opened. Banners swipe away (up or
 // sideways), close with ✕, or hide after 8s.
-const LIVE_MS = 20_000;
-const IDLE_MS = 5 * 60_000;
-
-function useGoalWatcher(enabled, picksRef, picksOnlyRef) {
+// Goals come from the shared "scored today" store (lib/todayGoals.js), which also drives the goal
+// badges on every player photo. A scorer's 2nd goal in a game that's still on is a HAT WATCH alert;
+// the 3rd is a HAT TRICK alert.
+function useGoalWatcher(enabled, today, picksRef, picksOnlyRef) {
+  const seen = useRef(null); // goal keys already known
   useEffect(() => {
-    if (!enabled) return undefined;
-    let seen = null; // goal keys already known
-    let timer = null;
-    let cancelled = false;
-    async function poll() {
-      try {
-        const res = await fetchLiveGoals(easternToday());
-        if (cancelled) return;
-        const keys = res.goals.map((g) => `${g.gameId}|${g.period}|${g.timeInPeriod}|${g.scorerId}`);
-        if (seen) {
-          res.goals.forEach((g, i) => {
-            if (seen.has(keys[i])) return;
-            const mine = Boolean(picksRef.current[g.scorerId]);
-            if (picksOnlyRef.current && !mine) return;
-            pushAlert({
-              kind: "goal",
-              icon: "🚨",
-              title: `GOAL — ${g.scorerName} (${g.scorerTeam})${mine ? " ⭐ your pick" : ""}`,
-              body: `vs ${g.oppTeam} · P${g.period} ${g.timeInPeriod}${g.shotType ? ` · ${g.shotType.toLowerCase()}` : ""}${g.seasonGoalNum ? ` · goal #${g.seasonGoalNum}` : ""}${g.goalieName ? ` on ${g.goalieName}` : ""}`,
-              player: { playerId: g.scorerId, name: g.scorerName, team: g.scorerTeam },
-            });
-          });
-        }
-        seen = new Set(keys);
-        timer = setTimeout(poll, res.started && res.unfinished ? LIVE_MS : IDLE_MS);
-      } catch {
-        if (!cancelled) timer = setTimeout(poll, LIVE_MS);
+    if (!today.loaded) return;
+    const keys = today.goals.map((g) => `${g.gameId}|${g.period}|${g.timeInPeriod}|${g.scorerId}`);
+    const prev = seen.current;
+    seen.current = new Set(keys);
+    if (!prev || !enabled) return; // first look: just remember what's already happened
+    const live = new Set(today.games.filter((g) => g.state === "LIVE" || g.state === "CRIT").map((g) => g.gameId));
+    today.goals.forEach((g, i) => {
+      if (prev.has(keys[i])) return;
+      const mine = Boolean(picksRef.current[g.scorerId]);
+      if (picksOnlyRef.current && !mine) return;
+      const n = today.goals.filter((x) => x.scorerId === g.scorerId && x.gameId === g.gameId).length;
+      const who = `${g.scorerName} (${g.scorerTeam})${mine ? " ⭐ your pick" : ""}`;
+      const detail = `vs ${g.oppTeam} · P${g.period} ${g.timeInPeriod}${g.shotType ? ` · ${g.shotType.toLowerCase()}` : ""}${g.seasonGoalNum ? ` · goal #${g.seasonGoalNum}` : ""}${g.goalieName ? ` on ${g.goalieName}` : ""}`;
+      const player = { playerId: g.scorerId, name: g.scorerName, team: g.scorerTeam };
+      if (n >= 3) {
+        pushAlert({ kind: "hat", icon: "🎩", title: `HAT TRICK — ${who}`, body: `${n} goals tonight · ${detail}`, player });
+      } else if (n === 2 && live.has(g.gameId)) {
+        pushAlert({ kind: "hatwatch", icon: "👀", title: `HAT WATCH — ${who}`, body: `2 goals tonight, one more for the hat trick · ${detail}`, player });
+      } else {
+        pushAlert({ kind: "goal", icon: "🚨", title: `GOAL — ${who}`, body: detail, player });
       }
-    }
-    poll();
-    return () => { cancelled = true; clearTimeout(timer); };
-  }, [enabled, picksRef, picksOnlyRef]);
+    });
+  }, [enabled, today, picksRef, picksOnlyRef]);
 }
 
 function useLineupWatcher(enabled, pool) {
@@ -149,7 +141,7 @@ export function AlertBell() {
       {open && (
         <div className="card" style={{ position: "absolute", right: 0, top: "calc(100% + 6px)", width: 300, zIndex: 1500, maxHeight: 420, overflowY: "auto" }}>
           <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>Alerts</div>
-          {row("goals", "🚨 Goals as they're scored")}
+          {row("goals", "🚨 Goals as they're scored (incl. 👀 hat watch / 🎩 hat trick)")}
           {row("lineups", "🥅 Confirmed goalies & official lineups")}
           {row("picksOnly", "⭐ Goals by my picks only")}
           <div className="mono" style={{ fontSize: 9, color: "var(--muted)", margin: "6px 0 8px" }}>
@@ -175,7 +167,8 @@ export default function NotificationBar() {
   const picksRef = useRef(picks);
   const picksOnlyRef = useRef(prefs.picksOnly);
   useEffect(() => { picksRef.current = picks; picksOnlyRef.current = prefs.picksOnly; }, [picks, prefs.picksOnly]);
-  useGoalWatcher(prefs.goals, picksRef, picksOnlyRef);
+  const today = useTodayGoals();
+  useGoalWatcher(prefs.goals, today, picksRef, picksOnlyRef);
   useLineupWatcher(prefs.lineups, pool);
 
   if (!visible.length) return null;
