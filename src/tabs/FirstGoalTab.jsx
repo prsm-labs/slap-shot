@@ -100,7 +100,9 @@ export default function FirstGoalTab() {
       <SlateStatus />
 
       <div className="note">
-        ℹ️ Each skater's chance = their goals-per-game rate ÷ every skater's rate in that game (rates shrunk toward league average).
+        ℹ️ Each skater's chance = their weight ÷ every skater's weight in that game. The weight is mostly their goals-per-game rate
+        (shrunk toward league average), boosted for skaters who shoot a lot in 1st periods — the one extra input that held up over four
+        seasons (top-3 picks scored first 20.6% vs 19.1% without it). Breakaway/rush chances and opponents' 1st-period defense were tested and add nothing.
         Backtested on 2025-26: the top pick scored first 6.1% of the time (2.8% random), a top-5 pick 30%.
         Uses full rosters — scratches aren't removed yet. {FIRST_GOAL} marks the actual first scorer once a game starts.
       </div>
