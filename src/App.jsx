@@ -3,6 +3,7 @@ import "./App.css";
 import logoMark from "./assets/logo-flame-puck.png";
 import PlayerSlideout from "./components/PlayerSlideout.jsx";
 import GoalTicker from "./components/GoalTicker.jsx";
+import NotificationBar, { AlertBell } from "./components/NotificationBar.jsx";
 import DashboardTab from "./tabs/DashboardTab.jsx";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
@@ -53,6 +54,7 @@ export default function App() {
           <span>SLAP</span> SHOT
         </div>
         <div className="badges">
+          <AlertBell />
           <div className="badge live">
             <div className="badge-dot" />
             LIVE
@@ -61,6 +63,7 @@ export default function App() {
         </div>
       </header>
 
+      <NotificationBar />
       <GoalTicker onClick={() => setTab("goals")} />
 
       <nav className="tabs">
