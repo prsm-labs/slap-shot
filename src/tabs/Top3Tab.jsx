@@ -3,6 +3,7 @@ import { refreshPool, useScoredPool } from "../lib/data.js";
 import { eligibleForTop3, LEGACY_TIERS, pickRecord, selectTop3, TIER_INFO, TIERS } from "../lib/top3.js";
 import { openGoalieSlide, openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
+import H2HCell from "../components/H2HCell.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 
@@ -79,6 +80,7 @@ function Top3Card({ pick, flipped, onFlip, poolById }) {
                 <Pill color={c} title="Opponent's expected goals allowed per game, ranked softest first">#{p.softRank} soft D</Pill>
                 {p.sogL5 != null && <Pill color={c} title="Shots on goal per game: last 5 / season">SOG {p.sogL5} / {p.sogPg}</Pill>}
                 {p.xgTrend != null && <Pill color={c} title="Expected goals per game, last 5 vs usual">xG {p.xgTrend}x</Pill>}
+                <H2HCell playerId={p.playerId} compact />
                 {pick.tier === "mid" && <Pill color={c}>{p.fallback ? "Fallback — didn't meet the bar" : "✓ Trend + soft matchup"}</Pill>}
               </div>
               <div style={{ fontSize: 11, lineHeight: 1.45, color: "var(--text)", flex: 1, overflow: "hidden" }}>{p.why}</div>

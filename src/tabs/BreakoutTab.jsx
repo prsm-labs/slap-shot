@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { breakoutBoard } from "../lib/breakout.js";
-import { useH2H } from "../lib/h2h.js";
 import { openSkaterSlide } from "../slideouts.js";
+import H2HCell from "../components/H2HCell.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import PickButton from "../components/PickButton.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
@@ -17,23 +17,8 @@ import { filterPositions, positionLabel, usePosition } from "../lib/positionFilt
 const x = (v) => (v == null || !Number.isFinite(v) ? "—" : `${v.toFixed(1)}x`);
 const pct = (v) => `${(v * 100).toFixed(0)}%`;
 
-function H2HNote({ entry, goalieId }) {
-  if (!entry) return <span style={{ color: "var(--muted)" }}>—</span>;
-  const t = entry.vsTeam;
-  const g = goalieId != null ? entry.vsGoalie?.[String(goalieId)] : null;
-  return (
-    <span>
-      {t ? `vs ${t.opp}: ${t.games.reduce((a, r) => a + r.goals, 0)} G, ${t.games.reduce((a, r) => a + r.points, 0)} P in last ${t.games.length}` : ""}
-      {t && g ? " · " : ""}
-      {g ? `vs ${g.goalie.split(" ").pop()}: ${g.totals.goalsOn}/${g.totals.sogOn} shots` : ""}
-      {!t && !g ? "—" : ""}
-    </span>
-  );
-}
-
 export default function BreakoutTab() {
   const pool = useScoredPool();
-  const h2h = useH2H();
   const selected = useMatchup();
   const position = usePosition();
   const board = useMemo(() => (pool ? breakoutBoard(pool.players) : null), [pool]);
@@ -67,7 +52,7 @@ export default function BreakoutTab() {
                 <th title="Unblocked shot attempts per game, last 5 vs season">Attempts trend</th>
                 <th title="Opponent's expected goals allowed per game, softest = #1">Opp D</th>
                 <th>Grade</th>
-                <th title="History only — not used to pick">H2H (context)</th>
+                <th title="History vs tonight's opponent — context only, not used to pick">H2H (context)</th>
               </tr>
             </thead>
             <tbody>
@@ -92,7 +77,7 @@ export default function BreakoutTab() {
                   <td className="mono">#{p.softRank} of {p.softOf}</td>
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td className="mono" style={{ fontSize: 10 }}>
-                    <H2HNote entry={h2h?.skaters?.[String(p.playerId)]} goalieId={p.opponentGoalieId} />
+                    <H2HCell playerId={p.playerId} />
                   </td>
                 </tr>
               ))}

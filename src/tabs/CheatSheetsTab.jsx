@@ -4,6 +4,7 @@ import SlateStatus from "../components/SlateStatus.jsx";
 import BreakoutTab from "./BreakoutTab.jsx";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
+import H2HCell from "../components/H2HCell.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -49,7 +50,7 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
               <div style={{ minWidth: 0 }}>
                 <div className="mono" style={{ fontSize: 12 }}>
                   {item.name} <span style={{ color: "var(--muted)" }}>({item.team})</span>
-                  {statusOf && <LineupBadge status={statusOf(item)} />} <PickButton player={item} />
+                  {statusOf && <LineupBadge status={statusOf(item)} />} <PickButton player={item} /> <H2HCell playerId={item.playerId} compact />
                 </div>
                 {opp && (
                   <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>
@@ -179,6 +180,7 @@ function CheatSheetMain() {
                   <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>
                     target: {g.attackedBy} skaters · {g.savePct != null ? `SV% ${g.savePct.toFixed(3).replace(/^0/, "")}` : "no NHL sample yet"}
                     {g.GA60_proxy != null ? ` · GA60 ${g.GA60_proxy}` : ""}
+                    {" "}<H2HCell playerId={g.playerId} goalie compact />
                   </div>
                 </div>
               </div>

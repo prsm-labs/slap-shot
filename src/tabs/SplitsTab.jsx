@@ -3,6 +3,8 @@ import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
+import H2HCell from "../components/H2HCell.jsx";
+import { useH2HGrades } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -14,11 +16,11 @@ import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js
 const SKATER_COLS = [
   ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"],
   ["ShotsOnGoalPerGame", "SOG/GP"], ["ICF", "ICF"], ["HDCF", "HDCF"],
-  ["gradeScore", "Grade"], ["slapScore", "Slap Score"],
+  ["gradeScore", "Grade"], ["slapScore", "Slap Score"], ["h2hScore", "H2H vs tonight"],
 ];
 const GOALIE_COLS = [
   ["name", "Goalie"], ["team", "Team"], ["wins", "Wins"], ["shutouts", "Shutouts"],
-  ["savePct", "Save %"], ["grade", "Grade"],
+  ["savePct", "Save %"], ["grade", "Grade"], ["h2hScore", "H2H vs tonight"],
 ];
 
 export default function SplitsTab() {
@@ -30,7 +32,13 @@ export default function SplitsTab() {
   const selected = useMatchup();
   const position = usePosition();
 
-  const rows = role === "goalie" ? filterByTeam(goalies, selected) : filterPositions(filterPlayers(skaters, selected), position);
+  const h2hGrades = useH2HGrades();
+  const base = role === "goalie" ? filterByTeam(goalies, selected) : filterPositions(filterPlayers(skaters, selected), position);
+  // H2H grade score for sorting (ungraded = no sort value).
+  const rows = (base || []).map((p) => {
+    const g = (role === "goalie" ? h2hGrades.goalies : h2hGrades.skaters).get(p.playerId);
+    return { ...p, h2hScore: g?.letter ? g.score : null };
+  });
   const cols = role === "goalie" ? GOALIE_COLS : SKATER_COLS;
   const defaultKey = role === "goalie" ? "savePct" : "slapScore";
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows || [], defaultKey, "desc");
@@ -81,7 +89,8 @@ export default function SplitsTab() {
                   </td>
                   {cols.slice(1).map(([key]) => (
                     <td key={key}>
-                      {key === "gradeScore" ? <GradeBadge grade={p.effectiveGrade} />
+                      {key === "h2hScore" ? <H2HCell playerId={p.playerId} goalie={role === "goalie"} />
+                        : key === "gradeScore" ? <GradeBadge grade={p.effectiveGrade} />
                         : key === "grade"
                         ? <GradeBadge grade={p[key]} />
                         : key === "position" ? positionLabel(p.position)

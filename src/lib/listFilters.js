@@ -14,7 +14,7 @@ export const GOAL_OPTIONS = [null, 10, 20, 30];
 export const GRADE_OPTIONS = [null, "A", "B", "C"]; // "B" = B or better
 const GRADE_ORDER = ["A+", "A", "B", "C", "D", "F"];
 
-const DEFAULTS = { tier: null, minGoal: null, minGrade: null, signals: false, soft: false, breakout: false, confirmed: false, search: "" };
+const DEFAULTS = { tier: null, minGoal: null, minGrade: null, signals: false, soft: false, breakout: false, confirmed: false, strongH2H: false, search: "" };
 let state = { ...DEFAULTS };
 const listeners = new Set();
 const notify = () => listeners.forEach((fn) => fn());
@@ -39,7 +39,8 @@ export function useListFilters() {
 
 // list: the players to show; slate: every eligible skater tonight (for the Breakout Watch check).
 // signal: "goal" | "point" — which signal the "Signals only" toggle means on this page.
-export function applyListFilters(list, f, { slate, signal = "goal" } = {}) {
+// h2h: Map playerId -> H2H grade (lib/h2h.js), for the "Strong H2H" toggle.
+export function applyListFilters(list, f, { slate, signal = "goal", h2h } = {}) {
   if (!list) return list;
   const tierMin = TIER_OPTIONS.find((t) => t.key === f.tier)?.min ?? null;
   const breakoutIds = f.breakout && slate ? new Set(breakoutBoard(slate).list.map((p) => p.playerId)) : null;
@@ -53,5 +54,6 @@ export function applyListFilters(list, f, { slate, signal = "goal" } = {}) {
     && (!f.soft || (p.oppSoftPct ?? 0) >= 0.67)
     && (!breakoutIds || breakoutIds.has(p.playerId))
     && (!f.confirmed || p.lineupStatus === "dressed")
+    && (!f.strongH2H || ["A+", "A"].includes(h2h?.get(p.playerId)?.letter))
     && (!q || `${p.name} ${p.team} ${p.opponentTeam}`.toLowerCase().includes(q)));
 }

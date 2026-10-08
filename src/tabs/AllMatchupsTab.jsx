@@ -2,6 +2,8 @@ import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
+import H2HCell from "../components/H2HCell.jsx";
+import { useH2HGrades } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
@@ -29,6 +31,7 @@ const COLUMNS = [
   ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
   ["tier", "Tier"],
+  ["h2hScore", "H2H"],
 ];
 
 const STARTED_TAG = { LIVE: "LIVE", CRIT: "LIVE", FINAL: "FINAL", OFF: "FINAL" };
@@ -93,8 +96,14 @@ export default function AllMatchupsTab() {
   const position = usePosition();
 
   const listFilters = useListFilters();
-  const shown = applyListFilters(filterPositions(filterPlayers(players, selected), position), listFilters, { slate: players, signal: "goal" });
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(shown || [], "slapScore", "desc");
+  const h2hGrades = useH2HGrades();
+  const shown = applyListFilters(filterPositions(filterPlayers(players, selected), position), listFilters, { slate: players, signal: "goal", h2h: h2hGrades.skaters });
+  // H2H grade score for sorting (ungraded = no sort value).
+  const rows = (shown || []).map((p) => {
+    const g = h2hGrades.skaters.get(p.playerId);
+    return { ...p, h2hScore: g?.letter ? g.score : null };
+  });
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "slapScore", "desc");
 
   return (
     <div>
@@ -141,6 +150,7 @@ export default function AllMatchupsTab() {
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>
                   <td><span className={`tier-pill ${TIER_CLASS[p.tier] || "tier-ignore"}`}>{p.tier}</span></td>
+                  <td><H2HCell playerId={p.playerId} /></td>
                 </tr>
               ))}
             </tbody>

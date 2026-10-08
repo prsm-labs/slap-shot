@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openGoalieSlide } from "../slideouts.js";
+import H2HCell from "../components/H2HCell.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -124,6 +125,7 @@ export default function CreaseLabTab() {
               {th("seasonSv", "Season SV%")}
               {th("ga60", "GA60")}
               <th>Grade</th>
+              <th title="Save % vs tonight's opponent vs their own — context, not a prediction">H2H</th>
             </tr>
           </thead>
           <tbody>
@@ -149,6 +151,7 @@ export default function CreaseLabTab() {
                 <td>{sv(r.seasonSv)}</td>
                 <td>{r.ga60 ?? "—"}</td>
                 <td>{r.grade ? <GradeBadge grade={r.grade} /> : "—"}</td>
+                <td><H2HCell playerId={r.playerId} goalie /></td>
               </tr>
             ))}
           </tbody>
