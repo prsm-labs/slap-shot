@@ -11,12 +11,13 @@
 // from the game model fit on other seasons; pre-game stats only):
 //   nights with 2+ early games (254): top pick broke the ice 3.9% (random skater ~0.55%), top 3 10.2%,
 //   top 10 21.7%; all nights (528): top pick 4.7%, top 5 21.2%. Pooling plain First Goal weights did the
-//   same — team pace adds consistency with the game model, not accuracy. Tested and NOT used: being on ice for
-//   the opening faceoff / early-shift ice time (2023-24 shift charts: no gain).
+//   same — team pace adds consistency with the game model, not accuracy. Starters predicted from past games
+//   didn't help; the OFFICIAL starting lineup does (2023-24, 2+ early games: top-10 21% -> 28%) — applied through
+//   lib/projections.js openingShare once the NHL posts it.
 //   Timing: median wait for the first goal, 1 early game 7.0 min (model 7.7), 2-3 games 4.0 (3.8),
 //   4+ games 1.8 (1.6); P(goal by 5 min) 39 / 60 / 87% actual vs 36 / 63 / 89% model.
 import { expectedGoals } from "./gameModel.js";
-import { firstGoalRate } from "./projections.js";
+import { firstGoalRate, OPENING, openingShare } from "./projections.js";
 
 export const EARLY_PACE = 0.909;
 
@@ -40,21 +41,25 @@ export function icebreakerBoard(players, games, ratings) {
   }
   const sk = (players || []).filter((p) => teamOf.has(p.team)).map((p) => ({ ...p, w: firstGoalRate(p) }));
   const teamW = new Map();
-  const gameW = new Map();
   for (const p of sk) {
     teamW.set(p.team, (teamW.get(p.team) || 0) + p.w);
-    const gid = teamOf.get(p.team).game.gameId;
-    gameW.set(gid, (gameW.get(gid) || 0) + p.w);
+  }
+  // own-game First Goal %, same as the First Goal page (incl. the official-starters boost)
+  const fg = new Map();
+  for (const g of games) {
+    for (const [id, v] of openingShare(sk.filter((p) => teamOf.get(p.team).game.gameId === g.gameId), (p) => p.w, 6.0 * OPENING.earlyPace)) fg.set(id, v);
   }
   const teamXg = new Map([...teamOf.entries()].map(([t, x]) => [t, expectedGoals(ratings, t, x.opp, x.isHome, x.oppGoalie)]));
   const rows = sk.map((p) => {
     const x = teamOf.get(p.team);
     const rate = (EARLY_PACE * teamXg.get(p.team) * p.w) / (teamW.get(p.team) || 1); // goals per 60 min
-    return { ...p, game: x.game, rate, teamXg: teamXg.get(p.team), firstGoalP: p.w / (gameW.get(x.game.gameId) || 1) };
+    return { ...p, game: x.game, rate, teamXg: teamXg.get(p.team), firstGoalP: fg.get(p.playerId) };
   });
   const total = rows.reduce((s, r) => s + r.rate, 0) || 1;
+  // Official starting lineups (once posted): opening-shift skaters get the first ~45 seconds (lib/projections.js).
+  const share = openingShare(rows, (r) => r.rate, total);
   for (const r of rows) {
-    r.iceP = r.rate / total;
+    r.iceP = share.get(r.playerId);
     r.by10 = 1 - Math.exp((-r.rate * 10) / 60);   // chance he scores in the first 10 minutes of his game
   }
   rows.sort((a, b) => b.iceP - a.iceP);
@@ -65,7 +70,8 @@ export function icebreakerBoard(players, games, ratings) {
   const teams = [...teamOf.keys()].map((t) => ({
     team: t, p: rows.filter((r) => r.team === t).reduce((s, r) => s + r.iceP, 0), xg: teamXg.get(t),
   })).sort((a, b) => b.p - a.p);
-  return { rows, teams, medianMin: Math.log(2) / perMin, by: { 2: byMin(2), 5: byMin(5), 10: byMin(10) } };
+  const startersPosted = games.filter((g) => rows.some((r) => r.game.gameId === g.gameId && r.startingLineup != null)).length;
+  return { rows, teams, startersPosted, windowSec: OPENING.windowSec, medianMin: Math.log(2) / perMin, by: { 2: byMin(2), 5: byMin(5), 10: byMin(10) } };
 }
 
 // Actual icebreaker from live goal rows (lib/liveGoals.js): earliest elapsedSeconds among these games.

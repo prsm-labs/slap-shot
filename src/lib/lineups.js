@@ -63,7 +63,13 @@ export function lineupMaps(data) {
   const outByName = new Map();
   const inNet = new Map();
   const gameState = new Map();
+  const starting = new Set();      // playerIds in tonight's official starting lineups
+  const startersTeams = new Set(); // teams whose game has posted starting lineups
   for (const g of data?.games || []) {
+    if (g.startersPosted) {
+      startersTeams.add(g.away);
+      startersTeams.add(g.home);
+    }
     gameState.set(g.away, g.state);
     gameState.set(g.home, g.state);
     for (const [team, t] of Object.entries(g.teams)) {
@@ -81,9 +87,10 @@ export function lineupMaps(data) {
       }
       if (t.goalie) goalies.set(team, t.goalie);
       if (t.inNet) inNet.set(team, t.inNet);
+      for (const p of t.startingLineup || []) starting.add(p.playerId);
     }
   }
-  return { skaters, goalies, officialTeams, outByName, inNet, gameState };
+  return { skaters, goalies, officialTeams, outByName, inNet, gameState, starting, startersTeams };
 }
 
 // Starting goalie for a team tonight, best source first: the goalie actually in net once the game

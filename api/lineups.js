@@ -7,6 +7,9 @@
 //     Confirmed/Expected status, power-play units 1 and 2, injuries. Covers the upcoming slate only.
 //   - The NHL's own game feed: once a game's lineup is official (around warmups) its
 //     play-by-play lists every dressed player — that is the only skater "confirmed" signal.
+//   - The NHL's official game roster report (nhl.com/scores/htmlreports/<season>/RO<game>.HTM): the
+//     STARTING LINEUP (5 skaters + goalie per team) is in bold. The roster posts ~1 hour before puck drop,
+//     the bold starters closer to it. Checked 2026-10-09: bold = exactly who was on ice at 0:00.
 // No source publishes full confirmed skater lineups earlier than that.
 
 const NHL = "https://api-web.nhle.com/v1";
@@ -73,6 +76,46 @@ export function startersFromPbp(pbp) {
     const team = abbrev[defending];
     if (team && !out[team]) out[team] = { playerId: d.goalieInNetId, name: names.get(d.goalieInNetId) || "" };
   }
+  return out;
+}
+
+// Official roster report -> bold (starting lineup) rows: [{ number, pos, name }].
+export function parseRosterReport(html) {
+  const out = [];
+  for (const row of String(html).matchAll(/<tr>([\s\S]*?)<\/tr>/g)) {
+    const cells = [...row[1].matchAll(/<td([^>]*)>([\s\S]*?)<\/td>/g)];
+    if (cells.length !== 3 || !cells.some((c) => /bold/.test(c[1]))) continue;
+    const [num, pos, name] = cells.map((c) => decode(c[2].replace(/<[^>]+>/g, "")));
+    if (!/^\d+$/.test(num)) continue;
+    out.push({ number: Number(num), pos, name: name.replace(/\s*\((C|A)\)\s*$/, "").trim() });
+  }
+  return out;
+}
+
+// Starting lineups for a game, matched to the dressed list by sweater number + last name.
+// -> { TEAM: [{ playerId, name, pos }] } with 6 per team, or null until both teams' starters are posted.
+const STARTERS_LOOKAHEAD_MS = 2 * 3600_000;
+const startersCache = new Map(); // gameId -> result (never changes once posted)
+async function startingLineups(g, dressed) {
+  if (startersCache.has(g.id)) return startersCache.get(g.id);
+  if (g.gameState === "FUT" && Date.parse(g.startTimeUTC) - Date.now() > STARTERS_LOOKAHEAD_MS) return null;
+  const teams = Object.keys(dressed);
+  if (teams.length !== 2) return null;
+  const id = String(g.id);
+  const res = await fetch(`https://www.nhl.com/scores/htmlreports/${id.slice(0, 4)}${Number(id.slice(0, 4)) + 1}/RO${id.slice(4)}.HTM`);
+  if (!res.ok) return null;
+  const bold = parseRosterReport(await res.text());
+  const out = {};
+  for (const team of teams) out[team] = [];
+  for (const b of bold) {
+    const last = norm(b.name).split(" ").pop();
+    for (const team of teams) {
+      const p = dressed[team].find((d) => d.number === b.number && norm(d.name).endsWith(last));
+      if (p) out[team].push({ playerId: p.playerId, name: p.name, pos: p.pos });
+    }
+  }
+  if (!teams.every((t) => out[t].length === 6)) return null;
+  startersCache.set(g.id, out);
   return out;
 }
 
@@ -155,6 +198,7 @@ export async function buildLineups(date) {
       dressed = {};
       inNet = {};
     }
+    const starting = await startingLineups(g, dressed).catch(() => null);
     if (!done && DONE.has(g.gameState) && Object.keys(dressed).length && Object.keys(inNet).length === 2) {
       finishedGames.set(g.id, { dressed, inNet });
     }
@@ -171,11 +215,13 @@ export async function buildLineups(date) {
         injuries: withId(t.injuries),
         dressed: dressed[team] || [],
         inNet: inNet[team] || null,
+        startingLineup: starting?.[team] || [],   // official starting 5 + goalie (bold in the NHL roster report)
       };
     }
     return {
       gameId: g.id, key, away, home, startTimeUTC: g.startTimeUTC, state: g.gameState,
       officialLineup: Boolean((dressed[away] || []).length && (dressed[home] || []).length),
+      startersPosted: Boolean(starting),
       teams,
     };
   }));

@@ -11,10 +11,11 @@ import { fmtToi } from "../lib/toi.js";
 import { matchupKey, playerMatchupKey, useMatchup } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
-import { firstGoalRate as rate } from "../lib/projections.js";
+import { firstGoalRate as rate, OPENING, openingShare } from "../lib/projections.js";
 import { useH2H } from "../lib/h2h.js";
 import { useSort } from "../lib/useSort.js";
 import IcebreakerView from "../components/IcebreakerView.jsx";
+import StarterTag from "../components/StarterTag.jsx";
 
 // Candidate table columns: [field, header, tooltip]. Form rates are share of games (last 5 / 10 played,
 // from h2h_today.json "form"); P1 SOG/GP from the pool (shots files).
@@ -92,10 +93,12 @@ export default function FirstGoalTab() {
     return meta.slate.map((g) => {
       const key = matchupKey(g.away, g.home);
       const skaters = pool.filter((p) => playerMatchupKey(p) === key).map((p) => ({ ...p, rate: rate(p) }));
-      const total = skaters.reduce((s, p) => s + p.rate, 0) || 1;
-      const ranked = skaters.map((p) => ({ ...p, firstGoalP: p.rate / total })).sort((a, b) => b.firstGoalP - a.firstGoalP);
+      // Official starting lineups (once posted) boost the opening-shift skaters for the first ~45 seconds.
+      const share = openingShare(skaters, (p) => p.rate, 6.0 * OPENING.earlyPace);
+      const ranked = skaters.map((p) => ({ ...p, firstGoalP: share.get(p.playerId) })).sort((a, b) => b.firstGoalP - a.firstGoalP);
+      const startersPosted = skaters.some((p) => p.startingLineup != null);
       const teamP = (team) => ranked.filter((p) => p.team === team).reduce((s, p) => s + p.firstGoalP, 0);
-      return { ...g, key, ranked, awayP: teamP(g.away), homeP: teamP(g.home) };
+      return { ...g, key, ranked, startersPosted, awayP: teamP(g.away), homeP: teamP(g.home) };
     });
   }, [pool, meta]);
 
@@ -146,7 +149,9 @@ export default function FirstGoalTab() {
         (shrunk toward league average), boosted for skaters who shoot a lot in 1st periods — the one extra input that held up over four
         seasons (top-3 picks scored first 20.6% vs 19.1% without it). Breakaway/rush chances and opponents' 1st-period defense were tested and add nothing.
         Backtested on 2025-26: the top pick scored first 6.1% of the time (2.8% random), a top-5 pick 30%.
-        Uses full rosters — scratches aren't removed yet. {FIRST_GOAL} marks the actual first scorer once a game starts.
+        Scratches drop off once lineups are official. When the NHL posts the starting lineups (shortly before puck drop), the five
+        skaters on the ice for the opening faceoff (▶ STARTING) get a boost for the first ~45 seconds — 90% of first goals that early come from them.
+        {FIRST_GOAL} marks the actual first scorer once a game starts.
       </div>
 
       <PositionFilter />
@@ -161,7 +166,7 @@ export default function FirstGoalTab() {
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 6 }}>
                 <span style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 700, fontSize: 17 }}>{g.away} @ {g.home}</span>
                 <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>
-                  first goal: {g.away} {pct(g.awayP)} · {g.home} {pct(g.homeP)}
+                  first goal: {g.away} {pct(g.awayP)} · {g.home} {pct(g.homeP)}{g.startersPosted ? " · ▶ starters in" : ""}
                 </span>
               </div>
               {actual && (
@@ -182,6 +187,7 @@ export default function FirstGoalTab() {
                   <span className="mono" style={{ fontSize: 12, flex: 1, minWidth: 0 }}>
                     {p.name} <span style={{ color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)}</span>
                     {actual?.scorerId === p.playerId && <span> {FIRST_GOAL}</span>}
+                    {p.startingLineup && <StarterTag />}
                   </span>
                   <span className="mono" style={{ fontSize: 12, fontWeight: 700 }}>{pct(p.firstGoalP)}</span>
                   <span className="mono" style={{ fontSize: 10, color: "var(--muted)", width: 48, textAlign: "right" }}>{fairOdds(p.firstGoalP)}</span>
@@ -218,6 +224,7 @@ export default function FirstGoalTab() {
                     <span className="player-name-link">{p.name}</span>
                     <PickButton player={p} />
                     {actualFirst.get(p.game.gameId)?.scorerId === p.playerId && <span>{FIRST_GOAL}</span>}
+                    {p.startingLineup && <StarterTag />}
                     <span className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)}</span>
                   </div>
                 </td>

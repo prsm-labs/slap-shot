@@ -6,6 +6,7 @@ import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import PickButton from "./PickButton.jsx";
+import StarterTag from "./StarterTag.jsx";
 
 // First Goal page -> 🧊 Icebreaker: who scores the fastest goal (game clock) among the games that start
 // together — the night's earliest start by default (lib/icebreaker.js has the model + backtest).
@@ -54,7 +55,8 @@ export default function IcebreakerView({ players, slate, goals, position }) {
         Every skater scores at his own rate (team expected goals × his share of the team's First Goal weight), so the favorite isn't
         always the top First Goal pick: a 10% shot in a low-scoring game can rank below an 8% shot in a shootout.
         Backtested over 528 nights: on nights with 2+ early games the top pick broke the ice 3.9% of the time (random skater ~0.5%),
-        a top-10 pick 22%. Being on the ice for the opening faceoff was tested and added nothing.
+        a top-10 pick 22%. Once the NHL posts the official starting lineups (shortly before puck drop), the skaters on the ice for the
+        opening faceoff (▶ STARTING) get the first ~45 seconds — with real starters the top-10 hit rate rose to 28% in the backtest.
       </div>
 
       {groups.length > 1 && (
@@ -71,7 +73,9 @@ export default function IcebreakerView({ players, slate, goals, position }) {
         <div className="card" style={{ padding: 10, minWidth: 170 }}>
           <div className="mono" style={{ fontSize: 9, ...muted }}>GAMES IN THIS BUCKET</div>
           <div style={{ ...big, fontSize: 16 }}>{group.games.map((g) => `${g.away}@${g.home}`).join(" · ")}</div>
-          <div className="mono" style={{ fontSize: 9, ...muted }}>{timeEt(group.start)} puck drop</div>
+          <div className="mono" style={{ fontSize: 9, ...muted }}>
+            {timeEt(group.start)} puck drop · ▶ starting lineups {board.startersPosted ? `posted for ${board.startersPosted} of ${group.games.length}` : "not posted yet"}
+          </div>
         </div>
         <div className="card" style={{ padding: 10, minWidth: 150 }}>
           <div className="mono" style={{ fontSize: 9, ...muted }}>TYPICAL WAIT FOR 1ST GOAL</div>
@@ -128,6 +132,7 @@ export default function IcebreakerView({ players, slate, goals, position }) {
                     <span className="player-name-link">{p.name}</span>
                     <PickButton player={p} />
                     {actual?.scorerId === p.playerId && <span>🧊</span>}
+                    {p.startingLineup && <StarterTag />}
                     <span className="mono" style={{ fontSize: 9, ...muted }}>{p.team} · {positionLabel(p.position)}</span>
                   </div>
                 </td>

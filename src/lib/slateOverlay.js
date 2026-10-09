@@ -57,7 +57,8 @@ export function applyLineups(data, lu, lineupsAt = null) {
       continue;
     }
 
-    const q = { ...p, lineupStatus };
+    // on the ice for the opening faceoff (official starting lineup) — null until that game's starters are posted
+    const q = { ...p, lineupStatus, startingLineup: maps.startersTeams?.has(p.team) ? Boolean(maps.starting?.has(p.playerId)) : null };
     const s = starters.get(p.opponentTeam);
     if (s?.playerId != null && s.playerId !== p.opponentGoalieId) {
       const g = goaliesById.get(s.playerId);

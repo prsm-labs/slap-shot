@@ -42,6 +42,33 @@ export function firstGoalRate(p) {
   return Math.pow(goals, P1.rateExp) * Math.exp(P1.coef * ((p1 - P1.mean) / P1.sd));
 }
 
+// Opening shift (2026-10-09): goals in the first ~45 seconds are almost all scored by the skaters on the ice
+// for the opening faceoff (2023-24: 90% of first goals inside 45s, by the 28% of skaters who started). Once the
+// NHL posts the official starting lineups (bold in its game roster report, shortly before puck drop), the chance
+// of scoring first mixes two windows:
+//   P = P(a goal inside the window) x share among starters (weight x (1 + BOOST)) + P(no goal yet) x normal share.
+// BOOST 15 / window 45s from scratch opening_oracle.py / ice_open.py (actual starters; icebreaker nights with 2+
+// early games: top-10 hit 21% -> 28%). Starters predicted from past games did NOT help, so nothing changes until
+// the real lineup is posted (startingLineup null).
+export const OPENING = { windowSec: 45, boost: 15, earlyPace: 0.909 };
+export function openingShare(group, rateOf, goalsPer60) {
+  // group: players competing (one game, or several games for the icebreaker); rateOf(p) -> relative weight.
+  // Returns Map playerId -> probability (sums to 1 over the group).
+  const pw = 1 - Math.exp((-goalsPer60 * OPENING.windowSec) / 3600);
+  const byTeam = new Map();
+  for (const p of group) byTeam.set(p.team, (byTeam.get(p.team) || 0) + 1);
+  // Starter flag: 1 / 0 when the lineup is posted; otherwise everyone gets the team's average share (5 of n),
+  // which leaves that team's odds as if the window didn't exist.
+  const s = (p) => (p.startingLineup == null ? 5 / (byTeam.get(p.team) || 18) : p.startingLineup ? 1 : 0);
+  let tot = 0, totOpen = 0;
+  for (const p of group) {
+    tot += rateOf(p);
+    totOpen += rateOf(p) * (1 + OPENING.boost * s(p));
+  }
+  return new Map(group.map((p) => [p.playerId,
+    pw * ((rateOf(p) * (1 + OPENING.boost * s(p))) / (totOpen || 1)) + (1 - pw) * (rateOf(p) / (tot || 1))]));
+}
+
 // Map of playerId -> P(scores the game's first goal), for players grouped by game key.
 export function firstGoalProbs(players, gameKeyOf) {
   const totals = new Map();
