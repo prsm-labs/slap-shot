@@ -12,6 +12,9 @@ const ON_ICE = "#d9b46a";
 const rowStyle = (onIce, hot) => ({
   background: hot ? "rgba(150,24,24,.42)" : onIce ? "rgba(217,180,106,.20)" : undefined,
   boxShadow: onIce ? `inset 3px 0 0 ${ON_ICE}` : undefined,
+  // the pinned first column (App.css) is opaque, so it repaints the row tint / on-ice bar from these
+  "--row-bg": hot ? "rgba(150,24,24,.42)" : onIce ? "rgba(217,180,106,.20)" : undefined,
+  "--row-bar": onIce ? ON_ICE : undefined,
 });
 const LIVE = new Set(["LIVE", "CRIT"]);
 
