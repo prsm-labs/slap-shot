@@ -3,8 +3,8 @@ import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
-import H2HCell from "../components/H2HCell.jsx";
-import { useH2HGrades } from "../lib/h2h.js";
+import H2HCell, { H2HStatCell } from "../components/H2HCell.jsx";
+import { SKATER_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -90,7 +90,7 @@ export default function AppleLabTab() {
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
   const filtered = useMemo(() => {
     const inGame = applyListFilters(filterPositions(filterPlayers(merged, selected), position), listFilters, { slate: live?.players, signal: "point", h2h: h2hGrades.skaters });
-    return (inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [];
+    return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades);
   }, [merged, team, selected, position, listFilters, live, h2hGrades]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimePointPct", "desc");
@@ -192,7 +192,10 @@ export default function AppleLabTab() {
                 <th className={sortKey === "plus3SogPct" ? "sorted" : ""} onClick={() => toggleSort("plus3SogPct")}>+3 SOG %{sortKey === "plus3SogPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="History vs tonight's opponent — context, not a prediction">H2H</th>
+                <th title="H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)" className={sortKey === "h2hScore" ? "sorted" : ""} onClick={() => toggleSort("h2hScore")}>H2H{sortKey === "h2hScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                {SKATER_H2H_COLS.map(([k, , label, title]) => (
+                  <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                ))}
               </tr>
             </thead>
             <tbody>
@@ -214,6 +217,7 @@ export default function AppleLabTab() {
                   <td>{p.slapScore}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td><H2HCell playerId={p.playerId} /></td>
+                  {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>
               ))}
             </tbody>

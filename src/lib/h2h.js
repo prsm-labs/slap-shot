@@ -49,7 +49,7 @@ function letters(rows) {
   });
 }
 
-export function h2hGrades(h2h, players, goalies) {
+export function h2hGrades(h2h, players, goalies, slateHomeTeams) {
   const skaters = new Map();
   const goalieOut = new Map();
   if (!h2h) return { skaters, goalies: goalieOut };
@@ -78,7 +78,16 @@ export function h2hGrades(h2h, players, goalies) {
     if (t) parts.push(`${t.games} GP vs ${e.vsTeam.opp}: ${t.goals} G, ${t.points} P`);
     if (vg) parts.push(`vs ${last(vg.goalie)} ${vg.totals.goalsOn}/${vg.totals.sogOn} shots`);
     const small = (t?.games ?? 0) < 4 && (vg?.totals.sogOn ?? 0) < 15;
-    const row = { playerId: p.playerId, score, graded, small, text: parts.join(" · ") + (graded && small ? " · small sample" : ""), letter: null };
+    const side = p.isHome ? "home" : "away";
+    const row = {
+      playerId: p.playerId, score, graded, small, text: parts.join(" · ") + (graded && small ? " · small sample" : ""), letter: null,
+      // goal-game rates (games with 1+ goal / games) for the table columns
+      team: t ? { made: t.goalGames ?? 0, n: t.games } : null,
+      goalie: vg ? { made: vg.totals.goalGames ?? 0, n: vg.totals.games, label: last(vg.goalie) } : null,
+      venue: e.venue?.[side]?.games ? { made: e.venue[side].goalGames, n: e.venue[side].games, side } : null,
+      l5: e.form?.l5?.games ? { made: e.form.l5.goalGames, n: e.form.l5.games } : null,
+      l10: e.form?.l10?.games ? { made: e.form.l10.goalGames, n: e.form.l10.games } : null,
+    };
     skaters.set(p.playerId, row);
     if (graded) rows.push(row);
   }
@@ -86,14 +95,19 @@ export function h2hGrades(h2h, players, goalies) {
 
   const grows = [];
   for (const g of goalies || []) {
-    const t = h2h.goalies?.[String(g.playerId)]?.vsTeam;
-    if (!t) continue;
-    const tt = t.totals;
+    const ge = h2h.goalies?.[String(g.playerId)];
+    if (!ge) continue;
+    const t = ge.vsTeam;
+    const tt = t?.totals;
     const own = g.savePct ?? 0.9;
-    const score = ((tt.sa - tt.ga) - tt.sa * own) / (tt.sa + 150);
+    const score = tt ? ((tt.sa - tt.ga) - tt.sa * own) / (tt.sa + 150) : 0;
+    const svStat = (b) => (b?.sa ? { sv: b.svPct, n: b.games, sa: b.sa } : null);
+    const isHome = (slateHomeTeams || new Set()).has(g.team);
     const row = {
-      playerId: g.playerId, score, graded: tt.games >= 2 && tt.sa >= 40, letter: null,
-      text: `${tt.games} GP vs ${t.opp}: ${sv(tt.svPct)} on ${tt.sa} shots (own ${sv(own)})`,
+      playerId: g.playerId, score, graded: Boolean(tt) && tt.games >= 2 && tt.sa >= 40, letter: null,
+      text: tt ? `${tt.games} GP vs ${t.opp}: ${sv(tt.svPct)} on ${tt.sa} shots (own ${sv(own)})` : "No games vs tonight's opponent since 2022-23",
+      team: svStat(tt), venue: svStat(ge.venue?.[isHome ? "home" : "away"]), venueSide: isHome ? "home" : "away",
+      l5: svStat(ge.form?.l5), l10: svStat(ge.form?.l10),
     };
     goalieOut.set(g.playerId, row);
     if (row.graded) grows.push(row);
@@ -109,10 +123,44 @@ function cachedGrades(h2h, pool) {
   if (gradeCache.h2h !== h2h || gradeCache.pool !== pool) {
     gradeCache.h2h = h2h;
     gradeCache.pool = pool;
-    gradeCache.value = h2hGrades(h2h, pool?.players, pool?.goalies);
+    gradeCache.value = h2hGrades(h2h, pool?.players, pool?.goalies, new Set((pool?.meta?.slate || []).map((g) => g.home)));
   }
   return gradeCache.value;
 }
+
+// Adds sortable H2H fields to table rows: h2hScore (grade score, graded only) and, as 0-1 rates,
+// skaters: h2hTeamPct / h2hGoaliePct / venuePct / l5Pct / l10Pct (share of games with a goal);
+// goalies: h2hTeamSv / venueSv / l5Sv / l10Sv (save %).
+// equal rates break toward the bigger sample (6/10 above 3/5, 2/2 above 1/1)
+const rate = (s) => (s && s.n ? s.made / s.n + s.n * 1e-6 : null);
+export function withH2H(list, grades, goalie = false) {
+  const map = goalie ? grades.goalies : grades.skaters;
+  return (list || []).map((p) => {
+    const g = map.get(p.playerId);
+    if (goalie) {
+      return { ...p, h2hScore: g?.letter ? g.score : null, h2hTeamSv: g?.team?.sv ?? null, venueSv: g?.venue?.sv ?? null, l5Sv: g?.l5?.sv ?? null, l10Sv: g?.l10?.sv ?? null };
+    }
+    return {
+      ...p, h2hScore: g?.letter ? g.score : null, h2hTeamPct: rate(g?.team), h2hGoaliePct: rate(g?.goalie),
+      venuePct: rate(g?.venue), l5Pct: rate(g?.l5), l10Pct: rate(g?.l10),
+    };
+  });
+}
+
+// Sortable H2H / form columns: [row field (withH2H), grade-row key, header, tooltip].
+export const SKATER_H2H_COLS = [
+  ["h2hTeamPct", "team", "G% vs Opp", "Share of games vs tonight's opponent with a goal (all meetings since 2022-23)"],
+  ["h2hGoaliePct", "goalie", "G% vs Goalie", "Share of games vs tonight's goalie with a goal on him (since 2022-23)"],
+  ["venuePct", "venue", "G% H/A", "Share of games with a goal at tonight's venue type (H = home, A = road), last season + this season"],
+  ["l5Pct", "l5", "G% L5", "Games with a goal in the last 5"],
+  ["l10Pct", "l10", "G% L10", "Games with a goal in the last 10"],
+];
+export const GOALIE_H2H_COLS = [
+  ["h2hTeamSv", "team", "SV% vs Opp", "Save % vs tonight's opponent since 2022-23"],
+  ["venueSv", "venue", "SV% H/A", "Save % at tonight's venue type (H = home, A = road), last season + this season"],
+  ["l5Sv", "l5", "SV% L5", "Save % over the last 5 games played"],
+  ["l10Sv", "l10", "SV% L10", "Save % over the last 10 games played"],
+];
 
 export function useH2HGrades() {
   const h2h = useH2H();

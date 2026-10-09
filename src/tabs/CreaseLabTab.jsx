@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openGoalieSlide } from "../slideouts.js";
-import H2HCell from "../components/H2HCell.jsx";
+import H2HCell, { H2HStatCell } from "../components/H2HCell.jsx";
+import { GOALIE_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -46,9 +47,10 @@ export default function CreaseLabTab() {
     })).filter(Boolean);
   }, [pool, lineups]);
 
+  const h2hGrades = useH2HGrades();
   const shown = useMemo(
-    () => rows.filter((r) => (!selected || r.matchup === selected) && (!confirmedOnly || r.confirmed)),
-    [rows, selected, confirmedOnly]
+    () => withH2H(rows.filter((r) => (!selected || r.matchup === selected) && (!confirmedOnly || r.confirmed)), h2hGrades, true),
+    [rows, selected, confirmedOnly, h2hGrades]
   );
   const { sorted, sortKey, sortDir, toggleSort } = useSort(shown, "saves", "desc");
 
@@ -125,7 +127,8 @@ export default function CreaseLabTab() {
               {th("seasonSv", "Season SV%")}
               {th("ga60", "GA60")}
               <th>Grade</th>
-              <th title="Save % vs tonight's opponent vs their own — context, not a prediction">H2H</th>
+              {th("h2hScore", "H2H")}
+              {GOALIE_H2H_COLS.map(([k, , label, title]) => <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>)}
             </tr>
           </thead>
           <tbody>
@@ -152,6 +155,7 @@ export default function CreaseLabTab() {
                 <td>{r.ga60 ?? "—"}</td>
                 <td>{r.grade ? <GradeBadge grade={r.grade} /> : "—"}</td>
                 <td><H2HCell playerId={r.playerId} goalie /></td>
+                {GOALIE_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={r.playerId} stat={stat} goalie /></td>)}
               </tr>
             ))}
           </tbody>

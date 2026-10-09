@@ -2,8 +2,8 @@ import { useScoredPool } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
-import H2HCell from "../components/H2HCell.jsx";
-import { useH2HGrades } from "../lib/h2h.js";
+import H2HCell, { H2HStatCell } from "../components/H2HCell.jsx";
+import { SKATER_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
@@ -31,7 +31,8 @@ const COLUMNS = [
   ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
   ["tier", "Tier"],
-  ["h2hScore", "H2H"],
+  ["h2hScore", "H2H", "H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)"],
+  ...SKATER_H2H_COLS.map(([k, , label, title]) => [k, label, title]),
 ];
 
 const STARTED_TAG = { LIVE: "LIVE", CRIT: "LIVE", FINAL: "FINAL", OFF: "FINAL" };
@@ -98,11 +99,8 @@ export default function AllMatchupsTab() {
   const listFilters = useListFilters();
   const h2hGrades = useH2HGrades();
   const shown = applyListFilters(filterPositions(filterPlayers(players, selected), position), listFilters, { slate: players, signal: "goal", h2h: h2hGrades.skaters });
-  // H2H grade score for sorting (ungraded = no sort value).
-  const rows = (shown || []).map((p) => {
-    const g = h2hGrades.skaters.get(p.playerId);
-    return { ...p, h2hScore: g?.letter ? g.score : null };
-  });
+  // H2H grade + goal-game rates (vs team / goalie / venue / L5 / L10) for sorting; missing = sorts last.
+  const rows = withH2H(shown, h2hGrades);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "slapScore", "desc");
 
   return (
@@ -126,8 +124,8 @@ export default function AllMatchupsTab() {
           <table className="data-table">
             <thead>
               <tr>
-                {COLUMNS.map(([key, label]) => (
-                  <th key={key} className={sortKey === key ? "sorted" : ""} onClick={() => key !== "opponentGoalie" && toggleSort(key)}>
+                {COLUMNS.map(([key, label, title]) => (
+                  <th key={key} title={title} className={sortKey === key ? "sorted" : ""} onClick={() => key !== "opponentGoalie" && toggleSort(key)}>
                     {label}{sortKey === key ? (sortDir === "desc" ? " ↓" : " ↑") : ""}
                   </th>
                 ))}
@@ -151,6 +149,7 @@ export default function AllMatchupsTab() {
                   <td>{p.slapScore}</td>
                   <td><span className={`tier-pill ${TIER_CLASS[p.tier] || "tier-ignore"}`}>{p.tier}</span></td>
                   <td><H2HCell playerId={p.playerId} /></td>
+                  {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>
               ))}
             </tbody>
