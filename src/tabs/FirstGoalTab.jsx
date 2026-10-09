@@ -14,6 +14,7 @@ import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
 import { firstGoalRate as rate } from "../lib/projections.js";
 import { useH2H } from "../lib/h2h.js";
 import { useSort } from "../lib/useSort.js";
+import IcebreakerView from "../components/IcebreakerView.jsx";
 
 // Candidate table columns: [field, header, tooltip]. Form rates are share of games (last 5 / 10 played,
 // from h2h_today.json "form"); P1 SOG/GP from the pool (shots files).
@@ -62,6 +63,7 @@ export default function FirstGoalTab() {
   const [live, setLive] = useState(null);
   const selected = useMatchup();
   const position = usePosition();
+  const [view, setView] = useState("first"); // "first" | "ice" (🧊 Icebreaker)
 
   // Tonight's actual first goals, to grade the projection as games go.
   useEffect(() => {
@@ -128,6 +130,16 @@ export default function FirstGoalTab() {
       </div>
 
       <SlateStatus />
+
+      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
+        <button className={`pill-btn ${view === "first" ? "active" : ""}`} onClick={() => setView("first")}>{FIRST_GOAL} First goal by game</button>
+        <button className={`pill-btn ${view === "ice" ? "active" : ""}`} onClick={() => setView("ice")}>🧊 Icebreaker (fastest goal)</button>
+      </div>
+
+      {view === "ice" ? (<>
+        <PositionFilter />
+        <IcebreakerView players={pool} slate={meta.slate} goals={live?.goals} position={position} />
+      </>) : (<>
 
       <div className="note">
         ℹ️ Each skater's chance = their weight ÷ every skater's weight in that game. The weight is mostly their goals-per-game rate
@@ -229,6 +241,7 @@ export default function FirstGoalTab() {
           {showAll ? `Show top ${SHOW}` : `Show all ${sorted.length}`}
         </button>
       )}
+      </>)}
     </div>
   );
 }
