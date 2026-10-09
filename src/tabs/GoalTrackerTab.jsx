@@ -7,6 +7,7 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import { useMatchup } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FASTEST_GOAL, FIRST_GOAL, fastestGoal, firstGoalsByGame, gameClock, isFirstGoal } from "../lib/goalBadges.js";
+import { matchesSearch } from "../lib/teamSearch.js";
 
 // Ported from Going Yard's real HRTrackerTab (mlb_project/going-yard/src/App.jsx:11821-12176):
 // a flat, sortable table of every real event for a selected date, native <input type="date">
@@ -108,10 +109,7 @@ export default function GoalTrackerTab() {
   const filtered = useMemo(() => {
     let rows = gameFilter ? dayGoals.filter((g) => g.matchup === gameFilter) : dayGoals;
     if (team) rows = rows.filter((g) => g.scorerTeam === team || g.oppTeam === team);
-    if (search.trim()) {
-      const q = search.trim().toLowerCase();
-      rows = rows.filter((g) => g.scorerName.toLowerCase().includes(q) || g.goalieName.toLowerCase().includes(q));
-    }
+    if (search.trim()) rows = rows.filter((g) => matchesSearch(search, [g.scorerName, g.goalieName], [g.scorerTeam]));
     return rows;
   }, [dayGoals, team, search, gameFilter]);
 
@@ -176,7 +174,7 @@ export default function GoalTrackerTab() {
         <button className="btn" onClick={() => setDate(latest)}>↩ Latest</button>
         <input
           className="mono"
-          placeholder="Search scorer or goalie…"
+          placeholder="Search scorer, goalie or team…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 9px", fontSize: 12, flex: 1, minWidth: 160 }}

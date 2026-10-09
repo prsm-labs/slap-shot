@@ -8,6 +8,7 @@ import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { useMatchup } from "../lib/matchupFilter.js";
 import { FIRST_GOAL } from "../lib/goalBadges.js";
+import { matchesSearch } from "../lib/teamSearch.js";
 
 // 2026-27 Track Record — Going Yard style: every skater's saved pre-game projection (grade, Slap
 // Score, tier, sim odds) next to their real box line. Data: public/data/track_record_2026.json,
@@ -128,10 +129,7 @@ export default function TrackRecordLive() {
     if (!showDnp) rows = rows.filter((r) => r.played);
     if (goalsOnly) rows = rows.filter((r) => r.scored);
     if (tierFilter) rows = rows.filter((r) => r.tier === tierFilter);
-    if (search.trim()) {
-      const q = search.trim().toLowerCase();
-      rows = rows.filter((r) => r.name.toLowerCase().includes(q) || r.team.toLowerCase() === q);
-    }
+    if (search.trim()) rows = rows.filter((r) => matchesSearch(search, [r.name], [r.team]));
     return rows;
   }, [scope, showDnp, goalsOnly, tierFilter, search]);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(tableRows, "slapScore", "desc");

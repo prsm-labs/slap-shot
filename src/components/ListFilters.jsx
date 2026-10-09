@@ -18,9 +18,9 @@ export default function ListFilters({ signalLabel = "★ Signals only", shown, t
         <input
           value={f.search}
           onChange={(e) => setListFilter("search", e.target.value)}
-          placeholder="Search skater or team"
+          placeholder="Search skater or team (TOR, Toronto, Leafs)"
           className="mono"
-          style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "4px 8px", fontSize: 11, minWidth: 170 }}
+          style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "4px 8px", fontSize: 11, minWidth: 230 }}
         />
         {shown != null && <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{shown} of {total} skaters</span>}
         {n > 0 && <button className="btn" onClick={clearListFilters}>✕ Clear</button>}

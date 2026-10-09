@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { breakoutBoard } from "./breakout.js";
 import { isGoalSignal, isPointSignal } from "./signals.js";
+import { matchesSearch } from "./teamSearch.js";
 
 export const TIER_OPTIONS = [
   { key: null, label: "All tiers" },
@@ -44,7 +45,6 @@ export function applyListFilters(list, f, { slate, signal = "goal", h2h } = {}) 
   if (!list) return list;
   const tierMin = TIER_OPTIONS.find((t) => t.key === f.tier)?.min ?? null;
   const breakoutIds = f.breakout && slate ? new Set(breakoutBoard(slate).list.map((p) => p.playerId)) : null;
-  const q = f.search.trim().toLowerCase();
   const sig = signal === "point" ? isPointSignal : isGoalSignal;
   return list.filter((p) =>
     (tierMin == null || (p.slapScore ?? 0) >= tierMin)
@@ -55,5 +55,5 @@ export function applyListFilters(list, f, { slate, signal = "goal", h2h } = {}) 
     && (!breakoutIds || breakoutIds.has(p.playerId))
     && (!f.confirmed || p.lineupStatus === "dressed")
     && (!f.strongH2H || ["A+", "A"].includes(h2h?.get(p.playerId)?.letter))
-    && (!q || `${p.name} ${p.team} ${p.opponentTeam}`.toLowerCase().includes(q)));
+    && matchesSearch(f.search, [p.name], [p.team]));
 }
