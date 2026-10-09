@@ -12,6 +12,22 @@ import { matchupKey, playerMatchupKey, useMatchup } from "../lib/matchupFilter.j
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
 import { firstGoalRate as rate } from "../lib/projections.js";
+import { useH2H } from "../lib/h2h.js";
+import { useSort } from "../lib/useSort.js";
+
+// Candidate table columns: [field, header, tooltip]. Form rates are share of games (last 5 / 10 played,
+// from h2h_today.json "form"); P1 SOG/GP from the pool (shots files).
+const FORM_COLS = [
+  ["firstGoalP", "First goal %", "Model chance to score this game's first goal"],
+  ["goalsPg", "Goals / GP", "Goals per game, last season + this season"],
+  ["p1SogPg", "P1 SOG/GP", "1st-period shots on goal per game, last season + this season"],
+  ["fgL5", "1st goal L5", "Games he scored his game's first goal, last 5 played"],
+  ["fgL10", "1st goal L10", "Games he scored his game's first goal, last 10 played"],
+  ["p1gL5", "P1 goal L5", "Games with a 1st-period goal, last 5 played"],
+  ["p1gL10", "P1 goal L10", "Games with a 1st-period goal, last 10 played"],
+  ["slapScore", "Slap Score", "Tonight's anytime-goal rank (0-99)"],
+];
+const SHOW = 50;
 
 // First goal projection. Every skater on tonight's rosters is a scoring "clock" running at their
 // goals-per-game rate; whoever's clock rings first scores the game's first goal, so each player's
@@ -83,10 +99,24 @@ export default function FirstGoalTab() {
 
   const actualFirst = useMemo(() => firstGoalsByGame(live?.goals), [live]);
   const shown = selected ? games.filter((g) => g.key === selected) : games;
-  const slateTop = useMemo(
-    () => filterPositions(shown.flatMap((g) => g.ranked.map((p) => ({ ...p, game: g }))), position).sort((a, b) => b.firstGoalP - a.firstGoalP).slice(0, 15),
-    [shown, position]
-  );
+  const h2h = useH2H();
+  const [showAll, setShowAll] = useState(false);
+  const candidates = useMemo(() => {
+    // rate = share of games, ties toward the bigger sample; null when no games
+    const r = (b, k) => (b?.games ? b[k] / b.games + b.games * 1e-6 : null);
+    return filterPositions(shown.flatMap((g) => g.ranked.map((p) => {
+      const f = h2h?.skaters?.[String(p.playerId)]?.form;
+      return {
+        ...p, game: g, form: f,
+        goalsPg: p.games_played ? p.TotalGoals / p.games_played : null,
+        p1SogPg: p.games_played && p.P1SOG != null ? p.P1SOG / p.games_played : null,
+        fgL5: r(f?.l5, "firstGoalGames"), fgL10: r(f?.l10, "firstGoalGames"),
+        p1gL5: r(f?.l5, "p1GoalGames"), p1gL10: r(f?.l10, "p1GoalGames"),
+      };
+    })), position);
+  }, [shown, position, h2h]);
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(candidates, "firstGoalP", "desc");
+  const slateTop = showAll ? sorted : sorted.slice(0, SHOW);
 
   if (!pool || !meta) return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>;
 
@@ -150,17 +180,21 @@ export default function FirstGoalTab() {
         })}
       </div>
 
-      <div className="section-title" style={{ fontSize: 18, marginBottom: 8 }}>Top first-goal candidates{selected ? "" : " on the slate"}</div>
+      <div className="section-title" style={{ fontSize: 18, marginBottom: 8 }}>First-goal candidates{selected ? "" : " on the slate"}</div>
+      <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 8 }}>
+        Click any column to sort. L5 / L10 = share of his last 5 / 10 games (count in brackets) — recent form shown as context;
+        only goals per game and 1st-period shot attempts feed the First goal %.
+      </div>
       <div className="table-wrap">
         <table className="data-table">
           <thead>
             <tr>
-              <th>Skater</th>
+              <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
               <th>Game</th>
-              <th>First goal %</th>
+              {FORM_COLS.map(([k, label, title]) => (
+                <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+              ))}
               <th>Fair odds</th>
-              <th>Goals / GP</th>
-              <th>Slap Score</th>
             </tr>
           </thead>
           <tbody>
@@ -176,15 +210,34 @@ export default function FirstGoalTab() {
                   </div>
                 </td>
                 <td>{p.game.away} @ {p.game.home}</td>
-                <td>{pct(p.firstGoalP)}</td>
-                <td>{fairOdds(p.firstGoalP)}</td>
-                <td>{p.TotalGoals} / {p.games_played}</td>
+                <td style={{ fontWeight: 700 }}>{pct(p.firstGoalP)}</td>
+                <td>{p.goalsPg != null ? p.goalsPg.toFixed(2) : "—"} <span style={{ fontSize: 9, color: "var(--muted)" }}>({p.TotalGoals}/{p.games_played})</span></td>
+                <td>{p.p1SogPg != null ? p.p1SogPg.toFixed(2) : "—"}</td>
+                <FormCell b={p.form?.l5} k="firstGoalGames" />
+                <FormCell b={p.form?.l10} k="firstGoalGames" />
+                <FormCell b={p.form?.l5} k="p1GoalGames" />
+                <FormCell b={p.form?.l10} k="p1GoalGames" />
                 <td>{p.slapScore}</td>
+                <td>{fairOdds(p.firstGoalP)}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {sorted.length > SHOW && (
+        <button className="btn" style={{ marginTop: 8 }} onClick={() => setShowAll((v) => !v)}>
+          {showAll ? `Show top ${SHOW}` : `Show all ${sorted.length}`}
+        </button>
+      )}
     </div>
+  );
+}
+
+function FormCell({ b, k }) {
+  if (!b?.games) return <td style={{ color: "var(--muted)" }}>—</td>;
+  return (
+    <td>
+      {Math.round((b[k] / b.games) * 100)}% <span style={{ fontSize: 9, color: "var(--muted)" }}>({b[k]}/{b.games})</span>
+    </td>
   );
 }
