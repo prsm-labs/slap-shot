@@ -67,9 +67,19 @@ export function icebreakerBoard(players, games, ratings) {
   // group pace: whole group scores at total goals per 60 min (EARLY_PACE already applied)
   const perMin = total / 60;
   const byMin = (m) => 1 - Math.exp(-perMin * m);
-  const teams = [...teamOf.keys()].map((t) => ({
-    team: t, p: rows.filter((r) => r.team === t).reduce((s, r) => s + r.iceP, 0), xg: teamXg.get(t),
-  })).sort((a, b) => b.p - a.p);
+  // Team view: a team's chances are its skaters' added up (so the two tables always agree).
+  const teams = [...teamOf.entries()].map(([t, x]) => {
+    const mine = rows.filter((r) => r.team === t);
+    const rate = mine.reduce((s, r) => s + r.rate, 0);
+    return {
+      team: t, opp: x.opp, isHome: x.isHome, game: x.game, xg: teamXg.get(t),
+      p: mine.reduce((s, r) => s + r.iceP, 0),                 // breaks the ice for the whole group
+      fgP: mine.reduce((s, r) => s + r.firstGoalP, 0),          // scores its own game's first goal
+      by5: 1 - Math.exp((-rate * 5) / 60), by10: 1 - Math.exp((-rate * 10) / 60),
+      top: mine[0] || null,                                     // rows are sorted by icebreaker %
+      starters: mine.some((r) => r.startingLineup != null) ? mine.filter((r) => r.startingLineup).map((r) => r.name) : null,
+    };
+  }).sort((a, b) => b.p - a.p);
   const startersPosted = games.filter((g) => rows.some((r) => r.game.gameId === g.gameId && r.startingLineup != null)).length;
   return { rows, teams, startersPosted, windowSec: OPENING.windowSec, medianMin: Math.log(2) / perMin, by: { 2: byMin(2), 5: byMin(5), 10: byMin(10) } };
 }

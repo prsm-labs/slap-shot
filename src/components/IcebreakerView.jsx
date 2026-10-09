@@ -27,6 +27,13 @@ const COLS = [
   ["p1SogPg", "P1 SOG/GP", "1st-period shots on goal per game"],
 ];
 const SHOW = 40;
+const TEAM_COLS = [
+  ["p", "Icebreaker %", "Chance one of this team's skaters scores the fastest goal among these games"],
+  ["fgP", "First goal %", "Chance this team scores its own game's first goal"],
+  ["by5", "Goal by 5:00", "Chance this team scores in the first 5 minutes of its game"],
+  ["by10", "Goal by 10:00", "Chance this team scores in the first 10 minutes of its game"],
+  ["xg", "Team xG", "Expected goals tonight (game model)"],
+];
 
 export default function IcebreakerView({ players, slate, goals, position }) {
   const ratings = useTeamRatings();
@@ -39,6 +46,8 @@ export default function IcebreakerView({ players, slate, goals, position }) {
   })), position), [board, position]);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "iceP", "desc");
   const [showAll, setShowAll] = useState(false);
+  const [mode, setMode] = useState("players"); // "players" | "teams"
+  const teamSort = useSort(board?.teams || [], "p", "desc");
   const actual = actualIcebreaker(goals, group?.games);
 
   if (!ratings) return <div className="mono" style={{ ...muted, fontSize: 12 }}>Loading team ratings…</div>;
@@ -110,6 +119,49 @@ export default function IcebreakerView({ players, slate, goals, position }) {
         </div>
       )}
 
+      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 10 }}>
+        <button className={`pill-btn ${mode === "players" ? "active" : ""}`} onClick={() => setMode("players")}>👤 Players</button>
+        <button className={`pill-btn ${mode === "teams" ? "active" : ""}`} onClick={() => setMode("teams")}>🏒 Teams</button>
+      </div>
+
+      {mode === "teams" ? (
+        <div className="table-wrap">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th className={teamSort.sortKey === "team" ? "sorted" : ""} onClick={() => teamSort.toggleSort("team")}>Team</th>
+                <th>Game</th>
+                {TEAM_COLS.map(([k, label, title]) => (
+                  <th key={k} title={title} className={teamSort.sortKey === k ? "sorted" : ""} onClick={() => teamSort.toggleSort(k)}>
+                    {label}{teamSort.sortKey === k ? (teamSort.sortDir === "desc" ? " ↓" : " ↑") : ""}
+                  </th>
+                ))}
+                <th>Fair odds</th>
+                <th title="Most likely icebreaker on this team">Top skater</th>
+                <th title="Official starting skaters (once posted)">▶ Starting</th>
+              </tr>
+            </thead>
+            <tbody>
+              {teamSort.sorted.map((t) => (
+                <tr key={t.team}>
+                  <td style={{ fontWeight: 700 }}>{actual?.scorerTeam === t.team ? "🧊 " : ""}{t.team}</td>
+                  <td>{t.isHome ? `vs ${t.opp}` : `@ ${t.opp}`}</td>
+                  <td style={{ fontWeight: 700 }}>{pct(t.p)}</td>
+                  <td>{pct(t.fgP)}</td>
+                  <td>{pct(t.by5, 0)}</td>
+                  <td>{pct(t.by10, 0)}</td>
+                  <td>{t.xg.toFixed(2)}</td>
+                  <td>{fairOdds(t.p)}</td>
+                  <td className="clickable" onClick={() => t.top && openSkaterSlide(t.top)}>
+                    {t.top ? <span className="player-name-link">{t.top.name}</span> : "—"} {t.top ? <span className="mono" style={{ fontSize: 9, ...muted }}>{pct(t.top.iceP)}</span> : null}
+                  </td>
+                  <td className="mono" style={{ fontSize: 10, whiteSpace: "normal", minWidth: 160 }}>{t.starters ? t.starters.join(", ") : <span style={muted}>not posted</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (<>
       <div className="table-wrap">
         <table className="data-table">
           <thead>
@@ -153,6 +205,7 @@ export default function IcebreakerView({ players, slate, goals, position }) {
           {showAll ? `Show top ${SHOW}` : `Show all ${sorted.length}`}
         </button>
       )}
+      </>)}
     </div>
   );
 }
