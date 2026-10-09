@@ -1,7 +1,7 @@
 {
  "_meta": {
   "slateDate": "2026-10-09",
-  "snapshotAt": "2026-10-09T16:02:35.198Z",
+  "snapshotAt": "2026-10-09T18:29:24.678Z",
   "poolGenerated": "2026-10-09 12:02",
   "games": [
    {
@@ -6023,20 +6023,20 @@
    "team": "PIT",
    "opp": "CBJ",
    "isHome": false,
-   "goalieId": 8481668,
-   "goalie": "Arturs Silovs",
-   "confirmed": false,
-   "status": "Expected",
+   "goalieId": 8483703,
+   "goalie": "Sergei Murashov",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 28.2,
-   "saves": 25.1,
-   "goalsAllowed": 3.15,
-   "savePct": 0.8882,
+   "saves": 25.3,
+   "goalsAllowed": 2.94,
+   "savePct": 0.8958,
    "lines": {
-    "20": 82,
-    "25": 53.7,
-    "30": 23.2,
-    "35": 6
+    "20": 82.9,
+    "25": 55.1,
+    "30": 24.3,
+    "35": 6.4
    },
    "teamsDataPresent": true
   },
@@ -6108,6 +6108,68 @@
     "35": 10.8
    },
    "teamsDataPresent": true
+  }
+ ],
+ "games": [
+  {
+   "gameId": 2026020066,
+   "matchup": "SEA@DET",
+   "away": "SEA",
+   "home": "DET",
+   "awayGoalieId": 8478916,
+   "homeGoalieId": 8476434,
+   "xgAway": 2.755,
+   "xgHome": 3.091,
+   "winAway": 0.443,
+   "winHome": 0.557,
+   "ot": 0.223,
+   "likely": "2-3",
+   "over55": 0.529
+  },
+  {
+   "gameId": 2026020067,
+   "matchup": "NYR@WSH",
+   "away": "NYR",
+   "home": "WSH",
+   "awayGoalieId": 8478048,
+   "homeGoalieId": 8480313,
+   "xgAway": 2.875,
+   "xgHome": 2.865,
+   "winAway": 0.502,
+   "winHome": 0.498,
+   "ot": 0.227,
+   "likely": "3-2",
+   "over55": 0.511
+  },
+  {
+   "gameId": 2026020068,
+   "matchup": "PIT@CBJ",
+   "away": "PIT",
+   "home": "CBJ",
+   "awayGoalieId": 8483703,
+   "homeGoalieId": 8475660,
+   "xgAway": 3.081,
+   "xgHome": 3.244,
+   "winAway": 0.474,
+   "winHome": 0.526,
+   "ot": 0.215,
+   "likely": "2-3",
+   "over55": 0.605
+  },
+  {
+   "gameId": 2026020069,
+   "matchup": "ANA@WPG",
+   "away": "ANA",
+   "home": "WPG",
+   "awayGoalieId": 8480843,
+   "homeGoalieId": 8483532,
+   "xgAway": 3.054,
+   "xgHome": 3.182,
+   "winAway": 0.479,
+   "winHome": 0.521,
+   "ot": 0.217,
+   "likely": "2-3",
+   "over55": 0.591
   }
  ]
 }

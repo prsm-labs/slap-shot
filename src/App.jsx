@@ -9,6 +9,7 @@ import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
 import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
 import FirstGoalTab from "./tabs/FirstGoalTab.jsx";
+import ProjectionsTab from "./tabs/ProjectionsTab.jsx";
 import TrackRecordTab from "./tabs/TrackRecordTab.jsx";
 import LiveThemesTab from "./tabs/LiveThemesTab.jsx";
 import SplitsTab from "./tabs/SplitsTab.jsx";
@@ -31,6 +32,7 @@ const TABS = [
   { key: "goals", label: "🚨 Goal Tracker", Component: GoalTrackerTab },
   // Scouting holds All Matchups (default) plus Lamp / Apple / Crease Lab as in-page buttons.
   { key: "board", label: "🎯 Scouting", Component: MatchupsHubTab },
+  { key: "projections", label: "🔮 Projections", Component: ProjectionsTab },
   { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab },
   { key: "track", label: "📈 Track Record", Component: TrackRecordTab },
   // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".

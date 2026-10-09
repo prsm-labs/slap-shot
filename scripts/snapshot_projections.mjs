@@ -21,6 +21,7 @@ import { applySlateScores } from "../src/lib/slapScore.js";
 import { projectGoalie } from "../src/lib/crease.js";
 import { lineupMaps, startingGoalie } from "../src/lib/lineups.js";
 import { buildLineups } from "../api/lineups.js";
+import { projectGame } from "../src/lib/gameModel.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -136,6 +137,22 @@ const players = scored.map((p) => {
   };
 });
 
+// Game projections (Projections tab, lib/gameModel.js) with the same starters as the goalie section.
+const ratingsPath = path.join(root, "public/data/team_ratings.json");
+const ratings = fs.existsSync(ratingsPath) ? JSON.parse(fs.readFileSync(ratingsPath, "utf8")) : null;
+const goalieRows = await goalieSection();
+const starterOf = new Map(goalieRows.map((g) => [g.team, g.goalieId]));
+const gameRows = ratings ? meta.slate.map((g) => {
+  const pr = projectGame(ratings, { away: g.away, home: g.home, awayGoalieId: starterOf.get(g.away), homeGoalieId: starterOf.get(g.home) });
+  const r3 = (v) => Math.round(v * 1000) / 1000;
+  return {
+    gameId: g.gameId, matchup: `${g.away}@${g.home}`, away: g.away, home: g.home,
+    awayGoalieId: starterOf.get(g.away) ?? null, homeGoalieId: starterOf.get(g.home) ?? null,
+    xgAway: r3(pr.xgAway), xgHome: r3(pr.xgHome), winAway: r3(pr.winAway), winHome: r3(pr.winHome), ot: r3(pr.ot),
+    likely: `${pr.scores[0].away}-${pr.scores[0].home}`, over55: r3(pr.overs[5.5]),
+  };
+}) : [];
+
 const snapshot = {
   _meta: {
     slateDate: meta.slateDate,
@@ -150,7 +167,8 @@ const snapshot = {
     note: "Pre-game projections as shown in the app. Slap Score v2: goal / point % from the grade model adjusted for the opponent (lib/slapScore.js); 3+ SOG % from the shot sim.",
   },
   players,
-  goalies: await goalieSection(),
+  goalies: goalieRows,
+  games: gameRows,
 };
 
 fs.mkdirSync(outDir, { recursive: true });
@@ -160,4 +178,4 @@ fs.writeFileSync(outPath, JSON.stringify(snapshot, null, 1));
 const dates = fs.readdirSync(outDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map((f) => f.slice(0, 10)).sort();
 fs.writeFileSync(path.join(outDir, "index.json"), JSON.stringify({ dates }, null, 1));
 
-console.log(`Wrote ${outPath}: ${players.length} skaters, ${snapshot.goalies.length} goalies, ${meta.slate.length} games (${dates.length} snapshot dates total)`);
+console.log(`Wrote ${outPath}: ${players.length} skaters, ${snapshot.goalies.length} goalies, ${meta.slate.length} games (${gameRows.length} game projections) (${dates.length} snapshot dates total)`);
