@@ -229,6 +229,12 @@ export async function buildLineups(date) {
   return { date, generated: new Date().toISOString(), rotowireError, games: out };
 }
 
+// From 15 minutes before a game's scheduled start to 10 minutes after it.
+export function nearPuckDrop(startTimeUTC, now = Date.now()) {
+  const t = Date.parse(startTimeUTC);
+  return now >= t - 15 * 60_000 && now <= t + 10 * 60_000;
+}
+
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET");
@@ -236,8 +242,10 @@ export default async function handler(req, res) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return res.status(400).json({ error: "date=YYYY-MM-DD required" });
   try {
     const data = await buildLineups(date);
-    // Lineup news changes through the day, not by the second.
-    res.setHeader("Cache-Control", "s-maxage=180, stale-while-revalidate=120");
+    // Lineup news changes through the day, not by the second — except right around puck drop, when the
+    // official starting lineups appear (10/9: 8 PM game's starters bolded at ~7:56) — then 30 s.
+    const near = data.games.some((g) => nearPuckDrop(g.startTimeUTC));
+    res.setHeader("Cache-Control", near ? "s-maxage=30, stale-while-revalidate=15" : "s-maxage=180, stale-while-revalidate=120");
     res.status(200).json(data);
   } catch (err) {
     console.error("[lineups] error:", err.message);

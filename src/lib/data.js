@@ -6,7 +6,7 @@ import { scorePlayerPool } from "../scoring.js";
 import { computeGoalieGrades, gradeSlate } from "./grades.js";
 import { applySlateScores } from "./slapScore.js";
 import { estimatedToi, ppToiPerGame } from "./toi.js";
-import { fetchLineups } from "./lineups.js";
+import { fetchLineups, lineupPollMs } from "./lineups.js";
 import { applyLineups, STARTED } from "./slateOverlay.js";
 
 // ── Live slate pool ──────────────────────────────────────────────────────────
@@ -106,12 +106,14 @@ function startPolling() {
   if (polling) return;
   polling = true;
   setInterval(() => checkPool().catch(() => {}), POOL_CHECK_MS);
-  setInterval(() => {
+  // Lineups: every 3 min, every 30 s around puck drop (lib/lineups.js lineupPollMs) so the official
+  // starting lineups land before the opening faceoff.
+  const tick = async () => {
     // Nothing left to update once every game is final.
-    if (lineups && current?.live.games && current.live.final === current.live.games) return;
-    checkLineups();
-  }, LINEUP_CHECK_MS);
-  checkLineups();
+    if (!(lineups && current?.live.games && current.live.final === current.live.games)) await checkLineups();
+    setTimeout(tick, lineups ? lineupPollMs(lineups) : LINEUP_CHECK_MS);
+  };
+  tick();
 }
 
 // Re-check the pool file and lineup news now (the Top 3 page's refresh button). /api/lineups is

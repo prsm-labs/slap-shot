@@ -4,11 +4,21 @@
 import { useEffect, useState } from "react";
 
 const POLL_MS = 3 * 60_000;
+const NEAR_POLL_MS = 30_000; // around puck drop, when the official starting lineups appear
 const cache = new Map(); // date -> { at, data }
+
+// How often to re-check: 30 s from 15 min before any game's start to 10 min after, else 3 min.
+export function lineupPollMs(data, now = Date.now()) {
+  const near = (data?.games || []).some((g) => {
+    const t = Date.parse(g.startTimeUTC);
+    return now >= t - 15 * 60_000 && now <= t + 10 * 60_000;
+  });
+  return near ? NEAR_POLL_MS : POLL_MS;
+}
 
 export async function fetchLineups(date) {
   const hit = cache.get(date);
-  if (hit && Date.now() - hit.at < POLL_MS - 5_000) return hit.data;
+  if (hit && Date.now() - hit.at < lineupPollMs(hit.data) - 5_000) return hit.data;
   const res = await fetch(`/api/lineups?date=${date}`);
   const body = await res.json();
   if (!res.ok) throw new Error(body.error || res.status);
@@ -27,7 +37,7 @@ export function useLineups(date) {
         const body = await fetchLineups(date);
         if (cancelled) return;
         setData(body);
-        if (body.games.some((g) => g.state !== "FINAL" && g.state !== "OFF")) timer = setTimeout(load, POLL_MS);
+        if (body.games.some((g) => g.state !== "FINAL" && g.state !== "OFF")) timer = setTimeout(load, lineupPollMs(body));
       } catch {
         if (!cancelled) timer = setTimeout(load, POLL_MS);
       }
