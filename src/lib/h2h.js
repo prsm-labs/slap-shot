@@ -33,7 +33,8 @@ export const nhlSeason = (s) => Number(`${s}${s + 1}`);
 // vs goalie 1.03x / 1.11x; nothing in a model test), so it never feeds Slap Score or the picks.
 //   skater: per-game goals + half of points above their own rate vs tonight's team (all meetings since
 //           2022-23, shrunk with 5 games of "normal"), plus goals above their own shooting % on tonight's
-//           goalie (shrunk with 20 shots). Graded with 3+ games vs the team or 8+ shots on the goalie.
+//           goalie (shrunk with 20 shots). Graded with 2+ games vs the team or 5+ shots on the goalie
+//           (was 3+ / 8+ until 2026-10-09); under 4 games and 15 shots the grade is marked small-sample (*).
 //   goalie: saves above their own save % vs tonight's opponent, shrunk with 150 shots; 2+ games, 40+ shots.
 //   letters by rank among tonight's graded players (A+ top 5%, A next 10%, B 20%, C 30%, D 20%, F 15%).
 const BANDS = [[0.95, "A+"], [0.85, "A"], [0.65, "B"], [0.35, "C"], [0.15, "D"], [0, "F"]];
@@ -65,18 +66,19 @@ export function h2hGrades(h2h, players, goalies) {
       const gr = (p.TotalGoals || 0) / gp;
       const pr = (p.I_F_points || 0) / gp;
       score += ((t.goals - t.games * gr) + 0.5 * (t.points - t.games * pr)) / (t.games + 5);
-      if (t.games >= 3) graded = true;
+      if (t.games >= 2) graded = true;
     }
     if (vg && vg.totals.sogOn > 0) {
       const sog = (p.ShotsOnGoalPerGame || 0) * gp;
       const ownSh = sog > 0 ? (p.TotalGoals || 0) / sog : 0.1;
       score += (vg.totals.goalsOn - vg.totals.sogOn * ownSh) / (vg.totals.sogOn + 20);
-      if (vg.totals.sogOn >= 8) graded = true;
+      if (vg.totals.sogOn >= 5) graded = true;
     }
     const parts = [];
     if (t) parts.push(`${t.games} GP vs ${e.vsTeam.opp}: ${t.goals} G, ${t.points} P`);
     if (vg) parts.push(`vs ${last(vg.goalie)} ${vg.totals.goalsOn}/${vg.totals.sogOn} shots`);
-    const row = { playerId: p.playerId, score, graded, text: parts.join(" · "), letter: null };
+    const small = (t?.games ?? 0) < 4 && (vg?.totals.sogOn ?? 0) < 15;
+    const row = { playerId: p.playerId, score, graded, small, text: parts.join(" · ") + (graded && small ? " · small sample" : ""), letter: null };
     skaters.set(p.playerId, row);
     if (graded) rows.push(row);
   }

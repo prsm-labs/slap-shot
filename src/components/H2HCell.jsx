@@ -9,6 +9,7 @@ export default function H2HCell({ playerId, goalie = false, compact = false }) {
   return (
     <span className="mono" title={`H2H (context, not a prediction): ${g.text}`} style={{ fontSize: 10, display: "inline-flex", alignItems: "center", gap: 6, whiteSpace: compact ? "nowrap" : "normal" }}>
       {g.letter ? <GradeBadge grade={{ letter: g.letter }} /> : <span style={{ color: "var(--muted)" }}>—</span>}
+      {g.letter && g.small && <span title="Small sample: under 4 games vs this team and under 15 shots on this goalie" style={{ color: "var(--muted)", marginLeft: -4 }}>*</span>}
       {!compact && <span style={{ color: "var(--muted)" }}>{g.text}</span>}
     </span>
   );
