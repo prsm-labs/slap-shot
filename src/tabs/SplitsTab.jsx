@@ -15,7 +15,7 @@ import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js
 
 const SKATER_COLS = [
   ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"],
-  ["ShotsOnGoalPerGame", "SOG/GP"], ["ICF", "ICF"], ["HDCF", "HDCF"],
+  ["ShotsOnGoalPerGame", "SOG/GP"], ["sog60", "SOG/60", "Shots on goal per 60 minutes of ice time"], ["ICF", "ICF"], ["HDCF", "HDCF"],
   ["gradeScore", "Grade"], ["slapScore", "Slap Score"], ["h2hScore", "H2H vs tonight"],
   // [key, label, tooltip, H2H stat] — goal-game rates (lib/h2h.js withH2H)
   ...SKATER_H2H_COLS.map(([k, stat, label, title]) => [k, label, title, stat]),

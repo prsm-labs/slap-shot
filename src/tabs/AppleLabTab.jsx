@@ -192,6 +192,8 @@ export default function AppleLabTab() {
                 <th className={sortKey === "plus3SogPct" ? "sorted" : ""} onClick={() => toggleSort("plus3SogPct")}>+3 SOG %{sortKey === "plus3SogPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Shots on goal per game, last season + this season" className={sortKey === "sogPg" ? "sorted" : ""} onClick={() => toggleSort("sogPg")}>SOG/GP{sortKey === "sogPg" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Shots on goal per 60 minutes of ice time" className={sortKey === "sog60" ? "sorted" : ""} onClick={() => toggleSort("sog60")}>SOG/60{sortKey === "sog60" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)" className={sortKey === "h2hScore" ? "sorted" : ""} onClick={() => toggleSort("h2hScore")}>H2H{sortKey === "h2hScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {SKATER_H2H_COLS.map(([k, , label, title]) => (
                   <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -216,6 +218,8 @@ export default function AppleLabTab() {
                   <td>{p.plus3SogPct}%</td>
                   <td>{p.slapScore}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>
+                  <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
+                  <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
                   <td><H2HCell playerId={p.playerId} /></td>
                   {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>

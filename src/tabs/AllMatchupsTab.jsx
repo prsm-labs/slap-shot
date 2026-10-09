@@ -28,6 +28,8 @@ const COLUMNS = [
   ["name", "Skater"],
   ["opponentGoalie", "Opp Goalie"],
   ["estToi", "Est. TOI"],
+  ["sogPg", "SOG/GP", "Shots on goal per game, last season + this season"],
+  ["sog60", "SOG/60", "Shots on goal per 60 minutes of ice time"],
   ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
   ["tier", "Tier"],
@@ -145,6 +147,8 @@ export default function AllMatchupsTab() {
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <td className="mono">{fmtToi(p.estToi)}</td>
+                  <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
+                  <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>
                   <td><span className={`tier-pill ${TIER_CLASS[p.tier] || "tier-ignore"}`}>{p.tier}</span></td>

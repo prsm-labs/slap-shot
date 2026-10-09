@@ -60,6 +60,9 @@ function build() {
     return {
       ...p, goalieGrade, effectiveGrade: grade, baseGrade: grade, gradeScore: grade?.score ?? null,
       modelProbs: grade?.probs ?? null, estToi: estimatedToi(p), ppToi: ppToiPerGame(p),
+      // shots on goal per game and per 60 minutes of ice time (icetime = total seconds), last season + this season
+      sogPg: p.ShotsOnGoalPerGame ?? null,
+      sog60: p.icetime > 0 && p.ShotsOnGoalPerGame != null ? Math.round(((p.ShotsOnGoalPerGame * p.games_played * 3600) / p.icetime) * 100) / 100 : null,
     };
   });
   // Slap Score / tiers / goal % / point % from the grade model (lib/slapScore.js).
