@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-11",
+  "lockedAt": "2026-10-11T21:32:44.609Z",
+  "poolGenerated": "2026-10-11 17:31",
+  "eligible": 80,
+  "confirmed": 80,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 1% of tonight's slate by the grade model (36.2% to score), facing VAN (#1 softest defense of 4 tonight, 3.5 expected goals allowed a game). Matchup-adjusted chance 37.6%.",
+   "playerId": 8476459,
+   "name": "Mika Zibanejad",
+   "team": "NYR",
+   "opp": "VAN",
+   "position": "C",
+   "isHome": true,
+   "opponentGoalie": "Kevin Lankinen",
+   "opponentGoalieId": 8480947,
+   "goalieGrade": "F",
+   "grade": "A+",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 36.2,
+   "adjGoalPct": 37.6,
+   "oppXga": 3.5,
+   "softRank": 1,
+   "sogL5": 1.8,
+   "sogPg": 2.6
+  },
+  {
+   "tier": "mid",
+   "fallback": true,
+   "why": "No mid-tier skater cleared tonight's bar (soft matchup + shots trending up), so this is the best remaining mid-tier chance: 24.8% vs PHI (#3 softest defense of 4 tonight, 2.9 expected goals allowed a game).",
+   "playerId": 8482809,
+   "name": "Jackson Blake",
+   "team": "CAR",
+   "opp": "PHI",
+   "position": "R",
+   "isHome": false,
+   "opponentGoalie": "Joseph Woll",
+   "opponentGoalieId": 8479361,
+   "goalieGrade": "D",
+   "grade": "A",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 25.4,
+   "adjGoalPct": 24.8,
+   "oppXga": 2.9,
+   "softRank": 3,
+   "sogL5": 2.8,
+   "sogPg": 2.2
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
