@@ -3,6 +3,8 @@
 //
 //   GET /api/boxscore?gameId=2026020004
 
+import { trackPlays } from "./live.js";
+
 const NHL = "https://api-web.nhle.com/v1";
 
 async function getJson(url) {
@@ -48,9 +50,10 @@ function team(box, side) {
 }
 
 export async function buildBoxscore(gameId) {
-  const [box, landing] = await Promise.all([
+  const [box, landing, pbp] = await Promise.all([
     getJson(`${NHL}/gamecenter/${gameId}/boxscore`),
     getJson(`${NHL}/gamecenter/${gameId}/landing`).catch(() => null),
+    getJson(`${NHL}/gamecenter/${gameId}/play-by-play`).catch(() => null),
   ]);
   const away = team(box, "awayTeam");
   const home = team(box, "homeTeam");
@@ -88,6 +91,8 @@ export async function buildBoxscore(gameId) {
       away: landing.situation.awayTeam?.strength ?? null, home: landing.situation.homeTeam?.strength ?? null,
     } : null,
     away, home, periods, scoring,
+    // Game Tracker view: recent plays + rink positions (api/live.js trackPlays)
+    track: pbp ? trackPlays(pbp) : null,
     threeStars: (landing?.summary?.threeStars || []).map((s) => ({
       star: s.star, playerId: s.playerId, team: s.teamAbbrev, name: text(s.name),
       goals: s.goals, assists: s.assists, points: s.points,

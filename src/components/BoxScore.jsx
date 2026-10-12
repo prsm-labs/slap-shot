@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import { batchFromBox, estimateOnIce, sameBatch } from "../lib/onIce.js";
+import RinkTracker from "./RinkTracker.jsx";
 
 // Full box score for one game, from /api/boxscore (api/boxscore.js). Refreshes every 15s while
 // the game is live (the endpoint is cached 15s at the edge). Skater rows are tinted tan when the
@@ -131,6 +132,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
   // The last two distinct batches of skater ice time, for the on-ice estimate.
   const batches = useRef({ prev: null, cur: null });
   const [onIce, setOnIce] = useState(null);
+  const [view, setView] = useState("box"); // "box" | "tracker" (Game Tracker: rink + recent plays)
 
   useEffect(() => {
     let cancelled = false;
@@ -187,6 +189,13 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Box score error: {error}</div>}
       {!box && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading box score…</div>}
       {box && (
+        <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
+          <button className={`pill-btn ${view === "box" ? "active" : ""}`} onClick={() => setView("box")}>📋 Box score</button>
+          <button className={`pill-btn ${view === "tracker" ? "active" : ""}`} onClick={() => setView("tracker")}>🏒 Game Tracker</button>
+        </div>
+      )}
+      {box && view === "tracker" && <RinkTracker box={box} />}
+      {box && view === "box" && (
         <>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start" }}>
             <Linescore box={box} />

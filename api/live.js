@@ -133,6 +133,66 @@ export function analyzeGame(pbp) {
   };
 }
 
+// Play-by-play tracker for the box score's "Play-by-play" view (components/RinkTracker.jsx).
+// Coordinates are flipped so the HOME team always attacks to the right (x = +89 is the net home
+// shoots at). The "puck" is just the last logged play's spot — the public feed logs faceoffs,
+// shots, hits, giveaways/takeaways, goals and penalties, not continuous puck position.
+const BLUE_LINE = 25;   // feet from center
+export function trackPlays(pbp, limit = 30) {
+  const teams = { [pbp.homeTeam.id]: pbp.homeTeam.abbrev, [pbp.awayTeam.id]: pbp.awayTeam.abbrev };
+  const names = {};
+  const teamOf = {};
+  for (const r of pbp.rosterSpots || []) {
+    names[r.playerId] = `${r.firstName.default[0]}. ${r.lastName.default}`;
+    teamOf[r.playerId] = teams[r.teamId];
+  }
+  const n = (id) => (id ? names[id] || "" : "");
+  const label = (type, d) => {
+    switch (type) {
+      case "faceoff": return `Faceoff won by ${n(d.winningPlayerId)}`;
+      case "hit": return `${n(d.hittingPlayerId)} hit ${n(d.hitteePlayerId)}`;
+      case "giveaway": return `Giveaway · ${n(d.playerId)}`;
+      case "takeaway": return `Takeaway · ${n(d.playerId)}`;
+      case "shot-on-goal": return `Shot · ${n(d.shootingPlayerId)}${d.goalieInNetId ? ` (saved by ${n(d.goalieInNetId)})` : ""}`;
+      case "missed-shot": return `Missed shot · ${n(d.shootingPlayerId)}${d.reason ? ` (${d.reason.replace(/-/g, " ")})` : ""}`;
+      case "blocked-shot": return `${n(d.shootingPlayerId)} blocked by ${n(d.blockingPlayerId)}`;
+      case "goal": return `GOAL · ${n(d.scoringPlayerId)}${d.assist1PlayerId ? ` (${[d.assist1PlayerId, d.assist2PlayerId].filter(Boolean).map(n).join(", ")})` : ""}`;
+      case "penalty": return `Penalty · ${n(d.committedByPlayerId) || teams[d.eventOwnerTeamId] || ""}${d.descKey ? ` — ${d.descKey.replace(/-/g, " ")}` : ""}${d.duration ? `, ${d.duration} min` : ""}`;
+      case "stoppage": return `Stoppage${d.reason ? ` — ${d.reason.replace(/-/g, " ")}` : ""}`;
+      case "delayed-penalty": return "Delayed penalty";
+      case "period-start": return "Period start";
+      case "period-end": return "End of period";
+      case "game-end": return "Game over";
+      default: return type.replace(/-/g, " ");
+    }
+  };
+  const rows = (pbp.plays || []).map((p) => {
+    const d = p.details || {};
+    let x = d.xCoord ?? null, y = d.yCoord ?? null;
+    if (x != null && y != null && p.homeTeamDefendingSide === "right") { x = -x; y = -y; }
+    // blocked shots belong to the shooting side (the feed's owner team isn't consistent for them)
+    const team = (p.typeDescKey === "blocked-shot" && teamOf[d.shootingPlayerId]) || teams[d.eventOwnerTeamId] || null;
+    return {
+      id: p.eventId, type: p.typeDescKey, label: label(p.typeDescKey, d), team,
+      period: p.periodDescriptor?.number ?? null, periodType: p.periodDescriptor?.periodType ?? null,
+      time: p.timeInPeriod, remaining: p.timeRemaining, x, y,
+    };
+  });
+  const located = rows.filter((r) => r.x != null && r.y != null);
+  const last = located[located.length - 1] || null;
+  // Which team is attacking = whose offensive zone the last play happened in.
+  const attacking = !last ? null
+    : last.x > BLUE_LINE ? pbp.homeTeam.abbrev
+    : last.x < -BLUE_LINE ? pbp.awayTeam.abbrev
+    : null;
+  return {
+    home: pbp.homeTeam.abbrev, away: pbp.awayTeam.abbrev,
+    attacking, last, latest: rows[rows.length - 1] || null,
+    trail: located.slice(-6),
+    plays: rows.slice(-limit).reverse(),   // newest first
+  };
+}
+
 // NHL feed shot types -> MoneyPuck's codes, so live rows read like the nightly log.
 const SHOT_TYPES = { backhand: "BACK", "tip-in": "TIP", deflected: "DEFL", "wrap-around": "WRAP" };
 
