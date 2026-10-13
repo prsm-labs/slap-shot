@@ -24,6 +24,22 @@ function pctRank(rows, get) {
   return out;
 }
 
+// Per skater: expected goals per game over the last 5 (3+ games) vs the season rate shrunk toward the slate's
+// league average with 10 games — the same trend Breakout Watch uses. Shared with lib/dueHeat.js.
+export function xgTrendMap(players) {
+  const rows = players.filter((p) => (p.games_played || 0) > 0);
+  const lg = mean(rows.filter((p) => p.games_played >= 10).map((p) => (p.xG || 0) / p.games_played));
+  const out = new Map();
+  for (const p of rows) {
+    const recent = (p.last7 || []).slice(-5).filter((g) => g.xg != null);
+    if (recent.length < 3) continue;
+    const xgL5 = mean(recent.map((g) => g.xg || 0));
+    const xgSeason = ((p.xG || 0) + PRIOR_GAMES * lg) / (p.games_played + PRIOR_GAMES);
+    out.set(p.playerId, { xgL5, xgSeason, xgTrend: xgL5 / xgSeason });
+  }
+  return out;
+}
+
 // players: tonight's eligible skaters from the live pool (modelProbs, last7 with xg / hd / shotAttempts).
 export function breakoutBoard(players) {
   const rows = players.filter((p) => p.modelProbs?.goal != null && p.opponentTeamxGA60 != null && (p.games_played || 0) > 0);
@@ -58,6 +74,7 @@ export function breakoutBoard(players) {
     if (r.quality < NOT_TOP && r.softness >= SOFT && xgTrend > TREND) list.push(r);
   }
   // Strongest chance tonight first (matchup-adjusted since 2026-10-13); trend + matchup got them on the list.
-  list.sort((a, b) => b.modelProbs.goal - a.modelProbs.goal);
+  // anytimeGoalPct (lib/slapScore.js) includes the 🔥 Due boost when present
+  list.sort((a, b) => (b.anytimeGoalPct ?? b.modelProbs.goal * 100) - (a.anytimeGoalPct ?? a.modelProbs.goal * 100));
   return { list, eligible: rows.length };
 }

@@ -7,6 +7,7 @@ import { SKATER_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import { useSort } from "../lib/useSort.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import PickButton from "../components/PickButton.jsx";
+import DueTag from "../components/DueTag.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -27,7 +28,7 @@ export default function BreakoutTab() {
   const h2hGrades = useH2HGrades();
   // Sortable: model goal % (default), trends, opp D, grade, H2H + goal-game rates.
   const rows = withH2H(board ? filterPositions(filterPlayers(board.list, selected), position) : [], h2hGrades)
-    .map((p) => ({ ...p, modelGoal: p.modelProbs?.goal ?? null, softRankSort: p.softRank != null ? -p.softRank : null }));
+    .map((p) => ({ ...p, modelGoal: p.anytimeGoalPct != null ? p.anytimeGoalPct / 100 : p.modelProbs?.goal ?? null, softRankSort: p.softRank != null ? -p.softRank : null }));
   const { sorted: list, sortKey, sortDir, toggleSort } = useSort(rows, "modelGoal", "desc");
 
   if (!board) return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading…</div>;
@@ -42,6 +43,10 @@ export default function BreakoutTab() {
         at least 1.3x their usual expected goals over their last 5 games, and faces one of tonight's softest third of defenses.
         Backtested on 2025-26, that group scored 20-29% more often than the model expected (points 11% more), in both halves of
         the season. Head-to-head history is shown for context only — it didn't predict anything in the same test.
+        <span style={{ display: "block", marginTop: 4 }}>
+          🔥 DUE = also no goal in 2+ games and not a top-25% scorer. Over 4 seasons that group scored 6-13% above the model (a
+          plain goal drought alone: 0%), so their goal chance gets x1.06 (2 games) / x1.10 (3+).
+        </span>
       </div>
       <PositionFilter />
       <MatchupFilter />
@@ -55,7 +60,7 @@ export default function BreakoutTab() {
               <tr>
                 {th("name", "Skater")}
                 <th>Opp goalie</th>
-                {th("modelGoal", "Model goal %", "Grade-model chance to score tonight")}
+                {th("modelGoal", "Model goal %", "Chance to score tonight: grade model + matchup, incl. the 🔥 Due boost")}
                 {th("multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed")}
                 {th("sogPg", "SOG/GP", "Shots on goal per game, last season + this season")}
                 {th("sog60", "SOG/60", "Shots on goal per 60 minutes of ice time")}
@@ -75,7 +80,7 @@ export default function BreakoutTab() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} />
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /><DueTag due={p.dueHeat} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>
                           {p.team} · {positionLabel(p.position)} · xG {p.xgL5.toFixed(2)}/gm last {p.recentGames} vs {p.xgSeason.toFixed(2)}
                         </div>

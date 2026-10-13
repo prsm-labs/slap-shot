@@ -40,6 +40,7 @@ export default function ListFilters({ signalLabel = "★ Signals only", shown, t
             {pill(f.signals, signalLabel, () => setListFilter("signals", !f.signals))}
             {pill(f.soft, "Soft defense tonight", () => setListFilter("soft", !f.soft), "Opponent in tonight's softest third by expected goals allowed — the matchup factor that tested real")}
             {pill(f.breakout, "🚀 Breakout Watch", () => setListFilter("breakout", !f.breakout), "Rising expected goals into a soft defense, outside the model's top 15%")}
+            {pill(f.due, "🔥 Due + heating up", () => setListFilter("due", !f.due), "No goal in 2+ games, expected goals last 5 at 1.3x+ the season rate, soft defense tonight, not a top-25% scorer — scored 6-13% above the model over 4 seasons")}
             {pill(f.confirmed, "✅ In official lineup", () => setListFilter("confirmed", !f.confirmed), "Only skaters in tonight's posted lineup (around warmups)")}
             {pill(f.strongH2H, "🔁 Strong H2H (A/A+)", () => setListFilter("strongH2H", !f.strongH2H), "History vs tonight's opponent well above their own norm — context, not a prediction")}
           </div>

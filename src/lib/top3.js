@@ -29,6 +29,7 @@
 // estimated ice time. Also: at most one pick per team (10/5 had two Ottawa skaters in one game).
 // Locked nights before this keep their original Longshot cards (LEGACY_TIERS).
 import { breakoutBoard } from "./breakout.js";
+import { dueHeatMap } from "./dueHeat.js";
 import { estimatedToi } from "./toi.js";
 
 export const TIERS = [
@@ -74,12 +75,13 @@ export function eligibleForTop3(players, slate, now = Date.now()) {
 // players: scored + graded pool skaters (modelProbs from lib/grades.js), already filtered to
 // tonight's eligible set (not ruled out, game not started).
 export function selectTop3(players) {
+  const due = dueHeatMap(players.filter((p) => p.modelProbs?.goal != null));
   const rows = players
     .filter((p) => p.modelProbs?.goal != null && p.opponentTeamxGA60 != null)
     .map((p) => {
       const recent = (p.last7 || []).slice(-5);
       const sogL5 = recent.length ? recent.reduce((s, g) => s + (g.sog || 0), 0) / recent.length : null;
-      return { ...p, pGoal: p.modelProbs.base?.goal ?? p.modelProbs.goal, pAdj: p.modelProbs.goal, oppXga: p.opponentTeamxGA60, sogL5, sogPg: p.ShotsOnGoalPerGame || 0 };
+      return { ...p, pGoal: p.modelProbs.base?.goal ?? p.modelProbs.goal, pAdj: Math.min(0.95, p.modelProbs.goal * (due.get(p.playerId)?.mult ?? 1)), due: due.get(p.playerId) || null, oppXga: p.opponentTeamxGA60, sogL5, sogPg: p.ShotsOnGoalPerGame || 0 };
     });
   if (!rows.length) return { picks: TIERS.map((t) => ({ tier: t.key, player: null })), eligible: 0 };
 
@@ -140,7 +142,8 @@ function whyLine(tier, r, nTeams, fallback) {
     }
     return `${r1(r.sogL5)} shots a game over the last 5 games vs ${r1(r.sogPg)} on the season, into ${opp} — the combination that scored 14-24% above the model last season. ${pct(r.pAdj)}% to score.`;
   }
-  return `${r.xgL5.toFixed(2)} expected goals a game over the last 5 vs ${r.xgSeason.toFixed(2)} usual (${r.xgTrend.toFixed(1)}x), outside the model's top 15%, into ${opp} — the combination that scored 20-29% above the model last season. About ${Math.round(r.estToi)} minutes a night. ${pct(r.pAdj)}% to score.`;
+  const dueNote = r.due ? ` No goal in ${r.due.drought >= 7 ? "7+" : r.due.drought} games — 🔥 due + heating up.` : "";
+  return `${r.xgL5.toFixed(2)} expected goals a game over the last 5 vs ${r.xgSeason.toFixed(2)} usual (${r.xgTrend.toFixed(1)}x), outside the model's top 15%, into ${opp} — the combination that scored 20-29% above the model last season. About ${Math.round(r.estToi)} minutes a night. ${pct(r.pAdj)}% to score.${dueNote}`;
 }
 
 // Compact record of a pick, as stored by the daily lock (public/data/top3/<date>.json).

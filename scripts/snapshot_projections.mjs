@@ -132,6 +132,7 @@ const players = scored.map((p) => {
     anytimeGoalPct: p.anytimeGoalPct,
     anytimePointPct: p.anytimePointPct,
     multiGoalPct: p.multiGoalPct,
+    dueHeat: p.dueHeat ? { drought: p.dueHeat.drought, mult: p.dueHeat.mult } : null,
     plus3SogPct: p.plus3SogPct,
     firstGoalPct: Math.round((firstGoal.get(p.playerId) || 0) * 1000) / 10,
     goalSignal: isGoalSignal(p),

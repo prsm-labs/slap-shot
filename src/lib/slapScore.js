@@ -15,6 +15,7 @@
 //   tiers: Elite Add-On top 10% (90+), Core Target next 20% (70-89), Value Upside next 20% (50-69),
 //          Ignore the rest. On 10/2-10/4 that ordering held: goal 31% / 24% / 14% / 8%.
 
+import { dueHeatMap } from "./dueHeat.js";
 export { MATCHUP_COEF } from "./grades.js"; // applied in gradeSlate; modelProbs arrive matchup-adjusted
 
 // 2+ goals tonight (2026-10-12; scratch multigoal_fit2.py): logistic on L = logit(grade-model goal chance)
@@ -53,13 +54,15 @@ function pctRank(rows, get) {
 // rank of the opponent's xGA allowed; 1 = softest).
 export function applySlateScores(players) {
   const scored = players.filter((p) => p.modelProbs?.goal != null);
+  // 🔥 Due + heating up (lib/dueHeat.js): x1.06 / x1.10 on the goal chance, backtested, non-stars only
+  const due = dueHeatMap(scored);
   const xs = scored.map((p) => p.opponentTeamxGA60).filter((v) => v != null);
   const mean = xs.reduce((a, b) => a + b, 0) / Math.max(xs.length, 1);
   const sd = Math.sqrt(xs.reduce((a, b) => a + (b - mean) ** 2, 0) / Math.max(xs.length, 1)) || 1;
   const adj = new Map(scored.map((p) => {
     const z = p.opponentTeamxGA60 != null ? (p.opponentTeamxGA60 - mean) / sd : 0;
     return [p.playerId, {
-      goal: p.modelProbs.goal,
+      goal: Math.min(0.95, p.modelProbs.goal * (due.get(p.playerId)?.mult ?? 1)),
       point: p.modelProbs.point,
       // fit on the pre-matchup chance + its own defense term
       multi: multiGoalChance(p.modelProbs.base?.goal ?? p.modelProbs.goal, z),
@@ -70,7 +73,7 @@ export function applySlateScores(players) {
   const softRank = pctRank(scored, (p) => p.opponentTeamxGA60 ?? mean);
   return players.map((p) => {
     const a = adj.get(p.playerId);
-    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, anytimePointPct: null, multiGoalPct: null };
+    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, anytimePointPct: null, multiGoalPct: null, dueHeat: null };
     const slapScore = Math.round(goalRank.get(p.playerId) * 99);
     return {
       ...p,
@@ -82,6 +85,7 @@ export function applySlateScores(players) {
       multiGoalPct: pct1(a.multi),
       pointPct: pointRank.get(p.playerId),
       oppSoftPct: softRank.get(p.playerId),
+      dueHeat: due.get(p.playerId) || null,
     };
   });
 }
