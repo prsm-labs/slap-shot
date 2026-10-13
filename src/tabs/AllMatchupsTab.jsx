@@ -15,6 +15,7 @@ import { filterPositions, positionLabel, usePosition } from "../lib/positionFilt
 import { fmtToi } from "../lib/toi.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import { dvpFor, dvpText } from "../lib/dvp.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -36,6 +37,7 @@ const COLUMNS = [
   ["slapScore", "Slap Score"],
   ["multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed"],
   ["tier", "Tier"],
+  ["dvpSoft", "D vs Pos", "What tonight's opponent allows to this position per game (rank of 32, 1 = most) — context only: the position split wasn't predictive beyond overall defense (▲ / ▼ on the grade)"],
   ["h2hScore", "H2H", "H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)"],
   ...SKATER_H2H_COLS.map(([k, , label, title]) => [k, label, title]),
 ];
@@ -58,7 +60,10 @@ export default function AllMatchupsTab() {
   const h2hGrades = useH2HGrades();
   const shown = applyListFilters(filterPositions(filterPlayers(players, selected), position), listFilters, { slate: players, signal: "goal", h2h: h2hGrades.skaters });
   // H2H grade + goal-game rates (vs team / goalie / venue / L5 / L10) for sorting; missing = sorts last.
-  const rows = withH2H(shown, h2hGrades);
+  const rows = withH2H(shown, h2hGrades).map((p) => {
+    const dvp = dvpFor(meta, p);
+    return { ...p, dvp, dvpSoft: dvp ? dvp.of + 1 - dvp.rank : null };
+  });
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "slapScore", "desc");
 
   return (
@@ -113,6 +118,9 @@ export default function AllMatchupsTab() {
                   <td>{p.slapScore}</td>
                   <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td><span className={`tier-pill ${TIER_CLASS[p.tier] || "tier-ignore"}`}>{p.tier}</span></td>
+                  <td className="mono" title={dvpText(p.dvp)} style={{ fontSize: 11, whiteSpace: "nowrap" }}>
+                    {p.dvp ? <>#{p.dvp.rank} <span style={{ color: "var(--muted)" }}>· {p.dvp.g.toFixed(2)} G to {p.dvp.label}</span></> : "—"}
+                  </td>
                   <td><H2HCell playerId={p.playerId} /></td>
                   {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>

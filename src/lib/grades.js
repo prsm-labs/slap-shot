@@ -155,9 +155,9 @@ function slateMatchups(players) {
 }
 
 // Why the matchup is overall team defense, not defense-vs-position (2026-10-13 backtest, 4 seasons).
-export const DVP_NOTE = "Defense vs position (what a team allows to C / W / D) isn't used: tested over 4 seasons, "
-  + "it only works because it carries the team's overall defense — the position split adds nothing and doesn't repeat. "
-  + "Goalie weak spots (position, handedness, shot type) tested as noise too.";
+export const DVP_NOTE = "This is the matchup factor that predicts: over 4 seasons, what a team allows to a position (C / W / D) "
+  + "only hit because it carries this overall defense — the position split itself added nothing and didn't repeat, so it's shown "
+  + "as context only (D vs Pos). Goalie weak spots (position, handedness, shot type) tested as noise too.";
 
 export function matchupText(m) {
   if (!m) return "";

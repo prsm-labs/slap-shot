@@ -6,6 +6,8 @@ import SkaterCharts from "./SkaterCharts.jsx";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import GradeBadge from "./GradeBadge.jsx";
 import { DVP_NOTE, matchupText } from "../lib/grades.js";
+import { dvpFor } from "../lib/dvp.js";
+import { useScoredPool } from "../lib/data.js";
 import GoalieProfile from "./GoalieProfile.jsx";
 
 const TIER_CLASS = {
@@ -61,6 +63,8 @@ function MatchupCard({ p }) {
 // equivalent of Six Points' QB/RB/WR branching (a goalie's stat line shares nothing with a
 // skater's).
 function SkaterStats({ p }) {
+  const meta = useScoredPool({ includeStarted: true })?.meta;
+  const dvp = dvpFor(meta, p);
   return (
     <div className="card">
       <StatRow label="Team" value={p.team} />
@@ -78,6 +82,11 @@ function SkaterStats({ p }) {
             {matchupText(p.effectiveGrade.matchup)}
           </span>
           <div style={{ marginTop: 3 }}>{DVP_NOTE}</div>
+          {dvp && (
+            <div style={{ marginTop: 3 }}>
+              D vs Pos (context): {dvp.opp} allows {dvp.g.toFixed(2)} G / {dvp.p.toFixed(2)} P / {dvp.sog.toFixed(1)} SOG per game to {dvp.label}s — #{dvp.rank} most of {dvp.of}.
+            </div>
+          )}
         </div>
       )}
       <StatRow label="PP TOI / game" value={fmtToi(p.ppToi)} />
