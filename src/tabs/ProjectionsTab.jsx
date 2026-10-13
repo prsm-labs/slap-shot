@@ -33,7 +33,7 @@ function SkaterLines({ players, team }) {
   const rows = players.filter((p) => p.team === team).sort((a, b) => (b.anytimeGoalPct ?? 0) - (a.anytimeGoalPct ?? 0)).slice(0, 6);
   return (
     <table className="data-table" style={{ fontSize: 11 }}>
-      <thead><tr><th>{team} skaters</th><th title="Model chance to score (matchup-adjusted)">Goal</th><th title="Chance of 1+ point">Point</th><th title="Chance of 3+ shots on goal">3+ SOG</th><th title="Season shots on goal per game">SOG/gm</th><th title="Shots on goal per 60 minutes of ice time">SOG/60</th><th /></tr></thead>
+      <thead><tr><th>{team} skaters</th><th title="Model chance to score (matchup-adjusted)">Goal</th><th title="Chance of 2+ goals (model + opponent defense)">2+ G</th><th title="Chance of 1+ point">Point</th><th title="Chance of 3+ shots on goal">3+ SOG</th><th title="Season shots on goal per game">SOG/gm</th><th title="Shots on goal per 60 minutes of ice time">SOG/60</th><th /></tr></thead>
       <tbody>
         {rows.map((p) => (
           <tr key={p.playerId}>
@@ -45,6 +45,7 @@ function SkaterLines({ players, team }) {
               </div>
             </td>
             <td style={{ fontWeight: 700 }}>{p.anytimeGoalPct != null ? `${p.anytimeGoalPct}%` : "—"}</td>
+            <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
             <td>{p.anytimePointPct != null ? `${p.anytimePointPct}%` : "—"}</td>
             <td>{p.modelProbs ? pct(p.modelProbs.sog3) : "—"}</td>
             <td>{f1(p.ShotsOnGoalPerGame)}</td>

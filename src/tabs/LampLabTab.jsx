@@ -154,6 +154,7 @@ export default function LampLabTab() {
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
                 <th className={sortKey === "anytimeGoalPct" ? "sorted" : ""} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed" className={sortKey === "multiGoalPct" ? "sorted" : ""} onClick={() => toggleSort("multiGoalPct")}>2+ Goals %{sortKey === "multiGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "tier" ? "sorted" : ""} onClick={() => toggleSort("tier")}>Tier{sortKey === "tier" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -180,6 +181,7 @@ export default function LampLabTab() {
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimeGoalPct}%</td>
+                  <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td>{p.slapScore}</td>
                   <td>{p.tier}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>

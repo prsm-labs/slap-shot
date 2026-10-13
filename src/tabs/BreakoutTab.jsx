@@ -56,6 +56,7 @@ export default function BreakoutTab() {
                 {th("name", "Skater")}
                 <th>Opp goalie</th>
                 {th("modelGoal", "Model goal %", "Grade-model chance to score tonight")}
+                {th("multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed")}
                 {th("sogPg", "SOG/GP", "Shots on goal per game, last season + this season")}
                 {th("sog60", "SOG/60", "Shots on goal per 60 minutes of ice time")}
                 {th("xgTrend", "xG trend", "Expected goals per game, last 5 vs season (shrunk to league)")}
@@ -83,6 +84,7 @@ export default function BreakoutTab() {
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <td style={{ fontWeight: 700 }}>{pct(p.modelProbs.goal)}</td>
+                  <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
                   <td style={{ fontWeight: 700, color: "var(--accent2)" }}>{x(p.xgTrend)}</td>

@@ -32,6 +32,7 @@ const COLUMNS = [
   ["sog60", "SOG/60", "Shots on goal per 60 minutes of ice time"],
   ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
+  ["multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed"],
   ["tier", "Tier"],
   ["h2hScore", "H2H", "H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)"],
   ...SKATER_H2H_COLS.map(([k, , label, title]) => [k, label, title]),
@@ -151,6 +152,7 @@ export default function AllMatchupsTab() {
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>
+                  <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td><span className={`tier-pill ${TIER_CLASS[p.tier] || "tier-ignore"}`}>{p.tier}</span></td>
                   <td><H2HCell playerId={p.playerId} /></td>
                   {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}

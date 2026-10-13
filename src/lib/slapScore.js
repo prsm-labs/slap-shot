@@ -16,6 +16,19 @@
 
 export const MATCHUP_COEF = { goal: 0.041, point: 0.055 };
 
+// 2+ goals tonight (2026-10-12; scratch multigoal_fit2.py): logistic on L = logit(grade-model goal chance)
+// and the slate z-score of the opponent's xGA allowed, fit on 69,577 Feb-Apr skater-games, 2022-23 .. 2025-26
+// (1,222 with 2+ goals). The L^2 term bends the top down: a star who has scored gets a second goal less often
+// than Poisson says (50%+ goal chance: 24% vs 35%). Leave-one-season-out log loss beat Poisson every season and
+// the opp-defense term helped all 4; calibrated by goal-chance bucket (top 5% said 7.8%, happened 7.2%).
+// Opponent defense matters more for a 2nd goal than a 1st (worst-fifth vs best-fifth defense: 2+ x1.6, 1+ x1.3).
+export const MULTI_GOAL = { intercept: -2.2936, l: 0.6864, l2: -0.2662, z: 0.1252, lMax: 1.29 };
+export function multiGoalChance(goalP, z = 0) {
+  if (goalP == null) return null;
+  const l = Math.min(logit(Math.min(Math.max(goalP, 1e-4), 1 - 1e-4)), MULTI_GOAL.lMax); // keep it increasing
+  return sigmoid(MULTI_GOAL.intercept + MULTI_GOAL.l * l + MULTI_GOAL.l2 * l * l + MULTI_GOAL.z * z);
+}
+
 export function tierFor(slapScore) {
   if (slapScore >= 90) return "Elite Add-On";
   if (slapScore >= 70) return "Core Target";
@@ -47,6 +60,7 @@ export function applySlateScores(players) {
     return [p.playerId, {
       goal: sigmoid(logit(p.modelProbs.goal) + MATCHUP_COEF.goal * z),
       point: sigmoid(logit(p.modelProbs.point) + MATCHUP_COEF.point * z),
+      multi: multiGoalChance(p.modelProbs.goal, z),
     }];
   }));
   const goalRank = pctRank(scored, (p) => adj.get(p.playerId).goal);
@@ -54,7 +68,7 @@ export function applySlateScores(players) {
   const softRank = pctRank(scored, (p) => p.opponentTeamxGA60 ?? mean);
   return players.map((p) => {
     const a = adj.get(p.playerId);
-    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, anytimePointPct: null };
+    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, anytimePointPct: null, multiGoalPct: null };
     const slapScore = Math.round(goalRank.get(p.playerId) * 99);
     return {
       ...p,
@@ -63,6 +77,7 @@ export function applySlateScores(players) {
       gGoal: pct1(a.goal),
       anytimeGoalPct: pct1(a.goal),
       anytimePointPct: pct1(a.point),
+      multiGoalPct: pct1(a.multi),
       pointPct: pointRank.get(p.playerId),
       oppSoftPct: softRank.get(p.playerId),
     };

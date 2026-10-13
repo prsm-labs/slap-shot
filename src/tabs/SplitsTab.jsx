@@ -14,7 +14,7 @@ import { fmtToi } from "../lib/toi.js";
 import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 
 const SKATER_COLS = [
-  ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"],
+  ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"], ["multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed"],
   ["ShotsOnGoalPerGame", "SOG/GP"], ["sog60", "SOG/60", "Shots on goal per 60 minutes of ice time"], ["ICF", "ICF"], ["HDCF", "HDCF"],
   ["gradeScore", "Grade"], ["slapScore", "Slap Score"], ["h2hScore", "H2H vs tonight"],
   // [key, label, tooltip, H2H stat] — goal-game rates (lib/h2h.js withH2H)
@@ -96,6 +96,7 @@ export default function SplitsTab() {
                         ? <GradeBadge grade={p[key]} />
                         : key === "position" ? positionLabel(p.position)
                         : key === "estToi" || key === "ppToi" ? fmtToi(p[key])
+                        : key === "multiGoalPct" ? (p[key] != null ? `${p[key]}%` : "—")
                         : (p[key] ?? "—")}
                     </td>
                   ))}
