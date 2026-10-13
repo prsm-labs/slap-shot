@@ -105,9 +105,9 @@ export default function CalledUpTab() {
   const upCount = rows.filter((r) => r.status === "up").length;
   const tonight = rows.filter((r) => r.status === "up" && r.game).length;
   const dressed = rows.filter((r) => r.status === "up" && r.dressed).length;
-  const th = (k, label, title) => (
+  const th = (k, label, title, sub) => (
     <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>
-      {label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}
+      {label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}{sub}
     </th>
   );
   const pill = (on, label, onClick, title) => (
@@ -162,9 +162,9 @@ export default function CalledUpTab() {
                 {th("dressed", "Lineup", "✅ = in tonight's official lineup (posted around warmups); OUT = injured; PP = power-play unit (RotoWire)")}
                 {th("goalPct", "Goal %", "Model chance to score tonight (players with NHL history in tonight's pool)")}
                 {th("gradeScore", "Grade")}
-                {th("ahlPpg", "AHL this season", "GP · G-A-P (goalies: GP · SV% · GAA). Sorts by points per game / SV%")}
-                {th("ahlLastPpg", "AHL last season", "GP · G-A-P (goalies: GP · SV% · GAA). Sorts by points per game / SV%")}
-                <th>NHL this season</th>
+                {th("ahlPpg", "AHL this season", "GP · G-A-P (goalies: GP · SV% · GAA). Sorts by points per game / SV%", <div key="s" style={{ fontSize: 8, fontWeight: 400, letterSpacing: 0, textTransform: "none", color: "var(--muted)" }}>GP · Goals-Assists-Points</div>)}
+                {th("ahlLastPpg", "AHL last season", "GP · G-A-P (goalies: GP · SV% · GAA). Sorts by points per game / SV%", <div key="s" style={{ fontSize: 8, fontWeight: 400, letterSpacing: 0, textTransform: "none", color: "var(--muted)" }}>GP · Goals-Assists-Points</div>)}
+                <th title="GP · G-A-P (goalies: GP · SV% · GAA)">NHL this season<div style={{ fontSize: 8, fontWeight: 400, letterSpacing: 0, textTransform: "none", color: "var(--muted)" }}>GP · Goals-Assists-Points</div></th>
                 {th("nhlGp", "NHL career GP")}
                 {th("age", "Age")}
                 <th>Draft</th>
