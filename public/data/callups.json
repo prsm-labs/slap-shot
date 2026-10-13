@@ -1,13 +1,365 @@
 {
  "_meta": {
-  "generated": "2026-10-13 12:18",
+  "generated": "2026-10-13 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 29,
-  "up": 19,
+  "count": 33,
+  "up": 25,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8477993,
+   "name": "Justin Kirkland",
+   "team": "MIN",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1996-08-02",
+   "sweater": 28,
+   "draft": {
+    "year": 2014,
+    "teamAbbrev": "NSH",
+    "round": 3,
+    "overallPick": 62
+   },
+   "recalledOn": "2026-10-13",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": -2,
+     "pim": 2,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 42,
+     "goals": 11,
+     "assists": 11,
+     "points": 22,
+     "plusMinus": -10,
+     "pim": 32,
+     "team": "Calgary Wranglers"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 20,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 1,
+     "pim": 2,
+     "shots": 11,
+     "team": "Calgary Flames"
+    },
+    "careerGp": 50,
+    "careerG": 3,
+    "careerP": 10
+   }
+  },
+  {
+   "playerId": 8484900,
+   "name": "Cooper Black",
+   "team": "FLA",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-06-14",
+   "sweater": 31,
+   "draft": null,
+   "recalledOn": "2026-10-13",
+   "from": "Charlotte",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Charlotte"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 2,
+     "wins": 1,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 6,
+     "shotsAgainst": 64,
+     "team": "Charlotte Checkers",
+     "savePct": 0.906,
+     "gaa": 3.01
+    },
+    "last": {
+     "gamesPlayed": 42,
+     "wins": 25,
+     "losses": 13,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 103,
+     "shotsAgainst": 1058,
+     "team": "Charlotte Checkers",
+     "savePct": 0.903,
+     "gaa": 2.47
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "team": "ANA",
+   "recalledOn": "2026-10-13",
+   "from": "San Diego",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-09-30",
+     "type": "down",
+     "club": "San Diego"
+    },
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "San Diego"
+    }
+   ],
+   "playerId": null,
+   "name": "Roger McQueen",
+   "position": "F",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
+   }
+  },
+  {
+   "playerId": 8481544,
+   "name": "Mads Sogaard",
+   "team": "TBL",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2000-12-13",
+   "sweater": 30,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "OTT",
+    "round": 2,
+    "overallPick": 37
+   },
+   "recalledOn": "2026-10-13",
+   "from": "Syracuse",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Syracuse"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "wins": 1,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 1,
+     "goalsAgainst": 4,
+     "shotsAgainst": 63,
+     "team": "Syracuse Crunch",
+     "savePct": 0.937,
+     "gaa": 1.73
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 1,
+     "losses": 0,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 6,
+     "shotsAgainst": 36,
+     "team": "Ottawa Senators",
+     "savePct": 0.833,
+     "gaa": 4.65
+    },
+    "careerGp": 31,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8478502,
+   "name": "Dennis Gilbert",
+   "team": "BUF",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1996-10-30",
+   "sweater": 44,
+   "draft": {
+    "year": 2015,
+    "teamAbbrev": "CHI",
+    "round": 3,
+    "overallPick": 91
+   },
+   "recalledOn": "2026-10-13",
+   "from": "Rochester",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-01",
+     "type": "up",
+     "club": "Rochester"
+    },
+    {
+     "date": "2026-10-02",
+     "type": "down",
+     "club": "Rochester"
+    },
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Rochester"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 6,
+     "team": "Rochester Americans"
+    },
+    "last": {
+     "gamesPlayed": 6,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 6,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 8,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 2,
+     "team": "Ottawa Senators"
+    },
+    "careerGp": 119,
+    "careerG": 3,
+    "careerP": 21
+   }
+  },
+  {
+   "playerId": 8484865,
+   "name": "Colin Ralph",
+   "team": "STL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2005-10-04",
+   "sweater": 51,
+   "draft": {
+    "year": 2024,
+    "teamAbbrev": "STL",
+    "round": 2,
+    "overallPick": 48
+   },
+   "recalledOn": "2026-10-12",
+   "from": "Springfield",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-13",
+   "events": [
+    {
+     "date": "2026-10-12",
+     "type": "up",
+     "club": "Springfield"
+    },
+    {
+     "date": "2026-10-13",
+     "type": "down",
+     "club": "Springfield"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 2,
+     "pim": 6,
+     "team": "Springfield Thunderbirds"
+    },
+    "last": {
+     "gamesPlayed": 6,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": -2,
+     "pim": 0,
+     "team": "Springfield Thunderbirds"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
   {
    "playerId": 8475752,
    "name": "Tyler Pitlick",
@@ -144,61 +496,6 @@
     "careerGp": 405,
     "careerG": 14,
     "careerP": 97
-   }
-  },
-  {
-   "playerId": 8484865,
-   "name": "Colin Ralph",
-   "team": "STL",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2005-10-04",
-   "sweater": 51,
-   "draft": {
-    "year": 2024,
-    "teamAbbrev": "STL",
-    "round": 2,
-    "overallPick": 48
-   },
-   "recalledOn": "2026-10-12",
-   "from": "Springfield",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-12",
-     "type": "up",
-     "club": "Springfield"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 2,
-     "pim": 6,
-     "team": "Springfield Thunderbirds"
-    },
-    "last": {
-     "gamesPlayed": 6,
-     "goals": 0,
-     "assists": 2,
-     "points": 2,
-     "plusMinus": -2,
-     "pim": 0,
-     "team": "Springfield Thunderbirds"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
    }
   },
   {
@@ -928,7 +1225,7 @@
    "from": "Rockford",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -1405,75 +1702,6 @@
     "careerGp": 323,
     "careerG": 7,
     "careerP": 60
-   }
-  },
-  {
-   "playerId": 8478502,
-   "name": "Dennis Gilbert",
-   "team": "BUF",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "1996-10-30",
-   "sweater": 44,
-   "draft": {
-    "year": 2015,
-    "teamAbbrev": "CHI",
-    "round": 3,
-    "overallPick": 91
-   },
-   "recalledOn": "2026-10-01",
-   "from": "Rochester",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-02",
-   "events": [
-    {
-     "date": "2026-10-01",
-     "type": "up",
-     "club": "Rochester"
-    },
-    {
-     "date": "2026-10-02",
-     "type": "down",
-     "club": "Rochester"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 6,
-     "team": "Rochester Americans"
-    },
-    "last": {
-     "gamesPlayed": 6,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
-     "pim": 6,
-     "team": "Lehigh Valley Phantoms"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 8,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 0,
-     "pim": 2,
-     "shots": 2,
-     "team": "Ottawa Senators"
-    },
-    "careerGp": 119,
-    "careerG": 3,
-    "careerP": 21
    }
   },
   {
