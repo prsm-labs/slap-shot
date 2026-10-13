@@ -12,7 +12,8 @@ import { applyListFilters, useListFilters } from "../lib/listFilters.js";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { fmtToi } from "../lib/toi.js";
-import { filterPlayers, matchupKey, setMatchup, toggleMatchup, useMatchup } from "../lib/matchupFilter.js";
+import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
+import MatchupFilter from "../components/MatchupFilter.jsx";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -38,57 +39,10 @@ const COLUMNS = [
   ...SKATER_H2H_COLS.map(([k, , label, title]) => [k, label, title]),
 ];
 
-const STARTED_TAG = { LIVE: "LIVE", CRIT: "LIVE", FINAL: "FINAL", OFF: "FINAL" };
-
-function startTime(utc) {
-  return new Date(utc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-}
-
 function slateHeading(meta) {
-  const day = new Date(`${meta.slateDate}T12:00:00`).toLocaleDateString([], { weekday: "long", month: "short", day: "numeric" });
-  const later = meta.requestedDate && meta.slateDate !== meta.requestedDate ? " (next day with games)" : "";
+  const day = new Date(`${meta.slateDate}T12:00:00`).toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" });
+  const later = meta.requestedDate && meta.slateDate !== meta.requestedDate ? " (next day)" : "";
   return `${day}${later} · ${meta.slate.length} games`;
-}
-
-function SlateStrip({ meta }) {
-  const selected = useMatchup();
-  if (!meta?.slate?.length) return null;
-  return (
-    <div style={{ marginBottom: 14 }}>
-      <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6, letterSpacing: 0.5 }}>
-        {slateHeading(meta).toUpperCase()} · CLICK A GAME TO SHOW ONLY THAT MATCHUP
-        {selected && (
-          <button className="pill-btn active" style={{ marginLeft: 8 }} onClick={() => setMatchup(null)}>
-            {selected.replace("@", " @ ")} ✕
-          </button>
-        )}
-      </div>
-      <div className="grid-cards">
-        {meta.slate.map((g) => {
-          const key = matchupKey(g.away, g.home);
-          const on = selected === key;
-          return (
-          <div
-            className="card"
-            key={g.gameId}
-            onClick={() => toggleMatchup(key)}
-            style={{ padding: "10px 12px", cursor: "pointer", borderColor: on ? "var(--accent2)" : undefined, opacity: selected && !on ? 0.55 : 1 }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-              <span style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 700, fontSize: 16 }}>{g.away} @ {g.home}</span>
-              <span className="mono" style={{ fontSize: 10, color: STARTED_TAG[g.state] === "LIVE" ? "var(--green)" : "var(--muted)" }}>
-                {STARTED_TAG[g.state] || startTime(g.startTimeUTC)}
-              </span>
-            </div>
-            <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginTop: 4 }}>
-              {g.awayGoalie || "—"} ({g.awayGoalieStatus}) vs {g.homeGoalie || "—"} ({g.homeGoalieStatus})
-            </div>
-          </div>
-          );
-        })}
-      </div>
-    </div>
-  );
 }
 
 export default function AllMatchupsTab() {
@@ -121,7 +75,7 @@ export default function AllMatchupsTab() {
           splits aren't used — over 4 seasons they only echoed the team's overall defense. Hover a grade or open a player for details.
         </span>
       </div>
-      <SlateStrip meta={meta} />
+      {meta?.slate?.length > 0 && <MatchupFilter label={slateHeading(meta)} />}
       <PositionFilter />
       <ListFilters signalLabel="★ Goal Signals only" shown={shown?.length} total={players?.length} />
       {!players && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
