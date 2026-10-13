@@ -13,6 +13,7 @@ import LineupBadge from "../components/LineupBadge.jsx";
 import { filterPositions, usePosition } from "../lib/positionFilter.js";
 import { filterPlayers, matchupKey, useMatchup } from "../lib/matchupFilter.js";
 import { lineupMaps, skaterStatus, startingGoalie, useLineups } from "../lib/lineups.js";
+import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from "../lib/bookOdds.js";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -122,6 +123,17 @@ function CheatSheetMain() {
     .sort((a, b) => (b.anytimePointPct ?? 0) - (a.anytimePointPct ?? 0))
     .slice(0, 5);
   const shotCandidates = [...inGame].sort((a, b) => (b.ShotsOnGoalPerGame || 0) - (a.ShotsOnGoalPerGame || 0)).slice(0, 5);
+  // Our goal % vs the best sportsbook anytime-goal price (lib/data.js): biggest gaps either way.
+  const priced = inGame.filter((p) => p.edge != null);
+  const bestValue = [...priced].filter((p) => p.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5);
+  const overvalued = [...priced].filter((p) => p.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5);
+  const edgeRow = (p) => (
+    <span title={`${edgeText(p)}
+${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
+      <span style={{ color: edgeColor(p.edge) }}>{fmtEdge(p.edge)}</span>
+      <div style={{ fontSize: 9, fontWeight: 400, color: "var(--muted)" }}>{p.anytimeGoalPct}% vs {p.book.bestImplied}% · {fmtAmerican(p.book.best)}</div>
+    </span>
+  );
 
   const attackable = starters
     .filter((g) => !selected || g.matchup === selected)
@@ -156,6 +168,14 @@ function CheatSheetMain() {
           renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
         <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates}
           renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+        {priced.length > 0 && (
+          <>
+            <ListCard title="💰 Best Value vs Book" sub="Anytime goal: our chance most above the best sportsbook price" items={bestValue}
+              renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+            <ListCard title="📉 Overvalued by Books" sub="Priced shorter than our chance supports — the popular names to fade" items={overvalued}
+              renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+          </>
+        )}
 
         <div className="card">
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 2 }}>🔓 Most Attackable Goalies to Target Today</div>

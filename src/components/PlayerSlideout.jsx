@@ -9,6 +9,7 @@ import { DVP_NOTE, matchupText } from "../lib/grades.js";
 import { dvpFor } from "../lib/dvp.js";
 import { useScoredPool } from "../lib/data.js";
 import GoalieProfile from "./GoalieProfile.jsx";
+import { booksText, edgeColor, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -74,6 +75,12 @@ function SkaterStats({ p }) {
         <StatRow
           label="Grade model: goal / assist / point / 3+ SOG"
           value={["goal", "assist", "point", "sog3"].map((k) => `${Math.round(p.modelProbs[k] * 100)}%`).join(" / ")}
+        />
+      )}
+      {p.book && (
+        <StatRow
+          label="Sportsbook anytime goal (best price)"
+          value={<span title={booksText(p.book)}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImplied}% vs ours {p.anytimeGoalPct}% · <span style={{ color: edgeColor(p.edge), fontWeight: 700 }}>edge {fmtEdge(p.edge)}</span></span>}
         />
       )}
       {p.effectiveGrade?.matchup && (
