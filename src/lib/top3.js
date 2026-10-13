@@ -8,7 +8,9 @@
 //     shrinks thin samples, so early-season counting stats don't drive it).
 //   - Matchup = the opponent's expected goals allowed per game. It adds a little on top of the
 //     model (goal AUC .702 -> .704; logloss better for goal/assist/point/3+SOG), fitted at +0.041 on
-//     the log-odds per slate standard deviation — applied below as the matchup-adjusted chance.
+//     the log-odds per slate standard deviation. Refit 2026-10-13 on 4 seasons at +0.114 and moved into
+//     lib/grades.js — modelProbs.goal arrives matchup-adjusted (pAdj); quality gates use the
+//     pre-matchup chance (modelProbs.base), as backtested.
 //     The opposing goalie's save % / GSAx added nothing beyond that, so it isn't used.
 //   - Goalie-specific "arsenal fit" (shot type / distance / rush-rebound weak spots) was tested and
 //     is noise: split-half r ~ 0 once the league-wide xG bias is removed. Not used.
@@ -40,7 +42,6 @@ export const LEGACY_TIERS = [
 ];
 export const TIER_INFO = Object.fromEntries([...TIERS, ...LEGACY_TIERS].map((t) => [t.key, t]));
 
-const MATCHUP_COEF = 0.041;
 const CHALK_QUALITY = 0.85;   // top 15% of tonight's eligible skaters by model goal chance
 const MID_FLOOR = 0.5;        // Mid-Tier: 50th-85th percentile
 const CHALK_MATCHUP = 0.5;    // opponent xGA allowed in the slate's top half
@@ -78,13 +79,10 @@ export function selectTop3(players) {
     .map((p) => {
       const recent = (p.last7 || []).slice(-5);
       const sogL5 = recent.length ? recent.reduce((s, g) => s + (g.sog || 0), 0) / recent.length : null;
-      return { ...p, pGoal: p.modelProbs.goal, oppXga: p.opponentTeamxGA60, sogL5, sogPg: p.ShotsOnGoalPerGame || 0 };
+      return { ...p, pGoal: p.modelProbs.base?.goal ?? p.modelProbs.goal, pAdj: p.modelProbs.goal, oppXga: p.opponentTeamxGA60, sogL5, sogPg: p.ShotsOnGoalPerGame || 0 };
     });
   if (!rows.length) return { picks: TIERS.map((t) => ({ tier: t.key, player: null })), eligible: 0 };
 
-  const xs = rows.map((r) => r.oppXga);
-  const mean = xs.reduce((a, b) => a + b, 0) / xs.length;
-  const sd = Math.sqrt(xs.reduce((a, b) => a + (b - mean) ** 2, 0) / xs.length) || 1;
   const q = pctRank(rows, "pGoal");
   const m = pctRank(rows, "oppXga");
   // Softest defense = rank 1.
@@ -93,9 +91,6 @@ export function selectTop3(players) {
   const softRank = new Map([...teams].sort((a, b) => teamXga.get(b) - teamXga.get(a)).map((t, i) => [t, i + 1]));
 
   for (const r of rows) {
-    const z = (r.oppXga - mean) / sd;
-    const logit = Math.log(r.pGoal / (1 - r.pGoal)) + MATCHUP_COEF * z;
-    r.pAdj = 1 / (1 + Math.exp(-logit));
     r.qPct = q.get(r.playerId);
     r.mPct = m.get(r.playerId);
     r.softRank = softRank.get(r.opponentTeam);

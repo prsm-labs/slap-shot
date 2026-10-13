@@ -84,6 +84,17 @@ export function computeEffectiveGrade(baseGrade, goalieGrade) {
 // A+ top 5%, A next 10%, B next 20%, C next 30%, D next 20%, F bottom 15%. Out-of-sample on
 // Feb-Apr 2026: goal rate A+ 35% / A 30% / B 22% / C 14% / D 8% / F 5%. The opponent goalie isn't
 // in it — it showed no signal; tonight's goalie status is shown next to it instead.
+//
+// Matchup (since 2026-10-13): each chance is adjusted for the opponent's expected goals allowed per
+// game — logit + coef x z, z = where that defense sits among tonight's slate (standard deviations).
+// Refit on 69,577 Feb-Apr skater-games 2022-23 .. 2025-26 (grade model fit Nov-Jan each season; scratch
+// matchup_refit.py), coefficients steady leave-one-season-out (goal .104-.120, point .126-.150). Before
+// it, skaters vs the stingiest fifth of defenses scored 0.86x what the model said and vs the softest
+// fifth 1.11x; after, both ~1.00. (The old +0.041 goal / +0.055 point came from a single-season fit and
+// left ~2/3 of the effect out.) Opponent shots allowed fit 3+ SOG a bit better (.140) but isn't in the
+// pool per skater, so xGA is used for all four. Defense vs position (allowed to C / W / D) was tested
+// too: once overall defense is removed it adds nothing and doesn't repeat half to half.
+export const MATCHUP_COEF = { goal: 0.114, assist: 0.117, point: 0.138, sog3: 0.126 };
 
 const GRADE_BANDS = [[0.95, "A+"], [0.85, "A"], [0.65, "B"], [0.35, "C"], [0.15, "D"], [0, "F"]];
 
@@ -126,7 +137,19 @@ export function skaterModelProbs(p) {
 // Grade every skater in a slate. Returns Map playerId -> { letter, score (0-100 slate
 // percentile), probs, tooltip }.
 export function gradeSlate(players) {
-  const rows = players.map((p) => ({ id: p.playerId, probs: skaterModelProbs(p) }));
+  const xs = players.map((p) => p.opponentTeamxGA60).filter((v) => v != null);
+  const mean = xs.reduce((a, b) => a + b, 0) / Math.max(xs.length, 1);
+  const sd = Math.sqrt(xs.reduce((a, b) => a + (b - mean) ** 2, 0) / Math.max(xs.length, 1)) || 1;
+  const rows = players.map((p) => {
+    const base = skaterModelProbs(p);
+    const z = p.opponentTeamxGA60 != null ? (p.opponentTeamxGA60 - mean) / sd : 0;
+    const probs = {};
+    for (const [k, v] of Object.entries(base)) probs[k] = 1 / (1 + Math.exp(-(Math.log(v / (1 - v)) + (MATCHUP_COEF[k] || 0) * z)));
+    // base = before the matchup, oppZ = tonight's opponent defense in slate SDs (+ = softer)
+    probs.base = base;
+    probs.oppZ = z;
+    return { id: p.playerId, probs };
+  });
   const n = rows.length;
   const pctRank = (key) => {
     const sorted = [...rows].sort((a, b) => a.probs[key] - b.probs[key]);
@@ -146,7 +169,7 @@ export function gradeSlate(players) {
       letter,
       score: Math.round(pct * 100),
       probs: r.probs,
-      tooltip: `Grade ${letter} — top ${Math.max(1, 100 - Math.round(pct * 100))}% of tonight's slate. Model chances: goal ${pr("goal")}, assist ${pr("assist")}, point ${pr("point")}, 3+ SOG ${pr("sog3")}`,
+      tooltip: `Grade ${letter} — top ${Math.max(1, 100 - Math.round(pct * 100))}% of tonight's slate. Chances with tonight's matchup: goal ${pr("goal")}, assist ${pr("assist")}, point ${pr("point")}, 3+ SOG ${pr("sog3")}`,
     });
   });
   return out;

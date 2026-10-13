@@ -35,7 +35,7 @@ export function breakoutBoard(players) {
     att: mean(rows.filter((p) => p.games_played >= 10).map((p) => per(p, "ICF"))),
   };
   const seasonRate = (p, k, lg) => ((p[k] || 0) + PRIOR_GAMES * lg) / (p.games_played + PRIOR_GAMES);
-  const q = pctRank(rows, (p) => p.modelProbs.goal);
+  const q = pctRank(rows, (p) => p.modelProbs.base?.goal ?? p.modelProbs.goal); // pre-matchup, as backtested
   const m = pctRank(rows, (p) => p.opponentTeamxGA60);
   const teams = [...new Set(rows.map((p) => p.opponentTeam))];
   const xga = new Map(rows.map((p) => [p.opponentTeam, p.opponentTeamxGA60]));
@@ -57,7 +57,7 @@ export function breakoutBoard(players) {
     };
     if (r.quality < NOT_TOP && r.softness >= SOFT && xgTrend > TREND) list.push(r);
   }
-  // Strongest underlying chance first; the trend and matchup are what got them on the list.
+  // Strongest chance tonight first (matchup-adjusted since 2026-10-13); trend + matchup got them on the list.
   list.sort((a, b) => b.modelProbs.goal - a.modelProbs.goal);
   return { list, eligible: rows.length };
 }

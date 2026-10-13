@@ -8,13 +8,14 @@
 // were calibrated over the same nights (goal 15.7% vs 14.7%, point 35.5% vs 33.9%).
 //
 //   goal %  = grade-model goal chance, adjusted for the opponent's expected goals allowed per game
-//             (logit + 0.041 x slate z-score; fitted on 2025-26, see lib/top3.js)
-//   point % = same for points (logit + 0.055 x z)
+//             (since 2026-10-13 the adjustment lives in lib/grades.js gradeSlate: logit + 0.114 x slate
+//             z-score, refit on 4 seasons; it was 0.041 here before)
+//   point % = same for points (logit + 0.138 x z)
 //   Slap Score = where tonight's slate ranks that goal %, 0-99
 //   tiers: Elite Add-On top 10% (90+), Core Target next 20% (70-89), Value Upside next 20% (50-69),
 //          Ignore the rest. On 10/2-10/4 that ordering held: goal 31% / 24% / 14% / 8%.
 
-export const MATCHUP_COEF = { goal: 0.041, point: 0.055 };
+export { MATCHUP_COEF } from "./grades.js"; // applied in gradeSlate; modelProbs arrive matchup-adjusted
 
 // 2+ goals tonight (2026-10-12; scratch multigoal_fit2.py): logistic on L = logit(grade-model goal chance)
 // and the slate z-score of the opponent's xGA allowed, fit on 69,577 Feb-Apr skater-games, 2022-23 .. 2025-26
@@ -58,9 +59,10 @@ export function applySlateScores(players) {
   const adj = new Map(scored.map((p) => {
     const z = p.opponentTeamxGA60 != null ? (p.opponentTeamxGA60 - mean) / sd : 0;
     return [p.playerId, {
-      goal: sigmoid(logit(p.modelProbs.goal) + MATCHUP_COEF.goal * z),
-      point: sigmoid(logit(p.modelProbs.point) + MATCHUP_COEF.point * z),
-      multi: multiGoalChance(p.modelProbs.goal, z),
+      goal: p.modelProbs.goal,
+      point: p.modelProbs.point,
+      // fit on the pre-matchup chance + its own defense term
+      multi: multiGoalChance(p.modelProbs.base?.goal ?? p.modelProbs.goal, z),
     }];
   }));
   const goalRank = pctRank(scored, (p) => adj.get(p.playerId).goal);
