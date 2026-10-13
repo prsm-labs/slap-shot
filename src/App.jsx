@@ -9,6 +9,7 @@ import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
 import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
 import FirstGoalTab from "./tabs/FirstGoalTab.jsx";
+import CalledUpTab from "./tabs/CalledUpTab.jsx";
 import ProjectionsTab from "./tabs/ProjectionsTab.jsx";
 import TrackRecordTab from "./tabs/TrackRecordTab.jsx";
 import LiveThemesTab from "./tabs/LiveThemesTab.jsx";
@@ -34,6 +35,7 @@ const TABS = [
   { key: "board", label: "🎯 Scouting", Component: MatchupsHubTab },
   { key: "projections", label: "🔮 Projections", Component: ProjectionsTab },
   { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab },
+  { key: "calledup", label: "🆙 Called Up", Component: CalledUpTab },
   { key: "track", label: "📈 Track Record", Component: TrackRecordTab },
   // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".
   { key: "live", label: "⚡ Goal Flurries", Component: LiveThemesTab },
