@@ -116,6 +116,10 @@ export default function AllMatchupsTab() {
       <div className="note">
         ℹ️ Ranked by Slap Score (0-99): where each skater's chance to score ranks on tonight's slate — the calibrated grade model, adjusted for the opponent's defense. Tiers: Elite Add-On 90+, Core Target 70-89, Value Upside 50-69.
         Goalies and scratches update as lineups are confirmed (✅ = confirmed or in net); Projected / Expected are not yet confirmed.
+        <span style={{ display: "block", marginTop: 4 }}>
+          ▲ / ▼ on a grade = facing one of tonight's softest / stingiest third of defenses (expected goals allowed). Defense-vs-position
+          splits aren't used — over 4 seasons they only echoed the team's overall defense. Hover a grade or open a player for details.
+        </span>
       </div>
       <SlateStrip meta={meta} />
       <PositionFilter />

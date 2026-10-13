@@ -134,6 +134,38 @@ export function skaterModelProbs(p) {
   return out;
 }
 
+// Tonight's defensive matchup per skater: opponent's rank among the slate's defenses by expected goals
+// allowed per game (1 = softest), and soft / tough = opponent in the softest / stingiest third of skaters'
+// opponents — the same cut as oppSoftPct (lib/slapScore.js) and the "Soft defense tonight" filter.
+function slateMatchups(players) {
+  const rows = players.filter((p) => p.opponentTeamxGA60 != null);
+  const xga = new Map(rows.map((p) => [p.opponentTeam, p.opponentTeamxGA60]));
+  const teams = [...xga.keys()].sort((a, b) => xga.get(b) - xga.get(a));
+  const rank = new Map(teams.map((t, i) => [t, i + 1]));
+  const sorted = [...rows].sort((a, b) => a.opponentTeamxGA60 - b.opponentTeamxGA60);
+  const out = new Map();
+  sorted.forEach((p, i) => {
+    const pct = sorted.length > 1 ? i / (sorted.length - 1) : 0.5;
+    out.set(p.playerId, {
+      opp: p.opponentTeam, rank: rank.get(p.opponentTeam), of: teams.length, xga: p.opponentTeamxGA60,
+      tier: pct >= 0.67 ? "soft" : pct <= 0.33 ? "tough" : null,
+    });
+  });
+  return out;
+}
+
+// Why the matchup is overall team defense, not defense-vs-position (2026-10-13 backtest, 4 seasons).
+export const DVP_NOTE = "Defense vs position (what a team allows to C / W / D) isn't used: tested over 4 seasons, "
+  + "it only works because it carries the team's overall defense — the position split adds nothing and doesn't repeat. "
+  + "Goalie weak spots (position, handedness, shot type) tested as noise too.";
+
+export function matchupText(m) {
+  if (!m) return "";
+  const label = m.tier === "soft" ? "▲ Soft matchup" : m.tier === "tough" ? "▼ Tough matchup" : "Matchup";
+  const r = (v) => `${Math.round(v * 1000) / 10}%`;
+  return `${label}: ${m.opp} defense #${m.rank} softest of ${m.of} tonight (${m.xga.toFixed(2)} xGA/gm) — goal ${r(m.goalBase)} → ${r(m.goal)}`;
+}
+
 // Grade every skater in a slate. Returns Map playerId -> { letter, score (0-100 slate
 // percentile), probs, tooltip }.
 export function gradeSlate(players) {
@@ -151,6 +183,7 @@ export function gradeSlate(players) {
     return { id: p.playerId, probs };
   });
   const n = rows.length;
+  const matchup = slateMatchups(players);
   const pctRank = (key) => {
     const sorted = [...rows].sort((a, b) => a.probs[key] - b.probs[key]);
     const rank = new Map();
@@ -169,7 +202,11 @@ export function gradeSlate(players) {
       letter,
       score: Math.round(pct * 100),
       probs: r.probs,
-      tooltip: `Grade ${letter} — top ${Math.max(1, 100 - Math.round(pct * 100))}% of tonight's slate. Chances with tonight's matchup: goal ${pr("goal")}, assist ${pr("assist")}, point ${pr("point")}, 3+ SOG ${pr("sog3")}`,
+      matchup: matchup.get(r.id) ? { ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.goal } : null,
+      tooltip: `Grade ${letter} — top ${Math.max(1, 100 - Math.round(pct * 100))}% of tonight's slate. Chances with tonight's matchup: goal ${pr("goal")}, assist ${pr("assist")}, point ${pr("point")}, 3+ SOG ${pr("sog3")}`
+        + (matchup.get(r.id) ? `
+${matchupText({ ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.goal })}
+${DVP_NOTE}` : ""),
     });
   });
   return out;

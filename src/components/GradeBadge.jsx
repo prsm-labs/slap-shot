@@ -13,6 +13,9 @@ export default function GradeBadge({ grade, title }) {
       }}
     >
       {grade.letter}
+      {/* skater grades only: ▲ / ▼ = opponent in tonight's softest / stingiest third of defenses */}
+      {grade.matchup?.tier === "soft" && <span style={{ fontSize: 8, marginLeft: 3, color: "var(--accent2)" }}>▲</span>}
+      {grade.matchup?.tier === "tough" && <span style={{ fontSize: 8, marginLeft: 3, color: "var(--muted)" }}>▼</span>}
     </span>
   );
 }

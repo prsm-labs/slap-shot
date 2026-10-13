@@ -5,6 +5,7 @@ import { registerSlide, closeAllSlides, openGoalieSlide } from "../slideouts.js"
 import SkaterCharts from "./SkaterCharts.jsx";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import GradeBadge from "./GradeBadge.jsx";
+import { DVP_NOTE, matchupText } from "../lib/grades.js";
 import GoalieProfile from "./GoalieProfile.jsx";
 
 const TIER_CLASS = {
@@ -70,6 +71,14 @@ function SkaterStats({ p }) {
           label="Grade model: goal / assist / point / 3+ SOG"
           value={["goal", "assist", "point", "sog3"].map((k) => `${Math.round(p.modelProbs[k] * 100)}%`).join(" / ")}
         />
+      )}
+      {p.effectiveGrade?.matchup && (
+        <div className="mono" style={{ fontSize: 10, color: "var(--muted)", padding: "6px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+          <span style={{ color: p.effectiveGrade.matchup.tier === "soft" ? "var(--accent2)" : "var(--text)", fontWeight: 600 }}>
+            {matchupText(p.effectiveGrade.matchup)}
+          </span>
+          <div style={{ marginTop: 3 }}>{DVP_NOTE}</div>
+        </div>
       )}
       <StatRow label="PP TOI / game" value={fmtToi(p.ppToi)} />
       <StatRow label="Games Played" value={p.games_played} />
