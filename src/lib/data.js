@@ -28,6 +28,7 @@ const LINEUP_CHECK_MS = 3 * 60_000;
 let raw = null;
 let lineups = null;
 let lineupsAt = null;
+let odds = null; // public/data/odds/<slateDate>.json (build_odds.py) — sportsbook anytime-goal prices
 let current = null;
 let currentSig = null;
 let firstBuild = null;
@@ -40,7 +41,7 @@ function build() {
   const { meta, players: active, live } = applyLineups(raw, lineups, lineupsAt);
   // Re-score only when something that changes the numbers or labels changed.
   const sig = JSON.stringify([
-    raw._meta.generated, live.removed.map((r) => r.playerId), live.swaps,
+    raw._meta.generated, odds?._meta?.updated ?? null, live.removed.map((r) => r.playerId), live.swaps,
     meta.slate.map((g) => [g.state, g.awayGoalieId, g.awayGoalieStatus, g.homeGoalieId, g.homeGoalieStatus]),
     active.map((p) => p.lineupStatus),
   ]);
@@ -66,12 +67,34 @@ function build() {
     };
   });
   // Slap Score / tiers / goal % / point % from the grade model (lib/slapScore.js).
-  const players = applySlateScores(graded);
+  const players = withBookOdds(applySlateScores(graded));
   const goalies = raw.goalies.map((g) => ({ ...g, grade: goalieGrades[g.playerId] || null }));
 
   currentSig = sig;
   current = { meta, players, goalies, live };
   notify();
+}
+
+// Sportsbook price per skater: best anytime-goal price across US books (what you'd actually bet), its
+// implied chance (vig included — books' anytime prices are one-sided), and edge = our goal % minus it.
+function withBookOdds(players) {
+  const book = odds?.players;
+  if (!book) return players;
+  return players.map((p) => {
+    const o = book[p.playerId];
+    if (!o) return p;
+    const edge = p.anytimeGoalPct != null ? Math.round((p.anytimeGoalPct - o.bestImplied) * 10) / 10 : null;
+    return { ...p, book: o, bookBest: o.best, bookImplied: o.bestImplied, edge };
+  });
+}
+
+async function fetchOdds(date) {
+  try {
+    const res = await fetch(`/data/odds/${date}.json`, { cache: "no-cache" });
+    return res.ok ? await res.json() : null;
+  } catch {
+    return null;
+  }
 }
 
 async function checkPool() {
@@ -80,6 +103,7 @@ async function checkPool() {
   if (raw && data._meta.generated === raw._meta.generated) return;
   const newSlate = !raw || data._meta.slateDate !== raw._meta.slateDate;
   raw = data;
+  odds = await fetchOdds(data._meta.slateDate);
   if (newSlate) {
     lineups = null;
     lineupsAt = null;

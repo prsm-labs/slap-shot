@@ -33,6 +33,9 @@ const outDir = path.join(root, "public/data/projections");
 const pool = JSON.parse(fs.readFileSync(poolPath, "utf8"));
 const meta = pool._meta;
 const outPath = path.join(outDir, `${meta.slateDate}.json`);
+// Sportsbook anytime-goal prices (build_odds.py), if tonight's games have been priced yet.
+const oddsPath = path.join(root, "public/data/odds", `${meta.slateDate}.json`);
+const bookOdds = fs.existsSync(oddsPath) ? JSON.parse(fs.readFileSync(oddsPath, "utf8")).players || {} : {};
 
 // Crease Lab projections for every team's starter, exactly as the Crease Lab tab computes them:
 // starter = RotoWire / DailyFaceoff confirmed first, then expected (lib/lineups.js startingGoalie).
@@ -134,6 +137,10 @@ const players = scored.map((p) => {
     multiGoalPct: p.multiGoalPct,
     dueHeat: p.dueHeat ? { drought: p.dueHeat.drought, mult: p.dueHeat.mult } : null,
     plus3SogPct: p.plus3SogPct,
+    bookBest: bookOdds[p.playerId]?.best ?? null,
+    bookBestBook: bookOdds[p.playerId]?.bestBook ?? null,
+    bookImplied: bookOdds[p.playerId]?.bestImplied ?? null,
+    bookMedianImplied: bookOdds[p.playerId]?.medianImplied ?? null,
     firstGoalPct: Math.round((firstGoal.get(p.playerId) || 0) * 1000) / 10,
     goalSignal: isGoalSignal(p),
     pointSignal: isPointSignal(p),
