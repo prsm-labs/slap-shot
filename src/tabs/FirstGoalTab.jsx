@@ -16,6 +16,22 @@ import { useH2H } from "../lib/h2h.js";
 import { useSort } from "../lib/useSort.js";
 import IcebreakerView from "../components/IcebreakerView.jsx";
 import StarterTag from "../components/StarterTag.jsx";
+import { setListFilter, useListFilters } from "../lib/listFilters.js";
+
+// Soft defense = opponent in tonight's softest third by expected goals allowed (oppSoftPct, lib/slapScore.js) —
+// the same app-wide toggle as the list filters on All Matchups / Lamp / Apple. Display only: the first-goal and
+// icebreaker chances are still shares of every skater in the game / start-time group.
+const isSoft = (p) => (p.oppSoftPct ?? 0) >= 0.67;
+function SoftDefensePill({ on }) {
+  return (
+    <button
+      className={`pill-btn ${on ? "active" : ""}`}
+      style={{ marginBottom: 10 }}
+      onClick={() => setListFilter("soft", !on)}
+      title="Only skaters facing a defense in tonight's softest third by expected goals allowed. Chances don't change — it only narrows what's shown."
+    >Soft defense tonight</button>
+  );
+}
 
 // Candidate table columns: [field, header, tooltip]. Form rates are share of games (last 5 / 10 played,
 // from h2h_today.json "form"); P1 SOG/GP from the pool (shots files).
@@ -64,6 +80,7 @@ export default function FirstGoalTab() {
   const [live, setLive] = useState(null);
   const selected = useMatchup();
   const position = usePosition();
+  const soft = useListFilters().soft;
   const [view, setView] = useState("first"); // "first" | "ice" (🧊 Icebreaker)
 
   // Tonight's actual first goals, to grade the projection as games go.
@@ -118,8 +135,8 @@ export default function FirstGoalTab() {
         fgL5: r(f?.l5, "firstGoalGames"), fgL10: r(f?.l10, "firstGoalGames"),
         p1gL5: r(f?.l5, "p1GoalGames"), p1gL10: r(f?.l10, "p1GoalGames"),
       };
-    })), position);
-  }, [shown, position, h2h]);
+    })), position).filter((p) => !soft || isSoft(p));
+  }, [shown, position, h2h, soft]);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(candidates, "firstGoalP", "desc");
   const slateTop = showAll ? sorted : sorted.slice(0, SHOW);
 
@@ -141,7 +158,8 @@ export default function FirstGoalTab() {
 
       {view === "ice" ? (<>
         <PositionFilter />
-        <IcebreakerView players={pool} slate={meta.slate} goals={live?.goals} position={position} />
+        <SoftDefensePill on={soft} />
+        <IcebreakerView players={pool} slate={meta.slate} goals={live?.goals} position={position} soft={soft} />
       </>) : (<>
 
       <div className="note">
@@ -156,9 +174,10 @@ export default function FirstGoalTab() {
 
       <PositionFilter />
       <MatchupFilter />
+      <SoftDefensePill on={soft} />
 
       <div className="grid-cards" style={{ marginBottom: 14 }}>
-        {shown.map((g) => {
+        {shown.filter((g) => !soft || g.ranked.some(isSoft)).map((g) => {
           const actual = actualFirst.get(g.gameId);
           const actualRank = actual ? g.ranked.findIndex((p) => p.playerId === actual.scorerId) + 1 : 0;
           return (
@@ -175,7 +194,7 @@ export default function FirstGoalTab() {
                   <span style={{ color: "var(--muted)" }}> — our #{actualRank || "—"} of {g.ranked.length}</span>
                 </div>
               )}
-              {filterPositions(g.ranked, position).slice(0, 5).map((p, i) => (
+              {filterPositions(g.ranked, position).filter((p) => !soft || isSoft(p)).slice(0, 5).map((p, i) => (
                 <div
                   key={p.playerId}
                   className="clickable"

@@ -35,7 +35,8 @@ const TEAM_COLS = [
   ["xg", "Team xG", "Expected goals tonight (game model)"],
 ];
 
-export default function IcebreakerView({ players, slate, goals, position }) {
+// soft: show only skaters (and teams) facing a defense in tonight's softest third (display only)
+export default function IcebreakerView({ players, slate, goals, position, soft = false }) {
   const ratings = useTeamRatings();
   const groups = useMemo(() => startGroups(slate), [slate]);
   const [startPick, setStartPick] = useState(null);
@@ -43,11 +44,12 @@ export default function IcebreakerView({ players, slate, goals, position }) {
   const board = useMemo(() => icebreakerBoard(players, group?.games, ratings), [players, group, ratings]);
   const rows = useMemo(() => filterPositions((board?.rows || []).map((r) => ({
     ...r, p1SogPg: r.games_played && r.P1SOG != null ? r.P1SOG / r.games_played : null,
-  })), position), [board, position]);
+  })), position).filter((r) => !soft || (r.oppSoftPct ?? 0) >= 0.67), [board, position, soft]);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "iceP", "desc");
   const [showAll, setShowAll] = useState(false);
   const [mode, setMode] = useState("players"); // "players" | "teams"
-  const teamSort = useSort(board?.teams || [], "p", "desc");
+  const softTeams = useMemo(() => new Set((players || []).filter((p) => (p.oppSoftPct ?? 0) >= 0.67).map((p) => p.team)), [players]);
+  const teamSort = useSort((board?.teams || []).filter((t) => !soft || softTeams.has(t.team)), "p", "desc");
   const actual = actualIcebreaker(goals, group?.games);
 
   if (!ratings) return <div className="mono" style={{ ...muted, fontSize: 12 }}>Loading team ratings…</div>;
@@ -123,6 +125,11 @@ export default function IcebreakerView({ players, slate, goals, position }) {
         <button className={`pill-btn ${mode === "players" ? "active" : ""}`} onClick={() => setMode("players")}>👤 Players</button>
         <button className={`pill-btn ${mode === "teams" ? "active" : ""}`} onClick={() => setMode("teams")}>🏒 Teams</button>
       </div>
+      {soft && !rows.length && (
+        <div className="mono" style={{ fontSize: 11, ...muted, marginBottom: 10 }}>
+          No skater in this start-time group faces a soft defense tonight — pick another start time or turn off "Soft defense tonight".
+        </div>
+      )}
 
       {mode === "teams" ? (
         <div className="table-wrap">
