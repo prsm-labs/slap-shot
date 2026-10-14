@@ -16,6 +16,8 @@ import { fmtToi } from "../lib/toi.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import { dvpFor, dvpText } from "../lib/dvp.js";
+import L120Cell from "../components/L120Cell.jsx";
+import { L120_COLS } from "../lib/last120.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -33,6 +35,7 @@ const COLUMNS = [
   ["estToi", "Est. TOI"],
   ["sogPg", "SOG/GP", "Shots on goal per game, last season + this season"],
   ["sog60", "SOG/60", "Shots on goal per 60 minutes of ice time"],
+  ...L120_COLS,
   ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
   ["bookBest", "Book Odds", "Best anytime-goal price across US sportsbooks (hover for each book). Priced once per game at the last pipeline run before puck drop"],
@@ -118,6 +121,8 @@ export default function AllMatchupsTab() {
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
+                  <L120Cell p={p} kind="sog" />
+                  <L120Cell p={p} kind="hd" />
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>
                   <td className="mono" title={p.book ? Object.entries(p.book.books).map(([b, v]) => `${b} ${fmtAmerican(v)}`).join(" · ") + (p.book.open ? ` — opened ${fmtAmerican(p.book.open.best)} ${p.book.open.bestBook}` : "") : "No sportsbook price"} style={{ whiteSpace: "nowrap" }}>

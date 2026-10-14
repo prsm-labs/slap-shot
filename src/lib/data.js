@@ -6,6 +6,7 @@ import { scorePlayerPool } from "../scoring.js";
 import { computeGoalieGrades, gradeSlate } from "./grades.js";
 import { applySlateScores } from "./slapScore.js";
 import { estimatedToi, ppToiPerGame } from "./toi.js";
+import { last120 } from "./last120.js";
 import { fetchLineups, lineupPollMs } from "./lineups.js";
 import { applyLineups, STARTED } from "./slateOverlay.js";
 
@@ -64,6 +65,7 @@ function build() {
       // shots on goal per game and per 60 minutes of ice time (icetime = total seconds), last season + this season
       sogPg: p.ShotsOnGoalPerGame ?? null,
       sog60: p.icetime > 0 && p.ShotsOnGoalPerGame != null ? Math.round(((p.ShotsOnGoalPerGame * p.games_played * 3600) / p.icetime) * 100) / 100 : null,
+      ...last120(p),
     };
   });
   // Slap Score / tiers / goal % / point % from the grade model (lib/slapScore.js).

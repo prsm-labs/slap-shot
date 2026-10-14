@@ -14,6 +14,8 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
+import L120Cell from "../components/L120Cell.jsx";
+import { L120_COLS } from "../lib/last120.js";
 
 // Cheat Sheets -> Breakout Watch: not the usual top scorers, but skaters whose shot quality is
 // rising into a soft matchup (lib/breakout.js has the backtest behind every rule).
@@ -64,6 +66,7 @@ export default function BreakoutTab() {
                 {th("multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed")}
                 {th("sogPg", "SOG/GP", "Shots on goal per game, last season + this season")}
                 {th("sog60", "SOG/60", "Shots on goal per 60 minutes of ice time")}
+                {L120_COLS.map(([k, label, title]) => th(k, label, title))}
                 {th("xgTrend", "xG trend", "Expected goals per game, last 5 vs season (shrunk to league)")}
                 {th("hdTrend", "HD trend", "High-danger shot attempts per game, last 5 vs season")}
                 {th("attTrend", "Attempts trend", "Unblocked shot attempts per game, last 5 vs season")}
@@ -92,6 +95,8 @@ export default function BreakoutTab() {
                   <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
+                  <L120Cell p={p} kind="sog" />
+                  <L120Cell p={p} kind="hd" />
                   <td style={{ fontWeight: 700, color: "var(--accent2)" }}>{x(p.xgTrend)}</td>
                   <td>{x(p.hdTrend)}</td>
                   <td>{x(p.attTrend)}</td>
