@@ -21,5 +21,6 @@ export function betText(lines, { sameGame = false } = {}) {
 
 export const gamblyUrl = (text) => `https://gambly.com/chat?q=${encodeURIComponent(text)}`;
 
-// My Picks category -> prop.
-export const PICK_PROP = { goal: "goal", point: "point", sog: "sog3", first: "first" };
+// My Picks category -> prop. Categories with no prop of their own (Favorite, Dark Horse, Longshot, Hot Hand) send an
+// anytime goal.
+export const PICK_PROP = { goal: "goal", goal2: "goal2", point: "point", sog: "sog3", first: "first", fav: "goal", dark: "goal", long: "goal", hot: "goal" };

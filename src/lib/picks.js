@@ -7,6 +7,7 @@ import { useSyncExternalStore } from "react";
 export const PICK_TYPES = [
   { key: "fav", label: "Favorite", emoji: "⭐" },
   { key: "goal", label: "Anytime Goal", emoji: "🚨" },
+  { key: "goal2", label: "2+ Goals", emoji: "🚨🚨" },
   { key: "point", label: "Point", emoji: "🍎" },
   { key: "sog", label: "Shots (3+)", emoji: "🏒" },
   { key: "first", label: "First Goal", emoji: "🥇" },
