@@ -16,7 +16,8 @@ import { filterPositions, positionLabel, usePosition } from "../lib/positionFilt
 import { fmtToi } from "../lib/toi.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { isGoalSignal } from "../lib/signals.js";
-import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
+import { booksText, edgeColor, edgeText, fmtEdge } from "../lib/bookOdds.js";
+import { BestPriceLink } from "../components/BetLink.jsx";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
 
@@ -191,7 +192,7 @@ export default function LampLabTab() {
                   <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimeGoalPct}%</td>
                   <td className="mono" title={booksText(p.book)} style={{ whiteSpace: "nowrap" }}>
-                    {p.book ? <>{fmtAmerican(p.book.best)} <span style={{ color: "var(--muted)", fontSize: 10 }}>{p.book.bestBook}</span></> : "—"}
+                    {p.book ? <BestPriceLink book={p.book} /> : "—"}
                   </td>
                   <td className="mono" title={p.book ? edgeText(p) : undefined} style={{ color: edgeColor(p.edge), fontWeight: p.edge >= 3 ? 700 : undefined }}>{fmtEdge(p.edge)}</td>
                   <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>

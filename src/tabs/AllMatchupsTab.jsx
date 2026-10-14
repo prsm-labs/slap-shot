@@ -1,4 +1,5 @@
 import { useScoredPool } from "../lib/data.js";
+import { BestPriceLink } from "../components/BetLink.jsx";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
@@ -126,7 +127,7 @@ export default function AllMatchupsTab() {
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>
                   <td className="mono" title={p.book ? Object.entries(p.book.books).map(([b, v]) => `${b} ${fmtAmerican(v)}`).join(" · ") + (p.book.open ? ` — opened ${fmtAmerican(p.book.open.best)} ${p.book.open.bestBook}` : "") : "No sportsbook price"} style={{ whiteSpace: "nowrap" }}>
-                    {p.book ? <>{fmtAmerican(p.book.best)} <span style={{ color: "var(--muted)", fontSize: 10 }}>{p.book.bestBook}</span></> : "—"}
+                    {p.book ? <BestPriceLink book={p.book} /> : "—"}
                   </td>
                   <td className="mono" title={p.book ? `Ours ${p.anytimeGoalPct}% vs book ${p.book.bestImplied}% (${fmtAmerican(p.book.best)})` : undefined}
                     style={{ color: p.edge == null ? undefined : p.edge >= 3 ? "var(--accent2)" : p.edge < 0 ? "var(--muted)" : undefined, fontWeight: p.edge >= 3 ? 700 : undefined }}>

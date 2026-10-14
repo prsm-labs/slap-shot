@@ -3,7 +3,8 @@ import { useScoredPool } from "../lib/data.js";
 import { buildPairs, MAX_PAIRS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican, toDecimal } from "../lib/pairs.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { useH2HGrades } from "../lib/h2h.js";
-import { booksText, fmtAmerican } from "../lib/bookOdds.js";
+import { BOOK_NAMES, fmtAmerican, pairBetUrl } from "../lib/bookOdds.js";
+import { AllBookLinks, BestPriceLink, BetAnchor, StatePicker } from "../components/BetLink.jsx";
 import { fmtToi } from "../lib/toi.js";
 import { dueHeatText } from "../lib/dueHeat.js";
 import { pointHeatText } from "../lib/pointHeat.js";
@@ -152,7 +153,7 @@ function LegDetails({ leg, h2h, defRank }) {
         {p.lineupStatus === "dressed" ? "✅ official lineup" : "not official yet"}
         {p.startingLineup === true ? " · ▶ starting" : ""}
       </Row>
-      {prop === "goal" && <Row k="Books">{booksText(p.book)}</Row>}
+      {prop === "goal" && <Row k="Books">{p.book ? <AllBookLinks book={p.book} /> : "no sportsbook price"}</Row>}
     </div>
   );
 }
@@ -187,7 +188,7 @@ function Leg({ leg, h2h, details, defRank }) {
       <div style={{ textAlign: "right", flex: "0 0 auto", alignSelf: "flex-start" }}>
         <div className="mono" style={{ fontSize: 10, ...muted }}>{info.emoji} {info.label}</div>
         <div className="mono" style={{ fontSize: 16, fontWeight: 700 }}>{pct(chance)}</div>
-        {prop === "goal" && leg.book && <div className="mono" style={{ fontSize: 10, ...muted }}>{fmtAmerican(leg.book.best)} {leg.book.bestBook}</div>}
+        {prop === "goal" && leg.book && <div className="mono" style={{ fontSize: 10, ...muted }}><BestPriceLink book={leg.book} /></div>}
       </div>
     </div>
   );
@@ -212,6 +213,7 @@ function PriceLine({ pr, boost }) {
       </span>
       {boost > 0 && <span>{Math.round(boost * 100)}% boost → <b>{fmtAmerican(parlay.boostedAmerican)}</b></span>}
       <span style={muted}>fair {fmtAmerican(pr.fair)}</span>
+      <PairBet pr={pr} />
       <span style={{ color: pr.ev > 0 ? "var(--accent2)" : "var(--muted)", fontWeight: 700 }} title="Expected return per 1 unit: chance both hit x payout - 1">
         EV {pr.ev > 0 ? "+" : ""}{(pr.ev * 100).toFixed(0)}%
       </span>
@@ -252,6 +254,46 @@ function StarBadge({ pr }) {
   );
 }
 
+// "Bet this pair at FD ↗": both legs on one slip where the book's link takes several selections; the legs' own
+// links (tap a leg's price) are the fallback.
+function PairBet({ pr }) {
+  const bk = pr.parlay?.book;
+  const link = bk ? pairBetUrl(pr.legs.map((l) => l.book), bk) : null;
+  if (!link) return null;
+  return (
+    <BetAnchor link={link} title={`Opens ${BOOK_NAMES[bk] || bk} with both legs on the slip. If only one lands, tap each leg's price instead.`}
+      style={{ fontWeight: 700, color: "var(--accent2)" }}>
+      Bet pair at {bk}
+    </BetAnchor>
+  );
+}
+
+// Plain bet text for any pair (points / shots have no book links): paste into a sportsbook search, a bet-slip
+// builder, or a group chat. one line per leg, then "(2-leg parlay)".
+const BET_WORDS = { goal: "Anytime Goal Scorer", point: "1+ Points", sog3: "3+ Shots on Goal" };
+function pairBetText(pr) {
+  return [...pr.legs.map((l) => `${l.p.name} (${l.p.team}) — ${BET_WORDS[l.prop]}`), pr.sameGame ? "(2-leg same game parlay)" : "(2-leg parlay)"].join("\n");
+}
+
+function CopyBet({ pr }) {
+  const [done, setDone] = useState(false);
+  const copy = async (e) => {
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(pairBetText(pr));
+      setDone(true);
+      setTimeout(() => setDone(false), 1500);
+    } catch {
+      setDone(false);
+    }
+  };
+  return (
+    <button className="pill-btn" style={{ fontSize: 10 }} onClick={copy} title={pairBetText(pr)}>
+      {done ? "✓ Copied" : "📋 Copy bet"}
+    </button>
+  );
+}
+
 function PairCard({ pr, n, isNew, h2h, boost, defRank }) {
   const [details, setDetails] = useState(false);
   const gold = Boolean(pr.starRank);
@@ -276,7 +318,10 @@ function PairCard({ pr, n, isNew, h2h, boost, defRank }) {
       </div>
       {why.length > 0 && <div className="mono" style={{ fontSize: 10, color: "var(--accent2)", marginTop: 2 }}>{why.join(" · ")}</div>}
       {pr.legs.map((l) => <Leg key={l.p.playerId + l.prop} leg={l} h2h={h2h} details={details} defRank={defRank} />)}
-      <button className="pill-btn" style={{ fontSize: 10, marginBottom: 6 }} onClick={() => setDetails(!details)}>{details ? "Hide breakdown" : "🔍 Full breakdown"}</button>
+      <div style={{ display: "flex", gap: 6, marginBottom: 6 }}>
+        <button className="pill-btn" style={{ fontSize: 10 }} onClick={() => setDetails(!details)}>{details ? "Hide breakdown" : "🔍 Full breakdown"}</button>
+        <CopyBet pr={pr} />
+      </div>
       <div style={{ borderTop: "1px solid var(--border)", paddingTop: 8 }}><PriceLine pr={pr} boost={boost} /></div>
     </div>
   );
@@ -385,6 +430,7 @@ export default function PairsTab() {
             <button key={m.key} className={`pill-btn ${mode === m.key ? "active" : ""}`} onClick={() => setMode(m.key)} title={m.blurb}>{m.label}</button>
           ))}
         </div>
+        <StatePicker />
         <div className="pill-row" title="Profit boost on the parlay (only changes goal + goal pairs with a book price)">
           <span className="mono" style={{ fontSize: 10, ...muted, alignSelf: "center", marginRight: 4 }}>Boost</span>
           {BOOSTS.map((b) => (

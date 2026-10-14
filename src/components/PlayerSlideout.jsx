@@ -10,6 +10,7 @@ import { dvpFor } from "../lib/dvp.js";
 import { useScoredPool } from "../lib/data.js";
 import GoalieProfile from "./GoalieProfile.jsx";
 import { booksText, edgeColor, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
+import { AllBookLinks, StatePicker } from "./BetLink.jsx";
 import { pointHeatText } from "../lib/pointHeat.js";
 
 const TIER_CLASS = {
@@ -99,6 +100,12 @@ function SkaterStats({ p }) {
         <StatRow
           label="Sportsbook anytime goal (best price)"
           value={<span title={booksText(p.book)}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImplied}% vs ours {p.anytimeGoalPct}% · <span style={{ color: edgeColor(p.edge), fontWeight: 700 }}>edge {fmtEdge(p.edge)}</span></span>}
+        />
+      )}
+      {p.book?.links && (
+        <StatRow
+          label={<>Bet anytime goal <StatePicker /></>}
+          value={<span className="mono" style={{ fontSize: 11 }}><AllBookLinks book={p.book} /></span>}
         />
       )}
       {p.effectiveGrade?.matchup && (

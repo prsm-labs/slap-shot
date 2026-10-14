@@ -282,7 +282,7 @@ export function pairRecord(pr) {
       playerId: p.playerId, name: p.name, team: p.team, opp: p.opponentTeam, isHome: p.isHome, position: p.position,
       prop, chancePct: r1(chance), grade: p.effectiveGrade?.letter ?? null, lineupStatus: p.lineupStatus ?? null,
       softD: p.oppSoftPct != null && p.oppSoftPct >= SOFT_D, toughD: p.oppSoftPct != null && p.oppSoftPct < 0.33,
-      book: book ? { best: book.best, bestBook: book.bestBook, books: book.books } : null, edge: prop === "goal" ? p.edge ?? null : null,
+      book: book ? { best: book.best, bestBook: book.bestBook, books: book.books, links: book.links || null } : null, edge: prop === "goal" ? p.edge ?? null : null,
     })),
   };
 }
