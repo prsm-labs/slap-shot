@@ -44,6 +44,21 @@ export const MODES = [
 ];
 export const MODE_KEYS = MODES.map((m) => m.key);
 
+// ★ Best pairs: every pair shown gets a star score, and the top STAR_TOP of the list are ranked ★1..★5 (gold).
+//   strength  = percentile of the pair's both-hit chance among EVERY valid pair tonight with the same props
+//               (goal+goal vs all goal+goal, point+point vs all point+point, ...) — "how good is this of its kind";
+//               raw chance alone would always crown point pairs (60%) over goal pairs (15%).
+//   + value   = 0.3 x expected return at the book (goal+goal with a price only; clipped -50%..+100%)
+//   + lineups = 0.05 per leg already in an official lineup (no void risk)
+// Matchup, form, grade, due boosts are already inside each leg's chance, so they aren't counted twice.
+export const STAR_TOP = 5;
+export const PROP_FILTERS = [
+  { key: null, label: "All props" },
+  { key: "goal", label: "🚨 Goal pairs" },
+  { key: "point", label: "🍎 Point pairs" },
+  { key: "sog3", label: "🏒 Shots pairs" },
+];
+
 export const toDecimal = (am) => (am > 0 ? 1 + am / 100 : 1 + 100 / -am);
 export const toAmerican = (dec) => (dec >= 2 ? Math.round((dec - 1) * 100) : Math.round(-100 / (dec - 1)));
 const fairAmerican = (p) => toAmerican(1 / p);
@@ -125,10 +140,51 @@ function take(sorted, n, state) {
 }
 
 // players: live slate skaters (upcoming games). Returns up to MAX_PAIRS pairs, each tagged with its section.
-export function buildPairs(players, { mode = "balanced", boost = 0 } = {}) {
+// prop = null | "goal" | "point" | "sog3": only pairs whose two legs are both that prop (up to 10 of them).
+export function buildPairs(players, { mode = "balanced", boost = 0, prop = null } = {}) {
   const live = players.filter((p) => !p.gameStarted && p.lineupStatus !== "out" && p.lineupStatus !== "scratched");
-  const top = (prop) => live.map((p) => legOf(p, prop)).filter(Boolean).sort((a, b) => b.chance - a.chance).slice(0, LEGS_PER_PROP);
-  const goal = top("goal"), point = top("point"), sog = top("sog3");
+  const top = (k) => live.map((p) => legOf(p, k)).filter(Boolean).sort((a, b) => b.chance - a.chance).slice(0, LEGS_PER_PROP);
+  const allGoal = top("goal"), allPoint = top("point"), allSog = top("sog3");
+  const only = (k, list) => (prop && prop !== k ? [] : list);
+  const goal = only("goal", allGoal), point = only("point", allPoint), sog = only("sog3", allSog);
+  const universe = starUniverse(allGoal, allPoint, allSog);
+  return withStars(pickPairs({ goal, point, sog, live, mode, boost, prop }), universe);
+}
+
+// Sorted both-hit chances of every valid pair tonight, per prop combination (for the star strength percentile).
+function starUniverse(goal, point, sog) {
+  const by = {};
+  for (const pr of [...allPairs([...goal, ...point], () => true, 0), ...allPairs(sog, () => true, 0)]) {
+    const k = comboOf(pr);
+    (by[k] ||= []).push(pr.chance);
+  }
+  for (const k of Object.keys(by)) by[k].sort((a, b) => a - b);
+  return by;
+}
+
+export const comboOf = (pr) => pr.legs.map((l) => l.prop).sort().join("+");
+
+function pctBelow(sorted, v) {
+  let lo = 0, hi = sorted.length;
+  while (lo < hi) { const m = (lo + hi) >> 1; if (sorted[m] <= v) lo = m + 1; else hi = m; }
+  return sorted.length > 1 ? (lo - 1) / (sorted.length - 1) : 1;
+}
+
+export function starScore(pr, universe) {
+  const strength = Math.max(0, pctBelow(universe[comboOf(pr)] || [pr.chance], pr.chance));
+  const value = pr.ev != null ? 0.3 * Math.min(1, Math.max(-0.5, pr.ev)) : 0;
+  const lineups = 0.05 * pr.legs.filter((l) => l.p.lineupStatus === "dressed").length;
+  return { score: strength + value + lineups, strength, value, lineups };
+}
+
+function withStars(list, universe) {
+  const scored = list.map((pr) => ({ ...pr, star: starScore(pr, universe) }));
+  const order = [...scored].sort((a, b) => b.star.score - a.star.score);
+  const rank = new Map(order.slice(0, STAR_TOP).map((pr, i) => [pr.key, i + 1]));
+  return scored.map((pr) => ({ ...pr, starRank: rank.get(pr.key) ?? null }));
+}
+
+function pickPairs({ goal, point, sog, live, mode, boost, prop }) {
   const byChance = (a, b) => b.chance - a.chance;
   const byEv = (a, b) => b.ev - a.ev;
   const state = { keys: new Set(), uses: new Map(), cap: MAX_PER_PLAYER[mode] ?? MAX_PER_PLAYER.default };
@@ -150,6 +206,13 @@ export function buildPairs(players, { mode = "balanced", boost = 0 } = {}) {
   const softPairs = allPairs([...goal, ...point, ...sog].filter(isSoft), () => true, boost).sort(byChance);
 
   if (mode === "value") return tag(take(valuePairs, MAX_PAIRS, state), "💰 Value");
+  // One prop type on Balanced: the strongest pairs of that kind across every relationship (teammates, opponents,
+  // different games), one per player.
+  if (prop && mode === "balanced") {
+    const label = { goal: "🚨 Goals", point: "🍎 Points", sog3: "🏒 Shots" }[prop];
+    const any = [...allPairs([...goal, ...point], () => true, boost), ...sogPairs].sort(byChance);
+    return tag(take(any, MAX_PAIRS, state), label);
+  }
   if (mode === "safest") {
     const any = [...allPairs([...goal, ...point], () => true, boost), ...sogPairs].sort(byChance);
     return tag(take(any, MAX_PAIRS, state), "🛡️ Safest");
@@ -212,6 +275,7 @@ const r1 = (v) => (v == null ? null : Math.round(v * 1000) / 10); // 0-1 -> % wi
 export function pairRecord(pr) {
   return {
     key: pr.key, section: pr.section, rel: pr.rel, corr: pr.corr, chancePct: r1(pr.chance), fair: pr.fair,
+    starRank: pr.starRank ?? null, star: pr.star ? Math.round(pr.star.score * 1000) / 1000 : null,
     parlay: pr.parlay ? { book: pr.parlay.book, legs: pr.parlay.legs, american: pr.parlay.american, dec: Math.round(pr.parlay.dec * 1000) / 1000 } : null,
     evPct: pr.ev == null ? null : Math.round(pr.ev * 1000) / 10,
     legs: pr.legs.map(({ p, prop, chance, book }) => ({

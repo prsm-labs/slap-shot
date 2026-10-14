@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
-import { buildPairs, MAX_PAIRS, MODES, notInPairs, PROPS, relText, toAmerican, toDecimal } from "../lib/pairs.js";
+import { buildPairs, MAX_PAIRS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican, toDecimal } from "../lib/pairs.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { useH2HGrades } from "../lib/h2h.js";
 import { booksText, fmtAmerican } from "../lib/bookOdds.js";
@@ -22,6 +22,7 @@ const pct = (v) => `${(v * 100).toFixed(1)}%`;
 const muted = { color: "var(--muted)" };
 const timeOf = (d) => d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 const LOCK_CHECK_MS = 5 * 60_000;
+const GOLD = "#d4af37";
 
 // A locked record (lib/pairs.js pairRecord) in the shape PairCard renders. Chances / prices are the locked ones;
 // the chips use the skater's live record when he's still on the slate.
@@ -36,7 +37,10 @@ function fromRecord(r, byId, boost) {
     const boostedDec = 1 + (r.parlay.dec - 1) * (1 + boost);
     parlay = { ...r.parlay, boostedDec, boostedAmerican: toAmerican(boostedDec) };
   }
-  return { key: r.key, section: r.section, rel: r.rel, corr: r.corr, chance, fair: r.fair, sameGame: r.rel !== "diff", legs, parlay, ev: parlay ? chance * parlay.boostedDec - 1 : null };
+  return {
+    key: r.key, section: r.section, rel: r.rel, corr: r.corr, chance, fair: r.fair, sameGame: r.rel !== "diff", legs, parlay,
+    ev: parlay ? chance * parlay.boostedDec - 1 : null, starRank: r.starRank ?? null, star: r.star != null ? { score: r.star } : null,
+  };
 }
 
 function BlindSpots({ list }) {
@@ -234,16 +238,31 @@ function whyLine(pr, defRank) {
   return out;
 }
 
+function StarBadge({ pr }) {
+  if (!pr.starRank) return null;
+  const s = pr.star;
+  const title = s?.strength != null
+    ? `★${pr.starRank} best pair tonight in this view. Score ${s.score.toFixed(2)} = strength ${s.strength.toFixed(2)} (percentile of the both-hit chance among every pair of these props tonight)` +
+      `${s.value ? ` ${s.value > 0 ? "+" : "−"} value ${Math.abs(s.value).toFixed(2)} (book price vs fair)` : ""}${s.lineups ? ` + lineups ${s.lineups.toFixed(2)} (official)` : ""}`
+    : `★${pr.starRank} best pair in this view when locked`;
+  return (
+    <span title={title} className="mono" style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 10, background: GOLD, color: "#1a1405", whiteSpace: "nowrap", cursor: "help" }}>
+      ★{pr.starRank} BEST
+    </span>
+  );
+}
+
 function PairCard({ pr, n, isNew, h2h, boost, defRank }) {
   const [details, setDetails] = useState(false);
+  const gold = Boolean(pr.starRank);
   const [a, b] = pr.legs;
   const either = Math.min(1, a.chance + b.chance - pr.chance);
   const why = whyLine(pr, defRank);
   return (
-    <div className="card" style={{ padding: 12, border: "1px solid var(--border)", borderRadius: 12, background: "var(--surface)" }}>
+    <div className="card" style={{ padding: 12, border: gold ? `2px solid ${GOLD}` : "1px solid var(--border)", boxShadow: gold ? `0 0 14px ${GOLD}55` : undefined, borderRadius: 12, background: "var(--surface)" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         <span style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 700, fontSize: 14 }}>
-          #{n} · {pr.section} {isNew && <span className="mono" style={{ fontSize: 9, color: "var(--accent2)", marginLeft: 4 }}>NEW</span>}
+          <StarBadge pr={pr} /> #{n} · {pr.section} {isNew && <span className="mono" style={{ fontSize: 9, color: "var(--accent2)", marginLeft: 4 }}>NEW</span>}
         </span>
         <span className="mono" style={{ fontSize: 12 }} title="Chance both legs hit = leg x leg x correlation">
           Both hit <b style={{ fontSize: 15 }}>{pct(pr.chance)}</b>
@@ -271,6 +290,8 @@ export default function PairsTab() {
   const [boost, setBoost] = useState(0);
   const [lock, setLock] = useState(null); // locked record for tonight, if any
   const [showLive, setShowLive] = useState(false);
+  const [propFilter, setPropFilter] = useState(null);
+  const [starFilter, setStarFilter] = useState(null); // 3 | 5 | null
   const slateDate = pool?.meta?.slateDate;
 
   useEffect(() => {
@@ -296,18 +317,23 @@ export default function PairsTab() {
 
   const livePairs = useMemo(() => {
     if (!pool) return [];
-    return buildPairs(filterPlayers(pool.players, selected), { mode, boost });
-  }, [pool, selected, mode, boost]);
+    return buildPairs(filterPlayers(pool.players, selected), { mode, boost, prop: propFilter });
+  }, [pool, selected, mode, boost, propFilter]);
   const allPlayers = useScoredPool({ includeStarted: true });
   const lockedPairs = useMemo(() => {
     if (!lock) return [];
     const byId = new Map((allPlayers?.players || []).map((p) => [p.playerId, p]));
     const [ta, tb] = selected ? selected.split("@") : [];
-    return (lock.modes[mode] || [])
+    const key = propFilter && mode === "balanced" ? `balanced:${propFilter}` : mode;
+    return (lock.modes[key] || lock.modes[mode] || [])
       .filter((r) => !selected || r.legs.some((l) => l.team === ta || l.team === tb))
+      .filter((r) => !propFilter || r.legs.every((l) => l.prop === propFilter))
       .map((r) => fromRecord(r, byId, boost));
-  }, [lock, allPlayers, mode, boost, selected]);
-  const pairs = locked ? lockedPairs : livePairs;
+  }, [lock, allPlayers, mode, boost, selected, propFilter]);
+  const board = locked ? lockedPairs : livePairs;
+  const pairs = starFilter
+    ? board.filter((pr) => pr.starRank && pr.starRank <= starFilter).sort((a, b) => a.starRank - b.starRank)
+    : board;
   const defRank = useMemo(() => defenseRanks(allPlayers?.players || []), [allPlayers]);
   const blind = useMemo(() => (pool ? notInPairs(filterPlayers(pool.players, selected), pairs) : []), [pool, selected, pairs]);
 
@@ -316,7 +342,7 @@ export default function PairsTab() {
   const [news, setNews] = useState({ at: null, keys: new Set() });
   const keyStr = pairs.map((p) => p.key).join(",");
   useEffect(() => {
-    const ctx = `${mode}|${selected}|${boost}|${locked}`;
+    const ctx = `${mode}|${selected}|${boost}|${locked}|${propFilter}|${starFilter}`;
     const last = prev.current;
     if (last.ctx === ctx && last.keys != null && last.keys !== keyStr) {
       const old = new Set(last.keys.split(","));
@@ -325,7 +351,7 @@ export default function PairsTab() {
       setNews({ at: null, keys: new Set() });
     }
     prev.current = { ctx, keys: keyStr };
-  }, [keyStr, mode, selected, boost, pairs, locked]);
+  }, [keyStr, mode, selected, boost, pairs, locked, propFilter, starFilter]);
 
   if (!pool) return <div className="mono" style={muted}>Loading tonight's slate…</div>;
   const modeInfo = MODES.find((m) => m.key === mode);
@@ -366,11 +392,30 @@ export default function PairsTab() {
           ))}
         </div>
       </div>
-      <div className="mono" style={{ fontSize: 10, ...muted, marginBottom: 10 }}>{modeInfo.blurb}.</div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center", marginBottom: 8 }}>
+        <div className="pill-row">
+          {[[null, "All pairs"], [3, "★ Top 3"], [5, "★ Top 5"]].map(([k, l]) => (
+            <button key={l} className={`pill-btn ${starFilter === k ? "active" : ""}`} onClick={() => setStarFilter(k)}
+              style={k ? { borderColor: GOLD, color: starFilter === k ? undefined : GOLD } : undefined}>{l}</button>
+          ))}
+        </div>
+        <div className="pill-row">
+          {PROP_FILTERS.map((f) => (
+            <button key={f.label} className={`pill-btn ${propFilter === f.key ? "active" : ""}`} onClick={() => setPropFilter(f.key)}>{f.label}</button>
+          ))}
+        </div>
+      </div>
+      <div className="mono" style={{ fontSize: 10, ...muted, marginBottom: 10 }}>
+        {modeInfo.blurb}{propFilter ? ` — ${PROPS[propFilter].label} pairs only (both legs)` : ""}. Gold ★ = the {STAR_TOP} best pairs in this view, in order
+        (strongest of its kind tonight, plus book value and official lineups — hover the badge for the math).
+      </div>
 
       {pairs.length === 0 ? (
         <div className="mono" style={muted}>
-          {mode === "value" ? "No goal + goal pair with a positive expected return at one book right now." : "No pairs — every game has started or no skaters qualify."}
+          {mode === "value" && propFilter && propFilter !== "goal" ? "Value vs book only exists for goal pairs (the only prop we have prices for)." :
+            mode === "value" ? "No goal + goal pair with a positive expected return at one book right now." :
+            locked && propFilter ? "No locked pairs of this prop type in this mode — switch to 🔄 Live to build them." :
+            "No pairs — every game has started or no skaters qualify."}
         </div>
       ) : (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 340px), 1fr))", gap: 12 }}>

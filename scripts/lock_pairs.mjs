@@ -88,6 +88,8 @@ const players = applySlateScores(scored.map((p) => {
 
 const modes = {};
 for (const m of MODE_KEYS) modes[m] = buildPairs(players, { mode: m, boost: 0 }).map(pairRecord);
+// Balanced with one prop type (the page's 🚨 / 🍎 / 🏒 filters) — locked too so Track Record can grade each.
+for (const prop of ["goal", "point", "sog3"]) modes[`balanced:${prop}`] = buildPairs(players, { mode: "balanced", boost: 0, prop }).map(pairRecord);
 
 const teamsOfficial = [...new Set(active.filter((p) => p.lineupStatus === "dressed").map((p) => p.team))];
 const record = {

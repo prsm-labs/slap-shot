@@ -1,6 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { openSkaterSlide } from "../slideouts.js";
 import { MODES, PROPS } from "../lib/pairs.js";
+
+const PROP_LOCKS = [
+  { key: "balanced:goal", label: "🚨 Goal pairs" },
+  { key: "balanced:point", label: "🍎 Point pairs" },
+  { key: "balanced:sog3", label: "🏒 Shots pairs" },
+];
 import { fmtAmerican } from "../lib/bookOdds.js";
 
 // Track Record — Pairs: every mode's locked pairs (scripts/lock_pairs.mjs, ~20-45 min before the first puck drop)
@@ -103,7 +109,11 @@ export default function TrackRecordPairs() {
   const backfilledDates = dates.filter((d) => locks[d]?.lockedAt == null);
   const liveDates = dates.filter((d) => locks[d]?.lockedAt != null);
   const decided = inScope.filter((r) => r.result !== "void");
-  const modeLabel = (k) => MODES.find((m) => m.key === k)?.label || k;
+  const modeLabel = (k) => {
+    const [m, prop] = k.split(":");
+    const base = MODES.find((x) => x.key === m)?.label || m;
+    return prop ? `${base} · ${PROPS[prop]?.emoji || prop}` : base;
+  };
 
   return (
     <div>
@@ -119,7 +129,7 @@ export default function TrackRecordPairs() {
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginBottom: 10 }}>
         <div className="pill-row">
-          {[{ key: "all", label: "All modes" }, ...MODES].map((m) => (
+          {[{ key: "all", label: "All modes" }, ...MODES, ...PROP_LOCKS].map((m) => (
             <button key={m.key} className={`pill-btn ${mode === m.key ? "active" : ""}`} onClick={() => setMode(m.key)}>{m.label}</button>
           ))}
         </div>
@@ -143,6 +153,8 @@ export default function TrackRecordPairs() {
         <GroupTable title="By prop combination" label="Props" rows={inScope} keyOf={(r) => COMBO_LABEL[propCombo(r)] || propCombo(r)} />
         <GroupTable title={mode === "all" ? "By mode" : "By section"} label={mode === "all" ? "Mode" : "Section"} rows={inScope}
           keyOf={(r) => (mode === "all" ? modeLabel(r.mode) : r.section)} />
+        <GroupTable title="By ★ rank (gold best pairs)" label="Rank" rows={inScope} order={["★ Top 3", "★ 4–5", "Not starred"]}
+          keyOf={(r) => (r.starRank && r.starRank <= 3 ? "★ Top 3" : r.starRank ? "★ 4–5" : "Not starred")} />
         <GroupTable title="By relationship" label="Legs" rows={inScope}
           keyOf={(r) => ({ diff: "Different games", team: "Teammates", opp: "Opponents" }[r.rel])} />
       </div>
@@ -170,7 +182,7 @@ export default function TrackRecordPairs() {
                   ))}
                 </td>
                 <td className="mono">{shortDate(r.date)}</td>
-                <td className="mono" style={{ fontSize: 10 }}>{modeLabel(r.mode)} #{r.rank}</td>
+                <td className="mono" style={{ fontSize: 10 }}>{modeLabel(r.mode)} #{r.rank}{r.starRank ? <span style={{ color: "#d4af37", fontWeight: 700 }}> ★{r.starRank}</span> : null}</td>
                 <td style={{ fontSize: 11 }}>{r.section}</td>
                 <td className="mono">{r.chancePct}%</td>
                 <td className="mono" style={{ color: r.result === "hit" ? "var(--accent2)" : undefined, fontWeight: r.result === "hit" ? 700 : 400 }}>
