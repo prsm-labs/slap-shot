@@ -1,0 +1,2695 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-13",
+  "lockedAt": null,
+  "firstPuck": "2026-10-13T22:00:00Z",
+  "firstGame": "NJD@DET",
+  "firstGameOfficial": false,
+  "late": false,
+  "backfilled": true,
+  "gamesLocked": [
+   "NJD@DET",
+   "FLA@CBJ",
+   "BUF@MTL",
+   "WSH@CAR",
+   "SEA@PHI",
+   "TBL@NYR",
+   "STL@OTT",
+   "VAN@NYI",
+   "PIT@CHI",
+   "MIN@WPG",
+   "COL@DAL",
+   "VGK@NSH",
+   "TOR@UTA",
+   "CGY@ANA",
+   "EDM@LAK",
+   "BOS@SJS"
+  ],
+  "teamsOfficial": [],
+  "lineupsLoaded": false,
+  "poolGenerated": "2026-10-13 17:32",
+  "oddsLoaded": true,
+  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written."
+ },
+ "modes": {
+  "balanced": [
+   {
+    "key": "8477492:goal|8478864:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 19.6,
+    "fair": 411,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      120,
+      130
+     ],
+     "american": 406,
+     "dec": 5.06
+    },
+    "evPct": -0.9,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 44.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 120,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 110,
+        "FD": 115,
+        "BR": 108,
+        "MGM": 120,
+        "BOV": 111
+       }
+      },
+      "edge": -0.7
+     },
+     {
+      "playerId": 8478864,
+      "name": "Kirill Kaprizov",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 43.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 130,
+       "bestBook": "FD",
+       "books": {
+        "DK": 125,
+        "FD": 130,
+        "BR": 128,
+        "BOV": 128,
+        "MGM": 130
+       }
+      },
+      "edge": 0.2
+     }
+    ]
+   },
+   {
+    "key": "8481557:goal|8484801:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 18.4,
+    "fair": 445,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      155,
+      140
+     ],
+     "american": 512,
+     "dec": 6.12
+    },
+    "evPct": 12.4,
+    "legs": [
+     {
+      "playerId": 8481557,
+      "name": "Matt Boldy",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 43,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "DK",
+       "books": {
+        "DK": 155,
+        "FD": 145,
+        "BR": 150,
+        "BOV": 147,
+        "MGM": 155
+       }
+      },
+      "edge": 3.8
+     },
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 42.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 140,
+       "bestBook": "FD",
+       "books": {
+        "DK": 130,
+        "FD": 140,
+        "BR": 120,
+        "MGM": 140,
+        "BOV": 130
+       }
+      },
+      "edge": 1
+     }
+    ]
+   },
+   {
+    "key": "8478414:goal|8478550:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.5,
+    "fair": 642,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      205,
+      260
+     ],
+     "american": 998,
+     "dec": 10.98
+    },
+    "evPct": 48,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "EDM",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 38.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 205,
+       "bestBook": "DK",
+       "books": {
+        "DK": 205,
+        "FD": 200,
+        "BR": 195,
+        "BOV": 195,
+        "MGM": 150
+       }
+      },
+      "edge": 5.5
+     },
+     {
+      "playerId": 8478414,
+      "name": "Timo Meier",
+      "team": "NJD",
+      "opp": "DET",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 35.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 260,
+       "bestBook": "DK",
+       "books": {
+        "DK": 260,
+        "FD": 240,
+        "BR": 240,
+        "MGM": 250,
+        "BOV": 235
+       }
+      },
+      "edge": 7.4
+     }
+    ]
+   },
+   {
+    "key": "8478403:goal|8479343:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.3,
+    "fair": 598,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      180,
+      220
+     ],
+     "american": 796,
+     "dec": 8.96
+    },
+    "evPct": 28.4,
+    "legs": [
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 188,
+       "bestBook": "BR",
+       "books": {
+        "DK": 175,
+        "FD": 180,
+        "BR": 188,
+        "BOV": 173,
+        "MGM": 180
+       }
+      },
+      "edge": 4.9
+     },
+     {
+      "playerId": 8479343,
+      "name": "Clayton Keller",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 36.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 220,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 190,
+        "FD": 180,
+        "BR": 195,
+        "BOV": 183,
+        "MGM": 220
+       }
+      },
+      "edge": 5
+     }
+    ]
+   },
+   {
+    "key": "8477956:point|8479420:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 51.1,
+    "fair": -105,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477956,
+      "name": "David Pastrnak",
+      "team": "BOS",
+      "opp": "SJS",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477951:point|8482699:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.6,
+    "fair": 102,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477951,
+      "name": "Nick Schmaltz",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482699,
+      "name": "Dylan Guenther",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477934:point|8478402:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 62.7,
+    "fair": -168,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478398:sog3|8483445:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 43.1,
+    "fair": 132,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478398,
+      "name": "Kyle Connor",
+      "team": "WPG",
+      "opp": "MIN",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8483445,
+      "name": "Cutter Gauthier",
+      "team": "ANA",
+      "opp": "CGY",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:goal|8477500:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16.4,
+    "fair": 509,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      155,
+      155
+     ],
+     "american": 550,
+     "dec": 6.502
+    },
+    "evPct": 6.8,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 41.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 145,
+        "FD": 145,
+        "BR": 145,
+        "MGM": 155,
+        "BOV": 140
+       }
+      },
+      "edge": 2.5
+     },
+     {
+      "playerId": 8477500,
+      "name": "Bo Horvat",
+      "team": "NYI",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 145,
+        "FD": 150,
+        "BR": 148,
+        "BOV": 145,
+        "MGM": 155
+       }
+      },
+      "edge": 0.2
+     }
+    ]
+   },
+   {
+    "key": "8479542:goal|8484144:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.1,
+    "fair": 561,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      170,
+      160
+     ],
+     "american": 602,
+     "dec": 7.02
+    },
+    "evPct": 6.2,
+    "legs": [
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 39.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 170,
+       "bestBook": "FD",
+       "books": {
+        "DK": 165,
+        "FD": 170,
+        "BR": 160,
+        "MGM": 155,
+        "BOV": 164
+       }
+      },
+      "edge": 2.3
+     },
+     {
+      "playerId": 8484144,
+      "name": "Connor Bedard",
+      "team": "CHI",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 38.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 170,
+       "bestBook": "BR",
+       "books": {
+        "DK": 145,
+        "FD": 160,
+        "BR": 170,
+        "BOV": 151,
+        "MGM": 160
+       }
+      },
+      "edge": 1.5
+     }
+    ]
+   }
+  ],
+  "value": [
+   {
+    "key": "8478414:goal|8478550:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.5,
+    "fair": 642,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      205,
+      260
+     ],
+     "american": 998,
+     "dec": 10.98
+    },
+    "evPct": 48,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "EDM",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 38.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 205,
+       "bestBook": "DK",
+       "books": {
+        "DK": 205,
+        "FD": 200,
+        "BR": 195,
+        "BOV": 195,
+        "MGM": 150
+       }
+      },
+      "edge": 5.5
+     },
+     {
+      "playerId": 8478414,
+      "name": "Timo Meier",
+      "team": "NJD",
+      "opp": "DET",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 35.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 260,
+       "bestBook": "DK",
+       "books": {
+        "DK": 260,
+        "FD": 240,
+        "BR": 240,
+        "MGM": 250,
+        "BOV": 235
+       }
+      },
+      "edge": 7.4
+     }
+    ]
+   },
+   {
+    "key": "8478414:goal|8479343:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12.7,
+    "fair": 685,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      220,
+      250
+     ],
+     "american": 1020,
+     "dec": 11.2
+    },
+    "evPct": 42.7,
+    "legs": [
+     {
+      "playerId": 8479343,
+      "name": "Clayton Keller",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 36.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 220,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 190,
+        "FD": 180,
+        "BR": 195,
+        "BOV": 183,
+        "MGM": 220
+       }
+      },
+      "edge": 5
+     },
+     {
+      "playerId": 8478414,
+      "name": "Timo Meier",
+      "team": "NJD",
+      "opp": "DET",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 35.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 260,
+       "bestBook": "DK",
+       "books": {
+        "DK": 260,
+        "FD": 240,
+        "BR": 240,
+        "MGM": 250,
+        "BOV": 235
+       }
+      },
+      "edge": 7.4
+     }
+    ]
+   },
+   {
+    "key": "8478403:goal|8478550:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.2,
+    "fair": 559,
+    "parlay": {
+     "book": "BR",
+     "legs": [
+      188,
+      195
+     ],
+     "american": 750,
+     "dec": 8.496
+    },
+    "evPct": 28.9,
+    "legs": [
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 188,
+       "bestBook": "BR",
+       "books": {
+        "DK": 175,
+        "FD": 180,
+        "BR": 188,
+        "BOV": 173,
+        "MGM": 180
+       }
+      },
+      "edge": 4.9
+     },
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "EDM",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 38.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 205,
+       "bestBook": "DK",
+       "books": {
+        "DK": 205,
+        "FD": 200,
+        "BR": 195,
+        "BOV": 195,
+        "MGM": 150
+       }
+      },
+      "edge": 5.5
+     }
+    ]
+   },
+   {
+    "key": "8478403:goal|8479343:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.3,
+    "fair": 598,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      180,
+      220
+     ],
+     "american": 796,
+     "dec": 8.96
+    },
+    "evPct": 28.4,
+    "legs": [
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 188,
+       "bestBook": "BR",
+       "books": {
+        "DK": 175,
+        "FD": 180,
+        "BR": 188,
+        "BOV": 173,
+        "MGM": 180
+       }
+      },
+      "edge": 4.9
+     },
+     {
+      "playerId": 8479343,
+      "name": "Clayton Keller",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 36.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 220,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 190,
+        "FD": 180,
+        "BR": 195,
+        "BOV": 183,
+        "MGM": 220
+       }
+      },
+      "edge": 5
+     }
+    ]
+   },
+   {
+    "key": "8477933:goal|8479420:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16.2,
+    "fair": 519,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      160,
+      190
+     ],
+     "american": 654,
+     "dec": 7.54
+    },
+    "evPct": 21.8,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 42.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 160,
+       "bestBook": "FD",
+       "books": {
+        "DK": 140,
+        "FD": 160,
+        "BR": 138,
+        "MGM": 150,
+        "BOV": 150
+       }
+      },
+      "edge": 4
+     },
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "CBJ",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 38,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 190,
+       "bestBook": "FD",
+       "books": {
+        "DK": 185,
+        "FD": 190,
+        "BR": 188,
+        "MGM": 180,
+        "BOV": 185
+       }
+      },
+      "edge": 3.5
+     }
+    ]
+   },
+   {
+    "key": "8480039:goal|8481557:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.1,
+    "fair": 561,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      155,
+      210
+     ],
+     "american": 690,
+     "dec": 7.905
+    },
+    "evPct": 19.7,
+    "legs": [
+     {
+      "playerId": 8481557,
+      "name": "Matt Boldy",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 43,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "DK",
+       "books": {
+        "DK": 155,
+        "FD": 145,
+        "BR": 150,
+        "BOV": 147,
+        "MGM": 155
+       }
+      },
+      "edge": 3.8
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 35.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 210,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 175,
+        "FD": 195,
+        "BR": 180,
+        "MGM": 210,
+        "BOV": 185
+       }
+      },
+      "edge": 2.9
+     }
+    ]
+   },
+   {
+    "key": "8475810:goal|8481557:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.9,
+    "fair": 572,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      155,
+      215
+     ],
+     "american": 703,
+     "dec": 8.032
+    },
+    "evPct": 19.5,
+    "legs": [
+     {
+      "playerId": 8481557,
+      "name": "Matt Boldy",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 43,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "DK",
+       "books": {
+        "DK": 155,
+        "FD": 145,
+        "BR": 150,
+        "BOV": 147,
+        "MGM": 155
+       }
+      },
+      "edge": 3.8
+     },
+     {
+      "playerId": 8475810,
+      "name": "Bryan Rust",
+      "team": "PIT",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 34.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 215,
+       "bestBook": "DK",
+       "books": {
+        "DK": 215,
+        "FD": 200,
+        "BR": 195,
+        "BOV": 200,
+        "MGM": 200
+       }
+      },
+      "edge": 2.9
+     }
+    ]
+   },
+   {
+    "key": "8475810:goal|8477933:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.1,
+    "fair": 661,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      185,
+      215
+     ],
+     "american": 798,
+     "dec": 8.978
+    },
+    "evPct": 18,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "CBJ",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 38,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 190,
+       "bestBook": "FD",
+       "books": {
+        "DK": 185,
+        "FD": 190,
+        "BR": 188,
+        "MGM": 180,
+        "BOV": 185
+       }
+      },
+      "edge": 3.5
+     },
+     {
+      "playerId": 8475810,
+      "name": "Bryan Rust",
+      "team": "PIT",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 34.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 215,
+       "bestBook": "DK",
+       "books": {
+        "DK": 215,
+        "FD": 200,
+        "BR": 195,
+        "BOV": 200,
+        "MGM": 200
+       }
+      },
+      "edge": 2.9
+     }
+    ]
+   },
+   {
+    "key": "8480039:goal|8482699:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.3,
+    "fair": 598,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      165,
+      210
+     ],
+     "american": 722,
+     "dec": 8.215
+    },
+    "evPct": 17.7,
+    "legs": [
+     {
+      "playerId": 8482699,
+      "name": "Dylan Guenther",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 40.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 165,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 135,
+        "FD": 145,
+        "BR": 130,
+        "BOV": 140,
+        "MGM": 165
+       }
+      },
+      "edge": 3
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 35.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 210,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 175,
+        "FD": 195,
+        "BR": 180,
+        "MGM": 210,
+        "BOV": 185
+       }
+      },
+      "edge": 2.9
+     }
+    ]
+   },
+   {
+    "key": "8479420:goal|8479542:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16.7,
+    "fair": 499,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      160,
+      170
+     ],
+     "american": 602,
+     "dec": 7.02
+    },
+    "evPct": 17.3,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 42.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 160,
+       "bestBook": "FD",
+       "books": {
+        "DK": 140,
+        "FD": 160,
+        "BR": 138,
+        "MGM": 150,
+        "BOV": 150
+       }
+      },
+      "edge": 4
+     },
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 39.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 170,
+       "bestBook": "FD",
+       "books": {
+        "DK": 165,
+        "FD": 170,
+        "BR": 160,
+        "MGM": 155,
+        "BOV": 164
+       }
+      },
+      "edge": 2.3
+     }
+    ]
+   }
+  ],
+  "safest": [
+   {
+    "key": "8477934:point|8478402:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 62.7,
+    "fair": -168,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477492:point|8478402:point",
+    "section": "🛡️ Safest",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 58.3,
+    "fair": -140,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477492:point|8480039:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.9,
+    "fair": -137,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8479542:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.3,
+    "fair": -134,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 74.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 68.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478864:point|8480800:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.2,
+    "fair": -134,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478864,
+      "name": "Kirill Kaprizov",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480800,
+      "name": "Quinn Hughes",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478864:point|8481557:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.1,
+    "fair": -133,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478864,
+      "name": "Kirill Kaprizov",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481557,
+      "name": "Matt Boldy",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8477404:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 56.8,
+    "fair": -131,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 74.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477934:point|8484801:point",
+    "section": "🛡️ Safest",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 55.4,
+    "fair": -124,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480800:point|8481557:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 55.4,
+    "fair": -124,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480800,
+      "name": "Quinn Hughes",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481557,
+      "name": "Matt Boldy",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478403:point|8484801:point",
+    "section": "🛡️ Safest",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 54,
+    "fair": -117,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "due": [],
+  "soft": [
+   {
+    "key": "8478403:point|8484801:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 54,
+    "fair": -117,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475913:point|8478403:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 53.5,
+    "fair": -115,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475913,
+      "name": "Mark Stone",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 66.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477956:point|8484801:point",
+    "section": "▲ Soft matchup",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 53,
+    "fair": -113,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477956,
+      "name": "David Pastrnak",
+      "team": "BOS",
+      "opp": "SJS",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477951:point|8479343:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 51.3,
+    "fair": -105,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477951,
+      "name": "Nick Schmaltz",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479343,
+      "name": "Clayton Keller",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 67.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477956:point|8479420:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 51.1,
+    "fair": -105,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477956,
+      "name": "David Pastrnak",
+      "team": "BOS",
+      "opp": "SJS",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477951:point|8482699:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.6,
+    "fair": 102,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477951,
+      "name": "Nick Schmaltz",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482699,
+      "name": "Dylan Guenther",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:point|8480800:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 49.6,
+    "fair": 102,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480800,
+      "name": "Quinn Hughes",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479343:point|8482699:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.4,
+    "fair": 102,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479343,
+      "name": "Clayton Keller",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 67.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482699,
+      "name": "Dylan Guenther",
+      "team": "UTA",
+      "opp": "TOR",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475913:point|8478483:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 48.6,
+    "fair": 106,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8475913,
+      "name": "Mark Stone",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 66.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478483,
+      "name": "Mitch Marner",
+      "team": "VGK",
+      "opp": "NSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477500:point|8480800:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 47.4,
+    "fair": 111,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480800,
+      "name": "Quinn Hughes",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477500,
+      "name": "Bo Horvat",
+      "team": "NYI",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "stacks": [
+   {
+    "key": "8477934:point|8478402:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 62.7,
+    "fair": -168,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477492:point|8480039:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.9,
+    "fair": -137,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8479542:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.3,
+    "fair": -134,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 74.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 68.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478864:point|8480800:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.2,
+    "fair": -134,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478864,
+      "name": "Kirill Kaprizov",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480800,
+      "name": "Quinn Hughes",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478864:point|8481557:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.1,
+    "fair": -133,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478864,
+      "name": "Kirill Kaprizov",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481557,
+      "name": "Matt Boldy",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8477404:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 56.8,
+    "fair": -131,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 74.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "NYR",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477956:point|8484801:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 53,
+    "fair": -113,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477956,
+      "name": "David Pastrnak",
+      "team": "BOS",
+      "opp": "SJS",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 72.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478402:point|8478550:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 49.6,
+    "fair": 102,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 75.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "EDM",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 67.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478398:point|8480800:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 48.3,
+    "fair": 107,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478398,
+      "name": "Kyle Connor",
+      "team": "WPG",
+      "opp": "MIN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480800,
+      "name": "Quinn Hughes",
+      "team": "MIN",
+      "opp": "WPG",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477934:point|8478550:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 48.2,
+    "fair": 108,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "EDM",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 67.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ]
+ }
+}

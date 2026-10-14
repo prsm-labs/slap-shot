@@ -178,7 +178,8 @@ const snapshot = {
       awayGoalie: g.awayGoalie, awayGoalieStatus: g.awayGoalieStatus,
       homeGoalie: g.homeGoalie, homeGoalieStatus: g.homeGoalieStatus,
     })),
-    scoreVersion: 4, // 4 = goal / point calibrated + 120-minute form on points (lib/calibration.js), 2026-10-14
+    scoreVersion: 5, // 4 = goal / point calibrated + 120-minute form on points (lib/calibration.js), 2026-10-14
+    // 5 = modelSog3Pct calibrated too (top end ran high), 2026-10-14 12:20
     note: "Pre-game projections as shown in the app. Slap Score v3 (2026-10-13): grade-model chances (goal / assist / point / 3+ SOG, and the grade letter) adjusted for the opponent's xGA allowed, refit on 4 seasons (lib/grades.js); plus3SogPct still from the shot sim.",
   },
   players,
