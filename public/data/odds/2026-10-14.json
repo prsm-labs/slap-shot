@@ -1,0 +1,1123 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-14",
+  "market": "player_goal_scorer_anytime",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-10-14T13:03:53+00:00",
+    "games": [
+     "MTL@WSH",
+     "DAL@COL"
+    ],
+    "creditsLeft": 465
+   }
+  ],
+  "updated": "2026-10-14T13:03:53+00:00",
+  "creditsLeft": 465
+ },
+ "games": {
+  "MTL@WSH": {
+   "fetchedAt": "2026-10-14T13:03:53+00:00",
+   "eventId": "11b474310b2b60cbae546d9c517444c6",
+   "players": 35,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  },
+  "DAL@COL": {
+   "fetchedAt": "2026-10-14T13:03:53+00:00",
+   "eventId": "9604eeafec33b8980e6565c617f04fc6",
+   "players": 35,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  }
+ },
+ "players": {
+  "8481540": {
+   "name": "Cole Caufield",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 125,
+    "FD": 135,
+    "BR": 123,
+    "MGM": 140,
+    "BOV": 131
+   },
+   "best": 140,
+   "bestBook": "MGM",
+   "bestImplied": 41.7,
+   "medianImplied": 43.3
+  },
+  "8477949": {
+   "name": "Alex Tuch",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 190,
+    "FD": 190,
+    "BR": 188,
+    "MGM": 200,
+    "BOV": 188
+   },
+   "best": 200,
+   "bestBook": "MGM",
+   "bestImplied": 33.3,
+   "medianImplied": 34.5
+  },
+  "8476880": {
+   "name": "Tom Wilson",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 200,
+    "FD": 220,
+    "BR": 205,
+    "MGM": 200,
+    "BOV": 200
+   },
+   "best": 220,
+   "bestBook": "FD",
+   "bestImplied": 31.2,
+   "medianImplied": 33.3
+  },
+  "8471214": {
+   "name": "Alex Ovechkin",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 205,
+    "FD": 200,
+    "BR": 190,
+    "MGM": 185,
+    "BOV": 195
+   },
+   "best": 205,
+   "bestBook": "DK",
+   "bestImplied": 32.8,
+   "medianImplied": 33.9
+  },
+  "8480018": {
+   "name": "Nick Suzuki",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 205,
+    "FD": 210,
+    "BR": 205,
+    "MGM": 220,
+    "BOV": 200
+   },
+   "best": 220,
+   "bestBook": "MGM",
+   "bestImplied": 31.2,
+   "medianImplied": 32.8
+  },
+  "8483515": {
+   "name": "Juraj Slafkovsky",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 210,
+    "FD": 220,
+    "BR": 225,
+    "MGM": 230,
+    "BOV": 212
+   },
+   "best": 230,
+   "bestBook": "MGM",
+   "bestImplied": 30.3,
+   "medianImplied": 31.2
+  },
+  "8475184": {
+   "name": "Chris Kreider",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 250,
+    "FD": 250,
+    "BR": 255,
+    "MGM": 250,
+    "BOV": 250
+   },
+   "best": 255,
+   "bestBook": "BR",
+   "bestImplied": 28.2,
+   "medianImplied": 28.6
+  },
+  "8478440": {
+   "name": "Dylan Strome",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 280,
+    "FD": 260,
+    "BR": 265,
+    "MGM": 275,
+    "BOV": 260
+   },
+   "best": 280,
+   "bestBook": "DK",
+   "bestImplied": 26.3,
+   "medianImplied": 27.4
+  },
+  "8484186": {
+   "name": "Ryan Leonard",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 300,
+    "FD": 340,
+    "BR": 360,
+    "MGM": 333,
+    "BOV": 320
+   },
+   "best": 360,
+   "bestBook": "BR",
+   "bestImplied": 21.7,
+   "medianImplied": 23.1
+  },
+  "8479385": {
+   "name": "Jordan Kyrou",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 300,
+    "FD": 320,
+    "BR": 310,
+    "MGM": 310,
+    "BOV": 300
+   },
+   "best": 320,
+   "bestBook": "FD",
+   "bestImplied": 23.8,
+   "medianImplied": 24.4
+  },
+  "8479345": {
+   "name": "Jakob Chychrun",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 320,
+    "FD": 310,
+    "BR": 360,
+    "MGM": 300,
+    "BOV": 310
+   },
+   "best": 360,
+   "bestBook": "BR",
+   "bestImplied": 21.7,
+   "medianImplied": 24.4
+  },
+  "8482737": {
+   "name": "Zachary Bolduc",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 330,
+    "FD": 370,
+    "BR": 350,
+    "BOV": 345
+   },
+   "best": 370,
+   "bestBook": "FD",
+   "bestImplied": 21.3,
+   "medianImplied": 22.3
+  },
+  "8481656": {
+   "name": "Aliaksei Protas",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 340,
+    "FD": 340,
+    "BR": 330,
+    "BOV": 325
+   },
+   "best": 340,
+   "bestBook": "DK",
+   "bestImplied": 22.7,
+   "medianImplied": 23.0
+  },
+  "8481618": {
+   "name": "Alex Newhook",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 350,
+    "FD": 420,
+    "BR": 370,
+    "BOV": 375
+   },
+   "best": 420,
+   "bestBook": "FD",
+   "bestImplied": 19.2,
+   "medianImplied": 21.2
+  },
+  "8484999": {
+   "name": "Ilya Protas",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 360,
+    "FD": 340,
+    "BR": 295,
+    "BOV": 325
+   },
+   "best": 360,
+   "bestBook": "DK",
+   "bestImplied": 21.7,
+   "medianImplied": 23.1
+  },
+  "8476981": {
+   "name": "Josh Anderson",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 425,
+    "FD": 490,
+    "BR": 430,
+    "BOV": 440
+   },
+   "best": 490,
+   "bestBook": "FD",
+   "bestImplied": 16.9,
+   "medianImplied": 18.7
+  },
+  "8476432": {
+   "name": "Boone Jenner",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 450,
+    "FD": 420,
+    "BR": 410,
+    "BOV": 405
+   },
+   "best": 450,
+   "bestBook": "DK",
+   "bestImplied": 18.2,
+   "medianImplied": 19.4
+  },
+  "8481523": {
+   "name": "Kirby Dach",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 475,
+    "FD": 625,
+    "BR": 600,
+    "BOV": 525
+   },
+   "best": 625,
+   "bestBook": "FD",
+   "bestImplied": 13.8,
+   "medianImplied": 15.1
+  },
+  "8480074": {
+   "name": "Alexandre Texier",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 475,
+    "FD": 500,
+    "BR": 460,
+    "BOV": 450
+   },
+   "best": 500,
+   "bestBook": "FD",
+   "bestImplied": 16.7,
+   "medianImplied": 17.6
+  },
+  "8478463": {
+   "name": "Anthony Beauvillier",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 500,
+    "FD": 575,
+    "BR": 440,
+    "BOV": 475
+   },
+   "best": 575,
+   "bestBook": "FD",
+   "bestImplied": 14.8,
+   "medianImplied": 17.0
+  },
+  "8482088": {
+   "name": "Justin Sourdif",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 550,
+    "FD": 575,
+    "BR": 550,
+    "BOV": 500
+   },
+   "best": 575,
+   "bestBook": "FD",
+   "bestImplied": 14.8,
+   "medianImplied": 15.4
+  },
+  "8484873": {
+   "name": "Cole Hutson",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 600,
+    "FD": 700,
+    "BR": 650,
+    "MGM": 475,
+    "BOV": 600
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 14.3
+  },
+  "8483457": {
+   "name": "Lane Hutson",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 650,
+    "FD": 625,
+    "BR": 550,
+    "MGM": 550,
+    "BOV": 575
+   },
+   "best": 650,
+   "bestBook": "DK",
+   "bestImplied": 13.3,
+   "medianImplied": 14.8
+  },
+  "8483573": {
+   "name": "Ethen Frank",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 650,
+    "FD": 650,
+    "BR": 650,
+    "BOV": 600
+   },
+   "best": 650,
+   "bestBook": "DK",
+   "bestImplied": 13.3,
+   "medianImplied": 13.3
+  },
+  "8478133": {
+   "name": "Jake Evans",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 700,
+    "FD": 750,
+    "BR": 600,
+    "BOV": 650
+   },
+   "best": 750,
+   "bestBook": "FD",
+   "bestImplied": 11.8,
+   "medianImplied": 12.9
+  },
+  "8483424": {
+   "name": "Owen Beck",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 700,
+    "FD": 725,
+    "BR": 600,
+    "BOV": 650
+   },
+   "best": 725,
+   "bestBook": "FD",
+   "bestImplied": 12.1,
+   "medianImplied": 12.9
+  },
+  "8480865": {
+   "name": "Noah Dobson",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 800,
+    "FD": 750,
+    "BR": 600,
+    "MGM": 600,
+    "BOV": 675
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 12.9
+  },
+  "8476479": {
+   "name": "Phillip Danault",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 800,
+    "FD": 850,
+    "BR": 700,
+    "BOV": 725
+   },
+   "best": 850,
+   "bestBook": "FD",
+   "bestImplied": 10.5,
+   "medianImplied": 11.6
+  },
+  "8478851": {
+   "name": "Alexandre Carrier",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 1300,
+    "FD": 1700,
+    "BR": 900,
+    "BOV": 1300
+   },
+   "best": 1700,
+   "bestBook": "FD",
+   "bestImplied": 5.6,
+   "medianImplied": 7.1
+  },
+  "8482087": {
+   "name": "Kaiden Guhle",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 1400,
+    "FD": 1300,
+    "BR": 750,
+    "BOV": 1100
+   },
+   "best": 1400,
+   "bestBook": "DK",
+   "bestImplied": 6.7,
+   "medianImplied": 7.7
+  },
+  "8480796": {
+   "name": "Martin Fehervary",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 1600,
+    "FD": 1700,
+    "BR": 900,
+    "BOV": 1400
+   },
+   "best": 1700,
+   "bestBook": "FD",
+   "bestImplied": 5.6,
+   "medianImplied": 6.3
+  },
+  "8480043": {
+   "name": "Timothy Liljegren",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 1700,
+    "FD": 1600,
+    "BR": 1000,
+    "BOV": 1400
+   },
+   "best": 1700,
+   "bestBook": "DK",
+   "bestImplied": 5.6,
+   "medianImplied": 6.3
+  },
+  "8482964": {
+   "name": "Arber Xhekaj",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 1800,
+    "FD": 1700,
+    "BR": 850,
+    "BOV": 1400
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 6.1
+  },
+  "8483686": {
+   "name": "Adam Engstrom",
+   "team": "MTL",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 1800,
+    "FD": 2000,
+    "BR": 750,
+    "BOV": 1600
+   },
+   "best": 2000,
+   "bestBook": "FD",
+   "bestImplied": 4.8,
+   "medianImplied": 5.6
+  },
+  "8479576": {
+   "name": "Vincent Desharnais",
+   "team": "WSH",
+   "game": "MTL@WSH",
+   "books": {
+    "DK": 2800,
+    "FD": 2100,
+    "BR": 900,
+    "BOV": 1900
+   },
+   "best": 2800,
+   "bestBook": "DK",
+   "bestImplied": 3.4,
+   "medianImplied": 4.8
+  },
+  "8477492": {
+   "name": "Nathan MacKinnon",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 100,
+    "FD": 100,
+    "BR": -108,
+    "BOV": 101,
+    "MGM": 110
+   },
+   "best": 110,
+   "bestBook": "MGM",
+   "bestImplied": 47.6,
+   "medianImplied": 50.0
+  },
+  "8480039": {
+   "name": "Martin Necas",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 170,
+    "FD": 170,
+    "BR": 170,
+    "BOV": 168
+   },
+   "best": 170,
+   "bestBook": "DK",
+   "bestImplied": 37.0,
+   "medianImplied": 37.0
+  },
+  "8480027": {
+   "name": "Jason Robertson",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 175,
+    "FD": 170,
+    "BR": 175,
+    "BOV": 168,
+    "MGM": 165
+   },
+   "best": 175,
+   "bestBook": "DK",
+   "bestImplied": 36.4,
+   "medianImplied": 37.0
+  },
+  "8478420": {
+   "name": "Mikko Rantanen",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 205,
+    "FD": 200,
+    "BR": 200,
+    "BOV": 195
+   },
+   "best": 205,
+   "bestBook": "DK",
+   "bestImplied": 32.8,
+   "medianImplied": 33.3
+  },
+  "8475794": {
+   "name": "Tyler Seguin",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 210,
+    "FD": 250,
+    "BR": 260,
+    "BOV": 230,
+    "MGM": 333
+   },
+   "best": 333,
+   "bestBook": "MGM",
+   "bestImplied": 23.1,
+   "medianImplied": 28.6
+  },
+  "8478449": {
+   "name": "Roope Hintz",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 240,
+    "FD": 220,
+    "BR": 215,
+    "BOV": 220,
+    "MGM": 230
+   },
+   "best": 240,
+   "bestBook": "DK",
+   "bestImplied": 29.4,
+   "medianImplied": 31.2
+  },
+  "8475172": {
+   "name": "Nazem Kadri",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 245,
+    "FD": 250,
+    "BR": 230,
+    "BOV": 245,
+    "MGM": 260
+   },
+   "best": 260,
+   "bestBook": "MGM",
+   "bestImplied": 27.8,
+   "medianImplied": 29.0
+  },
+  "8475754": {
+   "name": "Brock Nelson",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 290,
+    "FD": 275,
+    "BR": 280,
+    "BOV": 270,
+    "MGM": 230
+   },
+   "best": 290,
+   "bestBook": "DK",
+   "bestImplied": 25.6,
+   "medianImplied": 26.7
+  },
+  "8477476": {
+   "name": "Artturi Lehkonen",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 320,
+    "FD": 300,
+    "BR": 310,
+    "BOV": 290,
+    "MGM": 300
+   },
+   "best": 320,
+   "bestBook": "DK",
+   "bestImplied": 23.8,
+   "medianImplied": 25.0
+  },
+  "8486171": {
+   "name": "T.J. Hughes",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 330,
+    "FD": 310,
+    "BR": 360,
+    "BOV": 305,
+    "MGM": 340
+   },
+   "best": 360,
+   "bestBook": "BR",
+   "bestImplied": 21.7,
+   "medianImplied": 23.3
+  },
+  "8484829": {
+   "name": "Justin Hryckowian",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 340,
+    "FD": 320,
+    "BR": 340,
+    "BOV": 320
+   },
+   "best": 340,
+   "bestBook": "DK",
+   "bestImplied": 22.7,
+   "medianImplied": 23.3
+  },
+  "8476455": {
+   "name": "Gabriel Landeskog",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 340,
+    "FD": 330,
+    "BR": 330,
+    "BOV": 315,
+    "MGM": 250
+   },
+   "best": 340,
+   "bestBook": "DK",
+   "bestImplied": 22.7,
+   "medianImplied": 23.3
+  },
+  "8479351": {
+   "name": "Sam Steel",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 360,
+    "FD": 400,
+    "BR": 410,
+    "BOV": 360
+   },
+   "best": 410,
+   "bestBook": "BR",
+   "bestImplied": 19.6,
+   "medianImplied": 20.9
+  },
+  "8478038": {
+   "name": "Devon Toews",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 425,
+    "FD": 430,
+    "BR": 425,
+    "BOV": 400
+   },
+   "best": 430,
+   "bestBook": "FD",
+   "bestImplied": 18.9,
+   "medianImplied": 19.0
+  },
+  "8475768": {
+   "name": "Jaden Schwartz",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 450,
+    "FD": 390,
+    "BR": 400,
+    "BOV": 385
+   },
+   "best": 450,
+   "bestBook": "DK",
+   "bestImplied": 18.2,
+   "medianImplied": 20.2
+  },
+  "8473994": {
+   "name": "Jamie Benn",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 550,
+    "FD": 440,
+    "BR": 420,
+    "BOV": 445
+   },
+   "best": 550,
+   "bestBook": "DK",
+   "bestImplied": 15.4,
+   "medianImplied": 18.4
+  },
+  "8480036": {
+   "name": "Miro Heiskanen",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 600,
+    "FD": 550,
+    "BR": 550,
+    "BOV": 500,
+    "MGM": 550
+   },
+   "best": 600,
+   "bestBook": "DK",
+   "bestImplied": 14.3,
+   "medianImplied": 15.4
+  },
+  "8484258": {
+   "name": "Sam Malinski",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 650,
+    "FD": 700,
+    "BR": 700,
+    "BOV": 600
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 12.9
+  },
+  "8484938": {
+   "name": "Arttu Hyry",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 750,
+    "FD": 950,
+    "BR": 750,
+    "BOV": 775
+   },
+   "best": 950,
+   "bestBook": "FD",
+   "bestImplied": 9.5,
+   "medianImplied": 11.6
+  },
+  "8481641": {
+   "name": "Joel Kiviranta",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 750,
+    "BOV": 625
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 12.8
+  },
+  "8480448": {
+   "name": "Parker Kelly",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 750,
+    "FD": 700,
+    "BR": 700,
+    "BOV": 650
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 12.5
+  },
+  "8481581": {
+   "name": "Thomas Harley",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 800,
+    "FD": 800,
+    "BR": 700,
+    "BOV": 725
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 11.6
+  },
+  "8482768": {
+   "name": "Fedor Svechkov",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 850,
+    "FD": 800,
+    "BR": 650,
+    "BOV": 725
+   },
+   "best": 850,
+   "bestBook": "DK",
+   "bestImplied": 10.5,
+   "medianImplied": 11.6
+  },
+  "8478462": {
+   "name": "Nicolas Roy",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 900,
+    "FD": 900,
+    "BR": 700,
+    "BOV": 800
+   },
+   "best": 900,
+   "bestBook": "DK",
+   "bestImplied": 10.0,
+   "medianImplied": 10.6
+  },
+  "8476278": {
+   "name": "Colin Blackwell",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1100,
+    "FD": 1100,
+    "BR": 800,
+    "BOV": 900
+   },
+   "best": 1100,
+   "bestBook": "DK",
+   "bestImplied": 8.3,
+   "medianImplied": 9.2
+  },
+  "8476889": {
+   "name": "Radek Faksa",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1200,
+    "FD": 1300,
+    "BR": 950,
+    "BOV": 1100
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 8.0
+  },
+  "8470613": {
+   "name": "Brent Burns",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1300,
+    "FD": 1200,
+    "BR": 900,
+    "BOV": 1100
+   },
+   "best": 1300,
+   "bestBook": "DK",
+   "bestImplied": 7.1,
+   "medianImplied": 8.0
+  },
+  "8476967": {
+   "name": "Brett Kulak",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1300,
+    "FD": 1200,
+    "BR": 1000,
+    "BOV": 1100
+   },
+   "best": 1300,
+   "bestBook": "DK",
+   "bestImplied": 7.1,
+   "medianImplied": 8.0
+  },
+  "8476902": {
+   "name": "Esa Lindell",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1400,
+    "FD": 1300,
+    "BR": 950,
+    "BOV": 1100
+   },
+   "best": 1400,
+   "bestBook": "DK",
+   "bestImplied": 6.7,
+   "medianImplied": 7.7
+  },
+  "8476312": {
+   "name": "Josh Manson",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1500,
+    "FD": 1400,
+    "BR": 1100,
+    "BOV": 1200
+   },
+   "best": 1500,
+   "bestBook": "DK",
+   "bestImplied": 6.2,
+   "medianImplied": 7.2
+  },
+  "8480878": {
+   "name": "Nils Lundkvist",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1600,
+    "FD": 1900,
+    "BR": 850,
+    "BOV": 1700
+   },
+   "best": 1900,
+   "bestBook": "FD",
+   "bestImplied": 5.0,
+   "medianImplied": 5.7
+  },
+  "8478454": {
+   "name": "Noah Juulsen",
+   "team": "COL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 1700,
+    "BR": 1100,
+    "BOV": 1300
+   },
+   "best": 1700,
+   "bestBook": "DK",
+   "bestImplied": 5.6,
+   "medianImplied": 7.1
+  },
+  "8474574": {
+   "name": "Tyler Myers",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 2000,
+    "BR": 950,
+    "BOV": 1500
+   },
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
+   "medianImplied": 6.2
+  },
+  "8483425": {
+   "name": "Lian Bichsel",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "DK": 2200,
+    "BR": 850,
+    "BOV": 2100
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 4.5
+  },
+  "8478476": {
+   "name": "Kyle Capobianco",
+   "team": "DAL",
+   "game": "DAL@COL",
+   "books": {
+    "BR": 850
+   },
+   "best": 850,
+   "bestBook": "BR",
+   "bestImplied": 10.5,
+   "medianImplied": 10.5
+  }
+ },
+ "unmatched": [
+  {
+   "game": "MTL@WSH",
+   "name": "Justin Holl"
+  },
+  {
+   "game": "DAL@COL",
+   "name": "Oskar Back"
+  }
+ ]
+}
