@@ -12,6 +12,8 @@ import GoalieProfile from "./GoalieProfile.jsx";
 import { booksText, edgeColor, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
 import { AllBookLinks, StatePicker } from "./BetLink.jsx";
 import { pointHeatText } from "../lib/pointHeat.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -102,6 +104,17 @@ function SkaterStats({ p }) {
           value={<span title={booksText(p.book)}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImplied}% vs ours {p.anytimeGoalPct}% · <span style={{ color: edgeColor(p.edge), fontWeight: 700 }}>edge {fmtEdge(p.edge)}</span></span>}
         />
       )}
+      <StatRow
+        label="Send to Gambly"
+        value={
+          <span style={{ display: "inline-flex", gap: 4, flexWrap: "wrap", justifyContent: "flex-end" }}>
+            <GamblyButton compact={false} label="Goal" text={betLine(p, "goal")} />
+            <GamblyButton compact={false} label="Point" text={betLine(p, "point")} />
+            <GamblyButton compact={false} label="3+ SOG" text={betLine(p, "sog3")} />
+            <GamblyButton compact={false} label="1st goal" text={betLine(p, "first")} />
+          </span>
+        }
+      />
       {p.book?.links && (
         <StatRow
           label={<>Bet anytime goal <StatePicker /></>}

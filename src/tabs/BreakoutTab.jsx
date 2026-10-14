@@ -16,6 +16,8 @@ import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // Cheat Sheets -> Breakout Watch: not the usual top scorers, but skaters whose shot quality is
 // rising into a soft matchup (lib/breakout.js has the backtest behind every rule).
@@ -83,7 +85,7 @@ export default function BreakoutTab() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /><DueTag due={p.dueHeat} />
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /><DueTag due={p.dueHeat} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>
                           {p.team} · {positionLabel(p.position)} · xG {p.xgL5.toFixed(2)}/gm last {p.recentGames} vs {p.xgSeason.toFixed(2)}
                         </div>

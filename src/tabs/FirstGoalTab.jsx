@@ -17,6 +17,8 @@ import { useSort } from "../lib/useSort.js";
 import IcebreakerView from "../components/IcebreakerView.jsx";
 import StarterTag from "../components/StarterTag.jsx";
 import { setListFilter, useListFilters } from "../lib/listFilters.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // Soft defense = opponent in tonight's softest third by expected goals allowed (oppSoftPct, lib/slapScore.js) —
 // the same app-wide toggle as the list filters on All Matchups / Lamp / Apple. Display only: the first-goal and
@@ -241,7 +243,7 @@ export default function FirstGoalTab() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
                     <span className="player-name-link">{p.name}</span>
-                    <PickButton player={p} />
+                    <PickButton player={p} /> <GamblyButton text={betLine(p, "first")} />
                     {actualFirst.get(p.game.gameId)?.scorerId === p.playerId && <span>{FIRST_GOAL}</span>}
                     {p.startingLineup && <StarterTag />}
                     <span className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)}</span>

@@ -7,6 +7,8 @@ import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import PickButton from "./PickButton.jsx";
 import StarterTag from "./StarterTag.jsx";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // First Goal page -> 🧊 Icebreaker: who scores the fastest goal (game clock) among the games that start
 // together — the night's earliest start by default (lib/icebreaker.js has the model + backtest).
@@ -189,7 +191,7 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
                     <span className="mono" style={{ fontSize: 10, ...muted, width: 22 }}>#{p.iceRank}</span>
                     <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
                     <span className="player-name-link">{p.name}</span>
-                    <PickButton player={p} />
+                    <PickButton player={p} /> <GamblyButton text={betLine(p, "first")} />
                     {actual?.scorerId === p.playerId && <span>🧊</span>}
                     {p.startingLineup && <StarterTag />}
                     <span className="mono" style={{ fontSize: 9, ...muted }}>{p.team} · {positionLabel(p.position)}</span>

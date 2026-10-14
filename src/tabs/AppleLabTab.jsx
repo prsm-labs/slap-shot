@@ -18,6 +18,8 @@ import { isPointSignal } from "../lib/signals.js";
 import PointDueTag from "../components/PointDueTag.jsx";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // Structural port of Going Yard's real OnBaseTab (mlb_project/going-yard/src/App.jsx:
 // 33607-34567) — parallel structure to Barrel Lab/Lamp Lab with its own score field and its own
@@ -221,7 +223,7 @@ export default function AppleLabTab() {
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
                         {isPointSignal(p) && <span className="signal-star">★ </span>}
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /><PointDueTag heat={p.pointHeat} />
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "point")} /><PointDueTag heat={p.pointHeat} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>

@@ -8,6 +8,8 @@ import { openGoalieSlide, openSkaterSlide } from "../slideouts.js";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import PickButton from "../components/PickButton.jsx";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // Projections — game winner, likely final score and a projected box score for every game tonight
 // (lib/gameModel.js), plus a "Model" view that opens the model up: team ratings, inputs, backtest.
@@ -50,7 +52,7 @@ function SkaterLines({ players, team }) {
             <td>{p.modelProbs ? pct(p.modelProbs.sog3) : "—"}</td>
             <td>{f1(p.ShotsOnGoalPerGame)}</td>
             <td>{f1(p.sog60)}</td>
-            <td><PickButton player={p} /></td>
+            <td style={{ whiteSpace: "nowrap" }}><PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /></td>
           </tr>
         ))}
         {!rows.length && <tr><td colSpan={7} style={muted}>No skaters in tonight's pool.</td></tr>}

@@ -12,6 +12,8 @@ import LineupBadge from "../components/LineupBadge.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // 🆙 Called Up — this season's minor-league call-ups (public/data/callups.json, nhl_project/build_callups.py:
 // ESPN transactions + NHL rosters / player pages): when and from where, their AHL line this season and last, NHL
@@ -178,7 +180,7 @@ export default function CalledUpTab() {
                       {r.playerId ? <PlayerAvatar playerId={r.playerId} name={r.name} team={r.team} size={28} /> : null}
                       <div>
                         <span className={r.playerId ? "player-name-link" : ""}>{r.name}</span>
-                        {r.playerId && !r.goalie && <> <PickButton player={r.pool || { playerId: r.playerId, name: r.name, team: r.team }} /></>}
+                        {r.playerId && !r.goalie && <> <PickButton player={r.pool || { playerId: r.playerId, name: r.name, team: r.team }} /> <GamblyButton text={betLine({ name: r.name, team: r.team }, "goal")} /></>}
                         {r.debut && <span className="mono" title="Hasn't played an NHL game yet" style={{ fontSize: 9, padding: "1px 5px", borderRadius: 4, border: "1px solid var(--accent)", color: "var(--accent2)", marginLeft: 4 }}>NHL DEBUT</span>}
                         <div className="mono" style={{ fontSize: 9, ...muted }}>
                           {r.team} · {r.goalie ? "G" : positionLabel(r.position)}{r.shoots ? ` · ${r.goalie ? "catches" : "shoots"} ${r.shoots}` : ""}

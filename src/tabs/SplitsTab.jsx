@@ -12,6 +12,8 @@ import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { fmtToi } from "../lib/toi.js";
 import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 const SKATER_COLS = [
   ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"], ["multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed"],
@@ -84,7 +86,7 @@ export default function SplitsTab() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
                       <span className="player-name-link">{p.name}</span>
-                      {role !== "goalie" && <PickButton player={p} />}
+                      {role !== "goalie" && <><PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /></>}
                     </div>
                   </td>
                   {cols.slice(1).map(([key, , , stat]) => (

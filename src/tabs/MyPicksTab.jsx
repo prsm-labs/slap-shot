@@ -4,6 +4,8 @@ import { clearPicks, PICK_TYPE, PICK_TYPES, removePick, setPick, usePicks } from
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine, betText, PICK_PROP } from "../lib/gambly.js";
 
 // My Picks — every skater picked with a [+] button (lib/picks.js, saved in this browser), grouped by
 // category, with tonight's matchup from the live slate pool and a CSV export.
@@ -99,7 +101,13 @@ export default function MyPicksTab() {
         if (!rows.length) return null;
         return (
           <div key={t.key} className="card" style={{ marginBottom: 12 }}>
-            <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8 }}>{t.emoji} {t.label} <span className="mono" style={{ color: "var(--muted)", fontSize: 11 }}>({rows.length})</span></div>
+            <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+              <span>{t.emoji} {t.label} <span className="mono" style={{ color: "var(--muted)", fontSize: 11 }}>({rows.length})</span></span>
+              {rows.length > 1 && (
+                <GamblyButton compact={false} label={`All ${rows.length} as a parlay`}
+                  text={betText(rows.map((pk) => betLine({ name: pk.name, team: pk.team }, PICK_PROP[pk.type] || "goal")))} />
+              )}
+            </div>
             {rows.map((pk) => {
               const p = byId.get(pk.pid);
               const g = slateByTeam.get(pk.team);
@@ -125,6 +133,7 @@ export default function MyPicksTab() {
                   >
                     {PICK_TYPES.map((o) => <option key={o.key} value={o.key}>{o.emoji} {o.label}</option>)}
                   </select>
+                  <GamblyButton text={betLine({ name: pk.name, team: pk.team }, PICK_PROP[pk.type] || "goal")} />
                   <button className="btn" title="Remove" onClick={() => removePick(pk.pid)}>✕</button>
                 </div>
               );

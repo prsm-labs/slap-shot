@@ -14,6 +14,8 @@ import { filterPositions, usePosition } from "../lib/positionFilter.js";
 import { filterPlayers, matchupKey, useMatchup } from "../lib/matchupFilter.js";
 import { lineupMaps, skaterStatus, startingGoalie, useLineups } from "../lib/lineups.js";
 import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from "../lib/bookOdds.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -30,7 +32,8 @@ function GoalieStatus({ goalie }) {
     : <span className="mono" title={goalie.source} style={{ fontSize: 9, color: "var(--muted)" }}>{goalie.status || "Projected"}</span>;
 }
 
-function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf }) {
+// prop = the bet the list is about (Gambly button): goal / point / sog3.
+function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf, prop = "goal" }) {
   return (
     <div className="card">
       <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 2 }}>{title}</div>
@@ -51,7 +54,7 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
               <div style={{ minWidth: 0 }}>
                 <div className="mono" style={{ fontSize: 12 }}>
                   {item.name} <span style={{ color: "var(--muted)" }}>({item.team})</span>
-                  {statusOf && <LineupBadge status={statusOf(item)} />} <PickButton player={item} /> <H2HCell playerId={item.playerId} compact />
+                  {statusOf && <LineupBadge status={statusOf(item)} />} <PickButton player={item} /> <GamblyButton text={betLine(item, prop)} /> <H2HCell playerId={item.playerId} compact />
                 </div>
                 {opp && (
                   <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>
@@ -164,9 +167,9 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
       <div className="grid-cards">
         <ListCard title="🥅 Goal Candidates" sub="Top 5 by chance to score" items={goalCandidates} renderRow={(p) => `${p.anytimeGoalPct}%`}
           onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
-        <ListCard title="🎯 Point Candidates" sub="Top 5 by chance of a point" items={pointCandidates}
+        <ListCard title="🎯 Point Candidates" sub="Top 5 by chance of a point" items={pointCandidates} prop="point"
           renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
-        <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates}
+        <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates} prop="sog3"
           renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
         {priced.length > 0 && (
           <>

@@ -13,6 +13,8 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import PickButton from "../components/PickButton.jsx";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // 🤝 Pairs (Scouting): up to 10 auto-built 2-leg pairs from the live slate (lib/pairs.js). Rebuilt whenever the
 // live pool changes (lineups, goalie news, scratches), and pairs that are new since the last build get a NEW tag.
@@ -57,14 +59,14 @@ function BlindSpots({ list }) {
         (each player is in at most one Balanced pair). Try another mode, or build your own from these.
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 300px), 1fr))", gap: 6 }}>
-        {shown.map(({ p, why, goal, point, sog3 }) => (
+        {shown.map(({ p, why, goal, point, sog3, best }) => (
           <div key={p.playerId} style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
             <div style={{ minWidth: 0 }}>
               <div style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
                 <span className="player-name-link" style={{ fontWeight: 700, fontSize: 12, cursor: "pointer" }} onClick={() => openSkaterSlide(p)}>{p.name}</span>
                 <span className="mono" style={{ fontSize: 9, ...muted }}>{p.team} {p.isHome ? "vs" : "@"} {p.opponentTeam}</span>
-                <PickButton player={p} />
+                <PickButton player={p} /> <GamblyButton text={betLine(p, best || "goal")} />
               </div>
               <div className="mono" style={{ fontSize: 9, color: "var(--accent2)" }}>{why.join(" · ")}</div>
               <div className="mono" style={{ fontSize: 9, ...muted }}>🚨 {pc(goal)} · 🍎 {pc(point)} · 🏒 {pc(sog3)}</div>
@@ -168,7 +170,7 @@ function Leg({ leg, h2h, details, defRank }) {
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
           <span className="player-name-link" style={{ fontWeight: 700, cursor: "pointer" }} onClick={() => openSkaterSlide(p)}>{p.name}</span>
-          <PickButton player={p} />
+          <PickButton player={p} /> <GamblyButton text={betLine(p, prop)} />
         </div>
         <div className="mono" style={{ fontSize: 10, ...muted }}>
           {p.team} · {p.position} · {p.isHome ? "vs" : "@"} {p.opponentTeam}{p.opponentGoalie ? ` (${p.opponentGoalie.split(" ").pop()})` : ""}
@@ -299,28 +301,7 @@ function CopyBet({ pr }) {
 // and opens Gambly's chat with the bet typed in. Logo is Gambly's (public/brand/gambly.png), used only to label the
 // link to their service.
 function SlipBuilders({ pr }) {
-  const [note, setNote] = useState("");
-  const text = pairBetText(pr);
-  const copy = async () => {
-    try { await navigator.clipboard.writeText(text); return true; } catch { return false; }
-  };
-  const open = (url) => window.open(url, "_blank", "noopener,noreferrer");
-  const gambly = async (e) => {
-    e.stopPropagation();
-    const ok = await copy();
-    setNote(ok ? "Bet copied + typed into Gambly" : "");
-    setTimeout(() => setNote(""), 4000);
-    open(`https://gambly.com/chat?q=${encodeURIComponent(text)}`);
-  };
-  const btn = { fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 };
-  return (
-    <>
-      <button className="pill-btn" style={btn} onClick={gambly} title="Copies this bet and opens Gambly's chat with it typed in — send it there to build the slip at your book">
-        <img src="/brand/gambly.png" alt="" width={14} height={14} /> Gambly
-      </button>
-      {note && <span className="mono" style={{ fontSize: 10, color: "var(--accent2)", alignSelf: "center" }}>{note}</span>}
-    </>
-  );
+  return <GamblyButton compact={false} text={pairBetText(pr)} title="Copies this pair and opens Gambly's chat with it typed in — send it there to build the slip at your book" />;
 }
 
 function PairCard({ pr, n, isNew, h2h, boost, defRank }) {

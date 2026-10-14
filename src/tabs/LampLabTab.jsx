@@ -20,6 +20,8 @@ import { booksText, edgeColor, edgeText, fmtEdge } from "../lib/bookOdds.js";
 import { BestPriceLink } from "../components/BetLink.jsx";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // Structural port of Going Yard's real BarrelLabTab (mlb_project/going-yard/src/App.jsx:
 // 32419-33537, researched in full this session): toolbar + aggregate card + Signal Board tiles
@@ -184,7 +186,7 @@ export default function LampLabTab() {
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
                         {isGoalSignal(p) && <span className="signal-star">★ </span>}
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /><DueTag due={p.dueHeat} />
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /><DueTag due={p.dueHeat} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>

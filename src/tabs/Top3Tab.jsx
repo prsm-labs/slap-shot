@@ -7,6 +7,8 @@ import H2HCell from "../components/H2HCell.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
+import GamblyButton from "../components/GamblyButton.jsx";
+import { betLine } from "../lib/gambly.js";
 
 // Top 3 Tonight — the best real matchup per tier (Chalk / Mid-Tier / Breakout), deterministic, no
 // randomness, modeled on Going Yard's "Top 4 Tonight". Picks are computed live (lib/top3.js on the
@@ -93,6 +95,7 @@ ${booksText(full.book)}`}>
               <div style={{ fontSize: 11, lineHeight: 1.45, color: "var(--text)", flex: 1, overflow: "hidden" }}>{p.why}</div>
               <div style={{ display: "flex", gap: 8, justifyContent: "center", alignItems: "center" }}>
                 <PickButton player={{ playerId: p.playerId, name: p.name, team: p.team }} size="lg" />
+                <GamblyButton compact={false} text={betLine(p, "goal")} />
                 <button className="btn" style={{ borderColor: c }} onClick={openSkater}>Open player</button>
               </div>
             </>
