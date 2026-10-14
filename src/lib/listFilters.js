@@ -15,7 +15,7 @@ export const GOAL_OPTIONS = [null, 10, 20, 30];
 export const GRADE_OPTIONS = [null, "A", "B", "C"]; // "B" = B or better
 const GRADE_ORDER = ["A+", "A", "B", "C", "D", "F"];
 
-const DEFAULTS = { tier: null, minGoal: null, minGrade: null, signals: false, soft: false, breakout: false, due: false, value: false, confirmed: false, strongH2H: false, search: "" };
+const DEFAULTS = { tier: null, minGoal: null, minGrade: null, signals: false, soft: false, breakout: false, due: false, pointDue: false, value: false, confirmed: false, strongH2H: false, search: "" };
 let state = { ...DEFAULTS };
 const listeners = new Set();
 const notify = () => listeners.forEach((fn) => fn());
@@ -54,6 +54,7 @@ export function applyListFilters(list, f, { slate, signal = "goal", h2h } = {}) 
     && (!f.soft || (p.oppSoftPct ?? 0) >= 0.67)
     && (!breakoutIds || breakoutIds.has(p.playerId))
     && (!f.due || p.dueHeat)
+    && (!f.pointDue || p.pointHeat)
     && (!f.value || (p.edge ?? -99) >= 3)
     && (!f.confirmed || p.lineupStatus === "dressed")
     && (!f.strongH2H || ["A+", "A"].includes(h2h?.get(p.playerId)?.letter))

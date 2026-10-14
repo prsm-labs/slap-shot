@@ -15,6 +15,7 @@ import { filterPositions, positionLabel, usePosition } from "../lib/positionFilt
 import { fmtToi } from "../lib/toi.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { isPointSignal } from "../lib/signals.js";
+import PointDueTag from "../components/PointDueTag.jsx";
 
 // Structural port of Going Yard's real OnBaseTab (mlb_project/going-yard/src/App.jsx:
 // 33607-34567) — parallel structure to Barrel Lab/Lamp Lab with its own score field and its own
@@ -26,11 +27,11 @@ function isRoleEligible(p) {
 }
 
 function exportCsv(rows, filename) {
-  const header = ["name", "team", "opponentGoalie", "goalieGrade", "anytimePointPct", "plus3SogPct", "slapScore", "signal"];
+  const header = ["name", "team", "opponentGoalie", "goalieGrade", "anytimePointPct", "multiPoint2Pct", "multiPoint3Pct", "pointsDue", "plus3SogPct", "slapScore", "signal"];
   const lines = [header.join(",")];
   for (const p of rows) {
     lines.push([
-      p.name, p.team, p.opponentGoalie || "", p.goalieGrade?.letter || "", p.anytimePointPct, p.plus3SogPct, p.slapScore, isPointSignal(p) ? "Y" : "N",
+      p.name, p.team, p.opponentGoalie || "", p.goalieGrade?.letter || "", p.anytimePointPct, p.multiPoint2Pct, p.multiPoint3Pct, p.pointHeat ? "Y" : "N", p.plus3SogPct, p.slapScore, isPointSignal(p) ? "Y" : "N",
     ].map((v) => `"${v}"`).join(","));
   }
   const blob = new Blob([lines.join("\n")], { type: "text/csv" });
@@ -125,6 +126,9 @@ export default function AppleLabTab() {
         ℹ️ "An apple" = an assist. Point % = the grade model's chance of a goal or assist (first week: 35.5% said vs 33.9% happened),
         nudged for tonight's opponent. +3 SOG % comes from a 10,000-run shot simulation (first week: 21.0% said vs 22.1% happened).
         ★ Point Signal = point % in tonight's top 15% AND +3 SOG ≥40% — 66% of those got a point over the first week (base 35%).
+        2+ / 3+ Pts % are fit on 4 seasons (plain Poisson over-states multi-point nights by ~15-40%). 🍎 PTS DUE = no point in 2+ games
+        while the team's expected goals with them on the ice ran 1.2x+ their season rate, outside the top 25% — 12-14% more points than
+        expected over 4 seasons, so their point % is raised x1.07 (x1.10 at 3+ games). Rising shots alone didn't add points (defensemen included).
       </div>
 
       <PositionFilter />
@@ -175,7 +179,8 @@ export default function AppleLabTab() {
               </div>
               {isPointSignal(p) && <div className="mono" style={{ fontSize: 10, marginBottom: 6 }}><span className="signal-star">★</span> Point Signal</div>}
               <div style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 800, fontSize: 24 }}>{p.anytimePointPct}%</div>
-              <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>+3 SOG {p.plus3SogPct}% · Slap {p.slapScore}</div>
+              <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>2+ pts {p.multiPoint2Pct}% · 3+ {p.multiPoint3Pct}% · +3 SOG {p.plus3SogPct}%</div>
+              {p.pointHeat && <div style={{ marginTop: 4 }}><PointDueTag heat={p.pointHeat} /></div>}
             </div>
           ))}
         </div>
@@ -189,6 +194,8 @@ export default function AppleLabTab() {
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
                 <th className={sortKey === "anytimePointPct" ? "sorted" : ""} onClick={() => toggleSort("anytimePointPct")}>Anytime Point %{sortKey === "anytimePointPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Chance of 2+ points tonight" className={sortKey === "multiPoint2Pct" ? "sorted" : ""} onClick={() => toggleSort("multiPoint2Pct")}>2+ Pts %{sortKey === "multiPoint2Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Chance of 3+ points tonight" className={sortKey === "multiPoint3Pct" ? "sorted" : ""} onClick={() => toggleSort("multiPoint3Pct")}>3+ Pts %{sortKey === "multiPoint3Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "plus3SogPct" ? "sorted" : ""} onClick={() => toggleSort("plus3SogPct")}>+3 SOG %{sortKey === "plus3SogPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -208,13 +215,15 @@ export default function AppleLabTab() {
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
                         {isPointSignal(p) && <span className="signal-star">★ </span>}
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} />
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /><PointDueTag heat={p.pointHeat} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimePointPct}%</td>
+                  <td>{p.multiPoint2Pct != null ? `${p.multiPoint2Pct}%` : "—"}</td>
+                  <td>{p.multiPoint3Pct != null ? `${p.multiPoint3Pct}%` : "—"}</td>
                   <td>{p.plus3SogPct}%</td>
                   <td>{p.slapScore}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
+import { easternToday } from "../lib/liveGoals.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import BoxScore from "../components/BoxScore.jsx";
@@ -25,10 +26,8 @@ const HEAT_STYLE = {
   cold: { icon: "🧊", color: "var(--muted)", background: "transparent" },
 };
 
-function easternDate(offsetDays = 0) {
-  const d = new Date(Date.now() + offsetDays * 86_400_000);
-  return d.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
-}
+// Slate day (turns over at 4 AM ET — lib/liveGoals.js easternToday).
+const easternDate = (offsetDays = 0) => easternToday(offsetDays);
 
 function shiftDate(date, days) {
   const d = new Date(`${date}T12:00:00Z`);

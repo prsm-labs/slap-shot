@@ -10,6 +10,7 @@ import { dvpFor } from "../lib/dvp.js";
 import { useScoredPool } from "../lib/data.js";
 import GoalieProfile from "./GoalieProfile.jsx";
 import { booksText, edgeColor, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
+import { pointHeatText } from "../lib/pointHeat.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -76,6 +77,17 @@ function SkaterStats({ p }) {
           label="Grade model: goal / assist / point / 3+ SOG"
           value={["goal", "assist", "point", "sog3"].map((k) => `${Math.round(p.modelProbs[k] * 100)}%`).join(" / ")}
         />
+      )}
+      {p.anytimePointPct != null && (
+        <StatRow
+          label="Tonight: point / 2+ points / 3+ points"
+          value={`${p.anytimePointPct}% / ${p.multiPoint2Pct ?? "—"}% / ${p.multiPoint3Pct ?? "—"}%`}
+        />
+      )}
+      {p.pointHeat && (
+        <div className="mono" style={{ fontSize: 10, color: "var(--accent2)", padding: "6px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+          {pointHeatText(p.pointHeat)}
+        </div>
       )}
       {p.book && (
         <StatRow

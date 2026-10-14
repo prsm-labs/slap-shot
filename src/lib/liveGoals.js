@@ -5,8 +5,12 @@ export const LIVE_POLL_MS = 30_000;
 const DONE = new Set(["FINAL", "OFF"]);
 const STARTED = new Set(["LIVE", "CRIT", "FINAL", "OFF"]);
 
-export function easternToday() {
-  return new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+// The app's "today" is the slate day: it turns over at 4 AM ET, not midnight, so games that run past 12
+// (and their goals) stay on the night they started. Same rule in build_player_pool.py eastern_today().
+export const SLATE_ROLLOVER_HOUR = 4;
+export function easternToday(offsetDays = 0) {
+  const d = new Date(Date.now() - SLATE_ROLLOVER_HOUR * 3_600_000 + offsetDays * 86_400_000);
+  return d.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
 }
 
 // { goals, hasGames, started, unfinished, firstPuck } for one date.

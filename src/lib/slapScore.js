@@ -16,6 +16,7 @@
 //          Ignore the rest. On 10/2-10/4 that ordering held: goal 31% / 24% / 14% / 8%.
 
 import { dueHeatMap } from "./dueHeat.js";
+import { pointHeatMap } from "./pointHeat.js";
 export { MATCHUP_COEF } from "./grades.js"; // applied in gradeSlate; modelProbs arrive matchup-adjusted
 
 // 2+ goals tonight (2026-10-12; scratch multigoal_fit2.py): logistic on L = logit(grade-model goal chance)
@@ -29,6 +30,19 @@ export function multiGoalChance(goalP, z = 0) {
   if (goalP == null) return null;
   const l = Math.min(logit(Math.min(Math.max(goalP, 1e-4), 1 - 1e-4)), MULTI_GOAL.lMax); // keep it increasing
   return sigmoid(MULTI_GOAL.intercept + MULTI_GOAL.l * l + MULTI_GOAL.l2 * l * l + MULTI_GOAL.z * z);
+}
+
+// 2+ / 3+ points tonight (2026-10-14; scratch multipoint.py): logistic on L = logit(point chance, matchup-adjusted),
+// fit on the same 69,577 Feb-Apr skater-games (6,413 with 2+, 1,431 with 3+). Poisson off the point chance over-states
+// multi-point nights (3+ said 1,652 vs 1,431 happened; top 5%: 16.2% said vs 11.3%). This fit beat Poisson leave-one-
+// season-out and lands within ~5% every season; top 5%: 2+ said 32.1% / happened 32.2%, 3+ 11.4% / 11.3%.
+// The opp-defense term added nothing here (the point chance already carries it).
+export const MULTI_POINT = { lMax: 1.518, two: [-1.7473, 1.1113, -0.1477], three: [-3.4388, 1.5115, -0.1902] };
+export function multiPointChance(pointP, n = 2) {
+  if (pointP == null) return null;
+  const l = Math.min(logit(Math.min(Math.max(pointP, 1e-4), 1 - 1e-4)), MULTI_POINT.lMax);
+  const [a, b, c] = n >= 3 ? MULTI_POINT.three : MULTI_POINT.two;
+  return sigmoid(a + b * l + c * l * l);
 }
 
 export function tierFor(slapScore) {
@@ -56,6 +70,8 @@ export function applySlateScores(players) {
   const scored = players.filter((p) => p.modelProbs?.goal != null);
   // 🔥 Due + heating up (lib/dueHeat.js): x1.06 / x1.10 on the goal chance, backtested, non-stars only
   const due = dueHeatMap(scored);
+  // 🍎 Points due (lib/pointHeat.js): x1.07 / x1.10 on the point chance, backtested, outside the top 25%
+  const ptDue = pointHeatMap(scored);
   const xs = scored.map((p) => p.opponentTeamxGA60).filter((v) => v != null);
   const mean = xs.reduce((a, b) => a + b, 0) / Math.max(xs.length, 1);
   const sd = Math.sqrt(xs.reduce((a, b) => a + (b - mean) ** 2, 0) / Math.max(xs.length, 1)) || 1;
@@ -63,7 +79,7 @@ export function applySlateScores(players) {
     const z = p.opponentTeamxGA60 != null ? (p.opponentTeamxGA60 - mean) / sd : 0;
     return [p.playerId, {
       goal: Math.min(0.95, p.modelProbs.goal * (due.get(p.playerId)?.mult ?? 1)),
-      point: p.modelProbs.point,
+      point: Math.min(0.95, p.modelProbs.point * (ptDue.get(p.playerId)?.mult ?? 1)),
       // fit on the pre-matchup chance + its own defense term
       multi: multiGoalChance(p.modelProbs.base?.goal ?? p.modelProbs.goal, z),
     }];
@@ -73,7 +89,7 @@ export function applySlateScores(players) {
   const softRank = pctRank(scored, (p) => p.opponentTeamxGA60 ?? mean);
   return players.map((p) => {
     const a = adj.get(p.playerId);
-    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, anytimePointPct: null, multiGoalPct: null, dueHeat: null };
+    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, anytimePointPct: null, multiGoalPct: null, multiPoint2Pct: null, multiPoint3Pct: null, dueHeat: null, pointHeat: null };
     const slapScore = Math.round(goalRank.get(p.playerId) * 99);
     return {
       ...p,
@@ -83,9 +99,12 @@ export function applySlateScores(players) {
       anytimeGoalPct: pct1(a.goal),
       anytimePointPct: pct1(a.point),
       multiGoalPct: pct1(a.multi),
+      multiPoint2Pct: pct1(multiPointChance(a.point, 2)),
+      multiPoint3Pct: pct1(multiPointChance(a.point, 3)),
       pointPct: pointRank.get(p.playerId),
       oppSoftPct: softRank.get(p.playerId),
       dueHeat: due.get(p.playerId) || null,
+      pointHeat: ptDue.get(p.playerId) || null,
     };
   });
 }
