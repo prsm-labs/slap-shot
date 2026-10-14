@@ -294,6 +294,35 @@ function CopyBet({ pr }) {
   );
 }
 
+// Gambly (gambly.com) builds a bet slip at your book from plain text. Its web chat reads ?q= into the message box
+// (checked 2026-10-14: /chat?q=... pre-fills the box, nothing is sent). The button copies the bet to the clipboard too,
+// and opens Gambly's chat with the bet typed in. Logo is Gambly's (public/brand/gambly.png), used only to label the
+// link to their service.
+function SlipBuilders({ pr }) {
+  const [note, setNote] = useState("");
+  const text = pairBetText(pr);
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(text); return true; } catch { return false; }
+  };
+  const open = (url) => window.open(url, "_blank", "noopener,noreferrer");
+  const gambly = async (e) => {
+    e.stopPropagation();
+    const ok = await copy();
+    setNote(ok ? "Bet copied + typed into Gambly" : "");
+    setTimeout(() => setNote(""), 4000);
+    open(`https://gambly.com/chat?q=${encodeURIComponent(text)}`);
+  };
+  const btn = { fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 };
+  return (
+    <>
+      <button className="pill-btn" style={btn} onClick={gambly} title="Copies this bet and opens Gambly's chat with it typed in — send it there to build the slip at your book">
+        <img src="/brand/gambly.png" alt="" width={14} height={14} /> Gambly
+      </button>
+      {note && <span className="mono" style={{ fontSize: 10, color: "var(--accent2)", alignSelf: "center" }}>{note}</span>}
+    </>
+  );
+}
+
 function PairCard({ pr, n, isNew, h2h, boost, defRank }) {
   const [details, setDetails] = useState(false);
   const gold = Boolean(pr.starRank);
@@ -318,9 +347,10 @@ function PairCard({ pr, n, isNew, h2h, boost, defRank }) {
       </div>
       {why.length > 0 && <div className="mono" style={{ fontSize: 10, color: "var(--accent2)", marginTop: 2 }}>{why.join(" · ")}</div>}
       {pr.legs.map((l) => <Leg key={l.p.playerId + l.prop} leg={l} h2h={h2h} details={details} defRank={defRank} />)}
-      <div style={{ display: "flex", gap: 6, marginBottom: 6 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 6 }}>
         <button className="pill-btn" style={{ fontSize: 10 }} onClick={() => setDetails(!details)}>{details ? "Hide breakdown" : "🔍 Full breakdown"}</button>
         <CopyBet pr={pr} />
+        <SlipBuilders pr={pr} />
       </div>
       <div style={{ borderTop: "1px solid var(--border)", paddingTop: 8 }}><PriceLine pr={pr} boost={boost} /></div>
     </div>
