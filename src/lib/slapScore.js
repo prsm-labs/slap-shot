@@ -77,9 +77,12 @@ export function applySlateScores(players) {
   const sd = Math.sqrt(xs.reduce((a, b) => a + (b - mean) ** 2, 0) / Math.max(xs.length, 1)) || 1;
   const adj = new Map(scored.map((p) => {
     const z = p.opponentTeamxGA60 != null ? (p.opponentTeamxGA60 - mean) / sd : 0;
+    const ptMult = ptDue.get(p.playerId)?.mult ?? 1;
     return [p.playerId, {
+      // multi-point fit was on the pre-calibration point chance
+      pointUncal: Math.min(0.95, (p.modelProbs.uncal?.point ?? p.modelProbs.point) * ptMult),
       goal: Math.min(0.95, p.modelProbs.goal * (due.get(p.playerId)?.mult ?? 1)),
-      point: Math.min(0.95, p.modelProbs.point * (ptDue.get(p.playerId)?.mult ?? 1)),
+      point: Math.min(0.95, p.modelProbs.point * ptMult),
       // fit on the pre-matchup chance + its own defense term
       multi: multiGoalChance(p.modelProbs.base?.goal ?? p.modelProbs.goal, z),
     }];
@@ -99,8 +102,8 @@ export function applySlateScores(players) {
       anytimeGoalPct: pct1(a.goal),
       anytimePointPct: pct1(a.point),
       multiGoalPct: pct1(a.multi),
-      multiPoint2Pct: pct1(multiPointChance(a.point, 2)),
-      multiPoint3Pct: pct1(multiPointChance(a.point, 3)),
+      multiPoint2Pct: pct1(multiPointChance(a.pointUncal, 2)),
+      multiPoint3Pct: pct1(multiPointChance(a.pointUncal, 3)),
       pointPct: pointRank.get(p.playerId),
       oppSoftPct: softRank.get(p.playerId),
       dueHeat: due.get(p.playerId) || null,

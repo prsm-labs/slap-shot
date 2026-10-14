@@ -128,7 +128,8 @@ export default function AppleLabTab() {
         ★ Point Signal = point % in tonight's top 15% AND +3 SOG ≥40% — 66% of those got a point over the first week (base 35%).
         2+ / 3+ Pts % are fit on 4 seasons (plain Poisson over-states multi-point nights by ~15-40%). 🍎 PTS DUE = no point in 2+ games
         while the team's expected goals with them on the ice ran 1.2x+ their season rate, outside the top 25% — 12-14% more points than
-        expected over 4 seasons, so their point % is raised x1.07 (x1.10 at 3+ games). Rising shots alone didn't add points (defensemen included).
+        expected over 4 seasons; after calibration their point % is raised x1.04 (x1.05 at 3+ games). Point % also reads the last ~120 minutes
+        on ice: own expected goals and the team's expected goals with them on the ice vs their season rate (both tested to add points).
       </div>
 
       <PositionFilter />

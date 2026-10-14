@@ -95,6 +95,9 @@ export function computeEffectiveGrade(baseGrade, goalieGrade) {
 // pool per skater, so xGA is used for all four. Defense vs position (allowed to C / W / D) was tested
 // too: once overall defense is removed it adds nothing and doesn't repeat half to half.
 export const MATCHUP_COEF = { goal: 0.114, assist: 0.117, point: 0.138, sog3: 0.126 };
+// Since 2026-10-14 goal and point are then calibrated (top end was over-confident, middle under) and the point
+// chance uses last-120-minutes form — lib/calibration.js. uncal = with matchup, before calibration.
+import { calibrateGoal, calibratePoint, formRatios, slateRates } from "./calibration.js";
 
 const GRADE_BANDS = [[0.95, "A+"], [0.85, "A"], [0.65, "B"], [0.35, "C"], [0.15, "D"], [0, "F"]];
 
@@ -172,6 +175,7 @@ export function gradeSlate(players) {
   const xs = players.map((p) => p.opponentTeamxGA60).filter((v) => v != null);
   const mean = xs.reduce((a, b) => a + b, 0) / Math.max(xs.length, 1);
   const sd = Math.sqrt(xs.reduce((a, b) => a + (b - mean) ** 2, 0) / Math.max(xs.length, 1)) || 1;
+  const lg = slateRates(players);
   const rows = players.map((p) => {
     const base = skaterModelProbs(p);
     const z = p.opponentTeamxGA60 != null ? (p.opponentTeamxGA60 - mean) / sd : 0;
@@ -180,6 +184,10 @@ export function gradeSlate(players) {
     // base = before the matchup, oppZ = tonight's opponent defense in slate SDs (+ = softer)
     probs.base = base;
     probs.oppZ = z;
+    probs.uncal = { goal: probs.goal, point: probs.point };
+    probs.form = formRatios(p, lg);
+    probs.goal = calibrateGoal(probs.goal);
+    probs.point = calibratePoint(probs.point, probs.form);
     return { id: p.playerId, probs };
   });
   const n = rows.length;
@@ -202,10 +210,10 @@ export function gradeSlate(players) {
       letter,
       score: Math.round(pct * 100),
       probs: r.probs,
-      matchup: matchup.get(r.id) ? { ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.goal } : null,
+      matchup: matchup.get(r.id) ? { ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.uncal.goal } : null,
       tooltip: `Grade ${letter} — top ${Math.max(1, 100 - Math.round(pct * 100))}% of tonight's slate. Chances with tonight's matchup: goal ${pr("goal")}, assist ${pr("assist")}, point ${pr("point")}, 3+ SOG ${pr("sog3")}`
         + (matchup.get(r.id) ? `
-${matchupText({ ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.goal })}
+${matchupText({ ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.uncal.goal })}
 ${DVP_NOTE}` : ""),
     });
   });

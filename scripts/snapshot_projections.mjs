@@ -123,6 +123,8 @@ const players = scored.map((p) => {
     modelGoalPct: Math.round(p.grade.probs.goal * 1000) / 10,
     modelAssistPct: Math.round(p.grade.probs.assist * 1000) / 10,
     modelPointPct: Math.round(p.grade.probs.point * 1000) / 10,
+    modelGoalUncalPct: p.grade.probs.uncal ? Math.round(p.grade.probs.uncal.goal * 1000) / 10 : null,
+    modelPointUncalPct: p.grade.probs.uncal ? Math.round(p.grade.probs.uncal.point * 1000) / 10 : null,
     modelSog3Pct: Math.round(p.grade.probs.sog3 * 1000) / 10,
     modelGoalBasePct: Math.round(p.grade.probs.base.goal * 1000) / 10, // before the matchup
     slapScore: p.slapScore,
@@ -176,7 +178,7 @@ const snapshot = {
       awayGoalie: g.awayGoalie, awayGoalieStatus: g.awayGoalieStatus,
       homeGoalie: g.homeGoalie, homeGoalieStatus: g.homeGoalieStatus,
     })),
-    scoreVersion: 3,
+    scoreVersion: 4, // 4 = goal / point calibrated + 120-minute form on points (lib/calibration.js), 2026-10-14
     note: "Pre-game projections as shown in the app. Slap Score v3 (2026-10-13): grade-model chances (goal / assist / point / 3+ SOG, and the grade letter) adjusted for the opponent's xGA allowed, refit on 4 seasons (lib/grades.js); plus3SogPct still from the shot sim.",
   },
   players,

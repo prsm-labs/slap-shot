@@ -84,6 +84,12 @@ function SkaterStats({ p }) {
           value={`${p.anytimePointPct}% / ${p.multiPoint2Pct ?? "—"}% / ${p.multiPoint3Pct ?? "—"}%`}
         />
       )}
+      {p.modelProbs?.form?.minutes >= 90 && (
+        <StatRow
+          label={`Last ${Math.round(p.modelProbs.form.minutes)} min on ice vs season: own xG / team xG on ice`}
+          value={`x${Math.exp(p.modelProbs.form.xg).toFixed(2)} / x${Math.exp(p.modelProbs.form.oxg).toFixed(2)}`}
+        />
+      )}
       {p.pointHeat && (
         <div className="mono" style={{ fontSize: 10, color: "var(--accent2)", padding: "6px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
           {pointHeatText(p.pointHeat)}

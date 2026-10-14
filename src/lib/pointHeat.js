@@ -10,9 +10,11 @@
 //   no point 3+ & same ....................................... 1.14  (1.14 / 1.05 / 1.22 / 1.13, ±0.08)
 //   same, model's top 25% ................................... 0.96-0.99 — already priced in, so excluded.
 //   soft defense on top added little (the point % already carries the matchup).
-// Why: the chances are coming with this skater out there; the points haven't yet. Boost set under the measured lift:
-// x1.07 at 2 games without a point, x1.10 at 3+.
-export const POINT_DUE = { minDrought: 2, trend: 1.2, notTop: 0.75, priorGames: 10, mult: { 2: 1.07, 3: 1.10 } };
+// Why: the chances are coming with this skater out there; the points haven't yet.
+// Re-measured after the 2026-10-14 calibration + 120-minute form terms (lib/calibration.js), which already lift
+// these players part of the way: flagged group 1.05x without a boost, 0.97x with the old x1.07 / x1.10, 1.01x with
+// x1.04 at 2 games without a point / x1.05 at 3+.
+export const POINT_DUE = { minDrought: 2, trend: 1.2, notTop: 0.75, priorGames: 10, mult: { 2: 1.04, 3: 1.05 } };
 
 const mean = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
 
@@ -55,5 +57,5 @@ export function pointHeatMap(players) {
 
 export function pointHeatText(d) {
   if (!d) return "";
-  return `🍎 Points due: no point in ${d.drought >= 7 ? "7+" : d.drought} games, but the team's expected goals with this skater on the ice ran ${d.oxgL5.toFixed(2)}/game over the last 5 (${d.trend.toFixed(1)}x the season ${d.oxgSeason.toFixed(2)}) — point chance x${d.mult.toFixed(2)} (backtested 4 seasons: +12-14% more points than expected, outside the top 25%)`;
+  return `🍎 Points due: no point in ${d.drought >= 7 ? "7+" : d.drought} games, but the team's expected goals with this skater on the ice ran ${d.oxgL5.toFixed(2)}/game over the last 5 (${d.trend.toFixed(1)}x the season ${d.oxgSeason.toFixed(2)}) — point chance x${d.mult.toFixed(2)} (backtested 4 seasons, outside the top 25%)`;
 }
