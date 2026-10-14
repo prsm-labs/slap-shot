@@ -1,9 +1,10 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import logoMark from "./assets/logo-flame-puck.png";
 import PlayerSlideout from "./components/PlayerSlideout.jsx";
 import GoalTicker from "./components/GoalTicker.jsx";
 import NotificationBar, { AlertBell } from "./components/NotificationBar.jsx";
+import { installColumnResize } from "./lib/columnResize.js";
 import DashboardTab from "./tabs/DashboardTab.jsx";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
@@ -49,6 +50,8 @@ export default function App() {
   const [tab, setTab] = useState("cheat");
   const active = useMemo(() => TABS.find((t) => t.key === tab) || TABS[0], [tab]);
   const ActiveComponent = active.Component;
+  // Drag-to-resize table columns, app-wide (lib/columnResize.js).
+  useEffect(() => installColumnResize(), []);
 
   return (
     <div className="app">

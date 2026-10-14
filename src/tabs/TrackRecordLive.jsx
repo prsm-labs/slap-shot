@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -17,6 +17,17 @@ import { matchesSearch } from "../lib/teamSearch.js";
 const TIERS = ["Elite Add-On", "Core Target", "Value Upside", "Ignore"];
 const TIER_CLASS = { "Elite Add-On": "tier-elite", "Core Target": "tier-core", "Value Upside": "tier-value", Ignore: "tier-ignore" };
 const SIM_BUCKETS = [[0, 10], [10, 20], [20, 30], [30, 101]];
+
+// Tap a stat card to filter the table to the skaters it counts (tier cards use the tier filter).
+const CARD_FILTERS = {
+  goals: { label: "🚨 Scored", fn: (r) => r.scored },
+  hat: { label: "🎩 Hat tricks", fn: (r) => r.g >= 3 },
+  top10: { label: "Top 10 Slap", fn: (r) => r.slapRank != null && r.slapRank <= 10 },
+  goalSig: { label: "★ Goal Signal", fn: (r) => r.goalSignal },
+  pointSig: { label: "★ Point Signal", fn: (r) => r.pointSignal },
+  sog3: { label: "3+ SOG", fn: (r) => r.sog >= 3 },
+  firstGoal: { label: `${FIRST_GOAL} First goal`, fn: (r) => r.firstGoal },
+};
 
 const rate = (hits, n) => (n ? `${Math.round((hits / n) * 100)}%` : "—");
 const shortDate = (d) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}`;
@@ -44,9 +55,10 @@ function flatten(r) {
   };
 }
 
-function StatCard({ label, value, sub }) {
+function StatCard({ label, value, sub, onClick, active }) {
   return (
-    <div className="signal-tile">
+    <div className={`signal-tile${onClick ? " clickable" : ""}${active ? " active" : ""}`} onClick={onClick}
+      role={onClick ? "button" : undefined} title={onClick ? (active ? "Tap to clear this filter" : "Tap to show these skaters in the table") : undefined}>
       <div className="lbl">{label}</div>
       <div className="val">{value}</div>
       {sub && <div className="sub">{sub}</div>}
@@ -82,10 +94,18 @@ function summarize(rows) {
     return { label: hi > 100 ? `${lo}%+` : `${lo}-${hi}%`, n: set.length, predicted: avg, actual: set.filter((r) => r.scored).length };
   });
 
+  // All goals in scope, including scorers who weren't projected (no NHL history before that night).
+  const played = rows.filter((r) => r.played);
+  const totalGoals = played.reduce((s, r) => s + (r.g || 0), 0);
+  const allScorers = played.filter((r) => r.scored).length;
+  const multi = played.filter((r) => r.g >= 2).length;
+  const hatTricks = played.filter((r) => r.g >= 3);
+
   const upset = scorers.filter((r) => r.simGoal != null).sort((a, b) => a.simGoal - b.simGoal)[0];
   return {
     graded, scorers, tier, goalSig, pointSig, top10, expectedScorers, expected3Sog, actual3Sog,
     firstGoalRanks, ranked, buckets, upset, goals: graded.reduce((s, r) => s + (r.g || 0), 0),
+    totalGoals, allScorers, multi, hatTricks,
   };
 }
 
@@ -97,6 +117,8 @@ export default function TrackRecordLive() {
   const [tierFilter, setTierFilter] = useState(null);
   const [showDnp, setShowDnp] = useState(false);
   const [search, setSearch] = useState("");
+  const [cardFilter, setCardFilter] = useState(null); // key of CARD_FILTERS
+  const tableRef = useRef(null);
   const selected = useMatchup();
   const position = usePosition();
 
@@ -129,9 +151,10 @@ export default function TrackRecordLive() {
     if (!showDnp) rows = rows.filter((r) => r.played);
     if (goalsOnly) rows = rows.filter((r) => r.scored);
     if (tierFilter) rows = rows.filter((r) => r.tier === tierFilter);
+    if (cardFilter) rows = rows.filter(CARD_FILTERS[cardFilter].fn);
     if (search.trim()) rows = rows.filter((r) => matchesSearch(search, [r.name], [r.team]));
     return rows;
-  }, [scope, showDnp, goalsOnly, tierFilter, search]);
+  }, [scope, showDnp, goalsOnly, tierFilter, cardFilter, search]);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(tableRows, "slapScore", "desc");
 
   if (error) {
@@ -141,6 +164,10 @@ export default function TrackRecordLive() {
   if (!dates.length) return <div className="note">No graded days yet — the first day is graded the morning after its games.</div>;
 
   const idx = date ? dates.indexOf(date) : -1;
+  const showInTable = () => requestAnimationFrame(() => tableRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  const pickCard = (key) => { setCardFilter(cardFilter === key ? null : key); if (cardFilter !== key) showInTable(); };
+  const pickTier = (t) => { setTierFilter(tierFilter === t ? null : t); if (tierFilter !== t) showInTable(); };
+  const card = (key) => ({ onClick: () => pickCard(key), active: cardFilter === key });
   const th = (k, label) => (
     <th className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>
       {label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}
@@ -160,7 +187,7 @@ export default function TrackRecordLive() {
         </button>
         <div style={{ flex: 1 }} />
         <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>
-          {s.graded.length} skaters graded · {s.scorers.length} scored · {s.goals} goals
+          {s.graded.length} skaters graded · {s.allScorers} scored · {s.totalGoals} goals · {s.hatTricks.length} hat trick{s.hatTricks.length === 1 ? "" : "s"}
           {data._meta.pending?.length ? ` · waiting on finals: ${data._meta.pending.map(shortDate).join(", ")}` : ""}
         </span>
       </div>
@@ -175,15 +202,21 @@ export default function TrackRecordLive() {
       {date && <MatchupFilter games={dayGames} />}
 
       <div className="signal-board" style={{ flexWrap: "wrap" }}>
+        <StatCard label="🚨 Total goals" value={s.totalGoals} sub={`${s.allScorers} scorers · ${s.multi} with 2+`} {...card("goals")} />
+        <StatCard label="🎩 Hat tricks" value={s.hatTricks.length}
+          sub={s.hatTricks.length ? s.hatTricks.slice(0, 2).map((r) => r.name.split(" ").pop()).join(", ") + (s.hatTricks.length > 2 ? ` +${s.hatTricks.length - 2}` : "") : "none yet"}
+          {...(s.hatTricks.length ? card("hat") : {})} />
         <StatCard label="Scorers / expected" value={`${s.scorers.length} / ${s.expectedScorers.toFixed(1)}`} sub="actual vs sum of projected goal %" />
         {TIERS.map((t) => (
-          <StatCard key={t} label={`${t} goal rate`} value={rate(s.tier[t].hits, s.tier[t].n)} sub={`${s.tier[t].hits}/${s.tier[t].n}`} />
+          <StatCard key={t} label={`${t} goal rate`} value={rate(s.tier[t].hits, s.tier[t].n)} sub={`${s.tier[t].hits}/${s.tier[t].n}`}
+            onClick={() => pickTier(t)} active={tierFilter === t} />
         ))}
-        <StatCard label="Top 10 Slap goal rate" value={rate(s.top10.filter((r) => r.scored).length, s.top10.length)} sub={`${s.top10.filter((r) => r.scored).length}/${s.top10.length}`} />
-        <StatCard label="★ Goal Signal rate" value={rate(s.goalSig.filter((r) => r.scored).length, s.goalSig.length)} sub={`${s.goalSig.filter((r) => r.scored).length}/${s.goalSig.length}`} />
-        <StatCard label="★ Point Signal rate" value={rate(s.pointSig.filter((r) => r.pts > 0).length, s.pointSig.length)} sub={`${s.pointSig.filter((r) => r.pts > 0).length}/${s.pointSig.length} got a point`} />
-        <StatCard label="3+ SOG / expected" value={`${s.actual3Sog} / ${s.expected3Sog.toFixed(1)}`} sub="actual vs sum of sim %" />
+        <StatCard label="Top 10 Slap goal rate" value={rate(s.top10.filter((r) => r.scored).length, s.top10.length)} sub={`${s.top10.filter((r) => r.scored).length}/${s.top10.length}`} {...card("top10")} />
+        <StatCard label="★ Goal Signal rate" value={rate(s.goalSig.filter((r) => r.scored).length, s.goalSig.length)} sub={`${s.goalSig.filter((r) => r.scored).length}/${s.goalSig.length}`} {...card("goalSig")} />
+        <StatCard label="★ Point Signal rate" value={rate(s.pointSig.filter((r) => r.pts > 0).length, s.pointSig.length)} sub={`${s.pointSig.filter((r) => r.pts > 0).length}/${s.pointSig.length} got a point`} {...card("pointSig")} />
+        <StatCard label="3+ SOG / expected" value={`${s.actual3Sog} / ${s.expected3Sog.toFixed(1)}`} sub="actual vs sum of sim %" {...card("sog3")} />
         <StatCard
+          {...card("firstGoal")}
           label={`${FIRST_GOAL} First-goal pick rank`}
           value={s.ranked.length ? `#${(s.ranked.reduce((a, b) => a + b, 0) / s.ranked.length).toFixed(0)}` : "—"}
           sub={`avg rank of actual 1st scorer · top-5 ${s.ranked.filter((x) => x <= 5).length}/${s.firstGoalRanks.length}`}
@@ -217,7 +250,7 @@ export default function TrackRecordLive() {
           <div style={{ maxHeight: 260, overflowY: "auto" }}>
             {[...scope.filter((r) => r.scored)].sort((a, b) => b.g - a.g || (b.simGoal ?? -1) - (a.simGoal ?? -1)).map((r) => (
               <div key={`${r.date}-${r.playerId}`} className="mono" style={{ fontSize: 11, padding: "3px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
-                {"🚨".repeat(Math.min(r.g, 3))}{r.firstGoal ? ` ${FIRST_GOAL}` : ""} <b>{r.name}</b> <span style={{ color: "var(--muted)" }}>{r.team}{!date ? ` · ${shortDate(r.date)}` : ""}</span>
+                {r.g >= 3 ? "🎩 " : ""}{"🚨".repeat(Math.min(r.g, 3))}{r.firstGoal ? ` ${FIRST_GOAL}` : ""} <b>{r.name}</b> <span style={{ color: "var(--muted)" }}>{r.team}{!date ? ` · ${shortDate(r.date)}` : ""}</span>
                 <span style={{ color: "var(--muted)" }}>
                   {" "}— {r.inPool ? `Slap ${r.slapScore} (#${r.slapRank}) · ${r.tier} · goal ${r.simGoal}%` : "not in the projections (no NHL history)"}
                 </span>
@@ -227,7 +260,12 @@ export default function TrackRecordLive() {
         </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 8 }}>
+      <div ref={tableRef} style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 8, scrollMarginTop: "calc(var(--header-h, 60px) + 8px)" }}>
+        {cardFilter && (
+          <button className="pill-btn active" onClick={() => setCardFilter(null)} title="Clear the card filter">
+            Showing: {CARD_FILTERS[cardFilter].label} ✕
+          </button>
+        )}
         <div className="pill-row">
           <button className={`pill-btn ${goalsOnly ? "active" : ""}`} onClick={() => setGoalsOnly((v) => !v)}>🚨 Goals only</button>
           <button className={`pill-btn ${showDnp ? "active" : ""}`} onClick={() => setShowDnp((v) => !v)}>Show scratches</button>
@@ -300,7 +338,7 @@ export default function TrackRecordLive() {
                 <td>{r.played ? r.pts : "—"}</td>
                 <td>{r.played ? r.sog : "—"}</td>
                 <td className="mono">{r.played ? r.toi : "—"}</td>
-                <td>{!r.played ? <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>DNP</span> : r.scored ? "🚨 Goal" : r.pts ? "🍎 Point" : "—"}</td>
+                <td>{!r.played ? <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>DNP</span> : r.g >= 3 ? "🎩 Hat trick" : r.g === 2 ? "🚨🚨 2 goals" : r.scored ? "🚨 Goal" : r.pts ? "🍎 Point" : "—"}</td>
               </tr>
             ))}
           </tbody>
