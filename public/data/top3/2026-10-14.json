@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-14",
+  "lockedAt": "2026-10-14T21:33:50.945Z",
+  "poolGenerated": "2026-10-14 17:31",
+  "eligible": 79,
+  "confirmed": 41,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 3% of tonight's slate by the grade model (43.3% to score), facing WSH (#2 softest defense of 4 tonight, 3.2 expected goals allowed a game). Matchup-adjusted chance 39.8%.",
+   "playerId": 8481540,
+   "name": "Cole Caufield",
+   "team": "MTL",
+   "opp": "WSH",
+   "position": "R",
+   "isHome": false,
+   "opponentGoalie": "Charlie Lindgren",
+   "opponentGoalieId": 8479292,
+   "goalieGrade": "D",
+   "grade": "A+",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 43.3,
+   "adjGoalPct": 39.8,
+   "oppXga": 3.2,
+   "softRank": 2,
+   "sogL5": 4.2,
+   "sogPg": 3.3
+  },
+  {
+   "tier": "mid",
+   "fallback": false,
+   "why": "2.6 shots a game over the last 5 games vs 2.1 on the season, into MTL (#1 softest defense of 4 tonight, 3.3 expected goals allowed a game) — the combination that scored 14-24% above the model last season. 27.1% to score.",
+   "playerId": 8484186,
+   "name": "Ryan Leonard",
+   "team": "WSH",
+   "opp": "MTL",
+   "position": "R",
+   "isHome": true,
+   "opponentGoalie": "Jakub Dobes",
+   "opponentGoalieId": 8482487,
+   "goalieGrade": "B",
+   "grade": "B",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 22,
+   "adjGoalPct": 27.1,
+   "oppXga": 3.3,
+   "softRank": 1,
+   "sogL5": 2.6,
+   "sogPg": 2.1
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}

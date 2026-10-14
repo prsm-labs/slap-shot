@@ -1,13 +1,205 @@
 {
  "_meta": {
-  "generated": "2026-10-14 12:05",
+  "generated": "2026-10-14 17:33",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 33,
+  "count": 35,
   "up": 25,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8475413,
+   "name": "Justin Dowling",
+   "team": "NYR",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1990-10-01",
+   "sweater": 37,
+   "draft": null,
+   "recalledOn": "2026-10-14",
+   "from": "Hartford",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-14",
+     "type": "up",
+     "club": "Hartford"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": -2,
+     "pim": 4,
+     "team": "Hartford Wolf Pack"
+    },
+    "last": {
+     "gamesPlayed": 46,
+     "goals": 9,
+     "assists": 20,
+     "points": 29,
+     "plusMinus": -10,
+     "pim": 4,
+     "team": "Hartford Wolf Pack"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 1,
+     "team": "New York Rangers"
+    },
+    "careerGp": 154,
+    "careerG": 9,
+    "careerP": 26
+   }
+  },
+  {
+   "playerId": 8484220,
+   "name": "David Reinbacher",
+   "team": "MTL",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2004-10-25",
+   "sweater": 64,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "MTL",
+    "round": 1,
+    "overallPick": 5
+   },
+   "recalledOn": "2026-10-14",
+   "from": "Laval",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-14",
+     "type": "up",
+     "club": "Laval"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": 3,
+     "pim": 14,
+     "team": "Laval Rocket"
+    },
+    "last": {
+     "gamesPlayed": 57,
+     "goals": 5,
+     "assists": 19,
+     "points": 24,
+     "plusMinus": 18,
+     "pim": 56,
+     "team": "Laval Rocket"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 3,
+     "team": "Montr\u00e9al Canadiens"
+    },
+    "careerGp": 2,
+    "careerG": 0,
+    "careerP": 1
+   }
+  },
+  {
+   "playerId": 8481544,
+   "name": "Mads Sogaard",
+   "team": "TBL",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2000-12-13",
+   "sweater": 30,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "OTT",
+    "round": 2,
+    "overallPick": 37
+   },
+   "recalledOn": "2026-10-13",
+   "from": "Syracuse",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-14",
+   "events": [
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Syracuse"
+    },
+    {
+     "date": "2026-10-14",
+     "type": "down",
+     "club": "Syracuse"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "wins": 1,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 1,
+     "goalsAgainst": 4,
+     "shotsAgainst": 63,
+     "team": "Syracuse Crunch",
+     "savePct": 0.937,
+     "gaa": 1.73
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 1,
+     "losses": 0,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 6,
+     "shotsAgainst": 36,
+     "team": "Ottawa Senators",
+     "savePct": 0.833,
+     "gaa": 4.65
+    },
+    "careerGp": 31,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
   {
    "playerId": 8477993,
    "name": "Justin Kirkland",
@@ -160,70 +352,6 @@
     "season": null,
     "last": null,
     "careerGp": 0
-   }
-  },
-  {
-   "playerId": 8481544,
-   "name": "Mads Sogaard",
-   "team": "TBL",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2000-12-13",
-   "sweater": 30,
-   "draft": {
-    "year": 2019,
-    "teamAbbrev": "OTT",
-    "round": 2,
-    "overallPick": 37
-   },
-   "recalledOn": "2026-10-13",
-   "from": "Syracuse",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-13",
-     "type": "up",
-     "club": "Syracuse"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "wins": 1,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 1,
-     "goalsAgainst": 4,
-     "shotsAgainst": 63,
-     "team": "Syracuse Crunch",
-     "savePct": 0.937,
-     "gaa": 1.73
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 1,
-     "losses": 0,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 6,
-     "shotsAgainst": 36,
-     "team": "Ottawa Senators",
-     "savePct": 0.833,
-     "gaa": 4.65
-    },
-    "careerGp": 31,
-    "careerG": 0,
-    "careerP": null
    }
   },
   {
@@ -613,12 +741,17 @@
    "from": "Henderson",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-10-14",
    "events": [
     {
      "date": "2026-10-11",
      "type": "up",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-10-14",
+     "type": "down",
      "club": "Henderson"
     }
    ],
