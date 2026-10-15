@@ -1,0 +1,5084 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-14",
+  "lockedAt": null,
+  "firstPuck": "2026-10-14T23:30:00Z",
+  "firstGame": "MTL@WSH",
+  "firstGameOfficial": false,
+  "late": false,
+  "backfilled": true,
+  "gamesLocked": [
+   "MTL@WSH",
+   "DAL@COL"
+  ],
+  "teamsOfficial": [],
+  "lineupsLoaded": false,
+  "poolGenerated": "2026-10-14 17:31",
+  "oddsLoaded": true,
+  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written."
+ },
+ "modes": {
+  "balanced": [
+   {
+    "key": "8477492:goal|8481540:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17.5,
+    "fair": 472,
+    "starRank": 2,
+    "star": 0.97,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      115,
+      140
+     ],
+     "american": 416,
+     "dec": 5.16
+    },
+    "evPct": -9.8,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 43.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 115,
+       "bestBook": "FD",
+       "books": {
+        "DK": 105,
+        "FD": 115,
+        "BR": -105,
+        "BOV": 105,
+        "MGM": 110
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257135_13L42133Q1-170743743Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449308",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874624|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988177-6391057&type=Single"
+       }
+      },
+      "edge": -2.6
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 140,
+       "bestBook": "FD",
+       "books": {
+        "DK": 125,
+        "FD": 140,
+        "BR": 120,
+        "MGM": 140,
+        "BOV": 128
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254473_13L42133Q1-635797582Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=24660529",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831073|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3988052-6390840&type=Single"
+       }
+      },
+      "edge": -1.9
+     }
+    ]
+   },
+   {
+    "key": "8480018:goal|8480027:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.1,
+    "fair": 607,
+    "starRank": 1,
+    "star": 1.029,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      220,
+      150
+     ],
+     "american": 700,
+     "dec": 8
+    },
+    "evPct": 13.1,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 37.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 220,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 190,
+        "FD": 200,
+        "BR": 195,
+        "MGM": 220,
+        "BOV": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254399_13L42133Q1997318835Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=20852694",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831040|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987951-6390636&type=Single"
+       }
+      },
+      "edge": 6.6
+     },
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 37.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 160,
+       "bestBook": "BR",
+       "books": {
+        "DK": 155,
+        "FD": 150,
+        "BR": 160,
+        "BOV": 150,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257745_13L42133Q1-1819449052Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=38764242",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845498|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988300-6391295&type=Single"
+       }
+      },
+      "edge": -1.1
+     }
+    ]
+   },
+   {
+    "key": "8475172:goal|8476479:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 4.5,
+    "fair": 2145,
+    "starRank": null,
+    "star": 0.483,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      270,
+      850
+     ],
+     "american": 3415,
+     "dec": 35.15
+    },
+    "evPct": 56.6,
+    "legs": [
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 29.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 275,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 270,
+        "FD": 270,
+        "BR": 245,
+        "BOV": 260,
+        "MGM": 275
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257187_13L42133Q1-218511862Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449287",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373894847|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988232-6391161&type=Single"
+       }
+      },
+      "edge": 3.2
+     },
+     {
+      "playerId": 8476479,
+      "name": "Phillip Danault",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 14.9,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 850,
+       "bestBook": "FD",
+       "books": {
+        "DK": 800,
+        "FD": 850,
+        "BR": 750,
+        "BOV": 725
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254373_13L42133Q1952013370Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12857528",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373839694|{wagerAmount}"
+       }
+      },
+      "edge": 4.4
+     }
+    ]
+   },
+   {
+    "key": "8475754:goal|8484186:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 7.4,
+    "fair": 1252,
+    "starRank": null,
+    "star": 0.835,
+    "parlay": {
+     "book": "BR",
+     "legs": [
+      290,
+      360
+     ],
+     "american": 1694,
+     "dec": 17.94
+    },
+    "evPct": 32.7,
+    "legs": [
+     {
+      "playerId": 8475754,
+      "name": "Brock Nelson",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 27.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 290,
+       "bestBook": "DK",
+       "books": {
+        "DK": 290,
+        "FD": 280,
+        "BR": 290,
+        "BOV": 275,
+        "MGM": 240
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257253_13L42133Q12082714192Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12496418",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874612|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988184-6391065&type=Single"
+       }
+      },
+      "edge": 1.7
+     },
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 27.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 360,
+       "bestBook": "BR",
+       "books": {
+        "DK": 330,
+        "FD": 300,
+        "BR": 360,
+        "MGM": 333,
+        "BOV": 305
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254322_13L42133Q1377601336Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=51950507",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831063|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987827-6390388&type=Single"
+       }
+      },
+      "edge": 5.4
+     }
+    ]
+   },
+   {
+    "key": "8471214:point|8476880:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 37.9,
+    "fair": 164,
+    "starRank": 4,
+    "star": 0.911,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476880,
+      "name": "Tom Wilson",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 57.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477949:point|8479345:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 36.1,
+    "fair": 177,
+    "starRank": 5,
+    "star": 0.881,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479345,
+      "name": "Jakob Chychrun",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 57.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477949,
+      "name": "Alex Tuch",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 56.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478440:goal|8480039:point",
+    "section": "🔥 Due / heating",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17.4,
+    "fair": 475,
+    "starRank": null,
+    "star": 0.834,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478440,
+      "name": "Dylan Strome",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 25.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 280,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 260,
+        "FD": 260,
+        "BR": 270,
+        "MGM": 280,
+        "BOV": 260
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254031_13L42133Q1-1198181689Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=21070422",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831132|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987948-6390632&type=Single"
+       }
+      },
+      "edge": -0.6
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476432:goal|8478420:point",
+    "section": "🔥 Due / heating",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15,
+    "fair": 568,
+    "starRank": null,
+    "star": 0.718,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 23.6,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 430,
+       "bestBook": "FD",
+       "books": {
+        "DK": 400,
+        "FD": 430,
+        "BR": 410,
+        "BOV": 395
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253941_13L42133Q1-327809381Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496309",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831079|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8483457:point|8483515:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 41.4,
+    "fair": 142,
+    "starRank": 3,
+    "star": 0.955,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 61.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8483457,
+      "name": "Lane Hutson",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480069:sog3|8481656:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.9,
+    "fair": 530,
+    "starRank": null,
+    "star": 0.766,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480069,
+      "name": "Cale Makar",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "D",
+      "prop": "sog3",
+      "chancePct": 48.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481656,
+      "name": "Aliaksei Protas",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 32.5,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "value": [
+   {
+    "key": "8475172:goal|8476479:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 4.5,
+    "fair": 2145,
+    "starRank": null,
+    "star": 0.483,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      270,
+      850
+     ],
+     "american": 3415,
+     "dec": 35.15
+    },
+    "evPct": 56.6,
+    "legs": [
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 29.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 275,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 270,
+        "FD": 270,
+        "BR": 245,
+        "BOV": 260,
+        "MGM": 275
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257187_13L42133Q1-218511862Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449287",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373894847|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988232-6391161&type=Single"
+       }
+      },
+      "edge": 3.2
+     },
+     {
+      "playerId": 8476479,
+      "name": "Phillip Danault",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 14.9,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 850,
+       "bestBook": "FD",
+       "books": {
+        "DK": 800,
+        "FD": 850,
+        "BR": 750,
+        "BOV": 725
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254373_13L42133Q1952013370Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12857528",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373839694|{wagerAmount}"
+       }
+      },
+      "edge": 4.4
+     }
+    ]
+   },
+   {
+    "key": "8475754:goal|8476479:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 4.1,
+    "fair": 2358,
+    "starRank": null,
+    "star": 0.388,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      280,
+      850
+     ],
+     "american": 3510,
+     "dec": 36.1
+    },
+    "evPct": 46.8,
+    "legs": [
+     {
+      "playerId": 8475754,
+      "name": "Brock Nelson",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 27.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 290,
+       "bestBook": "DK",
+       "books": {
+        "DK": 290,
+        "FD": 280,
+        "BR": 290,
+        "BOV": 275,
+        "MGM": 240
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257253_13L42133Q12082714192Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12496418",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874612|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988184-6391065&type=Single"
+       }
+      },
+      "edge": 1.7
+     },
+     {
+      "playerId": 8476479,
+      "name": "Phillip Danault",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 14.9,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 850,
+       "bestBook": "FD",
+       "books": {
+        "DK": 800,
+        "FD": 850,
+        "BR": 750,
+        "BOV": 725
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254373_13L42133Q1952013370Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12857528",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373839694|{wagerAmount}"
+       }
+      },
+      "edge": 4.4
+     }
+    ]
+   },
+   {
+    "key": "8475172:goal|8476432:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 7.1,
+    "fair": 1317,
+    "starRank": 5,
+    "star": 0.817,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      270,
+      430
+     ],
+     "american": 1861,
+     "dec": 19.61
+    },
+    "evPct": 38.4,
+    "legs": [
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 29.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 275,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 270,
+        "FD": 270,
+        "BR": 245,
+        "BOV": 260,
+        "MGM": 275
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257187_13L42133Q1-218511862Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449287",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373894847|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988232-6391161&type=Single"
+       }
+      },
+      "edge": 3.2
+     },
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 23.6,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 430,
+       "bestBook": "FD",
+       "books": {
+        "DK": 400,
+        "FD": 430,
+        "BR": 410,
+        "BOV": 395
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253941_13L42133Q1-327809381Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496309",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831079|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     }
+    ]
+   },
+   {
+    "key": "8475754:goal|8484186:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 7.4,
+    "fair": 1252,
+    "starRank": 4,
+    "star": 0.835,
+    "parlay": {
+     "book": "BR",
+     "legs": [
+      290,
+      360
+     ],
+     "american": 1694,
+     "dec": 17.94
+    },
+    "evPct": 32.7,
+    "legs": [
+     {
+      "playerId": 8475754,
+      "name": "Brock Nelson",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 27.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 290,
+       "bestBook": "DK",
+       "books": {
+        "DK": 290,
+        "FD": 280,
+        "BR": 290,
+        "BOV": 275,
+        "MGM": 240
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257253_13L42133Q12082714192Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12496418",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874612|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988184-6391065&type=Single"
+       }
+      },
+      "edge": 1.7
+     },
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 27.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 360,
+       "bestBook": "BR",
+       "books": {
+        "DK": 330,
+        "FD": 300,
+        "BR": 360,
+        "MGM": 333,
+        "BOV": 305
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254322_13L42133Q1377601336Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=51950507",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831063|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987827-6390388&type=Single"
+       }
+      },
+      "edge": 5.4
+     }
+    ]
+   },
+   {
+    "key": "8476432:goal|8480039:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 8.3,
+    "fair": 1100,
+    "starRank": 3,
+    "star": 0.89,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      180,
+      430
+     ],
+     "american": 1384,
+     "dec": 14.84
+    },
+    "evPct": 23.6,
+    "legs": [
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 35.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "FD",
+       "books": {
+        "DK": 175,
+        "FD": 180,
+        "BR": 175,
+        "BOV": 172
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257340_13L42133Q1-2054815757Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=20852668",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845577|{wagerAmount}"
+       }
+      },
+      "edge": -0.4
+     },
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 23.6,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 430,
+       "bestBook": "FD",
+       "books": {
+        "DK": 400,
+        "FD": 430,
+        "BR": 410,
+        "BOV": 395
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253941_13L42133Q1-327809381Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496309",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831079|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     }
+    ]
+   },
+   {
+    "key": "8480039:goal|8481656:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 8.6,
+    "fair": 1066,
+    "starRank": 2,
+    "star": 0.906,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      180,
+      410
+     ],
+     "american": 1328,
+     "dec": 14.28
+    },
+    "evPct": 22.5,
+    "legs": [
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 35.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "FD",
+       "books": {
+        "DK": 175,
+        "FD": 180,
+        "BR": 175,
+        "BOV": 172
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257340_13L42133Q1-2054815757Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=20852668",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845577|{wagerAmount}"
+       }
+      },
+      "edge": -0.4
+     },
+     {
+      "playerId": 8481656,
+      "name": "Aliaksei Protas",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 24.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 410,
+       "bestBook": "FD",
+       "books": {
+        "DK": 380,
+        "FD": 410,
+        "BR": 340,
+        "BOV": 360
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254262_13L42133Q11241107052Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=41724183",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831101|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     }
+    ]
+   },
+   {
+    "key": "8480027:goal|8484186:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 10.1,
+    "fair": 887,
+    "starRank": 1,
+    "star": 0.976,
+    "parlay": {
+     "book": "BR",
+     "legs": [
+      160,
+      360
+     ],
+     "american": 1096,
+     "dec": 11.96
+    },
+    "evPct": 21.2,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 37.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 160,
+       "bestBook": "BR",
+       "books": {
+        "DK": 155,
+        "FD": 150,
+        "BR": 160,
+        "BOV": 150,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257745_13L42133Q1-1819449052Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=38764242",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845498|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988300-6391295&type=Single"
+       }
+      },
+      "edge": -1.1
+     },
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 27.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 360,
+       "bestBook": "BR",
+       "books": {
+        "DK": 330,
+        "FD": 300,
+        "BR": 360,
+        "MGM": 333,
+        "BOV": 305
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254322_13L42133Q1377601336Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=51950507",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831063|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987827-6390388&type=Single"
+       }
+      },
+      "edge": 5.4
+     }
+    ]
+   },
+   {
+    "key": "8478463:goal|8480027:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 6.7,
+    "fair": 1402,
+    "starRank": null,
+    "star": 0.721,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      155,
+      600
+     ],
+     "american": 1685,
+     "dec": 17.85
+    },
+    "evPct": 18.8,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 37.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 160,
+       "bestBook": "BR",
+       "books": {
+        "DK": 155,
+        "FD": 150,
+        "BR": 160,
+        "BOV": 150,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257745_13L42133Q1-1819449052Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=38764242",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845498|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988300-6391295&type=Single"
+       }
+      },
+      "edge": -1.1
+     },
+     {
+      "playerId": 8478463,
+      "name": "Anthony Beauvillier",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 17.8,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 600,
+       "bestBook": "DK",
+       "books": {
+        "DK": 600,
+        "FD": 575,
+        "BR": 450,
+        "BOV": 525
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253822_13L42133Q1-1188342178Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=23010458",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831119|{wagerAmount}"
+       }
+      },
+      "edge": 3.5
+     }
+    ]
+   },
+   {
+    "key": "8477476:goal|8481656:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 5.5,
+    "fair": 1713,
+    "starRank": null,
+    "star": 0.549,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      410,
+      320
+     ],
+     "american": 2042,
+     "dec": 21.42
+    },
+    "evPct": 18.2,
+    "legs": [
+     {
+      "playerId": 8481656,
+      "name": "Aliaksei Protas",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 24.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 410,
+       "bestBook": "FD",
+       "books": {
+        "DK": 380,
+        "FD": 410,
+        "BR": 340,
+        "BOV": 360
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254262_13L42133Q11241107052Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=41724183",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831101|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8477476,
+      "name": "Artturi Lehkonen",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 22.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 320,
+       "bestBook": "FD",
+       "books": {
+        "DK": 300,
+        "FD": 320,
+        "BR": 310,
+        "BOV": 295,
+        "MGM": 300
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257225_13L42133Q1-1713761000Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12496401",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373894845|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988311-6391319&type=Single"
+       }
+      },
+      "edge": -1.1
+     }
+    ]
+   },
+   {
+    "key": "8475768:goal|8478463:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 3.1,
+    "fair": 3166,
+    "starRank": null,
+    "star": 0.128,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      600,
+      450
+     ],
+     "american": 3750,
+     "dec": 38.5
+    },
+    "evPct": 17.9,
+    "legs": [
+     {
+      "playerId": 8478463,
+      "name": "Anthony Beauvillier",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 17.8,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 600,
+       "bestBook": "DK",
+       "books": {
+        "DK": 600,
+        "FD": 575,
+        "BR": 450,
+        "BOV": 525
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253822_13L42133Q1-1188342178Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=23010458",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831119|{wagerAmount}"
+       }
+      },
+      "edge": 3.5
+     },
+     {
+      "playerId": 8475768,
+      "name": "Jaden Schwartz",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 17.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 450,
+       "bestBook": "DK",
+       "books": {
+        "DK": 450,
+        "FD": 430,
+        "BR": 410,
+        "BOV": 415
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257303_13L42133Q11701937553Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449357",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874565|{wagerAmount}"
+       }
+      },
+      "edge": -1
+     }
+    ]
+   }
+  ],
+  "safest": [
+   {
+    "key": "8477492:point|8480039:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.8,
+    "fair": -137,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477492:point|8480018:point",
+    "section": "🛡️ Safest",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 54.8,
+    "fair": -121,
+    "starRank": 2,
+    "star": 0.999,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480018:point|8481540:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 52.8,
+    "fair": -112,
+    "starRank": 3,
+    "star": 0.996,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480039:point|8480069:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 47.3,
+    "fair": 111,
+    "starRank": 4,
+    "star": 0.99,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480069,
+      "name": "Cale Makar",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 62.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8480027:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 45.3,
+    "fair": 121,
+    "starRank": 5,
+    "star": 0.979,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481540:point|8483515:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 45.2,
+    "fair": 121,
+    "starRank": null,
+    "star": 0.978,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 61.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480027:point|8482740:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 41.8,
+    "fair": 139,
+    "starRank": null,
+    "star": 0.961,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482740,
+      "name": "Wyatt Johnston",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8482740:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 41.5,
+    "fair": 141,
+    "starRank": null,
+    "star": 0.956,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482740,
+      "name": "Wyatt Johnston",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8483457:point|8483515:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 41.4,
+    "fair": 142,
+    "starRank": null,
+    "star": 0.955,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 61.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8483457,
+      "name": "Lane Hutson",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475172:point|8480069:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 37.9,
+    "fair": 164,
+    "starRank": null,
+    "star": 0.915,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480069,
+      "name": "Cale Makar",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 62.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 54.3,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "due": [
+   {
+    "key": "8477492:point|8484186:goal",
+    "section": "🔥 Due / heating",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 20.7,
+    "fair": 384,
+    "starRank": 1,
+    "star": 0.92,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 27.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 360,
+       "bestBook": "BR",
+       "books": {
+        "DK": 330,
+        "FD": 300,
+        "BR": 360,
+        "MGM": 333,
+        "BOV": 305
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254322_13L42133Q1377601336Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=51950507",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831063|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987827-6390388&type=Single"
+       }
+      },
+      "edge": 5.4
+     },
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477492:point|8478440:goal",
+    "section": "🔥 Due / heating",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 19.6,
+    "fair": 411,
+    "starRank": 2,
+    "star": 0.9,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478440,
+      "name": "Dylan Strome",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 25.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 280,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 260,
+        "FD": 260,
+        "BR": 270,
+        "MGM": 280,
+        "BOV": 260
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254031_13L42133Q1-1198181689Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=21070422",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831132|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987948-6390632&type=Single"
+       }
+      },
+      "edge": -0.6
+     },
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480018:point|8484186:goal",
+    "section": "🔥 Due / heating",
+    "rel": "opp",
+    "corr": 0.98,
+    "chancePct": 19.1,
+    "fair": 424,
+    "starRank": 3,
+    "star": 0.887,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 27.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 360,
+       "bestBook": "BR",
+       "books": {
+        "DK": 330,
+        "FD": 300,
+        "BR": 360,
+        "MGM": 333,
+        "BOV": 305
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254322_13L42133Q1377601336Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=51950507",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831063|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987827-6390388&type=Single"
+       }
+      },
+      "edge": 5.4
+     },
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478440:goal|8480018:point",
+    "section": "🔥 Due / heating",
+    "rel": "opp",
+    "corr": 0.98,
+    "chancePct": 18.1,
+    "fair": 452,
+    "starRank": 4,
+    "star": 0.857,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478440,
+      "name": "Dylan Strome",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 25.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 280,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 260,
+        "FD": 260,
+        "BR": 270,
+        "MGM": 280,
+        "BOV": 260
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254031_13L42133Q1-1198181689Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=21070422",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831132|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987948-6390632&type=Single"
+       }
+      },
+      "edge": -0.6
+     },
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476432:goal|8480039:point",
+    "section": "🔥 Due / heating",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16,
+    "fair": 526,
+    "starRank": 5,
+    "star": 0.771,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 23.6,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 430,
+       "bestBook": "FD",
+       "books": {
+        "DK": 400,
+        "FD": 430,
+        "BR": 410,
+        "BOV": 395
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253941_13L42133Q1-327809381Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496309",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831079|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8471214:point|8476432:goal",
+    "section": "🔥 Due / heating",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 15.5,
+    "fair": 547,
+    "starRank": null,
+    "star": 0.746,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 23.6,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 430,
+       "bestBook": "FD",
+       "books": {
+        "DK": 400,
+        "FD": 430,
+        "BR": 410,
+        "BOV": 395
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253941_13L42133Q1-327809381Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496309",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831079|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479400:goal|8480039:point",
+    "section": "🔥 Due / heating",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.6,
+    "fair": 587,
+    "starRank": null,
+    "star": 0.691,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479400,
+      "name": "Pierre-Luc Dubois",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 21.5,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8471214:point|8479400:goal",
+    "section": "🔥 Due / heating",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 14.1,
+    "fair": 610,
+    "starRank": null,
+    "star": 0.666,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479400,
+      "name": "Pierre-Luc Dubois",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 21.5,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "soft": [
+   {
+    "key": "8471214:point|8476880:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 37.9,
+    "fair": 164,
+    "starRank": 1,
+    "star": 0.911,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476880,
+      "name": "Tom Wilson",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 57.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8471214:point|8479345:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 37.5,
+    "fair": 167,
+    "starRank": 2,
+    "star": 0.909,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479345,
+      "name": "Jakob Chychrun",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 57.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476880:point|8479345:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 37,
+    "fair": 170,
+    "starRank": 3,
+    "star": 0.901,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476880,
+      "name": "Tom Wilson",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 57.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479345,
+      "name": "Jakob Chychrun",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 57.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477949:point|8478440:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 33.6,
+    "fair": 198,
+    "starRank": 4,
+    "star": 0.825,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477949,
+      "name": "Alex Tuch",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 56.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478440,
+      "name": "Dylan Strome",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 53.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477949:point|8483457:point",
+    "section": "▲ Soft matchup",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 32.8,
+    "fair": 205,
+    "starRank": 5,
+    "star": 0.807,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483457,
+      "name": "Lane Hutson",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477949,
+      "name": "Alex Tuch",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 56.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478440:point|8483457:point",
+    "section": "▲ Soft matchup",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 31.1,
+    "fair": 222,
+    "starRank": null,
+    "star": 0.757,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483457,
+      "name": "Lane Hutson",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478440,
+      "name": "Dylan Strome",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 53.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479400:point|8484186:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 26.8,
+    "fair": 273,
+    "starRank": null,
+    "star": 0.602,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479400,
+      "name": "Pierre-Luc Dubois",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 49.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 48.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476432:point|8479400:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 24.7,
+    "fair": 305,
+    "starRank": null,
+    "star": 0.513,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479400,
+      "name": "Pierre-Luc Dubois",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 49.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 44.4,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476432:point|8484186:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 23.9,
+    "fair": 318,
+    "starRank": null,
+    "star": 0.461,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 48.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 44.4,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479385:point|8481656:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 20.5,
+    "fair": 387,
+    "starRank": null,
+    "star": 0.281,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479385,
+      "name": "Jordan Kyrou",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 42.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481656,
+      "name": "Aliaksei Protas",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 42.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "stacks": [
+   {
+    "key": "8477492:point|8480039:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.8,
+    "fair": -137,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477492:point|8480069:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 53.3,
+    "fair": -114,
+    "starRank": 2,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480069,
+      "name": "Cale Makar",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 62.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480018:point|8481540:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 52.8,
+    "fair": -112,
+    "starRank": 3,
+    "star": 0.996,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480018:point|8483515:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.5,
+    "fair": 102,
+    "starRank": 4,
+    "star": 0.994,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 61.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480039:point|8480069:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 47.3,
+    "fair": 111,
+    "starRank": 5,
+    "star": 0.99,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480069,
+      "name": "Cale Makar",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 62.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8480027:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 45.3,
+    "fair": 121,
+    "starRank": null,
+    "star": 0.979,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8471214:point|8481540:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 37.2,
+    "fair": 169,
+    "starRank": null,
+    "star": 0.905,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8471214:point|8483515:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 34.9,
+    "fair": 187,
+    "starRank": null,
+    "star": 0.855,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 61.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476880:point|8483457:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 33.7,
+    "fair": 197,
+    "starRank": null,
+    "star": 0.829,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483457,
+      "name": "Lane Hutson",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476880,
+      "name": "Tom Wilson",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 57.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475172:point|8480027:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 33.6,
+    "fair": 198,
+    "starRank": null,
+    "star": 0.824,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 54.3,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "balanced:goal": [
+   {
+    "key": "8477492:goal|8481540:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17.5,
+    "fair": 472,
+    "starRank": 3,
+    "star": 0.97,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      115,
+      140
+     ],
+     "american": 416,
+     "dec": 5.16
+    },
+    "evPct": -9.8,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 43.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 115,
+       "bestBook": "FD",
+       "books": {
+        "DK": 105,
+        "FD": 115,
+        "BR": -105,
+        "BOV": 105,
+        "MGM": 110
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257135_13L42133Q1-170743743Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449308",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874624|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988177-6391057&type=Single"
+       }
+      },
+      "edge": -2.6
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 140,
+       "bestBook": "FD",
+       "books": {
+        "DK": 125,
+        "FD": 140,
+        "BR": 120,
+        "MGM": 140,
+        "BOV": 128
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254473_13L42133Q1-635797582Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=24660529",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831073|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3988052-6390840&type=Single"
+       }
+      },
+      "edge": -1.9
+     }
+    ]
+   },
+   {
+    "key": "8480018:goal|8480027:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.1,
+    "fair": 607,
+    "starRank": 1,
+    "star": 1.029,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      220,
+      150
+     ],
+     "american": 700,
+     "dec": 8
+    },
+    "evPct": 13.1,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 37.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 220,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 190,
+        "FD": 200,
+        "BR": 195,
+        "MGM": 220,
+        "BOV": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254399_13L42133Q1997318835Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=20852694",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831040|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987951-6390636&type=Single"
+       }
+      },
+      "edge": 6.6
+     },
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 37.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 160,
+       "bestBook": "BR",
+       "books": {
+        "DK": 155,
+        "FD": 150,
+        "BR": 160,
+        "BOV": 150,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257745_13L42133Q1-1819449052Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=38764242",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845498|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988300-6391295&type=Single"
+       }
+      },
+      "edge": -1.1
+     }
+    ]
+   },
+   {
+    "key": "8471214:goal|8480039:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12.7,
+    "fair": 685,
+    "starRank": 2,
+    "star": 1.005,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      210,
+      180
+     ],
+     "american": 768,
+     "dec": 8.68
+    },
+    "evPct": 10.6,
+    "legs": [
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 36.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 210,
+       "bestBook": "FD",
+       "books": {
+        "DK": 195,
+        "FD": 210,
+        "BR": 200,
+        "MGM": 180,
+        "BOV": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253886_13L42133Q1708229946Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496319",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373839676|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987826-6390384&type=Single"
+       }
+      },
+      "edge": 3.8
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 35.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "FD",
+       "books": {
+        "DK": 175,
+        "FD": 180,
+        "BR": 175,
+        "BOV": 172
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257340_13L42133Q1-2054815757Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=20852668",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845577|{wagerAmount}"
+       }
+      },
+      "edge": -0.4
+     }
+    ]
+   },
+   {
+    "key": "8482740:goal|8483515:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 10.6,
+    "fair": 845,
+    "starRank": 4,
+    "star": 0.931,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 33.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 230,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 215,
+        "FD": 220,
+        "BR": 225,
+        "MGM": 230,
+        "BOV": 220
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254484_13L42133Q1660556265Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=44992503",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373833893|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987800-6390336&type=Single"
+       }
+      },
+      "edge": 3.6
+     },
+     {
+      "playerId": 8482740,
+      "name": "Wyatt Johnston",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 31.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477949:goal|8478420:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 9.9,
+    "fair": 908,
+    "starRank": null,
+    "star": 0.871,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      195,
+      200
+     ],
+     "american": 785,
+     "dec": 8.85
+    },
+    "evPct": -12.2,
+    "legs": [
+     {
+      "playerId": 8477949,
+      "name": "Alex Tuch",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 32.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 200,
+       "bestBook": "DK",
+       "books": {
+        "DK": 200,
+        "FD": 195,
+        "BR": 195,
+        "MGM": 200,
+        "BOV": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254150_13L42133Q1154234873Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=15948358",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373833930|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3988073-6390882&type=Single"
+       }
+      },
+      "edge": -1.1
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 30.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 200,
+       "bestBook": "FD",
+       "books": {
+        "DK": 180,
+        "FD": 200,
+        "BR": 200,
+        "BOV": 188
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257589_13L42133Q1-470455693Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449307",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874632|{wagerAmount}"
+       }
+      },
+      "edge": -2.5
+     }
+    ]
+   },
+   {
+    "key": "8475172:goal|8476880:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 9,
+    "fair": 1007,
+    "starRank": 5,
+    "star": 0.892,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      225,
+      270
+     ],
+     "american": 1103,
+     "dec": 12.025
+    },
+    "evPct": 8.6,
+    "legs": [
+     {
+      "playerId": 8476880,
+      "name": "Tom Wilson",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 30.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 225,
+       "bestBook": "DK",
+       "books": {
+        "DK": 225,
+        "FD": 210,
+        "BR": 210,
+        "MGM": 200,
+        "BOV": 215
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320253985_13L42133Q1-823427101Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496318",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373833983|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987878-6390496&type=Single"
+       }
+      },
+      "edge": -0.6
+     },
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 29.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 275,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 270,
+        "FD": 270,
+        "BR": 245,
+        "BOV": 260,
+        "MGM": 275
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257187_13L42133Q1-218511862Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12449287",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373894847|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988232-6391161&type=Single"
+       }
+      },
+      "edge": 3.2
+     }
+    ]
+   },
+   {
+    "key": "8475754:goal|8484186:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 7.4,
+    "fair": 1252,
+    "starRank": null,
+    "star": 0.835,
+    "parlay": {
+     "book": "BR",
+     "legs": [
+      290,
+      360
+     ],
+     "american": 1694,
+     "dec": 17.94
+    },
+    "evPct": 32.7,
+    "legs": [
+     {
+      "playerId": 8475754,
+      "name": "Brock Nelson",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 27.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 290,
+       "bestBook": "DK",
+       "books": {
+        "DK": 290,
+        "FD": 280,
+        "BR": 290,
+        "BOV": 275,
+        "MGM": 240
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257253_13L42133Q12082714192Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=12496418",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373874612|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988184-6391065&type=Single"
+       }
+      },
+      "edge": 1.7
+     },
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 27.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 360,
+       "bestBook": "BR",
+       "books": {
+        "DK": 330,
+        "FD": 300,
+        "BR": 360,
+        "MGM": 333,
+        "BOV": 305
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254322_13L42133Q1377601336Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=51950507",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831063|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987827-6390388&type=Single"
+       }
+      },
+      "edge": 5.4
+     }
+    ]
+   },
+   {
+    "key": "8478440:goal|8478449:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 6.3,
+    "fair": 1488,
+    "starRank": null,
+    "star": 0.537,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      280,
+      210
+     ],
+     "american": 1078,
+     "dec": 11.78
+    },
+    "evPct": -25.8,
+    "legs": [
+     {
+      "playerId": 8478440,
+      "name": "Dylan Strome",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 25.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 280,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 260,
+        "FD": 260,
+        "BR": 270,
+        "MGM": 280,
+        "BOV": 260
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254031_13L42133Q1-1198181689Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=21070422",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831132|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987948-6390632&type=Single"
+       }
+      },
+      "edge": -0.6
+     },
+     {
+      "playerId": 8478449,
+      "name": "Roope Hintz",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 24.5,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 225,
+       "bestBook": "DK",
+       "books": {
+        "DK": 225,
+        "FD": 210,
+        "BR": 210,
+        "BOV": 212,
+        "MGM": 210
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378877109%232320257644_13L42133Q1-998789330Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616184767&selectionId=23791207",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409922?coupon={pickType}|4373845599|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45648-3988313-6391323&type=Single"
+       }
+      },
+      "edge": -6.3
+     }
+    ]
+   },
+   {
+    "key": "8475184:goal|8484984:goal",
+    "section": "🚨 Goals",
+    "rel": "team",
+    "corr": 1,
+    "chancePct": 6,
+    "fair": 1561,
+    "starRank": null,
+    "star": 0.574,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8475184,
+      "name": "Chris Kreider",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 25.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 250,
+       "bestBook": "BR",
+       "books": {
+        "DK": 240,
+        "FD": 230,
+        "BR": 250,
+        "MGM": 250,
+        "BOV": 235
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254387_13L42133Q1454241221Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=12496363",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373839696|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3988023-6390780&type=Single"
+       }
+      },
+      "edge": -3.3
+     },
+     {
+      "playerId": 8484984,
+      "name": "Ivan Demidov",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 23.8,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479345:goal|8481656:goal",
+    "section": "🚨 Goals",
+    "rel": "team",
+    "corr": 1,
+    "chancePct": 5.8,
+    "fair": 1629,
+    "starRank": null,
+    "star": 0.535,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481656,
+      "name": "Aliaksei Protas",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 24.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 410,
+       "bestBook": "FD",
+       "books": {
+        "DK": 380,
+        "FD": 410,
+        "BR": 340,
+        "BOV": 360
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254262_13L42133Q11241107052Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=41724183",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831101|{wagerAmount}"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8479345,
+      "name": "Jakob Chychrun",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "D",
+      "prop": "goal",
+      "chancePct": 23.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 360,
+       "bestBook": "BR",
+       "books": {
+        "DK": 320,
+        "FD": 320,
+        "BR": 360,
+        "MGM": 300,
+        "BOV": 300
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378876224%232320254118_13L42133Q11949298175Q20",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616176303&selectionId=26346863",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409921?coupon={pickType}|4373831121|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45877-3987978-6390692&type=Single"
+       }
+      },
+      "edge": 2.1
+     }
+    ]
+   }
+  ],
+  "balanced:point": [
+   {
+    "key": "8477492:point|8480039:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 57.8,
+    "fair": -137,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 76.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 67.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480018:point|8481540:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 52.8,
+    "fair": -112,
+    "starRank": 2,
+    "star": 0.996,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 71.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 65.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8480027:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 45.3,
+    "fair": 121,
+    "starRank": 3,
+    "star": 0.979,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8483457:point|8483515:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 41.4,
+    "fair": 142,
+    "starRank": 4,
+    "star": 0.955,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 61.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8483457,
+      "name": "Lane Hutson",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475172:point|8480069:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 37.9,
+    "fair": 164,
+    "starRank": 5,
+    "star": 0.915,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480069,
+      "name": "Cale Makar",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 62.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 54.3,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8471214:point|8476880:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 37.9,
+    "fair": 164,
+    "starRank": null,
+    "star": 0.911,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476880,
+      "name": "Tom Wilson",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 57.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477949:point|8479345:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 36.1,
+    "fair": 177,
+    "starRank": null,
+    "star": 0.881,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479345,
+      "name": "Jakob Chychrun",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 57.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477949,
+      "name": "Alex Tuch",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 56.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480036:point|8482740:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 35,
+    "fair": 186,
+    "starRank": null,
+    "star": 0.858,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482740,
+      "name": "Wyatt Johnston",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480036,
+      "name": "Miro Heiskanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 53.4,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478440:point|8479400:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 29.7,
+    "fair": 237,
+    "starRank": null,
+    "star": 0.715,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478440,
+      "name": "Dylan Strome",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 53.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479400,
+      "name": "Pierre-Luc Dubois",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 49.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475184:point|8484984:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 28.6,
+    "fair": 250,
+    "starRank": null,
+    "star": 0.675,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8475184,
+      "name": "Chris Kreider",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 51,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8484984,
+      "name": "Ivan Demidov",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 50,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "balanced:sog3": [
+   {
+    "key": "8477492:sog3|8481540:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 43.1,
+    "fair": 132,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477492,
+      "name": "Nathan MacKinnon",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 69.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 61.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8471214:sog3|8480027:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 31.6,
+    "fair": 217,
+    "starRank": 2,
+    "star": 0.982,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 58.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8471214,
+      "name": "Alex Ovechkin",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 53.7,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475172:sog3|8479345:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 26.3,
+    "fair": 280,
+    "starRank": 3,
+    "star": 0.955,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479345,
+      "name": "Jakob Chychrun",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "D",
+      "prop": "sog3",
+      "chancePct": 53.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475172,
+      "name": "Nazem Kadri",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 49.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480018:sog3|8480069:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 25.3,
+    "fair": 295,
+    "starRank": 4,
+    "star": 0.937,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 51.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480069,
+      "name": "Cale Makar",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "D",
+      "prop": "sog3",
+      "chancePct": 48.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480039:sog3|8483515:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 22.9,
+    "fair": 336,
+    "starRank": 5,
+    "star": 0.92,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480039,
+      "name": "Martin Necas",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 48.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8483515,
+      "name": "Juraj Slafkovsky",
+      "team": "MTL",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 47.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477949:sog3|8482740:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 19.1,
+    "fair": 422,
+    "starRank": null,
+    "star": 0.867,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477949,
+      "name": "Alex Tuch",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 46.8,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482740,
+      "name": "Wyatt Johnston",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 40.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476432:sog3|8478420:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.8,
+    "fair": 574,
+    "starRank": null,
+    "star": 0.711,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 39.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476432,
+      "name": "Boone Jenner",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 37.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475754:sog3|8476880:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.3,
+    "fair": 652,
+    "starRank": null,
+    "star": 0.643,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476880,
+      "name": "Tom Wilson",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 37.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475754,
+      "name": "Brock Nelson",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 35.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478449:sog3|8484186:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12.6,
+    "fair": 693,
+    "starRank": null,
+    "star": 0.601,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484186,
+      "name": "Ryan Leonard",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 36.5,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478449,
+      "name": "Roope Hintz",
+      "team": "DAL",
+      "opp": "COL",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 34.6,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476455:sog3|8481656:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 9.7,
+    "fair": 926,
+    "starRank": null,
+    "star": 0.41,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481656,
+      "name": "Aliaksei Protas",
+      "team": "WSH",
+      "opp": "MTL",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 32.5,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476455,
+      "name": "Gabriel Landeskog",
+      "team": "COL",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 30,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ]
+ }
+}

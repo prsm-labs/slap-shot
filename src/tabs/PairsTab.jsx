@@ -310,11 +310,22 @@ function PairCard({ pr, n, isNew, h2h, boost, defRank }) {
   const [a, b] = pr.legs;
   const either = Math.min(1, a.chance + b.chance - pr.chance);
   const why = whyLine(pr, defRank);
+  // A pair stays on the board after its game(s) start, as reference (pre-game numbers, not live odds).
+  const started = pr.legs.filter((l) => l.p.gameStarted);
+  const startedTag = started.length
+    ? (pr.legs.every((l) => l.p.gameState === "FINAL" || l.p.gameState === "OFF") ? "FINAL" : "LIVE")
+    : null;
   return (
     <div className="card" style={{ padding: 12, border: gold ? `2px solid ${GOLD}` : "1px solid var(--border)", boxShadow: gold ? `0 0 14px ${GOLD}55` : undefined, borderRadius: 12, background: "var(--surface)" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         <span style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 700, fontSize: 14 }}>
           <StarBadge pr={pr} /> #{n} · {pr.section} {isNew && <span className="mono" style={{ fontSize: 9, color: "var(--accent2)", marginLeft: 4 }}>NEW</span>}
+          {startedTag && (
+            <span className="mono" title={`${started.length === 2 ? "Both games have" : "One leg's game has"} started — kept as reference; chances are the pre-game numbers`}
+              style={{ fontSize: 9, marginLeft: 6, padding: "1px 5px", borderRadius: 4, border: "1px solid var(--border)", color: "var(--muted)" }}>
+              {startedTag} · reference
+            </span>
+          )}
         </span>
         <span className="mono" style={{ fontSize: 12 }} title="Chance both legs hit = leg x leg x correlation">
           Both hit <b style={{ fontSize: 15 }}>{pct(pr.chance)}</b>
@@ -338,8 +349,16 @@ function PairCard({ pr, n, isNew, h2h, boost, defRank }) {
   );
 }
 
+// "17:31" -> "5:31 PM"
+const clock12 = (hm) => {
+  const [h, m] = (hm || "").split(":").map(Number);
+  return Number.isFinite(h) && Number.isFinite(m) ? `${((h + 11) % 12) + 1}:${String(m).padStart(2, "0")} ${h < 12 ? "AM" : "PM"}` : "pre-game";
+};
+
 export default function PairsTab() {
-  const pool = useScoredPool();
+  // Every game on tonight's slate, started or not: pairs stay up after puck drop as reference.
+  const allPlayers = useScoredPool({ includeStarted: true });
+  const pool = allPlayers;
   const selected = useMatchup();
   const h2hGrades = useH2HGrades();
   const [mode, setMode] = useState("balanced");
@@ -372,10 +391,9 @@ export default function PairsTab() {
   const locked = Boolean(lock) && !showLive;
 
   const livePairs = useMemo(() => {
-    if (!pool) return [];
-    return buildPairs(filterPlayers(pool.players, selected), { mode, boost, prop: propFilter });
-  }, [pool, selected, mode, boost, propFilter]);
-  const allPlayers = useScoredPool({ includeStarted: true });
+    if (!allPlayers) return [];
+    return buildPairs(filterPlayers(allPlayers.players, selected), { mode, boost, prop: propFilter, includeStarted: true });
+  }, [allPlayers, selected, mode, boost, propFilter]);
   const lockedPairs = useMemo(() => {
     if (!lock) return [];
     const byId = new Map((allPlayers?.players || []).map((p) => [p.playerId, p]));
@@ -391,7 +409,7 @@ export default function PairsTab() {
     ? board.filter((pr) => pr.starRank && pr.starRank <= starFilter).sort((a, b) => a.starRank - b.starRank)
     : board;
   const defRank = useMemo(() => defenseRanks(allPlayers?.players || []), [allPlayers]);
-  const blind = useMemo(() => (pool ? notInPairs(filterPlayers(pool.players, selected), pairs) : []), [pool, selected, pairs]);
+  const blind = useMemo(() => (pool ? notInPairs(filterPlayers(pool.players, selected), pairs, { includeStarted: true }) : []), [pool, selected, pairs]);
 
   // Reshuffle tracking: same mode + game filter, different pairs = the live slate changed underneath.
   const prev = useRef({ ctx: null, keys: null });
@@ -411,14 +429,16 @@ export default function PairsTab() {
 
   if (!pool) return <div className="mono" style={muted}>Loading tonight's slate…</div>;
   const modeInfo = MODES.find((m) => m.key === mode);
-  const games = new Set(pool.players.filter((p) => !p.gameStarted).map((p) => p.team)).size / 2;
+  const games = new Set(pool.players.map((p) => p.team)).size / 2;
+  const startedGames = new Set(pool.players.filter((p) => p.gameStarted).map((p) => p.team)).size / 2;
 
   return (
     <div>
       <div className="section-title" style={{ marginBottom: 4 }}>🤝 Pairs</div>
       <div className="mono" style={{ fontSize: 11, ...muted, marginBottom: 10 }}>
-        Up to {MAX_PAIRS} two-leg pairs built from tonight's upcoming games ({games} game{games === 1 ? "" : "s"}). They rebuild on their own
+        Up to {MAX_PAIRS} two-leg pairs built from tonight's games ({games} game{games === 1 ? "" : "s"}). They rebuild on their own
         when lineups, starting goalies or scratches change.
+        {startedGames > 0 && <> Pairs from games that have started stay up as reference (tagged LIVE / FINAL, pre-game chances).</>}
         {!locked && news.at && <> · <span style={{ color: "var(--accent2)" }}>🔄 Reshuffled {timeOf(news.at)} after lineup news</span></>}
       </div>
       {lock && (
@@ -428,7 +448,9 @@ export default function PairsTab() {
             <button className={`pill-btn ${showLive ? "active" : ""}`} onClick={() => setShowLive(true)}>🔄 Live</button>
           </div>
           <span className="mono" style={{ fontSize: 10, ...muted }}>
-            Locked {timeOf(new Date(lock._meta.lockedAt))} before the {lock._meta.firstGame} puck drop
+            {lock._meta.lockedAt
+              ? <>Locked {timeOf(new Date(lock._meta.lockedAt))} before the {lock._meta.firstGame} puck drop</>
+              : <>Locked after the fact from the {clock12(lock._meta.poolGenerated?.slice(11))} ET pre-game pool (no lineup news)</>}
             {lock._meta.teamsOfficial?.length ? ` · official lineups for ${lock._meta.teamsOfficial.length} teams` : ""}
             {lock._meta.late ? " · locked late (after the first game started)" : ""} — graded in Track Record › Pairs.
           </span>

@@ -139,10 +139,12 @@ function take(sorted, n, state) {
   return got;
 }
 
-// players: live slate skaters (upcoming games). Returns up to MAX_PAIRS pairs, each tagged with its section.
+// players: live slate skaters. Returns up to MAX_PAIRS pairs, each tagged with its section.
 // prop = null | "goal" | "point" | "sog3": only pairs whose two legs are both that prop (up to 10 of them).
-export function buildPairs(players, { mode = "balanced", boost = 0, prop = null } = {}) {
-  const live = players.filter((p) => !p.gameStarted && p.lineupStatus !== "out" && p.lineupStatus !== "scratched");
+// includeStarted: keep games that already started (the page shows them as reference, pre-game numbers). The lock
+// script leaves it off, so a late lock only freezes games still to start.
+export function buildPairs(players, { mode = "balanced", boost = 0, prop = null, includeStarted = false } = {}) {
+  const live = players.filter((p) => (includeStarted || !p.gameStarted) && p.lineupStatus !== "out" && p.lineupStatus !== "scratched");
   const top = (k) => live.map((p) => legOf(p, k)).filter(Boolean).sort((a, b) => b.chance - a.chance).slice(0, LEGS_PER_PROP);
   const allGoal = top("goal"), allPoint = top("point"), allSog = top("sog3");
   const only = (k, list) => (prop && prop !== k ? [] : list);
@@ -247,9 +249,9 @@ function hotIds(players) {
 // Blind-spot check: notable skaters tonight who aren't in any shown pair, with why they're notable and their
 // strongest prop. Notable = A/A+ grade, 🔥 due, 🍎 points due, 🚀 Breakout Watch, value vs book (edge >= 3), or a
 // B-or-better grade against a soft defense.
-export function notInPairs(players, pairs) {
+export function notInPairs(players, pairs, { includeStarted = false } = {}) {
   const used = new Set(pairs.flatMap((pr) => pr.legs.map((l) => l.p.playerId)));
-  const live = players.filter((p) => !p.gameStarted && p.lineupStatus !== "out" && p.lineupStatus !== "scratched" && p.modelProbs);
+  const live = players.filter((p) => (includeStarted || !p.gameStarted) && p.lineupStatus !== "out" && p.lineupStatus !== "scratched" && p.modelProbs);
   const hot = hotIds(live);
   const out = [];
   for (const p of live) {
