@@ -31,9 +31,28 @@ function titleNamesDate(title, date) {
   return MONTHS.indexOf(m[1]) + 1 === mo && Number(m[2]) === d;
 }
 
+// "nine minutes and 19 seconds" / "2:16 into" / "53 seconds into" -> seconds of game time
+function gameSeconds(s) {
+  let m = s.match(/(\d+):(\d\d) into/);
+  if (m) return Number(m[1]) * 60 + Number(m[2]);
+  m = s.match(/(?:(\w+) minutes? and )?(\w+) seconds into/);
+  if (m) return (m[1] ? num(m[1]) * 60 : 0) + num(m[2]);
+  return null;
+}
+
 // Past payouts quoted in the posts. Winner lines carry bettors + payout; "could've been" lines payout only.
-function payouts(text, postDate) {
+// "Ice Breaker results" posts (DK Network's night-of write-up) name the winner before DraftKings announces the
+// payout, so those winners come back with bettors / payout null until a later post quotes them.
+function payouts(text, postDate, title = "") {
   const out = [];
+  if (/ice breaker results/i.test(title)) {
+    const s = text.match(/[^.]*?(?:is|was) (?:\w+ night's|the|tonight's) (?:NHL )?Ice Breaker[^.]*/i);
+    if (s) {
+      const before = text.slice(0, text.indexOf(s[0]) + s[0].length);
+      const name = before.match(/([A-Z][\w.'-]+ [A-Z][\w.'-]+)/);
+      if (name) out.push({ name: name[1], bettors: null, payout: null, kind: "winner", post: postDate, seconds: gameSeconds(s[0]) });
+    }
+  }
   const win = /([A-Z][\w.'-]+(?: [A-Z][\w.'-]+){1,2}) was (?:the most recent|last week's|last night's|last week’s|last night’s) (?:NHL )?Ice Breaker, with (?:just |only )?([\d,]+|[a-z]+) DraftKings Sportsbook (?:bettors|users|customers) receiving (?:a |an )?(?:whopping )?\$([\d,]+)/g;
   for (const m of text.matchAll(win)) out.push({ name: m[1], bettors: num(m[2]), payout: num(m[3]), kind: "winner", post: postDate });
   const could = /🥅 ([A-Z][\w.'-]+(?: [A-Z][\w.'-]+){1,2}) [-–] \$([\d,]+)/g;
@@ -58,13 +77,15 @@ export async function promoStatus(date) {
     singleGame = /first goal of the game/i.test(today.text) && !/slate/i.test(today.text);
   }
   const seen = new Set();
-  const history = posts.flatMap((p) => payouts(p.text, p.date?.slice(0, 10)))
-    .filter((h) => {
-      const k = `${h.name}|${h.payout}`;
-      if (seen.has(k) || !(h.payout > 0)) return false;
-      seen.add(k);
-      return true;
-    });
+  const all = posts.flatMap((p) => payouts(p.text, p.date?.slice(0, 10), p.title));
+  const history = all.filter((h) => {
+    // a results-post winner without a payout yet: drop once a later post quotes his payout
+    if (h.payout == null) return h.kind === "winner" && !all.some((o) => o.name === h.name && o.payout > 0 && o.post >= h.post);
+    const k = `${h.name}|${h.payout}`;
+    if (seen.has(k) || !(h.payout > 0)) return false;
+    seen.add(k);
+    return true;
+  }).sort((a, b) => (b.post || "").localeCompare(a.post || ""));
   const thursday = new Date(`${date}T12:00:00Z`).getUTCDay() === 4;
   const status = today ? "confirmed" : thursday ? "likely" : "off";
   return {

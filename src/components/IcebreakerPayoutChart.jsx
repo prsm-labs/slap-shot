@@ -9,8 +9,11 @@ const W = 900, H = 430, M = { l: 62, r: 16, t: 16, b: 44 };
 const money = (v) => (v == null ? "—" : v >= 10000 ? `$${Math.round(v / 1000)}K` : `$${Math.round(v).toLocaleString()}`);
 const pctTxt = (p) => `${(p * 100).toFixed(p < 0.01 ? 2 : 1)}%`;
 
-export default function IcebreakerPayoutChart({ rows, selectedId, onSelect, opts, xMode }) {
+// selectedIds: every player picked (search, a tap on the graph, or a row in the table) — each gets a label.
+// onSelect(id) toggles one; onSelect(null) clears all.
+export default function IcebreakerPayoutChart({ rows, selectedIds = [], onSelect, opts, xMode }) {
   const [query, setQuery] = useState("");
+  const isSel = (id) => selectedIds.includes(id);
   const xOf = (r) => (xMode === "market" ? r.marketP ?? r.iceP : r.iceP);
   const pts = rows.filter((r) => r.payout != null && xOf(r) > 0).sort((a, b) => xOf(b) - xOf(a)).slice(0, 90);
   const scale = (() => {
@@ -38,14 +41,13 @@ export default function IcebreakerPayoutChart({ rows, selectedId, onSelect, opts
   const byEv = [...pts].sort((a, b) => (b.promoEv ?? 0) - (a.promoEv ?? 0)).slice(0, 6);
   const favs = pts.slice(0, 3);
   const labeled = new Map([...favs, ...byEv].map((r) => [r.playerId, r]));
-  const sel = pts.find((r) => r.playerId === selectedId);
-  if (sel) labeled.set(sel.playerId, sel);
+  for (const r of pts) if (isSel(r.playerId)) labeled.set(r.playerId, r);
   const topEv = new Set(byEv.slice(0, 3).map((r) => r.playerId));
 
   // label boxes: try spots above / below the dot (further out each try), keep the first that overlaps nothing
   const placed = [];
   const boxes = new Map();
-  const order = [...labeled.values()].sort((a, b) => (b.playerId === selectedId) - (a.playerId === selectedId));
+  const order = [...labeled.values()].sort((a, b) => isSel(b.playerId) - isSel(a.playerId)); // picked players place first
   for (const r of order) {
     const x = sx(xOf(r)), y = sy(Math.min(yMax, Math.max(yMin, r.payout)));
     const w = Math.max(r.name.length * 6.4, 60) + 10, h = 30;
@@ -73,15 +75,15 @@ export default function IcebreakerPayoutChart({ rows, selectedId, onSelect, opts
   return (
     <div className="card" style={{ padding: 10, marginBottom: 12 }}>
       <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 6 }}>
-        <input className="mono" placeholder="Find a player on the graph…" value={query} onChange={(e) => setQuery(e.target.value)}
+        <input className="mono" placeholder="Search players to add to the graph…" value={query} onChange={(e) => setQuery(e.target.value)}
           style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 9px", fontSize: 12, flex: "1 1 200px", minWidth: 160, maxWidth: 320 }} />
         {matches.map((r) => (
-          <button key={r.playerId} className={`pill-btn ${r.playerId === selectedId ? "active" : ""}`} style={{ fontSize: 10 }}
-            onClick={() => { onSelect(r.playerId); setQuery(""); }}>
-            {r.name} <span style={{ color: "var(--muted)" }}>{r.team}</span>
+          <button key={r.playerId} className={`pill-btn ${isSel(r.playerId) ? "active" : ""}`} style={{ fontSize: 10 }}
+            title={isSel(r.playerId) ? "Remove from the graph" : "Add to the graph"} onClick={() => onSelect(r.playerId)}>
+            {isSel(r.playerId) ? "✓ " : "+ "}{r.name} <span style={{ color: "var(--muted)" }}>{r.team}</span>
           </button>
         ))}
-        {selectedId && <button className="pill-btn" style={{ fontSize: 10 }} onClick={() => onSelect(null)}>✕ Clear selection</button>}
+        {selectedIds.length > 0 && <button className="pill-btn" style={{ fontSize: 10 }} onClick={() => onSelect(null)}>✕ Clear {selectedIds.length} picked</button>}
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto", display: "block" }} role="img" aria-label="Ice Breaker projected payout by chance">
         {yTicks.map((v) => (
@@ -99,21 +101,21 @@ export default function IcebreakerPayoutChart({ rows, selectedId, onSelect, opts
         <polygon points={band} fill="var(--accent)" opacity="0.10" />
         <polyline points={line} fill="none" stroke="var(--accent2)" strokeWidth="2" strokeDasharray="7 5" />
         {pts.map((r) => {
-          const on = r.playerId === selectedId;
+          const on = isSel(r.playerId);
           return (
             <circle key={r.playerId} cx={sx(xOf(r))} cy={sy(clampY(r.payout))} r={on ? 7 : labeled.has(r.playerId) ? 5 : 3.5}
               fill={on || topEv.has(r.playerId) ? "#d4af37" : labeled.has(r.playerId) ? "var(--accent2)" : "var(--accent)"}
               opacity={on || labeled.has(r.playerId) ? 1 : 0.55} stroke={on ? "#fff" : "none"} strokeWidth="2"
-              style={{ cursor: "pointer" }} onClick={() => onSelect(on ? null : r.playerId)}>
+              style={{ cursor: "pointer" }} onClick={() => onSelect(r.playerId)}>
               <title>{`${r.name} (${r.team}) — ${pctTxt(xOf(r))} · projected ${money(r.payout)} (80%: ${money(r.payLo)}–${money(r.payHi)})`}</title>
             </circle>
           );
         })}
         {[...labeled.values()].filter((r) => boxes.has(r.playerId)).map((r) => {
           const { cx: lx, cy: ly, w, x, y } = boxes.get(r.playerId);
-          const on = r.playerId === selectedId;
+          const on = isSel(r.playerId);
           return (
-            <g key={`l${r.playerId}`} style={{ cursor: "pointer" }} onClick={() => onSelect(on ? null : r.playerId)}>
+            <g key={`l${r.playerId}`} style={{ cursor: "pointer" }} onClick={() => onSelect(r.playerId)}>
               <line x1={x} y1={y} x2={lx} y2={ly + (ly > y ? -15 : 15)} stroke="var(--muted)" strokeWidth="1" />
               <rect x={lx - w / 2} y={ly - 15} width={w} height={30} rx="5" fill="var(--surface2, #10161d)"
                 stroke={on || topEv.has(r.playerId) ? "#d4af37" : "var(--accent)"} strokeWidth={on ? 2 : 1.2} />
@@ -130,7 +132,7 @@ export default function IcebreakerPayoutChart({ rows, selectedId, onSelect, opts
           : "Across = the market's chance (DraftKings first-goal odds, vig off, × the game's share of the first goal)."}
         {" "}The payout curve was fitted between ~0.4% and ~1.7% market chance — deep longshots (very high payouts) are an
         extrapolation, and only a handful of people pick them, so one or two extra entrants swing the real number a lot.
-        {" "}Tap a dot or label to show only that player in the table.
+        {" "}Search, tap dots / labels, or tap rows in the table to put several players on the graph at once (tap again to remove).
       </div>
     </div>
   );

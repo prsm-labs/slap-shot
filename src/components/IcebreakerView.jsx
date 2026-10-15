@@ -61,7 +61,17 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
   const [pool, setPool] = useState(null); // viewer edits; null = the promo's / model default
   const [entrants, setEntrants] = useState(PAYOUT.entrants);
   const [xMode, setXMode] = useState("market");
-  const [selectedId, setSelectedId] = useState(null);
+  // players picked on the graph / in the table (several at once); onlySel = table shows just them
+  const [selectedIds, setSelectedIds] = useState([]);
+  const [onlySel, setOnlySel] = useState(false);
+  const selSet = useMemo(() => new Set(selectedIds), [selectedIds]);
+  const toggleSel = (id) => setSelectedIds((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id]));
+  // from the graph / tracker: add (or remove) him and narrow the table to the picked players; null = clear
+  const pickFromChart = (id) => {
+    if (id == null) { setSelectedIds([]); setOnlySel(false); return; }
+    toggleSel(id);
+    setOnlySel(true);
+  };
   const opts = useMemo(() => ({ pool: pool ?? promo.pool ?? PAYOUT.pool, entrants }), [pool, promo.pool, entrants]);
   const board = useMemo(() => icebreakerBoard(players, group?.games, ratings), [players, group, ratings]);
   const allRows = useMemo(() => {
@@ -70,7 +80,7 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
   }, [board, promoHere, opts]);
   const rows = useMemo(() => filterPositions(allRows, position)
     .filter((r) => !soft || (r.oppSoftPct ?? 0) >= 0.67)
-    .filter((r) => !selectedId || r.playerId === selectedId), [allRows, position, soft, selectedId]);
+    .filter((r) => !onlySel || !selSet.size || selSet.has(r.playerId)), [allRows, position, soft, onlySel, selSet]);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "iceP", "desc");
   const [showAll, setShowAll] = useState(false);
   const [mode, setMode] = useState("players"); // "players" | "teams" | "graph" (promo nights)
@@ -140,7 +150,7 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
       </div>
 
       <IcebreakerTracker games={group.games} liveGames={liveGames} goals={goals} actual={actual} rows={allRows}
-        promoHere={promoHere} onPick={setSelectedId} />
+        promoHere={promoHere} onPick={pickFromChart} />
 
       <div className="pill-row" style={{ display: "inline-flex", marginBottom: 10 }}>
         <button className={`pill-btn ${mode === "players" ? "active" : ""}`} onClick={() => setMode("players")}>👤 Players</button>
@@ -168,14 +178,22 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
                 style={{ width: 80, marginLeft: 4, background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 4, padding: "2px 4px" }} />
             </label>
           </div>
-          <IcebreakerPayoutChart rows={allRows} selectedId={selectedId} onSelect={setSelectedId} opts={opts} xMode={xMode} />
+          <IcebreakerPayoutChart rows={allRows} selectedIds={selectedIds} onSelect={pickFromChart} opts={opts} xMode={xMode} />
           <PromoHistory history={promo.history} />
         </>
       )}
-      {selectedId && (
-        <div className="mono" style={{ fontSize: 11, marginBottom: 8 }}>
-          Showing: <b>{allRows.find((r) => r.playerId === selectedId)?.name}</b>{" "}
-          <button className="pill-btn" style={{ fontSize: 10 }} onClick={() => setSelectedId(null)}>✕ show all</button>
+      {selectedIds.length > 0 && (
+        <div className="mono" style={{ fontSize: 11, marginBottom: 8, display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+          <span>{promoHere ? "On the graph:" : "Picked:"}</span>
+          {selectedIds.map((id) => (
+            <button key={id} className="pill-btn active" style={{ fontSize: 10 }} title="Remove" onClick={() => toggleSel(id)}>
+              {allRows.find((r) => r.playerId === id)?.name || id} ✕
+            </button>
+          ))}
+          <button className={`pill-btn ${onlySel ? "active" : ""}`} style={{ fontSize: 10 }} onClick={() => setOnlySel((v) => !v)}>
+            {onlySel ? `Table: picked only (${selectedIds.length})` : "Table: everyone"}
+          </button>
+          <button className="pill-btn" style={{ fontSize: 10 }} onClick={() => { setSelectedIds([]); setOnlySel(false); }}>Clear all</button>
         </div>
       )}
       {soft && !rows.length && (
@@ -239,9 +257,14 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
           </thead>
           <tbody>
             {(showAll ? sorted : sorted.slice(0, SHOW)).map((p) => (
-              <tr key={p.playerId}>
-                <td className="clickable" onClick={() => openSkaterSlide(p)}>
+              <tr key={p.playerId} onClick={() => toggleSel(p.playerId)}
+                style={{ cursor: "pointer", ...(selSet.has(p.playerId) ? { "--row-bg": "rgba(212,175,55,0.16)", background: "rgba(212,175,55,0.16)" } : {}) }}
+                title={promoHere ? "Tap the row to show / hide him on the payout graph; tap the name for his profile" : "Tap the row to pick him; tap the name for his profile"}>
+                <td className="clickable" onClick={(e) => { e.stopPropagation(); openSkaterSlide(p); }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <button className="pill-btn" title={selSet.has(p.playerId) ? "Remove from the graph" : "Show on the graph"}
+                      style={{ fontSize: 10, padding: "1px 5px", ...(selSet.has(p.playerId) ? { borderColor: "#d4af37", color: "#d4af37" } : {}) }}
+                      onClick={(e) => { e.stopPropagation(); toggleSel(p.playerId); }}>{selSet.has(p.playerId) ? "★" : "☆"}</button>
                     <span className="mono" style={{ fontSize: 10, ...muted, width: 22 }}>#{p.iceRank}</span>
                     <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
                     <span className="player-name-link">{p.name}</span>
@@ -322,14 +345,15 @@ function PromoHistory({ history }) {
       {open && (
         <div className="table-wrap" style={{ marginTop: 6 }}>
           <table className="data-table">
-            <thead><tr><th>Player</th><th>Bettors</th><th>Paid each</th><th>Type</th><th>Posted</th></tr></thead>
+            <thead><tr><th>Player</th><th>Bettors</th><th>Paid each</th><th>Type</th><th title="Game clock of the winning goal, when the post gives it">Goal at</th><th>Posted</th></tr></thead>
             <tbody>
               {history.map((h, i) => (
                 <tr key={i}>
                   <td>{h.name}</td>
                   <td>{h.bettors ?? "—"}</td>
-                  <td>{money(h.payout)}</td>
+                  <td>{h.payout == null && h.kind === "winner" ? <span style={muted} title="DK Network named the winner; DraftKings hasn't published the payout in a post yet">not published yet</span> : money(h.payout)}</td>
                   <td>{h.kind === "winner" ? "Winner" : "Would have paid"}</td>
+                  <td>{h.seconds != null ? mmss(h.seconds) : "—"}</td>
                   <td>{h.post}</td>
                 </tr>
               ))}
@@ -422,7 +446,7 @@ function IcebreakerTracker({ games, liveGames, goals, actual, rows, promoHere, o
         </div>
       )}
       <div className="mono" style={{ fontSize: 9, ...muted, marginTop: 4 }}>
-        Fastest goal by game clock across these games (not time of day). Refreshes with the live feed (~30s). Tap a name to show him in the table.
+        Fastest goal by game clock across these games (not time of day). Refreshes with the live feed (~30s). Tap a name to add him to the graph and the table.
       </div>
     </div>
   );
