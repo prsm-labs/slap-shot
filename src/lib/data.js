@@ -81,9 +81,12 @@ function build() {
 // implied chance (vig included — books' anytime prices are one-sided), and edge = our goal % minus it.
 function withBookOdds(players) {
   const book = odds?.players;
-  if (!book) return players;
+  const first = odds?.firstGoal; // first goal scorer prices — Ice Breaker promo nights only (build_odds.py)
+  if (!book && !first) return players;
   return players.map((p) => {
-    const o = book[p.playerId];
+    const f = first?.[p.playerId];
+    if (f) p = { ...p, firstGoalBook: f };
+    const o = book?.[p.playerId];
     if (!o) return p;
     const edge = p.anytimeGoalPct != null ? Math.round((p.anytimeGoalPct - o.bestImplied) * 10) / 10 : null;
     return { ...p, book: o, bookBest: o.best, bookImplied: o.bestImplied, edge };
