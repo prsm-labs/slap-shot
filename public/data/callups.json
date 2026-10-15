@@ -1,13 +1,229 @@
 {
  "_meta": {
-  "generated": "2026-10-15 12:04",
+  "generated": "2026-10-15 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 35,
-  "up": 25,
+  "count": 37,
+  "up": 28,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8481572,
+   "name": "Ville Heinola",
+   "team": "VGK",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2001-03-02",
+   "sweater": 14,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "WPG",
+    "round": 1,
+    "overallPick": 20
+   },
+   "recalledOn": "2026-10-15",
+   "from": "Henderson",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-11",
+     "type": "up",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-10-14",
+     "type": "down",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Henderson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": -4,
+     "pim": 4,
+     "team": "Henderson Silver Knights"
+    },
+    "last": {
+     "gamesPlayed": 44,
+     "goals": 3,
+     "assists": 18,
+     "points": 21,
+     "plusMinus": -2,
+     "pim": 24,
+     "team": "Manitoba Moose"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 4,
+     "shots": 7,
+     "team": "Winnipeg Jets"
+    },
+    "careerGp": 58,
+    "careerG": 1,
+    "careerP": 12
+   }
+  },
+  {
+   "playerId": 8482781,
+   "name": "Carson Lambos",
+   "team": "MIN",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2003-01-14",
+   "sweater": 55,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "MIN",
+    "round": 1,
+    "overallPick": 26
+   },
+   "recalledOn": "2026-10-15",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": -1,
+     "pim": 5,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 8,
+     "assists": 11,
+     "points": 19,
+     "plusMinus": -4,
+     "pim": 48,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8483756,
+   "name": "Jared Wright",
+   "team": "LAK",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2002-11-22",
+   "sweater": 25,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "LAK",
+    "round": 6,
+    "overallPick": 169
+   },
+   "recalledOn": "2026-10-15",
+   "from": "Ontario",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-09",
+     "type": "up",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Ontario"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 2,
+     "assists": 1,
+     "points": 3,
+     "plusMinus": 1,
+     "pim": 0,
+     "team": "Ontario Reign"
+    },
+    "last": {
+     "gamesPlayed": 54,
+     "goals": 17,
+     "assists": 13,
+     "points": 30,
+     "plusMinus": 27,
+     "pim": 11,
+     "team": "Ontario Reign"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 3,
+     "team": "Los Angeles Kings"
+    },
+    "last": {
+     "gamesPlayed": 23,
+     "goals": 0,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": 0,
+     "pim": 4,
+     "shots": 32,
+     "team": "Los Angeles Kings"
+    },
+    "careerGp": 24,
+    "careerG": 0,
+    "careerP": 4
+   }
+  },
   {
    "playerId": 8475413,
    "name": "Justin Dowling",
@@ -132,6 +348,75 @@
    }
   },
   {
+   "playerId": 8477993,
+   "name": "Justin Kirkland",
+   "team": "MIN",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1996-08-02",
+   "sweater": 28,
+   "draft": {
+    "year": 2014,
+    "teamAbbrev": "NSH",
+    "round": 3,
+    "overallPick": 62
+   },
+   "recalledOn": "2026-10-13",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-15",
+   "events": [
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "down",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": -2,
+     "pim": 2,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 42,
+     "goals": 11,
+     "assists": 11,
+     "points": 22,
+     "plusMinus": -10,
+     "pim": 32,
+     "team": "Calgary Wranglers"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 20,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 1,
+     "pim": 2,
+     "shots": 11,
+     "team": "Calgary Flames"
+    },
+    "careerGp": 50,
+    "careerG": 3,
+    "careerP": 10
+   }
+  },
+  {
    "playerId": 8481544,
    "name": "Mads Sogaard",
    "team": "TBL",
@@ -198,70 +483,6 @@
     "careerGp": 31,
     "careerG": 0,
     "careerP": null
-   }
-  },
-  {
-   "playerId": 8477993,
-   "name": "Justin Kirkland",
-   "team": "MIN",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1996-08-02",
-   "sweater": 28,
-   "draft": {
-    "year": 2014,
-    "teamAbbrev": "NSH",
-    "round": 3,
-    "overallPick": 62
-   },
-   "recalledOn": "2026-10-13",
-   "from": "Iowa",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-13",
-     "type": "up",
-     "club": "Iowa"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 2,
-     "points": 2,
-     "plusMinus": -2,
-     "pim": 2,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 42,
-     "goals": 11,
-     "assists": 11,
-     "points": 22,
-     "plusMinus": -10,
-     "pim": 32,
-     "team": "Calgary Wranglers"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 20,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": 1,
-     "pim": 2,
-     "shots": 11,
-     "team": "Calgary Flames"
-    },
-    "careerGp": 50,
-    "careerG": 3,
-    "careerP": 10
    }
   },
   {
@@ -598,7 +819,7 @@
    "from": "Hershey",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -724,72 +945,81 @@
    }
   },
   {
-   "playerId": 8481572,
-   "name": "Ville Heinola",
-   "team": "VGK",
+   "playerId": 8483435,
+   "name": "Jorian Donovan",
+   "team": "OTT",
    "position": "D",
    "shoots": "L",
-   "birthDate": "2001-03-02",
-   "sweater": 14,
+   "birthDate": "2004-04-05",
+   "sweater": 56,
    "draft": {
-    "year": 2019,
-    "teamAbbrev": "WPG",
-    "round": 1,
-    "overallPick": 20
+    "year": 2022,
+    "teamAbbrev": "OTT",
+    "round": 5,
+    "overallPick": 136
    },
    "recalledOn": "2026-10-11",
-   "from": "Henderson",
+   "from": "Belleville",
    "fromLeague": "AHL",
    "timesRecalled": 1,
    "status": "down",
-   "sentDownOn": "2026-10-14",
+   "sentDownOn": "2026-10-15",
    "events": [
     {
      "date": "2026-10-11",
      "type": "up",
-     "club": "Henderson"
+     "club": "Belleville"
     },
     {
-     "date": "2026-10-14",
+     "date": "2026-10-15",
      "type": "down",
-     "club": "Henderson"
+     "club": "Belleville"
     }
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
-     "goals": 1,
-     "assists": 3,
-     "points": 4,
-     "plusMinus": -4,
-     "pim": 4,
-     "team": "Henderson Silver Knights"
-    },
-    "last": {
-     "gamesPlayed": 44,
-     "goals": 3,
-     "assists": 18,
-     "points": 21,
-     "plusMinus": -2,
-     "pim": 24,
-     "team": "Manitoba Moose"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 0,
-     "pim": 4,
-     "shots": 7,
-     "team": "Winnipeg Jets"
+     "pim": 0,
+     "team": "Belleville Senators"
     },
-    "careerGp": 58,
-    "careerG": 1,
-    "careerP": 12
+    "last": {
+     "gamesPlayed": 61,
+     "goals": 4,
+     "assists": 17,
+     "points": 21,
+     "plusMinus": -15,
+     "pim": 89,
+     "team": "Belleville Senators"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 5,
+     "shots": 0,
+     "team": "Ottawa Senators"
+    },
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 1,
+     "team": "Ottawa Senators"
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -936,79 +1166,6 @@
     "careerGp": 3,
     "careerG": 1,
     "careerP": 3
-   }
-  },
-  {
-   "playerId": 8483435,
-   "name": "Jorian Donovan",
-   "team": "OTT",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2004-04-05",
-   "sweater": 56,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "OTT",
-    "round": 5,
-    "overallPick": 136
-   },
-   "recalledOn": "2026-10-11",
-   "from": "Belleville",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-11",
-     "type": "up",
-     "club": "Belleville"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "team": "Belleville Senators"
-    },
-    "last": {
-     "gamesPlayed": 61,
-     "goals": 4,
-     "assists": 17,
-     "points": 21,
-     "plusMinus": -15,
-     "pim": 89,
-     "team": "Belleville Senators"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 5,
-     "shots": 0,
-     "team": "Ottawa Senators"
-    },
-    "last": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 1,
-     "team": "Ottawa Senators"
-    },
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -1286,79 +1443,6 @@
    }
   },
   {
-   "playerId": 8483756,
-   "name": "Jared Wright",
-   "team": "LAK",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2002-11-22",
-   "sweater": 25,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "LAK",
-    "round": 6,
-    "overallPick": 169
-   },
-   "recalledOn": "2026-10-09",
-   "from": "Ontario",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-09",
-     "type": "up",
-     "club": "Ontario"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 2,
-     "assists": 1,
-     "points": 3,
-     "plusMinus": 1,
-     "pim": 0,
-     "team": "Ontario Reign"
-    },
-    "last": {
-     "gamesPlayed": 54,
-     "goals": 17,
-     "assists": 13,
-     "points": 30,
-     "plusMinus": 27,
-     "pim": 11,
-     "team": "Ontario Reign"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 3,
-     "team": "Los Angeles Kings"
-    },
-    "last": {
-     "gamesPlayed": 23,
-     "goals": 0,
-     "assists": 4,
-     "points": 4,
-     "plusMinus": 0,
-     "pim": 4,
-     "shots": 32,
-     "team": "Los Angeles Kings"
-    },
-    "careerGp": 24,
-    "careerG": 0,
-    "careerP": 4
-   }
-  },
-  {
    "playerId": 8476952,
    "name": "Dominic Toninato",
    "team": "CHI",
@@ -1561,29 +1645,29 @@
    }
   },
   {
-   "playerId": 8483575,
+   "playerId": 8476899,
    "name": "Matt Murray",
    "team": "NSH",
    "position": "G",
    "shoots": "L",
-   "birthDate": "1998-02-02",
-   "sweater": 32,
-   "draft": null,
+   "birthDate": "1994-05-25",
+   "sweater": 30,
+   "draft": {
+    "year": 2012,
+    "teamAbbrev": "PIT",
+    "round": 3,
+    "overallPick": 83
+   },
    "recalledOn": "2026-10-06",
    "from": "Milwaukee",
    "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "up",
+   "timesRecalled": 1,
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
      "date": "2026-09-25",
      "type": "down",
-     "club": "Milwaukee"
-    },
-    {
-     "date": "2026-10-03",
-     "type": "up",
      "club": "Milwaukee"
     },
     {
@@ -1599,37 +1683,26 @@
    ],
    "ahl": {
     "season": null,
-    "last": {
-     "gamesPlayed": 47,
-     "wins": 22,
-     "losses": 22,
-     "otLosses": 2,
-     "shutouts": 4,
-     "goalsAgainst": 128,
-     "shotsAgainst": 1336,
-     "team": "Milwaukee Admirals",
-     "savePct": 0.904,
-     "gaa": 2.83
-    }
+    "last": null
    },
    "nhl": {
-    "season": {
-     "gamesPlayed": 1,
+    "season": null,
+    "last": {
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "pim": 0,
      "wins": 0,
-     "losses": 0,
+     "losses": 2,
      "otLosses": 1,
      "shutouts": 0,
-     "goalsAgainst": 2,
-     "shotsAgainst": 20,
-     "team": "Nashville Predators",
-     "savePct": 0.9,
-     "gaa": 1.85
+     "goalsAgainst": 8,
+     "shotsAgainst": 102,
+     "team": "Seattle Kraken",
+     "savePct": 0.922,
+     "gaa": 2.21
     },
-    "last": null,
-    "careerGp": 5,
+    "careerGp": 279,
     "careerG": 0,
     "careerP": null
    }
@@ -1853,6 +1926,35 @@
     "careerGp": 323,
     "careerG": 7,
     "careerP": 60
+   }
+  },
+  {
+   "team": "NSH",
+   "recalledOn": "2026-10-03",
+   "from": "Milwaukee",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-10-03",
+     "type": "up",
+     "club": "Milwaukee"
+    }
+   ],
+   "playerId": null,
+   "name": "Matthew Murray",
+   "position": "G",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
    }
   },
   {
