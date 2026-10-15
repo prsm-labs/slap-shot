@@ -50,7 +50,7 @@ const TEAM_COLS = [
 ];
 
 // soft: show only skaters (and teams) facing a defense in tonight's softest third (display only)
-export default function IcebreakerView({ players, slate, goals, position, soft = false, date }) {
+export default function IcebreakerView({ players, slate, goals, position, soft = false, date, liveGames }) {
   const ratings = useTeamRatings();
   const groups = useMemo(() => startGroups(slate), [slate]);
   const [startPick, setStartPick] = useState(null);
@@ -80,8 +80,6 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
 
   if (!ratings) return <div className="mono" style={{ ...muted, fontSize: 12 }}>Loading team ratings…</div>;
   if (!group) return <div className="note">No games on this slate.</div>;
-  const actualRow = actual ? board?.rows.find((r) => r.playerId === actual.scorerId) : null;
-  const allStarted = group.games.every((g) => g.state && g.state !== "FUT" && g.state !== "PRE");
   const fgTop = board ? [...board.rows].sort((a, b) => b.firstGoalP - a.firstGoalP)[0] : null;
   const top = board?.rows[0];
 
@@ -141,13 +139,8 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
         )}
       </div>
 
-      {actual && (
-        <div className="note" style={{ borderColor: "var(--accent)" }}>
-          🧊 {allStarted ? "Fastest goal so far" : "Fastest goal so far (not every game in this bucket has started)"}: <b>{actual.scorerName}</b> ({actual.scorerTeam})
-          {" "}at {Math.floor(actual.elapsedSeconds / 60)}:{String(actual.elapsedSeconds % 60).padStart(2, "0")} of game time, {actual.matchup?.replace("@", " @ ")}
-          {actualRow ? <span style={muted}> — our #{actualRow.iceRank} of {board.rows.length} ({pct(actualRow.iceP)})</span> : null}
-        </div>
-      )}
+      <IcebreakerTracker games={group.games} liveGames={liveGames} goals={goals} actual={actual} rows={allRows}
+        promoHere={promoHere} onPick={setSelectedId} />
 
       <div className="pill-row" style={{ display: "inline-flex", marginBottom: 10 }}>
         <button className={`pill-btn ${mode === "players" ? "active" : ""}`} onClick={() => setMode("players")}>👤 Players</button>
@@ -344,6 +337,93 @@ function PromoHistory({ history }) {
           </table>
         </div>
       )}
+    </div>
+  );
+}
+
+// 🧊 Live Ice Breaker tracker: the current leader (fastest goal by game clock so far), each game's first goal or how
+// far it has gone without one, which games can still beat the leader, and the best remaining candidates.
+const mmss = (sec) => `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`;
+function elapsedOf(g) {
+  if (!g?.period || !g.clock?.timeRemaining) return null;
+  const [m, sec] = g.clock.timeRemaining.split(":").map(Number);
+  return (g.period - 1) * 1200 + (1200 - (m * 60 + sec));
+}
+function IcebreakerTracker({ games, liveGames, goals, actual, rows, promoHere, onPick }) {
+  const live = new Map((liveGames || []).map((g) => [g.gameId, g]));
+  const started = games.some((g) => ["LIVE", "CRIT", "OFF", "FINAL"].includes(live.get(g.gameId)?.state || g.state));
+  if (!started) return null;
+  const first = new Map();
+  for (const x of goals || []) {
+    if (x.elapsedSeconds == null) continue;
+    const cur = first.get(x.gameId);
+    if (!cur || x.elapsedSeconds < cur.elapsedSeconds) first.set(x.gameId, x);
+  }
+  const lead = actual?.elapsedSeconds ?? null;
+  const lines = games.map((g) => {
+    const lg = live.get(g.gameId) || g;
+    const state = lg.state || "FUT";
+    const goal = first.get(g.gameId);
+    const el = state === "FINAL" || state === "OFF" ? null : elapsedOf(lg);
+    // can this game still produce a faster goal? only if it has no goal yet and its clock is still under the leader's
+    const alive = !goal && state !== "FINAL" && state !== "OFF" && (lead == null || el == null || el < lead);
+    return { g, state, goal, el, alive };
+  });
+  const aliveIds = new Set(lines.filter((l) => l.alive).map((l) => l.g.gameId));
+  const leaderRow = actual ? rows.find((r) => r.playerId === actual.scorerId) : null;
+  const contenders = rows.filter((r) => aliveIds.has(r.game.gameId)).sort((a, b) => b.iceP - a.iceP).slice(0, 5);
+  const decided = lead != null && aliveIds.size === 0;
+  return (
+    <div className="card" style={{ padding: 10, marginBottom: 12, borderColor: "#d4af37" }}>
+      <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6 }}>
+        🧊 Ice Breaker tracker {decided ? "— decided" : "— live"}
+      </div>
+      {actual ? (
+        <div style={{ fontSize: 13, marginBottom: 6 }}>
+          {decided ? "🏆 Ice Breaker: " : "Leader: "}
+          <b className="clickable player-name-link" onClick={() => onPick(actual.scorerId)}>{actual.scorerName}</b> ({actual.scorerTeam}) at <b>{mmss(actual.elapsedSeconds)}</b> of game time
+          {leaderRow ? <span style={muted}> · our #{leaderRow.iceRank} ({pct(leaderRow.iceP)})</span> : null}
+          {promoHere && leaderRow?.payout != null ? <span> · projected <b>${Math.round(leaderRow.payout).toLocaleString()}</b> in bonus bets each</span> : null}
+        </div>
+      ) : (
+        <div className="mono" style={{ fontSize: 11, ...muted, marginBottom: 6 }}>No goal yet in these games.</div>
+      )}
+      <div className="table-wrap">
+        <table className="data-table">
+          <thead><tr><th>Game</th><th>Status</th><th>First goal</th><th title="No goal yet and its clock is still under the leader's time">Can still beat it?</th></tr></thead>
+          <tbody>
+            {lines.map(({ g, state, goal, el, alive }) => (
+              <tr key={g.gameId}>
+                <td>{g.away} @ {g.home}</td>
+                <td className="mono" style={{ fontSize: 11 }}>
+                  {state === "FUT" || state === "PRE" ? "Not started" : state === "FINAL" || state === "OFF" ? "Final"
+                    : el != null ? `P${live.get(g.gameId)?.period} · ${mmss(el)} played${live.get(g.gameId)?.clock?.inIntermission ? " (int.)" : ""}` : "Live"}
+                </td>
+                <td>
+                  {goal ? <span className="clickable" onClick={() => onPick(goal.scorerId)}>
+                    {goal.scorerId === actual?.scorerId ? "🧊 " : ""}<span className="player-name-link">{goal.scorerName}</span> ({goal.scorerTeam}) {mmss(goal.elapsedSeconds)}
+                  </span> : <span style={muted}>{state === "FUT" || state === "PRE" ? "—" : `none through ${el != null ? mmss(el) : "—"}`}</span>}
+                </td>
+                <td>{alive ? "✓ yes" : <span style={muted}>no</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {!decided && contenders.length > 0 && (
+        <div className="mono" style={{ fontSize: 11, marginTop: 6 }}>
+          Most likely to {actual ? "beat it" : "break the ice"} (games still alive):{" "}
+          {contenders.map((r, i) => (
+            <span key={r.playerId}>
+              {i ? " · " : ""}<span className="clickable player-name-link" onClick={() => onPick(r.playerId)}>{r.name}</span>
+              <span style={muted}> {pct(r.iceP)}{promoHere && r.payout != null ? ` · $${Math.round(r.payout).toLocaleString()}` : ""}</span>
+            </span>
+          ))}
+        </div>
+      )}
+      <div className="mono" style={{ fontSize: 9, ...muted, marginTop: 4 }}>
+        Fastest goal by game clock across these games (not time of day). Refreshes with the live feed (~30s). Tap a name to show him in the table.
+      </div>
     </div>
   );
 }

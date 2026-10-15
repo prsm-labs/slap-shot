@@ -161,7 +161,7 @@ export default function FirstGoalTab() {
       {view === "ice" ? (<>
         <PositionFilter />
         <SoftDefensePill on={soft} />
-        <IcebreakerView players={pool} slate={meta.slate} goals={live?.goals} position={position} soft={soft} date={slateDate} />
+        <IcebreakerView players={pool} slate={meta.slate} goals={live?.goals} position={position} soft={soft} date={slateDate} liveGames={live?.games} />
       </>) : (<>
 
       <div className="note">
