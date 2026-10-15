@@ -5,6 +5,9 @@ import { useScoredPool } from "../lib/data.js";
 import { usePicks } from "../lib/picks.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "./PlayerAvatar.jsx";
+import { installHornUnlock, playGoalHorn } from "../lib/goalHorn.js";
+
+installHornUnlock(); // browsers only allow sound after the first tap / click
 
 // Drop-down notification bar (like a phone banner) + the header bell. Mounted once in App.jsx, so the
 // watchers run on every tab while the site is open:
@@ -144,8 +147,12 @@ export function AlertBell() {
           {row("goals", "🚨 Goals as they're scored (incl. 👀 hat watch / 🎩 hat trick)")}
           {row("lineups", "🥅 Confirmed goalies & official lineups")}
           {row("picksOnly", "⭐ Goals by my picks only")}
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            {row("horn", "📯 Goal horn sound")}
+            <button className="pill-btn" style={{ fontSize: 10 }} onClick={() => playGoalHorn({ force: true })}>▶ Test</button>
+          </div>
           <div className="mono" style={{ fontSize: 9, color: "var(--muted)", margin: "6px 0 8px" }}>
-            Shows while Slap Shot is open (any tab). Goals arrive ~15-45s after they're scored.
+            Shows while Slap Shot is open (any tab). Goals arrive ~15-45s after they're scored. The horn needs one tap on the page first, and stays quiet with an iPhone on silent.
           </div>
           {history.length === 0 && <div className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>No alerts yet.</div>}
           {history.map((a) => (

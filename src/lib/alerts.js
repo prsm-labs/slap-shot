@@ -2,9 +2,11 @@
 // confirmed / changed, official lineups posted. One shared store; watchers live in
 // components/NotificationBar.jsx. Preferences are saved in this browser.
 import { useSyncExternalStore } from "react";
+import { playGoalHorn } from "./goalHorn.js";
 
 const PREFS_KEY = "slapshot.alerts.v1";
-const DEFAULT_PREFS = { goals: true, lineups: true, picksOnly: false };
+const DEFAULT_PREFS = { goals: true, lineups: true, picksOnly: false, horn: true };
+const HORN_KINDS = new Set(["goal", "hatwatch", "hat"]); // goal alerts sound the horn (lib/goalHorn.js)
 const SHOW_MS = 8000;
 const MAX_VISIBLE = 3;
 const MAX_HISTORY = 30;
@@ -44,6 +46,7 @@ export function pushAlert(alert) {
     unread: state.unread + 1,
   });
   setTimeout(() => dismissAlert(a.id), SHOW_MS);
+  if (state.prefs.horn && HORN_KINDS.has(a.kind)) playGoalHorn();
 }
 
 export function dismissAlert(id) {
