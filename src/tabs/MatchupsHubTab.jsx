@@ -4,6 +4,7 @@ import LampLabTab from "./LampLabTab.jsx";
 import AppleLabTab from "./AppleLabTab.jsx";
 import CreaseLabTab from "./CreaseLabTab.jsx";
 import PairsTab from "./PairsTab.jsx";
+import LadderTab from "./LadderTab.jsx";
 import SlateStatus from "../components/SlateStatus.jsx";
 
 // "Scouting" top-level tab: All Matchups (the default view) plus every lab, switched by a button row in the
@@ -14,6 +15,7 @@ const VIEWS = [
   { key: "apple", label: "🍎 Apple Lab", Component: AppleLabTab },
   { key: "crease", label: "🥅 Crease Lab", Component: CreaseLabTab },
   { key: "pairs", label: "🤝 Pairs", Component: PairsTab },
+  { key: "ladder", label: "🪜 Game Ladder", Component: LadderTab },
 ];
 
 export default function MatchupsHubTab() {
