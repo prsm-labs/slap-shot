@@ -5,7 +5,6 @@ import PlayerSlideout from "./components/PlayerSlideout.jsx";
 import GoalTicker from "./components/GoalTicker.jsx";
 import NotificationBar, { AlertBell } from "./components/NotificationBar.jsx";
 import { installColumnResize } from "./lib/columnResize.js";
-import DashboardTab from "./tabs/DashboardTab.jsx";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
 import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
@@ -41,7 +40,6 @@ const TABS = [
   // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".
   { key: "live", label: "⚡ Goal Flurries", Component: LiveThemesTab },
   { key: "splits", label: "📊 Splits", Component: SplitsTab },
-  { key: "dashboard", label: "📊 Dashboard", Component: DashboardTab },
   { key: "lookup", label: "🔍 Matchup Lookup", Component: MatchupLookupTab },
   { key: "about", label: "📌 About", Component: AboutTab },
 ];
