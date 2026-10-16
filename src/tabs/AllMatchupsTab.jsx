@@ -124,8 +124,7 @@ export default function AllMatchupsTab() {
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
-                  <L120Cell p={p} kind="sog" />
-                  <L120Cell p={p} kind="hd" />
+                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} />)}
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>
                   <td className="mono" title={p.book ? Object.entries(p.book.books).map(([b, v]) => `${b} ${fmtAmerican(v)}`).join(" · ") + (p.book.open ? ` — opened ${fmtAmerican(p.book.open.best)} ${p.book.open.bestBook}` : "") : "No sportsbook price"} style={{ whiteSpace: "nowrap" }}>

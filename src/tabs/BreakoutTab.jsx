@@ -97,8 +97,7 @@ export default function BreakoutTab() {
                   <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
-                  <L120Cell p={p} kind="sog" />
-                  <L120Cell p={p} kind="hd" />
+                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} />)}
                   <td style={{ fontWeight: 700, color: "var(--accent2)" }}>{x(p.xgTrend)}</td>
                   <td>{x(p.hdTrend)}</td>
                   <td>{x(p.attTrend)}</td>

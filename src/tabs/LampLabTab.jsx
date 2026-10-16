@@ -203,8 +203,7 @@ export default function LampLabTab() {
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
-                  <L120Cell p={p} kind="sog" />
-                  <L120Cell p={p} kind="hd" />
+                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} />)}
                   <td><H2HCell playerId={p.playerId} /></td>
                   {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>
