@@ -11,14 +11,22 @@
      "BOS@ANA"
     ],
     "creditsLeft": 431
+   },
+   {
+    "at": "2026-10-16T21:33:48+00:00",
+    "games": [
+     "PIT@COL",
+     "BOS@ANA"
+    ],
+    "creditsLeft": 429
    }
   ],
-  "updated": "2026-10-16T13:04:25+00:00",
-  "creditsLeft": 431
+  "updated": "2026-10-16T21:33:48+00:00",
+  "creditsLeft": 429
  },
  "games": {
   "PIT@COL": {
-   "fetchedAt": "2026-10-16T13:04:25+00:00",
+   "fetchedAt": "2026-10-16T21:33:48+00:00",
    "eventId": "343be4cf732ddd9fd0a058953456d811",
    "players": 36,
    "books": [
@@ -30,7 +38,7 @@
    ]
   },
   "BOS@ANA": {
-   "fetchedAt": "2026-10-16T13:04:25+00:00",
+   "fetchedAt": "2026-10-16T21:33:48+00:00",
    "eventId": "7c44228f4c2e89133b34a3c70bfb30c5",
    "players": 35,
    "books": [
@@ -44,15 +52,21 @@
  },
  "players": {
   "8477492": {
+   "open": {
+    "best": -105,
+    "bestBook": "MGM",
+    "bestImplied": 51.2,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Nathan MacKinnon",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": -140,
+    "DK": -125,
     "MGM": -105,
-    "FD": -130,
+    "FD": -120,
     "BR": -127,
-    "BOV": -136
+    "BOV": -125
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642585_13L42133Q1-170743743Q20",
@@ -63,18 +77,24 @@
    "best": -105,
    "bestBook": "MGM",
    "bestImplied": 51.2,
-   "medianImplied": 56.5
+   "medianImplied": 55.6
   },
   "8480039": {
+   "open": {
+    "best": 155,
+    "bestBook": "MGM",
+    "bestImplied": 39.2,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Martin Necas",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 150,
+    "DK": 170,
     "MGM": 155,
-    "FD": 145,
-    "BR": 148,
-    "BOV": 149
+    "FD": 175,
+    "BR": 150,
+    "BOV": 167
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643174_13L42133Q1-2054815757Q20",
@@ -82,21 +102,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=20852668",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420689|{wagerAmount}"
    },
-   "best": 155,
-   "bestBook": "MGM",
-   "bestImplied": 39.2,
-   "medianImplied": 40.2
+   "best": 175,
+   "bestBook": "FD",
+   "bestImplied": 36.4,
+   "medianImplied": 37.5
   },
   "8480069": {
+   "open": {
+    "best": 270,
+    "bestBook": "FD",
+    "bestImplied": 27.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Cale Makar",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 250,
+    "DK": 265,
     "MGM": 250,
-    "FD": 270,
+    "FD": 275,
     "BR": 260,
-    "BOV": 250
+    "BOV": 255
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643249_13L42133Q11533347157Q20",
@@ -104,21 +130,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=25990567",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376432024|{wagerAmount}"
    },
-   "best": 270,
+   "best": 275,
    "bestBook": "FD",
-   "bestImplied": 27.0,
-   "medianImplied": 28.6
+   "bestImplied": 26.7,
+   "medianImplied": 27.8
   },
   "8476483": {
+   "open": {
+    "best": 260,
+    "bestBook": "MGM",
+    "bestImplied": 27.8,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Rickard Rakell",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 255,
+    "DK": 245,
     "MGM": 260,
-    "FD": 250,
-    "BR": 235,
-    "BOV": 245
+    "FD": 260,
+    "BR": 240,
+    "BOV": 240
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643600_13L42133Q1-1823173526Q20",
@@ -129,18 +161,24 @@
    "best": 260,
    "bestBook": "MGM",
    "bestImplied": 27.8,
-   "medianImplied": 28.6
+   "medianImplied": 29.0
   },
   "8471675": {
+   "open": {
+    "best": 255,
+    "bestBook": "DK",
+    "bestImplied": 28.2,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Sidney Crosby",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 255,
+    "DK": 250,
     "MGM": 240,
     "FD": 240,
-    "BR": 225,
-    "BOV": 240
+    "BR": 230,
+    "BOV": 235
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643612_13L42133Q1-1861961014Q20",
@@ -148,17 +186,23 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496353",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440539|{wagerAmount}"
    },
-   "best": 255,
+   "best": 250,
    "bestBook": "DK",
-   "bestImplied": 28.2,
+   "bestImplied": 28.6,
    "medianImplied": 29.4
   },
   "8471215": {
+   "open": {
+    "best": 290,
+    "bestBook": "FD",
+    "bestImplied": 25.6,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Evgeni Malkin",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 265,
+    "DK": 260,
     "MGM": 280,
     "FD": 290,
     "BR": 285,
@@ -176,15 +220,21 @@
    "medianImplied": 26.3
   },
   "8475172": {
+   "open": {
+    "best": 265,
+    "bestBook": "DK",
+    "bestImplied": 27.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Nazem Kadri",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 265,
-    "MGM": 240,
+    "DK": 240,
+    "MGM": 210,
     "FD": 260,
     "BR": 240,
-    "BOV": 250
+    "BOV": 240
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642658_13L42133Q1-218511862Q20",
@@ -192,21 +242,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449287",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440545|{wagerAmount}"
    },
-   "best": 265,
-   "bestBook": "DK",
-   "bestImplied": 27.4,
-   "medianImplied": 28.6
+   "best": 260,
+   "bestBook": "FD",
+   "bestImplied": 27.8,
+   "medianImplied": 29.4
   },
   "8475754": {
+   "open": {
+    "best": 270,
+    "bestBook": "DK",
+    "bestImplied": 27.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Brock Nelson",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 270,
+    "DK": 240,
     "MGM": 200,
     "FD": 240,
-    "BR": 225,
-    "BOV": 245
+    "BR": 230,
+    "BOV": 230
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642796_13L42133Q12082714192Q20",
@@ -214,20 +270,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496418",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420766|{wagerAmount}"
    },
-   "best": 270,
+   "best": 240,
    "bestBook": "DK",
-   "bestImplied": 27.0,
-   "medianImplied": 29.4
+   "bestImplied": 29.4,
+   "medianImplied": 30.3
   },
   "8477476": {
+   "open": {
+    "best": 275,
+    "bestBook": "DK",
+    "bestImplied": 26.7,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Artturi Lehkonen",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 275,
+    "DK": 265,
     "MGM": 260,
     "FD": 270,
-    "BR": 250,
+    "BR": 265,
     "BOV": 260
    },
    "links": {
@@ -236,21 +298,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496401",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440507|{wagerAmount}"
    },
-   "best": 275,
-   "bestBook": "DK",
-   "bestImplied": 26.7,
-   "medianImplied": 27.8
+   "best": 270,
+   "bestBook": "FD",
+   "bestImplied": 27.0,
+   "medianImplied": 27.4
   },
   "8475810": {
+   "open": {
+    "best": 280,
+    "bestBook": "FD",
+    "bestImplied": 26.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Bryan Rust",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
     "DK": 275,
-    "MGM": 260,
-    "FD": 280,
-    "BR": 275,
-    "BOV": 270
+    "MGM": 250,
+    "FD": 275,
+    "BR": 280,
+    "BOV": 265
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643699_13L42133Q1-1020243210Q20",
@@ -259,20 +327,26 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420800|{wagerAmount}"
    },
    "best": 280,
-   "bestBook": "FD",
+   "bestBook": "BR",
    "bestImplied": 26.3,
    "medianImplied": 26.7
   },
   "8486171": {
+   "open": {
+    "best": 333,
+    "bestBook": "MGM",
+    "bestImplied": 23.1,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "T.J. Hughes",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 310,
-    "MGM": 333,
-    "FD": 300,
+    "DK": 300,
+    "MGM": 340,
+    "FD": 290,
     "BR": 310,
-    "BOV": 290
+    "BOV": 280
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643559_13L42133Q1-556303293Q20",
@@ -280,21 +354,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=67592636",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440553|{wagerAmount}"
    },
-   "best": 333,
+   "best": 340,
    "bestBook": "MGM",
-   "bestImplied": 23.1,
-   "medianImplied": 24.4
+   "bestImplied": 22.7,
+   "medianImplied": 25.0
   },
   "8476455": {
+   "open": {
+    "best": 310,
+    "bestBook": "DK",
+    "bestImplied": 24.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Gabriel Landeskog",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 310,
+    "DK": 320,
     "MGM": 230,
-    "FD": 300,
-    "BR": 285,
-    "BOV": 295
+    "FD": 320,
+    "BR": 290,
+    "BOV": 300
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642588_13L42133Q12120579422Q20",
@@ -302,20 +382,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449309",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440563|{wagerAmount}"
    },
-   "best": 310,
+   "best": 320,
    "bestBook": "DK",
-   "bestImplied": 24.4,
-   "medianImplied": 25.3
+   "bestImplied": 23.8,
+   "medianImplied": 25.0
   },
   "8485414": {
+   "open": {
+    "best": 400,
+    "bestBook": "MGM",
+    "bestImplied": 20.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Ben Kindel",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
     "DK": 350,
     "MGM": 400,
-    "FD": 340,
-    "BR": 295,
+    "FD": 330,
+    "BR": 300,
     "BOV": 325
    },
    "links": {
@@ -327,15 +413,21 @@
    "best": 400,
    "bestBook": "MGM",
    "bestImplied": 20.0,
-   "medianImplied": 22.7
+   "medianImplied": 23.3
   },
   "8478438": {
+   "open": {
+    "best": 390,
+    "bestBook": "MGM",
+    "bestImplied": 20.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Tommy Novak",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 360,
-    "MGM": 390,
+    "DK": 350,
+    "MGM": 400,
     "FD": 380,
     "BR": 360,
     "BOV": 350
@@ -346,19 +438,25 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=53667902",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440551|{wagerAmount}"
    },
-   "best": 390,
+   "best": 400,
    "bestBook": "MGM",
-   "bestImplied": 20.4,
+   "bestImplied": 20.0,
    "medianImplied": 21.7
   },
   "8482475": {
+   "open": {
+    "best": 380,
+    "bestBook": "DK",
+    "bestImplied": 20.8,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Egor Chinakhov",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 380,
-    "MGM": 380,
-    "FD": 380,
+    "DK": 370,
+    "MGM": 390,
+    "FD": 400,
     "BR": 370,
     "BOV": 360
    },
@@ -368,21 +466,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=93774853",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376432022|{wagerAmount}"
    },
-   "best": 380,
-   "bestBook": "DK",
-   "bestImplied": 20.8,
-   "medianImplied": 20.8
+   "best": 400,
+   "bestBook": "FD",
+   "bestImplied": 20.0,
+   "medianImplied": 21.3
   },
   "8475768": {
+   "open": {
+    "best": 390,
+    "bestBook": "DK",
+    "bestImplied": 20.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Jaden Schwartz",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 390,
+    "DK": 265,
     "MGM": 360,
-    "FD": 380,
-    "BR": 350,
-    "BOV": 365
+    "FD": 260,
+    "BR": 320,
+    "BOV": 260
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643032_13L42133Q11701937553Q20",
@@ -390,21 +494,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449357",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376432044|{wagerAmount}"
    },
-   "best": 390,
-   "bestBook": "DK",
-   "bestImplied": 20.4,
-   "medianImplied": 21.5
+   "best": 360,
+   "bestBook": "MGM",
+   "bestImplied": 21.7,
+   "medianImplied": 27.4
   },
   "8474578": {
+   "open": {
+    "best": 550,
+    "bestBook": "FD",
+    "bestImplied": 15.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Erik Karlsson",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 475,
+    "DK": 500,
     "MGM": 475,
-    "FD": 550,
+    "FD": 575,
     "BR": 550,
-    "BOV": 475
+    "BOV": 500
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643680_13L42133Q11803730063Q20",
@@ -412,20 +522,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449407",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431957|{wagerAmount}"
    },
-   "best": 550,
+   "best": 575,
    "bestBook": "FD",
-   "bestImplied": 15.4,
-   "medianImplied": 17.4
+   "bestImplied": 14.8,
+   "medianImplied": 16.7
   },
   "8483808": {
+   "open": {
+    "best": 550,
+    "bestBook": "DK",
+    "bestImplied": 15.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Andrei Kuzmenko",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
     "DK": 550,
-    "MGM": 380,
+    "MGM": 375,
     "FD": 525,
-    "BR": 475,
+    "BR": 480,
     "BOV": 475
    },
    "links": {
@@ -437,18 +553,24 @@
    "best": 550,
    "bestBook": "DK",
    "bestImplied": 15.4,
-   "medianImplied": 17.4
+   "medianImplied": 17.2
   },
   "8478038": {
+   "open": {
+    "best": 600,
+    "bestBook": "DK",
+    "bestImplied": 14.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Devon Toews",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
     "DK": 600,
-    "MGM": 550,
-    "FD": 500,
-    "BR": 440,
-    "BOV": 475
+    "MGM": 575,
+    "FD": 550,
+    "BR": 450,
+    "BOV": 500
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643206_13L42133Q1-477048164Q20",
@@ -459,16 +581,22 @@
    "best": 600,
    "bestBook": "DK",
    "bestImplied": 14.3,
-   "medianImplied": 16.7
+   "medianImplied": 15.4
   },
   "8481582": {
+   "open": {
+    "best": 600,
+    "bestBook": "DK",
+    "bestImplied": 14.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Nick Robertson",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
     "DK": 600,
     "MGM": 450,
-    "FD": 600,
+    "FD": 625,
     "BR": 575,
     "BOV": 550
    },
@@ -478,21 +606,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=43165974",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431961|{wagerAmount}"
    },
-   "best": 600,
-   "bestBook": "DK",
-   "bestImplied": 14.3,
+   "best": 625,
+   "bestBook": "FD",
+   "bestImplied": 13.8,
    "medianImplied": 14.8
   },
   "8481725": {
+   "open": {
+    "best": 800,
+    "bestBook": "FD",
+    "bestImplied": 11.1,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Elmer Soderblom",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 700,
+    "DK": 650,
     "MGM": 550,
-    "FD": 800,
-    "BR": 575,
-    "BOV": 675
+    "FD": 750,
+    "BR": 600,
+    "BOV": 650
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643831_13L42133Q1-2043644624Q20",
@@ -500,19 +634,25 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=48894237",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420806|{wagerAmount}"
    },
-   "best": 800,
+   "best": 750,
    "bestBook": "FD",
-   "bestImplied": 11.1,
-   "medianImplied": 12.9
+   "bestImplied": 11.8,
+   "medianImplied": 13.3
   },
   "8484258": {
+   "open": {
+    "best": 750,
+    "bestBook": "DK",
+    "bestImplied": 11.8,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Sam Malinski",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 750,
+    "DK": 700,
     "MGM": 650,
-    "FD": 725,
+    "FD": 700,
     "BR": 700,
     "BOV": 650
    },
@@ -522,21 +662,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=62809572",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420760|{wagerAmount}"
    },
-   "best": 750,
+   "best": 700,
    "bestBook": "DK",
-   "bestImplied": 11.8,
+   "bestImplied": 12.5,
    "medianImplied": 12.5
   },
   "8480980": {
+   "open": {
+    "best": 900,
+    "bestBook": "FD",
+    "bestImplied": 10.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Connor Dewar",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
     "DK": 800,
     "MGM": 550,
-    "FD": 900,
+    "FD": 800,
     "BR": 700,
-    "BOV": 775
+    "BOV": 700
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643801_13L42133Q11000255630Q20",
@@ -544,21 +690,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=42285872",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440529|{wagerAmount}"
    },
-   "best": 900,
-   "bestBook": "FD",
-   "bestImplied": 10.0,
-   "medianImplied": 11.4
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 12.5
   },
   "8480448": {
+   "open": {
+    "best": 800,
+    "bestBook": "DK",
+    "bestImplied": 11.1,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Parker Kelly",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 800,
+    "DK": 700,
     "MGM": 450,
-    "FD": 700,
+    "FD": 550,
     "BR": 650,
-    "BOV": 650
+    "BOV": 550
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643419_13L42133Q1-1174590653Q20",
@@ -566,39 +718,53 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=41327608",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431992|{wagerAmount}"
    },
-   "best": 800,
+   "best": 700,
    "bestBook": "DK",
-   "bestImplied": 11.1,
-   "medianImplied": 13.3
+   "bestImplied": 12.5,
+   "medianImplied": 15.4
   },
   "8484149": {
+   "open": {
+    "best": 800,
+    "bestBook": "DK",
+    "bestImplied": 11.1,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Gavin Brindley",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 800,
+    "DK": 700,
+    "MGM": 600,
     "FD": 650,
-    "BR": 700,
-    "BOV": 625
+    "BR": 650,
+    "BOV": 600
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643525_13L42133Q1-1045713498Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026943-6461776&type=Single",
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=57615584",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376432042|{wagerAmount}"
    },
-   "best": 800,
+   "best": 700,
    "bestBook": "DK",
-   "bestImplied": 11.1,
-   "medianImplied": 12.9
+   "bestImplied": 12.5,
+   "medianImplied": 13.3
   },
   "8482768": {
+   "open": {
+    "best": 900,
+    "bestBook": "FD",
+    "bestImplied": 10.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Fedor Svechkov",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 850,
+    "DK": 900,
     "MGM": 700,
-    "FD": 900,
+    "FD": 850,
     "BR": 700,
     "BOV": 775
    },
@@ -609,19 +775,25 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440569|{wagerAmount}"
    },
    "best": 900,
-   "bestBook": "FD",
+   "bestBook": "DK",
    "bestImplied": 10.0,
    "medianImplied": 11.4
   },
   "8481481": {
+   "open": {
+    "best": 1100,
+    "bestBook": "FD",
+    "bestImplied": 8.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Blake Lizotte",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 1000,
-    "MGM": 600,
+    "DK": 950,
+    "MGM": 625,
     "FD": 1100,
-    "BR": 850,
+    "BR": 800,
     "BOV": 900
    },
    "links": {
@@ -636,14 +808,20 @@
    "medianImplied": 10.0
   },
   "8471724": {
+   "open": {
+    "best": 1100,
+    "bestBook": "FD",
+    "bestImplied": 8.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Kris Letang",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 1000,
-    "MGM": 850,
+    "DK": 1100,
+    "MGM": 875,
     "FD": 1100,
-    "BR": 900,
+    "BR": 850,
     "BOV": 900
    },
    "links": {
@@ -653,11 +831,17 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431977|{wagerAmount}"
    },
    "best": 1100,
-   "bestBook": "FD",
+   "bestBook": "DK",
    "bestImplied": 8.3,
    "medianImplied": 10.0
   },
   "8470613": {
+   "open": {
+    "best": 1200,
+    "bestBook": "DK",
+    "bestImplied": 7.7,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Brent Burns",
    "team": "COL",
    "game": "PIT@COL",
@@ -665,7 +849,7 @@
     "DK": 1200,
     "MGM": 775,
     "FD": 1200,
-    "BR": 800,
+    "BR": 850,
     "BOV": 1000
    },
    "links": {
@@ -680,15 +864,21 @@
    "medianImplied": 9.1
   },
   "8476312": {
+   "open": {
+    "best": 1500,
+    "bestBook": "DK",
+    "bestImplied": 6.2,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Josh Manson",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 1500,
+    "DK": 1600,
     "MGM": 775,
-    "FD": 1200,
+    "FD": 1400,
     "BR": 850,
-    "BOV": 1100
+    "BOV": 1200
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643386_13L42133Q11667695830Q20",
@@ -696,19 +886,25 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12862608",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376432004|{wagerAmount}"
    },
-   "best": 1500,
+   "best": 1600,
    "bestBook": "DK",
-   "bestImplied": 6.2,
-   "medianImplied": 8.3
+   "bestImplied": 5.9,
+   "medianImplied": 7.7
   },
   "8483398": {
+   "open": {
+    "best": 1800,
+    "bestBook": "FD",
+    "bestImplied": 5.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Declan Carlile",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 1700,
+    "DK": 1800,
     "MGM": 850,
-    "FD": 1800,
+    "FD": 1500,
     "BR": 900,
     "BOV": 1400
    },
@@ -719,20 +915,26 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431988|{wagerAmount}"
    },
    "best": 1800,
-   "bestBook": "FD",
+   "bestBook": "DK",
    "bestImplied": 5.3,
    "medianImplied": 6.7
   },
   "8476967": {
+   "open": {
+    "best": 1900,
+    "bestBook": "DK",
+    "bestImplied": 5.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Brett Kulak",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 1900,
+    "DK": 2000,
     "MGM": 1100,
-    "FD": 1400,
+    "FD": 1500,
     "BR": 850,
-    "BOV": 1300
+    "BOV": 1400
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643309_13L42133Q12102706196Q20",
@@ -740,19 +942,25 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=39538892",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431901|{wagerAmount}"
    },
-   "best": 1900,
+   "best": 2000,
    "bestBook": "DK",
-   "bestImplied": 5.0,
-   "medianImplied": 7.1
+   "bestImplied": 4.8,
+   "medianImplied": 6.7
   },
   "8478454": {
+   "open": {
+    "best": 1900,
+    "bestBook": "DK",
+    "bestImplied": 5.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Noah Juulsen",
    "team": "COL",
    "game": "PIT@COL",
    "books": {
-    "DK": 1900,
+    "DK": 1800,
     "MGM": 1600,
-    "FD": 1300,
+    "FD": 1400,
     "BR": 950,
     "BOV": 1300
    },
@@ -762,21 +970,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=42720403",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431971|{wagerAmount}"
    },
-   "best": 1900,
+   "best": 1800,
    "bestBook": "DK",
-   "bestImplied": 5.0,
-   "medianImplied": 7.1
+   "bestImplied": 5.3,
+   "medianImplied": 6.7
   },
   "8479398": {
+   "open": {
+    "best": 2000,
+    "bestBook": "DK",
+    "bestImplied": 4.8,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Samuel Girard",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 2000,
+    "DK": 1900,
     "MGM": 1300,
-    "FD": 2000,
+    "FD": 1800,
     "BR": 950,
-    "BOV": 1900
+    "BOV": 1800
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643718_13L42133Q11380109869Q20",
@@ -784,21 +998,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=26341380",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420770|{wagerAmount}"
    },
-   "best": 2000,
+   "best": 1900,
    "bestBook": "DK",
-   "bestImplied": 4.8,
-   "medianImplied": 5.0
+   "bestImplied": 5.0,
+   "medianImplied": 5.3
   },
   "8481527": {
+   "open": {
+    "best": 2200,
+    "bestBook": "DK",
+    "bestImplied": 4.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Kaedan Korczak",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
     "DK": 2200,
-    "MGM": 1500,
-    "FD": 2200,
+    "MGM": 1550,
+    "FD": 2100,
     "BR": 900,
-    "BOV": 2100
+    "BOV": 2000
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643805_13L42133Q1245531290Q20",
@@ -809,18 +1029,24 @@
    "best": 2200,
    "bestBook": "DK",
    "bestImplied": 4.3,
-   "medianImplied": 4.5
+   "medianImplied": 4.8
   },
   "8481056": {
+   "open": {
+    "best": 2800,
+    "bestBook": "DK",
+    "bestImplied": 3.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Spencer Stastney",
    "team": "PIT",
    "game": "PIT@COL",
    "books": {
-    "DK": 2800,
-    "MGM": 1200,
-    "FD": 2200,
-    "BR": 800,
-    "BOV": 2000
+    "DK": 2500,
+    "MGM": 1250,
+    "FD": 2400,
+    "BR": 750,
+    "BOV": 2300
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643847_13L42133Q1867663543Q20",
@@ -828,21 +1054,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=63510939",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420693|{wagerAmount}"
    },
-   "best": 2800,
+   "best": 2500,
    "bestBook": "DK",
-   "bestImplied": 3.4,
-   "medianImplied": 4.8
+   "bestImplied": 3.8,
+   "medianImplied": 4.2
   },
   "8477956": {
+   "open": {
+    "best": 143,
+    "bestBook": "BR",
+    "bestImplied": 41.2,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "David Pastrnak",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 140,
+    "DK": 135,
     "MGM": 125,
     "FD": 140,
     "BR": 143,
-    "BOV": 135
+    "BOV": 133
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630533_13L42133Q1-852739168Q20",
@@ -853,18 +1085,24 @@
    "best": 143,
    "bestBook": "BR",
    "bestImplied": 41.2,
-   "medianImplied": 41.7
+   "medianImplied": 42.6
   },
   "8483445": {
+   "open": {
+    "best": 175,
+    "bestBook": "MGM",
+    "bestImplied": 36.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Cutter Gauthier",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 145,
+    "DK": 130,
     "MGM": 175,
-    "FD": 145,
-    "BR": 140,
-    "BOV": 141
+    "FD": 135,
+    "BR": 138,
+    "BOV": 134
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630500_13L42133Q1-312822071Q20",
@@ -875,18 +1113,24 @@
    "best": 175,
    "bestBook": "MGM",
    "bestImplied": 36.4,
-   "medianImplied": 40.8
+   "medianImplied": 42.6
   },
   "8484762": {
+   "open": {
+    "best": 200,
+    "bestBook": "MGM",
+    "bestImplied": 33.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Beckett Sennecke",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 180,
+    "DK": 165,
     "MGM": 200,
-    "FD": 195,
-    "BR": 195,
-    "BOV": 185
+    "FD": 190,
+    "BR": 188,
+    "BOV": 180
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630507_13L42133Q1-426961209Q20",
@@ -897,18 +1141,24 @@
    "best": 200,
    "bestBook": "MGM",
    "bestImplied": 33.3,
-   "medianImplied": 33.9
+   "medianImplied": 34.7
   },
   "8484153": {
+   "open": {
+    "best": 200,
+    "bestBook": "MGM",
+    "bestImplied": 33.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Leo Carlsson",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 180,
+    "DK": 165,
     "MGM": 200,
-    "FD": 180,
-    "BR": 163,
-    "BOV": 172
+    "FD": 170,
+    "BR": 160,
+    "BOV": 170
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630463_13L42133Q1-338491320Q20",
@@ -919,9 +1169,15 @@
    "best": 200,
    "bestBook": "MGM",
    "bestImplied": 33.3,
-   "medianImplied": 35.7
+   "medianImplied": 37.0
   },
   "8479987": {
+   "open": {
+    "best": 200,
+    "bestBook": "MGM",
+    "bestImplied": 33.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Morgan Geekie",
    "team": "BOS",
    "game": "BOS@ANA",
@@ -929,7 +1185,7 @@
     "DK": 195,
     "MGM": 200,
     "FD": 200,
-    "BR": 170,
+    "BR": 180,
     "BOV": 195
    },
    "links": {
@@ -944,12 +1200,18 @@
    "medianImplied": 33.9
   },
   "8478401": {
+   "open": {
+    "best": 270,
+    "bestBook": "MGM",
+    "bestImplied": 27.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Pavel Zacha",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 235,
-    "MGM": 270,
+    "DK": 230,
+    "MGM": 260,
     "FD": 240,
     "BR": 245,
     "BOV": 230
@@ -960,21 +1222,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12449333",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446760|{wagerAmount}"
    },
-   "best": 270,
+   "best": 260,
    "bestBook": "MGM",
-   "bestImplied": 27.0,
+   "bestImplied": 27.8,
    "medianImplied": 29.4
   },
   "8482175": {
+   "open": {
+    "best": 300,
+    "bestBook": "MGM",
+    "bestImplied": 25.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "JJ Peterka",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
     "DK": 260,
     "MGM": 300,
-    "FD": 260,
-    "BR": 235,
-    "BOV": 255
+    "FD": 250,
+    "BR": 245,
+    "BOV": 250
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630559_13L42133Q11414819976Q20",
@@ -985,18 +1253,24 @@
    "best": 300,
    "bestBook": "MGM",
    "bestImplied": 25.0,
-   "medianImplied": 27.8
+   "medianImplied": 28.6
   },
   "8483489": {
+   "open": {
+    "best": 390,
+    "bestBook": "MGM",
+    "bestImplied": 20.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Fraser Minten",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
     "DK": 320,
     "MGM": 390,
-    "FD": 310,
-    "BR": 325,
-    "BOV": 300
+    "FD": 330,
+    "BR": 330,
+    "BOV": 310
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630562_13L42133Q1-684481969Q20",
@@ -1007,17 +1281,23 @@
    "best": 390,
    "bestBook": "MGM",
    "bestImplied": 20.4,
-   "medianImplied": 23.8
+   "medianImplied": 23.3
   },
   "8477496": {
+   "open": {
+    "best": 370,
+    "bestBook": "BR",
+    "bestImplied": 21.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Elias Lindholm",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 330,
+    "DK": 340,
     "MGM": 280,
-    "FD": 350,
-    "BR": 370,
+    "FD": 370,
+    "BR": 375,
     "BOV": 330
    },
    "links": {
@@ -1026,20 +1306,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12449438",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472241|{wagerAmount}"
    },
-   "best": 370,
+   "best": 375,
    "bestBook": "BR",
-   "bestImplied": 21.3,
-   "medianImplied": 23.3
+   "bestImplied": 21.1,
+   "medianImplied": 22.7
   },
   "8485395": {
+   "open": {
+    "best": 475,
+    "bestBook": "MGM",
+    "bestImplied": 17.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "James Hagens",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 330,
-    "MGM": 475,
+    "DK": 360,
+    "MGM": 500,
     "FD": 360,
-    "BR": 330,
+    "BR": 335,
     "BOV": 335
    },
    "links": {
@@ -1048,20 +1334,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=75905931",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446853|{wagerAmount}"
    },
-   "best": 475,
+   "best": 500,
    "bestBook": "MGM",
-   "bestImplied": 17.4,
-   "medianImplied": 23.0
+   "bestImplied": 16.7,
+   "medianImplied": 21.7
   },
   "8473986": {
+   "open": {
+    "best": 360,
+    "bestBook": "MGM",
+    "bestImplied": 21.7,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Alex Killorn",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 330,
+    "DK": 310,
     "MGM": 360,
     "FD": 320,
-    "BR": 325,
+    "BR": 320,
     "BOV": 320
    },
    "links": {
@@ -1073,18 +1365,24 @@
    "best": 360,
    "bestBook": "MGM",
    "bestImplied": 21.7,
-   "medianImplied": 23.5
+   "medianImplied": 23.8
   },
   "8481538": {
+   "open": {
+    "best": 475,
+    "bestBook": "MGM",
+    "bestImplied": 17.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Judd Caulfield",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 370,
+    "DK": 400,
     "MGM": 475,
-    "FD": 380,
+    "FD": 400,
     "BR": 430,
-    "BOV": 350
+    "BOV": 365
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630474_13L42133Q1-1936053132Q20",
@@ -1095,18 +1393,24 @@
    "best": 475,
    "bestBook": "MGM",
    "bestImplied": 17.4,
-   "medianImplied": 20.8
+   "medianImplied": 20.0
   },
   "8486052": {
+   "open": {
+    "best": 550,
+    "bestBook": "MGM",
+    "bestImplied": 15.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Nikita Klepov",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
     "DK": 400,
     "MGM": 550,
-    "FD": 380,
-    "BR": 390,
-    "BOV": 365
+    "FD": 360,
+    "BR": 375,
+    "BOV": 360
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630529_13L42133Q1-1568588605Q20",
@@ -1117,18 +1421,24 @@
    "best": 550,
    "bestBook": "MGM",
    "bestImplied": 15.4,
-   "medianImplied": 20.4
+   "medianImplied": 21.1
   },
   "8481754": {
+   "open": {
+    "best": 550,
+    "bestBook": "MGM",
+    "bestImplied": 15.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Nikita Nesterenko",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 450,
-    "MGM": 550,
-    "FD": 400,
-    "BR": 400,
-    "BOV": 385
+    "DK": 380,
+    "MGM": 500,
+    "FD": 370,
+    "BR": 390,
+    "BOV": 365
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630454_13L42133Q1565202991Q20",
@@ -1136,21 +1446,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=67975488",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466427|{wagerAmount}"
    },
-   "best": 550,
+   "best": 500,
    "bestBook": "MGM",
-   "bestImplied": 15.4,
-   "medianImplied": 20.0
+   "bestImplied": 16.7,
+   "medianImplied": 20.8
   },
   "8478366": {
+   "open": {
+    "best": 460,
+    "bestBook": "FD",
+    "bestImplied": 17.9,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Frank Vatrano",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 450,
-    "MGM": 325,
-    "FD": 460,
+    "DK": 425,
+    "MGM": 280,
+    "FD": 450,
     "BR": 440,
-    "BOV": 415
+    "BOV": 405
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630372_13L42133Q1-865747025Q20",
@@ -1158,20 +1474,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12694590",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472292|{wagerAmount}"
    },
-   "best": 460,
+   "best": 450,
    "bestBook": "FD",
-   "bestImplied": 17.9,
-   "medianImplied": 18.5
+   "bestImplied": 18.2,
+   "medianImplied": 19.0
   },
   "8481605": {
+   "open": {
+    "best": 550,
+    "bestBook": "MGM",
+    "bestImplied": 15.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Jackson LaCombe",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
     "DK": 500,
-    "MGM": 550,
+    "MGM": 475,
     "FD": 500,
-    "BR": 475,
+    "BR": 480,
     "BOV": 460
    },
    "links": {
@@ -1180,12 +1502,18 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=61754115",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472443|{wagerAmount}"
    },
-   "best": 550,
-   "bestBook": "MGM",
-   "bestImplied": 15.4,
-   "medianImplied": 16.7
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 17.2
   },
   "8479999": {
+   "open": {
+    "best": 550,
+    "bestBook": "FD",
+    "bestImplied": 15.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Casey Mittelstadt",
    "team": "BOS",
    "game": "BOS@ANA",
@@ -1193,7 +1521,7 @@
     "DK": 500,
     "MGM": 425,
     "FD": 550,
-    "BR": 450,
+    "BR": 460,
     "BOV": 475
    },
    "links": {
@@ -1208,14 +1536,20 @@
    "medianImplied": 17.4
   },
   "8479325": {
+   "open": {
+    "best": 550,
+    "bestBook": "DK",
+    "bestImplied": 15.4,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Charlie McAvoy",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 550,
+    "DK": 500,
     "MGM": 525,
     "FD": 500,
-    "BR": 440,
+    "BR": 460,
     "BOV": 460
    },
    "links": {
@@ -1224,12 +1558,18 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=20919626",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446834|{wagerAmount}"
    },
-   "best": 550,
-   "bestBook": "DK",
-   "bestImplied": 15.4,
+   "best": 525,
+   "bestBook": "MGM",
+   "bestImplied": 16.0,
    "medianImplied": 16.7
   },
   "8482177": {
+   "open": {
+    "best": 750,
+    "bestBook": "FD",
+    "bestImplied": 11.8,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Marat Khusnutdinov",
    "team": "BOS",
    "game": "BOS@ANA",
@@ -1238,7 +1578,7 @@
     "MGM": 600,
     "FD": 750,
     "BR": 650,
-    "BOV": 650
+    "BOV": 675
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630558_13L42133Q1-127332906Q20",
@@ -1249,15 +1589,21 @@
    "best": 750,
    "bestBook": "FD",
    "bestImplied": 11.8,
-   "medianImplied": 13.3
+   "medianImplied": 12.9
   },
   "8483505": {
+   "open": {
+    "best": 800,
+    "bestBook": "DK",
+    "bestImplied": 11.1,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Matthew Poitras",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
     "DK": 800,
-    "MGM": 650,
+    "MGM": 625,
     "FD": 750,
     "BR": 700,
     "BOV": 700
@@ -1274,15 +1620,21 @@
    "medianImplied": 12.5
   },
   "8478421": {
+   "open": {
+    "best": 850,
+    "bestBook": "DK",
+    "bestImplied": 10.5,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "A.J. Greer",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 850,
-    "MGM": 375,
-    "FD": 850,
+    "DK": 600,
+    "MGM": 333,
+    "FD": 600,
     "BR": 650,
-    "BOV": 725
+    "BOV": 550
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630413_13L42133Q1853481098Q20",
@@ -1290,21 +1642,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=42357649",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466332|{wagerAmount}"
    },
-   "best": 850,
-   "bestBook": "DK",
-   "bestImplied": 10.5,
-   "medianImplied": 12.1
+   "best": 650,
+   "bestBook": "BR",
+   "bestImplied": 13.3,
+   "medianImplied": 14.3
   },
   "8485512": {
+   "open": {
+    "best": 950,
+    "bestBook": "FD",
+    "bestImplied": 9.5,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Tim Washe",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 900,
-    "MGM": 650,
-    "FD": 950,
-    "BR": 850,
-    "BOV": 825
+    "DK": 850,
+    "MGM": 600,
+    "FD": 850,
+    "BR": 800,
+    "BOV": 750
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630516_13L42133Q1-1555218374Q20",
@@ -1312,21 +1670,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=93606198",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446726|{wagerAmount}"
    },
-   "best": 950,
-   "bestBook": "FD",
-   "bestImplied": 9.5,
-   "medianImplied": 10.5
+   "best": 850,
+   "bestBook": "DK",
+   "bestImplied": 10.5,
+   "medianImplied": 11.1
   },
   "8480355": {
+   "open": {
+    "best": 900,
+    "bestBook": "DK",
+    "bestImplied": 10.0,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Mark Kastelic",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 900,
+    "DK": 700,
     "MGM": 475,
-    "FD": 850,
+    "FD": 700,
     "BR": 650,
-    "BOV": 750
+    "BOV": 650
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630550_13L42133Q11154768239Q20",
@@ -1334,20 +1698,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=42683288",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472275|{wagerAmount}"
    },
-   "best": 900,
+   "best": 700,
    "bestBook": "DK",
-   "bestImplied": 10.0,
-   "medianImplied": 11.8
+   "bestImplied": 12.5,
+   "medianImplied": 13.3
   },
   "8482408": {
+   "open": {
+    "best": 950,
+    "bestBook": "DK",
+    "bestImplied": 9.5,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Jeff Malott",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
     "DK": 950,
-    "MGM": 725,
+    "MGM": 650,
     "BR": 850,
-    "BOV": 775
+    "BOV": 800
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630420_13L42133Q1-1432275118Q20",
@@ -1357,18 +1727,24 @@
    "best": 950,
    "bestBook": "DK",
    "bestImplied": 9.5,
-   "medianImplied": 11.0
+   "medianImplied": 10.8
   },
   "8482511": {
+   "open": {
+    "best": 1000,
+    "bestBook": "DK",
+    "bestImplied": 9.1,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Mason Lohrei",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
     "DK": 1000,
     "MGM": 850,
-    "FD": 1000,
+    "FD": 1100,
     "BR": 850,
-    "BOV": 875
+    "BOV": 900
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630561_13L42133Q11437052300Q20",
@@ -1376,20 +1752,26 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=62477009",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466358|{wagerAmount}"
    },
-   "best": 1000,
-   "bestBook": "DK",
-   "bestImplied": 9.1,
-   "medianImplied": 10.3
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 10.0
   },
   "8483482": {
+   "open": {
+    "best": 1000,
+    "bestBook": "DK",
+    "bestImplied": 9.1,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Tristan Luneau",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 1000,
+    "DK": 950,
     "MGM": 775,
     "FD": 950,
-    "BR": 800,
+    "BR": 750,
     "BOV": 850
    },
    "links": {
@@ -1398,21 +1780,27 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=61923479",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466396|{wagerAmount}"
    },
-   "best": 1000,
+   "best": 950,
    "bestBook": "DK",
-   "bestImplied": 9.1,
+   "bestImplied": 9.5,
    "medianImplied": 10.5
   },
   "8476854": {
+   "open": {
+    "best": 1100,
+    "bestBook": "DK",
+    "bestImplied": 8.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Hampus Lindholm",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 1100,
-    "MGM": 800,
+    "DK": 1000,
+    "MGM": 825,
     "FD": 1100,
     "BR": 950,
-    "BOV": 1000
+    "BOV": 900
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630544_13L42133Q1674472356Q20",
@@ -1421,16 +1809,22 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446728|{wagerAmount}"
    },
    "best": 1100,
-   "bestBook": "DK",
+   "bestBook": "FD",
    "bestImplied": 8.3,
-   "medianImplied": 9.1
+   "medianImplied": 9.5
   },
   "8479661": {
+   "open": {
+    "best": 1100,
+    "bestBook": "DK",
+    "bestImplied": 8.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Tanner Jeannot",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 1100,
+    "DK": 1000,
     "MGM": 550,
     "FD": 1100,
     "BR": 850,
@@ -1443,20 +1837,26 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446702|{wagerAmount}"
    },
    "best": 1100,
-   "bestBook": "DK",
+   "bestBook": "FD",
    "bestImplied": 8.3,
    "medianImplied": 10.0
   },
   "8483017": {
+   "open": {
+    "best": 1100,
+    "bestBook": "DK",
+    "bestImplied": 8.3,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Frederic Brunet",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 1100,
+    "DK": 950,
     "MGM": 550,
-    "FD": 1000,
+    "FD": 1100,
     "BR": 900,
-    "BOV": 900
+    "BOV": 875
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630564_13L42133Q11876645327Q20",
@@ -1465,18 +1865,24 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472294|{wagerAmount}"
    },
    "best": 1100,
-   "bestBook": "DK",
+   "bestBook": "FD",
    "bestImplied": 8.3,
    "medianImplied": 10.0
   },
   "8483490": {
+   "open": {
+    "best": 1200,
+    "bestBook": "DK",
+    "bestImplied": 7.7,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Pavel Mintyukov",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
     "DK": 1200,
-    "MGM": 850,
-    "FD": 1200,
+    "MGM": 775,
+    "FD": 1100,
     "BR": 800,
     "BOV": 1000
    },
@@ -1492,13 +1898,19 @@
    "medianImplied": 9.1
   },
   "8478840": {
+   "open": {
+    "best": 1700,
+    "bestBook": "FD",
+    "bestImplied": 5.6,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Will Borgen",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 1500,
+    "DK": 2000,
     "MGM": 1300,
-    "FD": 1700,
+    "FD": 1800,
     "BR": 750,
     "BOV": 1500
    },
@@ -1508,39 +1920,51 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=41294836",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466343|{wagerAmount}"
    },
-   "best": 1700,
-   "bestBook": "FD",
-   "bestImplied": 5.6,
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
    "medianImplied": 6.2
   },
   "8482731": {
+   "open": {
+    "best": 1600,
+    "bestBook": "DK",
+    "bestImplied": 5.9,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Tyson Hinds",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 1600,
-    "MGM": 900,
+    "DK": 1700,
+    "MGM": 850,
     "BR": 1050,
-    "BOV": 1200
+    "BOV": 1300
    },
    "links": {
     "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630483_13L42133Q1627066171Q20",
     "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026622-6461183&type=Single",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472252|{wagerAmount}"
    },
-   "best": 1600,
+   "best": 1700,
    "bestBook": "DK",
-   "bestImplied": 5.9,
-   "medianImplied": 8.2
+   "bestImplied": 5.6,
+   "medianImplied": 7.9
   },
   "8477507": {
+   "open": {
+    "best": 1700,
+    "bestBook": "DK",
+    "bestImplied": 5.6,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Nikita Zadorov",
    "team": "BOS",
    "game": "BOS@ANA",
    "books": {
-    "DK": 1700,
+    "DK": 1600,
     "MGM": 950,
-    "FD": 1600,
+    "FD": 1700,
     "BR": 850,
     "BOV": 1400
    },
@@ -1551,19 +1975,25 @@
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446754|{wagerAmount}"
    },
    "best": 1700,
-   "bestBook": "DK",
+   "bestBook": "FD",
    "bestImplied": 5.6,
    "medianImplied": 6.7
   },
   "8481563": {
+   "open": {
+    "best": 2300,
+    "bestBook": "FD",
+    "bestImplied": 4.2,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Drew Helleson",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 2000,
-    "MGM": 1300,
+    "DK": 1900,
+    "MGM": 1250,
     "FD": 2300,
-    "BR": 900,
+    "BR": 850,
     "BOV": 2100
    },
    "links": {
@@ -1575,16 +2005,22 @@
    "best": 2300,
    "bestBook": "FD",
    "bestImplied": 4.2,
-   "medianImplied": 4.8
+   "medianImplied": 5.0
   },
   "8483521": {
+   "open": {
+    "best": 2000,
+    "bestBook": "DK",
+    "bestImplied": 4.8,
+    "at": "2026-10-16T13:04:25+00:00"
+   },
    "name": "Noah Warren",
    "team": "ANA",
    "game": "BOS@ANA",
    "books": {
-    "DK": 2000,
-    "MGM": 800,
-    "FD": 1900,
+    "DK": 1800,
+    "MGM": 725,
+    "FD": 2100,
     "BR": 1000,
     "BOV": 1900
    },
@@ -1594,10 +2030,10 @@
     "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=64280305",
     "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446700|{wagerAmount}"
    },
-   "best": 2000,
-   "bestBook": "DK",
-   "bestImplied": 4.8,
-   "medianImplied": 5.0
+   "best": 2100,
+   "bestBook": "FD",
+   "bestImplied": 4.5,
+   "medianImplied": 5.3
   }
  },
  "unmatched": [

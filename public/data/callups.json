@@ -1,13 +1,158 @@
 {
  "_meta": {
-  "generated": "2026-10-16 12:04",
+  "generated": "2026-10-16 17:33",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 38,
+  "count": 40,
   "up": 28,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8483494,
+   "name": "Ty Nelson",
+   "team": "SEA",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2004-03-30",
+   "sweater": 24,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "SEA",
+    "round": 3,
+    "overallPick": 68
+   },
+   "recalledOn": "2026-10-16",
+   "from": "Coachella Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-16",
+     "type": "up",
+     "club": "Coachella Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": 4,
+     "pim": 6,
+     "team": "Coachella Valley Firebirds"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 11,
+     "assists": 24,
+     "points": 35,
+     "plusMinus": 13,
+     "pim": 26,
+     "team": "Coachella Valley Firebirds"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8479390,
+   "name": "Taylor Raddysh",
+   "team": "NYR",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "1998-02-18",
+   "sweater": 14,
+   "draft": {
+    "year": 2016,
+    "teamAbbrev": "TBL",
+    "round": 2,
+    "overallPick": 58
+   },
+   "recalledOn": "2026-10-16",
+   "from": "Hartford",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-16",
+     "type": "up",
+     "club": "Hartford"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 3,
+     "assists": 2,
+     "points": 5,
+     "plusMinus": 2,
+     "pim": 2,
+     "team": "Hartford Wolf Pack"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 9,
+     "assists": 10,
+     "points": 19,
+     "plusMinus": 5,
+     "pim": 12,
+     "shots": 53,
+     "team": "New York Rangers"
+    },
+    "careerGp": 373,
+    "careerG": 52,
+    "careerP": 119
+   }
+  },
+  {
+   "team": "MIN",
+   "recalledOn": "2026-10-15",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-16",
+     "type": "down",
+     "club": "Iowa"
+    }
+   ],
+   "playerId": null,
+   "name": "Carson Lambos",
+   "position": "D",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-10-16",
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
+   }
+  },
   {
    "playerId": 8481572,
    "name": "Ville Heinola",
@@ -80,35 +225,6 @@
     "careerGp": 58,
     "careerG": 1,
     "careerP": 12
-   }
-  },
-  {
-   "team": "MIN",
-   "recalledOn": "2026-10-15",
-   "from": "Iowa",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "events": [
-    {
-     "date": "2026-10-15",
-     "type": "up",
-     "club": "Iowa"
-    }
-   ],
-   "playerId": null,
-   "name": "Carson Lambos",
-   "position": "D",
-   "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
-   "ahl": {
-    "season": null,
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0
    }
   },
   {
@@ -386,6 +502,67 @@
    }
   },
   {
+   "playerId": 8484900,
+   "name": "Cooper Black",
+   "team": "FLA",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-06-14",
+   "sweater": 31,
+   "draft": null,
+   "recalledOn": "2026-10-13",
+   "from": "Charlotte",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-16",
+   "events": [
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Charlotte"
+    },
+    {
+     "date": "2026-10-16",
+     "type": "down",
+     "club": "Charlotte"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 2,
+     "wins": 1,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 6,
+     "shotsAgainst": 64,
+     "team": "Charlotte Checkers",
+     "savePct": 0.906,
+     "gaa": 3.01
+    },
+    "last": {
+     "gamesPlayed": 42,
+     "wins": 25,
+     "losses": 13,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 103,
+     "shotsAgainst": 1058,
+     "team": "Charlotte Checkers",
+     "savePct": 0.903,
+     "gaa": 2.47
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
    "playerId": 8477993,
    "name": "Justin Kirkland",
    "team": "MIN",
@@ -520,62 +697,6 @@
     },
     "careerGp": 31,
     "careerG": 0,
-    "careerP": null
-   }
-  },
-  {
-   "playerId": 8484900,
-   "name": "Cooper Black",
-   "team": "FLA",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2001-06-14",
-   "sweater": 31,
-   "draft": null,
-   "recalledOn": "2026-10-13",
-   "from": "Charlotte",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-13",
-     "type": "up",
-     "club": "Charlotte"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 2,
-     "wins": 1,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 6,
-     "shotsAgainst": 64,
-     "team": "Charlotte Checkers",
-     "savePct": 0.906,
-     "gaa": 3.01
-    },
-    "last": {
-     "gamesPlayed": 42,
-     "wins": 25,
-     "losses": 13,
-     "otLosses": 4,
-     "shutouts": 1,
-     "goalsAgainst": 103,
-     "shotsAgainst": 1058,
-     "team": "Charlotte Checkers",
-     "savePct": 0.903,
-     "gaa": 2.47
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0,
-    "careerG": null,
     "careerP": null
    }
   },
