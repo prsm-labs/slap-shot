@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-15 17:34",
+  "generated": "2026-10-16 09:04",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 37,
-  "up": 28,
+  "count": 38,
+  "up": 27,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -225,6 +225,70 @@
    }
   },
   {
+   "playerId": 8484392,
+   "name": "Felix Unger S\u00f6rum",
+   "team": "CAR",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2005-09-14",
+   "sweater": 36,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "CAR",
+    "round": 2,
+    "overallPick": 62
+   },
+   "recalledOn": "2026-10-15",
+   "from": "Chicago",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Chicago"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -6,
+     "pim": 2,
+     "team": "Chicago Wolves"
+    },
+    "last": {
+     "gamesPlayed": 72,
+     "goals": 17,
+     "assists": 49,
+     "points": 66,
+     "plusMinus": 13,
+     "pim": 20,
+     "team": "Chicago Wolves"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 0,
+     "team": "Carolina Hurricanes"
+    },
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 1
+   }
+  },
+  {
    "playerId": 8475413,
    "name": "Justin Dowling",
    "team": "NYR",
@@ -267,7 +331,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 0,
+     "team": "New York Rangers"
+    },
     "last": {
      "gamesPlayed": 2,
      "goals": 0,
@@ -278,7 +351,7 @@
      "shots": 1,
      "team": "New York Rangers"
     },
-    "careerGp": 154,
+    "careerGp": 155,
     "careerG": 9,
     "careerP": 26
    }
@@ -634,13 +707,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
+     "gamesPlayed": 2,
+     "goals": 1,
      "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 0,
+     "points": 2,
+     "plusMinus": 3,
+     "pim": 2,
+     "shots": 1,
      "team": "Buffalo Sabres"
     },
     "last": {
@@ -653,9 +726,9 @@
      "shots": 2,
      "team": "Ottawa Senators"
     },
-    "careerGp": 120,
-    "careerG": 3,
-    "careerP": 22
+    "careerGp": 121,
+    "careerG": 4,
+    "careerP": 23
    }
   },
   {
@@ -777,13 +850,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 0,
-     "shots": 1,
+     "shots": 3,
      "team": "Minnesota Wild"
     },
     "last": {
@@ -796,7 +869,7 @@
      "shots": 26,
      "team": "Minnesota Wild"
     },
-    "careerGp": 453,
+    "careerGp": 454,
     "careerG": 58,
     "careerP": 111
    }
@@ -920,13 +993,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
+     "gamesPlayed": 4,
+     "goals": 1,
      "assists": 1,
-     "points": 1,
-     "plusMinus": -1,
+     "points": 2,
+     "plusMinus": 0,
      "pim": 0,
-     "shots": 3,
+     "shots": 6,
      "team": "New Jersey Devils"
     },
     "last": {
@@ -939,9 +1012,9 @@
      "shots": 52,
      "team": "New Jersey Devils"
     },
-    "careerGp": 485,
-    "careerG": 83,
-    "careerP": 176
+    "careerGp": 486,
+    "careerG": 84,
+    "careerP": 177
    }
   },
   {
@@ -1144,13 +1217,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": -2,
+     "plusMinus": -3,
      "pim": 4,
-     "shots": 3,
+     "shots": 5,
      "team": "Philadelphia Flyers"
     },
     "last": {
@@ -1163,7 +1236,7 @@
      "shots": 1,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 3,
+    "careerGp": 4,
     "careerG": 1,
     "careerP": 3
    }
@@ -1320,17 +1393,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": -2,
+     "plusMinus": -3,
      "pim": 15,
      "shots": 1,
      "team": "Minnesota Wild"
     },
     "last": null,
-    "careerGp": 3,
+    "careerGp": 4,
     "careerG": 0,
     "careerP": 1
    }
@@ -1378,7 +1451,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 2,
+     "pim": 0,
+     "shots": 0,
+     "team": "Minnesota Wild"
+    },
     "last": {
      "gamesPlayed": 6,
      "goals": 0,
@@ -1389,7 +1471,7 @@
      "shots": 4,
      "team": "Minnesota Wild"
     },
-    "careerGp": 45,
+    "careerGp": 46,
     "careerG": 2,
     "careerP": 8
    }
@@ -1556,17 +1638,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 1,
      "points": 1,
      "plusMinus": 0,
-     "pim": 2,
+     "pim": 6,
      "shots": 3,
      "team": "Calgary Flames"
     },
     "last": null,
-    "careerGp": 3,
+    "careerGp": 4,
     "careerG": 0,
     "careerP": 1
    }
@@ -1620,13 +1702,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 2,
      "assists": 1,
      "points": 3,
-     "plusMinus": 0,
+     "plusMinus": -3,
      "pim": 2,
-     "shots": 4,
+     "shots": 7,
      "team": "Calgary Flames"
     },
     "last": {
@@ -1639,7 +1721,7 @@
      "shots": 9,
      "team": "Calgary Flames"
     },
-    "careerGp": 10,
+    "careerGp": 11,
     "careerG": 2,
     "careerP": 4
    }
@@ -1852,19 +1934,53 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 0,
      "shots": 3,
      "team": "Nashville Predators"
     },
     "last": null,
-    "careerGp": 2,
+    "careerGp": 3,
     "careerG": 0,
     "careerP": 1
+   }
+  },
+  {
+   "team": "NSH",
+   "recalledOn": "2026-10-03",
+   "from": "Milwaukee",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-10-03",
+     "type": "up",
+     "club": "Milwaukee"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "down",
+     "club": "Milwaukee"
+    }
+   ],
+   "playerId": null,
+   "name": "Matthew Murray",
+   "position": "G",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-10-15",
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -1929,35 +2045,6 @@
    }
   },
   {
-   "team": "NSH",
-   "recalledOn": "2026-10-03",
-   "from": "Milwaukee",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "events": [
-    {
-     "date": "2026-10-03",
-     "type": "up",
-     "club": "Milwaukee"
-    }
-   ],
-   "playerId": null,
-   "name": "Matthew Murray",
-   "position": "G",
-   "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
-   "ahl": {
-    "season": null,
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0
-   }
-  },
-  {
    "playerId": 8482193,
    "name": "Dylan Garand",
    "team": "NYR",
@@ -1990,19 +2077,19 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "pim": 0,
      "wins": 3,
-     "losses": 1,
+     "losses": 2,
      "otLosses": 0,
      "shutouts": 1,
-     "goalsAgainst": 4,
-     "shotsAgainst": 81,
+     "goalsAgainst": 8,
+     "shotsAgainst": 94,
      "team": "New York Rangers",
-     "savePct": 0.951,
-     "gaa": 1.15
+     "savePct": 0.915,
+     "gaa": 2.05
     },
     "last": {
      "gamesPlayed": 3,
@@ -2019,7 +2106,7 @@
      "savePct": 0.948,
      "gaa": 1.62
     },
-    "careerGp": 7,
+    "careerGp": 8,
     "careerG": 0,
     "careerP": null
    }
