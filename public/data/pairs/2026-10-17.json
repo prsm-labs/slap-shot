@@ -1,0 +1,4770 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-17",
+  "lockedAt": "2026-10-17T16:15:00.335Z",
+  "firstPuck": "2026-10-17T17:00:00Z",
+  "firstGame": "NJD@WSH",
+  "firstGameOfficial": true,
+  "late": false,
+  "backfilled": false,
+  "gamesLocked": [
+   "NJD@WSH",
+   "CAR@WPG",
+   "VAN@TBL",
+   "SEA@FLA",
+   "NYI@TOR",
+   "BUF@MTL",
+   "SJS@DET",
+   "OTT@PHI",
+   "NYR@CBJ",
+   "DAL@CHI",
+   "STL@NSH",
+   "BOS@LAK",
+   "EDM@UTA",
+   "PIT@VGK"
+  ],
+  "teamsOfficial": [
+   "NJD",
+   "WSH"
+  ],
+  "lineupsLoaded": true,
+  "poolGenerated": "2026-10-17 12:04",
+  "oddsLoaded": true,
+  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written."
+ },
+ "modes": {
+  "balanced": [
+   {
+    "key": "8476453:goal|8478402:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 19.1,
+    "fair": 424,
+    "starRank": 1,
+    "star": 1.065,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      150,
+      155
+     ],
+     "american": 538,
+     "dec": 6.375
+    },
+    "evPct": 21.6,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 45.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 150,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 115,
+        "BR": 116,
+        "BOV": 107,
+        "FD": 110,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379756780%232323720430_13L42133Q1-849855470Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409875?coupon={pickType}|4377893380|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617025811&selectionId=9552867",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45819-4055706-6516550&type=Single"
+       }
+      },
+      "edge": 5.3
+     },
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 42.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 110,
+        "BR": 132,
+        "BOV": 122,
+        "FD": 125,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379776667%232323798754_13L42133Q11102268935Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409954?coupon={pickType}|4377874846|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617051159&selectionId=11133553",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45833-4060419-6526465&type=Single"
+       }
+      },
+      "edge": 2.9
+     }
+    ]
+   },
+   {
+    "key": "8479337:goal|8480027:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17.5,
+    "fair": 471,
+    "starRank": 3,
+    "star": 0.989,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      130,
+      155
+     ],
+     "american": 486,
+     "dec": 5.865
+    },
+    "evPct": 2.7,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 41.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 130,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 125,
+        "BR": 125,
+        "FD": 125,
+        "BOV": 117,
+        "MGM": 130
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379769340%232323768404_13L42133Q1-1819449052Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409841?coupon={pickType}|4377895844|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617031960&selectionId=38764242",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45871-4058399-6522433&type=Single"
+       }
+      },
+      "edge": -1.6
+     },
+     {
+      "playerId": 8479337,
+      "name": "Alex DeBrincat",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 41.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 140,
+        "BR": 130,
+        "FD": 140,
+        "BOV": 138,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379763056%232323742320_13L42133Q1-647699450Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409828?coupon={pickType}|4377882872|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616989911&selectionId=25990450",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45672-4058158-6521851&type=Single"
+       }
+      },
+      "edge": 2.6
+     }
+    ]
+   },
+   {
+    "key": "8476459:goal|8478414:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12,
+    "fair": 735,
+    "starRank": null,
+    "star": 0.349,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      270,
+      230
+     ],
+     "american": 1121,
+     "dec": 12.21
+    },
+    "evPct": 46.2,
+    "legs": [
+     {
+      "playerId": 8478414,
+      "name": "Timo Meier",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 34.7,
+      "grade": "A",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 275,
+       "bestBook": "DK",
+       "books": {
+        "DK": 275,
+        "BR": 255,
+        "BOV": 255,
+        "FD": 270,
+        "MGM": 240
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379730615%232323625004_13L42133Q1-1688236844Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409972?coupon={pickType}|4377825375|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617040992&selectionId=12858510",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45855-4055126-6515329&type=Single"
+       }
+      },
+      "edge": 8
+     },
+     {
+      "playerId": 8476459,
+      "name": "Mika Zibanejad",
+      "team": "NYR",
+      "opp": "CBJ",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 230,
+       "bestBook": "FD",
+       "books": {
+        "DK": 205,
+        "BR": 220,
+        "FD": 230,
+        "BOV": 215,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379766302%232323755406_13L42133Q1456090619Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409816?coupon={pickType}|4377873026|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617021039&selectionId=12496368",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45655-4056317-6517972&type=Single"
+       }
+      },
+      "edge": 4.2
+     }
+    ]
+   },
+   {
+    "key": "8477500:goal|8484144:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.7,
+    "fair": 631,
+    "starRank": null,
+    "star": 0.609,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      195,
+      230
+     ],
+     "american": 874,
+     "dec": 9.735
+    },
+    "evPct": 33.2,
+    "legs": [
+     {
+      "playerId": 8477500,
+      "name": "Bo Horvat",
+      "team": "NYI",
+      "opp": "TOR",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 185,
+        "BR": 163,
+        "FD": 180,
+        "BOV": 175,
+        "MGM": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379748842%232323693956_13L42133Q1-1655556603Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409822?coupon={pickType}|4377897069|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616979888&selectionId=12496305",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45823-4057394-6520289&type=Single"
+       }
+      },
+      "edge": 5.3
+     },
+     {
+      "playerId": 8484144,
+      "name": "Connor Bedard",
+      "team": "CHI",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 230,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 200,
+        "BR": 188,
+        "FD": 195,
+        "BOV": 185,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379769340%232323768123_13L42133Q1472408738Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409841?coupon={pickType}|4377866980|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617031960&selectionId=58195609",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45871-4058392-6522421&type=Single"
+       }
+      },
+      "edge": 4.6
+     }
+    ]
+   },
+   {
+    "key": "8477404:point|8479542:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 55.3,
+    "fair": -124,
+    "starRank": 4,
+    "star": 0.982,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477939:point|8479318:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 54.3,
+    "fair": -119,
+    "starRank": 5,
+    "star": 0.969,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477939,
+      "name": "William Nylander",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 70.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479318,
+      "name": "Auston Matthews",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 68.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477934:point|8480803:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 53.5,
+    "fair": -115,
+    "starRank": null,
+    "star": 0.953,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 74.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480803,
+      "name": "Evan Bouchard",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 64.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:sog3|8481559:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 44,
+    "fair": 127,
+    "starRank": 2,
+    "star": 1.046,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 66.6,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477933:goal|8484801:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16.6,
+    "fair": 501,
+    "starRank": null,
+    "star": 0.947,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      140,
+      155
+     ],
+     "american": 512,
+     "dec": 6.12
+    },
+    "evPct": 1.9,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "DET",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 41.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 140,
+       "bestBook": "FD",
+       "books": {
+        "DK": 105,
+        "BR": 132,
+        "FD": 140,
+        "BOV": 135
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379763056%232323742382_13L42133Q11248174323Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409828?coupon={pickType}|4377880254|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616989911&selectionId=70664823"
+       }
+      },
+      "edge": -0.3
+     },
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "SEA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 40.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 165,
+       "bestBook": "DK",
+       "books": {
+        "DK": 165,
+        "BR": 150,
+        "FD": 155,
+        "BOV": 148,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379741873%232323669288_13L42133Q11622144764Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409867?coupon={pickType}|4377871245|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617039773&selectionId=12496387",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45708-4056057-6517351&type=Single"
+       }
+      },
+      "edge": 2.5
+     }
+    ]
+   },
+   {
+    "key": "8478403:goal|8478550:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.8,
+    "fair": 531,
+    "starRank": null,
+    "star": 0.894,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      180,
+      145
+     ],
+     "american": 586,
+     "dec": 6.86
+    },
+    "evPct": 8.7,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "BR",
+       "books": {
+        "DK": 160,
+        "BR": 180,
+        "FD": 180,
+        "MGM": 135,
+        "BOV": 171
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379820507%232323984901_13L42133Q1303973191Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409961?coupon={pickType}|4377855192|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617054603&selectionId=12502556",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45710-4059264-6524157&type=Single"
+       }
+      },
+      "edge": 4.1
+     },
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 140,
+        "BR": 138,
+        "FD": 145,
+        "MGM": 180,
+        "BOV": 140
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379821833%232323988593_13L42133Q1-515191351Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409973?coupon={pickType}|4377857819|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617048063&selectionId=12496383",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45845-4059757-6525135&type=Single"
+       }
+      },
+      "edge": 4.1
+     }
+    ]
+   }
+  ],
+  "value": [
+   {
+    "key": "8476459:goal|8478414:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12,
+    "fair": 735,
+    "starRank": null,
+    "star": 0.349,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      270,
+      230
+     ],
+     "american": 1121,
+     "dec": 12.21
+    },
+    "evPct": 46.2,
+    "legs": [
+     {
+      "playerId": 8478414,
+      "name": "Timo Meier",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 34.7,
+      "grade": "A",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 275,
+       "bestBook": "DK",
+       "books": {
+        "DK": 275,
+        "BR": 255,
+        "BOV": 255,
+        "FD": 270,
+        "MGM": 240
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379730615%232323625004_13L42133Q1-1688236844Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409972?coupon={pickType}|4377825375|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617040992&selectionId=12858510",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45855-4055126-6515329&type=Single"
+       }
+      },
+      "edge": 8
+     },
+     {
+      "playerId": 8476459,
+      "name": "Mika Zibanejad",
+      "team": "NYR",
+      "opp": "CBJ",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 230,
+       "bestBook": "FD",
+       "books": {
+        "DK": 205,
+        "BR": 220,
+        "FD": 230,
+        "BOV": 215,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379766302%232323755406_13L42133Q1456090619Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409816?coupon={pickType}|4377873026|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617021039&selectionId=12496368",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45655-4056317-6517972&type=Single"
+       }
+      },
+      "edge": 4.2
+     }
+    ]
+   },
+   {
+    "key": "8478414:goal|8482078:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 11.2,
+    "fair": 789,
+    "starRank": null,
+    "star": 0.248,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      270,
+      250
+     ],
+     "american": 1195,
+     "dec": 12.95
+    },
+    "evPct": 45.6,
+    "legs": [
+     {
+      "playerId": 8478414,
+      "name": "Timo Meier",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 34.7,
+      "grade": "A",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 275,
+       "bestBook": "DK",
+       "books": {
+        "DK": 275,
+        "BR": 255,
+        "BOV": 255,
+        "FD": 270,
+        "MGM": 240
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379730615%232323625004_13L42133Q1-1688236844Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409972?coupon={pickType}|4377825375|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617040992&selectionId=12858510",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45855-4055126-6515329&type=Single"
+       }
+      },
+      "edge": 8
+     },
+     {
+      "playerId": 8482078,
+      "name": "Lucas Raymond",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 32.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 250,
+       "bestBook": "FD",
+       "books": {
+        "DK": 225,
+        "BR": 225,
+        "FD": 250,
+        "BOV": 240,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379763056%232323742345_13L42133Q1-455762834Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409828?coupon={pickType}|4377923308|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616989911&selectionId=36305280",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45672-4057900-6521335&type=Single"
+       }
+      },
+      "edge": 3.8
+     }
+    ]
+   },
+   {
+    "key": "8477500:goal|8484144:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.7,
+    "fair": 631,
+    "starRank": null,
+    "star": 0.609,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      195,
+      230
+     ],
+     "american": 874,
+     "dec": 9.735
+    },
+    "evPct": 33.2,
+    "legs": [
+     {
+      "playerId": 8477500,
+      "name": "Bo Horvat",
+      "team": "NYI",
+      "opp": "TOR",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 185,
+        "BR": 163,
+        "FD": 180,
+        "BOV": 175,
+        "MGM": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379748842%232323693956_13L42133Q1-1655556603Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409822?coupon={pickType}|4377897069|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616979888&selectionId=12496305",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45823-4057394-6520289&type=Single"
+       }
+      },
+      "edge": 5.3
+     },
+     {
+      "playerId": 8484144,
+      "name": "Connor Bedard",
+      "team": "CHI",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 230,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 200,
+        "BR": 188,
+        "FD": 195,
+        "BOV": 185,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379769340%232323768123_13L42133Q1472408738Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409841?coupon={pickType}|4377866980|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617031960&selectionId=58195609",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45871-4058392-6522421&type=Single"
+       }
+      },
+      "edge": 4.6
+     }
+    ]
+   },
+   {
+    "key": "8477500:goal|8481559:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.8,
+    "fair": 535,
+    "starRank": 5,
+    "star": 1.004,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      195,
+      185
+     ],
+     "american": 741,
+     "dec": 8.408
+    },
+    "evPct": 32.5,
+    "legs": [
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 40.2,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "DK",
+       "books": {
+        "DK": 195,
+        "BR": 185,
+        "BOV": 176,
+        "FD": 180,
+        "MGM": 175
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379730615%232323624991_13L42133Q1253110723Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409972?coupon={pickType}|4377833340|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617040992&selectionId=24660528",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45855-4055131-6515341&type=Single"
+       }
+      },
+      "edge": 6.3
+     },
+     {
+      "playerId": 8477500,
+      "name": "Bo Horvat",
+      "team": "NYI",
+      "opp": "TOR",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 185,
+        "BR": 163,
+        "FD": 180,
+        "BOV": 175,
+        "MGM": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379748842%232323693956_13L42133Q1-1655556603Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409822?coupon={pickType}|4377897069|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616979888&selectionId=12496305",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45823-4057394-6520289&type=Single"
+       }
+      },
+      "edge": 5.3
+     }
+    ]
+   },
+   {
+    "key": "8476459:goal|8484144:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12,
+    "fair": 731,
+    "starRank": null,
+    "star": 0.267,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      230,
+      230
+     ],
+     "american": 989,
+     "dec": 10.89
+    },
+    "evPct": 31.1,
+    "legs": [
+     {
+      "playerId": 8484144,
+      "name": "Connor Bedard",
+      "team": "CHI",
+      "opp": "DAL",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 230,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 200,
+        "BR": 188,
+        "FD": 195,
+        "BOV": 185,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379769340%232323768123_13L42133Q1472408738Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409841?coupon={pickType}|4377866980|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617031960&selectionId=58195609",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45871-4058392-6522421&type=Single"
+       }
+      },
+      "edge": 4.6
+     },
+     {
+      "playerId": 8476459,
+      "name": "Mika Zibanejad",
+      "team": "NYR",
+      "opp": "CBJ",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 230,
+       "bestBook": "FD",
+       "books": {
+        "DK": 205,
+        "BR": 220,
+        "FD": 230,
+        "BOV": 215,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379766302%232323755406_13L42133Q1456090619Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409816?coupon={pickType}|4377873026|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617021039&selectionId=12496368",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45655-4056317-6517972&type=Single"
+       }
+      },
+      "edge": 4.2
+     }
+    ]
+   },
+   {
+    "key": "8478550:goal|8481559:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16,
+    "fair": 525,
+    "starRank": 3,
+    "star": 1.02,
+    "parlay": {
+     "book": "BR",
+     "legs": [
+      185,
+      180
+     ],
+     "american": 698,
+     "dec": 7.98
+    },
+    "evPct": 27.7,
+    "legs": [
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 40.2,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "DK",
+       "books": {
+        "DK": 195,
+        "BR": 185,
+        "BOV": 176,
+        "FD": 180,
+        "MGM": 175
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379730615%232323624991_13L42133Q1253110723Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409972?coupon={pickType}|4377833340|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617040992&selectionId=24660528",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45855-4055131-6515341&type=Single"
+       }
+      },
+      "edge": 6.3
+     },
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "BR",
+       "books": {
+        "DK": 160,
+        "BR": 180,
+        "FD": 180,
+        "MGM": 135,
+        "BOV": 171
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379820507%232323984901_13L42133Q1303973191Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409961?coupon={pickType}|4377855192|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617054603&selectionId=12502556",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45710-4059264-6524157&type=Single"
+       }
+      },
+      "edge": 4.1
+     }
+    ]
+   },
+   {
+    "key": "8478550:goal|8482078:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12.9,
+    "fair": 675,
+    "starRank": null,
+    "star": 0.409,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      180,
+      250
+     ],
+     "american": 880,
+     "dec": 9.8
+    },
+    "evPct": 26.4,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "BR",
+       "books": {
+        "DK": 160,
+        "BR": 180,
+        "FD": 180,
+        "MGM": 135,
+        "BOV": 171
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379820507%232323984901_13L42133Q1303973191Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409961?coupon={pickType}|4377855192|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617054603&selectionId=12502556",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45710-4059264-6524157&type=Single"
+       }
+      },
+      "edge": 4.1
+     },
+     {
+      "playerId": 8482078,
+      "name": "Lucas Raymond",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 32.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 250,
+       "bestBook": "FD",
+       "books": {
+        "DK": 225,
+        "BR": 225,
+        "FD": 250,
+        "BOV": 240,
+        "MGM": 230
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379763056%232323742345_13L42133Q1-455762834Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409828?coupon={pickType}|4377923308|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616989911&selectionId=36305280",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45672-4057900-6521335&type=Single"
+       }
+      },
+      "edge": 3.8
+     }
+    ]
+   },
+   {
+    "key": "8476453:goal|8478403:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 18,
+    "fair": 455,
+    "starRank": 1,
+    "star": 1.067,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      150,
+      180
+     ],
+     "american": 600,
+     "dec": 7
+    },
+    "evPct": 26.2,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 45.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 150,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 115,
+        "BR": 116,
+        "BOV": 107,
+        "FD": 110,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379756780%232323720430_13L42133Q1-849855470Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409875?coupon={pickType}|4377893380|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617025811&selectionId=9552867",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45819-4055706-6516550&type=Single"
+       }
+      },
+      "edge": 5.3
+     },
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 140,
+        "BR": 138,
+        "FD": 145,
+        "MGM": 180,
+        "BOV": 140
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379821833%232323988593_13L42133Q1-515191351Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409973?coupon={pickType}|4377857819|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617048063&selectionId=12496383",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45845-4059757-6525135&type=Single"
+       }
+      },
+      "edge": 4.1
+     }
+    ]
+   },
+   {
+    "key": "8476453:goal|8478402:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 19.1,
+    "fair": 424,
+    "starRank": 2,
+    "star": 1.065,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      150,
+      155
+     ],
+     "american": 538,
+     "dec": 6.375
+    },
+    "evPct": 21.6,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 45.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 150,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 115,
+        "BR": 116,
+        "BOV": 107,
+        "FD": 110,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379756780%232323720430_13L42133Q1-849855470Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409875?coupon={pickType}|4377893380|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617025811&selectionId=9552867",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45819-4055706-6516550&type=Single"
+       }
+      },
+      "edge": 5.3
+     },
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 42.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 110,
+        "BR": 132,
+        "BOV": 122,
+        "FD": 125,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379776667%232323798754_13L42133Q11102268935Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409954?coupon={pickType}|4377874846|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617051159&selectionId=11133553",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45833-4060419-6526465&type=Single"
+       }
+      },
+      "edge": 2.9
+     }
+    ]
+   },
+   {
+    "key": "8478402:goal|8478403:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16.8,
+    "fair": 497,
+    "starRank": 4,
+    "star": 1.005,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      155,
+      180
+     ],
+     "american": 614,
+     "dec": 7.14
+    },
+    "evPct": 19.6,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 42.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 110,
+        "BR": 132,
+        "BOV": 122,
+        "FD": 125,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379776667%232323798754_13L42133Q11102268935Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409954?coupon={pickType}|4377874846|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617051159&selectionId=11133553",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45833-4060419-6526465&type=Single"
+       }
+      },
+      "edge": 2.9
+     },
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 140,
+        "BR": 138,
+        "FD": 145,
+        "MGM": 180,
+        "BOV": 140
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379821833%232323988593_13L42133Q1-515191351Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409973?coupon={pickType}|4377857819|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617048063&selectionId=12496383",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45845-4059757-6525135&type=Single"
+       }
+      },
+      "edge": 4.1
+     }
+    ]
+   }
+  ],
+  "safest": [
+   {
+    "key": "8477934:point|8478402:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 64.3,
+    "fair": -180,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 77.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 74.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8479542:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 62.6,
+    "fair": -167,
+    "starRank": 2,
+    "star": 0.999,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 78.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8477404:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 61.1,
+    "fair": -157,
+    "starRank": 3,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 78.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478402:point|8484801:point",
+    "section": "🛡️ Safest",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 57.2,
+    "fair": -134,
+    "starRank": 5,
+    "star": 0.992,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 77.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "DET",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477404:point|8479542:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 55.3,
+    "fair": -124,
+    "starRank": null,
+    "star": 0.982,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477934:point|8484801:point",
+    "section": "🛡️ Safest",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 54.7,
+    "fair": -121,
+    "starRank": null,
+    "star": 0.974,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 74.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "DET",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477939:point|8479318:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 54.3,
+    "fair": -119,
+    "starRank": null,
+    "star": 0.969,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477939,
+      "name": "William Nylander",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 70.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479318,
+      "name": "Auston Matthews",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 68.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8480027:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 53.3,
+    "fair": -114,
+    "starRank": null,
+    "star": 0.947,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 68,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478403:point|8481559:point",
+    "section": "🛡️ Safest",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 52.9,
+    "fair": -112,
+    "starRank": 4,
+    "star": 0.994,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 72.7,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 72.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475913:point|8478403:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 52.8,
+    "fair": -112,
+    "starRank": null,
+    "star": 0.942,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 72.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475913,
+      "name": "Mark Stone",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 64.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "due": [],
+  "soft": [
+   {
+    "key": "8476453:point|8479542:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 62.6,
+    "fair": -167,
+    "starRank": 1,
+    "star": 0.999,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 78.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8477404:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 61.1,
+    "fair": -157,
+    "starRank": 2,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 78.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477404:point|8479542:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 55.3,
+    "fair": -124,
+    "starRank": 3,
+    "star": 0.982,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477939:point|8479318:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 54.3,
+    "fair": -119,
+    "starRank": 4,
+    "star": 0.969,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477939,
+      "name": "William Nylander",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 70.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479318,
+      "name": "Auston Matthews",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 68.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8480027:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 53.3,
+    "fair": -114,
+    "starRank": null,
+    "star": 0.947,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 68,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477939:point|8481559:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 51.3,
+    "fair": -105,
+    "starRank": 5,
+    "star": 0.96,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 72.7,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477939,
+      "name": "William Nylander",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 70.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480027:point|8481559:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 50.9,
+    "fair": -104,
+    "starRank": null,
+    "star": 0.95,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 72.7,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479337:point|8482078:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.6,
+    "fair": 101,
+    "starRank": null,
+    "star": 0.845,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479337,
+      "name": "Alex DeBrincat",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 69.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482078,
+      "name": "Lucas Raymond",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8482740:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.2,
+    "fair": 103,
+    "starRank": null,
+    "star": 0.813,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 68,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482740,
+      "name": "Wyatt Johnston",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 64.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477960:point|8478550:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.2,
+    "fair": 103,
+    "starRank": null,
+    "star": 0.81,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 69.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477960,
+      "name": "Adrian Kempe",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "stacks": [
+   {
+    "key": "8477934:point|8478402:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 64.3,
+    "fair": -180,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 77.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 74.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8479542:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 62.6,
+    "fair": -167,
+    "starRank": 2,
+    "star": 0.999,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 78.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8477404:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 61.1,
+    "fair": -157,
+    "starRank": 3,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 78.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478402:point|8480803:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 56,
+    "fair": -127,
+    "starRank": 4,
+    "star": 0.986,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 77.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480803,
+      "name": "Evan Bouchard",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 64.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477404:point|8479542:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 55.3,
+    "fair": -124,
+    "starRank": 5,
+    "star": 0.982,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477939:point|8479318:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 54.3,
+    "fair": -119,
+    "starRank": null,
+    "star": 0.969,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477939,
+      "name": "William Nylander",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 70.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479318,
+      "name": "Auston Matthews",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 68.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479337:point|8484801:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 50,
+    "fair": -100,
+    "starRank": null,
+    "star": 0.861,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "DET",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479337,
+      "name": "Alex DeBrincat",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 69.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477956:point|8478550:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 46.9,
+    "fair": 113,
+    "starRank": null,
+    "star": 0.665,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 69.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477956,
+      "name": "David Pastrnak",
+      "team": "BOS",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 69.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:point|8480018:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 46.2,
+    "fair": 117,
+    "starRank": null,
+    "star": 0.626,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "BUF",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 70,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 68,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477934:point|8479343:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 45.8,
+    "fair": 118,
+    "starRank": null,
+    "star": 0.598,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 74.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479343,
+      "name": "Clayton Keller",
+      "team": "UTA",
+      "opp": "EDM",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "balanced:goal": [
+   {
+    "key": "8476453:goal|8478402:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 19.1,
+    "fair": 424,
+    "starRank": 1,
+    "star": 1.065,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      150,
+      155
+     ],
+     "american": 538,
+     "dec": 6.375
+    },
+    "evPct": 21.6,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 45.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 150,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 115,
+        "BR": 116,
+        "BOV": 107,
+        "FD": 110,
+        "MGM": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379756780%232323720430_13L42133Q1-849855470Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409875?coupon={pickType}|4377893380|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617025811&selectionId=9552867",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45819-4055706-6516550&type=Single"
+       }
+      },
+      "edge": 5.3
+     },
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 42.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 110,
+        "BR": 132,
+        "BOV": 122,
+        "FD": 125,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379776667%232323798754_13L42133Q11102268935Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409954?coupon={pickType}|4377874846|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617051159&selectionId=11133553",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45833-4060419-6526465&type=Single"
+       }
+      },
+      "edge": 2.9
+     }
+    ]
+   },
+   {
+    "key": "8479337:goal|8480027:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17.5,
+    "fair": 471,
+    "starRank": 3,
+    "star": 0.989,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      130,
+      155
+     ],
+     "american": 486,
+     "dec": 5.865
+    },
+    "evPct": 2.7,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 41.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 130,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 125,
+        "BR": 125,
+        "FD": 125,
+        "BOV": 117,
+        "MGM": 130
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379769340%232323768404_13L42133Q1-1819449052Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409841?coupon={pickType}|4377895844|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617031960&selectionId=38764242",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45871-4058399-6522433&type=Single"
+       }
+      },
+      "edge": -1.6
+     },
+     {
+      "playerId": 8479337,
+      "name": "Alex DeBrincat",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 41.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 155,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 140,
+        "BR": 130,
+        "FD": 140,
+        "BOV": 138,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379763056%232323742320_13L42133Q1-647699450Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409828?coupon={pickType}|4377882872|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616989911&selectionId=25990450",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45672-4058158-6521851&type=Single"
+       }
+      },
+      "edge": 2.6
+     }
+    ]
+   },
+   {
+    "key": "8479420:goal|8484801:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17.1,
+    "fair": 485,
+    "starRank": 4,
+    "star": 0.972,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      140,
+      150
+     ],
+     "american": 500,
+     "dec": 6
+    },
+    "evPct": 2.6,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "DET",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 41.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 140,
+       "bestBook": "FD",
+       "books": {
+        "DK": 105,
+        "BR": 132,
+        "FD": 140,
+        "BOV": 135
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379763056%232323742382_13L42133Q11248174323Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409828?coupon={pickType}|4377880254|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616989911&selectionId=70664823"
+       }
+      },
+      "edge": -0.3
+     },
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 41.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 150,
+       "bestBook": "DK",
+       "books": {
+        "DK": 150,
+        "BR": 143,
+        "BOV": 144,
+        "MGM": 140,
+        "FD": 150
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379754649%232323714307_13L42133Q1100066802Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409831?coupon={pickType}|4377899292|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45732-4056682-6518798&type=Single",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617053382&selectionId=21604085"
+       }
+      },
+      "edge": 1.3
+     }
+    ]
+   },
+   {
+    "key": "8479542:goal|8481559:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16.5,
+    "fair": 505,
+    "starRank": 2,
+    "star": 0.993,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      130,
+      180
+     ],
+     "american": 544,
+     "dec": 6.44
+    },
+    "evPct": 6.4,
+    "legs": [
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 41.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 130,
+       "bestBook": "FD",
+       "books": {
+        "DK": 110,
+        "BR": 112,
+        "BOV": 125,
+        "FD": 130,
+        "MGM": 125
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379756780%232323720712_13L42133Q1-1237337686Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409875?coupon={pickType}|4377893308|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617025811&selectionId=38522077",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45819-4055856-6516850&type=Single"
+       }
+      },
+      "edge": -2.4
+     },
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 40.2,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "DK",
+       "books": {
+        "DK": 195,
+        "BR": 185,
+        "BOV": 176,
+        "FD": 180,
+        "MGM": 175
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379730615%232323624991_13L42133Q1253110723Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409972?coupon={pickType}|4377833340|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617040992&selectionId=24660528",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45855-4055131-6515341&type=Single"
+       }
+      },
+      "edge": 6.3
+     }
+    ]
+   },
+   {
+    "key": "8477933:goal|8477934:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 16.1,
+    "fair": 520,
+    "starRank": null,
+    "star": 0.891,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      165,
+      130
+     ],
+     "american": 510,
+     "dec": 6.095
+    },
+    "evPct": -1.7,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "SEA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 40.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 165,
+       "bestBook": "DK",
+       "books": {
+        "DK": 165,
+        "BR": 150,
+        "FD": 155,
+        "BOV": 148,
+        "MGM": 155
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379741873%232323669288_13L42133Q11622144764Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409867?coupon={pickType}|4377871245|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617039773&selectionId=12496387",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45708-4056057-6517351&type=Single"
+       }
+      },
+      "edge": 2.5
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 40.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 135,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 130,
+        "BR": 125,
+        "BOV": 127,
+        "FD": 125,
+        "MGM": 135
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379776667%232323798759_13L42133Q1-1842705126Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409954?coupon={pickType}|4377858090|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617051159&selectionId=11133543",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45833-4060352-6526331&type=Single"
+       }
+      },
+      "edge": -2.5
+     }
+    ]
+   },
+   {
+    "key": "8478403:goal|8478550:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.8,
+    "fair": 531,
+    "starRank": 5,
+    "star": 0.894,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      180,
+      145
+     ],
+     "american": 586,
+     "dec": 6.86
+    },
+    "evPct": 8.7,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "BR",
+       "books": {
+        "DK": 160,
+        "BR": 180,
+        "FD": 180,
+        "MGM": 135,
+        "BOV": 171
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379820507%232323984901_13L42133Q1303973191Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409961?coupon={pickType}|4377855192|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617054603&selectionId=12502556",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45710-4059264-6524157&type=Single"
+       }
+      },
+      "edge": 4.1
+     },
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 140,
+        "BR": 138,
+        "FD": 145,
+        "MGM": 180,
+        "BOV": 140
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379821833%232323988593_13L42133Q1-515191351Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409973?coupon={pickType}|4377857819|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617048063&selectionId=12496383",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45845-4059757-6525135&type=Single"
+       }
+      },
+      "edge": 4.1
+     }
+    ]
+   },
+   {
+    "key": "8477404:goal|8479318:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 15.1,
+    "fair": 561,
+    "starRank": null,
+    "star": 0.738,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      135,
+      140
+     ],
+     "american": 464,
+     "dec": 5.64
+    },
+    "evPct": -14.7,
+    "legs": [
+     {
+      "playerId": 8479318,
+      "name": "Auston Matthews",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 135,
+       "bestBook": "DK",
+       "books": {
+        "DK": 135,
+        "BR": 130,
+        "FD": 130,
+        "BOV": 131,
+        "MGM": 135
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379748842%232323693267_13L42133Q11956455765Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409822?coupon={pickType}|4377905626|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616979888&selectionId=11133523",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45823-4057451-6520397&type=Single"
+       }
+      },
+      "edge": -3.2
+     },
+     {
+      "playerId": 8477404,
+      "name": "Jake Guentzel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 38.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 140,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 120,
+        "BR": 118,
+        "BOV": 125,
+        "FD": 130,
+        "MGM": 140
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379756780%232323720385_13L42133Q11381089955Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409875?coupon={pickType}|4377898865|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617025811&selectionId=12857544",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45819-4055950-6517038&type=Single"
+       }
+      },
+      "edge": -3.3
+     }
+    ]
+   },
+   {
+    "key": "8477500:goal|8481540:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.9,
+    "fair": 570,
+    "starRank": null,
+    "star": 0.747,
+    "parlay": {
+     "book": "MGM",
+     "legs": [
+      195,
+      120
+     ],
+     "american": 549,
+     "dec": 6.49
+    },
+    "evPct": -3.1,
+    "legs": [
+     {
+      "playerId": 8477500,
+      "name": "Bo Horvat",
+      "team": "NYI",
+      "opp": "TOR",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 185,
+        "BR": 163,
+        "FD": 180,
+        "BOV": 175,
+        "MGM": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379748842%232323693956_13L42133Q1-1655556603Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409822?coupon={pickType}|4377897069|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616979888&selectionId=12496305",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45823-4057394-6520289&type=Single"
+       }
+      },
+      "edge": 5.3
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "BUF",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 38.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 120,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 115,
+        "BR": -103,
+        "BOV": 107,
+        "MGM": 120,
+        "FD": 110
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379754649%232323714034_13L42133Q1-635797582Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409831?coupon={pickType}|4377876938|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45732-4056609-6518652&type=Single",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617053382&selectionId=24660529"
+       }
+      },
+      "edge": -7.4
+     }
+    ]
+   },
+   {
+    "key": "8477956:goal|8478398:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.3,
+    "fair": 598,
+    "starRank": null,
+    "star": 0.633,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      160,
+      165
+     ],
+     "american": 589,
+     "dec": 6.89
+    },
+    "evPct": -1.3,
+    "legs": [
+     {
+      "playerId": 8478398,
+      "name": "Kyle Connor",
+      "team": "WPG",
+      "opp": "CAR",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 37.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 160,
+       "bestBook": "FD",
+       "books": {
+        "DK": 155,
+        "BR": 150,
+        "BOV": 153,
+        "FD": 160,
+        "MGM": 140
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379723233%232323597395_13L42133Q1-1777575323Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450188?coupon={pickType}|4377883715|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617008280&selectionId=15710822",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45861-4055466-6515969&type=Single"
+       }
+      },
+      "edge": -0.6
+     },
+     {
+      "playerId": 8477956,
+      "name": "David Pastrnak",
+      "team": "BOS",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 37.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": {
+       "best": 170,
+       "bestBook": "MGM",
+       "books": {
+        "DK": 155,
+        "BR": 155,
+        "FD": 165,
+        "MGM": 170,
+        "BOV": 157
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379820507%232323985097_13L42133Q1-852739168Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409961?coupon={pickType}|4377883613|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617054603&selectionId=12496295",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45710-4059321-6524271&type=Single"
+       }
+      },
+      "edge": 0.8
+     }
+    ]
+   },
+   {
+    "key": "8477946:goal|8480018:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.8,
+    "fair": 625,
+    "starRank": null,
+    "star": 0.573,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      180,
+      195
+     ],
+     "american": 726,
+     "dec": 8.26
+    },
+    "evPct": 14,
+    "legs": [
+     {
+      "playerId": 8477946,
+      "name": "Dylan Larkin",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 37.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": {
+       "best": 180,
+       "bestBook": "DK",
+       "books": {
+        "DK": 180,
+        "BR": 165,
+        "FD": 180,
+        "BOV": 174,
+        "MGM": 175
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379763056%232323742322_13L42133Q1131122862Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409828?coupon={pickType}|4377880262|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616989911&selectionId=11133529",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45672-4057958-6521451&type=Single"
+       }
+      },
+      "edge": 1.6
+     },
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "BUF",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 37,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": {
+       "best": 195,
+       "bestBook": "FD",
+       "books": {
+        "DK": 175,
+        "BR": 180,
+        "BOV": 185,
+        "MGM": 185,
+        "FD": 195
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379754649%232323713592_13L42133Q1997318835Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409831?coupon={pickType}|4377876865|{wagerAmount}",
+        "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45732-4056673-6518780&type=Single",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617053382&selectionId=20852694"
+       }
+      },
+      "edge": 3.1
+     }
+    ]
+   }
+  ],
+  "balanced:point": [
+   {
+    "key": "8477934:point|8478402:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 64.3,
+    "fair": -180,
+    "starRank": 2,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 77.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 74.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:point|8479542:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 62.6,
+    "fair": -167,
+    "starRank": 3,
+    "star": 0.999,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 78.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 71.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477939:point|8479318:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 54.3,
+    "fair": -119,
+    "starRank": 4,
+    "star": 0.969,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477939,
+      "name": "William Nylander",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 70.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479318,
+      "name": "Auston Matthews",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 68.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481559:point|8484801:point",
+    "section": "🍎 Points",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 53.7,
+    "fair": -116,
+    "starRank": 1,
+    "star": 1.005,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "DET",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 73.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 72.7,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478420:point|8480027:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 53.3,
+    "fair": -114,
+    "starRank": 5,
+    "star": 0.947,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 70,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478420,
+      "name": "Mikko Rantanen",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 68,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475913:point|8478403:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 52.8,
+    "fair": -112,
+    "starRank": null,
+    "star": 0.942,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 72.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475913,
+      "name": "Mark Stone",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 64.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477933:point|8479314:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 50.3,
+    "fair": -101,
+    "starRank": null,
+    "star": 0.875,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "SEA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 70.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "SEA",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479337:point|8482078:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.6,
+    "fair": 101,
+    "starRank": null,
+    "star": 0.845,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479337,
+      "name": "Alex DeBrincat",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 69.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482078,
+      "name": "Lucas Raymond",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 63.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477960:point|8478550:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.2,
+    "fair": 103,
+    "starRank": null,
+    "star": 0.81,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 69.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477960,
+      "name": "Adrian Kempe",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 63.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480018:point|8481540:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 49.1,
+    "fair": 104,
+    "starRank": null,
+    "star": 0.806,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480018,
+      "name": "Nick Suzuki",
+      "team": "MTL",
+      "opp": "BUF",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 70,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "BUF",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 62.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "balanced:sog3": [
+   {
+    "key": "8479337:sog3|8481559:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 44.7,
+    "fair": 124,
+    "starRank": 1,
+    "star": 1.05,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479337,
+      "name": "Alex DeBrincat",
+      "team": "DET",
+      "opp": "SJS",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 67.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481559,
+      "name": "Jack Hughes",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 66.6,
+      "grade": "A+",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479318:sog3|8479420:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 43.4,
+    "fair": 131,
+    "starRank": 2,
+    "star": 0.992,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "MTL",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479318,
+      "name": "Auston Matthews",
+      "team": "TOR",
+      "opp": "NYI",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 65.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479542:sog3|8484801:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 41.7,
+    "fair": 140,
+    "starRank": 4,
+    "star": 0.966,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479542,
+      "name": "Brandon Hagel",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 64.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8484801,
+      "name": "Macklin Celebrini",
+      "team": "SJS",
+      "opp": "DET",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 64.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478414:sog3|8480027:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 40.6,
+    "fair": 146,
+    "starRank": 3,
+    "star": 0.985,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478414,
+      "name": "Timo Meier",
+      "team": "NJD",
+      "opp": "WSH",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 63.7,
+      "grade": "A",
+      "lineupStatus": "dressed",
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480027,
+      "name": "Jason Robertson",
+      "team": "DAL",
+      "opp": "CHI",
+      "isHome": false,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 63.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477956:sog3|8478403:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 39.2,
+    "fair": 155,
+    "starRank": 5,
+    "star": 0.891,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478403,
+      "name": "Jack Eichel",
+      "team": "VGK",
+      "opp": "PIT",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 62.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477956,
+      "name": "David Pastrnak",
+      "team": "BOS",
+      "opp": "LAK",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 62.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478398:sog3|8478402:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 38.6,
+    "fair": 159,
+    "starRank": null,
+    "star": 0.869,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478402,
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 62.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478398,
+      "name": "Kyle Connor",
+      "team": "WPG",
+      "opp": "CAR",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 62.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8476453:sog3|8477500:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 37.8,
+    "fair": 165,
+    "starRank": null,
+    "star": 0.829,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477500,
+      "name": "Bo Horvat",
+      "team": "NYI",
+      "opp": "TOR",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 61.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8476453,
+      "name": "Nikita Kucherov",
+      "team": "TBL",
+      "opp": "VAN",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 61.3,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478550:sog3|8480801:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 35.7,
+    "fair": 180,
+    "starRank": null,
+    "star": 0.726,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "SEA",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 59.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478550,
+      "name": "Artemi Panarin",
+      "team": "LAK",
+      "opp": "BOS",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 59.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477933:sog3|8482699:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 34.1,
+    "fair": 193,
+    "starRank": null,
+    "star": 0.633,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "SEA",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 58.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482699,
+      "name": "Dylan Guenther",
+      "team": "UTA",
+      "opp": "EDM",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 57.9,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477934:sog3|8481540:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 33.4,
+    "fair": 199,
+    "starRank": null,
+    "star": 0.589,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481540,
+      "name": "Cole Caufield",
+      "team": "MTL",
+      "opp": "BUF",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 57.9,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477934,
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "opp": "UTA",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 57.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ]
+ }
+}
