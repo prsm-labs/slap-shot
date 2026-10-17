@@ -1,7 +1,7 @@
 {
  "_meta": {
   "season": 2026,
-  "generated": "2026-10-17 12:08",
+  "generated": "2026-10-17 14:49",
   "dates": [
    "2026-09-29",
    "2026-09-30",
@@ -310215,6 +310215,6974 @@
    "result": "hit",
    "oneLegVoid": false,
    "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 1,
+   "key": "8477492:goal|8477956:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 19,
+   "fair": 427,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     -120,
+     140
+    ],
+    "american": 340,
+    "dec": 4.4
+   },
+   "evPct": -16.5,
+   "starRank": 2,
+   "star": 0.95,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 45.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": -105,
+      "bestBook": "MGM",
+      "books": {
+       "DK": -125,
+       "MGM": -105,
+       "FD": -120,
+       "BR": -127,
+       "BOV": -125
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642585_13L42133Q1-170743743Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026189-6460466&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449308",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440565|{wagerAmount}"
+      }
+     },
+     "edge": -5.6,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 41.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 143,
+      "bestBook": "BR",
+      "books": {
+       "DK": 135,
+       "MGM": 125,
+       "FD": 140,
+       "BR": 143,
+       "BOV": 133
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630533_13L42133Q1-852739168Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026586-6461111&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12496295",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466364|{wagerAmount}"
+      }
+     },
+     "edge": 0.4,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": 3.4
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 2,
+   "key": "8480039:goal|8483445:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 13.8,
+   "fair": 623,
+   "parlay": {
+    "book": "MGM",
+    "legs": [
+     175,
+     155
+    ],
+    "american": 601,
+    "dec": 7.012
+   },
+   "evPct": -3.1,
+   "starRank": 1,
+   "star": 0.981,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "goal",
+     "chancePct": 38.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 175,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 130,
+       "MGM": 175,
+       "FD": 135,
+       "BR": 138,
+       "BOV": 134
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630500_13L42133Q1-312822071Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026576-6461091&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=44992509",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466390|{wagerAmount}"
+      }
+     },
+     "edge": 2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 36,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 175,
+      "bestBook": "FD",
+      "books": {
+       "DK": 170,
+       "MGM": 155,
+       "FD": 175,
+       "BR": 150,
+       "BOV": 167
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643174_13L42133Q1-2054815757Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026191-6460472&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=20852668",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420689|{wagerAmount}"
+      }
+     },
+     "edge": -0.4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 3,
+   "key": "8475810:goal|8483505:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 5.1,
+   "fair": 1848,
+   "parlay": {
+    "book": "DK",
+    "legs": [
+     275,
+     800
+    ],
+    "american": 3275,
+    "dec": 33.75
+   },
+   "evPct": 73.2,
+   "starRank": 5,
+   "star": 0.796,
+   "legs": [
+    {
+     "playerId": 8475810,
+     "name": "Bryan Rust",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 29,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 280,
+      "bestBook": "BR",
+      "books": {
+       "DK": 275,
+       "MGM": 250,
+       "FD": 275,
+       "BR": 280,
+       "BOV": 265
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643699_13L42133Q1-1020243210Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026234-6460558&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12857539",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420800|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "18:38"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8483505,
+     "name": "Matthew Poitras",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 17.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 800,
+      "bestBook": "DK",
+      "books": {
+       "DK": 800,
+       "MGM": 625,
+       "FD": 750,
+       "BR": 700,
+       "BOV": 700
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630560_13L42133Q11565482315Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026589-6461117&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=61420699",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466368|{wagerAmount}"
+      }
+     },
+     "edge": 6.6,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "09:18"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": 32.75
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 4,
+   "key": "8475172:goal|8482177:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 4.5,
+   "fair": 2125,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     260,
+     750
+    ],
+    "american": 2960,
+    "dec": 30.6
+   },
+   "evPct": 37.5,
+   "starRank": null,
+   "star": 0.559,
+   "legs": [
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 31,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 260,
+      "bestBook": "FD",
+      "books": {
+       "DK": 240,
+       "MGM": 210,
+       "FD": 260,
+       "BR": 240,
+       "BOV": 240
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642658_13L42133Q1-218511862Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026170-6460430&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449287",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440545|{wagerAmount}"
+      }
+     },
+     "edge": 3.2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8482177,
+     "name": "Marat Khusnutdinov",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 14.5,
+     "grade": "C",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 750,
+      "bestBook": "FD",
+      "books": {
+       "DK": 700,
+       "MGM": 600,
+       "FD": 750,
+       "BR": 650,
+       "BOV": 675
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630558_13L42133Q1-127332906Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026585-6461109&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=68187998",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446704|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "14:35"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 5,
+   "key": "8479325:point|8479987:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 32.2,
+   "fair": 211,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.87,
+   "legs": [
+    {
+     "playerId": 8479325,
+     "name": "Charlie McAvoy",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 54.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "26:54"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 52.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 6,
+   "key": "8477496:point|8478401:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 27.1,
+   "fair": 270,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.736,
+   "legs": [
+    {
+     "playerId": 8478401,
+     "name": "Pavel Zacha",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49.3,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 1,
+      "toi": "17:04"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 7,
+   "key": "8480069:point|8485414:point",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 23,
+   "fair": 335,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.593,
+   "legs": [
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 64.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8485414,
+     "name": "Ben Kindel",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 36.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "14:57"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 8,
+   "key": "8484153:point|8485395:goal",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "opp",
+   "corr": 0.98,
+   "chancePct": 12.1,
+   "fair": 724,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.666,
+   "legs": [
+    {
+     "playerId": 8485395,
+     "name": "James Hagens",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 20.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 500,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 360,
+       "MGM": 500,
+       "FD": 360,
+       "BR": 335,
+       "BOV": 335
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630563_13L42133Q1-267365205Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026547-6461033&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=75905931",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446853|{wagerAmount}"
+      }
+     },
+     "edge": 4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "10:03"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 59.8,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 9,
+   "key": "8475798:point|8484762:point",
+   "section": "\ud83d\udd17 Teammates",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 37.1,
+   "fair": 170,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 3,
+   "star": 0.932,
+   "legs": [
+    {
+     "playerId": 8475798,
+     "name": "Mikael Granlund",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 58.1,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": false,
+     "actual": null,
+     "hit": null
+    },
+    {
+     "playerId": 8484762,
+     "name": "Beckett Sennecke",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 57,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 1,
+      "toi": "23:12"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": true,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced",
+   "rank": 10,
+   "key": "8473986:sog3|8476483:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 10.8,
+   "fair": 822,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.669,
+   "legs": [
+    {
+     "playerId": 8476483,
+     "name": "Rickard Rakell",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "sog3",
+     "chancePct": 39.2,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 5,
+      "toi": "18:51"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8473986,
+     "name": "Alex Killorn",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "sog3",
+     "chancePct": 27.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "16:06"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 1,
+   "key": "8475810:goal|8483505:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 5.1,
+   "fair": 1848,
+   "parlay": {
+    "book": "DK",
+    "legs": [
+     275,
+     800
+    ],
+    "american": 3275,
+    "dec": 33.75
+   },
+   "evPct": 73.2,
+   "starRank": 3,
+   "star": 0.796,
+   "legs": [
+    {
+     "playerId": 8475810,
+     "name": "Bryan Rust",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 29,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 280,
+      "bestBook": "BR",
+      "books": {
+       "DK": 275,
+       "MGM": 250,
+       "FD": 275,
+       "BR": 280,
+       "BOV": 265
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643699_13L42133Q1-1020243210Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026234-6460558&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12857539",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420800|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "18:38"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8483505,
+     "name": "Matthew Poitras",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 17.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 800,
+      "bestBook": "DK",
+      "books": {
+       "DK": 800,
+       "MGM": 625,
+       "FD": 750,
+       "BR": 700,
+       "BOV": 700
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630560_13L42133Q11565482315Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026589-6461117&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=61420699",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466368|{wagerAmount}"
+      }
+     },
+     "edge": 6.6,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "09:18"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": 32.75
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 2,
+   "key": "8475172:goal|8483505:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 5.5,
+   "fair": 1722,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     260,
+     750
+    ],
+    "american": 2960,
+    "dec": 30.6
+   },
+   "evPct": 67.9,
+   "starRank": 2,
+   "star": 0.825,
+   "legs": [
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 31,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 260,
+      "bestBook": "FD",
+      "books": {
+       "DK": 240,
+       "MGM": 210,
+       "FD": 260,
+       "BR": 240,
+       "BOV": 240
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642658_13L42133Q1-218511862Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026170-6460430&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449287",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440545|{wagerAmount}"
+      }
+     },
+     "edge": 3.2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8483505,
+     "name": "Matthew Poitras",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 17.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 800,
+      "bestBook": "DK",
+      "books": {
+       "DK": 800,
+       "MGM": 625,
+       "FD": 750,
+       "BR": 700,
+       "BOV": 700
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630560_13L42133Q11565482315Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026589-6461117&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=61420699",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466368|{wagerAmount}"
+      }
+     },
+     "edge": 6.6,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "09:18"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 3,
+   "key": "8475172:goal|8482177:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 4.5,
+   "fair": 2125,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     260,
+     750
+    ],
+    "american": 2960,
+    "dec": 30.6
+   },
+   "evPct": 37.5,
+   "starRank": null,
+   "star": 0.559,
+   "legs": [
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 31,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 260,
+      "bestBook": "FD",
+      "books": {
+       "DK": 240,
+       "MGM": 210,
+       "FD": 260,
+       "BR": 240,
+       "BOV": 240
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642658_13L42133Q1-218511862Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026170-6460430&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449287",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440545|{wagerAmount}"
+      }
+     },
+     "edge": 3.2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8482177,
+     "name": "Marat Khusnutdinov",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 14.5,
+     "grade": "C",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 750,
+      "bestBook": "FD",
+      "books": {
+       "DK": 700,
+       "MGM": 600,
+       "FD": 750,
+       "BR": 650,
+       "BOV": 675
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630558_13L42133Q1-127332906Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026585-6461109&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=68187998",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446704|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "14:35"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 4,
+   "key": "8474578:goal|8482177:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 2.3,
+   "fair": 4157,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     575,
+     750
+    ],
+    "american": 5638,
+    "dec": 57.375
+   },
+   "evPct": 34.8,
+   "starRank": null,
+   "star": 0.144,
+   "legs": [
+    {
+     "playerId": 8474578,
+     "name": "Erik Karlsson",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "D",
+     "prop": "goal",
+     "chancePct": 16.2,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 575,
+      "bestBook": "FD",
+      "books": {
+       "DK": 500,
+       "MGM": 475,
+       "FD": 575,
+       "BR": 550,
+       "BOV": 500
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643680_13L42133Q11803730063Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026240-6460570&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449407",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431957|{wagerAmount}"
+      }
+     },
+     "edge": 1.4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "20:57"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8482177,
+     "name": "Marat Khusnutdinov",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 14.5,
+     "grade": "C",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 750,
+      "bestBook": "FD",
+      "books": {
+       "DK": 700,
+       "MGM": 600,
+       "FD": 750,
+       "BR": 650,
+       "BOV": 675
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630558_13L42133Q1-127332906Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026585-6461109&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=68187998",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446704|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "14:35"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 5,
+   "key": "8475810:goal|8477496:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 7.2,
+   "fair": 1290,
+   "parlay": {
+    "book": "BR",
+    "legs": [
+     280,
+     375
+    ],
+    "american": 1705,
+    "dec": 18.05
+   },
+   "evPct": 29.8,
+   "starRank": 1,
+   "star": 0.887,
+   "legs": [
+    {
+     "playerId": 8475810,
+     "name": "Bryan Rust",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 29,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 280,
+      "bestBook": "BR",
+      "books": {
+       "DK": 275,
+       "MGM": 250,
+       "FD": 275,
+       "BR": 280,
+       "BOV": 265
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643699_13L42133Q1-1020243210Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026234-6460558&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12857539",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420800|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "18:38"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 24.8,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 375,
+      "bestBook": "BR",
+      "books": {
+       "DK": 340,
+       "MGM": 280,
+       "FD": 370,
+       "BR": 375,
+       "BOV": 330
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630537_13L42133Q1-1929178231Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026562-6461063&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12449438",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472241|{wagerAmount}"
+      }
+     },
+     "edge": 3.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": 17.05
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 6,
+   "key": "8474578:goal|8479999:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 2.9,
+   "fair": 3310,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     550,
+     575
+    ],
+    "american": 4288,
+    "dec": 43.875
+   },
+   "evPct": 28.7,
+   "starRank": null,
+   "star": 0.243,
+   "legs": [
+    {
+     "playerId": 8479999,
+     "name": "Casey Mittelstadt",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 18.1,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 550,
+      "bestBook": "FD",
+      "books": {
+       "DK": 500,
+       "MGM": 425,
+       "FD": 550,
+       "BR": 460,
+       "BOV": 475
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630555_13L42133Q11367153421Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026598-6461135&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=21604084",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466441|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "10:25"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8474578,
+     "name": "Erik Karlsson",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "D",
+     "prop": "goal",
+     "chancePct": 16.2,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 575,
+      "bestBook": "FD",
+      "books": {
+       "DK": 500,
+       "MGM": 475,
+       "FD": 575,
+       "BR": 550,
+       "BOV": 500
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643680_13L42133Q11803730063Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026240-6460570&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449407",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376431957|{wagerAmount}"
+      }
+     },
+     "edge": 1.4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "20:57"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 7,
+   "key": "8471215:goal|8485395:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 5.4,
+   "fair": 1758,
+   "parlay": {
+    "book": "MGM",
+    "legs": [
+     280,
+     500
+    ],
+    "american": 2180,
+    "dec": 22.8
+   },
+   "evPct": 22.7,
+   "starRank": 5,
+   "star": 0.68,
+   "legs": [
+    {
+     "playerId": 8471215,
+     "name": "Evgeni Malkin",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 26,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 290,
+      "bestBook": "FD",
+      "books": {
+       "DK": 260,
+       "MGM": 280,
+       "FD": 290,
+       "BR": 285,
+       "BOV": 270
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643635_13L42133Q11747521153Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026217-6460524&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496352",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420698|{wagerAmount}"
+      }
+     },
+     "edge": 0.4,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "17:01"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8485395,
+     "name": "James Hagens",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 20.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 500,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 360,
+       "MGM": 500,
+       "FD": 360,
+       "BR": 335,
+       "BOV": 335
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630563_13L42133Q1-267365205Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026547-6461033&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=75905931",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446853|{wagerAmount}"
+      }
+     },
+     "edge": 4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "10:03"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 8,
+   "key": "8476483:goal|8485395:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 5.7,
+   "fair": 1663,
+   "parlay": {
+    "book": "MGM",
+    "legs": [
+     260,
+     500
+    ],
+    "american": 2060,
+    "dec": 21.6
+   },
+   "evPct": 22.5,
+   "starRank": 4,
+   "star": 0.709,
+   "legs": [
+    {
+     "playerId": 8476483,
+     "name": "Rickard Rakell",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 27.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 260,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 245,
+       "MGM": 260,
+       "FD": 260,
+       "BR": 240,
+       "BOV": 240
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643600_13L42133Q1-1823173526Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026222-6460534&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449303",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420758|{wagerAmount}"
+      }
+     },
+     "edge": -0.4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 5,
+      "toi": "18:51"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8485395,
+     "name": "James Hagens",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 20.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 500,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 360,
+       "MGM": 500,
+       "FD": 360,
+       "BR": 335,
+       "BOV": 335
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630563_13L42133Q1-267365205Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026547-6461033&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=75905931",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446853|{wagerAmount}"
+      }
+     },
+     "edge": 4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "10:03"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 9,
+   "key": "8471215:goal|8479999:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 4.7,
+   "fair": 2025,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     290,
+     550
+    ],
+    "american": 2435,
+    "dec": 25.35
+   },
+   "evPct": 19.3,
+   "starRank": null,
+   "star": 0.556,
+   "legs": [
+    {
+     "playerId": 8471215,
+     "name": "Evgeni Malkin",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 26,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 290,
+      "bestBook": "FD",
+      "books": {
+       "DK": 260,
+       "MGM": 280,
+       "FD": 290,
+       "BR": 285,
+       "BOV": 270
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643635_13L42133Q11747521153Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026217-6460524&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496352",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420698|{wagerAmount}"
+      }
+     },
+     "edge": 0.4,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "17:01"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8479999,
+     "name": "Casey Mittelstadt",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 18.1,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 550,
+      "bestBook": "FD",
+      "books": {
+       "DK": 500,
+       "MGM": 425,
+       "FD": 550,
+       "BR": 460,
+       "BOV": 475
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630555_13L42133Q11367153421Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026598-6461135&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=21604084",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466441|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "10:25"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "value",
+   "rank": 10,
+   "key": "8477496:goal|8483808:goal",
+   "section": "\ud83d\udcb0 Value",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 4,
+   "fair": 2405,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     370,
+     525
+    ],
+    "american": 2838,
+    "dec": 29.375
+   },
+   "evPct": 17.3,
+   "starRank": null,
+   "star": 0.4,
+   "legs": [
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 24.8,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 375,
+      "bestBook": "BR",
+      "books": {
+       "DK": 340,
+       "MGM": 280,
+       "FD": 370,
+       "BR": 375,
+       "BOV": 330
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630537_13L42133Q1-1929178231Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026562-6461063&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12449438",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472241|{wagerAmount}"
+      }
+     },
+     "edge": 3.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8483808,
+     "name": "Andrei Kuzmenko",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "L",
+     "prop": "goal",
+     "chancePct": 16.1,
+     "grade": "C",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 550,
+      "bestBook": "DK",
+      "books": {
+       "DK": 550,
+       "MGM": 375,
+       "FD": 525,
+       "BR": 480,
+       "BOV": 475
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643769_13L42133Q1-1140063041Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026207-6460504&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=48699553",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440527|{wagerAmount}"
+      }
+     },
+     "edge": 0.7,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "11:03"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 1,
+   "key": "8477492:point|8480039:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 57.8,
+   "fair": -137,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 1,
+   "star": 1,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 76.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 67.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 2,
+   "key": "8477492:point|8477956:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 55.9,
+   "fair": -127,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 2,
+   "star": 0.999,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 76.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 3,
+   "key": "8477956:point|8480039:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 49.2,
+   "fair": 103,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 3,
+   "star": 0.996,
+   "legs": [
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 67.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 4,
+   "key": "8475172:point|8480069:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 41.1,
+   "fair": 143,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.972,
+   "legs": [
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 64.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 56.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 5,
+   "key": "8483445:point|8484153:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 40.9,
+   "fair": 145,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 5,
+   "star": 0.97,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "point",
+     "chancePct": 61,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 59.8,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 6,
+   "key": "8475798:point|8483445:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 39.7,
+   "fair": 152,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.96,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "point",
+     "chancePct": 61,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475798,
+     "name": "Mikael Granlund",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 58.1,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": false,
+     "actual": null,
+     "hit": null
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": true,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 7,
+   "key": "8475754:point|8480069:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 39.1,
+   "fair": 156,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.954,
+   "legs": [
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 64.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475754,
+     "name": "Brock Nelson",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 54,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "20:27"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 8,
+   "key": "8475798:point|8484153:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 38.9,
+   "fair": 157,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.951,
+   "legs": [
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 59.8,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8475798,
+     "name": "Mikael Granlund",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 58.1,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": false,
+     "actual": null,
+     "hit": null
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": true,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 9,
+   "key": "8475172:point|8475754:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 34.4,
+   "fair": 191,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.913,
+   "legs": [
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 56.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475754,
+     "name": "Brock Nelson",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 54,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "20:27"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "safest",
+   "rank": 10,
+   "key": "8481605:point|8484762:point",
+   "section": "\ud83d\udee1\ufe0f Safest",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 32.9,
+   "fair": 204,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.888,
+   "legs": [
+    {
+     "playerId": 8484762,
+     "name": "Beckett Sennecke",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 57,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 1,
+      "toi": "23:12"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8481605,
+     "name": "Jackson LaCombe",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 51.5,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "26:26"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "due",
+   "rank": 1,
+   "key": "8477492:point|8485414:point",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 27.3,
+   "fair": 267,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 3,
+   "star": 0.743,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 76.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8485414,
+     "name": "Ben Kindel",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 36.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "14:57"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "due",
+   "rank": 2,
+   "key": "8477956:point|8485414:point",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 26.8,
+   "fair": 273,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 5,
+   "star": 0.725,
+   "legs": [
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8485414,
+     "name": "Ben Kindel",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 36.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "14:57"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "due",
+   "rank": 3,
+   "key": "8477956:point|8485395:goal",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 16.9,
+   "fair": 491,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 1,
+   "star": 0.882,
+   "legs": [
+    {
+     "playerId": 8485395,
+     "name": "James Hagens",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 20.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 500,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 360,
+       "MGM": 500,
+       "FD": 360,
+       "BR": 335,
+       "BOV": 335
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630563_13L42133Q1-267365205Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026547-6461033&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=75905931",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446853|{wagerAmount}"
+      }
+     },
+     "edge": 4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "10:03"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "due",
+   "rank": 4,
+   "key": "8477492:point|8485395:goal",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 15.9,
+   "fair": 531,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 2,
+   "star": 0.843,
+   "legs": [
+    {
+     "playerId": 8485395,
+     "name": "James Hagens",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 20.7,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 500,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 360,
+       "MGM": 500,
+       "FD": 360,
+       "BR": 335,
+       "BOV": 335
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630563_13L42133Q1-267365205Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026547-6461033&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=75905931",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446853|{wagerAmount}"
+      }
+     },
+     "edge": 4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "10:03"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 76.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "due",
+   "rank": 5,
+   "key": "8480039:point|8483489:goal",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 13.2,
+   "fair": 657,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.727,
+   "legs": [
+    {
+     "playerId": 8483489,
+     "name": "Fraser Minten",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 19.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 390,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 320,
+       "MGM": 390,
+       "FD": 330,
+       "BR": 330,
+       "BOV": 310
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630562_13L42133Q1-684481969Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026536-6461013&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=61543152",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466376|{wagerAmount}"
+      }
+     },
+     "edge": -0.8,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "17:05"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 67.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "due",
+   "rank": 6,
+   "key": "8480069:point|8483489:goal",
+   "section": "\ud83d\udd25 Due / heating",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 12.7,
+   "fair": 690,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.698,
+   "legs": [
+    {
+     "playerId": 8483489,
+     "name": "Fraser Minten",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 19.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 390,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 320,
+       "MGM": 390,
+       "FD": 330,
+       "BR": 330,
+       "BOV": 310
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630562_13L42133Q1-684481969Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026536-6461013&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=61543152",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466376|{wagerAmount}"
+      }
+     },
+     "edge": -0.8,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "17:05"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 64.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 1,
+   "key": "8477956:point|8479325:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 44.5,
+   "fair": 125,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 1,
+   "star": 0.986,
+   "legs": [
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8479325,
+     "name": "Charlie McAvoy",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 54.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "26:54"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 2,
+   "key": "8477956:point|8479987:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 43.2,
+   "fair": 132,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 2,
+   "star": 0.982,
+   "legs": [
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 52.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 3,
+   "key": "8479325:point|8479987:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 32.2,
+   "fair": 211,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 3,
+   "star": 0.87,
+   "legs": [
+    {
+     "playerId": 8479325,
+     "name": "Charlie McAvoy",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 54.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "26:54"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 52.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 4,
+   "key": "8477496:point|8478401:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 27.1,
+   "fair": 270,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.736,
+   "legs": [
+    {
+     "playerId": 8478401,
+     "name": "Pavel Zacha",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49.3,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 1,
+      "toi": "17:04"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 5,
+   "key": "8478401:point|8481605:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 24.6,
+   "fair": 306,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 5,
+   "star": 0.664,
+   "legs": [
+    {
+     "playerId": 8481605,
+     "name": "Jackson LaCombe",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 51.5,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "26:26"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8478401,
+     "name": "Pavel Zacha",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49.3,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 1,
+      "toi": "17:04"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 6,
+   "key": "8477496:point|8481605:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 24.5,
+   "fair": 309,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.659,
+   "legs": [
+    {
+     "playerId": 8481605,
+     "name": "Jackson LaCombe",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 51.5,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "26:26"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 7,
+   "key": "8482175:point|8483489:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 19.9,
+   "fair": 401,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.433,
+   "legs": [
+    {
+     "playerId": 8482175,
+     "name": "JJ Peterka",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 42.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "14:14"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8483489,
+     "name": "Fraser Minten",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 41.8,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "17:05"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 8,
+   "key": "8479999:point|8482175:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 19.1,
+   "fair": 423,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.377,
+   "legs": [
+    {
+     "playerId": 8482175,
+     "name": "JJ Peterka",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 42.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "14:14"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479999,
+     "name": "Casey Mittelstadt",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 40.1,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "10:25"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 9,
+   "key": "8479999:point|8483489:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 18.8,
+   "fair": 433,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.356,
+   "legs": [
+    {
+     "playerId": 8483489,
+     "name": "Fraser Minten",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 41.8,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "17:05"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479999,
+     "name": "Casey Mittelstadt",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 40.1,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "10:25"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "soft",
+   "rank": 10,
+   "key": "8476854:point|8485395:point",
+   "section": "\u25b2 Soft matchup",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 16,
+   "fair": 524,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.208,
+   "legs": [
+    {
+     "playerId": 8485395,
+     "name": "James Hagens",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 39.1,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "10:03"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8476854,
+     "name": "Hampus Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 36.6,
+     "grade": "C",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 0,
+      "toi": "25:51"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 1,
+   "key": "8477492:point|8480039:point",
+   "section": "\ud83d\udd17 Teammates",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 57.8,
+   "fair": -137,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 1,
+   "star": 1,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 76.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 67.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 2,
+   "key": "8477492:point|8480069:point",
+   "section": "\ud83d\udd17 Teammates",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 55.4,
+   "fair": -124,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 2,
+   "star": 0.997,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 76.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 64.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 3,
+   "key": "8480039:point|8480069:point",
+   "section": "\ud83d\udd17 Teammates",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 48.8,
+   "fair": 105,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 3,
+   "star": 0.995,
+   "legs": [
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 67.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 64.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 4,
+   "key": "8477956:point|8479325:point",
+   "section": "\ud83d\udd17 Teammates",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 44.5,
+   "fair": 125,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.986,
+   "legs": [
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8479325,
+     "name": "Charlie McAvoy",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 54.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "26:54"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 5,
+   "key": "8477956:point|8479987:point",
+   "section": "\ud83d\udd17 Teammates",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 43.2,
+   "fair": 132,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 5,
+   "star": 0.982,
+   "legs": [
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 52.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 6,
+   "key": "8483445:point|8484153:point",
+   "section": "\ud83d\udd17 Teammates",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 40.9,
+   "fair": 145,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.97,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "point",
+     "chancePct": 61,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 59.8,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 7,
+   "key": "8479325:point|8483445:point",
+   "section": "\u2694\ufe0f Opponents",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 32.2,
+   "fair": 211,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.872,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "point",
+     "chancePct": 61,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8479325,
+     "name": "Charlie McAvoy",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 54.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "26:54"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 8,
+   "key": "8471675:point|8475172:point",
+   "section": "\u2694\ufe0f Opponents",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 30.7,
+   "fair": 226,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.841,
+   "legs": [
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 56.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8471675,
+     "name": "Sidney Crosby",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 55.7,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "19:46"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 9,
+   "key": "8479987:point|8484153:point",
+   "section": "\u2694\ufe0f Opponents",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 30.6,
+   "fair": 227,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.838,
+   "legs": [
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 59.8,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 52.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "stacks",
+   "rank": 10,
+   "key": "8471675:point|8475754:point",
+   "section": "\u2694\ufe0f Opponents",
+   "rel": "opp",
+   "corr": 0.97,
+   "chancePct": 29.2,
+   "fair": 243,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.802,
+   "legs": [
+    {
+     "playerId": 8471675,
+     "name": "Sidney Crosby",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 55.7,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "19:46"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475754,
+     "name": "Brock Nelson",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 54,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "20:27"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 1,
+   "key": "8477492:goal|8477956:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 19,
+   "fair": 427,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     -120,
+     140
+    ],
+    "american": 340,
+    "dec": 4.4
+   },
+   "evPct": -16.5,
+   "starRank": 2,
+   "star": 0.95,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 45.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": -105,
+      "bestBook": "MGM",
+      "books": {
+       "DK": -125,
+       "MGM": -105,
+       "FD": -120,
+       "BR": -127,
+       "BOV": -125
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642585_13L42133Q1-170743743Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026189-6460466&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449308",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440565|{wagerAmount}"
+      }
+     },
+     "edge": -5.6,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 41.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 143,
+      "bestBook": "BR",
+      "books": {
+       "DK": 135,
+       "MGM": 125,
+       "FD": 140,
+       "BR": 143,
+       "BOV": 133
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630533_13L42133Q1-852739168Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026586-6461111&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12496295",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466364|{wagerAmount}"
+      }
+     },
+     "edge": 0.4,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": 3.4
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 2,
+   "key": "8480039:goal|8483445:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 13.8,
+   "fair": 623,
+   "parlay": {
+    "book": "MGM",
+    "legs": [
+     175,
+     155
+    ],
+    "american": 601,
+    "dec": 7.012
+   },
+   "evPct": -3.1,
+   "starRank": 1,
+   "star": 0.981,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "goal",
+     "chancePct": 38.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 175,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 130,
+       "MGM": 175,
+       "FD": 135,
+       "BR": 138,
+       "BOV": 134
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630500_13L42133Q1-312822071Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026576-6461091&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=44992509",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466390|{wagerAmount}"
+      }
+     },
+     "edge": 2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 36,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 175,
+      "bestBook": "FD",
+      "books": {
+       "DK": 170,
+       "MGM": 155,
+       "FD": 175,
+       "BR": 150,
+       "BOV": 167
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643174_13L42133Q1-2054815757Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026191-6460472&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=20852668",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420689|{wagerAmount}"
+      }
+     },
+     "edge": -0.4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 3,
+   "key": "8475172:goal|8484153:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 9.8,
+   "fair": 924,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     170,
+     260
+    ],
+    "american": 872,
+    "dec": 9.72
+   },
+   "evPct": -5.1,
+   "starRank": 3,
+   "star": 0.914,
+   "legs": [
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 31.5,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 200,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 165,
+       "MGM": 200,
+       "FD": 170,
+       "BR": 160,
+       "BOV": 170
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630463_13L42133Q1-338491320Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026607-6461153&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=51950508",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376466408|{wagerAmount}"
+      }
+     },
+     "edge": -1.8,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 31,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 260,
+      "bestBook": "FD",
+      "books": {
+       "DK": 240,
+       "MGM": 210,
+       "FD": 260,
+       "BR": 240,
+       "BOV": 240
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642658_13L42133Q1-218511862Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026170-6460430&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449287",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440545|{wagerAmount}"
+      }
+     },
+     "edge": 3.2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 4,
+   "key": "8475798:goal|8484762:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "team",
+   "corr": 1,
+   "chancePct": 9,
+   "fair": 1015,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.904,
+   "legs": [
+    {
+     "playerId": 8484762,
+     "name": "Beckett Sennecke",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 30.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 200,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 165,
+       "MGM": 200,
+       "FD": 190,
+       "BR": 188,
+       "BOV": 180
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630507_13L42133Q1-426961209Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026583-6461105&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=70260728",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446742|{wagerAmount}"
+      }
+     },
+     "edge": -2.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 1,
+      "toi": "23:12"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475798,
+     "name": "Mikael Granlund",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 29.3,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": false,
+     "actual": null,
+     "hit": null
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": true,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 5,
+   "key": "8471675:goal|8475810:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "team",
+   "corr": 1,
+   "chancePct": 8.3,
+   "fair": 1106,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 5,
+   "star": 0.875,
+   "legs": [
+    {
+     "playerId": 8475810,
+     "name": "Bryan Rust",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 29,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 280,
+      "bestBook": "BR",
+      "books": {
+       "DK": 275,
+       "MGM": 250,
+       "FD": 275,
+       "BR": 280,
+       "BOV": 265
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643699_13L42133Q1-1020243210Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026234-6460558&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12857539",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420800|{wagerAmount}"
+      }
+     },
+     "edge": 2.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "18:38"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8471675,
+     "name": "Sidney Crosby",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 28.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 250,
+      "bestBook": "DK",
+      "books": {
+       "DK": 250,
+       "MGM": 240,
+       "FD": 240,
+       "BR": 230,
+       "BOV": 235
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643612_13L42133Q1-1861961014Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026237-6460564&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496353",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440539|{wagerAmount}"
+      }
+     },
+     "edge": 0,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "19:46"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 6,
+   "key": "8475754:goal|8479987:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 8.2,
+   "fair": 1119,
+   "parlay": {
+    "book": "FD",
+    "legs": [
+     240,
+     200
+    ],
+    "american": 920,
+    "dec": 10.2
+   },
+   "evPct": -16.3,
+   "starRank": null,
+   "star": 0.823,
+   "legs": [
+    {
+     "playerId": 8475754,
+     "name": "Brock Nelson",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 29.2,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 240,
+      "bestBook": "DK",
+      "books": {
+       "DK": 240,
+       "MGM": 200,
+       "FD": 240,
+       "BR": 230,
+       "BOV": 230
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642796_13L42133Q12082714192Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026188-6460468&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496418",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420766|{wagerAmount}"
+      }
+     },
+     "edge": -0.2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "20:27"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 28.1,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 200,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 195,
+       "MGM": 200,
+       "FD": 200,
+       "BR": 180,
+       "BOV": 195
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630546_13L42133Q1-234387984Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026520-6460979&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=39505240",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472321|{wagerAmount}"
+      }
+     },
+     "edge": -5.2,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 7,
+   "key": "8471215:goal|8476483:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "team",
+   "corr": 1,
+   "chancePct": 7.1,
+   "fair": 1304,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.795,
+   "legs": [
+    {
+     "playerId": 8476483,
+     "name": "Rickard Rakell",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 27.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 260,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 245,
+       "MGM": 260,
+       "FD": 260,
+       "BR": 240,
+       "BOV": 240
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643600_13L42133Q1-1823173526Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026222-6460534&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449303",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420758|{wagerAmount}"
+      }
+     },
+     "edge": -0.4,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 5,
+      "toi": "18:51"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8471215,
+     "name": "Evgeni Malkin",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 26,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 290,
+      "bestBook": "FD",
+      "books": {
+       "DK": 260,
+       "MGM": 280,
+       "FD": 290,
+       "BR": 285,
+       "BOV": 270
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643635_13L42133Q11747521153Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026217-6460524&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496352",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376420698|{wagerAmount}"
+      }
+     },
+     "edge": 0.4,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "17:01"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 8,
+   "key": "8477496:goal|8478401:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "team",
+   "corr": 1,
+   "chancePct": 6.2,
+   "fair": 1526,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.703,
+   "legs": [
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 24.8,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 375,
+      "bestBook": "BR",
+      "books": {
+       "DK": 340,
+       "MGM": 280,
+       "FD": 370,
+       "BR": 375,
+       "BOV": 330
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630537_13L42133Q1-1929178231Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026562-6461063&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12449438",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376472241|{wagerAmount}"
+      }
+     },
+     "edge": 3.7,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8478401,
+     "name": "Pavel Zacha",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "goal",
+     "chancePct": 24.8,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 260,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 230,
+       "MGM": 260,
+       "FD": 240,
+       "BR": 245,
+       "BOV": 230
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630542_13L42133Q1-1799999812Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026606-6461151&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=12449333",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446760|{wagerAmount}"
+      }
+     },
+     "edge": -3,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 1,
+      "toi": "17:04"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 9,
+   "key": "8477476:goal|8480069:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "team",
+   "corr": 1,
+   "chancePct": 5.8,
+   "fair": 1615,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.664,
+   "legs": [
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "goal",
+     "chancePct": 24.2,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 275,
+      "bestBook": "FD",
+      "books": {
+       "DK": 265,
+       "MGM": 250,
+       "FD": 275,
+       "BR": 260,
+       "BOV": 255
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322643249_13L42133Q11533347157Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026218-6460526&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=25990567",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376432024|{wagerAmount}"
+      }
+     },
+     "edge": -2.5,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8477476,
+     "name": "Artturi Lehkonen",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "L",
+     "prop": "goal",
+     "chancePct": 24.1,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": {
+      "best": 270,
+      "bestBook": "FD",
+      "books": {
+       "DK": 265,
+       "MGM": 260,
+       "FD": 270,
+       "BR": 265,
+       "BOV": 260
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642700_13L42133Q1-1713761000Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026270-6460630&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12496401",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440507|{wagerAmount}"
+      }
+     },
+     "edge": -2.9,
+     "played": true,
+     "actual": {
+      "g": 2,
+      "a": 0,
+      "p": 2,
+      "sog": 3,
+      "toi": "18:33"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:goal",
+   "rank": 10,
+   "key": "8476455:goal|8482175:goal",
+   "section": "\ud83d\udea8 Goals",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 5.2,
+   "fair": 1835,
+   "parlay": {
+    "book": "DK",
+    "legs": [
+     320,
+     260
+    ],
+    "american": 1412,
+    "dec": 15.12
+   },
+   "evPct": -21.9,
+   "starRank": null,
+   "star": 0.519,
+   "legs": [
+    {
+     "playerId": 8476455,
+     "name": "Gabriel Landeskog",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "L",
+     "prop": "goal",
+     "chancePct": 23.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": {
+      "best": 320,
+      "bestBook": "DK",
+      "books": {
+       "DK": 320,
+       "MGM": 230,
+       "FD": 320,
+       "BR": 290,
+       "BOV": 300
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379493589%232322642588_13L42133Q12120579422Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45647-4026259-6460608&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616675754&selectionId=12449309",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409960?coupon={pickType}|4376440563|{wagerAmount}"
+      }
+     },
+     "edge": -0.2,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 1,
+      "toi": "14:56"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8482175,
+     "name": "JJ Peterka",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "goal",
+     "chancePct": 21.9,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": {
+      "best": 300,
+      "bestBook": "MGM",
+      "books": {
+       "DK": 260,
+       "MGM": 300,
+       "FD": 250,
+       "BR": 245,
+       "BOV": 250
+      },
+      "links": {
+       "DK": "https://sportsbook.draftkings.com/?outcomes=0QA379490049%232322630559_13L42133Q11414819976Q20",
+       "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45614-4026575-6461089&type=Single",
+       "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.616757608&selectionId=42205372",
+       "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409959?coupon={pickType}|4376446830|{wagerAmount}"
+      }
+     },
+     "edge": -3.1,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "14:14"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": -1.0
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 1,
+   "key": "8477492:point|8480039:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 57.8,
+   "fair": -137,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 1,
+   "star": 1,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 76.6,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 67.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 2,
+   "key": "8477956:point|8480069:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 47.2,
+   "fair": 112,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 2,
+   "star": 0.992,
+   "legs": [
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 73,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 64.6,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 3,
+   "key": "8483445:point|8484153:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 40.9,
+   "fair": 145,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 3,
+   "star": 0.97,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "point",
+     "chancePct": 61,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 59.8,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 4,
+   "key": "8475798:point|8484762:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 37.1,
+   "fair": 170,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.932,
+   "legs": [
+    {
+     "playerId": 8475798,
+     "name": "Mikael Granlund",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 58.1,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": false,
+     "actual": null,
+     "hit": null
+    },
+    {
+     "playerId": 8484762,
+     "name": "Beckett Sennecke",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 57,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 1,
+      "toi": "23:12"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": true,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 5,
+   "key": "8475172:point|8475754:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 34.4,
+   "fair": 191,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 5,
+   "star": 0.913,
+   "legs": [
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 56.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475754,
+     "name": "Brock Nelson",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 54,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "20:27"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 6,
+   "key": "8471675:point|8475810:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 32.6,
+   "fair": 206,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.879,
+   "legs": [
+    {
+     "playerId": 8471675,
+     "name": "Sidney Crosby",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 55.7,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "19:46"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475810,
+     "name": "Bryan Rust",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 52.3,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "18:38"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 7,
+   "key": "8479325:point|8479987:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 32.2,
+   "fair": 211,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.87,
+   "legs": [
+    {
+     "playerId": 8479325,
+     "name": "Charlie McAvoy",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 54.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "26:54"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 52.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": true
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 8,
+   "key": "8471215:point|8474578:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 30.1,
+   "fair": 232,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.828,
+   "legs": [
+    {
+     "playerId": 8474578,
+     "name": "Erik Karlsson",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 52.2,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "20:57"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8471215,
+     "name": "Evgeni Malkin",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 51.5,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "17:01"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 9,
+   "key": "8477496:point|8478401:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "team",
+   "corr": 1.12,
+   "chancePct": 27.1,
+   "fair": 270,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.736,
+   "legs": [
+    {
+     "playerId": 8478401,
+     "name": "Pavel Zacha",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49.3,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 1,
+      "toi": "17:04"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "point",
+     "chancePct": 49,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:point",
+   "rank": 10,
+   "key": "8476483:point|8481605:point",
+   "section": "\ud83c\udf4e Points",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 24.9,
+   "fair": 301,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.675,
+   "legs": [
+    {
+     "playerId": 8481605,
+     "name": "Jackson LaCombe",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "D",
+     "prop": "point",
+     "chancePct": 51.5,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "26:26"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8476483,
+     "name": "Rickard Rakell",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "point",
+     "chancePct": 48.4,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 5,
+      "toi": "18:51"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 1,
+   "key": "8477492:sog3|8477956:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 45.8,
+   "fair": 118,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 1,
+   "star": 1,
+   "legs": [
+    {
+     "playerId": 8477492,
+     "name": "Nathan MacKinnon",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 69.9,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 3,
+      "p": 4,
+      "sog": 9,
+      "toi": "22:59"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8477956,
+     "name": "David Pastrnak",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "sog3",
+     "chancePct": 65.5,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 4,
+      "toi": "20:35"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 2,
+   "key": "8475172:sog3|8483445:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 33.2,
+   "fair": 201,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 2,
+   "star": 0.99,
+   "legs": [
+    {
+     "playerId": 8483445,
+     "name": "Cutter Gauthier",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "sog3",
+     "chancePct": 65,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "21:20"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8475172,
+     "name": "Nazem Kadri",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 51,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 4,
+      "toi": "20:55"
+     },
+     "hit": true
+    }
+   ],
+   "result": "hit",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 3,
+   "key": "8480069:sog3|8484762:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 23.9,
+   "fair": 318,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 3,
+   "star": 0.95,
+   "legs": [
+    {
+     "playerId": 8480069,
+     "name": "Cale Makar",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "D",
+     "prop": "sog3",
+     "chancePct": 50.7,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 2,
+      "p": 2,
+      "sog": 2,
+      "toi": "22:19"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8484762,
+     "name": "Beckett Sennecke",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "R",
+     "prop": "sog3",
+     "chancePct": 47.3,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 1,
+      "toi": "23:12"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 4,
+   "key": "8480039:sog3|8484153:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 19.6,
+   "fair": 411,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 4,
+   "star": 0.915,
+   "legs": [
+    {
+     "playerId": 8480039,
+     "name": "Martin Necas",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 46.4,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 3,
+      "p": 3,
+      "sog": 1,
+      "toi": "20:58"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8484153,
+     "name": "Leo Carlsson",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 42.2,
+     "grade": "A+",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 1,
+      "toi": "20:23"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 5,
+   "key": "8475798:sog3|8475810:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 15.3,
+   "fair": 555,
+   "parlay": null,
+   "evPct": null,
+   "starRank": 5,
+   "star": 0.837,
+   "legs": [
+    {
+     "playerId": 8475810,
+     "name": "Bryan Rust",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "sog3",
+     "chancePct": 39.2,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "18:38"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8475798,
+     "name": "Mikael Granlund",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 38.9,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": false,
+     "actual": null,
+     "hit": null
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": true,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 6,
+   "key": "8476483:sog3|8479987:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 13,
+   "fair": 671,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.754,
+   "legs": [
+    {
+     "playerId": 8476483,
+     "name": "Rickard Rakell",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "R",
+     "prop": "sog3",
+     "chancePct": 39.2,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 5,
+      "toi": "18:51"
+     },
+     "hit": true
+    },
+    {
+     "playerId": 8479987,
+     "name": "Morgan Geekie",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 33.1,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "19:59"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 7,
+   "key": "8475754:sog3|8477496:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 10.8,
+   "fair": 825,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.667,
+   "legs": [
+    {
+     "playerId": 8475754,
+     "name": "Brock Nelson",
+     "team": "COL",
+     "opp": "PIT",
+     "isHome": true,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 38.2,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 1,
+      "toi": "20:27"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8477496,
+     "name": "Elias Lindholm",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 28.3,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 1,
+      "p": 2,
+      "sog": 1,
+      "toi": "18:30"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 8,
+   "key": "8471675:sog3|8473986:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 10.5,
+   "fair": 852,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.647,
+   "legs": [
+    {
+     "playerId": 8471675,
+     "name": "Sidney Crosby",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 38,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "19:46"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8473986,
+     "name": "Alex Killorn",
+     "team": "ANA",
+     "opp": "BOS",
+     "isHome": true,
+     "position": "L",
+     "prop": "sog3",
+     "chancePct": 27.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "16:06"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 9,
+   "key": "8474578:sog3|8482175:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 9.8,
+   "fair": 921,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.586,
+   "legs": [
+    {
+     "playerId": 8474578,
+     "name": "Erik Karlsson",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "D",
+     "prop": "sog3",
+     "chancePct": 36.1,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 1,
+      "p": 1,
+      "sog": 2,
+      "toi": "20:57"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8482175,
+     "name": "JJ Peterka",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "R",
+     "prop": "sog3",
+     "chancePct": 27.2,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "14:14"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
+  },
+  {
+   "date": "2026-10-16",
+   "mode": "balanced:sog3",
+   "rank": 10,
+   "key": "8471215:sog3|8479325:sog3",
+   "section": "\ud83c\udfd2 Shots",
+   "rel": "diff",
+   "corr": 1,
+   "chancePct": 9.5,
+   "fair": 950,
+   "parlay": null,
+   "evPct": null,
+   "starRank": null,
+   "star": 0.559,
+   "legs": [
+    {
+     "playerId": 8471215,
+     "name": "Evgeni Malkin",
+     "team": "PIT",
+     "opp": "COL",
+     "isHome": false,
+     "position": "C",
+     "prop": "sog3",
+     "chancePct": 35.8,
+     "grade": "A",
+     "lineupStatus": null,
+     "softD": false,
+     "toughD": true,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 1,
+      "a": 0,
+      "p": 1,
+      "sog": 2,
+      "toi": "17:01"
+     },
+     "hit": false
+    },
+    {
+     "playerId": 8479325,
+     "name": "Charlie McAvoy",
+     "team": "BOS",
+     "opp": "ANA",
+     "isHome": false,
+     "position": "D",
+     "prop": "sog3",
+     "chancePct": 26.6,
+     "grade": "B",
+     "lineupStatus": null,
+     "softD": true,
+     "toughD": false,
+     "book": null,
+     "edge": null,
+     "played": true,
+     "actual": {
+      "g": 0,
+      "a": 0,
+      "p": 0,
+      "sog": 2,
+      "toi": "26:54"
+     },
+     "hit": false
+    }
+   ],
+   "result": "miss",
+   "oneLegVoid": false,
+   "units": null
   }
  ],
  "pairLocks": {
@@ -310490,6 +317458,17 @@
     "STL@MIN",
     "UTA@EDM",
     "CGY@VGK"
+   ]
+  },
+  "2026-10-16": {
+   "lockedAt": null,
+   "firstPuck": "2026-10-17T01:00:00Z",
+   "firstGame": "PIT@COL",
+   "late": false,
+   "teamsOfficial": [],
+   "gamesLocked": [
+    "PIT@COL",
+    "BOS@ANA"
    ]
   }
  }
