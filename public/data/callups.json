@@ -1,13 +1,258 @@
 {
  "_meta": {
-  "generated": "2026-10-17 12:08",
+  "generated": "2026-10-17 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 40,
+  "count": 44,
   "up": 28,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8481133,
+   "name": "Cole Reinhardt",
+   "team": "FLA",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2000-02-01",
+   "sweater": 29,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "OTT",
+    "round": 6,
+    "overallPick": 181
+   },
+   "recalledOn": "2026-10-17",
+   "from": "Charlotte",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-17",
+     "type": "up",
+     "club": "Charlotte"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": -3,
+     "pim": 6,
+     "team": "Charlotte Checkers"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 59,
+     "goals": 9,
+     "assists": 6,
+     "points": 15,
+     "plusMinus": -2,
+     "pim": 21,
+     "shots": 49,
+     "team": "Vegas Golden Knights / Florida Panthers"
+    },
+    "careerGp": 77,
+    "careerG": 10,
+    "careerP": 17
+   }
+  },
+  {
+   "playerId": 8477380,
+   "name": "Jonny Brodzinski",
+   "team": "WSH",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "1993-06-19",
+   "sweater": 76,
+   "draft": {
+    "year": 2013,
+    "teamAbbrev": "LAK",
+    "round": 5,
+    "overallPick": 148
+   },
+   "recalledOn": "2026-10-17",
+   "from": "Hershey",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-17",
+     "type": "up",
+     "club": "Hershey"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 2,
+     "assists": 3,
+     "points": 5,
+     "plusMinus": 3,
+     "pim": 2,
+     "team": "Hershey Bears"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 2,
+     "team": "Washington Capitals"
+    },
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 6,
+     "assists": 10,
+     "points": 16,
+     "plusMinus": -1,
+     "pim": 12,
+     "shots": 63,
+     "team": "New York Rangers"
+    },
+    "careerGp": 265,
+    "careerG": 33,
+    "careerP": 71
+   }
+  },
+  {
+   "playerId": 8477380,
+   "name": "Jonny Brodzinski",
+   "team": "NYR",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "1993-06-19",
+   "sweater": 76,
+   "draft": {
+    "year": 2013,
+    "teamAbbrev": "LAK",
+    "round": 5,
+    "overallPick": 148
+   },
+   "recalledOn": "2026-10-17",
+   "from": "Hershey",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-17",
+     "type": "up",
+     "club": "Hershey"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 2,
+     "assists": 3,
+     "points": 5,
+     "plusMinus": 3,
+     "pim": 2,
+     "team": "Hershey Bears"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 2,
+     "team": "Washington Capitals"
+    },
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 6,
+     "assists": 10,
+     "points": 16,
+     "plusMinus": -1,
+     "pim": 12,
+     "shots": 63,
+     "team": "New York Rangers"
+    },
+    "careerGp": 265,
+    "careerG": 33,
+    "careerP": 71
+   }
+  },
+  {
+   "playerId": 8483406,
+   "name": "Taylor Ward",
+   "team": "LAK",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "1998-03-31",
+   "sweater": 17,
+   "draft": null,
+   "recalledOn": "2026-10-17",
+   "from": "Ontario",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-17",
+     "type": "up",
+     "club": "Ontario"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 2,
+     "assists": 1,
+     "points": 3,
+     "plusMinus": -2,
+     "pim": 4,
+     "team": "Ontario Reign"
+    },
+    "last": {
+     "gamesPlayed": 32,
+     "goals": 12,
+     "assists": 9,
+     "points": 21,
+     "plusMinus": 1,
+     "pim": 23,
+     "team": "Ontario Reign"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 36,
+     "goals": 3,
+     "assists": 4,
+     "points": 7,
+     "plusMinus": 0,
+     "pim": 7,
+     "shots": 38,
+     "team": "Los Angeles Kings"
+    },
+    "careerGp": 37,
+    "careerG": 4,
+    "careerP": 8
+   }
+  },
   {
    "playerId": 8483494,
    "name": "Ty Nelson",
@@ -120,6 +365,89 @@
    }
   },
   {
+   "playerId": 8483756,
+   "name": "Jared Wright",
+   "team": "LAK",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2002-11-22",
+   "sweater": 25,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "LAK",
+    "round": 6,
+    "overallPick": 169
+   },
+   "recalledOn": "2026-10-15",
+   "from": "Ontario",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": "2026-10-17",
+   "events": [
+    {
+     "date": "2026-10-09",
+     "type": "up",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-10-17",
+     "type": "down",
+     "club": "Ontario"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 2,
+     "assists": 1,
+     "points": 3,
+     "plusMinus": 1,
+     "pim": 0,
+     "team": "Ontario Reign"
+    },
+    "last": {
+     "gamesPlayed": 54,
+     "goals": 17,
+     "assists": 13,
+     "points": 30,
+     "plusMinus": 27,
+     "pim": 11,
+     "team": "Ontario Reign"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 3,
+     "team": "Los Angeles Kings"
+    },
+    "last": {
+     "gamesPlayed": 23,
+     "goals": 0,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": 0,
+     "pim": 4,
+     "shots": 32,
+     "team": "Los Angeles Kings"
+    },
+    "careerGp": 24,
+    "careerG": 0,
+    "careerP": 4
+   }
+  },
+  {
    "team": "MIN",
    "recalledOn": "2026-10-15",
    "from": "Iowa",
@@ -225,84 +553,6 @@
     "careerGp": 58,
     "careerG": 1,
     "careerP": 12
-   }
-  },
-  {
-   "playerId": 8483756,
-   "name": "Jared Wright",
-   "team": "LAK",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2002-11-22",
-   "sweater": 25,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "LAK",
-    "round": 6,
-    "overallPick": 169
-   },
-   "recalledOn": "2026-10-15",
-   "from": "Ontario",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-09",
-     "type": "up",
-     "club": "Ontario"
-    },
-    {
-     "date": "2026-10-15",
-     "type": "up",
-     "club": "Ontario"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 2,
-     "assists": 1,
-     "points": 3,
-     "plusMinus": 1,
-     "pim": 0,
-     "team": "Ontario Reign"
-    },
-    "last": {
-     "gamesPlayed": 54,
-     "goals": 17,
-     "assists": 13,
-     "points": 30,
-     "plusMinus": 27,
-     "pim": 11,
-     "team": "Ontario Reign"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 3,
-     "team": "Los Angeles Kings"
-    },
-    "last": {
-     "gamesPlayed": 23,
-     "goals": 0,
-     "assists": 4,
-     "points": 4,
-     "plusMinus": 0,
-     "pim": 4,
-     "shots": 32,
-     "team": "Los Angeles Kings"
-    },
-    "careerGp": 24,
-    "careerG": 0,
-    "careerP": 4
    }
   },
   {
@@ -1009,7 +1259,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 2,
      "assists": 0,
      "points": 2,
@@ -1028,7 +1278,7 @@
      "shots": 7,
      "team": "St. Louis Blues"
     },
-    "careerGp": 407,
+    "careerGp": 408,
     "careerG": 16,
     "careerP": 99
    }
@@ -1079,10 +1329,10 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 1,
-     "assists": 1,
-     "points": 2,
+     "assists": 2,
+     "points": 3,
      "plusMinus": 0,
      "pim": 0,
      "shots": 6,
@@ -1098,9 +1348,9 @@
      "shots": 52,
      "team": "New Jersey Devils"
     },
-    "careerGp": 486,
+    "careerGp": 487,
     "careerG": 84,
-    "careerP": 177
+    "careerP": 178
    }
   },
   {
@@ -2394,11 +2644,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 5,
      "team": "San Diego Gulls"
     },
