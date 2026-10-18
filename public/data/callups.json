@@ -1,13 +1,156 @@
 {
  "_meta": {
-  "generated": "2026-10-18 12:07",
+  "generated": "2026-10-18 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 44,
-  "up": 27,
+  "count": 45,
+  "up": 28,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482781,
+   "name": "Carson Lambos",
+   "team": "MIN",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2003-01-14",
+   "sweater": 55,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "MIN",
+    "round": 1,
+    "overallPick": 26
+   },
+   "recalledOn": "2026-10-18",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-16",
+     "type": "down",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": -1,
+     "pim": 5,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 8,
+     "assists": 11,
+     "points": 19,
+     "plusMinus": -4,
+     "pim": 48,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8483452,
+   "name": "Hunter Haight",
+   "team": "MIN",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2004-04-04",
+   "sweater": 37,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "MIN",
+    "round": 2,
+    "overallPick": 47
+   },
+   "recalledOn": "2026-10-18",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-24",
+     "type": "down",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 3,
+     "assists": 2,
+     "points": 5,
+     "plusMinus": 4,
+     "pim": 4,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 54,
+     "goals": 18,
+     "assists": 14,
+     "points": 32,
+     "plusMinus": -17,
+     "pim": 22,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 9,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": -5,
+     "pim": 4,
+     "shots": 13,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 9,
+    "careerG": 1,
+    "careerP": 2
+   }
+  },
   {
    "playerId": 8481133,
    "name": "Cole Reinhardt",
@@ -454,75 +597,6 @@
     "careerGp": 24,
     "careerG": 0,
     "careerP": 4
-   }
-  },
-  {
-   "playerId": 8482781,
-   "name": "Carson Lambos",
-   "team": "MIN",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2003-01-14",
-   "sweater": 55,
-   "draft": {
-    "year": 2021,
-    "teamAbbrev": "MIN",
-    "round": 1,
-    "overallPick": 26
-   },
-   "recalledOn": "2026-10-15",
-   "from": "Iowa",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-16",
-   "events": [
-    {
-     "date": "2026-10-15",
-     "type": "up",
-     "club": "Iowa"
-    },
-    {
-     "date": "2026-10-16",
-     "type": "down",
-     "club": "Iowa"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": -1,
-     "pim": 5,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 70,
-     "goals": 8,
-     "assists": 11,
-     "points": 19,
-     "plusMinus": -4,
-     "pim": 48,
-     "team": "Iowa Wild"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 1,
-     "team": "Minnesota Wild"
-    },
-    "careerGp": 1,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -1940,12 +2014,17 @@
    "from": "Rockford",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-10-18",
    "events": [
     {
      "date": "2026-10-07",
      "type": "up",
+     "club": "Rockford"
+    },
+    {
+     "date": "2026-10-18",
+     "type": "down",
      "club": "Rockford"
     }
    ],

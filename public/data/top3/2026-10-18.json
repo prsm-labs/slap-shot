@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-18",
+  "lockedAt": "2026-10-18T21:35:22.686Z",
+  "poolGenerated": "2026-10-18 17:31",
+  "eligible": 78,
+  "confirmed": 78,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 1% of tonight's slate by the grade model (51.7% to score), facing CBJ (#2 softest defense of 4 tonight, 3.2 expected goals allowed a game). Matchup-adjusted chance 44.4%.",
+   "playerId": 8478864,
+   "name": "Kirill Kaprizov",
+   "team": "MIN",
+   "opp": "CBJ",
+   "position": "L",
+   "isHome": true,
+   "opponentGoalie": "Cam Talbot",
+   "opponentGoalieId": 8475660,
+   "goalieGrade": "C",
+   "grade": "A+",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 51.7,
+   "adjGoalPct": 44.4,
+   "oppXga": 3.2,
+   "softRank": 2,
+   "sogL5": 3.2,
+   "sogPg": 3.4
+  },
+  {
+   "tier": "mid",
+   "fallback": false,
+   "why": "3 shots a game over the last 5 games vs 2.1 on the season, into CGY (#1 softest defense of 4 tonight, 3.3 expected goals allowed a game) — the combination that scored 14-24% above the model last season. 24.7% to score.",
+   "playerId": 8482702,
+   "name": "Logan Stankoven",
+   "team": "CAR",
+   "opp": "CGY",
+   "position": "C",
+   "isHome": false,
+   "opponentGoalie": "Devin Cooley",
+   "opponentGoalieId": 8482445,
+   "goalieGrade": "B",
+   "grade": "A",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 21.7,
+   "adjGoalPct": 24.7,
+   "oppXga": 3.3,
+   "softRank": 1,
+   "sogL5": 3,
+   "sogPg": 2.1
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
