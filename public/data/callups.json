@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-10-18 09:05",
+  "generated": "2026-10-18 12:07",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 44,
@@ -457,11 +457,25 @@
    }
   },
   {
+   "playerId": 8482781,
+   "name": "Carson Lambos",
    "team": "MIN",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2003-01-14",
+   "sweater": 55,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "MIN",
+    "round": 1,
+    "overallPick": 26
+   },
    "recalledOn": "2026-10-15",
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-16",
    "events": [
     {
      "date": "2026-10-15",
@@ -474,20 +488,41 @@
      "club": "Iowa"
     }
    ],
-   "playerId": null,
-   "name": "Carson Lambos",
-   "position": "D",
-   "noProfile": true,
-   "status": "down",
-   "sentDownOn": "2026-10-16",
    "ahl": {
-    "season": null,
-    "last": null
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": -1,
+     "pim": 5,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 8,
+     "assists": 11,
+     "points": 19,
+     "plusMinus": -4,
+     "pim": 48,
+     "team": "Iowa Wild"
+    }
    },
    "nhl": {
     "season": null,
-    "last": null,
-    "careerGp": 0
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
