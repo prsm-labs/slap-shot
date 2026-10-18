@@ -41,7 +41,8 @@
   "lineupsLoaded": true,
   "poolGenerated": "2026-10-15 17:32",
   "oddsLoaded": true,
-  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written."
+  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written.",
+  "h2hRebuilt": "H2H letters added 2026-10-18 from that night's pre-game h2h_today.json (git), graded against the pool's projected starters"
  },
  "modes": {
   "balanced": [
@@ -95,7 +96,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45829-4014057-6441204&type=Single"
        }
       },
-      "edge": 1.2
+      "edge": 1.2,
+      "h2h": "D"
      },
      {
       "playerId": 8484801,
@@ -127,7 +129,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409883?coupon={pickType}|4375208792|{wagerAmount}"
        }
       },
-      "edge": 2.6
+      "edge": 2.6,
+      "h2h": "C"
      }
     ]
    },
@@ -181,7 +184,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409923?coupon={pickType}|4375196957|{wagerAmount}"
        }
       },
-      "edge": -1.3
+      "edge": -1.3,
+      "h2h": "C"
      },
      {
       "playerId": 8477933,
@@ -213,7 +217,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375207961|{wagerAmount}"
        }
       },
-      "edge": 1.3
+      "edge": 1.3,
+      "h2h": "D"
      }
     ]
    },
@@ -267,7 +272,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409923?coupon={pickType}|4375194674|{wagerAmount}"
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "B"
      },
      {
       "playerId": 8482113,
@@ -299,7 +305,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375182674|{wagerAmount}"
        }
       },
-      "edge": 5.2
+      "edge": 5.2,
+      "h2h": "D"
      }
     ]
    },
@@ -353,7 +360,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45675-4016313-6444520&type=Single"
        }
       },
-      "edge": 3.3
+      "edge": 3.3,
+      "h2h": "F"
      },
      {
       "playerId": 8478414,
@@ -385,7 +393,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45751-4014111-6441409&type=Single"
        }
       },
-      "edge": 5.3
+      "edge": 5.3,
+      "h2h": "B"
      }
     ]
    },
@@ -415,7 +424,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8475913,
@@ -431,7 +441,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -461,7 +472,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8480801,
@@ -477,7 +489,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -507,7 +520,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8477934,
@@ -523,7 +537,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -553,7 +568,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8479318,
@@ -569,7 +585,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -623,7 +640,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409885?coupon={pickType}|4375209465|{wagerAmount}"
        }
       },
-      "edge": -2.8
+      "edge": -2.8,
+      "h2h": "F"
      },
      {
       "playerId": 8476453,
@@ -655,7 +673,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45817-4010648-6433993&type=Single"
        }
       },
-      "edge": -1.2
+      "edge": -1.2,
+      "h2h": "A"
      }
     ]
    },
@@ -709,7 +728,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409885?coupon={pickType}|4375209473|{wagerAmount}"
        }
       },
-      "edge": 2.3
+      "edge": 2.3,
+      "h2h": "F"
      },
      {
       "playerId": 8479337,
@@ -741,7 +761,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409895?coupon={pickType}|4375220257|{wagerAmount}"
        }
       },
-      "edge": 0
+      "edge": 0,
+      "h2h": "C"
      }
     ]
    }
@@ -797,7 +818,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409923?coupon={pickType}|4375194674|{wagerAmount}"
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "B"
      },
      {
       "playerId": 8482113,
@@ -829,7 +851,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375182674|{wagerAmount}"
        }
       },
-      "edge": 5.2
+      "edge": 5.2,
+      "h2h": "D"
      }
     ]
    },
@@ -883,7 +906,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45751-4014111-6441409&type=Single"
        }
       },
-      "edge": 5.3
+      "edge": 5.3,
+      "h2h": "B"
      },
      {
       "playerId": 8482113,
@@ -915,7 +939,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375182674|{wagerAmount}"
        }
       },
-      "edge": 5.2
+      "edge": 5.2,
+      "h2h": "D"
      }
     ]
    },
@@ -969,7 +994,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409923?coupon={pickType}|4375194674|{wagerAmount}"
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "B"
      },
      {
       "playerId": 8478414,
@@ -1001,7 +1027,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45751-4014111-6441409&type=Single"
        }
       },
-      "edge": 5.3
+      "edge": 5.3,
+      "h2h": "B"
      }
     ]
    },
@@ -1055,7 +1082,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45675-4016313-6444520&type=Single"
        }
       },
-      "edge": 3.3
+      "edge": 3.3,
+      "h2h": "F"
      },
      {
       "playerId": 8476459,
@@ -1087,7 +1115,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45751-4014112-6441411&type=Single"
        }
       },
-      "edge": 1.7
+      "edge": 1.7,
+      "h2h": "F"
      }
     ]
    },
@@ -1141,7 +1170,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409885?coupon={pickType}|4375209473|{wagerAmount}"
        }
       },
-      "edge": 2.3
+      "edge": 2.3,
+      "h2h": "F"
      },
      {
       "playerId": 8482699,
@@ -1173,7 +1203,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45675-4016313-6444520&type=Single"
        }
       },
-      "edge": 3.3
+      "edge": 3.3,
+      "h2h": "F"
      }
     ]
    },
@@ -1227,7 +1258,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409883?coupon={pickType}|4375208792|{wagerAmount}"
        }
       },
-      "edge": 2.6
+      "edge": 2.6,
+      "h2h": "C"
      },
      {
       "playerId": 8481557,
@@ -1259,7 +1291,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409885?coupon={pickType}|4375209473|{wagerAmount}"
        }
       },
-      "edge": 2.3
+      "edge": 2.3,
+      "h2h": "F"
      }
     ]
    },
@@ -1313,7 +1346,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409883?coupon={pickType}|4375208792|{wagerAmount}"
        }
       },
-      "edge": 2.6
+      "edge": 2.6,
+      "h2h": "C"
      },
      {
       "playerId": 8480893,
@@ -1345,7 +1379,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45829-4014067-6441220&type=Single"
        }
       },
-      "edge": 0.8
+      "edge": 0.8,
+      "h2h": "C"
      }
     ]
    },
@@ -1399,7 +1434,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375207961|{wagerAmount}"
        }
       },
-      "edge": 1.3
+      "edge": 1.3,
+      "h2h": "D"
      },
      {
       "playerId": 8476459,
@@ -1431,7 +1467,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45751-4014112-6441411&type=Single"
        }
       },
-      "edge": 1.7
+      "edge": 1.7,
+      "h2h": "F"
      }
     ]
    },
@@ -1485,7 +1522,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375207961|{wagerAmount}"
        }
       },
-      "edge": 1.3
+      "edge": 1.3,
+      "h2h": "D"
      },
      {
       "playerId": 8479343,
@@ -1517,7 +1555,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45675-4016324-6444542&type=Single"
        }
       },
-      "edge": 0.8
+      "edge": 0.8,
+      "h2h": "D"
      }
     ]
    },
@@ -1571,7 +1610,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45829-4014057-6441204&type=Single"
        }
       },
-      "edge": 1.2
+      "edge": 1.2,
+      "h2h": "D"
      },
      {
       "playerId": 8476887,
@@ -1603,7 +1643,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409883?coupon={pickType}|4375208694|{wagerAmount}"
        }
       },
-      "edge": 0.9
+      "edge": 0.9,
+      "h2h": "A+"
      }
     ]
    }
@@ -1635,7 +1676,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8477934,
@@ -1651,7 +1693,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -1681,7 +1724,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8484801,
@@ -1697,7 +1741,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -1727,7 +1772,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8476460,
@@ -1743,7 +1789,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -1773,7 +1820,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8477934,
@@ -1789,7 +1837,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -1819,7 +1868,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      },
      {
       "playerId": 8479542,
@@ -1835,7 +1885,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -1865,7 +1916,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      },
      {
       "playerId": 8477404,
@@ -1881,7 +1933,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -1911,7 +1964,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8479314,
@@ -1927,7 +1981,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -1957,7 +2012,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8478403,
@@ -1973,7 +2029,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2003,7 +2060,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8475913,
@@ -2019,7 +2077,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2049,7 +2108,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8481557,
@@ -2065,7 +2125,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    }
@@ -2098,7 +2159,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8476460,
@@ -2114,7 +2176,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2144,7 +2207,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8478398,
@@ -2160,7 +2224,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2190,7 +2255,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8478403,
@@ -2206,7 +2272,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2236,7 +2303,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8479314,
@@ -2252,7 +2320,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -2282,7 +2351,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8475913,
@@ -2298,7 +2368,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2328,7 +2399,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8480801,
@@ -2344,7 +2416,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2374,7 +2447,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8480839,
@@ -2390,7 +2464,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2420,7 +2495,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8476460,
@@ -2436,7 +2512,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2466,7 +2543,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8480801,
@@ -2482,7 +2560,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2512,7 +2591,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      },
      {
       "playerId": 8478483,
@@ -2528,7 +2608,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    }
@@ -2560,7 +2641,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8477934,
@@ -2576,7 +2658,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2606,7 +2689,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8476460,
@@ -2622,7 +2706,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2652,7 +2737,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8480803,
@@ -2668,7 +2754,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2698,7 +2785,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      },
      {
       "playerId": 8479542,
@@ -2714,7 +2802,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -2744,7 +2833,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      },
      {
       "playerId": 8477404,
@@ -2760,7 +2850,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2790,7 +2881,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8480803,
@@ -2806,7 +2898,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2836,7 +2929,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8484144,
@@ -2852,7 +2946,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2882,7 +2977,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8479318,
@@ -2898,7 +2994,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -2928,7 +3025,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8477939,
@@ -2944,7 +3042,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2974,7 +3073,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8476887,
@@ -2990,7 +3090,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    }
@@ -3046,7 +3147,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45829-4014057-6441204&type=Single"
        }
       },
-      "edge": 1.2
+      "edge": 1.2,
+      "h2h": "D"
      },
      {
       "playerId": 8484801,
@@ -3078,7 +3180,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409883?coupon={pickType}|4375208792|{wagerAmount}"
        }
       },
-      "edge": 2.6
+      "edge": 2.6,
+      "h2h": "C"
      }
     ]
    },
@@ -3132,7 +3235,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409923?coupon={pickType}|4375196957|{wagerAmount}"
        }
       },
-      "edge": -1.3
+      "edge": -1.3,
+      "h2h": "C"
      },
      {
       "playerId": 8477933,
@@ -3164,7 +3268,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375207961|{wagerAmount}"
        }
       },
-      "edge": 1.3
+      "edge": 1.3,
+      "h2h": "D"
      }
     ]
    },
@@ -3218,7 +3323,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45675-4016329-6444552&type=Single"
        }
       },
-      "edge": -3.5
+      "edge": -3.5,
+      "h2h": "A+"
      },
      {
       "playerId": 8478864,
@@ -3250,7 +3356,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409885?coupon={pickType}|4375209465|{wagerAmount}"
        }
       },
-      "edge": -2.8
+      "edge": -2.8,
+      "h2h": "F"
      }
     ]
    },
@@ -3304,7 +3411,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45817-4010648-6433993&type=Single"
        }
       },
-      "edge": -1.2
+      "edge": -1.2,
+      "h2h": "A"
      },
      {
       "playerId": 8477934,
@@ -3336,7 +3444,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45675-4016286-6444466&type=Single"
        }
       },
-      "edge": -6
+      "edge": -6,
+      "h2h": "C"
      }
     ]
    },
@@ -3390,7 +3499,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45751-4014146-6441479&type=Single"
        }
       },
-      "edge": -0.7
+      "edge": -0.7,
+      "h2h": "A+"
      },
      {
       "playerId": 8481557,
@@ -3422,7 +3532,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409885?coupon={pickType}|4375209473|{wagerAmount}"
        }
       },
-      "edge": 2.3
+      "edge": 2.3,
+      "h2h": "F"
      }
     ]
    },
@@ -3476,7 +3587,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45851-4013229-6438932&type=Single"
        }
       },
-      "edge": 0.8
+      "edge": 0.8,
+      "h2h": "F"
      },
      {
       "playerId": 8479318,
@@ -3508,7 +3620,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45829-4014077-6441244&type=Single"
        }
       },
-      "edge": -4.3
+      "edge": -4.3,
+      "h2h": "A+"
      }
     ]
    },
@@ -3562,7 +3675,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409895?coupon={pickType}|4375220257|{wagerAmount}"
        }
       },
-      "edge": 0
+      "edge": 0,
+      "h2h": "C"
      },
      {
       "playerId": 8479542,
@@ -3594,7 +3708,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45817-4010707-6434111&type=Single"
        }
       },
-      "edge": -3.5
+      "edge": -3.5,
+      "h2h": "A+"
      }
     ]
    },
@@ -3648,7 +3763,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409923?coupon={pickType}|4375194674|{wagerAmount}"
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "B"
      },
      {
       "playerId": 8480801,
@@ -3680,7 +3796,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375205041|{wagerAmount}"
        }
       },
-      "edge": -2.5
+      "edge": -2.5,
+      "h2h": "F"
      }
     ]
    },
@@ -3734,7 +3851,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409883?coupon={pickType}|4375208694|{wagerAmount}"
        }
       },
-      "edge": 0.9
+      "edge": 0.9,
+      "h2h": "A+"
      },
      {
       "playerId": 8482699,
@@ -3766,7 +3884,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45675-4016313-6444520&type=Single"
        }
       },
-      "edge": 3.3
+      "edge": 3.3,
+      "h2h": "F"
      }
     ]
    },
@@ -3820,7 +3939,8 @@
         "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409891?coupon={pickType}|4375182629|{wagerAmount}"
        }
       },
-      "edge": -3.2
+      "edge": -3.2,
+      "h2h": "D"
      },
      {
       "playerId": 8478414,
@@ -3852,7 +3972,8 @@
         "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45751-4014111-6441409&type=Single"
        }
       },
-      "edge": 5.3
+      "edge": 5.3,
+      "h2h": "B"
      }
     ]
    }
@@ -3884,7 +4005,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8477934,
@@ -3900,7 +4022,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -3930,7 +4053,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8476460,
@@ -3946,7 +4070,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -3976,7 +4101,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8476453,
@@ -3992,7 +4118,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      }
     ]
    },
@@ -4022,7 +4149,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8479314,
@@ -4038,7 +4166,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -4068,7 +4197,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8475913,
@@ -4084,7 +4214,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -4114,7 +4245,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8481557,
@@ -4130,7 +4262,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -4160,7 +4293,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8477939,
@@ -4176,7 +4310,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -4206,7 +4341,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8479420,
@@ -4222,7 +4358,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -4252,7 +4389,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8477404,
@@ -4268,7 +4406,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -4298,7 +4437,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477495,
@@ -4314,7 +4454,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    }
@@ -4346,7 +4487,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8478398,
@@ -4362,7 +4504,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -4392,7 +4535,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8479318,
@@ -4408,7 +4552,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -4438,7 +4583,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8478414,
@@ -4454,7 +4600,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -4484,7 +4631,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8478864,
@@ -4500,7 +4648,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -4530,7 +4679,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8478403,
@@ -4546,7 +4696,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -4576,7 +4727,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8479542,
@@ -4592,7 +4744,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -4622,7 +4775,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477934,
@@ -4638,7 +4792,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -4668,7 +4823,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8484144,
@@ -4684,7 +4840,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -4714,7 +4871,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8476887,
@@ -4730,7 +4888,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -4760,7 +4919,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      },
      {
       "playerId": 8476453,
@@ -4776,7 +4936,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      }
     ]
    }

@@ -29,7 +29,8 @@
   "lineupsLoaded": false,
   "poolGenerated": "2026-10-13 17:32",
   "oddsLoaded": true,
-  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written."
+  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written.",
+  "h2hRebuilt": "H2H letters added 2026-10-18 from that night's pre-game h2h_today.json (git), graded against the pool's projected starters"
  },
  "modes": {
   "balanced": [
@@ -77,7 +78,8 @@
         "BOV": 111
        }
       },
-      "edge": -0.7
+      "edge": -0.7,
+      "h2h": "F"
      },
      {
       "playerId": 8478864,
@@ -103,7 +105,8 @@
         "MGM": 130
        }
       },
-      "edge": 0.2
+      "edge": 0.2,
+      "h2h": "D"
      }
     ]
    },
@@ -151,7 +154,8 @@
         "MGM": 155
        }
       },
-      "edge": 3.8
+      "edge": 3.8,
+      "h2h": "F"
      },
      {
       "playerId": 8484801,
@@ -177,7 +181,8 @@
         "BOV": 130
        }
       },
-      "edge": 1
+      "edge": 1,
+      "h2h": "F"
      }
     ]
    },
@@ -225,7 +230,8 @@
         "MGM": 150
        }
       },
-      "edge": 5.5
+      "edge": 5.5,
+      "h2h": "C"
      },
      {
       "playerId": 8478414,
@@ -251,7 +257,8 @@
         "BOV": 235
        }
       },
-      "edge": 7.4
+      "edge": 7.4,
+      "h2h": "A+"
      }
     ]
    },
@@ -299,7 +306,8 @@
         "MGM": 180
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "F"
      },
      {
       "playerId": 8479343,
@@ -325,7 +333,8 @@
         "MGM": 220
        }
       },
-      "edge": 5
+      "edge": 5,
+      "h2h": "F"
      }
     ]
    },
@@ -355,7 +364,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8479420,
@@ -371,7 +381,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      }
     ]
    },
@@ -401,7 +412,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8482699,
@@ -417,7 +429,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -447,7 +460,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477934,
@@ -463,7 +477,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -493,7 +508,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8483445,
@@ -509,7 +525,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -557,7 +574,8 @@
         "BOV": 140
        }
       },
-      "edge": 2.5
+      "edge": 2.5,
+      "h2h": "F"
      },
      {
       "playerId": 8477500,
@@ -583,7 +601,8 @@
         "MGM": 155
        }
       },
-      "edge": 0.2
+      "edge": 0.2,
+      "h2h": "C"
      }
     ]
    },
@@ -631,7 +650,8 @@
         "BOV": 164
        }
       },
-      "edge": 2.3
+      "edge": 2.3,
+      "h2h": "F"
      },
      {
       "playerId": 8484144,
@@ -657,7 +677,8 @@
         "MGM": 160
        }
       },
-      "edge": 1.5
+      "edge": 1.5,
+      "h2h": "F"
      }
     ]
    }
@@ -707,7 +728,8 @@
         "MGM": 150
        }
       },
-      "edge": 5.5
+      "edge": 5.5,
+      "h2h": "C"
      },
      {
       "playerId": 8478414,
@@ -733,7 +755,8 @@
         "BOV": 235
        }
       },
-      "edge": 7.4
+      "edge": 7.4,
+      "h2h": "A+"
      }
     ]
    },
@@ -781,7 +804,8 @@
         "MGM": 220
        }
       },
-      "edge": 5
+      "edge": 5,
+      "h2h": "F"
      },
      {
       "playerId": 8478414,
@@ -807,7 +831,8 @@
         "BOV": 235
        }
       },
-      "edge": 7.4
+      "edge": 7.4,
+      "h2h": "A+"
      }
     ]
    },
@@ -855,7 +880,8 @@
         "MGM": 180
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "F"
      },
      {
       "playerId": 8478550,
@@ -881,7 +907,8 @@
         "MGM": 150
        }
       },
-      "edge": 5.5
+      "edge": 5.5,
+      "h2h": "C"
      }
     ]
    },
@@ -929,7 +956,8 @@
         "MGM": 180
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "F"
      },
      {
       "playerId": 8479343,
@@ -955,7 +983,8 @@
         "MGM": 220
        }
       },
-      "edge": 5
+      "edge": 5,
+      "h2h": "F"
      }
     ]
    },
@@ -1003,7 +1032,8 @@
         "BOV": 150
        }
       },
-      "edge": 4
+      "edge": 4,
+      "h2h": "A"
      },
      {
       "playerId": 8477933,
@@ -1029,7 +1059,8 @@
         "BOV": 185
        }
       },
-      "edge": 3.5
+      "edge": 3.5,
+      "h2h": "A+"
      }
     ]
    },
@@ -1077,7 +1108,8 @@
         "MGM": 155
        }
       },
-      "edge": 3.8
+      "edge": 3.8,
+      "h2h": "F"
      },
      {
       "playerId": 8480039,
@@ -1103,7 +1135,8 @@
         "BOV": 185
        }
       },
-      "edge": 2.9
+      "edge": 2.9,
+      "h2h": "B"
      }
     ]
    },
@@ -1151,7 +1184,8 @@
         "MGM": 155
        }
       },
-      "edge": 3.8
+      "edge": 3.8,
+      "h2h": "F"
      },
      {
       "playerId": 8475810,
@@ -1177,7 +1211,8 @@
         "MGM": 200
        }
       },
-      "edge": 2.9
+      "edge": 2.9,
+      "h2h": "B"
      }
     ]
    },
@@ -1225,7 +1260,8 @@
         "BOV": 185
        }
       },
-      "edge": 3.5
+      "edge": 3.5,
+      "h2h": "A+"
      },
      {
       "playerId": 8475810,
@@ -1251,7 +1287,8 @@
         "MGM": 200
        }
       },
-      "edge": 2.9
+      "edge": 2.9,
+      "h2h": "B"
      }
     ]
    },
@@ -1299,7 +1336,8 @@
         "MGM": 165
        }
       },
-      "edge": 3
+      "edge": 3,
+      "h2h": "B"
      },
      {
       "playerId": 8480039,
@@ -1325,7 +1363,8 @@
         "BOV": 185
        }
       },
-      "edge": 2.9
+      "edge": 2.9,
+      "h2h": "B"
      }
     ]
    },
@@ -1373,7 +1412,8 @@
         "BOV": 150
        }
       },
-      "edge": 4
+      "edge": 4,
+      "h2h": "A"
      },
      {
       "playerId": 8479542,
@@ -1399,7 +1439,8 @@
         "BOV": 164
        }
       },
-      "edge": 2.3
+      "edge": 2.3,
+      "h2h": "F"
      }
     ]
    }
@@ -1431,7 +1472,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477934,
@@ -1447,7 +1489,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -1477,7 +1520,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8478402,
@@ -1493,7 +1537,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -1523,7 +1568,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8480039,
@@ -1539,7 +1585,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -1569,7 +1616,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8479542,
@@ -1585,7 +1633,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -1615,7 +1664,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8480800,
@@ -1631,7 +1681,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -1661,7 +1712,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8481557,
@@ -1677,7 +1729,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -1707,7 +1760,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477404,
@@ -1723,7 +1777,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -1753,7 +1808,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477934,
@@ -1769,7 +1825,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -1799,7 +1856,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8481557,
@@ -1815,7 +1873,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -1845,7 +1904,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8478403,
@@ -1861,7 +1921,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    }
@@ -1894,7 +1955,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8478403,
@@ -1910,7 +1972,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -1940,7 +2003,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8475913,
@@ -1956,7 +2020,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -1986,7 +2051,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477956,
@@ -2002,7 +2068,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -2032,7 +2099,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8479343,
@@ -2048,7 +2116,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2078,7 +2147,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8479420,
@@ -2094,7 +2164,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      }
     ]
    },
@@ -2124,7 +2195,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8482699,
@@ -2140,7 +2212,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2170,7 +2243,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      },
      {
       "playerId": 8480800,
@@ -2186,7 +2260,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2216,7 +2291,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8482699,
@@ -2232,7 +2308,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2262,7 +2339,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      },
      {
       "playerId": 8478483,
@@ -2278,7 +2356,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2308,7 +2387,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8477500,
@@ -2324,7 +2404,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    }
@@ -2356,7 +2437,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477934,
@@ -2372,7 +2454,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -2402,7 +2485,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8480039,
@@ -2418,7 +2502,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -2448,7 +2533,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8479542,
@@ -2464,7 +2550,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2494,7 +2581,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8480800,
@@ -2510,7 +2598,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2540,7 +2629,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8481557,
@@ -2556,7 +2646,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2586,7 +2677,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477404,
@@ -2602,7 +2694,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -2632,7 +2725,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477956,
@@ -2648,7 +2742,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -2678,7 +2773,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8478550,
@@ -2694,7 +2790,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2724,7 +2821,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8480800,
@@ -2740,7 +2838,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -2770,7 +2869,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8478550,
@@ -2786,7 +2886,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    }
@@ -2836,7 +2937,8 @@
         "BOV": 111
        }
       },
-      "edge": -0.7
+      "edge": -0.7,
+      "h2h": "F"
      },
      {
       "playerId": 8478864,
@@ -2862,7 +2964,8 @@
         "MGM": 130
        }
       },
-      "edge": 0.2
+      "edge": 0.2,
+      "h2h": "D"
      }
     ]
    },
@@ -2910,7 +3013,8 @@
         "MGM": 155
        }
       },
-      "edge": 3.8
+      "edge": 3.8,
+      "h2h": "F"
      },
      {
       "playerId": 8484801,
@@ -2936,7 +3040,8 @@
         "BOV": 130
        }
       },
-      "edge": 1
+      "edge": 1,
+      "h2h": "F"
      }
     ]
    },
@@ -2984,7 +3089,8 @@
         "BOV": 150
        }
       },
-      "edge": 4
+      "edge": 4,
+      "h2h": "A"
      },
      {
       "playerId": 8476453,
@@ -3010,7 +3116,8 @@
         "BOV": 140
        }
       },
-      "edge": 2.5
+      "edge": 2.5,
+      "h2h": "F"
      }
     ]
    },
@@ -3058,7 +3165,8 @@
         "BOV": 135
        }
       },
-      "edge": 1.1
+      "edge": 1.1,
+      "h2h": "A+"
      },
      {
       "playerId": 8482699,
@@ -3084,7 +3192,8 @@
         "MGM": 165
        }
       },
-      "edge": 3
+      "edge": 3,
+      "h2h": "B"
      }
     ]
    },
@@ -3132,7 +3241,8 @@
         "MGM": 130
        }
       },
-      "edge": -2.9
+      "edge": -2.9,
+      "h2h": "F"
      },
      {
       "playerId": 8478398,
@@ -3158,7 +3268,8 @@
         "MGM": 120
        }
       },
-      "edge": -0.6
+      "edge": -0.6,
+      "h2h": "C"
      }
     ]
    },
@@ -3206,7 +3317,8 @@
         "MGM": 100
        }
       },
-      "edge": -5.7
+      "edge": -5.7,
+      "h2h": "D"
      },
      {
       "playerId": 8478403,
@@ -3232,7 +3344,8 @@
         "MGM": 180
        }
       },
-      "edge": 4.9
+      "edge": 4.9,
+      "h2h": "F"
      }
     ]
    },
@@ -3280,7 +3393,8 @@
         "MGM": 155
        }
       },
-      "edge": 0.2
+      "edge": 0.2,
+      "h2h": "C"
      },
      {
       "playerId": 8479542,
@@ -3306,7 +3420,8 @@
         "BOV": 164
        }
       },
-      "edge": 2.3
+      "edge": 2.3,
+      "h2h": "F"
      }
     ]
    },
@@ -3336,7 +3451,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8484144,
@@ -3362,7 +3478,8 @@
         "MGM": 160
        }
       },
-      "edge": 1.5
+      "edge": 1.5,
+      "h2h": "F"
      }
     ]
    },
@@ -3410,7 +3527,8 @@
         "BOV": 116
        }
       },
-      "edge": -7.2
+      "edge": -7.2,
+      "h2h": "C"
      },
      {
       "playerId": 8478550,
@@ -3436,7 +3554,8 @@
         "MGM": 150
        }
       },
-      "edge": 5.5
+      "edge": 5.5,
+      "h2h": "C"
      }
     ]
    },
@@ -3484,7 +3603,8 @@
         "BOV": 156
        }
       },
-      "edge": 0.4
+      "edge": 0.4,
+      "h2h": "B"
      },
      {
       "playerId": 8477933,
@@ -3510,7 +3630,8 @@
         "BOV": 185
        }
       },
-      "edge": 3.5
+      "edge": 3.5,
+      "h2h": "A+"
      }
     ]
    }
@@ -3542,7 +3663,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8477934,
@@ -3558,7 +3680,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    },
@@ -3588,7 +3711,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8480039,
@@ -3604,7 +3728,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -3634,7 +3759,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8479542,
@@ -3650,7 +3776,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -3680,7 +3807,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8480800,
@@ -3696,7 +3824,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -3726,7 +3855,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8478403,
@@ -3742,7 +3872,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -3772,7 +3903,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8479343,
@@ -3788,7 +3920,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -3818,7 +3951,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8478398,
@@ -3834,7 +3968,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -3864,7 +3999,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      },
      {
       "playerId": 8481557,
@@ -3880,7 +4016,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -3910,7 +4047,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      },
      {
       "playerId": 8478483,
@@ -3926,7 +4064,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -3956,7 +4095,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      },
      {
       "playerId": 8481540,
@@ -3972,7 +4112,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    }
@@ -4004,7 +4145,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8479420,
@@ -4020,7 +4162,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A"
      }
     ]
    },
@@ -4050,7 +4193,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8483445,
@@ -4066,7 +4210,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -4096,7 +4241,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8484801,
@@ -4112,7 +4258,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -4142,7 +4289,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      },
      {
       "playerId": 8477956,
@@ -4158,7 +4306,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      }
     ]
    },
@@ -4188,7 +4337,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "A+"
      },
      {
       "playerId": 8479318,
@@ -4204,7 +4354,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -4234,7 +4385,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8482699,
@@ -4250,7 +4402,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      }
     ]
    },
@@ -4280,7 +4433,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "B"
      },
      {
       "playerId": 8477500,
@@ -4296,7 +4450,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      }
     ]
    },
@@ -4326,7 +4481,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8478403,
@@ -4342,7 +4498,8 @@
       "softD": true,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -4372,7 +4529,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      },
      {
       "playerId": 8484144,
@@ -4388,7 +4546,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "F"
      }
     ]
    },
@@ -4418,7 +4577,8 @@
       "softD": false,
       "toughD": false,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "C"
      },
      {
       "playerId": 8477934,
@@ -4434,7 +4594,8 @@
       "softD": false,
       "toughD": true,
       "book": null,
-      "edge": null
+      "edge": null,
+      "h2h": "D"
      }
     ]
    }

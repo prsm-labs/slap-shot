@@ -22,6 +22,7 @@ import { applySlateScores } from "../src/lib/slapScore.js";
 import { applyLineups, STARTED } from "../src/lib/slateOverlay.js";
 import { buildPairs, MODE_KEYS, pairRecord } from "../src/lib/pairs.js";
 import { buildLineups } from "../api/lineups.js";
+import { h2hGrades } from "../src/lib/h2h.js";
 
 const EARLY_MIN = 45; // may lock this early if the first game's lineups are official
 const LATE_MIN = 20; // locks at this point regardless
@@ -85,6 +86,15 @@ const players = applySlateScores(scored.map((p) => {
   if (!o) return p;
   return { ...p, book: o, edge: p.anytimeGoalPct != null ? Math.round((p.anytimeGoalPct - o.bestImplied) * 10) / 10 : null };
 });
+
+// H2H grade per skater (same lib/h2h.js grading as the tables, vs tonight's live starters), stored on each leg so Track
+// Record can follow soft D + H2H A/A+. Context only — not used to build the pairs. Needs that night's h2h_today.json.
+const h2hPath = path.join(root, "public/data/h2h_today.json");
+const h2hFile = fs.existsSync(h2hPath) ? JSON.parse(fs.readFileSync(h2hPath, "utf8").replace(/^﻿/, "")) : null;
+if (h2hFile?._meta?.slateDate === date) {
+  const hg = h2hGrades(h2hFile, players, pool.goalies, new Set(meta.slate.map((g) => g.home))).skaters;
+  for (const p of players) p.h2hGrade = hg.get(p.playerId)?.letter ?? null;
+}
 
 const modes = {};
 for (const m of MODE_KEYS) modes[m] = buildPairs(players, { mode: m, boost: 0 }).map(pairRecord);

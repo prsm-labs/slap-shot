@@ -284,6 +284,9 @@ export function pairRecord(pr) {
       playerId: p.playerId, name: p.name, team: p.team, opp: p.opponentTeam, isHome: p.isHome, position: p.position,
       prop, chancePct: r1(chance), grade: p.effectiveGrade?.letter ?? null, lineupStatus: p.lineupStatus ?? null,
       softD: p.oppSoftPct != null && p.oppSoftPct >= SOFT_D, toughD: p.oppSoftPct != null && p.oppSoftPct < 0.33,
+      // H2H letter at lock (lib/h2h.js, context only; null = no grade) — Track Record follows soft D + H2H A/A+.
+      // Left out (undefined) when the lock had no H2H file for the night.
+      h2h: p.h2hGrade,
       book: book ? { best: book.best, bestBook: book.bestBook, books: book.books, links: book.links || null } : null, edge: prop === "goal" ? p.edge ?? null : null,
     })),
   };
