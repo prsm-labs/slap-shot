@@ -166,7 +166,8 @@
    }
   ],
   "scoreVersion": 3,
-  "note": "Pre-game projections as shown in the app. Slap Score v3 (2026-10-13): grade-model chances (goal / assist / point / 3+ SOG, and the grade letter) adjusted for the opponent's xGA allowed, refit on 4 seasons (lib/grades.js); plus3SogPct still from the shot sim."
+  "note": "Pre-game projections as shown in the app. Slap Score v3 (2026-10-13): grade-model chances (goal / assist / point / 3+ SOG, and the grade letter) adjusted for the opponent's xGA allowed, refit on 4 seasons (lib/grades.js); plus3SogPct still from the shot sim.",
+  "sogPgRebuilt": "sogPg added 2026-10-18 from git f19a198 pool (exact match)"
  },
  "players": [
   {
@@ -207,7 +208,8 @@
    "bookMedianImplied": 12.1,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.95
   },
   {
    "playerId": 8479407,
@@ -247,7 +249,8 @@
    "bookMedianImplied": 27.8,
    "firstGoalPct": 3.2,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.22
   },
   {
    "playerId": 8477015,
@@ -287,7 +290,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.55
   },
   {
    "playerId": 8482146,
@@ -327,7 +331,8 @@
    "bookMedianImplied": 25.3,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.19
   },
   {
    "playerId": 8479996,
@@ -367,7 +372,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.48
   },
   {
    "playerId": 8481721,
@@ -407,7 +413,8 @@
    "bookMedianImplied": 20.4,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.27
   },
   {
    "playerId": 8480002,
@@ -447,7 +454,8 @@
    "bookMedianImplied": 34.7,
    "firstGoalPct": 4.7,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.53
   },
   {
    "playerId": 8481559,
@@ -487,7 +495,8 @@
    "bookMedianImplied": 38.5,
    "firstGoalPct": 5.8,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.77
   },
   {
    "playerId": 8483695,
@@ -527,7 +536,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.8
   },
   {
    "playerId": 8477511,
@@ -567,7 +577,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 4.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.84
   },
   {
    "playerId": 8478414,
@@ -607,7 +618,8 @@
    "bookMedianImplied": 29.4,
    "firstGoalPct": 5.7,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.49
   },
   {
    "playerId": 8482110,
@@ -647,7 +659,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.95
   },
   {
    "playerId": 8476474,
@@ -687,7 +700,8 @@
    "bookMedianImplied": 20.8,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.35
   },
   {
    "playerId": 8478542,
@@ -727,7 +741,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.24
   },
   {
    "playerId": 8480990,
@@ -767,7 +782,8 @@
    "bookMedianImplied": 4.8,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.71
   },
   {
    "playerId": 8475455,
@@ -807,7 +823,8 @@
    "bookMedianImplied": 5.4,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.66
   },
   {
    "playerId": 8476462,
@@ -847,7 +864,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.65
   },
   {
    "playerId": 8482684,
@@ -887,7 +905,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.26
   },
   {
    "playerId": 8480192,
@@ -927,7 +946,8 @@
    "bookMedianImplied": 5.3,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8477488,
@@ -967,7 +987,8 @@
    "bookMedianImplied": 5.3,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.19
   },
   {
    "playerId": 8478399,
@@ -1007,7 +1028,8 @@
    "bookMedianImplied": 4.8,
    "firstGoalPct": 0.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.71
   },
   {
    "playerId": 8478891,
@@ -1047,7 +1069,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.96
   },
   {
    "playerId": 8478042,
@@ -1087,7 +1110,8 @@
    "bookMedianImplied": 33.9,
    "firstGoalPct": 4.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.5
   },
   {
    "playerId": 8484794,
@@ -1127,7 +1151,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.84
   },
   {
    "playerId": 8477456,
@@ -1167,7 +1192,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.17
   },
   {
    "playerId": 8477429,
@@ -1207,7 +1233,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.5
   },
   {
    "playerId": 8484160,
@@ -1247,7 +1274,8 @@
    "bookMedianImplied": 10.8,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.03
   },
   {
    "playerId": 8479337,
@@ -1287,7 +1315,8 @@
    "bookMedianImplied": 40,
    "firstGoalPct": 7.9,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.48
   },
   {
    "playerId": 8480326,
@@ -1327,7 +1356,8 @@
    "bookMedianImplied": 10.4,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.71
   },
   {
    "playerId": 8484471,
@@ -1367,7 +1397,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.48
   },
   {
    "playerId": 8483464,
@@ -1407,7 +1438,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.65
   },
   {
    "playerId": 8478434,
@@ -1447,7 +1479,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.79
   },
   {
    "playerId": 8477946,
@@ -1487,7 +1520,8 @@
    "bookMedianImplied": 37.7,
    "firstGoalPct": 6.3,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.06
   },
   {
    "playerId": 8482802,
@@ -1527,7 +1561,8 @@
    "bookMedianImplied": 9.8,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.6
   },
   {
    "playerId": 8479992,
@@ -1567,7 +1602,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.03
   },
   {
    "playerId": 8482078,
@@ -1607,7 +1643,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.22
   },
   {
    "playerId": 8480879,
@@ -1647,7 +1684,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.65
   },
   {
    "playerId": 8475279,
@@ -1687,7 +1725,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.23
   },
   {
    "playerId": 8477971,
@@ -1727,7 +1766,8 @@
    "bookMedianImplied": 10,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.6
   },
   {
    "playerId": 8475753,
@@ -1767,7 +1807,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.89
   },
   {
    "playerId": 8481607,
@@ -1807,7 +1848,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.82
   },
   {
    "playerId": 8483679,
@@ -1847,7 +1889,8 @@
    "bookMedianImplied": 7.7,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8484223,
@@ -1887,7 +1930,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.03
   },
   {
    "playerId": 8481542,
@@ -1927,7 +1971,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.26
   },
   {
    "playerId": 8482171,
@@ -1967,7 +2012,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.5
   },
   {
    "playerId": 8477493,
@@ -2007,7 +2053,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8477935,
@@ -2047,7 +2094,8 @@
    "bookMedianImplied": 28.2,
    "firstGoalPct": 4.3,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.59
   },
   {
    "playerId": 8474189,
@@ -2087,7 +2135,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8479981,
@@ -2127,7 +2176,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8477903,
@@ -2167,7 +2217,8 @@
    "bookMedianImplied": 7.7,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.49
   },
   {
    "playerId": 8478147,
@@ -2207,7 +2258,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.75
   },
   {
    "playerId": 8478043,
@@ -2247,7 +2299,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.29
   },
   {
    "playerId": 8482113,
@@ -2287,7 +2340,8 @@
    "bookMedianImplied": 23,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.24
   },
   {
    "playerId": 8480185,
@@ -2327,7 +2381,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.46
   },
   {
    "playerId": 8473419,
@@ -2367,7 +2422,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 6.9,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.63
   },
   {
    "playerId": 8477933,
@@ -2407,7 +2463,8 @@
    "bookMedianImplied": 35.1,
    "firstGoalPct": 5.9,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.54
   },
   {
    "playerId": 8480801,
@@ -2447,7 +2504,8 @@
    "bookMedianImplied": 33.3,
    "firstGoalPct": 6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.53
   },
   {
    "playerId": 8479314,
@@ -2487,7 +2545,8 @@
    "bookMedianImplied": 33.9,
    "firstGoalPct": 5.9,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.68
   },
   {
    "playerId": 8477409,
@@ -2527,7 +2586,8 @@
    "bookMedianImplied": 28.6,
    "firstGoalPct": 4.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.34
   },
   {
    "playerId": 8483771,
@@ -2567,7 +2627,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8484304,
@@ -2607,7 +2668,8 @@
    "bookMedianImplied": 9.2,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.19
   },
   {
    "playerId": 8477932,
@@ -2647,7 +2709,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.37
   },
   {
    "playerId": 8478055,
@@ -2687,7 +2750,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.4
   },
   {
    "playerId": 8475462,
@@ -2727,7 +2791,8 @@
    "bookMedianImplied": 5.6,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.06
   },
   {
    "playerId": 8477495,
@@ -2767,7 +2832,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.79
   },
   {
    "playerId": 8475179,
@@ -2807,7 +2873,8 @@
    "bookMedianImplied": 6.5,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.68
   },
   {
    "playerId": 8478859,
@@ -2847,7 +2914,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.03
   },
   {
    "playerId": 8475745,
@@ -2887,7 +2955,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 3.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.73
   },
   {
    "playerId": 8483432,
@@ -2927,7 +2996,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.79
   },
   {
    "playerId": 8484166,
@@ -2967,7 +3037,8 @@
    "bookMedianImplied": 35.7,
    "firstGoalPct": 4.5,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.62
   },
   {
    "playerId": 8478856,
@@ -3007,7 +3078,8 @@
    "bookMedianImplied": 22.1,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.83
   },
   {
    "playerId": 8478046,
@@ -3047,7 +3119,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.02
   },
   {
    "playerId": 8482660,
@@ -3087,7 +3160,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.55
   },
   {
    "playerId": 8482720,
@@ -3127,7 +3201,8 @@
    "bookMedianImplied": 32.8,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.77
   },
   {
    "playerId": 8479066,
@@ -3167,7 +3242,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8477497,
@@ -3207,7 +3283,8 @@
    "bookMedianImplied": 22.2,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.63
   },
   {
    "playerId": 8477501,
@@ -3247,7 +3324,8 @@
    "bookMedianImplied": 25,
    "firstGoalPct": 3.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.21
   },
   {
    "playerId": 8479671,
@@ -3287,7 +3365,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.58
   },
   {
    "playerId": 8482705,
@@ -3327,7 +3406,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.69
   },
   {
    "playerId": 8481716,
@@ -3367,7 +3447,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.73
   },
   {
    "playerId": 8482126,
@@ -3407,7 +3488,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.58
   },
   {
    "playerId": 8481161,
@@ -3447,7 +3529,8 @@
    "bookMedianImplied": 5,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.6
   },
   {
    "playerId": 8479371,
@@ -3487,7 +3570,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.92
   },
   {
    "playerId": 8475790,
@@ -3527,7 +3611,8 @@
    "bookMedianImplied": 4.5,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.83
   },
   {
    "playerId": 8483485,
@@ -3567,7 +3652,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.22
   },
   {
    "playerId": 8478500,
@@ -3607,7 +3693,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.93
   },
   {
    "playerId": 8477369,
@@ -3647,7 +3734,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8478460,
@@ -3687,7 +3775,8 @@
    "bookMedianImplied": 24.7,
    "firstGoalPct": 5,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.39
   },
   {
    "playerId": 8484145,
@@ -3727,7 +3816,8 @@
    "bookMedianImplied": 23.8,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.75
   },
   {
    "playerId": 8475842,
@@ -3767,7 +3857,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.01
   },
   {
    "playerId": 8479941,
@@ -3807,7 +3898,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.43
   },
   {
    "playerId": 8482659,
@@ -3847,7 +3939,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 3.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.05
   },
   {
    "playerId": 8484797,
@@ -3887,7 +3980,8 @@
    "bookMedianImplied": 17.5,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.57
   },
   {
    "playerId": 8482896,
@@ -3927,7 +4021,8 @@
    "bookMedianImplied": 9.5,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8481522,
@@ -3967,7 +4062,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.1
   },
   {
    "playerId": 8483468,
@@ -4007,7 +4103,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.53
   },
   {
    "playerId": 8479359,
@@ -4047,7 +4144,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.82
   },
   {
    "playerId": 8480802,
@@ -4087,7 +4185,8 @@
    "bookMedianImplied": 16.4,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.09
   },
   {
    "playerId": 8480064,
@@ -4127,7 +4226,8 @@
    "bookMedianImplied": 19,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.52
   },
   {
    "playerId": 8483500,
@@ -4167,7 +4267,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.17
   },
   {
    "playerId": 8482097,
@@ -4207,7 +4308,8 @@
    "bookMedianImplied": 29,
    "firstGoalPct": 3.5,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.35
   },
   {
    "playerId": 8479420,
@@ -4247,7 +4349,8 @@
    "bookMedianImplied": 40,
    "firstGoalPct": 8.8,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.49
   },
   {
    "playerId": 8481806,
@@ -4287,7 +4390,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.45
   },
   {
    "playerId": 8480839,
@@ -4327,7 +4431,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.58
   },
   {
    "playerId": 8478502,
@@ -4367,7 +4472,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.25
   },
   {
    "playerId": 8476891,
@@ -4407,7 +4513,8 @@
    "bookMedianImplied": 6.9,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.99
   },
   {
    "playerId": 8484305,
@@ -4447,7 +4554,8 @@
    "bookMedianImplied": 4.8,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.49
   },
   {
    "playerId": 8482671,
@@ -4487,7 +4595,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.45
   },
   {
    "playerId": 8480807,
@@ -4527,7 +4636,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.39
   },
   {
    "playerId": 8479982,
@@ -4567,7 +4677,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8482803,
@@ -4607,7 +4718,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.56
   },
   {
    "playerId": 8476981,
@@ -4647,7 +4759,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.29
   },
   {
    "playerId": 8483424,
@@ -4687,7 +4800,8 @@
    "bookMedianImplied": 12.1,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.73
   },
   {
    "playerId": 8482737,
@@ -4727,7 +4841,8 @@
    "bookMedianImplied": 21.7,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.36
   },
   {
    "playerId": 8481540,
@@ -4767,7 +4882,8 @@
    "bookMedianImplied": 45.5,
    "firstGoalPct": 9,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.24
   },
   {
    "playerId": 8481523,
@@ -4807,7 +4923,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8476479,
@@ -4847,7 +4964,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8484984,
@@ -4887,7 +5005,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.56
   },
   {
    "playerId": 8478133,
@@ -4927,7 +5046,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.08
   },
   {
    "playerId": 8482775,
@@ -4967,7 +5087,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.6
   },
   {
    "playerId": 8475184,
@@ -5007,7 +5128,8 @@
    "bookMedianImplied": 32.3,
    "firstGoalPct": 3.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.8
   },
   {
    "playerId": 8481618,
@@ -5047,7 +5169,8 @@
    "bookMedianImplied": 22.7,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.38
   },
   {
    "playerId": 8483515,
@@ -5087,7 +5210,8 @@
    "bookMedianImplied": 33.9,
    "firstGoalPct": 4.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.25
   },
   {
    "playerId": 8480018,
@@ -5127,7 +5251,8 @@
    "bookMedianImplied": 36.4,
    "firstGoalPct": 4.7,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.23
   },
   {
    "playerId": 8480074,
@@ -5167,7 +5292,8 @@
    "bookMedianImplied": 19.8,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.38
   },
   {
    "playerId": 8484403,
@@ -5207,7 +5333,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.86
   },
   {
    "playerId": 8478851,
@@ -5247,7 +5374,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.79
   },
   {
    "playerId": 8480865,
@@ -5287,7 +5415,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.95
   },
   {
    "playerId": 8483686,
@@ -5327,7 +5456,8 @@
    "bookMedianImplied": 7.1,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.71
   },
   {
    "playerId": 8482087,
@@ -5367,7 +5497,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8483457,
@@ -5407,7 +5538,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.53
   },
   {
    "playerId": 8476875,
@@ -5447,7 +5579,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.48
   },
   {
    "playerId": 8482964,
@@ -5487,7 +5620,8 @@
    "bookMedianImplied": 7.1,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.6
   },
   {
    "playerId": 8478463,
@@ -5527,7 +5661,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.86
   },
   {
    "playerId": 8479400,
@@ -5567,7 +5702,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.42
   },
   {
    "playerId": 8483573,
@@ -5607,7 +5743,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.43
   },
   {
    "playerId": 8476432,
@@ -5647,7 +5784,8 @@
    "bookMedianImplied": 16.4,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.07
   },
   {
    "playerId": 8479385,
@@ -5687,7 +5825,8 @@
    "bookMedianImplied": 21.1,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.3
   },
   {
    "playerId": 8484186,
@@ -5727,7 +5866,8 @@
    "bookMedianImplied": 20.6,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.09
   },
   {
    "playerId": 8483491,
@@ -5767,7 +5907,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.92
   },
   {
    "playerId": 8471214,
@@ -5807,7 +5948,8 @@
    "bookMedianImplied": 29.4,
    "firstGoalPct": 5.5,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.89
   },
   {
    "playerId": 8481656,
@@ -5847,7 +5989,8 @@
    "bookMedianImplied": 19.2,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.0
   },
   {
    "playerId": 8484999,
@@ -5887,7 +6030,8 @@
    "bookMedianImplied": 21.7,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8482088,
@@ -5927,7 +6071,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.34
   },
   {
    "playerId": 8478440,
@@ -5967,7 +6112,8 @@
    "bookMedianImplied": 25,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.81
   },
   {
    "playerId": 8477949,
@@ -6007,7 +6153,8 @@
    "bookMedianImplied": 30.8,
    "firstGoalPct": 5.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.49
   },
   {
    "playerId": 8476880,
@@ -6047,7 +6194,8 @@
    "bookMedianImplied": 29,
    "firstGoalPct": 4.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.12
   },
   {
    "playerId": 8479345,
@@ -6087,7 +6235,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 4.4,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.78
   },
   {
    "playerId": 8479576,
@@ -6127,7 +6276,8 @@
    "bookMedianImplied": 5.4,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.6
   },
   {
    "playerId": 8480796,
@@ -6167,7 +6317,8 @@
    "bookMedianImplied": 5.3,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.87
   },
   {
    "playerId": 8484873,
@@ -6207,7 +6358,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.89
   },
   {
    "playerId": 8480043,
@@ -6247,7 +6399,8 @@
    "bookMedianImplied": 5.6,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.83
   },
   {
    "playerId": 8475795,
@@ -6287,7 +6440,8 @@
    "bookMedianImplied": 7.3,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.31
   },
   {
    "playerId": 8478911,
@@ -6327,7 +6481,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.15
   },
   {
    "playerId": 8478427,
@@ -6367,7 +6522,8 @@
    "bookMedianImplied": 34.5,
    "firstGoalPct": 5.5,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.55
   },
   {
    "playerId": 8482809,
@@ -6407,7 +6563,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 3.6,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.19
   },
   {
    "playerId": 8477478,
@@ -6447,7 +6604,8 @@
    "bookMedianImplied": 19.2,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8475235,
@@ -6487,7 +6645,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.56
   },
   {
    "playerId": 8477940,
@@ -6527,7 +6686,8 @@
    "bookMedianImplied": 29,
    "firstGoalPct": 4,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.49
   },
   {
    "playerId": 8475791,
@@ -6567,7 +6727,8 @@
    "bookMedianImplied": 24.4,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.75
   },
   {
    "playerId": 8476873,
@@ -6607,7 +6768,8 @@
    "bookMedianImplied": 20.8,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.95
   },
   {
    "playerId": 8480829,
@@ -6647,7 +6809,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.96
   },
   {
    "playerId": 8476921,
@@ -6687,7 +6850,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.44
   },
   {
    "playerId": 8480762,
@@ -6727,7 +6891,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.23
   },
   {
    "playerId": 8473533,
@@ -6767,7 +6932,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.38
   },
   {
    "playerId": 8482702,
@@ -6807,7 +6973,8 @@
    "bookMedianImplied": 29.9,
    "firstGoalPct": 3.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.09
   },
   {
    "playerId": 8480830,
@@ -6847,7 +7014,8 @@
    "bookMedianImplied": 36.4,
    "firstGoalPct": 6,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.6
   },
   {
    "playerId": 8478970,
@@ -6887,7 +7055,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.38
   },
   {
    "playerId": 8476906,
@@ -6927,7 +7096,8 @@
    "bookMedianImplied": 17.9,
    "firstGoalPct": 3.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.1
   },
   {
    "playerId": 8480817,
@@ -6967,7 +7137,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.67
   },
   {
    "playerId": 8476422,
@@ -7007,7 +7178,8 @@
    "bookMedianImplied": 5,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.45
   },
   {
    "playerId": 8476958,
@@ -7047,7 +7219,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.59
   },
   {
    "playerId": 8480336,
@@ -7087,7 +7260,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.12
   },
   {
    "playerId": 8482665,
@@ -7127,7 +7301,8 @@
    "bookMedianImplied": 23.8,
    "firstGoalPct": 3.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.75
   },
   {
    "playerId": 8484800,
@@ -7167,7 +7342,8 @@
    "bookMedianImplied": 17.1,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.24
   },
   {
    "playerId": 8480876,
@@ -7207,7 +7383,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.67
   },
   {
    "playerId": 8474586,
@@ -7247,7 +7424,8 @@
    "bookMedianImplied": 29.4,
    "firstGoalPct": 4.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.12
   },
   {
    "playerId": 8477919,
@@ -7287,7 +7465,8 @@
    "bookMedianImplied": 12.9,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.07
   },
   {
    "playerId": 8481554,
@@ -7327,7 +7506,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.17
   },
   {
    "playerId": 8477955,
@@ -7367,7 +7547,8 @@
    "bookMedianImplied": 33.3,
    "firstGoalPct": 4.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.31
   },
   {
    "playerId": 8482259,
@@ -7407,7 +7588,8 @@
    "bookMedianImplied": 33.3,
    "firstGoalPct": 4.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.42
   },
   {
    "playerId": 8482874,
@@ -7447,7 +7629,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.92
   },
   {
    "playerId": 8483570,
@@ -7487,7 +7670,8 @@
    "bookMedianImplied": 10.6,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.16
   },
   {
    "playerId": 8482713,
@@ -7527,7 +7711,8 @@
    "bookMedianImplied": 24.7,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.07
   },
   {
    "playerId": 8476905,
@@ -7567,7 +7752,8 @@
    "bookMedianImplied": 21.3,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8482751,
@@ -7607,7 +7793,8 @@
    "bookMedianImplied": 10.3,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.3
   },
   {
    "playerId": 8483524,
@@ -7647,7 +7834,8 @@
    "bookMedianImplied": 19,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.34
   },
   {
    "playerId": 8478407,
@@ -7687,7 +7875,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.14
   },
   {
    "playerId": 8482858,
@@ -7727,7 +7916,8 @@
    "bookMedianImplied": 6.9,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.68
   },
   {
    "playerId": 8479985,
@@ -7767,7 +7957,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8476457,
@@ -7807,7 +7998,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.26
   },
   {
    "playerId": 8479324,
@@ -7847,7 +8039,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8479372,
@@ -7887,7 +8080,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8477986,
@@ -7927,7 +8121,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.61
   },
   {
    "playerId": 8482866,
@@ -7967,7 +8162,8 @@
    "bookMedianImplied": 5.4,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8478569,
@@ -8007,7 +8203,8 @@
    "bookMedianImplied": 12.9,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.28
   },
   {
    "playerId": 8484142,
@@ -8047,7 +8244,8 @@
    "bookMedianImplied": 19.5,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.94
   },
   {
    "playerId": 8478047,
@@ -8087,7 +8285,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.7
   },
   {
    "playerId": 8480220,
@@ -8127,7 +8326,8 @@
    "bookMedianImplied": 17.3,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.55
   },
   {
    "playerId": 8476461,
@@ -8167,7 +8367,8 @@
    "bookMedianImplied": 18,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.48
   },
   {
    "playerId": 8477989,
@@ -8207,7 +8408,8 @@
    "bookMedianImplied": 22.2,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.79
   },
   {
    "playerId": 8482159,
@@ -8247,7 +8449,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 4.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.11
   },
   {
    "playerId": 8483733,
@@ -8287,7 +8490,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.6
   },
   {
    "playerId": 8478439,
@@ -8327,7 +8531,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 4,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.16
   },
   {
    "playerId": 8485406,
@@ -8367,7 +8572,8 @@
    "bookMedianImplied": 27.8,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.31
   },
   {
    "playerId": 8484387,
@@ -8407,7 +8613,8 @@
    "bookMedianImplied": 26,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.92
   },
   {
    "playerId": 8480021,
@@ -8447,7 +8654,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.84
   },
   {
    "playerId": 8480015,
@@ -8487,7 +8695,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 5,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.72
   },
   {
    "playerId": 8475253,
@@ -8527,7 +8736,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.75
   },
   {
    "playerId": 8481533,
@@ -8567,7 +8777,8 @@
    "bookMedianImplied": 25,
    "firstGoalPct": 4,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.93
   },
   {
    "playerId": 8481122,
@@ -8607,7 +8818,8 @@
    "bookMedianImplied": 4.8,
    "firstGoalPct": 0.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.76
   },
   {
    "playerId": 8484148,
@@ -8647,7 +8859,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.5
   },
   {
    "playerId": 8482142,
@@ -8687,7 +8900,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.28
   },
   {
    "playerId": 8482169,
@@ -8727,7 +8941,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8483460,
@@ -8767,7 +8982,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.68
   },
   {
    "playerId": 8477499,
@@ -8807,7 +9023,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.34
   },
   {
    "playerId": 8477948,
@@ -8847,7 +9064,8 @@
    "bookMedianImplied": 13.6,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.19
   },
   {
    "playerId": 8476372,
@@ -8887,7 +9105,8 @@
    "bookMedianImplied": 6.5,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8481546,
@@ -8927,7 +9146,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.19
   },
   {
    "playerId": 8478519,
@@ -8967,7 +9187,8 @@
    "bookMedianImplied": 25,
    "firstGoalPct": 3.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.74
   },
   {
    "playerId": 8483447,
@@ -9007,7 +9228,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.95
   },
   {
    "playerId": 8476878,
@@ -9047,7 +9269,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8482201,
@@ -9087,7 +9310,8 @@
    "bookMedianImplied": 19,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8476826,
@@ -9127,7 +9351,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.39
   },
   {
    "playerId": 8477404,
@@ -9167,7 +9392,8 @@
    "bookMedianImplied": 38.2,
    "firstGoalPct": 5.6,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.73
   },
   {
    "playerId": 8479542,
@@ -9207,7 +9433,8 @@
    "bookMedianImplied": 37.9,
    "firstGoalPct": 7.1,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.17
   },
   {
    "playerId": 8480995,
@@ -9247,7 +9474,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.28
   },
   {
    "playerId": 8483752,
@@ -9287,7 +9515,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.3
   },
   {
    "playerId": 8476453,
@@ -9327,7 +9556,8 @@
    "bookMedianImplied": 40.8,
    "firstGoalPct": 8.3,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.91
   },
   {
    "playerId": 8481624,
@@ -9367,7 +9597,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.54
   },
   {
    "playerId": 8478010,
@@ -9407,7 +9638,8 @@
    "bookMedianImplied": 34.5,
    "firstGoalPct": 3.8,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.04
   },
   {
    "playerId": 8477149,
@@ -9447,7 +9679,8 @@
    "bookMedianImplied": 10.8,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.44
   },
   {
    "playerId": 8479705,
@@ -9487,7 +9720,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.37
   },
   {
    "playerId": 8474590,
@@ -9527,7 +9761,8 @@
    "bookMedianImplied": 19,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.22
   },
   {
    "playerId": 8478416,
@@ -9567,7 +9802,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.91
   },
   {
    "playerId": 8481719,
@@ -9607,7 +9843,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.37
   },
   {
    "playerId": 8480426,
@@ -9647,7 +9884,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.17
   },
   {
    "playerId": 8475167,
@@ -9687,7 +9925,8 @@
    "bookMedianImplied": 12.1,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.42
   },
   {
    "playerId": 8482929,
@@ -9727,7 +9966,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.86
   },
   {
    "playerId": 8474151,
@@ -9767,7 +10007,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.77
   },
   {
    "playerId": 8482655,
@@ -9807,7 +10048,8 @@
    "bookMedianImplied": 10,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.35
   },
   {
    "playerId": 8484786,
@@ -9847,7 +10089,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.33
   },
   {
    "playerId": 8477416,
@@ -9887,7 +10130,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.61
   },
   {
    "playerId": 8482877,
@@ -9927,7 +10171,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.79
   },
   {
    "playerId": 8482157,
@@ -9967,7 +10212,8 @@
    "bookMedianImplied": 20.4,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.97
   },
   {
    "playerId": 8481604,
@@ -10007,7 +10253,8 @@
    "bookMedianImplied": 33.9,
    "firstGoalPct": 6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.82
   },
   {
    "playerId": 8481789,
@@ -10047,7 +10294,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.89
   },
   {
    "playerId": 8483690,
@@ -10087,7 +10335,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.96
   },
   {
    "playerId": 8482109,
@@ -10127,7 +10376,8 @@
    "bookMedianImplied": 29.4,
    "firstGoalPct": 3.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.01
   },
   {
    "playerId": 8476468,
@@ -10167,7 +10417,8 @@
    "bookMedianImplied": 26,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.01
   },
   {
    "playerId": 8484210,
@@ -10207,7 +10458,8 @@
    "bookMedianImplied": 21.3,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.46
   },
   {
    "playerId": 8482460,
@@ -10247,7 +10499,8 @@
    "bookMedianImplied": 9.7,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.59
   },
   {
    "playerId": 8483669,
@@ -10287,7 +10540,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.27
   },
   {
    "playerId": 8480009,
@@ -10327,7 +10581,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.78
   },
   {
    "playerId": 8480813,
@@ -10367,7 +10622,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.83
   },
   {
    "playerId": 8476459,
@@ -10407,7 +10663,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 5.3,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.59
   },
   {
    "playerId": 8480434,
@@ -10447,7 +10704,8 @@
    "bookMedianImplied": 10,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.3
   },
   {
    "playerId": 8479323,
@@ -10487,7 +10745,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.55
   },
   {
    "playerId": 8478882,
@@ -10527,7 +10786,8 @@
    "bookMedianImplied": 7.7,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.47
   },
   {
    "playerId": 8482861,
@@ -10567,7 +10827,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.56
   },
   {
    "playerId": 8482666,
@@ -10607,7 +10868,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.83
   },
   {
    "playerId": 8477969,
@@ -10647,7 +10909,8 @@
    "bookMedianImplied": 5.3,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8482073,
@@ -10687,7 +10950,8 @@
    "bookMedianImplied": 6.5,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.22
   },
   {
    "playerId": 8485957,
@@ -10727,7 +10991,8 @@
    "bookMedianImplied": 5.3,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.29
   },
   {
    "playerId": 8481013,
@@ -10767,7 +11032,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8477402,
@@ -10807,7 +11073,8 @@
    "bookMedianImplied": 21.7,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.73
   },
   {
    "playerId": 8482784,
@@ -10847,7 +11114,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8479346,
@@ -10887,7 +11155,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.33
   },
   {
    "playerId": 8484164,
@@ -10927,7 +11196,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.33
   },
   {
    "playerId": 8482077,
@@ -10967,7 +11237,8 @@
    "bookMedianImplied": 31.7,
    "firstGoalPct": 5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.67
   },
   {
    "playerId": 8477527,
@@ -11007,7 +11278,8 @@
    "bookMedianImplied": 10.3,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.53
   },
   {
    "playerId": 8481580,
@@ -11047,7 +11319,8 @@
    "bookMedianImplied": 22,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.83
   },
   {
    "playerId": 8482745,
@@ -11087,7 +11360,8 @@
    "bookMedianImplied": 26.3,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.04
   },
   {
    "playerId": 8482089,
@@ -11127,7 +11401,8 @@
    "bookMedianImplied": 24.4,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.24
   },
   {
    "playerId": 8483516,
@@ -11167,7 +11442,8 @@
    "bookMedianImplied": 32.3,
    "firstGoalPct": 4.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.41
   },
   {
    "playerId": 8480459,
@@ -11207,7 +11483,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.46
   },
   {
    "playerId": 8480023,
@@ -11247,7 +11524,8 @@
    "bookMedianImplied": 26.7,
    "firstGoalPct": 3.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.55
   },
   {
    "playerId": 8480281,
@@ -11287,7 +11565,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.03
   },
   {
    "playerId": 8482111,
@@ -11327,7 +11606,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.63
   },
   {
    "playerId": 8481598,
@@ -11367,7 +11647,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.23
   },
   {
    "playerId": 8478443,
@@ -11407,7 +11688,8 @@
    "bookMedianImplied": 5.6,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.17
   },
   {
    "playerId": 8475764,
@@ -11447,7 +11729,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.11
   },
   {
    "playerId": 8484790,
@@ -11487,7 +11770,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.8
   },
   {
    "playerId": 8484188,
@@ -11527,7 +11811,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.1
   },
   {
    "playerId": 8482733,
@@ -11567,7 +11852,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.19
   },
   {
    "playerId": 8476892,
@@ -11607,7 +11893,8 @@
    "bookMedianImplied": 8,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.38
   },
   {
    "playerId": 8481006,
@@ -11647,7 +11934,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.99
   },
   {
    "playerId": 8478020,
@@ -11687,7 +11975,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.22
   },
   {
    "playerId": 8480208,
@@ -11727,7 +12016,8 @@
    "bookMedianImplied": 32.3,
    "firstGoalPct": 5.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.11
   },
   {
    "playerId": 8477444,
@@ -11767,7 +12057,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8476393,
@@ -11807,7 +12098,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.94
   },
   {
    "playerId": 8481528,
@@ -11847,7 +12139,8 @@
    "bookMedianImplied": 29,
    "firstGoalPct": 4.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.45
   },
   {
    "playerId": 8482667,
@@ -11887,7 +12180,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.27
   },
   {
    "playerId": 8477998,
@@ -11927,7 +12221,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.46
   },
   {
    "playerId": 8473512,
@@ -11967,7 +12262,8 @@
    "bookMedianImplied": 18.5,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.68
   },
   {
    "playerId": 8482092,
@@ -12007,7 +12303,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.64
   },
   {
    "playerId": 8483676,
@@ -12047,7 +12344,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8478173,
@@ -12087,7 +12385,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.33
   },
   {
    "playerId": 8481596,
@@ -12127,7 +12426,8 @@
    "bookMedianImplied": 25,
    "firstGoalPct": 4.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.13
   },
   {
    "playerId": 8482116,
@@ -12167,7 +12467,8 @@
    "bookMedianImplied": 35.1,
    "firstGoalPct": 5.6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.42
   },
   {
    "playerId": 8480188,
@@ -12207,7 +12508,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.61
   },
   {
    "playerId": 8478469,
@@ -12247,7 +12549,8 @@
    "bookMedianImplied": 15.6,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.83
   },
   {
    "playerId": 8480075,
@@ -12287,7 +12590,8 @@
    "bookMedianImplied": 5.3,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8482095,
@@ -12327,7 +12631,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.28
   },
   {
    "playerId": 8484321,
@@ -12367,7 +12672,8 @@
    "bookMedianImplied": 6.9,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.73
   },
   {
    "playerId": 8482105,
@@ -12407,7 +12713,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.15
   },
   {
    "playerId": 8481606,
@@ -12447,7 +12754,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.46
   },
   {
    "playerId": 8484759,
@@ -12487,7 +12795,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.3
   },
   {
    "playerId": 8483395,
@@ -12527,7 +12836,8 @@
    "bookMedianImplied": 9.5,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8478444,
@@ -12567,7 +12877,8 @@
    "bookMedianImplied": 28.6,
    "firstGoalPct": 4.1,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.12
   },
   {
    "playerId": 8480078,
@@ -12607,7 +12918,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.0
   },
   {
    "playerId": 8481032,
@@ -12647,7 +12959,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8478498,
@@ -12687,7 +13000,8 @@
    "bookMedianImplied": 29.9,
    "firstGoalPct": 5.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.72
   },
   {
    "playerId": 8475848,
@@ -12727,7 +13041,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.51
   },
   {
    "playerId": 8481024,
@@ -12767,7 +13082,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.51
   },
   {
    "playerId": 8483476,
@@ -12807,7 +13123,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8482055,
@@ -12847,7 +13164,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.58
   },
   {
    "playerId": 8483499,
@@ -12890,7 +13208,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.3
   },
   {
    "playerId": 8480012,
@@ -12930,7 +13249,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.1,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.74
   },
   {
    "playerId": 8482691,
@@ -12973,7 +13293,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.99
   },
   {
    "playerId": 8482079,
@@ -13013,7 +13334,8 @@
    "bookMedianImplied": 22.7,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.39
   },
   {
    "playerId": 8484136,
@@ -13053,7 +13375,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.95
   },
   {
    "playerId": 8478465,
@@ -13093,7 +13416,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.0
   },
   {
    "playerId": 8484798,
@@ -13133,7 +13457,8 @@
    "bookMedianImplied": 10.3,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.94
   },
   {
    "playerId": 8479425,
@@ -13173,7 +13498,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.64
   },
   {
    "playerId": 8483768,
@@ -13213,7 +13539,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.56
   },
   {
    "playerId": 8476467,
@@ -13253,7 +13580,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.94
   },
   {
    "playerId": 8483678,
@@ -13293,7 +13621,8 @@
    "bookMedianImplied": 5,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.7
   },
   {
    "playerId": 8474568,
@@ -13333,7 +13662,8 @@
    "bookMedianImplied": 5.8,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.68
   },
   {
    "playerId": 8484240,
@@ -13373,7 +13703,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.82
   },
   {
    "playerId": 8475231,
@@ -13416,7 +13747,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.99
   },
   {
    "playerId": 8477407,
@@ -13456,7 +13788,8 @@
    "bookMedianImplied": 22.2,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.19
   },
   {
    "playerId": 8485388,
@@ -13496,7 +13829,8 @@
    "bookMedianImplied": 27.8,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.17
   },
   {
    "playerId": 8482476,
@@ -13536,7 +13870,8 @@
    "bookMedianImplied": 27.8,
    "firstGoalPct": 3.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.02
   },
   {
    "playerId": 8481601,
@@ -13576,7 +13911,8 @@
    "bookMedianImplied": 21.7,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8477500,
@@ -13616,7 +13952,8 @@
    "bookMedianImplied": 40.3,
    "firstGoalPct": 7.6,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.33
   },
   {
    "playerId": 8481711,
@@ -13656,7 +13993,8 @@
    "bookMedianImplied": 21.1,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.26
   },
   {
    "playerId": 8481237,
@@ -13696,7 +14034,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.71
   },
   {
    "playerId": 8476419,
@@ -13736,7 +14075,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.08
   },
   {
    "playerId": 8476292,
@@ -13776,7 +14116,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.06
   },
   {
    "playerId": 8475151,
@@ -13816,7 +14157,8 @@
    "bookMedianImplied": 33.9,
    "firstGoalPct": 4.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.67
   },
   {
    "playerId": 8484221,
@@ -13856,7 +14198,8 @@
    "bookMedianImplied": 29.4,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8475170,
@@ -13896,7 +14239,8 @@
    "bookMedianImplied": 28.6,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.52
   },
   {
    "playerId": 8477950,
@@ -13936,7 +14280,8 @@
    "bookMedianImplied": 12.9,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.9
   },
   {
    "playerId": 8482516,
@@ -13976,7 +14321,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.69
   },
   {
    "playerId": 8476429,
@@ -14016,7 +14362,8 @@
    "bookMedianImplied": 7.3,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.87
   },
   {
    "playerId": 8476917,
@@ -14056,7 +14403,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.43
   },
   {
    "playerId": 8477506,
@@ -14096,7 +14444,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.16
   },
   {
    "playerId": 8481014,
@@ -14136,7 +14485,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.11
   },
   {
    "playerId": 8485366,
@@ -14176,7 +14526,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 4.6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.78
   },
   {
    "playerId": 8479378,
@@ -14216,7 +14567,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.22
   },
   {
    "playerId": 8479638,
@@ -14256,7 +14608,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.61
   },
   {
    "playerId": 8482475,
@@ -14296,7 +14649,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.94
   },
   {
    "playerId": 8471675,
@@ -14336,7 +14690,8 @@
    "bookMedianImplied": 35.7,
    "firstGoalPct": 5.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.38
   },
   {
    "playerId": 8480980,
@@ -14376,7 +14731,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.4
   },
   {
    "playerId": 8485414,
@@ -14416,7 +14772,8 @@
    "bookMedianImplied": 27,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.96
   },
   {
    "playerId": 8482758,
@@ -14456,7 +14813,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.93
   },
   {
    "playerId": 8483808,
@@ -14496,7 +14854,8 @@
    "bookMedianImplied": 19.6,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.33
   },
   {
    "playerId": 8482148,
@@ -14536,7 +14895,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.7
   },
   {
    "playerId": 8481481,
@@ -14576,7 +14936,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.92
   },
   {
    "playerId": 8471215,
@@ -14616,7 +14977,8 @@
    "bookMedianImplied": 31.2,
    "firstGoalPct": 4.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.55
   },
   {
    "playerId": 8478438,
@@ -14659,7 +15021,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.6
   },
   {
    "playerId": 8476483,
@@ -14699,7 +15062,8 @@
    "bookMedianImplied": 33.9,
    "firstGoalPct": 5.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.64
   },
   {
    "playerId": 8481582,
@@ -14739,7 +15103,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.62
   },
   {
    "playerId": 8475810,
@@ -14779,7 +15144,8 @@
    "bookMedianImplied": 33.3,
    "firstGoalPct": 6.3,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.48
   },
   {
    "playerId": 8481725,
@@ -14819,7 +15185,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8483398,
@@ -14862,7 +15229,8 @@
    "bookMedianImplied": 7.7,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8479398,
@@ -14905,7 +15273,8 @@
    "bookMedianImplied": 7.1,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.76
   },
   {
    "playerId": 8481564,
@@ -14945,7 +15314,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8474578,
@@ -14985,7 +15355,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.31
   },
   {
    "playerId": 8481527,
@@ -15025,7 +15396,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.77
   },
   {
    "playerId": 8471724,
@@ -15065,7 +15437,8 @@
    "bookMedianImplied": 12.1,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.49
   },
   {
    "playerId": 8481056,
@@ -15105,7 +15478,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.85
   },
   {
    "playerId": 8477845,
@@ -15145,7 +15519,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.63
   },
   {
    "playerId": 8484144,
@@ -15185,7 +15560,8 @@
    "bookMedianImplied": 38.5,
    "firstGoalPct": 6.5,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.28
   },
   {
    "playerId": 8477479,
@@ -15225,7 +15601,8 @@
    "bookMedianImplied": 33.3,
    "firstGoalPct": 4.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.99
   },
   {
    "playerId": 8477987,
@@ -15265,7 +15642,8 @@
    "bookMedianImplied": 18.9,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.48
   },
   {
    "playerId": 8485391,
@@ -15305,7 +15683,8 @@
    "bookMedianImplied": 26.7,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.56
   },
   {
    "playerId": 8483450,
@@ -15345,7 +15724,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.29
   },
   {
    "playerId": 8478413,
@@ -15385,7 +15765,8 @@
    "bookMedianImplied": 10,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.98
   },
   {
    "playerId": 8474141,
@@ -15425,7 +15806,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 3.7,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.42
   },
   {
    "playerId": 8484390,
@@ -15465,7 +15847,8 @@
    "bookMedianImplied": 28.6,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.33
   },
   {
    "playerId": 8478233,
@@ -15505,7 +15888,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.94
   },
   {
    "playerId": 8484197,
@@ -15545,7 +15929,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.16
   },
   {
    "playerId": 8483493,
@@ -15585,7 +15970,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.06
   },
   {
    "playerId": 8482062,
@@ -15625,7 +16011,8 @@
    "bookMedianImplied": 10.8,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.09
   },
   {
    "playerId": 8476882,
@@ -15665,7 +16052,8 @@
    "bookMedianImplied": 16.4,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.15
   },
   {
    "playerId": 8476952,
@@ -15705,7 +16093,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.9
   },
   {
    "playerId": 8481524,
@@ -15745,7 +16134,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.32
   },
   {
    "playerId": 8474013,
@@ -15785,7 +16175,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.75
   },
   {
    "playerId": 8482807,
@@ -15825,7 +16216,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.89
   },
   {
    "playerId": 8482176,
@@ -15865,7 +16257,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.95
   },
   {
    "playerId": 8483466,
@@ -15905,7 +16298,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.64
   },
   {
    "playerId": 8484783,
@@ -15945,7 +16339,8 @@
    "bookMedianImplied": 7.7,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.26
   },
   {
    "playerId": 8483506,
@@ -15985,7 +16380,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.5
   },
   {
    "playerId": 8481568,
@@ -16025,7 +16421,8 @@
    "bookMedianImplied": 8.2,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.05
   },
   {
    "playerId": 8481557,
@@ -16065,7 +16462,8 @@
    "bookMedianImplied": 40,
    "firstGoalPct": 8.1,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.43
   },
   {
    "playerId": 8481553,
@@ -16105,7 +16503,8 @@
    "bookMedianImplied": 18.9,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.55
   },
   {
    "playerId": 8476399,
@@ -16145,7 +16544,8 @@
    "bookMedianImplied": 25.3,
    "firstGoalPct": 3.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.49
   },
   {
    "playerId": 8478493,
@@ -16185,7 +16585,8 @@
    "bookMedianImplied": 31.2,
    "firstGoalPct": 3.6,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.76
   },
   {
    "playerId": 8475220,
@@ -16225,7 +16626,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8473422,
@@ -16265,7 +16667,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8477451,
@@ -16305,7 +16708,8 @@
    "bookMedianImplied": 24.4,
    "firstGoalPct": 3.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.11
   },
   {
    "playerId": 8478864,
@@ -16345,7 +16749,8 @@
    "bookMedianImplied": 43.9,
    "firstGoalPct": 10.4,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.39
   },
   {
    "playerId": 8477993,
@@ -16385,7 +16790,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.55
   },
   {
    "playerId": 8483478,
@@ -16425,7 +16831,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8477446,
@@ -16465,7 +16872,8 @@
    "bookMedianImplied": 11.4,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.42
   },
   {
    "playerId": 8475752,
@@ -16505,7 +16913,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.81
   },
   {
    "playerId": 8485702,
@@ -16545,7 +16954,8 @@
    "bookMedianImplied": 23.3,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.3
   },
   {
    "playerId": 8481477,
@@ -16585,7 +16995,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.75
   },
   {
    "playerId": 8478508,
@@ -16625,7 +17036,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.18
   },
   {
    "playerId": 8483525,
@@ -16665,7 +17077,8 @@
    "bookMedianImplied": 17.9,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.1
   },
   {
    "playerId": 8474567,
@@ -16705,7 +17118,8 @@
    "bookMedianImplied": 4.7,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.76
   },
   {
    "playerId": 8476463,
@@ -16745,7 +17159,8 @@
    "bookMedianImplied": 7.1,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.19
   },
   {
    "playerId": 8482122,
@@ -16785,7 +17200,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.15
   },
   {
    "playerId": 8480800,
@@ -16825,7 +17241,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.58
   },
   {
    "playerId": 8482094,
@@ -16865,7 +17282,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.55
   },
   {
    "playerId": 8482641,
@@ -16905,7 +17323,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.67
   },
   {
    "playerId": 8476874,
@@ -16945,7 +17364,8 @@
    "bookMedianImplied": 5.6,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.77
   },
   {
    "playerId": 8483766,
@@ -16985,7 +17405,8 @@
    "bookMedianImplied": 5.6,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.25
   },
   {
    "playerId": 8474716,
@@ -17025,7 +17446,8 @@
    "bookMedianImplied": 11.4,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8480289,
@@ -17065,7 +17487,8 @@
    "bookMedianImplied": 13.8,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.39
   },
   {
    "playerId": 8486025,
@@ -17105,7 +17528,8 @@
    "bookMedianImplied": 19,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8478398,
@@ -17145,7 +17569,8 @@
    "bookMedianImplied": 42.6,
    "firstGoalPct": 6.6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.46
   },
   {
    "playerId": 8480113,
@@ -17185,7 +17610,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.42
   },
   {
    "playerId": 8481043,
@@ -17225,7 +17651,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.26
   },
   {
    "playerId": 8483471,
@@ -17265,7 +17692,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8476392,
@@ -17305,7 +17733,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.99
   },
   {
    "playerId": 8476480,
@@ -17345,7 +17774,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.26
   },
   {
    "playerId": 8475799,
@@ -17385,7 +17815,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.32
   },
   {
    "playerId": 8482149,
@@ -17425,7 +17856,8 @@
    "bookMedianImplied": 29.9,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.04
   },
   {
    "playerId": 8482765,
@@ -17465,7 +17897,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.98
   },
   {
    "playerId": 8476460,
@@ -17505,7 +17938,8 @@
    "bookMedianImplied": 35.7,
    "firstGoalPct": 4.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.09
   },
   {
    "playerId": 8480014,
@@ -17545,7 +17979,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.83
   },
   {
    "playerId": 8482459,
@@ -17585,7 +18020,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8476331,
@@ -17625,7 +18061,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.87
   },
   {
    "playerId": 8479983,
@@ -17665,7 +18102,8 @@
    "bookMedianImplied": 7.4,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.15
   },
   {
    "playerId": 8477938,
@@ -17705,7 +18143,8 @@
    "bookMedianImplied": 9.5,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.67
   },
   {
    "playerId": 8477504,
@@ -17745,7 +18184,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.94
   },
   {
    "playerId": 8480145,
@@ -17785,7 +18225,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.88
   },
   {
    "playerId": 8480049,
@@ -17825,7 +18266,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.32
   },
   {
    "playerId": 8481030,
@@ -17865,7 +18307,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.77
   },
   {
    "playerId": 8486171,
@@ -17905,7 +18348,8 @@
    "bookMedianImplied": 19.2,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.8
   },
   {
    "playerId": 8475172,
@@ -17945,7 +18389,8 @@
    "bookMedianImplied": 25.6,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.78
   },
   {
    "playerId": 8480448,
@@ -17985,7 +18430,8 @@
    "bookMedianImplied": 12.1,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.24
   },
   {
    "playerId": 8482742,
@@ -18025,7 +18471,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.36
   },
   {
    "playerId": 8476455,
@@ -18065,7 +18512,8 @@
    "bookMedianImplied": 22.5,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.14
   },
   {
    "playerId": 8477476,
@@ -18105,7 +18553,8 @@
    "bookMedianImplied": 21.7,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.12
   },
   {
    "playerId": 8477492,
@@ -18145,7 +18594,8 @@
    "bookMedianImplied": 47.4,
    "firstGoalPct": 12.6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 4.42
   },
   {
    "playerId": 8480039,
@@ -18185,7 +18635,8 @@
    "bookMedianImplied": 35.1,
    "firstGoalPct": 6.1,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.64
   },
   {
    "playerId": 8475754,
@@ -18225,7 +18676,8 @@
    "bookMedianImplied": 23,
    "firstGoalPct": 4.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.2
   },
   {
    "playerId": 8481186,
@@ -18265,7 +18717,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8478462,
@@ -18305,7 +18758,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.09
   },
   {
    "playerId": 8475768,
@@ -18345,7 +18799,8 @@
    "bookMedianImplied": 18.2,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.65
   },
   {
    "playerId": 8482768,
@@ -18385,7 +18840,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8470613,
@@ -18425,7 +18881,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.06
   },
   {
    "playerId": 8478454,
@@ -18465,7 +18922,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.49
   },
   {
    "playerId": 8476967,
@@ -18505,7 +18963,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.11
   },
   {
    "playerId": 8480069,
@@ -18545,7 +19004,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.8,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.65
   },
   {
    "playerId": 8484258,
@@ -18585,7 +19045,8 @@
    "bookMedianImplied": 12,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.95
   },
   {
    "playerId": 8476312,
@@ -18625,7 +19086,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.6
   },
   {
    "playerId": 8478038,
@@ -18665,7 +19127,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.64
   },
   {
    "playerId": 8473994,
@@ -18705,7 +19168,8 @@
    "bookMedianImplied": 19.6,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.23
   },
   {
    "playerId": 8476278,
@@ -18745,7 +19209,8 @@
    "bookMedianImplied": 10,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.86
   },
   {
    "playerId": 8480840,
@@ -18785,7 +19250,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.6
   },
   {
    "playerId": 8475168,
@@ -18825,7 +19291,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.56
   },
   {
    "playerId": 8476889,
@@ -18865,7 +19332,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.67
   },
   {
    "playerId": 8478449,
@@ -18905,7 +19373,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 3.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.34
   },
   {
    "playerId": 8484829,
@@ -18945,7 +19414,8 @@
    "bookMedianImplied": 17.2,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8484938,
@@ -18985,7 +19455,8 @@
    "bookMedianImplied": 11.4,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.16
   },
   {
    "playerId": 8482740,
@@ -19025,7 +19496,8 @@
    "bookMedianImplied": 37.2,
    "firstGoalPct": 5.9,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.49
   },
   {
    "playerId": 8481641,
@@ -19065,7 +19537,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8478420,
@@ -19105,7 +19578,8 @@
    "bookMedianImplied": 32.3,
    "firstGoalPct": 3.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.2
   },
   {
    "playerId": 8480027,
@@ -19145,7 +19619,8 @@
    "bookMedianImplied": 40,
    "firstGoalPct": 8.4,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.55
   },
   {
    "playerId": 8475794,
@@ -19185,7 +19660,8 @@
    "bookMedianImplied": 21.3,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.31
   },
   {
    "playerId": 8479351,
@@ -19225,7 +19701,8 @@
    "bookMedianImplied": 18.5,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.17
   },
   {
    "playerId": 8483425,
@@ -19265,7 +19742,8 @@
    "bookMedianImplied": 4.8,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.51
   },
   {
    "playerId": 8478476,
@@ -19305,7 +19783,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.55
   },
   {
    "playerId": 8481581,
@@ -19345,7 +19824,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.64
   },
   {
    "playerId": 8480036,
@@ -19385,7 +19865,8 @@
    "bookMedianImplied": 16,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.9
   },
   {
    "playerId": 8476902,
@@ -19425,7 +19906,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.98
   },
   {
    "playerId": 8480878,
@@ -19465,7 +19947,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8474574,
@@ -19505,7 +19988,8 @@
    "bookMedianImplied": 4.5,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8477964,
@@ -19545,7 +20029,8 @@
    "bookMedianImplied": 23.8,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.58
   },
   {
    "playerId": 8483890,
@@ -19585,7 +20070,8 @@
    "bookMedianImplied": 17.4,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.33
   },
   {
    "playerId": 8484803,
@@ -19625,7 +20111,8 @@
    "bookMedianImplied": 25,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.14
   },
   {
    "playerId": 8475343,
@@ -19665,7 +20152,8 @@
    "bookMedianImplied": 9.5,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.84
   },
   {
    "playerId": 8478403,
@@ -19705,7 +20193,8 @@
    "bookMedianImplied": 35.7,
    "firstGoalPct": 5.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.43
   },
   {
    "playerId": 8483553,
@@ -19745,7 +20234,8 @@
    "bookMedianImplied": 11.4,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.23
   },
   {
    "playerId": 8476881,
@@ -19785,7 +20275,8 @@
    "bookMedianImplied": 29.4,
    "firstGoalPct": 4.6,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.47
   },
   {
    "playerId": 8479353,
@@ -19828,7 +20319,8 @@
    "bookMedianImplied": 21.7,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8476448,
@@ -19868,7 +20360,8 @@
    "bookMedianImplied": 20.8,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.05
   },
   {
    "playerId": 8481534,
@@ -19908,7 +20401,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.5
   },
   {
    "playerId": 8478483,
@@ -19948,7 +20442,8 @@
    "bookMedianImplied": 32.3,
    "firstGoalPct": 3.7,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.1
   },
   {
    "playerId": 8478109,
@@ -19988,7 +20483,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.9
   },
   {
    "playerId": 8475913,
@@ -20028,7 +20524,8 @@
    "bookMedianImplied": 35.1,
    "firstGoalPct": 5.9,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.18
   },
   {
    "playerId": 8478397,
@@ -20068,7 +20565,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.18
   },
   {
    "playerId": 8479639,
@@ -20108,7 +20606,8 @@
    "bookMedianImplied": 7.5,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.5
   },
   {
    "playerId": 8478396,
@@ -20148,7 +20647,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.85
   },
   {
    "playerId": 8481572,
@@ -20188,7 +20688,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.4
   },
   {
    "playerId": 8478468,
@@ -20228,7 +20729,8 @@
    "bookMedianImplied": 4.5,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8475188,
@@ -20268,7 +20770,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.26
   },
   {
    "playerId": 8477447,
@@ -20308,7 +20811,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.9
   },
   {
    "playerId": 8478450,
@@ -20348,7 +20852,8 @@
    "bookMedianImplied": 4.4,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.87
   },
   {
    "playerId": 8482145,
@@ -20388,7 +20893,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.8
   },
   {
    "playerId": 8479525,
@@ -20428,7 +20934,8 @@
    "bookMedianImplied": 16.9,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.04
   },
   {
    "playerId": 8480835,
@@ -20468,7 +20975,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.18
   },
   {
    "playerId": 8481726,
@@ -20508,7 +21016,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.02
   },
   {
    "playerId": 8476887,
@@ -20548,7 +21057,8 @@
    "bookMedianImplied": 38.5,
    "firstGoalPct": 7.3,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.92
   },
   {
    "playerId": 8481535,
@@ -20588,7 +21098,8 @@
    "bookMedianImplied": 19.6,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.98
   },
   {
    "playerId": 8477021,
@@ -20628,7 +21139,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.82
   },
   {
    "playerId": 8476539,
@@ -20668,7 +21180,8 @@
    "bookMedianImplied": 26.3,
    "firstGoalPct": 3.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.1
   },
   {
    "playerId": 8475158,
@@ -20708,7 +21221,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 3.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.86
   },
   {
    "playerId": 8486189,
@@ -20748,7 +21262,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8483513,
@@ -20788,7 +21303,8 @@
    "bookMedianImplied": 9.5,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.86
   },
   {
    "playerId": 8474564,
@@ -20828,7 +21344,8 @@
    "bookMedianImplied": 38.3,
    "firstGoalPct": 6.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.47
   },
   {
    "playerId": 8484241,
@@ -20868,7 +21385,8 @@
    "bookMedianImplied": 22.7,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.47
   },
   {
    "playerId": 8482072,
@@ -20908,7 +21426,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.69
   },
   {
    "playerId": 8479980,
@@ -20948,7 +21467,8 @@
    "bookMedianImplied": 5.3,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.85
   },
   {
    "playerId": 8474600,
@@ -20988,7 +21508,8 @@
    "bookMedianImplied": 19,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.59
   },
   {
    "playerId": 8480950,
@@ -21028,7 +21549,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8480246,
@@ -21068,7 +21590,8 @@
    "bookMedianImplied": 4.8,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.99
   },
   {
    "playerId": 8476869,
@@ -21108,7 +21631,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.31
   },
   {
    "playerId": 8481593,
@@ -21148,7 +21672,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.41
   },
   {
    "playerId": 8482806,
@@ -21188,7 +21713,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.67
   },
   {
    "playerId": 8482482,
@@ -21228,7 +21754,8 @@
    "bookMedianImplied": 7.3,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.02
   },
   {
    "playerId": 8476927,
@@ -21268,7 +21795,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.32
   },
   {
    "playerId": 8484158,
@@ -21308,7 +21836,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.47
   },
   {
    "playerId": 8479520,
@@ -21348,7 +21877,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.76
   },
   {
    "playerId": 8480870,
@@ -21388,7 +21918,8 @@
    "bookMedianImplied": 11.4,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.94
   },
   {
    "playerId": 8479772,
@@ -21428,7 +21959,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8480893,
@@ -21468,7 +22000,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 5,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.85
   },
   {
    "playerId": 8479318,
@@ -21508,7 +22041,8 @@
    "bookMedianImplied": 40,
    "firstGoalPct": 6.3,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.7
   },
   {
    "playerId": 8486067,
@@ -21548,7 +22082,8 @@
    "bookMedianImplied": 18.9,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.67
   },
   {
    "playerId": 8477939,
@@ -21588,7 +22123,8 @@
    "bookMedianImplied": 34.5,
    "firstGoalPct": 5,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.46
   },
   {
    "playerId": 8477426,
@@ -21628,7 +22164,8 @@
    "bookMedianImplied": 17.2,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.32
   },
   {
    "playerId": 8478458,
@@ -21668,7 +22205,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.12
   },
   {
    "playerId": 8476925,
@@ -21708,7 +22246,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8475166,
@@ -21748,7 +22287,8 @@
    "bookMedianImplied": 31.2,
    "firstGoalPct": 4.1,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.37
   },
   {
    "playerId": 8477425,
@@ -21788,7 +22328,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.3
   },
   {
    "playerId": 8483565,
@@ -21828,7 +22369,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.18
   },
   {
    "playerId": 8475171,
@@ -21868,7 +22410,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.32
   },
   {
    "playerId": 8476931,
@@ -21908,7 +22451,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8478178,
@@ -21948,7 +22492,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 4.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.85
   },
   {
    "playerId": 8476853,
@@ -21988,7 +22533,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.76
   },
   {
    "playerId": 8483546,
@@ -22028,7 +22574,8 @@
    "bookMedianImplied": 8.1,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8479442,
@@ -22068,7 +22615,8 @@
    "bookMedianImplied": 6.4,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8475690,
@@ -22108,7 +22656,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.53
   },
   {
    "playerId": 8484388,
@@ -22148,7 +22697,8 @@
    "bookMedianImplied": 15.4,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.4
   },
   {
    "playerId": 8479619,
@@ -22191,7 +22741,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.94
   },
   {
    "playerId": 8483431,
@@ -22231,7 +22782,8 @@
    "bookMedianImplied": 34.5,
    "firstGoalPct": 3.9,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.73
   },
   {
    "playerId": 8478474,
@@ -22271,7 +22823,8 @@
    "bookMedianImplied": 23.3,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.74
   },
   {
    "playerId": 8482699,
@@ -22311,7 +22864,8 @@
    "bookMedianImplied": 41.7,
    "firstGoalPct": 7.3,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.09
   },
   {
    "playerId": 8480849,
@@ -22351,7 +22905,8 @@
    "bookMedianImplied": 17.9,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.77
   },
   {
    "playerId": 8479343,
@@ -22391,7 +22946,8 @@
    "bookMedianImplied": 34.5,
    "firstGoalPct": 4.1,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.75
   },
   {
    "playerId": 8475314,
@@ -22431,7 +22987,8 @@
    "bookMedianImplied": 26.7,
    "firstGoalPct": 3.6,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.4
   },
   {
    "playerId": 8480855,
@@ -22471,7 +23028,8 @@
    "bookMedianImplied": 13.8,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.38
   },
   {
    "playerId": 8477070,
@@ -22514,7 +23072,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.92
   },
   {
    "playerId": 8477951,
@@ -22554,7 +23113,8 @@
    "bookMedianImplied": 38.5,
    "firstGoalPct": 5,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.57
   },
   {
    "playerId": 8478831,
@@ -22594,7 +23154,8 @@
    "bookMedianImplied": 10.8,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.81
   },
   {
    "playerId": 8476389,
@@ -22634,7 +23195,8 @@
    "bookMedianImplied": 23.3,
    "firstGoalPct": 2.3,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.62
   },
   {
    "playerId": 8479977,
@@ -22674,7 +23236,8 @@
    "bookMedianImplied": 20.4,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.05
   },
   {
    "playerId": 8480084,
@@ -22714,7 +23277,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8483472,
@@ -22754,7 +23318,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8478507,
@@ -22794,7 +23359,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.7
   },
   {
    "playerId": 8479369,
@@ -22834,7 +23400,8 @@
    "bookMedianImplied": 5.6,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.06
   },
   {
    "playerId": 8477220,
@@ -22874,7 +23441,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.07
   },
   {
    "playerId": 8479410,
@@ -22914,7 +23482,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.07
   },
   {
    "playerId": 8484386,
@@ -22954,7 +23523,8 @@
    "bookMedianImplied": 9.5,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8477346,
@@ -22994,7 +23564,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.93
   },
   {
    "playerId": 8474150,
@@ -23034,7 +23605,8 @@
    "bookMedianImplied": 22.7,
    "firstGoalPct": 3.5,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.34
   },
   {
    "playerId": 8484154,
@@ -23074,7 +23646,8 @@
    "bookMedianImplied": 12.9,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.5
   },
   {
    "playerId": 8482679,
@@ -23114,7 +23687,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 3.4,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.41
   },
   {
    "playerId": 8480797,
@@ -23154,7 +23728,8 @@
    "bookMedianImplied": 28.2,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.77
   },
   {
    "playerId": 8480028,
@@ -23194,7 +23769,8 @@
    "bookMedianImplied": 27.4,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.72
   },
   {
    "playerId": 8484860,
@@ -23234,7 +23810,8 @@
    "bookMedianImplied": 23.8,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.93
   },
   {
    "playerId": 8484180,
@@ -23274,7 +23851,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.14
   },
   {
    "playerId": 8476456,
@@ -23314,7 +23892,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.68
   },
   {
    "playerId": 8483609,
@@ -23354,7 +23933,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8482747,
@@ -23394,7 +23974,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8481028,
@@ -23434,7 +24015,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.04
   },
   {
    "playerId": 8481068,
@@ -23474,7 +24056,8 @@
    "bookMedianImplied": 22.7,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.81
   },
   {
    "playerId": 8476458,
@@ -23514,7 +24097,8 @@
    "bookMedianImplied": 18.5,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.16
   },
   {
    "playerId": 8484234,
@@ -23554,7 +24138,8 @@
    "bookMedianImplied": 18.9,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.5
   },
   {
    "playerId": 8484958,
@@ -23594,7 +24179,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.83
   },
   {
    "playerId": 8480860,
@@ -23634,7 +24220,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.78
   },
   {
    "playerId": 8477810,
@@ -23674,7 +24261,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8482165,
@@ -23714,7 +24302,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.16
   },
   {
    "playerId": 8478136,
@@ -23754,7 +24343,8 @@
    "bookMedianImplied": 5.6,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.84
   },
   {
    "playerId": 8483495,
@@ -23797,7 +24387,8 @@
    "bookMedianImplied": 11.4,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.51
   },
   {
    "playerId": 8484768,
@@ -23837,7 +24428,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.38
   },
   {
    "playerId": 8480727,
@@ -23877,7 +24469,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.86
   },
   {
    "playerId": 8484153,
@@ -23917,7 +24510,8 @@
    "bookMedianImplied": 41.5,
    "firstGoalPct": 5.7,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.64
   },
   {
    "playerId": 8481538,
@@ -23957,7 +24551,8 @@
    "bookMedianImplied": 21.7,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8482118,
@@ -23997,7 +24592,8 @@
    "bookMedianImplied": 23.1,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.75
   },
   {
    "playerId": 8483445,
@@ -24037,7 +24633,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 9.8,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.73
   },
   {
    "playerId": 8475798,
@@ -24077,7 +24674,8 @@
    "bookMedianImplied": 32.3,
    "firstGoalPct": 4.1,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.0
   },
   {
    "playerId": 8478421,
@@ -24117,7 +24715,8 @@
    "bookMedianImplied": 18.9,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.39
   },
   {
    "playerId": 8473986,
@@ -24157,7 +24756,8 @@
    "bookMedianImplied": 26.7,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.8
   },
   {
    "playerId": 8486052,
@@ -24197,7 +24797,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8482408,
@@ -24240,7 +24841,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.94
   },
   {
    "playerId": 8481754,
@@ -24280,7 +24882,8 @@
    "bookMedianImplied": 19.6,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.09
   },
   {
    "playerId": 8480068,
@@ -24320,7 +24923,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.25
   },
   {
    "playerId": 8484762,
@@ -24360,7 +24964,8 @@
    "bookMedianImplied": 39.2,
    "firstGoalPct": 4.4,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.41
   },
   {
    "playerId": 8478366,
@@ -24400,7 +25005,8 @@
    "bookMedianImplied": 21.5,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.54
   },
   {
    "playerId": 8485512,
@@ -24440,7 +25046,8 @@
    "bookMedianImplied": 12.5,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.84
   },
   {
    "playerId": 8481563,
@@ -24480,7 +25087,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.65
   },
   {
    "playerId": 8482731,
@@ -24520,7 +25128,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.45
   },
   {
    "playerId": 8475324,
@@ -24560,7 +25169,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.59
   },
   {
    "playerId": 8481605,
@@ -24600,7 +25210,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.82
   },
   {
    "playerId": 8483482,
@@ -24640,7 +25251,8 @@
    "bookMedianImplied": 10.3,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.5
   },
   {
    "playerId": 8483490,
@@ -24680,7 +25292,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.08
   },
   {
    "playerId": 8484262,
@@ -24720,7 +25333,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.5
   },
   {
    "playerId": 8482178,
@@ -24760,7 +25374,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.99
   },
   {
    "playerId": 8483521,
@@ -24800,7 +25415,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8482703,
@@ -24840,7 +25456,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.98
   },
   {
    "playerId": 8477450,
@@ -24880,7 +25497,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.11
   },
   {
    "playerId": 8477934,
@@ -24920,7 +25538,8 @@
    "bookMedianImplied": 47.2,
    "firstGoalPct": 7.2,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.93
   },
   {
    "playerId": 8480029,
@@ -24960,7 +25579,8 @@
    "bookMedianImplied": 18.9,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8479365,
@@ -25000,7 +25620,8 @@
    "bookMedianImplied": 13.8,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.05
   },
   {
    "playerId": 8480842,
@@ -25040,7 +25661,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.62
   },
   {
    "playerId": 8483455,
@@ -25080,7 +25702,8 @@
    "bookMedianImplied": 13.8,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.21
   },
   {
    "playerId": 8475786,
@@ -25120,7 +25743,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.75
   },
   {
    "playerId": 8477406,
@@ -25160,7 +25784,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.56
   },
   {
    "playerId": 8479368,
@@ -25200,7 +25825,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.04
   },
   {
    "playerId": 8478472,
@@ -25240,7 +25866,8 @@
    "bookMedianImplied": 10.5,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.71
   },
   {
    "playerId": 8477953,
@@ -25280,7 +25907,8 @@
    "bookMedianImplied": 25.3,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.61
   },
   {
    "playerId": 8478402,
@@ -25320,7 +25948,8 @@
    "bookMedianImplied": 46.3,
    "firstGoalPct": 8,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.63
   },
   {
    "playerId": 8486161,
@@ -25360,7 +25989,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8476454,
@@ -25400,7 +26030,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.83
   },
   {
    "playerId": 8481617,
@@ -25440,7 +26071,8 @@
    "bookMedianImplied": 31.2,
    "firstGoalPct": 2.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.78
   },
   {
    "playerId": 8484509,
@@ -25480,7 +26112,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.36
   },
   {
    "playerId": 8483512,
@@ -25520,7 +26153,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.68
   },
   {
    "playerId": 8480803,
@@ -25560,7 +26194,8 @@
    "bookMedianImplied": 24.4,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.75
   },
   {
    "playerId": 8475218,
@@ -25600,7 +26235,8 @@
    "bookMedianImplied": 10,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.56
   },
   {
    "playerId": 8480834,
@@ -25640,7 +26276,8 @@
    "bookMedianImplied": 5,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.61
   },
   {
    "playerId": 8482166,
@@ -25680,7 +26317,8 @@
    "bookMedianImplied": 8.6,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.92
   },
   {
    "playerId": 8476473,
@@ -25720,7 +26358,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.85
   },
   {
    "playerId": 8480831,
@@ -25760,7 +26399,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.62
   },
   {
    "playerId": 8478854,
@@ -25800,7 +26440,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8478013,
@@ -25840,7 +26481,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.77
   },
   {
    "playerId": 8476469,
@@ -25880,7 +26522,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.35
   },
   {
    "playerId": 8482124,
@@ -25920,7 +26563,8 @@
    "bookMedianImplied": 32.3,
    "firstGoalPct": 3.4,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.3
   },
   {
    "playerId": 8477942,
@@ -25960,7 +26604,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 3.5,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.62
   },
   {
    "playerId": 8475287,
@@ -26000,7 +26645,8 @@
    "bookMedianImplied": 19,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.59
   },
   {
    "playerId": 8482726,
@@ -26040,7 +26686,8 @@
    "bookMedianImplied": 8.7,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.71
   },
   {
    "playerId": 8477960,
@@ -26080,7 +26727,8 @@
    "bookMedianImplied": 38.2,
    "firstGoalPct": 5.5,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.82
   },
   {
    "playerId": 8482155,
@@ -26120,7 +26768,8 @@
    "bookMedianImplied": 29.4,
    "firstGoalPct": 3.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.5
   },
   {
    "playerId": 8476872,
@@ -26160,7 +26809,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 2.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.49
   },
   {
    "playerId": 8481732,
@@ -26200,7 +26850,8 @@
    "bookMedianImplied": 11.8,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.78
   },
   {
    "playerId": 8479675,
@@ -26240,7 +26891,8 @@
    "bookMedianImplied": 22.2,
    "firstGoalPct": 2.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.27
   },
   {
    "playerId": 8478550,
@@ -26280,7 +26932,8 @@
    "bookMedianImplied": 33.9,
    "firstGoalPct": 4.4,
    "goalSignal": false,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.9
   },
   {
    "playerId": 8470621,
@@ -26320,7 +26973,8 @@
    "bookMedianImplied": 22.5,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.56
   },
   {
    "playerId": 8481532,
@@ -26360,7 +27014,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.05
   },
   {
    "playerId": 8475692,
@@ -26400,7 +27055,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.98
   },
   {
    "playerId": 8479998,
@@ -26440,7 +27096,8 @@
    "bookMedianImplied": 6.2,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.76
   },
   {
    "playerId": 8476879,
@@ -26480,7 +27137,8 @@
    "bookMedianImplied": 5,
    "firstGoalPct": 0.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.72
   },
   {
    "playerId": 8482730,
@@ -26520,7 +27178,8 @@
    "bookMedianImplied": 14.3,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.97
   },
   {
    "playerId": 8474563,
@@ -26560,7 +27219,8 @@
    "bookMedianImplied": 9.5,
    "firstGoalPct": 1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.34
   },
   {
    "playerId": 8475208,
@@ -26600,7 +27260,8 @@
    "bookMedianImplied": 7.7,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.76
   },
   {
    "playerId": 8476441,
@@ -26640,7 +27301,8 @@
    "bookMedianImplied": 7.1,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.24
   },
   {
    "playerId": 8476979,
@@ -26680,7 +27342,8 @@
    "bookMedianImplied": 4.9,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.25
   },
   {
    "playerId": 8479987,
@@ -26720,7 +27383,8 @@
    "bookMedianImplied": 35.1,
    "firstGoalPct": 5,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.15
   },
   {
    "playerId": 8485395,
@@ -26763,7 +27427,8 @@
    "bookMedianImplied": 22.7,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.62
   },
   {
    "playerId": 8479661,
@@ -26803,7 +27468,8 @@
    "bookMedianImplied": 11.1,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.98
   },
   {
    "playerId": 8480355,
@@ -26843,7 +27509,8 @@
    "bookMedianImplied": 12.1,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.23
   },
   {
    "playerId": 8482177,
@@ -26883,7 +27550,8 @@
    "bookMedianImplied": 13.3,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8476374,
@@ -26923,7 +27591,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.36
   },
   {
    "playerId": 8477496,
@@ -26963,7 +27632,8 @@
    "bookMedianImplied": 22.5,
    "firstGoalPct": 3.1,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.65
   },
   {
    "playerId": 8483489,
@@ -27003,7 +27673,8 @@
    "bookMedianImplied": 22.2,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.47
   },
   {
    "playerId": 8479999,
@@ -27043,7 +27714,8 @@
    "bookMedianImplied": 17.2,
    "firstGoalPct": 2.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.13
   },
   {
    "playerId": 8477956,
@@ -27083,7 +27755,8 @@
    "bookMedianImplied": 40,
    "firstGoalPct": 6.9,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.43
   },
   {
    "playerId": 8482175,
@@ -27123,7 +27796,8 @@
    "bookMedianImplied": 29,
    "firstGoalPct": 3.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.93
   },
   {
    "playerId": 8483505,
@@ -27163,7 +27837,8 @@
    "bookMedianImplied": 12.1,
    "firstGoalPct": 2.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.83
   },
   {
    "playerId": 8478401,
@@ -27203,7 +27878,8 @@
    "bookMedianImplied": 30.3,
    "firstGoalPct": 4.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.69
   },
   {
    "playerId": 8481219,
@@ -27243,7 +27919,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.8
   },
   {
    "playerId": 8478840,
@@ -27283,7 +27960,8 @@
    "bookMedianImplied": 5.9,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.88
   },
   {
    "playerId": 8483017,
@@ -27323,7 +28001,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.67
   },
   {
    "playerId": 8477365,
@@ -27363,7 +28042,8 @@
    "bookMedianImplied": 7.4,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.73
   },
   {
    "playerId": 8476854,
@@ -27403,7 +28083,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 1.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.45
   },
   {
    "playerId": 8482511,
@@ -27443,7 +28124,8 @@
    "bookMedianImplied": 10.8,
    "firstGoalPct": 1.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8479325,
@@ -27483,7 +28165,8 @@
    "bookMedianImplied": 18,
    "firstGoalPct": 2.1,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.61
   },
   {
    "playerId": 8477507,
@@ -27526,7 +28209,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.33
   },
   {
    "playerId": 8479718,
@@ -27566,7 +28250,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.0
   },
   {
    "playerId": 8484801,
@@ -27606,7 +28291,8 @@
    "bookMedianImplied": 43.5,
    "firstGoalPct": 8.3,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 3.52
   },
   {
    "playerId": 8484994,
@@ -27646,7 +28332,8 @@
    "bookMedianImplied": 20,
    "firstGoalPct": 3.2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.52
   },
   {
    "playerId": 8480848,
@@ -27689,7 +28376,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.04
   },
   {
    "playerId": 8478874,
@@ -27729,7 +28417,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.45
   },
   {
    "playerId": 8476624,
@@ -27769,7 +28458,8 @@
    "bookMedianImplied": 9.8,
    "firstGoalPct": 0.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.79
   },
   {
    "playerId": 8484911,
@@ -27809,7 +28499,8 @@
    "bookMedianImplied": 16.7,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.44
   },
   {
    "playerId": 8478975,
@@ -27849,7 +28540,8 @@
    "bookMedianImplied": 23.8,
    "firstGoalPct": 3.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.74
   },
   {
    "playerId": 8485402,
@@ -27889,7 +28581,8 @@
    "bookMedianImplied": 18.9,
    "firstGoalPct": 1.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.2
   },
   {
    "playerId": 8482859,
@@ -27929,7 +28622,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.77
   },
   {
    "playerId": 8480748,
@@ -27969,7 +28663,8 @@
    "bookMedianImplied": 18.5,
    "firstGoalPct": 4.6,
    "goalSignal": true,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.3
   },
   {
    "playerId": 8484227,
@@ -28009,7 +28704,8 @@
    "bookMedianImplied": 34.5,
    "firstGoalPct": 4.2,
    "goalSignal": true,
-   "pointSignal": true
+   "pointSignal": true,
+   "sogPg": 2.34
   },
   {
    "playerId": 8486103,
@@ -28049,7 +28745,8 @@
    "bookMedianImplied": 23.8,
    "firstGoalPct": 1.4,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.0
   },
   {
    "playerId": 8475726,
@@ -28089,7 +28786,8 @@
    "bookMedianImplied": 23.3,
    "firstGoalPct": 3.3,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.19
   },
   {
    "playerId": 8477505,
@@ -28129,7 +28827,8 @@
    "bookMedianImplied": 22.2,
    "firstGoalPct": 2,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.16
   },
   {
    "playerId": 8482700,
@@ -28169,7 +28868,8 @@
    "bookMedianImplied": null,
    "firstGoalPct": 2.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.5
   },
   {
    "playerId": 8484152,
@@ -28209,7 +28909,8 @@
    "bookMedianImplied": 14.8,
    "firstGoalPct": 1.8,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.5
   },
   {
    "playerId": 8484806,
@@ -28249,7 +28950,8 @@
    "bookMedianImplied": 7.1,
    "firstGoalPct": 0.6,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 0.97
   },
   {
    "playerId": 8480891,
@@ -28289,7 +28991,8 @@
    "bookMedianImplied": 6.7,
    "firstGoalPct": 0.9,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.31
   },
   {
    "playerId": 8477498,
@@ -28329,7 +29032,8 @@
    "bookMedianImplied": 10,
    "firstGoalPct": 1.5,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.99
   },
   {
    "playerId": 8475200,
@@ -28369,7 +29073,8 @@
    "bookMedianImplied": 8.3,
    "firstGoalPct": 0.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 1.08
   },
   {
    "playerId": 8476885,
@@ -28409,7 +29114,8 @@
    "bookMedianImplied": 9.1,
    "firstGoalPct": 1.7,
    "goalSignal": false,
-   "pointSignal": false
+   "pointSignal": false,
+   "sogPg": 2.02
   }
  ],
  "goalies": [

@@ -3,6 +3,7 @@ import { fetchTrackRecord } from "../lib/data.js";
 import TrackRecordLive from "./TrackRecordLive.jsx";
 import TrackRecordGoalies from "./TrackRecordGoalies.jsx";
 import TrackRecordPairs from "./TrackRecordPairs.jsx";
+import TrackRecordCheatSheets from "./TrackRecordCheatSheets.jsx";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -141,9 +142,10 @@ export default function TrackRecordTab() {
         <button className={`pill-btn ${view === "live" ? "active" : ""}`} onClick={() => setView("live")}>2026-27 Skaters</button>
         <button className={`pill-btn ${view === "goalies" ? "active" : ""}`} onClick={() => setView("goalies")}>🥅 2026-27 Goalies (Crease Lab)</button>
         <button className={`pill-btn ${view === "pairs" ? "active" : ""}`} onClick={() => setView("pairs")}>🤝 Pairs</button>
+        <button className={`pill-btn ${view === "cheat" ? "active" : ""}`} onClick={() => setView("cheat")}>📋 Cheat Sheets</button>
         <button className={`pill-btn ${view === "pbix" ? "active" : ""}`} onClick={() => setView("pbix")}>Mar 2026 backtest (Power BI model)</button>
       </div>
-      {view === "live" ? <TrackRecordLive /> : view === "goalies" ? <TrackRecordGoalies /> : view === "pairs" ? <TrackRecordPairs /> : <PbixBacktest />}
+      {view === "live" ? <TrackRecordLive /> : view === "goalies" ? <TrackRecordGoalies /> : view === "pairs" ? <TrackRecordPairs /> : view === "cheat" ? <TrackRecordCheatSheets /> : <PbixBacktest />}
     </div>
   );
 }

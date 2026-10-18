@@ -142,6 +142,7 @@ const players = scored.map((p) => {
     multiPoint3Pct: p.multiPoint3Pct,
     pointHeat: p.pointHeat ? { drought: p.pointHeat.drought, trend: Math.round(p.pointHeat.trend * 100) / 100, mult: p.pointHeat.mult } : null,
     plus3SogPct: p.plus3SogPct,
+    sogPg: p.ShotsOnGoalPerGame ?? null, // Cheat Sheets' Shots Candidates rank (Track Record > Cheat Sheets)
     bookBest: bookOdds[p.playerId]?.best ?? null,
     bookBestBook: bookOdds[p.playerId]?.bestBook ?? null,
     bookImplied: bookOdds[p.playerId]?.bestImplied ?? null,
