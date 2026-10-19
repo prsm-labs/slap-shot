@@ -1,13 +1,458 @@
 {
  "_meta": {
-  "generated": "2026-10-19 12:04",
+  "generated": "2026-10-19 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 49,
-  "up": 31,
+  "count": 56,
+  "up": 38,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8484242,
+   "name": "Brayden Yager",
+   "team": "WPG",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2005-01-03",
+   "sweater": 29,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "PIT",
+    "round": 1,
+    "overallPick": 14
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Manitoba",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Manitoba"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 5,
+     "assists": 4,
+     "points": 9,
+     "plusMinus": 4,
+     "pim": 4,
+     "team": "Manitoba Moose"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 10,
+     "assists": 20,
+     "points": 30,
+     "plusMinus": -15,
+     "pim": 10,
+     "team": "Manitoba Moose"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 2,
+     "team": "Winnipeg Jets"
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8481655,
+   "name": "Cole Schwindt",
+   "team": "FLA",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2001-04-25",
+   "sweater": 79,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "FLA",
+    "round": 3,
+    "overallPick": 81
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Charlotte",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Charlotte"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": -1,
+     "pim": 6,
+     "team": "Charlotte Checkers"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 29,
+     "goals": 5,
+     "assists": 2,
+     "points": 7,
+     "plusMinus": 2,
+     "pim": 2,
+     "shots": 25,
+     "team": "Florida Panthers"
+    },
+    "careerGp": 78,
+    "careerG": 6,
+    "careerP": 15
+   }
+  },
+  {
+   "playerId": 8482515,
+   "name": "Artur Akhtyamov",
+   "team": "TOR",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-10-31",
+   "sweater": 70,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "TOR",
+    "round": 4,
+    "overallPick": 106
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "wins": 2,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 9,
+     "shotsAgainst": 76,
+     "team": "Toronto Marlies",
+     "savePct": 0.882,
+     "gaa": 2.94
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 0,
+     "losses": 2,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 11,
+     "shotsAgainst": 81,
+     "team": "Toronto Maple Leafs",
+     "savePct": 0.864,
+     "gaa": 5.24
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8483787,
+   "name": "Cole Knuble",
+   "team": "PHI",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2004-07-01",
+   "sweater": 54,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "PHI",
+    "round": 4,
+    "overallPick": 103
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Lehigh Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Lehigh Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": -2,
+     "pim": 4,
+     "team": "Lehigh Valley Phantoms"
+    },
+    "last": {
+     "gamesPlayed": 7,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": 0,
+     "pim": 0,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8483731,
+   "name": "Alex Bump",
+   "team": "PHI",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2003-11-20",
+   "sweater": 20,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "PHI",
+    "round": 5,
+    "overallPick": 133
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Lehigh Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-07",
+     "type": "down",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Lehigh Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 7,
+     "assists": 1,
+     "points": 8,
+     "plusMinus": 1,
+     "pim": 4,
+     "team": "Lehigh Valley Phantoms"
+    },
+    "last": {
+     "gamesPlayed": 36,
+     "goals": 11,
+     "assists": 15,
+     "points": 26,
+     "plusMinus": -2,
+     "pim": 22,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 4,
+     "team": "Philadelphia Flyers"
+    },
+    "last": {
+     "gamesPlayed": 17,
+     "goals": 5,
+     "assists": 4,
+     "points": 9,
+     "plusMinus": 3,
+     "pim": 2,
+     "shots": 23,
+     "team": "Philadelphia Flyers"
+    },
+    "careerGp": 20,
+    "careerG": 5,
+    "careerP": 9
+   }
+  },
+  {
+   "playerId": 8481848,
+   "name": "Jacob Gaucher",
+   "team": "PHI",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2001-03-09",
+   "sweater": 78,
+   "draft": null,
+   "recalledOn": "2026-10-19",
+   "from": "Lehigh Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Lehigh Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 4,
+     "assists": 4,
+     "points": 8,
+     "plusMinus": -3,
+     "pim": 4,
+     "team": "Lehigh Valley Phantoms"
+    },
+    "last": {
+     "gamesPlayed": 69,
+     "goals": 20,
+     "assists": 16,
+     "points": 36,
+     "plusMinus": -9,
+     "pim": 44,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 4,
+     "team": "Philadelphia Flyers"
+    },
+    "careerGp": 8,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8482070,
+   "name": "Mitchell Chaffee",
+   "team": "NYI",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "1998-01-26",
+   "sweater": 26,
+   "draft": null,
+   "recalledOn": "2026-10-19",
+   "from": "Hamilton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Hamilton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 4,
+     "assists": 2,
+     "points": 6,
+     "plusMinus": -3,
+     "pim": 8,
+     "team": "Hamilton Hammers"
+    },
+    "last": {
+     "gamesPlayed": 54,
+     "goals": 24,
+     "assists": 33,
+     "points": 57,
+     "plusMinus": 7,
+     "pim": 57,
+     "team": "Syracuse Crunch"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 11,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -2,
+     "pim": 4,
+     "shots": 9,
+     "team": "Tampa Bay Lightning"
+    },
+    "careerGp": 109,
+    "careerG": 16,
+    "careerP": 26
+   }
+  },
   {
    "playerId": 8482781,
    "name": "Carson Lambos",
@@ -467,7 +912,7 @@
    "from": "Hershey",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
