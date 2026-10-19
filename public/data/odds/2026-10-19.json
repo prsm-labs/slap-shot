@@ -1,0 +1,3231 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-19",
+  "market": "player_goal_scorer_anytime",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-10-19T13:04:54+00:00",
+    "games": [
+     "ANA@NYR",
+     "COL@PHI",
+     "SJS@TOR",
+     "PIT@UTA"
+    ],
+    "creditsLeft": 396
+   }
+  ],
+  "updated": "2026-10-19T13:04:54+00:00",
+  "creditsLeft": 396
+ },
+ "games": {
+  "ANA@NYR": {
+   "fetchedAt": "2026-10-19T13:04:54+00:00",
+   "eventId": "ea54f93ba7f80a041cb134ca262d7bc0",
+   "players": 35,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  },
+  "COL@PHI": {
+   "fetchedAt": "2026-10-19T13:04:54+00:00",
+   "eventId": "c8d71abe9d49ca6ea219b84923b9a48c",
+   "players": 37,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  },
+  "SJS@TOR": {
+   "fetchedAt": "2026-10-19T13:04:54+00:00",
+   "eventId": "7ac756ef7eb5d5b1042e68d86d561147",
+   "players": 37,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  },
+  "PIT@UTA": {
+   "fetchedAt": "2026-10-19T13:04:54+00:00",
+   "eventId": "0e2b3099b25e9827dc4a6abd7fabfa51",
+   "players": 38,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  }
+ },
+ "players": {
+  "8482109": {
+   "name": "Alexis Lafreniere",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 165,
+    "DK": 175,
+    "MGM": 175,
+    "BOV": 164,
+    "BR": 165
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=36305275",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401969_13L42133Q11741111808Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087502-6577108&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478310|{wagerAmount}"
+   },
+   "best": 175,
+   "bestBook": "DK",
+   "bestImplied": 36.4,
+   "medianImplied": 37.7
+  },
+  "8481604": {
+   "name": "Pavel Dorofeyev",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 160,
+    "DK": 155,
+    "MGM": 165,
+    "BOV": 156,
+    "BR": 175
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=41294840",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402030_13L42133Q1-1694033768Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087471-6577046&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478209|{wagerAmount}"
+   },
+   "best": 175,
+   "bestBook": "BR",
+   "bestImplied": 36.4,
+   "medianImplied": 38.5
+  },
+  "8476459": {
+   "name": "Mika Zibanejad",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 180,
+    "DK": 185,
+    "MGM": 210,
+    "BOV": 176,
+    "BR": 185
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=12496368",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401804_13L42133Q1456090619Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087538-6577198&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478187|{wagerAmount}"
+   },
+   "best": 210,
+   "bestBook": "MGM",
+   "bestImplied": 32.3,
+   "medianImplied": 35.1
+  },
+  "8483445": {
+   "name": "Cutter Gauthier",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 180,
+    "DK": 170,
+    "MGM": 200,
+    "BOV": 172,
+    "BR": 175
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=44992509",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402189_13L42133Q1-312822071Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087543-6577206&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478308|{wagerAmount}"
+   },
+   "best": 200,
+   "bestBook": "MGM",
+   "bestImplied": 33.3,
+   "medianImplied": 36.4
+  },
+  "8484762": {
+   "name": "Beckett Sennecke",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 210,
+    "DK": 195,
+    "MGM": 240,
+    "BOV": 200,
+    "BR": 200
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=70260728",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402191_13L42133Q1-426961209Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087528-6577178&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483681|{wagerAmount}"
+   },
+   "best": 240,
+   "bestBook": "MGM",
+   "bestImplied": 29.4,
+   "medianImplied": 33.3
+  },
+  "8484153": {
+   "name": "Leo Carlsson",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 230,
+    "DK": 235,
+    "MGM": 250,
+    "BOV": 225,
+    "BR": 235
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=51950508",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402159_13L42133Q1-338491320Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087489-6577080&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452412|{wagerAmount}"
+   },
+   "best": 250,
+   "bestBook": "MGM",
+   "bestImplied": 28.6,
+   "medianImplied": 29.9
+  },
+  "8475798": {
+   "name": "Mikael Granlund",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 260,
+    "DK": 260,
+    "MGM": 325,
+    "BOV": 255,
+    "BR": 265
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=11133520",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402085_13L42133Q1442103846Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087506-6577116&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380484045|{wagerAmount}"
+   },
+   "best": 325,
+   "bestBook": "MGM",
+   "bestImplied": 23.5,
+   "medianImplied": 27.8
+  },
+  "8476468": {
+   "name": "J.T. Miller",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 260,
+    "DK": 265,
+    "MGM": 180,
+    "BOV": 250,
+    "BR": 255
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=12496361",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401856_13L42133Q1-2008088088Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087556-6577234&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478193|{wagerAmount}"
+   },
+   "best": 265,
+   "bestBook": "DK",
+   "bestImplied": 27.4,
+   "medianImplied": 28.2
+  },
+  "8484210": {
+   "name": "Gabe Perreault",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 300,
+    "DK": 310,
+    "MGM": 300,
+    "BOV": 295,
+    "BR": 300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=57131970",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402059_13L42133Q11303324770Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087480-6577064&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478276|{wagerAmount}"
+   },
+   "best": 310,
+   "bestBook": "DK",
+   "bestImplied": 24.4,
+   "medianImplied": 25.0
+  },
+  "8482157": {
+   "name": "Will Cuylle",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 320,
+    "DK": 300,
+    "MGM": 300,
+    "BOV": 295,
+    "BR": 300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=51970211",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402037_13L42133Q12048176365Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087558-6577238&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478302|{wagerAmount}"
+   },
+   "best": 320,
+   "bestBook": "FD",
+   "bestImplied": 23.8,
+   "medianImplied": 25.0
+  },
+  "8486052": {
+   "name": "Nikita Klepov",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 380,
+    "DK": 400,
+    "MGM": 550,
+    "BOV": 365,
+    "BR": 350
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=101122323",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402198_13L42133Q1-1568588605Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087535-6577192&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452445|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "MGM",
+   "bestImplied": 15.4,
+   "medianImplied": 20.8
+  },
+  "8473986": {
+   "name": "Alex Killorn",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 390,
+    "DK": 390,
+    "MGM": 310,
+    "BOV": 365,
+    "BR": 360
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=9552865",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402096_13L42133Q1-1817883070Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087547-6577214&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478274|{wagerAmount}"
+   },
+   "best": 390,
+   "bestBook": "FD",
+   "bestImplied": 20.4,
+   "medianImplied": 21.5
+  },
+  "8478366": {
+   "name": "Frank Vatrano",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 430,
+    "DK": 450,
+    "MGM": 340,
+    "BOV": 410,
+    "BR": 420
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=12694590",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402092_13L42133Q1-865747025Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087565-6577252&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478215|{wagerAmount}"
+   },
+   "best": 450,
+   "bestBook": "DK",
+   "bestImplied": 18.2,
+   "medianImplied": 19.2
+  },
+  "8480009": {
+   "name": "Eeli Tolvanen",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 460,
+    "DK": 450,
+    "MGM": 360,
+    "BOV": 425,
+    "BR": 430
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=20852707",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401984_13L42133Q176951520Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087532-6577186&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483804|{wagerAmount}"
+   },
+   "best": 460,
+   "bestBook": "FD",
+   "bestImplied": 17.9,
+   "medianImplied": 18.9
+  },
+  "8479323": {
+   "name": "Adam Fox",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 490,
+    "DK": 500,
+    "MGM": 525,
+    "BOV": 460,
+    "BR": 510
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=27847947",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401900_13L42133Q11317190128Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087568-6577260&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478189|{wagerAmount}"
+   },
+   "best": 525,
+   "bestBook": "MGM",
+   "bestImplied": 16.0,
+   "medianImplied": 16.7
+  },
+  "8481789": {
+   "name": "Tye Kartye",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 500,
+    "DK": 400,
+    "MGM": 425,
+    "BOV": 430,
+    "BR": 440
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=55272234",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402047_13L42133Q1834476559Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087527-6577176&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478227|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "FD",
+   "bestImplied": 16.7,
+   "medianImplied": 18.9
+  },
+  "8481605": {
+   "name": "Jackson LaCombe",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 525,
+    "DK": 550,
+    "MGM": 575,
+    "BOV": 500,
+    "BR": 540
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=61754115",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402105_13L42133Q11841929892Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087477-6577058&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483800|{wagerAmount}"
+   },
+   "best": 575,
+   "bestBook": "MGM",
+   "bestImplied": 14.8,
+   "medianImplied": 15.6
+  },
+  "8481538": {
+   "name": "Judd Caulfield",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 550,
+    "DK": 475,
+    "MGM": 375,
+    "BOV": 475,
+    "BR": 575
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=88966565",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402167_13L42133Q1-1936053132Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087467-6577038&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483721|{wagerAmount}"
+   },
+   "best": 575,
+   "bestBook": "BR",
+   "bestImplied": 14.8,
+   "medianImplied": 17.4
+  },
+  "8483690": {
+   "name": "Noah Laba",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 600,
+    "DK": 650,
+    "MGM": 575,
+    "BOV": 550,
+    "BR": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=89606001",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402070_13L42133Q1-67824734Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087554-6577230&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483816|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "DK",
+   "bestImplied": 13.3,
+   "medianImplied": 14.3
+  },
+  "8477416": {
+   "name": "Oliver Bjorkstrand",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 650,
+    "DK": 600,
+    "MGM": 380,
+    "BOV": 575,
+    "BR": 475
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=12857540",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401883_13L42133Q1-1562526676Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087510-6577124&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483725|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "FD",
+   "bestImplied": 13.3,
+   "medianImplied": 14.8
+  },
+  "8478421": {
+   "name": "A.J. Greer",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 650,
+    "DK": 600,
+    "MGM": 390,
+    "BOV": 575,
+    "BR": 550
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=42357649",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402133_13L42133Q1853481098Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087479-6577062&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478266|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "FD",
+   "bestImplied": 13.3,
+   "medianImplied": 14.8
+  },
+  "8480434": {
+   "name": "Sean Durzi",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 800,
+    "DK": 700,
+    "MGM": 950,
+    "BOV": 675,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=42568114",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402000_13L42133Q1-1868398654Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087485-6577074&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478213|{wagerAmount}"
+   },
+   "best": 950,
+   "bestBook": "MGM",
+   "bestImplied": 9.5,
+   "medianImplied": 12.5
+  },
+  "8479390": {
+   "name": "Taylor Raddysh",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 900,
+    "DK": 900,
+    "BOV": 800,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=41292233",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402015_13L42133Q1-500911567Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478272|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 10.6
+  },
+  "8483482": {
+   "name": "Tristan Luneau",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 900,
+    "DK": 1100,
+    "MGM": 850,
+    "BOV": 850,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=61923479",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402179_13L42133Q1-23067975Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087494-6577092&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452427|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "DK",
+   "bestImplied": 8.3,
+   "medianImplied": 10.5
+  },
+  "8485512": {
+   "name": "Tim Washe",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 900,
+    "DK": 850,
+    "MGM": 625,
+    "BOV": 775,
+    "BR": 800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=93606198",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402193_13L42133Q1-1555218374Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087519-6577160&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478231|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 11.1
+  },
+  "8478882": {
+   "name": "Vladislav Gavrikov",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 1000,
+    "DK": 750,
+    "MGM": 850,
+    "BOV": 800,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=28037057",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401921_13L42133Q11589865995Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087491-6577086&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452408|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "FD",
+   "bestImplied": 9.1,
+   "medianImplied": 11.1
+  },
+  "8475413": {
+   "name": "Justin Dowling",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 1100,
+    "DK": 1100,
+    "MGM": 850,
+    "BOV": 900,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=39094848",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401949_13L42133Q1-642685546Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087504-6577112&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452416|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 10.0
+  },
+  "8482408": {
+   "name": "Jeff Malott",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 1100,
+    "DK": 1100,
+    "MGM": 650,
+    "BOV": 900,
+    "BR": 850
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=81880766",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402140_13L42133Q1-1432275118Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087559-6577240&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380478264|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 10.0
+  },
+  "8483490": {
+   "name": "Pavel Mintyukov",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 1300,
+    "DK": 1100,
+    "MGM": 875,
+    "BOV": 1100,
+    "BR": 800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=46259060",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402154_13L42133Q1-1637558719Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087533-6577188&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483671|{wagerAmount}"
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 8.3
+  },
+  "8482073": {
+   "name": "Braden Schneider",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 1700,
+    "DK": 1500,
+    "MGM": 1100,
+    "BOV": 1400,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=42906542",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402027_13L42133Q1-692491271Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087534-6577190&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483673|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "FD",
+   "bestImplied": 5.6,
+   "medianImplied": 6.7
+  },
+  "8477969": {
+   "name": "Marcus Pettersson",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 1700,
+    "DK": 1700,
+    "MGM": 1350,
+    "BOV": 1600,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=27566580",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326401934_13L42133Q1911084839Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087499-6577102&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452447|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "FD",
+   "bestImplied": 5.6,
+   "medianImplied": 5.9
+  },
+  "8485957": {
+   "name": "Alberts Smits",
+   "team": "NYR",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 1700,
+    "DK": 1600,
+    "MGM": 875,
+    "BOV": 1400,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=94219803",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402079_13L42133Q1-1894754983Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087546-6577212&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452383|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "FD",
+   "bestImplied": 5.6,
+   "medianImplied": 6.7
+  },
+  "8483521": {
+   "name": "Noah Warren",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 2100,
+    "DK": 2000,
+    "MGM": 875,
+    "BOV": 2000,
+    "BR": 950
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=64280305",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402185_13L42133Q1-67904076Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087505-6577114&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380483802|{wagerAmount}"
+   },
+   "best": 2100,
+   "bestBook": "FD",
+   "bestImplied": 4.5,
+   "medianImplied": 4.8
+  },
+  "8482731": {
+   "name": "Tyson Hinds",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "FD": 2100,
+    "DK": 1600,
+    "MGM": 950,
+    "BOV": 1600,
+    "BR": 1000
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617611019&selectionId=88966576",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402174_13L42133Q1627066171Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087544-6577216&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452381|{wagerAmount}"
+   },
+   "best": 2100,
+   "bestBook": "FD",
+   "bestImplied": 4.5,
+   "medianImplied": 5.9
+  },
+  "8481563": {
+   "name": "Drew Helleson",
+   "team": "ANA",
+   "game": "ANA@NYR",
+   "books": {
+    "DK": 1800,
+    "MGM": 1300,
+    "BOV": 1300,
+    "BR": 800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380371863%232326402148_13L42133Q1-1352459069Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45767-4087507-6577118&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409836?coupon={pickType}|4380452387|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 7.1
+  },
+  "8477492": {
+   "name": "Nathan MacKinnon",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": -110,
+    "DK": -105,
+    "MGM": 115,
+    "BOV": -110,
+    "BR": -108
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12449308",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423494_13L42133Q1-170743743Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087747-6577610&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483322|{wagerAmount}"
+   },
+   "best": 115,
+   "bestBook": "MGM",
+   "bestImplied": 46.5,
+   "medianImplied": 51.9
+  },
+  "8477476": {
+   "name": "Artturi Lehkonen",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 170,
+    "DK": 190,
+    "MGM": 220,
+    "BOV": 172,
+    "BR": 160
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12496401",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423575_13L42133Q1-1713761000Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087660-6577436&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483397|{wagerAmount}"
+   },
+   "best": 220,
+   "bestBook": "MGM",
+   "bestImplied": 31.2,
+   "medianImplied": 36.8
+  },
+  "8480039": {
+   "name": "Martin Necas",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 210,
+    "DK": 205,
+    "MGM": 200,
+    "BOV": 200,
+    "BR": 190
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=20852668",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423649_13L42133Q1-2054815757Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087715-6577544&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477749|{wagerAmount}"
+   },
+   "best": 210,
+   "bestBook": "FD",
+   "bestImplied": 32.3,
+   "medianImplied": 33.3
+  },
+  "8484387": {
+   "name": "Matvei Michkov",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 240,
+    "DK": 255,
+    "MGM": 360,
+    "BOV": 240,
+    "BR": 270
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=51950509",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423292_13L42133Q11833191072Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087718-6577552&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483307|{wagerAmount}"
+   },
+   "best": 360,
+   "bestBook": "MGM",
+   "bestImplied": 21.7,
+   "medianImplied": 28.2
+  },
+  "8475754": {
+   "name": "Brock Nelson",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 250,
+    "DK": 275,
+    "MGM": 230,
+    "BOV": 250,
+    "BR": 255
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12496418",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423590_13L42133Q12082714192Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087674-6577464&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477900|{wagerAmount}"
+   },
+   "best": 275,
+   "bestBook": "DK",
+   "bestImplied": 26.7,
+   "medianImplied": 28.6
+  },
+  "8475172": {
+   "name": "Nazem Kadri",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 260,
+    "DK": 260,
+    "MGM": 250,
+    "BOV": 255,
+    "BR": 240
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12449287",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423546_13L42133Q1-218511862Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087670-6577456&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477763|{wagerAmount}"
+   },
+   "best": 260,
+   "bestBook": "FD",
+   "bestImplied": 27.8,
+   "medianImplied": 28.2
+  },
+  "8481533": {
+   "name": "Trevor Zegras",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 275,
+    "DK": 300,
+    "MGM": 300,
+    "BOV": 270,
+    "BR": 290
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=24660527",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423126_13L42133Q11335855067Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087679-6577474&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452063|{wagerAmount}"
+   },
+   "best": 300,
+   "bestBook": "DK",
+   "bestImplied": 25.0,
+   "medianImplied": 25.6
+  },
+  "8482159": {
+   "name": "Tyson Foerster",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 275,
+    "DK": 265,
+    "MGM": 300,
+    "BOV": 265,
+    "BR": 285
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=53480967",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423255_13L42133Q1-1517651558Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087692-6577500&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477905|{wagerAmount}"
+   },
+   "best": 300,
+   "bestBook": "MGM",
+   "bestImplied": 25.0,
+   "medianImplied": 26.7
+  },
+  "8480069": {
+   "name": "Cale Makar",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 280,
+    "DK": 320,
+    "MGM": 275,
+    "BOV": 285,
+    "BR": 340
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=25990567",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423669_13L42133Q11533347157Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087722-6577560&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452051|{wagerAmount}"
+   },
+   "best": 340,
+   "bestBook": "BR",
+   "bestImplied": 22.7,
+   "medianImplied": 26.0
+  },
+  "8485406": {
+   "name": "Porter Martone",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 300,
+    "DK": 290,
+    "MGM": 333,
+    "BOV": 275,
+    "BR": 290
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=83859814",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423472_13L42133Q1-79098035Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087684-6577484&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477872|{wagerAmount}"
+   },
+   "best": 333,
+   "bestBook": "MGM",
+   "bestImplied": 23.1,
+   "medianImplied": 25.6
+  },
+  "8475768": {
+   "name": "Jaden Schwartz",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 300,
+    "DK": 340,
+    "MGM": 380,
+    "BOV": 305,
+    "BR": 300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12449357",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423634_13L42133Q11701937553Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087714-6577546&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452057|{wagerAmount}"
+   },
+   "best": 380,
+   "bestBook": "MGM",
+   "bestImplied": 20.8,
+   "medianImplied": 24.7
+  },
+  "8486171": {
+   "name": "T.J. Hughes",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 320,
+    "DK": 295,
+    "MGM": 333,
+    "BOV": 295,
+    "BR": 320
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=67592636",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423746_13L42133Q1-556303293Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087716-6577548&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452059|{wagerAmount}"
+   },
+   "best": 333,
+   "bestBook": "MGM",
+   "bestImplied": 23.1,
+   "medianImplied": 23.8
+  },
+  "8476455": {
+   "name": "Gabriel Landeskog",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 340,
+    "DK": 350,
+    "MGM": 250,
+    "BOV": 330,
+    "BR": 310
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12449309",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423520_13L42133Q12120579422Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087739-6577594&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452010|{wagerAmount}"
+   },
+   "best": 350,
+   "bestBook": "DK",
+   "bestImplied": 22.2,
+   "medianImplied": 23.3
+  },
+  "8477989": {
+   "name": "Christian Dvorak",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 360,
+    "DK": 370,
+    "MGM": 360,
+    "BOV": 350,
+    "BR": 390
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12496411",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326422872_13L42133Q11833759263Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087658-6577432&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477907|{wagerAmount}"
+   },
+   "best": 390,
+   "bestBook": "BR",
+   "bestImplied": 20.4,
+   "medianImplied": 21.7
+  },
+  "8484142": {
+   "name": "Denver Barkey",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 500,
+    "DK": 400,
+    "MGM": 500,
+    "BOV": 430,
+    "BR": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=92870632",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423390_13L42133Q1691980564Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087751-6577618&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452053|{wagerAmount}"
+   },
+   "best": 525,
+   "bestBook": "BR",
+   "bestImplied": 16.0,
+   "medianImplied": 16.7
+  },
+  "8478047": {
+   "name": "Michael Bunting",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 550,
+    "DK": 425,
+    "MGM": 425,
+    "BOV": 460,
+    "BR": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=39157312",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423156_13L42133Q1-470110384Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087649-6577414&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483360|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "FD",
+   "bestImplied": 15.4,
+   "medianImplied": 17.9
+  },
+  "8480220": {
+   "name": "Noah Cates",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 550,
+    "DK": 600,
+    "MGM": 425,
+    "BOV": 500,
+    "BR": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=43961294",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423356_13L42133Q11056117490Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087724-6577564&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483358|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "DK",
+   "bestImplied": 14.3,
+   "medianImplied": 16.0
+  },
+  "8478038": {
+   "name": "Devon Toews",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 550,
+    "DK": 550,
+    "MGM": 550,
+    "BOV": 500,
+    "BR": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=23705333",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423660_13L42133Q1-477048164Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087748-6577612&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452055|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "FD",
+   "bestImplied": 15.4,
+   "medianImplied": 15.4
+  },
+  "8476461": {
+   "name": "Sean Couturier",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 600,
+    "DK": 650,
+    "MGM": 450,
+    "BOV": 550,
+    "BR": 540
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12449419",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326422644_13L42133Q1-1727265552Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087672-6577460&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477909|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "DK",
+   "bestImplied": 13.3,
+   "medianImplied": 15.4
+  },
+  "8480448": {
+   "name": "Parker Kelly",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 650,
+    "DK": 700,
+    "MGM": 500,
+    "BOV": 600,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=41327608",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423714_13L42133Q1-1174590653Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087746-6577608&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477757|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "DK",
+   "bestImplied": 12.5,
+   "medianImplied": 13.3
+  },
+  "8484149": {
+   "name": "Gavin Brindley",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 700,
+    "DK": 800,
+    "MGM": 650,
+    "BOV": 650,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=57615584",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423741_13L42133Q1-1045713498Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087735-6577584&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477858|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 13.3
+  },
+  "8484258": {
+   "name": "Sam Malinski",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 700,
+    "DK": 800,
+    "MGM": 725,
+    "BOV": 650,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=62809572",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423737_13L42133Q11012908799Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087741-6577598&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477913|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 12.1
+  },
+  "8478569": {
+   "name": "Noel Acciari",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 800,
+    "DK": 600,
+    "MGM": 500,
+    "BOV": 650,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=21175010",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326422711_13L42133Q1148809083Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087740-6577596&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452030|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "FD",
+   "bestImplied": 11.1,
+   "medianImplied": 13.3
+  },
+  "8482768": {
+   "name": "Fedor Svechkov",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 900,
+    "DK": 1000,
+    "MGM": 775,
+    "BOV": 825,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=40281219",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423733_13L42133Q1-410421883Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087663-6577442&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483364|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "DK",
+   "bestImplied": 9.1,
+   "medianImplied": 10.8
+  },
+  "8483460": {
+   "name": "David Jiricek",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 900,
+    "DK": 800,
+    "MGM": 850,
+    "BOV": 750,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=44992507",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423349_13L42133Q11374187448Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087671-6577458&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477892|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 11.1
+  },
+  "8482142": {
+   "name": "Jamie Drysdale",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 1000,
+    "DK": 800,
+    "MGM": 950,
+    "BOV": 800,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=36305277",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326422941_13L42133Q1521250643Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087712-6577540&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477941|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "FD",
+   "bestImplied": 9.1,
+   "medianImplied": 11.1
+  },
+  "8470613": {
+   "name": "Brent Burns",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 1100,
+    "DK": 1200,
+    "MGM": 825,
+    "BOV": 1000,
+    "BR": 850
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=12456554",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423615_13L42133Q1-1474546298Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087695-6577506&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483337|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "DK",
+   "bestImplied": 7.7,
+   "medianImplied": 9.1
+  },
+  "8477948": {
+   "name": "Travis Sanheim",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 1100,
+    "DK": 1000,
+    "MGM": 825,
+    "BOV": 900,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=23010442",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326422781_13L42133Q1497438109Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087651-6577418&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483393|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 10.0
+  },
+  "8475253": {
+   "name": "Garrett Wilson",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 1200,
+    "DK": 1100,
+    "MGM": 775,
+    "BOV": 1000,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=96566868",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423199_13L42133Q1-2081431463Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087742-6577600&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483318|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "FD",
+   "bestImplied": 7.7,
+   "medianImplied": 9.1
+  },
+  "8480021": {
+   "name": "Jack Studnicka",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 1300,
+    "MGM": 775,
+    "BOV": 1000,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=38634865",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087729-6577574&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477747|{wagerAmount}"
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 10.3
+  },
+  "8476967": {
+   "name": "Brett Kulak",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 1600,
+    "DK": 2200,
+    "MGM": 1300,
+    "BOV": 1500,
+    "BR": 900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=39538892",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423684_13L42133Q12102706196Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087728-6577572&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477753|{wagerAmount}"
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 6.2
+  },
+  "8484148": {
+   "name": "Oliver Bonk",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 1700,
+    "DK": 1500,
+    "MGM": 850,
+    "BOV": 1400,
+    "BR": 900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=57534901",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423427_13L42133Q1-2120703990Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087693-6577502&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452014|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "FD",
+   "bestImplied": 5.6,
+   "medianImplied": 6.7
+  },
+  "8476372": {
+   "name": "Nick Seeler",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "FD": 2100,
+    "DK": 2500,
+    "MGM": 1300,
+    "BOV": 1800,
+    "BR": 900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617591142&selectionId=41340980",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326422811_13L42133Q1-2052867214Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087657-6577430&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477862|{wagerAmount}"
+   },
+   "best": 2500,
+   "bestBook": "DK",
+   "bestImplied": 3.8,
+   "medianImplied": 5.3
+  },
+  "8476312": {
+   "name": "Josh Manson",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "DK": 1500,
+    "MGM": 875,
+    "BOV": 1200,
+    "BR": 950
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423703_13L42133Q11667695830Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087731-6577578&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380452071|{wagerAmount}"
+   },
+   "best": 1500,
+   "bestBook": "DK",
+   "bestImplied": 6.2,
+   "medianImplied": 8.6
+  },
+  "8478454": {
+   "name": "Noah Juulsen",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "DK": 2200,
+    "BOV": 1500,
+    "BR": 1050
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423723_13L42133Q1-1915650853Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380477742|{wagerAmount}"
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 6.2
+  },
+  "8481122": {
+   "name": "Simon Benoit",
+   "team": "PHI",
+   "game": "COL@PHI",
+   "books": {
+    "DK": 2200,
+    "MGM": 1600,
+    "BOV": 1600,
+    "BR": 750
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380377237%232326423043_13L42133Q1-120372316Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087656-6577428&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409856?coupon={pickType}|4380483419|{wagerAmount}"
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 5.9
+  },
+  "8481186": {
+   "name": "Logan O'Connor",
+   "team": "COL",
+   "game": "COL@PHI",
+   "books": {
+    "MGM": 550
+   },
+   "links": {
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45786-4087685-6577486&type=Single"
+   },
+   "best": 550,
+   "bestBook": "MGM",
+   "bestImplied": 15.4,
+   "medianImplied": 15.4
+  },
+  "8479318": {
+   "name": "Auston Matthews",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 115,
+    "DK": 125,
+    "MGM": 120,
+    "BOV": 117,
+    "BR": 112
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=11133523",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499599_13L42133Q11956455765Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087903-6578252&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475853|{wagerAmount}"
+   },
+   "best": 125,
+   "bestBook": "DK",
+   "bestImplied": 44.4,
+   "medianImplied": 46.1
+  },
+  "8484801": {
+   "name": "Macklin Celebrini",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 125,
+    "DK": 115,
+    "MGM": 125,
+    "BOV": 121,
+    "BR": 130
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=70664823",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500509_13L42133Q11248174323Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087875-6578196&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380472852|{wagerAmount}"
+   },
+   "best": 130,
+   "bestBook": "BR",
+   "bestImplied": 43.5,
+   "medianImplied": 44.4
+  },
+  "8480893": {
+   "name": "Kirill Marchenko",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 160,
+    "DK": 170,
+    "MGM": 175,
+    "BOV": 159,
+    "BR": 160
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=49394873",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500128_13L42133Q11364705702Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087897-6578240&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380515845|{wagerAmount}"
+   },
+   "best": 175,
+   "bestBook": "MGM",
+   "bestImplied": 36.4,
+   "medianImplied": 38.5
+  },
+  "8477939": {
+   "name": "William Nylander",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 160,
+    "DK": 150,
+    "MGM": 130,
+    "BOV": 153,
+    "BR": 150
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=12449272",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499658_13L42133Q1-329168466Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087908-6578262&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475738|{wagerAmount}"
+   },
+   "best": 160,
+   "bestBook": "FD",
+   "bestImplied": 38.5,
+   "medianImplied": 40.0
+  },
+  "8484227": {
+   "name": "Will Smith",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 180,
+    "DK": 180,
+    "MGM": 250,
+    "BOV": 183,
+    "BR": 188
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=64280424",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500498_13L42133Q1-449825102Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087846-6578138&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475790|{wagerAmount}"
+   },
+   "best": 250,
+   "bestBook": "MGM",
+   "bestImplied": 28.6,
+   "medianImplied": 35.3
+  },
+  "8478458": {
+   "name": "Jack Roslovic",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 240,
+    "DK": 240,
+    "MGM": 270,
+    "BOV": 235,
+    "BR": 225
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=17022414",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499899_13L42133Q1-1724993738Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087851-6578144&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467532|{wagerAmount}"
+   },
+   "best": 270,
+   "bestBook": "MGM",
+   "bestImplied": 27.0,
+   "medianImplied": 29.4
+  },
+  "8486103": {
+   "name": "Ivar Stenberg",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 260,
+    "DK": 285,
+    "MGM": 360,
+    "BOV": 265,
+    "BR": 260
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=93492546",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500556_13L42133Q1-1255847322Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087930-6578306&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380515843|{wagerAmount}"
+   },
+   "best": 360,
+   "bestBook": "MGM",
+   "bestImplied": 21.7,
+   "medianImplied": 27.4
+  },
+  "8486067": {
+   "name": "Gavin McKenna",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 280,
+    "DK": 260,
+    "MGM": 340,
+    "BOV": 270,
+    "BR": 285
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=89427934",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500303_13L42133Q1-1284685080Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087850-6578146&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380472850|{wagerAmount}"
+   },
+   "best": 340,
+   "bestBook": "MGM",
+   "bestImplied": 22.7,
+   "medianImplied": 26.3
+  },
+  "8484158": {
+   "name": "Easton Cowan",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 310,
+    "DK": 310,
+    "MGM": 400,
+    "BOV": 300,
+    "BR": 290
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=64280307",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500284_13L42133Q1960607083Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087898-6578242&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475794|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "MGM",
+   "bestImplied": 20.0,
+   "medianImplied": 24.4
+  },
+  "8477426": {
+   "name": "Nick Paul",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 370,
+    "DK": 390,
+    "MGM": 340,
+    "BOV": 360,
+    "BR": 375
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=27729211",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499790_13L42133Q11552613992Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087919-6578284&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475804|{wagerAmount}"
+   },
+   "best": 390,
+   "bestBook": "DK",
+   "bestImplied": 20.4,
+   "medianImplied": 21.3
+  },
+  "8475726": {
+   "name": "Tyler Toffoli",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 380,
+    "DK": 320,
+    "MGM": 260,
+    "BOV": 335,
+    "BR": 325
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=12553607",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500362_13L42133Q1-61260148Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087877-6578200&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467570|{wagerAmount}"
+   },
+   "best": 380,
+   "bestBook": "FD",
+   "bestImplied": 20.8,
+   "medianImplied": 23.5
+  },
+  "8484994": {
+   "name": "Igor Chernyshov",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 390,
+    "DK": 340,
+    "MGM": 350,
+    "BOV": 350,
+    "BR": 350
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=92704133",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500526_13L42133Q1859115779Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087863-6578172&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475810|{wagerAmount}"
+   },
+   "best": 390,
+   "bestBook": "FD",
+   "bestImplied": 20.4,
+   "medianImplied": 22.2
+  },
+  "8478975": {
+   "name": "Mason Marchment",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 400,
+    "DK": 360,
+    "MGM": 280,
+    "BOV": 360,
+    "BR": 390
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=38732463",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500451_13L42133Q1-1098340413Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087895-6578236&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380472844|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "FD",
+   "bestImplied": 20.0,
+   "medianImplied": 21.7
+  },
+  "8477505": {
+   "open": {
+    "best": 475,
+    "bestBook": "MGM",
+    "bestImplied": 17.4,
+    "at": null
+   },
+   "name": "Alexander Wennberg",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "BOV": 380,
+    "BR": 400
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380472864|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "BR",
+   "bestImplied": 20.0,
+   "medianImplied": 20.4
+  },
+  "8480748": {
+   "name": "Kiefer Sherwood",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 430,
+    "DK": 370,
+    "MGM": 360,
+    "BOV": 385,
+    "BR": 390
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=21751893",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500427_13L42133Q1-1222277888Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087876-6578198&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475812|{wagerAmount}"
+   },
+   "best": 430,
+   "bestBook": "FD",
+   "bestImplied": 18.9,
+   "medianImplied": 20.6
+  },
+  "8478178": {
+   "name": "Darren Raddysh",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 500,
+    "DK": 450,
+    "MGM": 375,
+    "BOV": 450,
+    "BR": 460
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=53289751",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500242_13L42133Q137467234Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087843-6578132&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467574|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "FD",
+   "bestImplied": 16.7,
+   "medianImplied": 18.2
+  },
+  "8484911": {
+   "name": "Collin Graf",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 500,
+    "DK": 450,
+    "MGM": 380,
+    "BOV": 445,
+    "BR": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=68234785",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500517_13L42133Q11396401750Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087870-6578186&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380472780|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "FD",
+   "bestImplied": 16.7,
+   "medianImplied": 18.2
+  },
+  "8485402": {
+   "name": "Michael Misa",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 500,
+    "DK": 500,
+    "MGM": 450,
+    "BOV": 460,
+    "BR": 420
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=83859817",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500545_13L42133Q1706833095Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087946-6578338&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475754|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "FD",
+   "bestImplied": 16.7,
+   "medianImplied": 17.9
+  },
+  "8476925": {
+   "name": "Colton Sissons",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 575,
+    "DK": 550,
+    "MGM": 550,
+    "BOV": 525,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=12862629",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500018_13L42133Q1-519489031Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087873-6578192&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475822|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "BR",
+   "bestImplied": 13.3,
+   "medianImplied": 15.4
+  },
+  "8480870": {
+   "name": "Bo Groulx",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 575,
+    "DK": 600,
+    "MGM": 775,
+    "BOV": 550,
+    "BR": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=41315497",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500211_13L42133Q11257833555Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087912-6578274&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380472834|{wagerAmount}"
+   },
+   "best": 775,
+   "bestBook": "MGM",
+   "bestImplied": 11.4,
+   "medianImplied": 14.3
+  },
+  "8476927": {
+   "name": "Teddy Blueger",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "MGM": 700,
+    "BOV": 625,
+    "BR": 460
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=26340866",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499810_13L42133Q1-1732066220Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087917-6578280&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467554|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 13.3
+  },
+  "8483565": {
+   "name": "Nick Blankenburg",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "MGM": 950,
+    "BOV": 625,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=44433649",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500255_13L42133Q1-1919633563Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087906-6578258&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467564|{wagerAmount}"
+   },
+   "best": 950,
+   "bestBook": "MGM",
+   "bestImplied": 9.5,
+   "medianImplied": 12.5
+  },
+  "8479520": {
+   "name": "Brandon Duhaime",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 725,
+    "DK": 650,
+    "MGM": 600,
+    "BOV": 625,
+    "BR": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=41341932",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500180_13L42133Q12105231553Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087944-6578332&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467534|{wagerAmount}"
+   },
+   "best": 725,
+   "bestBook": "FD",
+   "bestImplied": 12.1,
+   "medianImplied": 13.8
+  },
+  "8482859": {
+   "name": "Zack Ostapchuk",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 850,
+    "DK": 850,
+    "MGM": 625,
+    "BOV": 750,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=67026572",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500468_13L42133Q1-139023721Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087871-6578188&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380515833|{wagerAmount}"
+   },
+   "best": 850,
+   "bestBook": "FD",
+   "bestImplied": 10.5,
+   "medianImplied": 11.8
+  },
+  "8475200": {
+   "name": "Dmitry Orlov",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 900,
+    "DK": 750,
+    "MGM": 950,
+    "BOV": 750,
+    "BR": 575
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=12862651",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500388_13L42133Q1-1276366740Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087915-6578276&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475826|{wagerAmount}"
+   },
+   "best": 950,
+   "bestBook": "MGM",
+   "bestImplied": 9.5,
+   "medianImplied": 11.8
+  },
+  "8476624": {
+   "name": "Barclay Goodrow",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 900,
+    "DK": 1100,
+    "MGM": 725,
+    "BOV": 850,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=22262171",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500397_13L42133Q1-1631754200Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087929-6578304&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467558|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "DK",
+   "bestImplied": 8.3,
+   "medianImplied": 10.5
+  },
+  "8477498": {
+   "name": "Darnell Nurse",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 950,
+    "DK": 900,
+    "MGM": 675,
+    "BOV": 825,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=22105201",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500408_13L42133Q1-446277324Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087914-6578272&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467526|{wagerAmount}"
+   },
+   "best": 950,
+   "bestBook": "FD",
+   "bestImplied": 9.5,
+   "medianImplied": 10.8
+  },
+  "8476853": {
+   "name": "Morgan Rielly",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 1000,
+    "DK": 850,
+    "MGM": 725,
+    "BOV": 825,
+    "BR": 800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=12553079",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499718_13L42133Q11020387742Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087887-6578220&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467584|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "FD",
+   "bestImplied": 9.1,
+   "medianImplied": 10.8
+  },
+  "8476885": {
+   "name": "Jacob Trouba",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 1100,
+    "DK": 1000,
+    "MGM": 950,
+    "BOV": 900,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=15300180",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500374_13L42133Q1-2036041097Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087931-6578308&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380515850|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 9.5
+  },
+  "8479772": {
+   "name": "Zack MacEwen",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 1100,
+    "DK": 1000,
+    "MGM": 700,
+    "BOV": 900,
+    "BR": 950
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=41567255",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500046_13L42133Q1896644265Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087857-6578162&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467510|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 9.5
+  },
+  "8475171": {
+   "name": "Oliver Ekman-Larsson",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 1200,
+    "DK": 1400,
+    "MGM": 950,
+    "BOV": 1100,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=12496400",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499503_13L42133Q12078612376Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087869-6578184&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475849|{wagerAmount}"
+   },
+   "best": 1400,
+   "bestBook": "DK",
+   "bestImplied": 6.7,
+   "medianImplied": 8.3
+  },
+  "8480891": {
+   "name": "Michael Kesselring",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 1400,
+    "DK": 1300,
+    "MGM": 950,
+    "BOV": 1200,
+    "BR": 800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=63417661",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500485_13L42133Q1-371320603Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087886-6578218&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475834|{wagerAmount}"
+   },
+   "best": 1400,
+   "bestBook": "FD",
+   "bestImplied": 6.7,
+   "medianImplied": 7.7
+  },
+  "8476931": {
+   "name": "Jake McCabe",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 1700,
+    "DK": 1900,
+    "MGM": 1300,
+    "BOV": 1700,
+    "BR": 900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=41317113",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326499961_13L42133Q1-39509283Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087859-6578164&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380475802|{wagerAmount}"
+   },
+   "best": 1900,
+   "bestBook": "DK",
+   "bestImplied": 5.0,
+   "medianImplied": 5.6
+  },
+  "8484806": {
+   "name": "Sam Dickinson",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "FD": 1800,
+    "DK": 1700,
+    "MGM": 1050,
+    "BOV": 1400,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617621404&selectionId=70260725",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500533_13L42133Q1-1681732077Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087923-6578292&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467536|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "FD",
+   "bestImplied": 5.3,
+   "medianImplied": 6.7
+  },
+  "8482700": {
+   "name": "Nolan Allan",
+   "team": "SJS",
+   "game": "SJS@TOR",
+   "books": {
+    "DK": 1300,
+    "MGM": 1100,
+    "BOV": 1000,
+    "BR": 950
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500474_13L42133Q11545966129Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087945-6578334&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380467576|{wagerAmount}"
+   },
+   "best": 1300,
+   "bestBook": "DK",
+   "bestImplied": 7.1,
+   "medianImplied": 8.7
+  },
+  "8479442": {
+   "name": "Troy Stecher",
+   "team": "TOR",
+   "game": "SJS@TOR",
+   "books": {
+    "DK": 2000,
+    "MGM": 1300,
+    "BOV": 1400,
+    "BR": 850
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380388953%232326500074_13L42133Q1-115779828Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45826-4087845-6578136&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409953?coupon={pickType}|4380515855|{wagerAmount}"
+   },
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
+   "medianImplied": 6.9
+  },
+  "8482699": {
+   "name": "Dylan Guenther",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 140,
+    "DK": 135,
+    "MGM": 175,
+    "BOV": 137,
+    "BR": 123
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=40258487",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413782_13L42133Q11152215140Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088154-6578851&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479268|{wagerAmount}"
+   },
+   "best": 175,
+   "bestBook": "MGM",
+   "bestImplied": 36.4,
+   "medianImplied": 42.2
+  },
+  "8477951": {
+   "name": "Nick Schmaltz",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 155,
+    "DK": 160,
+    "MGM": 185,
+    "BOV": 156,
+    "BR": 148
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12862627",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413451_13L42133Q1877812657Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088050-6578643&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504579|{wagerAmount}"
+   },
+   "best": 185,
+   "bestBook": "MGM",
+   "bestImplied": 35.1,
+   "medianImplied": 39.1
+  },
+  "8479343": {
+   "name": "Clayton Keller",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 175,
+    "DK": 175,
+    "MGM": 200,
+    "BOV": 170,
+    "BR": 175
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=15969321",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413391_13L42133Q1852933874Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088124-6578791&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504495|{wagerAmount}"
+   },
+   "best": 200,
+   "bestBook": "MGM",
+   "bestImplied": 33.3,
+   "medianImplied": 36.4
+  },
+  "8483431": {
+   "name": "Logan Cooley",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 220,
+    "DK": 220,
+    "MGM": 220,
+    "BOV": 215,
+    "BR": 220
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=44992511",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413796_13L42133Q1634769727Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088056-6578655&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380485042|{wagerAmount}"
+   },
+   "best": 220,
+   "bestBook": "FD",
+   "bestImplied": 31.2,
+   "medianImplied": 31.2
+  },
+  "8475810": {
+   "name": "Bryan Rust",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 230,
+    "DK": 205,
+    "MGM": 230,
+    "BOV": 215,
+    "BR": 235
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12857539",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413885_13L42133Q1-1020243210Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088127-6578797&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479297|{wagerAmount}"
+   },
+   "best": 235,
+   "bestBook": "BR",
+   "bestImplied": 29.9,
+   "medianImplied": 30.3
+  },
+  "8471675": {
+   "name": "Sidney Crosby",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 235,
+    "DK": 225,
+    "MGM": 210,
+    "BOV": 225,
+    "BR": 230
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12496353",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413842_13L42133Q1-1861961014Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088128-6578799&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484942|{wagerAmount}"
+   },
+   "best": 235,
+   "bestBook": "FD",
+   "bestImplied": 29.9,
+   "medianImplied": 30.8
+  },
+  "8476483": {
+   "name": "Rickard Rakell",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 250,
+    "DK": 225,
+    "MGM": 230,
+    "BOV": 235,
+    "BR": 245
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12449303",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413828_13L42133Q1-1823173526Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088073-6578689&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479326|{wagerAmount}"
+   },
+   "best": 250,
+   "bestBook": "FD",
+   "bestImplied": 28.6,
+   "medianImplied": 29.9
+  },
+  "8475314": {
+   "name": "Anders Lee",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 275,
+    "DK": 270,
+    "MGM": 210,
+    "BOV": 265,
+    "BR": 260
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12496421",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413506_13L42133Q1-188952988Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088135-6578813&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380485040|{wagerAmount}"
+   },
+   "best": 275,
+   "bestBook": "FD",
+   "bestImplied": 26.7,
+   "medianImplied": 27.4
+  },
+  "8476389": {
+   "name": "Vincent Trocheck",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 275,
+    "DK": 270,
+    "MGM": 310,
+    "BOV": 265,
+    "BR": 265
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12449414",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413473_13L42133Q1664608553Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088108-6578759&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484936|{wagerAmount}"
+   },
+   "best": 310,
+   "bestBook": "MGM",
+   "bestImplied": 24.4,
+   "medianImplied": 27.0
+  },
+  "8471215": {
+   "name": "Evgeni Malkin",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 290,
+    "DK": 260,
+    "MGM": 250,
+    "BOV": 270,
+    "BR": 275
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12496352",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413860_13L42133Q11747521153Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088074-6578691&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479258|{wagerAmount}"
+   },
+   "best": 290,
+   "bestBook": "FD",
+   "bestImplied": 25.6,
+   "medianImplied": 27.0
+  },
+  "8478438": {
+   "name": "Tommy Novak",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 290,
+    "DK": 290,
+    "MGM": 360,
+    "BOV": 285,
+    "BR": 280
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=53667902",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413927_13L42133Q12092545369Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088102-6578747&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484973|{wagerAmount}"
+   },
+   "best": 360,
+   "bestBook": "MGM",
+   "bestImplied": 21.7,
+   "medianImplied": 25.6
+  },
+  "8485414": {
+   "name": "Ben Kindel",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 330,
+    "DK": 300,
+    "MGM": 360,
+    "BOV": 315,
+    "BR": 320
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=89598799",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413941_13L42133Q1-1538304048Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088079-6578703&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479216|{wagerAmount}"
+   },
+   "best": 360,
+   "bestBook": "MGM",
+   "bestImplied": 21.7,
+   "medianImplied": 23.8
+  },
+  "8480849": {
+   "name": "Barrett Hayton",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 360,
+    "DK": 400,
+    "MGM": 333,
+    "BOV": 360,
+    "BR": 350
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=28056881",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413717_13L42133Q1-803313804Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088109-6578761&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479236|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "DK",
+   "bestImplied": 20.0,
+   "medianImplied": 21.7
+  },
+  "8478474": {
+   "name": "Lawson Crouse",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 390,
+    "DK": 380,
+    "MGM": 300,
+    "BOV": 360,
+    "BR": 400
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=22239379",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413688_13L42133Q1-1006147339Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088076-6578695&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504499|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "BR",
+   "bestImplied": 20.0,
+   "medianImplied": 20.8
+  },
+  "8479410": {
+   "name": "Mikhail Sergachev",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 430,
+    "DK": 425,
+    "MGM": 450,
+    "BOV": 410,
+    "BR": 475
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=20919622",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413523_13L42133Q1777469529Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088136-6578815&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504408|{wagerAmount}"
+   },
+   "best": 475,
+   "bestBook": "BR",
+   "bestImplied": 17.4,
+   "medianImplied": 18.9
+  },
+  "8479977": {
+   "name": "Kailer Yamamoto",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 440,
+    "DK": 450,
+    "MGM": 375,
+    "BOV": 410,
+    "BR": 425
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=20852692",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413747_13L42133Q1-1828693165Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088093-6578729&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479266|{wagerAmount}"
+   },
+   "best": 450,
+   "bestBook": "DK",
+   "bestImplied": 18.2,
+   "medianImplied": 19.0
+  },
+  "8481582": {
+   "name": "Nick Robertson",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 490,
+    "DK": 500,
+    "MGM": 425,
+    "BOV": 460,
+    "BR": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=43165974",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413913_13L42133Q11768161168Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088057-6578657&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484956|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 16.9
+  },
+  "8482758": {
+   "name": "Ville Koivunen",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 525,
+    "DK": 450,
+    "MGM": 700,
+    "BOV": 475,
+    "BR": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=81970336",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413933_13L42133Q1-1997253060Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088144-6578831&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380485028|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "MGM",
+   "bestImplied": 12.5,
+   "medianImplied": 16.7
+  },
+  "8474578": {
+   "name": "Erik Karlsson",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 550,
+    "DK": 475,
+    "MGM": 450,
+    "BOV": 475,
+    "BR": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12449407",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413880_13L42133Q11803730063Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088078-6578699&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484971|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "FD",
+   "bestImplied": 15.4,
+   "medianImplied": 17.4
+  },
+  "8484388": {
+   "name": "Daniil But",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 575,
+    "DK": 550,
+    "MGM": 500,
+    "BOV": 500,
+    "BR": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=51950504",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413817_13L42133Q1-175359343Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088054-6578651&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479238|{wagerAmount}"
+   },
+   "best": 575,
+   "bestBook": "FD",
+   "bestImplied": 14.8,
+   "medianImplied": 16.0
+  },
+  "8478831": {
+   "name": "Kevin Stenlund",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 700,
+    "DK": 800,
+    "MGM": 475,
+    "BOV": 675,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=28037056",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413604_13L42133Q1633004672Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088080-6578701&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479204|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 12.9
+  },
+  "8478507": {
+   "name": "John Marino",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "MGM": 1100,
+    "BOV": 625,
+    "BR": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=27586231",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413646_13L42133Q1997332761Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088151-6578845&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380485018|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "MGM",
+   "bestImplied": 8.3,
+   "medianImplied": 13.3
+  },
+  "8483808": {
+   "name": "Andrei Kuzmenko",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "MGM": 350,
+    "BOV": 600,
+    "BR": 540
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=48699553",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413905_13L42133Q1-1140063041Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088134-6578811&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504412|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 14.3
+  },
+  "8477346": {
+   "name": "MacKenzie Weegar",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 725,
+    "DK": 750,
+    "MGM": 650,
+    "BOV": 675,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=28051875",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413564_13L42133Q1-1771688003Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088148-6578839&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479287|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 12.5
+  },
+  "8480980": {
+   "name": "Connor Dewar",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 750,
+    "DK": 750,
+    "MGM": 550,
+    "BOV": 675,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=42285872",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413920_13L42133Q11000255630Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088110-6578763&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504418|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "FD",
+   "bestImplied": 11.8,
+   "medianImplied": 11.8
+  },
+  "8480855": {
+   "name": "Jack McBain",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 750,
+    "DK": 700,
+    "MGM": 450,
+    "BOV": 650,
+    "BR": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=44378131",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413805_13L42133Q11857265878Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088100-6578743&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484948|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "FD",
+   "bestImplied": 11.8,
+   "medianImplied": 13.3
+  },
+  "8481481": {
+   "name": "Blake Lizotte",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 850,
+    "DK": 750,
+    "MGM": 600,
+    "BOV": 725,
+    "BR": 850
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=28051862",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413897_13L42133Q1-66135005Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088125-6578793&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479264|{wagerAmount}"
+   },
+   "best": 850,
+   "bestBook": "FD",
+   "bestImplied": 10.5,
+   "medianImplied": 11.8
+  },
+  "8481725": {
+   "name": "Elmer Soderblom",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 850,
+    "DK": 750,
+    "MGM": 525,
+    "BOV": 725,
+    "BR": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=48894237",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413929_13L42133Q1-2043644624Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088075-6578693&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484946|{wagerAmount}"
+   },
+   "best": 850,
+   "bestBook": "FD",
+   "bestImplied": 10.5,
+   "medianImplied": 12.1
+  },
+  "8471724": {
+   "name": "Kris Letang",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 900,
+    "DK": 900,
+    "MGM": 825,
+    "BOV": 800,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=12562120",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413873_13L42133Q1310351790Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088149-6578843&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380485051|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 10.8
+  },
+  "8477220": {
+   "name": "Nate Schmidt",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 1100,
+    "DK": 1200,
+    "MGM": 1100,
+    "BOV": 1000,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=26329821",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413762_13L42133Q11207692019Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088123-6578789&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479234|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "DK",
+   "bestImplied": 7.7,
+   "medianImplied": 8.3
+  },
+  "8483398": {
+   "name": "Declan Carlile",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 1200,
+    "DK": 950,
+    "MGM": 900,
+    "BOV": 1000,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=79509984",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413938_13L42133Q11231325202Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088116-6578775&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504505|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "FD",
+   "bestImplied": 7.7,
+   "medianImplied": 9.5
+  },
+  "8481527": {
+   "name": "Kaedan Korczak",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 1300,
+    "DK": 1300,
+    "MGM": 1550,
+    "BOV": 1100,
+    "BR": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=61746204",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413924_13L42133Q1245531290Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088091-6578725&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380484958|{wagerAmount}"
+   },
+   "best": 1550,
+   "bestBook": "MGM",
+   "bestImplied": 6.1,
+   "medianImplied": 7.1
+  },
+  "8479398": {
+   "name": "Samuel Girard",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 1300,
+    "MGM": 1150,
+    "BOV": 1000
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=26341380",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088090-6578723&type=Single"
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 8.0
+  },
+  "8484386": {
+   "open": {
+    "best": 1400,
+    "bestBook": "FD",
+    "bestImplied": 6.7,
+    "at": null
+   },
+   "name": "Dmitri Simashev",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "BR": 800
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380504489|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "BR",
+   "bestImplied": 11.1,
+   "medianImplied": 11.1
+  },
+  "8479369": {
+   "name": "Andrew Peeke",
+   "team": "UTA",
+   "game": "PIT@UTA",
+   "books": {
+    "FD": 1700,
+    "DK": 1500,
+    "MGM": 1100,
+    "BOV": 1400,
+    "BR": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617627390&selectionId=41328772",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413633_13L42133Q1-925151201Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088129-6578801&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380485024|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "FD",
+   "bestImplied": 5.6,
+   "medianImplied": 6.7
+  },
+  "8481056": {
+   "name": "Spencer Stastney",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "DK": 1700,
+    "MGM": 1250,
+    "BOV": 1300,
+    "BR": 750
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326413935_13L42133Q1867663543Q20",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:45830-4088119-6578781&type=Single",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409842?coupon={pickType}|4380479291|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "DK",
+   "bestImplied": 5.6,
+   "medianImplied": 7.3
+  },
+  "8477845": {
+   "name": "Trevor van Riemsdyk",
+   "team": "PIT",
+   "game": "PIT@UTA",
+   "books": {
+    "DK": 2200,
+    "BOV": 2200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380374991%232326474105_13L42133Q1-432247532Q20"
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 4.3
+  }
+ },
+ "unmatched": [
+  {
+   "game": "ANA@NYR",
+   "name": "Roger McQueen"
+  }
+ ]
+}

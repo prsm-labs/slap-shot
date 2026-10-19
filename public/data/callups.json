@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-18 17:35",
+  "generated": "2026-10-19 09:04",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 45,
-  "up": 28,
+  "count": 49,
+  "up": 29,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -149,6 +149,248 @@
     "careerGp": 9,
     "careerG": 1,
     "careerP": 2
+   }
+  },
+  {
+   "playerId": 8479968,
+   "name": "Vinni Lettieri",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "1995-02-06",
+   "sweater": 71,
+   "draft": null,
+   "recalledOn": "2026-10-18",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 3,
+     "assists": 6,
+     "points": 9,
+     "plusMinus": 3,
+     "pim": 0,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 14,
+     "assists": 28,
+     "points": 42,
+     "plusMinus": 1,
+     "pim": 32,
+     "team": "Toronto Marlies"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 155,
+    "careerG": 15,
+    "careerP": 32
+   }
+  },
+  {
+   "playerId": 8484230,
+   "name": "Otto Stenberg",
+   "team": "STL",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "2005-05-29",
+   "sweater": 28,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "STL",
+    "round": 1,
+    "overallPick": 25
+   },
+   "recalledOn": "2026-10-18",
+   "from": "Springfield",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Springfield"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": -1,
+     "pim": 0,
+     "team": "Springfield Thunderbirds"
+    },
+    "last": {
+     "gamesPlayed": 36,
+     "goals": 4,
+     "assists": 13,
+     "points": 17,
+     "plusMinus": 2,
+     "pim": 6,
+     "team": "Springfield Thunderbirds"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 32,
+     "goals": 3,
+     "assists": 7,
+     "points": 10,
+     "plusMinus": 3,
+     "pim": 5,
+     "shots": 31,
+     "team": "St. Louis Blues"
+    },
+    "careerGp": 32,
+    "careerG": 3,
+    "careerP": 10
+   }
+  },
+  {
+   "playerId": 8482470,
+   "name": "Ilya Solovyov",
+   "team": "PIT",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2000-07-20",
+   "sweater": 7,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "CGY",
+    "round": 7,
+    "overallPick": 205
+   },
+   "recalledOn": "2026-10-18",
+   "from": "Wilkes-Barre/Scranton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Wilkes-Barre/Scranton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 6,
+     "pim": 4,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    },
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "team": "Colorado Eagles"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 30,
+     "goals": 1,
+     "assists": 7,
+     "points": 8,
+     "plusMinus": 0,
+     "pim": 16,
+     "shots": 23,
+     "team": "Colorado Avalanche / Pittsburgh Penguins"
+    },
+    "careerGp": 45,
+    "careerG": 1,
+    "careerP": 12
+   }
+  },
+  {
+   "playerId": 8483760,
+   "name": "Hunter McDonald",
+   "team": "PHI",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2002-05-11",
+   "sweater": 19,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "PHI",
+    "round": 6,
+    "overallPick": 165
+   },
+   "recalledOn": "2026-10-18",
+   "from": "Lehigh Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Lehigh Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": 4,
+     "pim": 2,
+     "team": "Lehigh Valley Phantoms"
+    },
+    "last": {
+     "gamesPlayed": 65,
+     "goals": 0,
+     "assists": 6,
+     "points": 6,
+     "plusMinus": 0,
+     "pim": 92,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 3,
+     "pim": 4,
+     "shots": 0,
+     "team": "Philadelphia Flyers"
+    },
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 1
    }
   },
   {
@@ -722,12 +964,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 1,
-     "pim": 0,
+     "pim": 2,
      "shots": 1,
      "team": "Carolina Hurricanes"
     },
@@ -741,7 +983,7 @@
      "shots": 0,
      "team": "Carolina Hurricanes"
     },
-    "careerGp": 2,
+    "careerGp": 3,
     "careerG": 0,
     "careerP": 1
    }
@@ -982,11 +1224,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 1,
      "assists": 2,
      "points": 3,
-     "plusMinus": 0,
+     "plusMinus": 1,
      "pim": 4,
      "team": "Iowa Wild"
     },
@@ -1204,6 +1446,84 @@
    }
   },
   {
+   "playerId": 8475718,
+   "name": "Justin Holl",
+   "team": "WSH",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "1992-01-30",
+   "sweater": 4,
+   "draft": {
+    "year": 2010,
+    "teamAbbrev": "CHI",
+    "round": 2,
+    "overallPick": 54
+   },
+   "recalledOn": "2026-10-12",
+   "from": "Hershey",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-18",
+   "events": [
+    {
+     "date": "2026-10-12",
+     "type": "up",
+     "club": "Hershey"
+    },
+    {
+     "date": "2026-10-18",
+     "type": "down",
+     "club": "Hershey"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -2,
+     "pim": 0,
+     "team": "Hershey Bears"
+    },
+    "last": {
+     "gamesPlayed": 41,
+     "goals": 2,
+     "assists": 12,
+     "points": 14,
+     "plusMinus": 19,
+     "pim": 10,
+     "team": "Grand Rapids Griffins"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 2,
+     "assists": 0,
+     "points": 2,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 2,
+     "team": "Washington Capitals"
+    },
+    "last": {
+     "gamesPlayed": 9,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 5,
+     "pim": 6,
+     "shots": 7,
+     "team": "St. Louis Blues"
+    },
+    "careerGp": 408,
+    "careerG": 16,
+    "careerP": 99
+   }
+  },
+  {
    "playerId": 8484865,
    "name": "Colin Ralph",
    "team": "STL",
@@ -1322,13 +1642,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -2,
      "pim": 0,
-     "shots": 3,
+     "shots": 4,
      "team": "Minnesota Wild"
     },
     "last": {
@@ -1341,82 +1661,9 @@
      "shots": 26,
      "team": "Minnesota Wild"
     },
-    "careerGp": 454,
+    "careerGp": 455,
     "careerG": 58,
     "careerP": 111
-   }
-  },
-  {
-   "playerId": 8475718,
-   "name": "Justin Holl",
-   "team": "WSH",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "1992-01-30",
-   "sweater": 4,
-   "draft": {
-    "year": 2010,
-    "teamAbbrev": "CHI",
-    "round": 2,
-    "overallPick": 54
-   },
-   "recalledOn": "2026-10-12",
-   "from": "Hershey",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-12",
-     "type": "up",
-     "club": "Hershey"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -2,
-     "pim": 0,
-     "team": "Hershey Bears"
-    },
-    "last": {
-     "gamesPlayed": 41,
-     "goals": 2,
-     "assists": 12,
-     "points": 14,
-     "plusMinus": 19,
-     "pim": 10,
-     "team": "Grand Rapids Griffins"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 2,
-     "assists": 0,
-     "points": 2,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 2,
-     "team": "Washington Capitals"
-    },
-    "last": {
-     "gamesPlayed": 9,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": 5,
-     "pim": 6,
-     "shots": 7,
-     "team": "St. Louis Blues"
-    },
-    "careerGp": 408,
-    "careerG": 16,
-    "careerP": 99
    }
   },
   {
@@ -1865,17 +2112,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 1,
      "points": 1,
      "plusMinus": -3,
      "pim": 15,
-     "shots": 1,
+     "shots": 2,
      "team": "Minnesota Wild"
     },
     "last": null,
-    "careerGp": 4,
+    "careerGp": 5,
     "careerG": 0,
     "careerP": 1
    }
@@ -1924,13 +2171,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 2,
      "pim": 0,
-     "shots": 0,
+     "shots": 3,
      "team": "Minnesota Wild"
     },
     "last": {
@@ -1943,7 +2190,7 @@
      "shots": 4,
      "team": "Minnesota Wild"
     },
-    "careerGp": 46,
+    "careerGp": 47,
     "careerG": 2,
     "careerP": 8
    }
@@ -2030,11 +2277,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 1,
      "assists": 0,
      "points": 1,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 0,
      "team": "Rockford IceHogs"
     },
@@ -2115,17 +2362,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 1,
      "points": 1,
      "plusMinus": 0,
      "pim": 6,
-     "shots": 3,
+     "shots": 5,
      "team": "Calgary Flames"
     },
     "last": null,
-    "careerGp": 4,
+    "careerGp": 5,
     "careerG": 0,
     "careerP": 1
    }
@@ -2179,11 +2426,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 2,
      "assists": 1,
      "points": 3,
-     "plusMinus": -3,
+     "plusMinus": -2,
      "pim": 2,
      "shots": 7,
      "team": "Calgary Flames"
@@ -2198,7 +2445,7 @@
      "shots": 9,
      "team": "Calgary Flames"
     },
-    "careerGp": 11,
+    "careerGp": 12,
     "careerG": 2,
     "careerP": 4
    }
