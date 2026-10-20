@@ -25,6 +25,7 @@ export default function AboutTab() {
             <li>All Matchups board — full pool sorted by Slap Score</li>
             <li>Lamp Lab / Apple Lab — Monte Carlo goal / point sims</li>
             <li>Track Record — real hit-rate history, Mar 2026</li>
+            <li>Stats — every skater, goalie and team game by game (this season + last), filterable and searchable; context only</li>
           </ul>
         </div>
       </div>

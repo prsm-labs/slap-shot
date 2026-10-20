@@ -273,3 +273,26 @@ tr.signal-row{--row-bg:rgba(47,125,174,.05);}
 .mc-teams{font-family:'Oswald',sans-serif;font-weight:700;font-size:13px;white-space:nowrap;display:flex;gap:8px;align-items:baseline;justify-content:space-between;}
 .mc-time{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:9px;color:var(--muted);}
 .mc-sub{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* 📊 Stats tab (2026-10-20) */
+.stats-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.stats-pills{display:inline-flex;flex-wrap:wrap;}
+.stats-pills .pill-btn{font-size:11px;padding:5px 10px;}
+.stats-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;}
+.stats-filters input:not([type=number]){flex:1 1 200px;min-width:0;max-width:340px;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:7px 10px;font-family:'DM Mono',monospace;font-size:12px;}
+.stats-filters select,.stats-filters input[type=number]{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:6px;font-family:'DM Mono',monospace;font-size:11px;}
+.stats-filters input[type=number]{width:56px;}
+.stats-muted{color:var(--muted);font-size:11px;}
+.stats-meta{color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;margin:6px 0 8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.stats-csv{border:1px solid var(--border)!important;}
+.stats-name{display:flex;align-items:center;gap:8px;}
+.stats-sorted{color:var(--accent)!important;font-weight:700;}
+.stats-row.open td{background:rgba(56,184,242,.08);}
+.stats-detail>td{padding:0!important;}
+.stats-log{padding:10px 12px;border-left:3px solid var(--accent);max-width:min(1100px,calc(100vw - 40px));position:sticky;left:0;white-space:normal;}
+.stats-log-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px;}
+.stats-bars{display:flex;gap:4px;align-items:flex-end;height:90px;overflow-x:auto;margin-bottom:8px;}
+.stats-bar{display:grid;grid-template-rows:auto 1fr auto;justify-items:center;min-width:28px;height:100%;font-size:10px;font-family:'DM Mono',monospace;}
+.stats-bar .b{align-self:end;width:14px;background:rgba(56,184,242,.35);border-radius:3px 3px 0 0;}
+.stats-bar .b.win{background:var(--accent);}
+.stats-bar .x{color:var(--muted);}
