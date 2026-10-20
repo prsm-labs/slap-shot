@@ -90,6 +90,23 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
   border-radius:10px;padding:14px 16px;margin-bottom:14px;
 }
 .mono{font-family:'DM Mono',monospace;}
+/* 💎 PRISM Picks -- gold glow card at the top of Cheat Sheets (components/PrismPicks.jsx) */
+.prism-card{--gold:#d4af37;border:1px solid rgba(212,175,55,.75);background:linear-gradient(180deg,rgba(212,175,55,.09),var(--surface) 70%);
+  box-shadow:0 0 0 1px rgba(212,175,55,.3),0 0 22px rgba(212,175,55,.38);animation:prism-glow 3.2s ease-in-out infinite;}
+@keyframes prism-glow{50%{box-shadow:0 0 0 1px rgba(212,175,55,.45),0 0 32px rgba(212,175,55,.55);}}
+@media (prefers-reduced-motion:reduce){.prism-card{animation:none;}}
+.prism-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.prism-gem{font-size:22px;filter:drop-shadow(0 0 6px rgba(212,175,55,.7));}
+.prism-title{font-weight:700;font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);}
+.prism-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(212,175,55,.18);cursor:pointer;}
+.prism-main{flex:1;min-width:0;}
+.prism-line{font-weight:600;font-size:15px;color:var(--gold);letter-spacing:.02em;}
+.prism-stat{display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;line-height:1.25;font-size:9px;color:var(--muted);}
+.prism-stat b{font-size:19px;color:var(--gold);font-family:'DM Mono',monospace;}
+.prism-foot{margin-top:8px;font-size:10px;color:var(--muted);line-height:1.55;}
+.prism-past{margin-top:6px;font-size:11px;}
+.prism-past summary{cursor:pointer;color:var(--gold);font-family:'DM Mono',monospace;}
+.prism-past-row{padding:4px 0;border-bottom:1px solid var(--border);font-size:10px;}
 .note{
   background:rgba(56,184,242,.06);border:1px solid rgba(56,184,242,.15);
   border-radius:8px;padding:10px 14px;color:rgba(56,184,242,.85);

@@ -16,6 +16,7 @@ import { lineupMaps, skaterStatus, startingGoalie, useLineups } from "../lib/lin
 import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from "../lib/bookOdds.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import PrismPicks from "../components/PrismPicks.jsx";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -149,6 +150,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   return (
     <div>
       <SlateStatus />
+      <PrismPicks players={players} />
 
       <div className="note">
         ℹ️ ✅ = in tonight's official lineup (posted by the NHL around warmups) or a confirmed starting goalie.

@@ -26,6 +26,11 @@ export default function AboutTab() {
             <li>Lamp Lab / Apple Lab — Monte Carlo goal / point sims</li>
             <li>Track Record — real hit-rate history, Mar 2026</li>
             <li>Stats — every skater, goalie and team game by game (this season + last), filterable and searchable; context only</li>
+            <li>💎 PRISM Picks (top of Cheat Sheets) — tonight's few props with the highest tested hit rates that aren't the obvious ones:
+              1+ point, 2+ or 3+ shots on goal at a 70%+ model chance, where the skater had it in 80% or fewer of his last 20 games and
+              the model sees at least 5 points more tonight (one per player, 2 per game, up to 5). Backtest 2023-24 to 2025-26:
+              1,262 of 1,649 hit (77%); this season from the locked snapshots: shown on the card. The big number is the track
+              record at that chance, not the raw model chance.</li>
           </ul>
         </div>
       </div>
