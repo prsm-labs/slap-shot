@@ -1,13 +1,77 @@
 {
  "_meta": {
-  "generated": "2026-10-20 12:04",
+  "generated": "2026-10-20 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 56,
-  "up": 38,
+  "count": 57,
+  "up": 37,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8480259,
+   "name": "Ben Jones",
+   "team": "CGY",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1999-02-26",
+   "sweater": 18,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "VGK",
+    "round": 7,
+    "overallPick": 189
+   },
+   "recalledOn": "2026-10-20",
+   "from": "Calgary",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-20",
+     "type": "up",
+     "club": "Calgary"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 7,
+     "assists": 2,
+     "points": 9,
+     "plusMinus": -1,
+     "pim": 2,
+     "team": "Calgary Wranglers"
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "goals": 12,
+     "assists": 20,
+     "points": 32,
+     "plusMinus": 1,
+     "pim": 26,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 28,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": -10,
+     "pim": 0,
+     "shots": 26,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 56,
+    "careerG": 1,
+    "careerP": 3
+   }
+  },
   {
    "playerId": 8484242,
    "name": "Brayden Yager",
@@ -563,7 +627,7 @@
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -1936,6 +2000,81 @@
    }
   },
   {
+   "playerId": 8476474,
+   "name": "Stefan Noesen",
+   "team": "NJD",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "1993-02-12",
+   "sweater": 11,
+   "draft": {
+    "year": 2011,
+    "teamAbbrev": "OTT",
+    "round": 1,
+    "overallPick": 21
+   },
+   "recalledOn": "2026-10-12",
+   "from": "Utica",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-20",
+   "events": [
+    {
+     "date": "2026-10-09",
+     "type": "down",
+     "club": "Utica"
+    },
+    {
+     "date": "2026-10-12",
+     "type": "up",
+     "club": "Utica"
+    },
+    {
+     "date": "2026-10-20",
+     "type": "down",
+     "club": "Utica"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "team": "Utica Comets"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 6,
+     "team": "New Jersey Devils"
+    },
+    "last": {
+     "gamesPlayed": 38,
+     "goals": 3,
+     "assists": 4,
+     "points": 7,
+     "plusMinus": -12,
+     "pim": 33,
+     "shots": 52,
+     "team": "New Jersey Devils"
+    },
+    "careerGp": 487,
+    "careerG": 84,
+    "careerP": 178
+   }
+  },
+  {
    "playerId": 8475718,
    "name": "Justin Holl",
    "team": "WSH",
@@ -2154,76 +2293,6 @@
     "careerGp": 455,
     "careerG": 58,
     "careerP": 111
-   }
-  },
-  {
-   "playerId": 8476474,
-   "name": "Stefan Noesen",
-   "team": "NJD",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "1993-02-12",
-   "sweater": 11,
-   "draft": {
-    "year": 2011,
-    "teamAbbrev": "OTT",
-    "round": 1,
-    "overallPick": 21
-   },
-   "recalledOn": "2026-10-12",
-   "from": "Utica",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-09",
-     "type": "down",
-     "club": "Utica"
-    },
-    {
-     "date": "2026-10-12",
-     "type": "up",
-     "club": "Utica"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "team": "Utica Comets"
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 1,
-     "assists": 2,
-     "points": 3,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 6,
-     "team": "New Jersey Devils"
-    },
-    "last": {
-     "gamesPlayed": 38,
-     "goals": 3,
-     "assists": 4,
-     "points": 7,
-     "plusMinus": -12,
-     "pim": 33,
-     "shots": 52,
-     "team": "New Jersey Devils"
-    },
-    "careerGp": 487,
-    "careerG": 84,
-    "careerP": 178
    }
   },
   {
