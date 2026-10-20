@@ -89,8 +89,87 @@ function SkaterTable({ t, poolById, onIce, heatById, live }) {
             </tr>
             );
           })}
+          <tr className="box-total-row">
+            <td style={{ ...left, fontWeight: 700 }}>{t.abbrev} total</td>
+            {["goals", "assists", "points"].map((k) => <td key={k} style={{ ...cell, fontWeight: 700 }}>{t.skaters.reduce((s, p) => s + (p[k] || 0), 0)}</td>)}
+            <td style={cell} />
+            {["sog", "hits", "blocks", "pim"].map((k) => <td key={k} style={{ ...cell, fontWeight: 700 }}>{t.skaters.reduce((s, p) => s + (p[k] || 0), 0)}</td>)}
+            <td style={cell} />
+          </tr>
         </tbody>
       </table>
+    </div>
+  );
+}
+
+// 2026-10-20 (user): team-vs-team comparison from the NHL right rail, a bar for who leads each line
+const CMP = [
+  ["sog", "Shots on goal"], ["faceoffWins", "Faceoffs won", "", false, "faceoffWinningPctg"], ["powerPlay", "Power play", "", false, "powerPlayPctg"],
+  ["pim", "Penalty minutes", "", true], ["hits", "Hits"], ["blockedShots", "Blocked shots"], ["giveaways", "Giveaways", "", true], ["takeaways", "Takeaways"],
+];
+function TeamCompare({ box }) {
+  const st = new Map((box.teamStats || []).map((s) => [s.key, s]));
+  if (!st.size) return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Team totals aren't posted yet.</div>;
+  const num = (v) => (typeof v === "string" && v.includes("/") ? Number(v.split("/")[0]) : Number(v) || 0);
+  const pctOf = (k, side) => (st.get(k) ? `${Math.round(Number(st.get(k)[side]) * 100)}%` : null);
+  return (
+    <div className="cmp-card">
+      <div className="cmp-head mono"><b>{box.away.abbrev}</b> {box.away.score ?? ""}<span style={{ color: "var(--muted)", fontSize: 10 }}>{box.state === "OFF" || box.state === "FINAL" ? "Final" : box.period ? `P${box.period}` : ""}</span>{box.home.score ?? ""} <b>{box.home.abbrev}</b></div>
+      {CMP.map(([k, label, , lowerBetter, pctKey]) => {
+        const s = st.get(k);
+        if (!s) return null;
+        const a = num(s.away), h = num(s.home), tot = a + h || 1;
+        const lead = a === h ? 0 : (a > h) !== !!lowerBetter ? -1 : 1;
+        return (
+          <div key={k} className="cmp-row">
+            <span className={`cmp-val mono ${lead < 0 ? "lead" : ""}`}>{s.away}{pctKey && pctOf(pctKey, "away") ? <span className="cmp-sub"> {pctOf(pctKey, "away")}</span> : null}</span>
+            <div><div className="cmp-label mono">{label}{lowerBetter ? " (fewer is better)" : ""}</div>
+              <div className="cmp-bar"><span style={{ width: `${(a / tot) * 100}%` }} className={lead < 0 ? "lead" : ""} /><span style={{ width: `${(h / tot) * 100}%` }} className={lead > 0 ? "lead" : ""} /></div></div>
+            <span className={`cmp-val mono r ${lead > 0 ? "lead" : ""}`}>{pctKey && pctOf(pctKey, "home") ? <span className="cmp-sub">{pctOf(pctKey, "home")} </span> : null}{s.home}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// 2026-10-20 (user): play-by-play (NHL feed, /api/boxscore?plays=1), filter by period, goals / shots / penalties, team
+const KINDS = [["all", "Every play"], ["goal", "Goals"], ["shots", "Shots"], ["penalty", "Penalties"]];
+const SHOT_KINDS = new Set(["goal", "shot-on-goal", "missed-shot", "blocked-shot"]);
+function PlayByPlay({ box, live }) {
+  const [per, setPer] = useState("all");
+  const [kind, setKind] = useState("all");
+  const [tm, setTm] = useState("all");
+  const plays = box.plays || [];
+  if (!plays.length) return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>No plays yet.</div>;
+  const periods = [...new Set(plays.map((p) => p.period).filter(Boolean))];
+  const list = plays.filter((p) => (per === "all" || p.period === per) && (tm === "all" || p.team === tm)
+    && (kind === "all" || (kind === "goal" ? p.goal : kind === "shots" ? SHOT_KINDS.has(p.kind) : p.kind === kind)));
+  const shown = live ? [...list].reverse() : list;
+  const pl = (opts, v, set) => opts.map(([k, l]) => <button key={k} className={`pill-btn ${v === k ? "active" : ""}`} onClick={() => set(k)}>{l}</button>);
+  return (
+    <div>
+      <div className="pill-row" style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 6 }}>
+        {pl([["all", "All periods"], ...periods.map((p) => [p, /^\d$/.test(p) ? `P${p}` : p])], per, setPer)}
+      </div>
+      <div className="pill-row" style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }}>
+        {pl(KINDS, kind, setKind)}{pl([["all", "Both teams"], [box.away.abbrev, box.away.abbrev], [box.home.abbrev, box.home.abbrev]], tm, setTm)}
+      </div>
+      <div className="pbp">
+        {shown.length === 0 && <div className="mono" style={{ color: "var(--muted)", fontSize: 11 }}>No plays match.</div>}
+        {shown.map((p, i) => (
+          <div key={p.id ?? i}>
+            {(i === 0 || shown[i - 1].period !== p.period) && <div className="pbp-q mono">{/^\d$/.test(p.period) ? `Period ${p.period}` : p.period}</div>}
+            <div className={`pbp-row mono ${p.goal ? "goal" : ""} ${p.kind === "penalty" ? "pen" : ""}`}>
+              <span className="pbp-clock">{p.time}</span>
+              <span className="pbp-team">{p.team || ""}</span>
+              <span className="pbp-text">{p.text}</span>
+              <span className="pbp-score">{p.goal ? <b>{p.score}</b> : p.score}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="mono" style={{ color: "var(--muted)", fontSize: 10, marginTop: 6 }}>{live ? "Newest first, refreshes with the box score (15 s). " : ""}Score {box.away.abbrev}-{box.home.abbrev}. Source: NHL play-by-play.</div>
     </div>
   );
 }
@@ -132,14 +211,14 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
   // The last two distinct batches of skater ice time, for the on-ice estimate.
   const batches = useRef({ prev: null, cur: null });
   const [onIce, setOnIce] = useState(null);
-  const [view, setView] = useState("box"); // "box" | "tracker" (Game Tracker: rink + recent plays)
+  const [view, setView] = useState("box"); // "box" | "compare" | "pbp" | "tracker" (Game Tracker: rink + recent plays)
 
   useEffect(() => {
     let cancelled = false;
     let timer = null;
     async function load() {
       try {
-        const res = await fetch(`/api/boxscore?gameId=${gameId}`);
+        const res = await fetch(`/api/boxscore?gameId=${gameId}&plays=1`);
         const body = await res.json();
         if (!res.ok) throw new Error(body.error || res.status);
         if (cancelled) return;
@@ -191,10 +270,14 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
       {box && (
         <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
           <button className={`pill-btn ${view === "box" ? "active" : ""}`} onClick={() => setView("box")}>📋 Box score</button>
+          <button className={`pill-btn ${view === "compare" ? "active" : ""}`} onClick={() => setView("compare")}>⚖️ Team comparison</button>
+          <button className={`pill-btn ${view === "pbp" ? "active" : ""}`} onClick={() => setView("pbp")}>📜 Play-by-play</button>
           <button className={`pill-btn ${view === "tracker" ? "active" : ""}`} onClick={() => setView("tracker")}>🏒 Game Tracker</button>
         </div>
       )}
       {box && view === "tracker" && <RinkTracker box={box} />}
+      {box && view === "compare" && <TeamCompare box={box} />}
+      {box && view === "pbp" && <PlayByPlay box={box} live={LIVE.has(box.state)} />}
       {box && view === "box" && (
         <>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start" }}>
