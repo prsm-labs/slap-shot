@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import { batchFromBox, estimateOnIce, sameBatch } from "../lib/onIce.js";
 import RinkTracker from "./RinkTracker.jsx";
+import LineupsView from "./LineupsView.jsx";
 
 // Full box score for one game, from /api/boxscore (api/boxscore.js). Refreshes every 15s while
 // the game is live (the endpoint is cached 15s at the edge). Skater rows are tinted tan when the
@@ -204,14 +205,17 @@ function GoalieTable({ t }) {
   );
 }
 
-export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, heatById }) {
+export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, heatById, date, startOn = "box" }) {
   const [box, setBox] = useState(null);
   const [error, setError] = useState(null);
   const shownGame = useRef(null);
   // The last two distinct batches of skater ice time, for the on-ice estimate.
   const batches = useRef({ prev: null, cur: null });
   const [onIce, setOnIce] = useState(null);
-  const [view, setView] = useState("box"); // "box" | "compare" | "pbp" | "tracker" (Game Tracker: rink + recent plays)
+  const [view, setView] = useState(startOn); // "box" | "compare" | "pbp" | "tracker" (Game Tracker: rink + recent plays) | "lineups"
+  // 2026-10-20: before puck drop only the lineups view has anything in it
+  const pre = box && !LIVE.has(box.state) && !["OFF", "FINAL"].includes(box.state);
+  const shown = pre ? "lineups" : view;
 
   useEffect(() => {
     let cancelled = false;
@@ -261,24 +265,26 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
     <div className="card" style={{ marginBottom: 14 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
         <div className="section-title" style={{ fontSize: 18 }}>
-          📋 Box Score{box ? ` — ${box.away.abbrev} @ ${box.home.abbrev}` : ""}
+          {pre ? "👥 Lineups" : "📋 Box Score"}{box ? ` — ${box.away.abbrev} @ ${box.home.abbrev}` : ""}
         </div>
         <button className="btn" onClick={onClose}>✕ Close</button>
       </div>
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Box score error: {error}</div>}
       {!box && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading box score…</div>}
-      {box && (
-        <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
+      {box && !pre && (
+        <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
           <button className={`pill-btn ${view === "box" ? "active" : ""}`} onClick={() => setView("box")}>📋 Box score</button>
+          <button className={`pill-btn ${view === "lineups" ? "active" : ""}`} onClick={() => setView("lineups")}>👥 Lineups</button>
           <button className={`pill-btn ${view === "compare" ? "active" : ""}`} onClick={() => setView("compare")}>⚖️ Team comparison</button>
           <button className={`pill-btn ${view === "pbp" ? "active" : ""}`} onClick={() => setView("pbp")}>📜 Play-by-play</button>
           <button className={`pill-btn ${view === "tracker" ? "active" : ""}`} onClick={() => setView("tracker")}>🏒 Game Tracker</button>
         </div>
       )}
-      {box && view === "tracker" && <RinkTracker box={box} />}
-      {box && view === "compare" && <TeamCompare box={box} />}
-      {box && view === "pbp" && <PlayByPlay box={box} live={LIVE.has(box.state)} />}
-      {box && view === "box" && (
+      {box && shown === "lineups" && <LineupsView date={date} gameId={gameId} />}
+      {box && shown === "tracker" && <RinkTracker box={box} />}
+      {box && shown === "compare" && <TeamCompare box={box} />}
+      {box && shown === "pbp" && <PlayByPlay box={box} live={LIVE.has(box.state)} />}
+      {box && shown === "box" && (
         <>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "flex-start" }}>
             <Linescore box={box} />

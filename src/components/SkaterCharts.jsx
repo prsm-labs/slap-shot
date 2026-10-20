@@ -13,7 +13,7 @@ const GOALIE_VIEWS = [
 ];
 const pct = (v) => (v == null ? "—" : `${(v * 100).toFixed(1)}%`);
 
-export default function SkaterCharts({ player }) {
+export default function SkaterCharts({ player, tonight = null }) {
   const h2h = useH2H();
   const pool = useScoredPool({ includeStarted: true });
   const [mode, setMode] = useState("l7");
@@ -39,7 +39,11 @@ export default function SkaterCharts({ player }) {
         </div>
       )}
 
-      {active === "l7" && <L7Chart key="l7" games={live.last7 || player.last7} role="skater" />}
+      {/* 2026-10-20: tonight's game (live or final) is the last bar once he's in the box score */}
+      {active === "l7" && <L7Chart key="l7" games={[
+        ...(live.last7 || player.last7 || []).filter((g) => !tonight?.skater || String(g.gameId) !== String(tonight.gameId)),
+        ...(tonight?.started && tonight.skater ? [{ ...tonight.skater, gameId: tonight.gameId, opp: tonight.them.abbrev, home: tonight.home.abbrev === tonight.us.abbrev, today: true, live: tonight.live }] : []),
+      ]} role="skater" />}
 
       {active === "team" && (
         <>

@@ -97,15 +97,14 @@ function GameCard({ g, selected, onSelect, onBox, boxOpen }) {
         </div>
       ))}
       <PressureBar g={g} />
-      {started && (
-        <button
-          className={`pill-btn ${boxOpen ? "active" : ""}`}
-          style={{ marginTop: 8, width: "100%" }}
-          onClick={(e) => { e.stopPropagation(); onBox(); }}
-        >
-          📋 Box score
-        </button>
-      )}
+      {/* 2026-10-20: before puck drop the same button opens that game's lineups (goalies, PP units, injuries, dressed lineup) */}
+      <button
+        className={`pill-btn ${boxOpen ? "active" : ""}`}
+        style={{ marginTop: 8, width: "100%" }}
+        onClick={(e) => { e.stopPropagation(); onBox(); }}
+      >
+        {started ? "📋 Box score · 👥 Lineups" : "👥 Lineups"}
+      </button>
       {g.error && <div className="mono" style={{ fontSize: 9, color: "var(--red)", marginTop: 6 }}>Feed error: {g.error}</div>}
     </div>
   );
@@ -256,7 +255,7 @@ export default function LiveTab() {
         </div>
       )}
 
-      {boxGame && <BoxScore gameId={boxGame} poolById={poolById} heatById={heatById} refreshKey={refreshKey} onClose={() => setBoxGame(null)} />}
+      {boxGame && <BoxScore gameId={boxGame} date={date} poolById={poolById} heatById={heatById} refreshKey={refreshKey} onClose={() => setBoxGame(null)} />}
 
       {view === "games" && data && data.games.length > 0 && (
         <>

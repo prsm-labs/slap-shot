@@ -14,6 +14,8 @@ import { AllBookLinks, StatePicker } from "./BetLink.jsx";
 import { pointHeatText } from "../lib/pointHeat.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { useTonightLine } from "../lib/tonightLine.js";
+import TonightCard from "./TonightCard.jsx";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -156,6 +158,8 @@ export default function PlayerSlideout() {
   const player = skater || goalie;
   const isOpen = !!player;
   const role = goalie ? "goalie" : "skater";
+  // 2026-10-20 live slideout: tonight's line while the game is on and after it ends
+  const tonight = useTonightLine(player);
 
   return (
     <>
@@ -182,6 +186,8 @@ export default function PlayerSlideout() {
               </div>
             )}
 
+            <TonightCard t={tonight} p={player} role={role} />
+
             {role === "skater" && <MatchupCard p={player} />}
 
             {role === "goalie" ? (
@@ -190,7 +196,7 @@ export default function PlayerSlideout() {
             ) : (
               <>
                 <SkaterStats p={player} />
-                <SkaterCharts player={player} />
+                <SkaterCharts player={player} tonight={tonight} />
               </>
             )}
           </div>

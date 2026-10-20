@@ -72,6 +72,8 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
               <div style={{
                 width: "100%", borderRadius: "4px 4px 0 0", height: barH,
                 background: isHit ? "linear-gradient(180deg,var(--accent2),var(--accent))" : "rgba(255,64,32,.15)",
+                // 2026-10-20: tonight's game (live slideout) is outlined, green while live
+                outline: g.today ? `1.5px solid ${g.live ? "var(--green)" : "var(--text)"}` : undefined, outlineOffset: g.today ? 1 : undefined,
               }} />
             </div>
           );
@@ -80,7 +82,7 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
       <div style={{ display: "flex", gap: 4, marginTop: 4 }}>
         {g7.map((g, i) => (
           <div key={i} className="mono" style={{ flex: 1, textAlign: "center", fontSize: 9, lineHeight: 1.3, color: "var(--muted)", minWidth: 0 }}>
-            <div>{barDate(g, showYear)}</div>
+            <div style={g.today ? { color: g.live ? "var(--green)" : "var(--text)", fontWeight: 700 } : undefined}>{g.today ? (g.live ? "LIVE" : "Tonight") : barDate(g, showYear)}</div>
             <div style={{ color: "var(--text)", whiteSpace: "nowrap" }}>{barOpp(g)}</div>
           </div>
         ))}

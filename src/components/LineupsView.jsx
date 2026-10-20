@@ -82,7 +82,8 @@ function TeamColumn({ team, t, game, slateGame, maps, poolById }) {
   );
 }
 
-export default function LineupsView({ date }) {
+// 2026-10-20: gameId = just that game (the Live tab's matchup card -> 👥 Lineups inside the box score panel)
+export default function LineupsView({ date, gameId = null }) {
   const data = useLineups(date);
   const [pool, setPool] = useState({ byId: new Map(), slate: [] });
   const selected = useMatchup();
@@ -94,7 +95,8 @@ export default function LineupsView({ date }) {
   if (!data) return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading lineups…</div>;
   if (!data.games.length) return <div className="note">No NHL games on this date.</div>;
   const maps = lineupMaps(data);
-  const games = selected ? data.games.filter((g) => g.key === selected) : data.games;
+  const games = gameId ? data.games.filter((g) => g.gameId === gameId) : selected ? data.games.filter((g) => g.key === selected) : data.games;
+  if (gameId && !games.length) return <div className="note">No lineup report for this game yet.</div>;
 
   return (
     <div>
