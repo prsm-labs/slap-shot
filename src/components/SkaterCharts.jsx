@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import L7Chart from "./L7Chart.jsx";
 import { useH2H } from "../lib/h2h.js";
 import { useScoredPool } from "../lib/data.js";
+import { lineupMaps, useLineups } from "../lib/lineups.js";
+import { OnOffPicker, onOffGames, useOnOff } from "./OnOff.jsx";
 
 // The skater slideout's chart with H2H toggles: last 7 games, the last 5 games vs tonight's
 // opponent, and the last 5 games tonight's opposing goalie was in net against them (any team,
@@ -17,6 +19,11 @@ export default function SkaterCharts({ player, tonight = null }) {
   const h2h = useH2H();
   const pool = useScoredPool({ includeStarted: true });
   const [mode, setMode] = useState("l7");
+  // 2026-10-21 👥 with / without teammates (OnOff.jsx); resets when another skater opens
+  const lineups = useLineups(pool?.meta?.slateDate);
+  const [sel, setSel] = useState([]);
+  const [how, setHow] = useState("without");
+  useEffect(() => { setSel([]); }, [player.playerId]);
   // The slideout may be opened with only id/name/team; tonight's matchup comes from the live pool.
   const live = pool?.players.find((p) => p.playerId === player.playerId) || player;
   const entry = h2h?.skaters?.[String(player.playerId)];
@@ -26,7 +33,9 @@ export default function SkaterCharts({ player, tonight = null }) {
   // 2026-10-21 (user): home / away toggle -- his last 10 games at tonight's venue type (last season + this)
   const venue = entry?.venueGames?.games?.length ? entry.venueGames : null;
   const vLabel = venue?.side === "home" ? "🏠 Home" : "✈️ Road";
-  const active = mode === "team" && !vsTeam ? "l7" : mode === "goalie" && !vsGoalie ? "l7" : mode === "venue" && !venue ? "l7" : mode;
+  const onoff = useOnOff(live.team);
+  const oo = onOffGames(onoff?.team === live.team ? onoff : null, player.playerId, sel, how);
+  const active = oo.match ? "onoff" : mode === "team" && !vsTeam ? "l7" : mode === "goalie" && !vsGoalie ? "l7" : mode === "venue" && !venue ? "l7" : mode;
 
   const btn = (key, label) => (
     <button key={key} className={`pill-btn ${active === key ? "active" : ""}`} onClick={() => setMode(key)}>{label}</button>
@@ -34,7 +43,12 @@ export default function SkaterCharts({ player, tonight = null }) {
 
   return (
     <div style={{ marginTop: 12 }}>
-      {(vsTeam || vsGoalie || venue) && (
+      {onoff?.team === live.team && <OnOffPicker d={onoff} player={player} maps={lineups ? lineupMaps(lineups) : null} sel={sel} setSel={setSel} how={how} setHow={setHow} />}
+      {active === "onoff" && (oo.match.length
+        ? <L7Chart key={`onoff-${how}-${sel.join("-")}`} games={oo.match.slice(-10)} role="skater" showYear />
+        : <div className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>No games match that pick.</div>)}
+
+      {active !== "onoff" && (vsTeam || vsGoalie || venue) && (
         <div className="pill-row" style={{ display: "inline-flex", flexWrap: "wrap", marginBottom: 6 }}>
           {btn("l7", "Last 7")}
           {venue && btn("venue", `${vLabel} (tonight)`)}
@@ -88,7 +102,7 @@ export default function SkaterCharts({ player, tonight = null }) {
           />
         </>
       )}
-      {(vsTeam || vsGoalie || venue) && active !== "l7" && (
+      {(vsTeam || vsGoalie || venue) && active !== "l7" && active !== "onoff" && (
         <div className="mono" style={{ fontSize: 9, color: "var(--muted)", marginTop: 4 }}>
           {active === "venue" ? "Home / road splits are shown for context, not used in any score." : "Head-to-head history is a small sample — shown for context, not used in any score."}
         </div>
