@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-21",
+  "lockedAt": "2026-10-21T21:34:52.226Z",
+  "poolGenerated": "2026-10-21 17:31",
+  "eligible": 81,
+  "confirmed": 81,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 6% of tonight's slate by the grade model (32.6% to score), facing FLA (#2 softest defense of 4 tonight, 3.2 expected goals allowed a game). Matchup-adjusted chance 34.5%.",
+   "playerId": 8482116,
+   "name": "Tim Stutzle",
+   "team": "OTT",
+   "opp": "FLA",
+   "position": "C",
+   "isHome": true,
+   "opponentGoalie": "Akira Schmid",
+   "opponentGoalieId": 8481033,
+   "goalieGrade": "B",
+   "grade": "A+",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 32.6,
+   "adjGoalPct": 34.5,
+   "oppXga": 3.2,
+   "softRank": 2,
+   "sogL5": 1.8,
+   "sogPg": 2.4
+  },
+  {
+   "tier": "mid",
+   "fallback": true,
+   "why": "No mid-tier skater cleared tonight's bar (soft matchup + shots trending up), so this is the best remaining mid-tier chance: 24.2% vs BUF (#1 softest defense of 4 tonight, 3.2 expected goals allowed a game).",
+   "playerId": 8482159,
+   "name": "Tyson Foerster",
+   "team": "PHI",
+   "opp": "BUF",
+   "position": "R",
+   "isHome": false,
+   "opponentGoalie": "Ukko-Pekka Luukkonen",
+   "opponentGoalieId": 8480045,
+   "goalieGrade": "A",
+   "grade": "B",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 22,
+   "adjGoalPct": 24.2,
+   "oppXga": 3.2,
+   "softRank": 1,
+   "sogL5": 1.8,
+   "sogPg": 2.1
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}

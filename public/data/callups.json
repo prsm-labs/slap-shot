@@ -1,13 +1,165 @@
 {
  "_meta": {
-  "generated": "2026-10-21 12:06",
+  "generated": "2026-10-21 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 58,
+  "count": 59,
   "up": 35,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482125,
+   "name": "Alexander Holtz",
+   "team": "VGK",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2002-01-23",
+   "sweater": 10,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "NJD",
+    "round": 1,
+    "overallPick": 7
+   },
+   "recalledOn": "2026-10-21",
+   "from": "Henderson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-21",
+     "type": "up",
+     "club": "Henderson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 4,
+     "assists": 4,
+     "points": 8,
+     "plusMinus": -1,
+     "pim": 6,
+     "team": "Henderson Silver Knights"
+    },
+    "last": {
+     "gamesPlayed": 13,
+     "goals": 2,
+     "assists": 7,
+     "points": 9,
+     "plusMinus": 1,
+     "pim": 2,
+     "team": "Henderson Silver Knights"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 28,
+     "goals": 3,
+     "assists": 6,
+     "points": 9,
+     "plusMinus": -1,
+     "pim": 10,
+     "shots": 30,
+     "team": "Vegas Golden Knights"
+    },
+    "careerGp": 191,
+    "careerG": 26,
+    "careerP": 55
+   }
+  },
+  {
+   "playerId": 8483756,
+   "name": "Jared Wright",
+   "team": "LAK",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2002-11-22",
+   "sweater": 25,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "LAK",
+    "round": 6,
+    "overallPick": 169
+   },
+   "recalledOn": "2026-10-21",
+   "from": "Ontario",
+   "fromLeague": "AHL",
+   "timesRecalled": 3,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-09",
+     "type": "up",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "up",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-10-17",
+     "type": "down",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "up",
+     "club": "Ontario"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 2,
+     "assists": 1,
+     "points": 3,
+     "plusMinus": 0,
+     "pim": 0,
+     "team": "Ontario Reign"
+    },
+    "last": {
+     "gamesPlayed": 54,
+     "goals": 17,
+     "assists": 13,
+     "points": 30,
+     "plusMinus": 27,
+     "pim": 11,
+     "team": "Ontario Reign"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 3,
+     "team": "Los Angeles Kings"
+    },
+    "last": {
+     "gamesPlayed": 23,
+     "goals": 0,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": 0,
+     "pim": 4,
+     "shots": 32,
+     "team": "Los Angeles Kings"
+    },
+    "careerGp": 24,
+    "careerG": 0,
+    "careerP": 4
+   }
+  },
   {
    "playerId": 8483436,
    "name": "Artem Duda",
@@ -194,6 +346,75 @@
    }
   },
   {
+   "playerId": 8482515,
+   "name": "Artur Akhtyamov",
+   "team": "TOR",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-10-31",
+   "sweater": 70,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "TOR",
+    "round": 4,
+    "overallPick": 106
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-21",
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "down",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "wins": 2,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 9,
+     "shotsAgainst": 76,
+     "team": "Toronto Marlies",
+     "savePct": 0.882,
+     "gaa": 2.94
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 0,
+     "losses": 2,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 11,
+     "shotsAgainst": 81,
+     "team": "Toronto Maple Leafs",
+     "savePct": 0.864,
+     "gaa": 5.24
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
    "playerId": 8484242,
    "name": "Brayden Yager",
    "team": "WPG",
@@ -311,70 +532,6 @@
     "careerGp": 78,
     "careerG": 6,
     "careerP": 15
-   }
-  },
-  {
-   "playerId": 8482515,
-   "name": "Artur Akhtyamov",
-   "team": "TOR",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2001-10-31",
-   "sweater": 70,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "TOR",
-    "round": 4,
-    "overallPick": 106
-   },
-   "recalledOn": "2026-10-19",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "wins": 2,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 9,
-     "shotsAgainst": 76,
-     "team": "Toronto Marlies",
-     "savePct": 0.882,
-     "gaa": 2.94
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 0,
-     "losses": 2,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 11,
-     "shotsAgainst": 81,
-     "team": "Toronto Maple Leafs",
-     "savePct": 0.864,
-     "gaa": 5.24
-    },
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": null
    }
   },
   {
@@ -1092,6 +1249,76 @@
    }
   },
   {
+   "playerId": 8477380,
+   "name": "Jonny Brodzinski",
+   "team": "WSH",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "1993-06-19",
+   "sweater": 76,
+   "draft": {
+    "year": 2013,
+    "teamAbbrev": "LAK",
+    "round": 5,
+    "overallPick": 148
+   },
+   "recalledOn": "2026-10-17",
+   "from": "Hershey",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-21",
+   "events": [
+    {
+     "date": "2026-10-17",
+     "type": "up",
+     "club": "Hershey"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "down",
+     "club": "Hershey"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 2,
+     "assists": 3,
+     "points": 5,
+     "plusMinus": 3,
+     "pim": 2,
+     "team": "Hershey Bears"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 4,
+     "team": "Washington Capitals"
+    },
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 6,
+     "assists": 10,
+     "points": 16,
+     "plusMinus": -1,
+     "pim": 12,
+     "shots": 63,
+     "team": "New York Rangers"
+    },
+    "careerGp": 266,
+    "careerG": 33,
+    "careerP": 72
+   }
+  },
+  {
    "playerId": 8481133,
    "name": "Cole Reinhardt",
    "team": "FLA",
@@ -1145,71 +1372,6 @@
     "careerGp": 77,
     "careerG": 10,
     "careerP": 17
-   }
-  },
-  {
-   "playerId": 8477380,
-   "name": "Jonny Brodzinski",
-   "team": "WSH",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "1993-06-19",
-   "sweater": 76,
-   "draft": {
-    "year": 2013,
-    "teamAbbrev": "LAK",
-    "round": 5,
-    "overallPick": 148
-   },
-   "recalledOn": "2026-10-17",
-   "from": "Hershey",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-17",
-     "type": "up",
-     "club": "Hershey"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 2,
-     "assists": 3,
-     "points": 5,
-     "plusMinus": 3,
-     "pim": 2,
-     "team": "Hershey Bears"
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 4,
-     "team": "Washington Capitals"
-    },
-    "last": {
-     "gamesPlayed": 55,
-     "goals": 6,
-     "assists": 10,
-     "points": 16,
-     "plusMinus": -1,
-     "pim": 12,
-     "shots": 63,
-     "team": "New York Rangers"
-    },
-    "careerGp": 266,
-    "careerG": 33,
-    "careerP": 72
    }
   },
   {
@@ -1354,12 +1516,17 @@
    "from": "Coachella Valley",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-10-21",
    "events": [
     {
      "date": "2026-10-16",
      "type": "up",
+     "club": "Coachella Valley"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "down",
      "club": "Coachella Valley"
     }
    ],
@@ -1454,89 +1621,6 @@
     "careerGp": 375,
     "careerG": 52,
     "careerP": 120
-   }
-  },
-  {
-   "playerId": 8483756,
-   "name": "Jared Wright",
-   "team": "LAK",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2002-11-22",
-   "sweater": 25,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "LAK",
-    "round": 6,
-    "overallPick": 169
-   },
-   "recalledOn": "2026-10-15",
-   "from": "Ontario",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": "2026-10-17",
-   "events": [
-    {
-     "date": "2026-10-09",
-     "type": "up",
-     "club": "Ontario"
-    },
-    {
-     "date": "2026-10-15",
-     "type": "up",
-     "club": "Ontario"
-    },
-    {
-     "date": "2026-10-17",
-     "type": "down",
-     "club": "Ontario"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 2,
-     "assists": 1,
-     "points": 3,
-     "plusMinus": 0,
-     "pim": 0,
-     "team": "Ontario Reign"
-    },
-    "last": {
-     "gamesPlayed": 54,
-     "goals": 17,
-     "assists": 13,
-     "points": 30,
-     "plusMinus": 27,
-     "pim": 11,
-     "team": "Ontario Reign"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 3,
-     "team": "Los Angeles Kings"
-    },
-    "last": {
-     "gamesPlayed": 23,
-     "goals": 0,
-     "assists": 4,
-     "points": 4,
-     "plusMinus": 0,
-     "pim": 4,
-     "shots": 32,
-     "team": "Los Angeles Kings"
-    },
-    "careerGp": 24,
-    "careerG": 0,
-    "careerP": 4
    }
   },
   {
@@ -1687,6 +1771,84 @@
    }
   },
   {
+   "playerId": 8484220,
+   "name": "David Reinbacher",
+   "team": "MTL",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2004-10-25",
+   "sweater": 64,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "MTL",
+    "round": 1,
+    "overallPick": 5
+   },
+   "recalledOn": "2026-10-14",
+   "from": "Laval",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-21",
+   "events": [
+    {
+     "date": "2026-10-14",
+     "type": "up",
+     "club": "Laval"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "down",
+     "club": "Laval"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": 3,
+     "pim": 14,
+     "team": "Laval Rocket"
+    },
+    "last": {
+     "gamesPlayed": 57,
+     "goals": 5,
+     "assists": 19,
+     "points": 24,
+     "plusMinus": 18,
+     "pim": 56,
+     "team": "Laval Rocket"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Montr\u00e9al Canadiens"
+    },
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 3,
+     "team": "Montr\u00e9al Canadiens"
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": 1
+   }
+  },
+  {
    "playerId": 8475413,
    "name": "Justin Dowling",
    "team": "NYR",
@@ -1752,79 +1914,6 @@
     "careerGp": 157,
     "careerG": 9,
     "careerP": 26
-   }
-  },
-  {
-   "playerId": 8484220,
-   "name": "David Reinbacher",
-   "team": "MTL",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "2004-10-25",
-   "sweater": 64,
-   "draft": {
-    "year": 2023,
-    "teamAbbrev": "MTL",
-    "round": 1,
-    "overallPick": 5
-   },
-   "recalledOn": "2026-10-14",
-   "from": "Laval",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-14",
-     "type": "up",
-     "club": "Laval"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 2,
-     "points": 2,
-     "plusMinus": 3,
-     "pim": 14,
-     "team": "Laval Rocket"
-    },
-    "last": {
-     "gamesPlayed": 57,
-     "goals": 5,
-     "assists": 19,
-     "points": 24,
-     "plusMinus": 18,
-     "pim": 56,
-     "team": "Laval Rocket"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 1,
-     "team": "Montr\u00e9al Canadiens"
-    },
-    "last": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 3,
-     "team": "Montr\u00e9al Canadiens"
-    },
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": 1
    }
   },
   {
