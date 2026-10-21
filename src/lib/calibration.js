@@ -73,3 +73,28 @@ export function calibratePoint(p, form = { xg: 0, oxg: 0 }) {
   const L = logit(Math.min(Math.max(p, 1e-4), 1 - 1e-4)), c = CALIBRATION.point;
   return sigmoid(c.a * L + c.b * L * L + c.c + c.xg * form.xg + c.oxg * form.oxg);
 }
+
+// Role / ice-time trend (2026-10-21, user: a colleague's "moves up to LW2 / PP1" write-up; scratch learn/nhl_role2.py, nhl_role3.py).
+// dTOI = log(his ice time per game over his last 3 games THIS season / his rate over last season + this season), clipped 0.5-2,
+// added after calibration: logit p' = logit p + coef x dTOI. Same 68,826 Feb-Apr skater-games, held out by season (log loss,
+// e-5, negative = better): goal -10 / +8 / -32 / -72, point -48 / -27 / +4 / -131, assist -49 / -44 / +32 / -74, 3+ SOG
+// -99 / -74 / -111 / -116. Live check on the locked 2026 snapshots 9/29-10/20 (3,399 skater-games with 3 games this season):
+// goal -116, point -221, assist -114, 3+ SOG -91 (ice time up 10%+: goal said 13.6% / happened 15.8%; down 10%+: 14.5% / 11.1%).
+// Power-play time change on its own did not hold (worse in 2 of 4 seasons and live), so it's not used.
+export const ROLE = { goal: 0.637, point: 0.663, assist: 0.608, sog3: 0.949, games: 3 };
+
+export function roleTrend(p) {
+  const log = (p.last7 || []).filter((g) => g.icetime > 0);
+  if (!log.length || !p.games_played || !p.icetime) return 0;
+  const lastDate = log[log.length - 1].date;
+  const y = Number(lastDate.slice(0, 4)) - (Number(lastDate.slice(5, 7)) < 8 ? 1 : 0);
+  const season = log.filter((g) => g.date >= `${y}-08-01`).slice(-ROLE.games);
+  if (season.length < ROLE.games) return 0;
+  const recent = season.reduce((s, g) => s + g.icetime, 0) / season.length;
+  return Math.log(Math.min(2, Math.max(0.5, recent / (p.icetime / p.games_played))));
+}
+
+export function applyRole(prob, key, dTOI) {
+  if (prob == null || !dTOI || !ROLE[key]) return prob;
+  return sigmoid(logit(Math.min(Math.max(prob, 1e-4), 1 - 1e-4)) + ROLE[key] * dTOI);
+}

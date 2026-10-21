@@ -98,7 +98,7 @@ export const MATCHUP_COEF = { goal: 0.114, assist: 0.117, point: 0.138, sog3: 0.
 // Since 2026-10-14 goal and point are then calibrated (top end was over-confident, middle under) and the point
 // chance uses last-120-minutes form — lib/calibration.js. uncal = with matchup, before calibration.
 // 3+ SOG calibrated too since 2026-10-14 (same top-end over-confidence; calibration.js header).
-import { calibrateGoal, calibratePoint, calibrateSog3, formRatios, slateRates } from "./calibration.js";
+import { applyRole, calibrateGoal, calibratePoint, calibrateSog3, formRatios, roleTrend, slateRates } from "./calibration.js";
 
 const GRADE_BANDS = [[0.95, "A+"], [0.85, "A"], [0.65, "B"], [0.35, "C"], [0.15, "D"], [0, "F"]];
 
@@ -190,6 +190,9 @@ export function gradeSlate(players) {
     probs.goal = calibrateGoal(probs.goal);
     probs.point = calibratePoint(probs.point, probs.form);
     if (probs.sog3 != null) probs.sog3 = calibrateSog3(probs.sog3, probs.form);
+    // 2026-10-21 role / ice-time trend (calibration.js ROLE): last 3 games' ice time vs his usual, after calibration
+    probs.role = roleTrend(p);
+    for (const k of ["goal", "point", "assist", "sog3"]) probs[k] = applyRole(probs[k], k, probs.role);
     return { id: p.playerId, probs };
   });
   const n = rows.length;
@@ -214,6 +217,8 @@ export function gradeSlate(players) {
       probs: r.probs,
       matchup: matchup.get(r.id) ? { ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.uncal.goal } : null,
       tooltip: `Grade ${letter} — top ${Math.max(1, 100 - Math.round(pct * 100))}% of tonight's slate. Chances with tonight's matchup: goal ${pr("goal")}, assist ${pr("assist")}, point ${pr("point")}, 3+ SOG ${pr("sog3")}`
+        + (Math.abs(r.probs.role || 0) >= 0.1 ? `
+Ice time last 3 games: ${r.probs.role > 0 ? "+" : ""}${Math.round((Math.exp(r.probs.role) - 1) * 100)}% vs his usual — a ${r.probs.role > 0 ? "bigger" : "smaller"} role lately carries into tonight (built into these chances)` : "")
         + (matchup.get(r.id) ? `
 ${matchupText({ ...matchup.get(r.id), goalBase: r.probs.base.goal, goal: r.probs.uncal.goal })}
 ${DVP_NOTE}` : ""),
