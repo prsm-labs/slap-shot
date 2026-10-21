@@ -1,13 +1,134 @@
 {
  "_meta": {
-  "generated": "2026-10-20 17:34",
+  "generated": "2026-10-21 09:00",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 57,
-  "up": 37,
+  "count": 58,
+  "up": 38,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8483436,
+   "name": "Artem Duda",
+   "team": "UTA",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2004-04-08",
+   "sweater": 84,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "ARI",
+    "round": 2,
+    "overallPick": 36
+   },
+   "recalledOn": "2026-10-20",
+   "from": "Tucson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-20",
+     "type": "up",
+     "club": "Tucson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": 6,
+     "pim": 2,
+     "team": "Tucson Roadrunners"
+    },
+    "last": {
+     "gamesPlayed": 27,
+     "goals": 2,
+     "assists": 11,
+     "points": 13,
+     "plusMinus": 7,
+     "pim": 22,
+     "team": "Tucson Roadrunners"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8484900,
+   "name": "Cooper Black",
+   "team": "FLA",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-06-14",
+   "sweater": 31,
+   "draft": null,
+   "recalledOn": "2026-10-20",
+   "from": "Charlotte",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Charlotte"
+    },
+    {
+     "date": "2026-10-16",
+     "type": "down",
+     "club": "Charlotte"
+    },
+    {
+     "date": "2026-10-20",
+     "type": "up",
+     "club": "Charlotte"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "wins": 2,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 8,
+     "shotsAgainst": 99,
+     "team": "Charlotte Checkers",
+     "savePct": 0.919,
+     "gaa": 2.67
+    },
+    "last": {
+     "gamesPlayed": 42,
+     "wins": 25,
+     "losses": 13,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 103,
+     "shotsAgainst": 1058,
+     "team": "Charlotte Checkers",
+     "savePct": 0.903,
+     "gaa": 2.47
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
   {
    "playerId": 8480259,
    "name": "Ben Jones",
@@ -519,7 +640,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 5,
+     "shots": 1,
+     "team": "New York Islanders"
+    },
     "last": {
      "gamesPlayed": 11,
      "goals": 0,
@@ -530,9 +660,83 @@
      "shots": 9,
      "team": "Tampa Bay Lightning"
     },
-    "careerGp": 109,
+    "careerGp": 110,
     "careerG": 16,
     "careerP": 26
+   }
+  },
+  {
+   "playerId": 8483452,
+   "name": "Hunter Haight",
+   "team": "MIN",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2004-04-04",
+   "sweater": 37,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "MIN",
+    "round": 2,
+    "overallPick": 47
+   },
+   "recalledOn": "2026-10-18",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-20",
+   "events": [
+    {
+     "date": "2026-09-24",
+     "type": "down",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-20",
+     "type": "down",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 3,
+     "assists": 2,
+     "points": 5,
+     "plusMinus": 4,
+     "pim": 4,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 54,
+     "goals": 18,
+     "assists": 14,
+     "points": 32,
+     "plusMinus": -17,
+     "pim": 22,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 9,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": -5,
+     "pim": 4,
+     "shots": 13,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 9,
+    "careerG": 1,
+    "careerP": 2
    }
   },
   {
@@ -610,75 +814,6 @@
    }
   },
   {
-   "playerId": 8483452,
-   "name": "Hunter Haight",
-   "team": "MIN",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2004-04-04",
-   "sweater": 37,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "MIN",
-    "round": 2,
-    "overallPick": 47
-   },
-   "recalledOn": "2026-10-18",
-   "from": "Iowa",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-24",
-     "type": "down",
-     "club": "Iowa"
-    },
-    {
-     "date": "2026-10-18",
-     "type": "up",
-     "club": "Iowa"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 3,
-     "assists": 2,
-     "points": 5,
-     "plusMinus": 4,
-     "pim": 4,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 54,
-     "goals": 18,
-     "assists": 14,
-     "points": 32,
-     "plusMinus": -17,
-     "pim": 22,
-     "team": "Iowa Wild"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 9,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": -5,
-     "pim": 4,
-     "shots": 13,
-     "team": "Minnesota Wild"
-    },
-    "careerGp": 9,
-    "careerG": 1,
-    "careerP": 2
-   }
-  },
-  {
    "playerId": 8479968,
    "name": "Vinni Lettieri",
    "team": "TOR",
@@ -722,17 +857,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
+     "plusMinus": -1,
+     "pim": 2,
      "shots": 1,
      "team": "Toronto Maple Leafs"
     },
     "last": null,
-    "careerGp": 156,
+    "careerGp": 157,
     "careerG": 15,
     "careerP": 32
    }
@@ -785,7 +920,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 1,
+     "team": "St. Louis Blues"
+    },
     "last": {
      "gamesPlayed": 32,
      "goals": 3,
@@ -796,7 +940,7 @@
      "shots": 31,
      "team": "St. Louis Blues"
     },
-    "careerGp": 32,
+    "careerGp": 33,
     "careerG": 3,
     "careerP": 10
    }
@@ -1044,13 +1188,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
-     "assists": 0,
-     "points": 0,
+     "assists": 1,
+     "points": 1,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 2,
+     "shots": 4,
      "team": "Washington Capitals"
     },
     "last": {
@@ -1063,9 +1207,9 @@
      "shots": 63,
      "team": "New York Rangers"
     },
-    "careerGp": 265,
+    "careerGp": 266,
     "careerG": 33,
-    "careerP": 71
+    "careerP": 72
    }
   },
   {
@@ -1109,13 +1253,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
-     "assists": 0,
-     "points": 0,
+     "assists": 1,
+     "points": 1,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 2,
+     "shots": 4,
      "team": "Washington Capitals"
     },
     "last": {
@@ -1128,9 +1272,9 @@
      "shots": 63,
      "team": "New York Rangers"
     },
-    "careerGp": 265,
+    "careerGp": 266,
     "careerG": 33,
-    "careerP": 71
+    "careerP": 72
    }
   },
   {
@@ -1518,13 +1662,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 1,
+     "plusMinus": 0,
      "pim": 2,
-     "shots": 1,
+     "shots": 3,
      "team": "Carolina Hurricanes"
     },
     "last": {
@@ -1537,7 +1681,7 @@
      "shots": 0,
      "team": "Carolina Hurricanes"
     },
-    "careerGp": 3,
+    "careerGp": 4,
     "careerG": 0,
     "careerP": 1
    }
@@ -1681,67 +1825,6 @@
     "careerGp": 3,
     "careerG": 0,
     "careerP": 1
-   }
-  },
-  {
-   "playerId": 8484900,
-   "name": "Cooper Black",
-   "team": "FLA",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2001-06-14",
-   "sweater": 31,
-   "draft": null,
-   "recalledOn": "2026-10-13",
-   "from": "Charlotte",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-16",
-   "events": [
-    {
-     "date": "2026-10-13",
-     "type": "up",
-     "club": "Charlotte"
-    },
-    {
-     "date": "2026-10-16",
-     "type": "down",
-     "club": "Charlotte"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "wins": 2,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 8,
-     "shotsAgainst": 99,
-     "team": "Charlotte Checkers",
-     "savePct": 0.919,
-     "gaa": 2.67
-    },
-    "last": {
-     "gamesPlayed": 42,
-     "wins": 25,
-     "losses": 13,
-     "otLosses": 4,
-     "shutouts": 1,
-     "goalsAgainst": 103,
-     "shotsAgainst": 1058,
-     "team": "Charlotte Checkers",
-     "savePct": 0.903,
-     "gaa": 2.47
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
    }
   },
   {
@@ -2271,7 +2354,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
@@ -2290,7 +2373,7 @@
      "shots": 26,
      "team": "Minnesota Wild"
     },
-    "careerGp": 455,
+    "careerGp": 456,
     "careerG": 58,
     "careerP": 111
    }
@@ -2417,13 +2500,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
+     "gamesPlayed": 2,
+     "goals": 1,
      "assists": 0,
-     "points": 0,
+     "points": 1,
      "plusMinus": 0,
-     "pim": 0,
-     "shots": 0,
+     "pim": 2,
+     "shots": 2,
      "team": "Toronto Maple Leafs"
     },
     "last": {
@@ -2436,9 +2519,9 @@
      "shots": 1,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 4,
-    "careerG": 0,
-    "careerP": 0
+    "careerGp": 5,
+    "careerG": 1,
+    "careerP": 1
    }
   },
   {
@@ -2730,7 +2813,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
@@ -2749,7 +2832,7 @@
      "shots": 4,
      "team": "Minnesota Wild"
     },
-    "careerGp": 47,
+    "careerGp": 48,
     "careerG": 2,
     "careerP": 8
    }
@@ -3430,13 +3513,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 3,
      "assists": 0,
      "points": 3,
      "plusMinus": 2,
      "pim": 7,
-     "shots": 13,
+     "shots": 15,
      "team": "Dallas Stars"
     },
     "last": {
@@ -3449,7 +3532,7 @@
      "shots": 24,
      "team": "Dallas Stars"
     },
-    "careerGp": 33,
+    "careerGp": 34,
     "careerG": 6,
     "careerP": 9
    }
@@ -3487,13 +3570,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 2,
-     "shots": 7,
+     "shots": 9,
      "team": "Dallas Stars"
     },
     "last": {
@@ -3506,7 +3589,7 @@
      "shots": 61,
      "team": "Dallas Stars"
     },
-    "careerGp": 374,
+    "careerGp": 375,
     "careerG": 45,
     "careerP": 106
    }
@@ -3552,17 +3635,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 3,
      "points": 3,
-     "plusMinus": 3,
+     "plusMinus": 2,
      "pim": 2,
      "shots": 7,
      "team": "Anaheim Ducks"
     },
     "last": null,
-    "careerGp": 8,
+    "careerGp": 9,
     "careerG": 0,
     "careerP": 3
    }
@@ -3676,13 +3759,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 2,
      "points": 2,
      "plusMinus": -1,
      "pim": 0,
-     "shots": 5,
+     "shots": 7,
      "team": "Anaheim Ducks"
     },
     "last": {
@@ -3695,7 +3778,7 @@
      "shots": 2,
      "team": "Anaheim Ducks"
     },
-    "careerGp": 22,
+    "careerGp": 23,
     "careerG": 2,
     "careerP": 6
    }
