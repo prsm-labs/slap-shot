@@ -1,8 +1,8 @@
 {
  "_meta": {
   "slateDate": "2026-10-21",
-  "snapshotAt": "2026-10-21T13:01:06.212Z",
-  "poolGenerated": "2026-10-21 08:58",
+  "snapshotAt": "2026-10-21T16:06:54.134Z",
+  "poolGenerated": "2026-10-21 12:03",
   "games": [
    {
     "gameId": 2026020152,
@@ -10,9 +10,9 @@
     "home": "BUF",
     "startTimeUTC": "2026-10-21T23:30:00Z",
     "awayGoalie": "Dan Vladar",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Likely",
     "homeGoalie": "Ukko-Pekka Luukkonen",
-    "homeGoalieStatus": "Unconfirmed"
+    "homeGoalieStatus": "Confirmed"
    },
    {
     "gameId": 2026020153,
@@ -22,7 +22,7 @@
     "awayGoalie": "Akira Schmid",
     "awayGoalieStatus": "Unconfirmed",
     "homeGoalie": "Linus Ullmark",
-    "homeGoalieStatus": "Unconfirmed"
+    "homeGoalieStatus": "Likely"
    }
   ],
   "scoreVersion": 5,
@@ -4406,8 +4406,8 @@
    "isHome": true,
    "goalieId": 8480045,
    "goalie": "Ukko-Pekka Luukkonen",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 25.9,
    "saves": 23.3,
