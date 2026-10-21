@@ -23,7 +23,10 @@ export default function SkaterCharts({ player, tonight = null }) {
   const vsTeam = entry?.vsTeam;
   const goalieId = live.opponentGoalieId != null ? String(live.opponentGoalieId) : null;
   const vsGoalie = goalieId ? entry?.vsGoalie?.[goalieId] : null;
-  const active = mode === "team" && !vsTeam ? "l7" : mode === "goalie" && !vsGoalie ? "l7" : mode;
+  // 2026-10-21 (user): home / away toggle -- his last 10 games at tonight's venue type (last season + this)
+  const venue = entry?.venueGames?.games?.length ? entry.venueGames : null;
+  const vLabel = venue?.side === "home" ? "🏠 Home" : "✈️ Road";
+  const active = mode === "team" && !vsTeam ? "l7" : mode === "goalie" && !vsGoalie ? "l7" : mode === "venue" && !venue ? "l7" : mode;
 
   const btn = (key, label) => (
     <button key={key} className={`pill-btn ${active === key ? "active" : ""}`} onClick={() => setMode(key)}>{label}</button>
@@ -31,9 +34,10 @@ export default function SkaterCharts({ player, tonight = null }) {
 
   return (
     <div style={{ marginTop: 12 }}>
-      {(vsTeam || vsGoalie) && (
+      {(vsTeam || vsGoalie || venue) && (
         <div className="pill-row" style={{ display: "inline-flex", flexWrap: "wrap", marginBottom: 6 }}>
           {btn("l7", "Last 7")}
+          {venue && btn("venue", `${vLabel} (tonight)`)}
           {vsTeam && btn("team", `H2H vs ${vsTeam.opp}`)}
           {vsGoalie && btn("goalie", `H2H vs ${vsGoalie.goalie}`)}
         </div>
@@ -44,6 +48,17 @@ export default function SkaterCharts({ player, tonight = null }) {
         ...(live.last7 || player.last7 || []).filter((g) => !tonight?.skater || String(g.gameId) !== String(tonight.gameId)),
         ...(tonight?.started && tonight.skater ? [{ ...tonight.skater, gameId: tonight.gameId, opp: tonight.them.abbrev, home: tonight.home.abbrev === tonight.us.abbrev, today: true, live: tonight.live }] : []),
       ]} role="skater" />}
+
+      {active === "venue" && (
+        <>
+          <div className="mono" style={{ fontSize: 10, color: "var(--muted)", margin: "4px 0" }}>
+            Last {venue.games.length} {venue.side === "home" ? "home" : "road"} games (last season + this, regular season):{" "}
+            {venue.games.reduce((a, g) => a + g.goals, 0)} G, {venue.games.reduce((a, g) => a + g.points, 0)} P,{" "}
+            {venue.games.reduce((a, g) => a + g.sog, 0)} SOG. Tonight he plays {venue.side === "home" ? "at home" : "on the road"}.
+          </div>
+          <L7Chart key="venue" games={venue.games} role="skater" showYear />
+        </>
+      )}
 
       {active === "team" && (
         <>
@@ -73,9 +88,9 @@ export default function SkaterCharts({ player, tonight = null }) {
           />
         </>
       )}
-      {(vsTeam || vsGoalie) && active !== "l7" && (
+      {(vsTeam || vsGoalie || venue) && active !== "l7" && (
         <div className="mono" style={{ fontSize: 9, color: "var(--muted)", marginTop: 4 }}>
-          Head-to-head history is a small sample — shown for context, not used in any score.
+          {active === "venue" ? "Home / road splits are shown for context, not used in any score." : "Head-to-head history is a small sample — shown for context, not used in any score."}
         </div>
       )}
     </div>
