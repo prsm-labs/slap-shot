@@ -1,0 +1,4882 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-21",
+  "lockedAt": "2026-10-21T23:10:13.321Z",
+  "firstPuck": "2026-10-21T23:30:00Z",
+  "firstGame": "PHI@BUF",
+  "firstGameOfficial": false,
+  "late": false,
+  "backfilled": false,
+  "gamesLocked": [
+   "PHI@BUF",
+   "FLA@OTT"
+  ],
+  "teamsOfficial": [],
+  "lineupsLoaded": false,
+  "poolGenerated": "2026-10-21 17:31",
+  "oddsLoaded": true,
+  "note": "Locked Pairs (src/lib/pairs.js, every mode, no boost). Never recomputed after this file is written."
+ },
+ "modes": {
+  "balanced": [
+   {
+    "key": "8477933:goal|8479420:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.3,
+    "fair": 601,
+    "starRank": 2,
+    "star": 1.012,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      135,
+      210
+     ],
+     "american": 629,
+     "dec": 7.285
+    },
+    "evPct": 3.9,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 135,
+       "bestBook": "FD",
+       "books": {
+        "DK": 130,
+        "BR": 125,
+        "FD": 135,
+        "BOV": 133
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328638916_13L42133Q1100066802Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205741|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=21604085"
+       }
+      },
+      "edge": -3
+     },
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 36,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": {
+       "best": 215,
+       "bestBook": "DK",
+       "books": {
+        "DK": 215,
+        "BR": 205,
+        "FD": 210,
+        "BOV": 200
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685136_13L42133Q11622144764Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989790|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12496387"
+       }
+      },
+      "edge": 4.3
+     }
+    ]
+   },
+   {
+    "key": "8481533:goal|8482116:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 10.4,
+    "fair": 866,
+    "starRank": 1,
+    "star": 1.021,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      210,
+      260
+     ],
+     "american": 1016,
+     "dec": 11.16
+    },
+    "evPct": 15.5,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 210,
+       "bestBook": "BR",
+       "books": {
+        "DK": 195,
+        "BR": 210,
+        "FD": 210,
+        "BOV": 200
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685125_13L42133Q1251655568Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382951738|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=53669010"
+       }
+      },
+      "edge": 2.2
+     },
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 30,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": {
+       "best": 260,
+       "bestBook": "FD",
+       "books": {
+        "DK": 255,
+        "BR": 255,
+        "FD": 260,
+        "BOV": 255
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639745_13L42133Q11335855067Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205748|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=24660527"
+       }
+      },
+      "edge": 2.2
+     }
+    ]
+   },
+   {
+    "key": "8476461:goal|8482113:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 4.5,
+    "fair": 2124,
+    "starRank": null,
+    "star": 0.572,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      400,
+      650
+     ],
+     "american": 3650,
+     "dec": 37.5
+    },
+    "evPct": 68.6,
+    "legs": [
+     {
+      "playerId": 8482113,
+      "name": "Anton Lundell",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 24.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": {
+       "best": 400,
+       "bestBook": "FD",
+       "books": {
+        "DK": 380,
+        "BR": 370,
+        "FD": 400,
+        "BOV": 370
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685151_13L42133Q11982014914Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382940170|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=36305281"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8476461,
+      "name": "Sean Couturier",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 18.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": {
+       "best": 650,
+       "bestBook": "FD",
+       "books": {
+        "DK": 550,
+        "BR": 575,
+        "FD": 650,
+        "BOV": 550
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639649_13L42133Q1-1727265552Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205752|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=12449419"
+       }
+      },
+      "edge": 4.9
+     }
+    ]
+   },
+   {
+    "key": "8482092:goal|8483787:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 3.3,
+    "fair": 2886,
+    "starRank": null,
+    "star": 0.241,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      550,
+      550
+     ],
+     "american": 4125,
+     "dec": 42.25
+    },
+    "evPct": 41.5,
+    "legs": [
+     {
+      "playerId": 8483787,
+      "name": "Cole Knuble",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 18.4,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": null,
+      "book": {
+       "best": 550,
+       "bestBook": "DK",
+       "books": {
+        "DK": 550,
+        "BR": 510,
+        "BOV": 500
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639882_13L42133Q11440918251Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383208637|{wagerAmount}"
+       }
+      },
+      "edge": 3
+     },
+     {
+      "playerId": 8482092,
+      "name": "Ridly Greig",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 18.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "D",
+      "book": {
+       "best": 550,
+       "bestBook": "DK",
+       "books": {
+        "DK": 550,
+        "BOV": 500
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685130_13L42133Q1-989903Q20"
+       }
+      },
+      "edge": 2.8
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482105:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 40.2,
+    "fair": 149,
+    "starRank": 3,
+    "star": 0.99,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481528:point|8482667:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 29,
+    "fair": 245,
+    "starRank": null,
+    "star": 0.815,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482667,
+      "name": "William Eklund",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 51.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481528,
+      "name": "Dylan Cozens",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 50.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479314:point|8483676:goal",
+    "section": "🔥 Due / heating",
+    "rel": "opp",
+    "corr": 0.98,
+    "chancePct": 11.3,
+    "fair": 783,
+    "starRank": null,
+    "star": 0.55,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483676,
+      "name": "Stephen Halliday",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 19,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": null,
+      "book": {
+       "best": 460,
+       "bestBook": "BR",
+       "books": {
+        "DK": 425,
+        "BR": 460,
+        "FD": 440,
+        "BOV": 405
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685134_13L42133Q12080546489Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382951701|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=91486988"
+       }
+      },
+      "edge": 1.1
+     },
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477495:point|8480801:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 36.7,
+    "fair": 172,
+    "starRank": 4,
+    "star": 0.964,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477495,
+      "name": "Seth Jones",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 54.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477935:sog3|8480015:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 19.1,
+    "fair": 423,
+    "starRank": 5,
+    "star": 0.93,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480015,
+      "name": "Owen Tippett",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 46.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477935,
+      "name": "Sam Bennett",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 41.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8473419:goal|8478439:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 8.1,
+    "fair": 1140,
+    "starRank": null,
+    "star": 0.887,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8473419,
+      "name": "Brad Marchand",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 28.7,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478439,
+      "name": "Travis Konecny",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 28.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "value": [
+   {
+    "key": "8476461:goal|8482113:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 4.5,
+    "fair": 2124,
+    "starRank": 5,
+    "star": 0.572,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      400,
+      650
+     ],
+     "american": 3650,
+     "dec": 37.5
+    },
+    "evPct": 68.6,
+    "legs": [
+     {
+      "playerId": 8482113,
+      "name": "Anton Lundell",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 24.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": {
+       "best": 400,
+       "bestBook": "FD",
+       "books": {
+        "DK": 380,
+        "BR": 370,
+        "FD": 400,
+        "BOV": 370
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685151_13L42133Q11982014914Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382940170|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=36305281"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8476461,
+      "name": "Sean Couturier",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 18.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": {
+       "best": 650,
+       "bestBook": "FD",
+       "books": {
+        "DK": 550,
+        "BR": 575,
+        "FD": 650,
+        "BOV": 550
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639649_13L42133Q1-1727265552Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205752|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=12449419"
+       }
+      },
+      "edge": 4.9
+     }
+    ]
+   },
+   {
+    "key": "8476461:goal|8482105:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 3.5,
+    "fair": 2718,
+    "starRank": null,
+    "star": 0.338,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      500,
+      650
+     ],
+     "american": 4400,
+     "dec": 45
+    },
+    "evPct": 59.7,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "goal",
+      "chancePct": 19.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 500,
+       "bestBook": "DK",
+       "books": {
+        "DK": 500,
+        "BR": 500,
+        "FD": 500,
+        "BOV": 460
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685132_13L42133Q1-1002730163Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989712|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=36305278"
+       }
+      },
+      "edge": 2.8
+     },
+     {
+      "playerId": 8476461,
+      "name": "Sean Couturier",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 18.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": {
+       "best": 650,
+       "bestBook": "FD",
+       "books": {
+        "DK": 550,
+        "BR": 575,
+        "FD": 650,
+        "BOV": 550
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639649_13L42133Q1-1727265552Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205752|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=12449419"
+       }
+      },
+      "edge": 4.9
+     }
+    ]
+   },
+   {
+    "key": "8482113:goal|8483787:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 4.5,
+    "fair": 2100,
+    "starRank": null,
+    "star": 0.499,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      380,
+      550
+     ],
+     "american": 3020,
+     "dec": 31.2
+    },
+    "evPct": 41.8,
+    "legs": [
+     {
+      "playerId": 8482113,
+      "name": "Anton Lundell",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 24.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": {
+       "best": 400,
+       "bestBook": "FD",
+       "books": {
+        "DK": 380,
+        "BR": 370,
+        "FD": 400,
+        "BOV": 370
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685151_13L42133Q11982014914Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382940170|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=36305281"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8483787,
+      "name": "Cole Knuble",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 18.4,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": null,
+      "book": {
+       "best": 550,
+       "bestBook": "DK",
+       "books": {
+        "DK": 550,
+        "BR": 510,
+        "BOV": 500
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639882_13L42133Q11440918251Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383208637|{wagerAmount}"
+       }
+      },
+      "edge": 3
+     }
+    ]
+   },
+   {
+    "key": "8482092:goal|8483787:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 3.3,
+    "fair": 2886,
+    "starRank": null,
+    "star": 0.241,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      550,
+      550
+     ],
+     "american": 4125,
+     "dec": 42.25
+    },
+    "evPct": 41.5,
+    "legs": [
+     {
+      "playerId": 8483787,
+      "name": "Cole Knuble",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 18.4,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": null,
+      "book": {
+       "best": 550,
+       "bestBook": "DK",
+       "books": {
+        "DK": 550,
+        "BR": 510,
+        "BOV": 500
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639882_13L42133Q11440918251Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383208637|{wagerAmount}"
+       }
+      },
+      "edge": 3
+     },
+     {
+      "playerId": 8482092,
+      "name": "Ridly Greig",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 18.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "D",
+      "book": {
+       "best": 550,
+       "bestBook": "DK",
+       "books": {
+        "DK": 550,
+        "BOV": 500
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685130_13L42133Q1-989903Q20"
+       }
+      },
+      "edge": 2.8
+     }
+    ]
+   },
+   {
+    "key": "8480220:goal|8482105:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 3.4,
+    "fair": 2882,
+    "starRank": null,
+    "star": 0.211,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      500,
+      550
+     ],
+     "american": 3800,
+     "dec": 39
+    },
+    "evPct": 30.8,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "goal",
+      "chancePct": 19.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 500,
+       "bestBook": "DK",
+       "books": {
+        "DK": 500,
+        "BR": 500,
+        "FD": 500,
+        "BOV": 460
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685132_13L42133Q1-1002730163Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989712|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=36305278"
+       }
+      },
+      "edge": 2.8
+     },
+     {
+      "playerId": 8480220,
+      "name": "Noah Cates",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 17.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": {
+       "best": 550,
+       "bestBook": "FD",
+       "books": {
+        "DK": 500,
+        "BR": 500,
+        "FD": 550,
+        "BOV": 475
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639791_13L42133Q11056117490Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205798|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=43961294"
+       }
+      },
+      "edge": 1.8
+     }
+    ]
+   },
+   {
+    "key": "8473512:goal|8480220:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 3.8,
+    "fair": 2555,
+    "starRank": null,
+    "star": 0.282,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      420,
+      550
+     ],
+     "american": 3280,
+     "dec": 33.8
+    },
+    "evPct": 27.3,
+    "legs": [
+     {
+      "playerId": 8473512,
+      "name": "Claude Giroux",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 21.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": {
+       "best": 420,
+       "bestBook": "FD",
+       "books": {
+        "DK": 400,
+        "BR": 360,
+        "FD": 420,
+        "BOV": 395
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685112_13L42133Q1-2037500365Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989762|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12449427"
+       }
+      },
+      "edge": 2.7
+     },
+     {
+      "playerId": 8480220,
+      "name": "Noah Cates",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 17.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": {
+       "best": 550,
+       "bestBook": "FD",
+       "books": {
+        "DK": 500,
+        "BR": 500,
+        "FD": 550,
+        "BOV": 475
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639791_13L42133Q11056117490Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205798|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=43961294"
+       }
+      },
+      "edge": 1.8
+     }
+    ]
+   },
+   {
+    "key": "8481533:goal|8482092:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 5.5,
+    "fair": 1732,
+    "starRank": 3,
+    "star": 0.652,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      255,
+      550
+     ],
+     "american": 2208,
+     "dec": 23.075
+    },
+    "evPct": 26,
+    "legs": [
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 30,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": {
+       "best": 260,
+       "bestBook": "FD",
+       "books": {
+        "DK": 255,
+        "BR": 255,
+        "FD": 260,
+        "BOV": 255
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639745_13L42133Q11335855067Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205748|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=24660527"
+       }
+      },
+      "edge": 2.2
+     },
+     {
+      "playerId": 8482092,
+      "name": "Ridly Greig",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 18.2,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "D",
+      "book": {
+       "best": 550,
+       "bestBook": "DK",
+       "books": {
+        "DK": 550,
+        "BOV": 500
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685130_13L42133Q1-989903Q20"
+       }
+      },
+      "edge": 2.8
+     }
+    ]
+   },
+   {
+    "key": "8473512:goal|8481533:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 6.6,
+    "fair": 1422,
+    "starRank": 2,
+    "star": 0.817,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      260,
+      420
+     ],
+     "american": 1772,
+     "dec": 18.72
+    },
+    "evPct": 23,
+    "legs": [
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 30,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": {
+       "best": 260,
+       "bestBook": "FD",
+       "books": {
+        "DK": 255,
+        "BR": 255,
+        "FD": 260,
+        "BOV": 255
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639745_13L42133Q11335855067Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205748|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=24660527"
+       }
+      },
+      "edge": 2.2
+     },
+     {
+      "playerId": 8473512,
+      "name": "Claude Giroux",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 21.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": {
+       "best": 420,
+       "bestBook": "FD",
+       "books": {
+        "DK": 400,
+        "BR": 360,
+        "FD": 420,
+        "BOV": 395
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685112_13L42133Q1-2037500365Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989762|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12449427"
+       }
+      },
+      "edge": 2.7
+     }
+    ]
+   },
+   {
+    "key": "8477933:goal|8477989:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 8.2,
+    "fair": 1124,
+    "starRank": 1,
+    "star": 0.925,
+    "parlay": {
+     "book": "BR",
+     "legs": [
+      205,
+      340
+     ],
+     "american": 1242,
+     "dec": 13.42
+    },
+    "evPct": 9.7,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 36,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": {
+       "best": 215,
+       "bestBook": "DK",
+       "books": {
+        "DK": 215,
+        "BR": 205,
+        "FD": 210,
+        "BOV": 200
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685136_13L42133Q11622144764Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989790|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12496387"
+       }
+      },
+      "edge": 4.3
+     },
+     {
+      "playerId": 8477989,
+      "name": "Christian Dvorak",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 22.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "D",
+      "book": {
+       "best": 340,
+       "bestBook": "BR",
+       "books": {
+        "DK": 290,
+        "BR": 340,
+        "FD": 280,
+        "BOV": 270
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639728_13L42133Q11833759263Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205718|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=12496411"
+       }
+      },
+      "edge": 0
+     }
+    ]
+   },
+   {
+    "key": "8477933:goal|8483731:goal",
+    "section": "💰 Value",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 5.6,
+    "fair": 1681,
+    "starRank": 4,
+    "star": 0.63,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      210,
+      525
+     ],
+     "american": 1838,
+     "dec": 19.375
+    },
+    "evPct": 8.8,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 36,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": {
+       "best": 215,
+       "bestBook": "DK",
+       "books": {
+        "DK": 215,
+        "BR": 205,
+        "FD": 210,
+        "BOV": 200
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685136_13L42133Q11622144764Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989790|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12496387"
+       }
+      },
+      "edge": 4.3
+     },
+     {
+      "playerId": 8483731,
+      "name": "Alex Bump",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 15.6,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": null,
+      "book": {
+       "best": 525,
+       "bestBook": "FD",
+       "books": {
+        "DK": 450,
+        "BR": 480,
+        "FD": 525,
+        "BOV": 460
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639862_13L42133Q157074438Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383217538|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=96028243"
+       }
+      },
+      "edge": -0.4
+     }
+    ]
+   }
+  ],
+  "safest": [
+   {
+    "key": "8477933:point|8479314:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 45,
+    "fair": 122,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477933:point|8480801:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 44.8,
+    "fair": 123,
+    "starRank": 2,
+    "star": 0.999,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8482105:point|8482116:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 44.3,
+    "fair": 126,
+    "starRank": 3,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482116:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 43.2,
+    "fair": 131,
+    "starRank": 4,
+    "star": 0.995,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479314:point|8480801:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 41.2,
+    "fair": 143,
+    "starRank": 5,
+    "star": 0.991,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482105:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 40.2,
+    "fair": 149,
+    "starRank": null,
+    "star": 0.99,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:point|8480839:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 40.1,
+    "fair": 150,
+    "starRank": null,
+    "star": 0.987,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480839,
+      "name": "Rasmus Dahlin",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:point|8481533:point",
+    "section": "🛡️ Safest",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 37.4,
+    "fair": 168,
+    "starRank": null,
+    "star": 0.97,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478439:point|8481533:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 36,
+    "fair": 178,
+    "starRank": null,
+    "star": 0.959,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478439,
+      "name": "Travis Konecny",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8473419:point|8477495:point",
+    "section": "🛡️ Safest",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 31.6,
+    "fair": 217,
+    "starRank": null,
+    "star": 0.887,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477495,
+      "name": "Seth Jones",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 54.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8473419,
+      "name": "Brad Marchand",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 52,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "due": [
+   {
+    "key": "8482116:point|8482667:goal",
+    "section": "🔥 Due / heating",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 16.9,
+    "fair": 490,
+    "starRank": 1,
+    "star": 0.902,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482667,
+      "name": "William Eklund",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 23.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8482105:point|8482667:goal",
+    "section": "🔥 Due / heating",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 15.7,
+    "fair": 535,
+    "starRank": 2,
+    "star": 0.863,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482667,
+      "name": "William Eklund",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 23.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8482105:goal|8482116:point",
+    "section": "🔥 Due / heating",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 14.2,
+    "fair": 602,
+    "starRank": 3,
+    "star": 0.784,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "goal",
+      "chancePct": 19.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 500,
+       "bestBook": "DK",
+       "books": {
+        "DK": 500,
+        "BR": 500,
+        "FD": 500,
+        "BOV": 460
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685132_13L42133Q1-1002730163Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989712|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=36305278"
+       }
+      },
+      "edge": 2.8
+     },
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8483676:goal",
+    "section": "🔥 Due / heating",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 12.6,
+    "fair": 694,
+    "starRank": 4,
+    "star": 0.67,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483676,
+      "name": "Stephen Halliday",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 19,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": null,
+      "book": {
+       "best": 460,
+       "bestBook": "BR",
+       "books": {
+        "DK": 425,
+        "BR": 460,
+        "FD": 440,
+        "BOV": 405
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685134_13L42133Q12080546489Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382951701|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=91486988"
+       }
+      },
+      "edge": 1.1
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:point|8483676:goal",
+    "section": "🔥 Due / heating",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12.4,
+    "fair": 704,
+    "starRank": 5,
+    "star": 0.656,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8483676,
+      "name": "Stephen Halliday",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 19,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": null,
+      "book": {
+       "best": 460,
+       "bestBook": "BR",
+       "books": {
+        "DK": 425,
+        "BR": 460,
+        "FD": 440,
+        "BOV": 405
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685134_13L42133Q12080546489Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382951701|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=91486988"
+       }
+      },
+      "edge": 1.1
+     },
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "soft": [
+   {
+    "key": "8482105:point|8482116:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 44.3,
+    "fair": 126,
+    "starRank": 1,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482116:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 43.2,
+    "fair": 131,
+    "starRank": 2,
+    "star": 0.995,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482105:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 40.2,
+    "fair": 149,
+    "starRank": 3,
+    "star": 0.99,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481533:point|8482667:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 30,
+    "fair": 233,
+    "starRank": 4,
+    "star": 0.852,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482667,
+      "name": "William Eklund",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 51.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481528:point|8481533:point",
+    "section": "▲ Soft matchup",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 29.8,
+    "fair": 236,
+    "starRank": 5,
+    "star": 0.842,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481528,
+      "name": "Dylan Cozens",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 50.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481528:point|8482667:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 29,
+    "fair": 245,
+    "starRank": null,
+    "star": 0.815,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482667,
+      "name": "William Eklund",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 51.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481528,
+      "name": "Dylan Cozens",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 50.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8473512:point|8481596:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 24.9,
+    "fair": 302,
+    "starRank": null,
+    "star": 0.643,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481596,
+      "name": "Shane Pinto",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 47.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8473512,
+      "name": "Claude Giroux",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 46.4,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478469:point|8481596:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 23.8,
+    "fair": 321,
+    "starRank": null,
+    "star": 0.588,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481596,
+      "name": "Shane Pinto",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 47.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478469,
+      "name": "Thomas Chabot",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 44.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8473512:point|8478469:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 23,
+    "fair": 334,
+    "starRank": null,
+    "star": 0.534,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8473512,
+      "name": "Claude Giroux",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 46.4,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478469,
+      "name": "Thomas Chabot",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 44.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477948:point|8482142:point",
+    "section": "▲ Soft matchup",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 19.4,
+    "fair": 415,
+    "starRank": null,
+    "star": 0.295,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477948,
+      "name": "Travis Sanheim",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 44.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482142,
+      "name": "Jamie Drysdale",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 39.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "stacks": [
+   {
+    "key": "8477933:point|8479314:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 45,
+    "fair": 122,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477933:point|8480801:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 44.8,
+    "fair": 123,
+    "starRank": 2,
+    "star": 0.999,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8482105:point|8482116:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 44.3,
+    "fair": 126,
+    "starRank": 3,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482116:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 43.2,
+    "fair": 131,
+    "starRank": 4,
+    "star": 0.995,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479314:point|8480801:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 41.2,
+    "fair": 143,
+    "starRank": 5,
+    "star": 0.991,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482105:point",
+    "section": "🔗 Teammates",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 40.2,
+    "fair": 149,
+    "starRank": null,
+    "star": 0.99,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:point|8481533:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 37.4,
+    "fair": 168,
+    "starRank": null,
+    "star": 0.97,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478439:point|8479420:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 34.7,
+    "fair": 188,
+    "starRank": null,
+    "star": 0.937,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478439,
+      "name": "Travis Konecny",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480839:point|8481533:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 31.1,
+    "fair": 221,
+    "starRank": null,
+    "star": 0.881,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480839,
+      "name": "Rasmus Dahlin",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478439:point|8480839:point",
+    "section": "⚔️ Opponents",
+    "rel": "opp",
+    "corr": 0.97,
+    "chancePct": 28.9,
+    "fair": 246,
+    "starRank": null,
+    "star": 0.814,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8478439,
+      "name": "Travis Konecny",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480839,
+      "name": "Rasmus Dahlin",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "balanced:goal": [
+   {
+    "key": "8477933:goal|8479420:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.3,
+    "fair": 601,
+    "starRank": 1,
+    "star": 1.012,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      135,
+      210
+     ],
+     "american": 629,
+     "dec": 7.285
+    },
+    "evPct": 3.9,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 39.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 135,
+       "bestBook": "FD",
+       "books": {
+        "DK": 130,
+        "BR": 125,
+        "FD": 135,
+        "BOV": 133
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328638916_13L42133Q1100066802Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205741|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=21604085"
+       }
+      },
+      "edge": -3
+     },
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 36,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": {
+       "best": 215,
+       "bestBook": "DK",
+       "books": {
+        "DK": 215,
+        "BR": 205,
+        "FD": 210,
+        "BOV": 200
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685136_13L42133Q11622144764Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989790|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12496387"
+       }
+      },
+      "edge": 4.3
+     }
+    ]
+   },
+   {
+    "key": "8480208:goal|8482116:goal",
+    "section": "🚨 Goals",
+    "rel": "team",
+    "corr": 1,
+    "chancePct": 11.3,
+    "fair": 784,
+    "starRank": 2,
+    "star": 0.987,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 34.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 210,
+       "bestBook": "BR",
+       "books": {
+        "DK": 195,
+        "BR": 210,
+        "FD": 210,
+        "BOV": 200
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685125_13L42133Q1251655568Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382951738|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=53669010"
+       }
+      },
+      "edge": 2.2
+     },
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 32.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 230,
+       "bestBook": "FD",
+       "books": {
+        "DK": 215,
+        "BR": 225,
+        "FD": 230,
+        "BOV": 215
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685124_13L42133Q11266120167Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382940228|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=38521911"
+       }
+      },
+      "edge": 2.5
+     }
+    ]
+   },
+   {
+    "key": "8480801:goal|8481533:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 9.8,
+    "fair": 919,
+    "starRank": 3,
+    "star": 0.936,
+    "parlay": {
+     "book": "DK",
+     "legs": [
+      160,
+      255
+     ],
+     "american": 823,
+     "dec": 9.23
+    },
+    "evPct": -9.5,
+    "legs": [
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 32.7,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": {
+       "best": 160,
+       "bestBook": "DK",
+       "books": {
+        "DK": 160,
+        "BR": 150,
+        "FD": 155,
+        "BOV": 152
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685140_13L42133Q1100180496Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989776|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=20852680"
+       }
+      },
+      "edge": -5.8
+     },
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 30,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": {
+       "best": 260,
+       "bestBook": "FD",
+       "books": {
+        "DK": 255,
+        "BR": 255,
+        "FD": 260,
+        "BOV": 255
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639745_13L42133Q11335855067Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205748|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=24660527"
+       }
+      },
+      "edge": 2.2
+     }
+    ]
+   },
+   {
+    "key": "8479314:goal|8480015:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 8.6,
+    "fair": 1065,
+    "starRank": 4,
+    "star": 0.913,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 29.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": {
+       "best": 230,
+       "bestBook": "DK",
+       "books": {
+        "DK": 230,
+        "BR": 205,
+        "FD": 220,
+        "BOV": 215
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685137_13L42133Q1-648785476Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382951760|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12452414"
+       }
+      },
+      "edge": -0.7
+     },
+     {
+      "playerId": 8480015,
+      "name": "Owen Tippett",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 29,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8473419:goal|8478439:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 8.1,
+    "fair": 1140,
+    "starRank": 5,
+    "star": 0.887,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8473419,
+      "name": "Brad Marchand",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 28.7,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478439,
+      "name": "Travis Konecny",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 28.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481528:goal|8482097:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 7.6,
+    "fair": 1218,
+    "starRank": null,
+    "star": 0.806,
+    "parlay": {
+     "book": "FD",
+     "legs": [
+      240,
+      230
+     ],
+     "american": 1022,
+     "dec": 11.22
+    },
+    "evPct": -14.9,
+    "legs": [
+     {
+      "playerId": 8481528,
+      "name": "Dylan Cozens",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 28.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": {
+       "best": 245,
+       "bestBook": "DK",
+       "books": {
+        "DK": 245,
+        "BR": 235,
+        "FD": 240,
+        "BOV": 235
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685123_13L42133Q11830240850Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382940220|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=24660522"
+       }
+      },
+      "edge": -0.9
+     },
+     {
+      "playerId": 8482097,
+      "name": "Jack Quinn",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 27,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A+",
+      "book": {
+       "best": 230,
+       "bestBook": "FD",
+       "books": {
+        "DK": 210,
+        "BR": 225,
+        "FD": 230,
+        "BOV": 215
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639297_13L42133Q1-880335985Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383208619|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=36305293"
+       }
+      },
+      "edge": -3.3
+     }
+    ]
+   },
+   {
+    "key": "8477409:goal|8477935:goal",
+    "section": "🚨 Goals",
+    "rel": "team",
+    "corr": 1,
+    "chancePct": 6.8,
+    "fair": 1364,
+    "starRank": null,
+    "star": 0.784,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477935,
+      "name": "Sam Bennett",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 27,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": {
+       "best": 220,
+       "bestBook": "DK",
+       "books": {
+        "DK": 220,
+        "BR": 205,
+        "FD": 210,
+        "BOV": 205
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685146_13L42133Q11509694793Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382989770|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=12452422"
+       }
+      },
+      "edge": -4.2
+     },
+     {
+      "playerId": 8477409,
+      "name": "Carter Verhaeghe",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 25.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "A",
+      "book": {
+       "best": 225,
+       "bestBook": "DK",
+       "books": {
+        "DK": 225,
+        "BR": 225,
+        "FD": 220,
+        "BOV": 215
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685142_13L42133Q1-1944035273Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382951803|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=28059650"
+       }
+      },
+      "edge": -5.5
+     }
+    ]
+   },
+   {
+    "key": "8481596:goal|8482159:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 6.3,
+    "fair": 1489,
+    "starRank": null,
+    "star": 0.711,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481596,
+      "name": "Shane Pinto",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 26,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "B",
+      "book": {
+       "best": 310,
+       "bestBook": "DK",
+       "books": {
+        "DK": 310,
+        "BR": 300,
+        "FD": 300,
+        "BOV": 285
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685129_13L42133Q11314041895Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382940201|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=40934208"
+       }
+      },
+      "edge": 1.6
+     },
+     {
+      "playerId": 8482159,
+      "name": "Tyson Foerster",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "goal",
+      "chancePct": 24.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8475722:goal|8482113:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 6,
+    "fair": 1580,
+    "starRank": null,
+    "star": 0.647,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482113,
+      "name": "Anton Lundell",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 24.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": {
+       "best": 400,
+       "bestBook": "FD",
+       "books": {
+        "DK": 380,
+        "BR": 370,
+        "FD": 400,
+        "BOV": 370
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380672313%232327685151_13L42133Q11982014914Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409827?coupon={pickType}|4382940170|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618178007&selectionId=36305281"
+       }
+      },
+      "edge": 4.7
+     },
+     {
+      "playerId": 8475722,
+      "name": "Jason Zucker",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 24.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477989:goal|8482667:goal",
+    "section": "🚨 Goals",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 5.3,
+    "fair": 1799,
+    "starRank": null,
+    "star": 0.531,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482667,
+      "name": "William Eklund",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "L",
+      "prop": "goal",
+      "chancePct": 23.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477989,
+      "name": "Christian Dvorak",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "goal",
+      "chancePct": 22.7,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "D",
+      "book": {
+       "best": 340,
+       "bestBook": "BR",
+       "books": {
+        "DK": 290,
+        "BR": 340,
+        "FD": 280,
+        "BOV": 270
+       },
+       "links": {
+        "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380924370%232328639728_13L42133Q11833759263Q20",
+        "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409830?coupon={pickType}|4383205718|{wagerAmount}",
+        "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.618222210&selectionId=12496411"
+       }
+      },
+      "edge": 0
+     }
+    ]
+   }
+  ],
+  "balanced:point": [
+   {
+    "key": "8477933:point|8479314:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 45,
+    "fair": 122,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 66.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8482105:point|8482116:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 44.3,
+    "fair": 126,
+    "starRank": 2,
+    "star": 0.997,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.2,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 60.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479420:point|8480839:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 40.1,
+    "fair": 150,
+    "starRank": 3,
+    "star": 0.987,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 65.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480839,
+      "name": "Rasmus Dahlin",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477495:point|8480801:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 36.7,
+    "fair": 172,
+    "starRank": 4,
+    "star": 0.964,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 60.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477495,
+      "name": "Seth Jones",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "D",
+      "prop": "point",
+      "chancePct": 54.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478439:point|8481533:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 36,
+    "fair": 178,
+    "starRank": 5,
+    "star": 0.959,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 58.8,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478439,
+      "name": "Travis Konecny",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 54.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:point|8482667:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 33.9,
+    "fair": 195,
+    "starRank": null,
+    "star": 0.927,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 59.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482667,
+      "name": "William Eklund",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 51.1,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8473419:point|8477935:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 29.5,
+    "fair": 239,
+    "starRank": null,
+    "star": 0.833,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8473419,
+      "name": "Brad Marchand",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 52,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8477935,
+      "name": "Sam Bennett",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 50.7,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481528:point|8481596:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 27.1,
+    "fair": 268,
+    "starRank": null,
+    "star": 0.747,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481528,
+      "name": "Dylan Cozens",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 50.6,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481596,
+      "name": "Shane Pinto",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 47.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8482097:point|8484145:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 27,
+    "fair": 270,
+    "starRank": null,
+    "star": 0.743,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482097,
+      "name": "Jack Quinn",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "R",
+      "prop": "point",
+      "chancePct": 50.4,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A+",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8484145,
+      "name": "Zach Benson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "L",
+      "prop": "point",
+      "chancePct": 47.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477409:point|8482113:point",
+    "section": "🍎 Points",
+    "rel": "team",
+    "corr": 1.12,
+    "chancePct": 26,
+    "fair": 285,
+    "starRank": null,
+    "star": 0.693,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477409,
+      "name": "Carter Verhaeghe",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 49.5,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482113,
+      "name": "Anton Lundell",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "point",
+      "chancePct": 46.9,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ],
+  "balanced:sog3": [
+   {
+    "key": "8479420:sog3|8480801:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 39.1,
+    "fair": 156,
+    "starRank": 1,
+    "star": 1,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479420,
+      "name": "Tage Thompson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 65.5,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480801,
+      "name": "Brady Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 59.8,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477933:sog3|8480015:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 25,
+    "fair": 301,
+    "starRank": 2,
+    "star": 0.972,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477933,
+      "name": "Sam Reinhart",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 54.1,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480015,
+      "name": "Owen Tippett",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 46.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8482097:sog3|8482116:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 18.7,
+    "fair": 434,
+    "starRank": 3,
+    "star": 0.925,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482116,
+      "name": "Tim Stutzle",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 43.6,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482097,
+      "name": "Jack Quinn",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 43,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A+",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8479314:sog3|8481533:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17.7,
+    "fair": 466,
+    "starRank": 4,
+    "star": 0.899,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8479314,
+      "name": "Matthew Tkachuk",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 43.4,
+      "grade": "A+",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8481533,
+      "name": "Trevor Zegras",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 40.7,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8480208:sog3|8480839:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 17,
+    "fair": 490,
+    "starRank": 5,
+    "star": 0.882,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8480208,
+      "name": "Drake Batherson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 43.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8480839,
+      "name": "Rasmus Dahlin",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "D",
+      "prop": "sog3",
+      "chancePct": 39.3,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8478439:sog3|8482105:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 14.8,
+    "fair": 576,
+    "starRank": null,
+    "star": 0.799,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8482105,
+      "name": "Jake Sanderson",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "D",
+      "prop": "sog3",
+      "chancePct": 42.1,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8478439,
+      "name": "Travis Konecny",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 35.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477935:sog3|8482159:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 13.4,
+    "fair": 648,
+    "starRank": null,
+    "star": 0.729,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477935,
+      "name": "Sam Bennett",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 41.5,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482159,
+      "name": "Tyson Foerster",
+      "team": "PHI",
+      "opp": "BUF",
+      "isHome": false,
+      "position": "R",
+      "prop": "sog3",
+      "chancePct": 32.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "B",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8473419:sog3|8475722:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12.3,
+    "fair": 716,
+    "starRank": null,
+    "star": 0.686,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8473419,
+      "name": "Brad Marchand",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 39.2,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8475722,
+      "name": "Jason Zucker",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 31.2,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8481528:sog3|8484145:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 12,
+    "fair": 734,
+    "starRank": null,
+    "star": 0.658,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8481528,
+      "name": "Dylan Cozens",
+      "team": "OTT",
+      "opp": "FLA",
+      "isHome": true,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 38.7,
+      "grade": "A",
+      "lineupStatus": null,
+      "softD": true,
+      "toughD": false,
+      "h2h": "F",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8484145,
+      "name": "Zach Benson",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "L",
+      "prop": "sog3",
+      "chancePct": 31,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "C",
+      "book": null,
+      "edge": null
+     }
+    ]
+   },
+   {
+    "key": "8477409:sog3|8482803:sog3",
+    "section": "🏒 Shots",
+    "rel": "diff",
+    "corr": 1,
+    "chancePct": 10.4,
+    "fair": 862,
+    "starRank": null,
+    "star": 0.533,
+    "parlay": null,
+    "evPct": null,
+    "legs": [
+     {
+      "playerId": 8477409,
+      "name": "Carter Verhaeghe",
+      "team": "FLA",
+      "opp": "OTT",
+      "isHome": false,
+      "position": "C",
+      "prop": "sog3",
+      "chancePct": 37.3,
+      "grade": "B",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": true,
+      "h2h": "A",
+      "book": null,
+      "edge": null
+     },
+     {
+      "playerId": 8482803,
+      "name": "Olen Zellweger",
+      "team": "BUF",
+      "opp": "PHI",
+      "isHome": true,
+      "position": "D",
+      "prop": "sog3",
+      "chancePct": 27.8,
+      "grade": "C",
+      "lineupStatus": null,
+      "softD": false,
+      "toughD": false,
+      "h2h": "D",
+      "book": null,
+      "edge": null
+     }
+    ]
+   }
+  ]
+ }
+}
