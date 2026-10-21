@@ -3,6 +3,7 @@ import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import { batchFromBox, estimateOnIce, sameBatch } from "../lib/onIce.js";
 import RinkTracker from "./RinkTracker.jsx";
 import LineupsView from "./LineupsView.jsx";
+import LiveProjection from "./LiveProjection.jsx";
 
 // Full box score for one game, from /api/boxscore (api/boxscore.js). Refreshes every 15s while
 // the game is live (the endpoint is cached 15s at the edge). Skater rows are tinted tan when the
@@ -212,7 +213,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
   // The last two distinct batches of skater ice time, for the on-ice estimate.
   const batches = useRef({ prev: null, cur: null });
   const [onIce, setOnIce] = useState(null);
-  const [view, setView] = useState(startOn); // "box" | "compare" | "pbp" | "tracker" (Game Tracker: rink + recent plays) | "lineups"
+  const [view, setView] = useState(startOn); // "box" | "proj" (📈 Live projection) | "compare" | "pbp" | "tracker" (Game Tracker: rink + recent plays) | "lineups"
   // 2026-10-20: before puck drop only the lineups view has anything in it
   const pre = box && !LIVE.has(box.state) && !["OFF", "FINAL"].includes(box.state);
   const shown = pre ? "lineups" : view;
@@ -274,6 +275,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
       {box && !pre && (
         <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
           <button className={`pill-btn ${view === "box" ? "active" : ""}`} onClick={() => setView("box")}>📋 Box score</button>
+          <button className={`pill-btn ${view === "proj" ? "active" : ""}`} onClick={() => setView("proj")}>📈 Live projection</button>
           <button className={`pill-btn ${view === "lineups" ? "active" : ""}`} onClick={() => setView("lineups")}>👥 Lineups</button>
           <button className={`pill-btn ${view === "compare" ? "active" : ""}`} onClick={() => setView("compare")}>⚖️ Team comparison</button>
           <button className={`pill-btn ${view === "pbp" ? "active" : ""}`} onClick={() => setView("pbp")}>📜 Play-by-play</button>
@@ -281,6 +283,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
         </div>
       )}
       {box && shown === "lineups" && <LineupsView date={date} gameId={gameId} />}
+      {box && shown === "proj" && <LiveProjection box={box} poolById={poolById} date={date} />}
       {box && shown === "tracker" && <RinkTracker box={box} />}
       {box && shown === "compare" && <TeamCompare box={box} />}
       {box && shown === "pbp" && <PlayByPlay box={box} live={LIVE.has(box.state)} />}
