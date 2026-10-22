@@ -176,6 +176,9 @@ export default function PlayerSlideout() {
                 <div className="section-sub">
                   {player.team} · {role === "goalie" ? "Goaltender" : (player.position || "Skater")}
                 </div>
+                {/* 2026-10-22 early-season role check (build_player_pool.role_check) */}
+                {player.roleFlag === "noPP" && <div className="section-sub" style={{ color: "var(--gold)" }} title="Kept out of Top 3 and PRISM Picks">🪑? Not on {player.team}'s power-play units tonight (RotoWire), with {player.teamGp ?? 0} game{player.teamGp === 1 ? "" : "s"} for them — his PP-driven chances lean on last season's role.</div>}
+                {!player.roleFlag && player.teamGp === 0 && <div className="section-sub" title="Stats blend last season + this">📅 No games with {player.team} yet{player.lastTeam && player.lastTeam !== player.team ? ` (last season: ${player.lastTeam})` : ""} — his numbers lean on last season until he plays.</div>}
               </div>
             </div>
 

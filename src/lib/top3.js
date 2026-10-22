@@ -69,7 +69,8 @@ export function eligibleForTop3(players, slate, now = Date.now()) {
     start.set(g.away, Date.parse(g.startTimeUTC));
     start.set(g.home, Date.parse(g.startTimeUTC));
   }
-  return players.filter((p) => !p.gameStarted && (start.get(p.team) ?? Infinity) > now);
+  // 2026-10-22: role-flagged skaters (build_player_pool.role_check: < 3 games for this team, off tonight's PP units) sit out Top 3
+  return players.filter((p) => !p.gameStarted && !p.roleFlag && (start.get(p.team) ?? Infinity) > now);
 }
 
 // players: scored + graded pool skaters (modelProbs from lib/grades.js), already filtered to

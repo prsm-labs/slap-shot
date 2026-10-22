@@ -72,7 +72,7 @@ export function prismPicks(players, data, odds) {
   const R = data.rule;
   const cands = [];
   for (const p of players) {
-    if (p.gameStarted || !p.modelProbs) continue;
+    if (p.gameStarted || !p.modelProbs || p.roleFlag) continue; // 2026-10-22: role-flagged (build_player_pool.role_check)
     const f = data.form[p.playerId];
     if (!f) continue;
     for (const [stat, vals] of [["SOG", f.s], ["PTS", f.p]]) {
