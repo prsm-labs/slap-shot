@@ -1,4 +1,5 @@
 import { fmtToi } from "../lib/toi.js";
+import ProfileLinks from "./ProfileLinks.jsx";
 import { positionLabel } from "../lib/positionFilter.js";
 import { useEffect, useState } from "react";
 import { registerSlide, closeAllSlides, openGoalieSlide } from "../slideouts.js";
@@ -171,7 +172,7 @@ export default function PlayerSlideout() {
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
               <PlayerAvatar playerId={player.playerId} name={player.name} team={player.team} size={56} />
               <div>
-                <div className="section-title" style={{ fontSize: 20 }}>{player.name}</div>
+                <div className="section-title" style={{ fontSize: 20 }}>{player.name}<ProfileLinks p={player} /></div>
                 <div className="section-sub">
                   {player.team} · {role === "goalie" ? "Goaltender" : (player.position || "Skater")}
                 </div>
