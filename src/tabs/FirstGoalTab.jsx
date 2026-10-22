@@ -15,6 +15,7 @@ import { firstGoalRate as rate, OPENING, openingShare } from "../lib/projections
 import { useH2H } from "../lib/h2h.js";
 import { useSort } from "../lib/useSort.js";
 import IcebreakerView from "../components/IcebreakerView.jsx";
+import FirstConcedeView from "../components/FirstConcedeView.jsx";
 import StarterTag from "../components/StarterTag.jsx";
 import { setListFilter, useListFilters } from "../lib/listFilters.js";
 import GamblyButton from "../components/GamblyButton.jsx";
@@ -156,9 +157,10 @@ export default function FirstGoalTab() {
       <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
         <button className={`pill-btn ${view === "first" ? "active" : ""}`} onClick={() => setView("first")}>{FIRST_GOAL} First goal by game</button>
         <button className={`pill-btn ${view === "ice" ? "active" : ""}`} onClick={() => setView("ice")}>🧊 Icebreaker (fastest goal)</button>
+        <button className={`pill-btn ${view === "concede" ? "active" : ""}`} onClick={() => setView("concede")}>⏱️ Fastest to concede</button>
       </div>
 
-      {view === "ice" ? (<>
+      {view === "concede" ? <FirstConcedeView /> : view === "ice" ? (<>
         <PositionFilter />
         <SoftDefensePill on={soft} />
         <IcebreakerView players={pool} slate={meta.slate} goals={live?.goals} position={position} soft={soft} date={slateDate} liveGames={live?.games} />
