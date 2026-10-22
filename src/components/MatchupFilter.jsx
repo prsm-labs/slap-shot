@@ -36,6 +36,13 @@ function GoalieLine({ name, status }) {
 }
 
 export default function MatchupFilter({ games, label }) {
+  // 2026-10-22: tonight's slate now lives in the header (components/GameStrip.jsx, above the tabs); a page only gets its own
+  // strip when it passes a different `games` list (e.g. the Goal Tracker on another date)
+  if (!games) return null;
+  return <MatchupStrip games={games} label={label} />;
+}
+
+function MatchupStrip({ games, label }) {
   const selected = useMatchup();
   const live = useScoredPool({ includeStarted: true });
   const scroller = useRef(null);

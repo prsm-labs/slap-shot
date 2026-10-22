@@ -273,7 +273,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Box score error: {error}</div>}
       {!box && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading box score…</div>}
       {box && !pre && (
-        <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
+        <div className="pill-row" style={{ marginBottom: 10 }}>
           <button className={`pill-btn ${view === "box" ? "active" : ""}`} onClick={() => setView("box")}>📋 Box score</button>
           <button className={`pill-btn ${view === "proj" ? "active" : ""}`} onClick={() => setView("proj")}>📈 Live projection</button>
           <button className={`pill-btn ${view === "lineups" ? "active" : ""}`} onClick={() => setView("lineups")}>👥 Lineups</button>
@@ -322,12 +322,16 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
               <span>On-ice is estimated from the live box score's ice time and can trail a line change by ~30s.</span>
             </div>
           )}
-          {["away", "home"].map((side) => (
-            <div key={side} style={{ marginTop: 12 }}>
-              <SkaterTable t={box[side]} poolById={poolById} onIce={onIce} heatById={heatById} live={LIVE.has(box.state)} />
-              <GoalieTable t={box[side]} />
-            </div>
-          ))}
+          {/* 2026-10-22 (user: CourtIQ's box score is the standard): the two teams side by side, stacked on a phone */}
+          <div className="box-grid">
+            {["away", "home"].map((side) => (
+              <div key={side} className="card box-card">
+                <div className="box-title"><img src={`https://assets.nhle.com/logos/nhl/svg/${box[side].abbrev}_dark.svg`} alt="" width="22" height="22" /> <b>{box[side].abbrev}</b> <span className="mono" style={{ color: "var(--muted)", fontSize: 10 }}>{side}</span></div>
+                <SkaterTable t={box[side]} poolById={poolById} onIce={onIce} heatById={heatById} live={LIVE.has(box.state)} />
+                <GoalieTable t={box[side]} />
+              </div>
+            ))}
+          </div>
         </>
       )}
     </div>

@@ -5,6 +5,7 @@ import PlayerSlideout from "./components/PlayerSlideout.jsx";
 import GoalTicker from "./components/GoalTicker.jsx";
 import NotificationBar, { AlertBell } from "./components/NotificationBar.jsx";
 import { installColumnResize } from "./lib/columnResize.js";
+import GameStrip from "./components/GameStrip.jsx";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
 import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
@@ -73,6 +74,8 @@ export default function App() {
 
       <NotificationBar />
       <GoalTicker onClick={() => setTab("goals")} />
+      {/* 2026-10-22: one CourtIQ-style matchup strip above the tabs; it narrows every page */}
+      <GameStrip />
 
       <nav className="tabs">
         {TABS.map((t) => (

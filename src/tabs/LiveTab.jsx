@@ -117,6 +117,7 @@ export default function LiveTab() {
   const [pool, setPool] = useState(null);
   const selected = useMatchup();
   const [boxGame, setBoxGame] = useState(null);
+  // 2026-10-22: like CourtIQ, a game is always open below the cards -- the live one, else the first (or the matchup picked up top)
   const [showAll, setShowAll] = useState(false);
   const [view, setView] = useState("games"); // "games" | "lineups"
   // Manual refresh: reloads now and restarts the 30s timer. /api/live and /api/boxscore are cached
@@ -188,6 +189,12 @@ export default function LiveTab() {
   );
   // The shared matchup filter only applies if that game is on this date's list.
   const gameFilter = selected && [...gameKeys.values()].includes(selected) ? selected : null;
+  useEffect(() => {
+    const list = (data?.games || []).filter((g) => !gameFilter || gameKeys.get(g.gameId) === gameFilter);
+    if (!list.length) return;
+    if (boxGame && list.some((g) => g.gameId === boxGame)) return;
+    setBoxGame((list.find((g) => LIVE.has(g.state)) || list[0]).gameId);
+  }, [data, gameFilter, gameKeys, boxGame]);
 
   const rows = useMemo(() => {
     if (!data) return [];
@@ -240,18 +247,20 @@ export default function LiveTab() {
 
       {view === "games" && data && data.games.length === 0 && <div className="note">No NHL games on this date.</div>}
 
+      {/* 2026-10-22 (user: CourtIQ's Live is the standard): compact score cards; tap one to open its box score right below */}
       {view === "games" && data && data.games.length > 0 && (
-        <div className="grid-cards" style={{ marginBottom: 14 }}>
-          {data.games.map((g) => (
-            <GameCard
-              key={g.gameId}
-              g={g}
-              selected={gameFilter === gameKeys.get(g.gameId)}
-              onSelect={() => toggleMatchup(gameKeys.get(g.gameId))}
-              onBox={() => setBoxGame(boxGame === g.gameId ? null : g.gameId)}
-              boxOpen={boxGame === g.gameId}
-            />
-          ))}
+        <div className="score-grid">
+          {data.games.filter((g) => !gameFilter || gameKeys.get(g.gameId) === gameFilter).map((g) => {
+            const live = LIVE.has(g.state), started = live || DONE.has(g.state);
+            return (
+              <button key={g.gameId} className={`score-card ${boxGame === g.gameId ? "active" : ""}`} onClick={() => setBoxGame(g.gameId)}>
+                {[g.away, g.home].map((t) => (
+                  <div key={t.abbrev} className="sc-row"><img src={`https://assets.nhle.com/logos/nhl/svg/${t.abbrev}_dark.svg`} alt="" width="20" height="20" /> {t.abbrev} <b>{started ? t.score : ""}</b></div>
+                ))}
+                <div className={`sc-status ${live ? "live" : ""}`}>{live ? "● " : ""}{gameStatus(g)}{started && g.away.sog != null ? ` · SOG ${g.away.sog}-${g.home.sog}` : ""}</div>
+              </button>
+            );
+          })}
         </div>
       )}
 
@@ -270,7 +279,7 @@ export default function LiveTab() {
           <div className="note">
             ℹ️ Heat (0-10) = shots on goal tonight + high-danger attempts (within 20 ft) + attempts in the last 10 minutes
             of game time. 5+ is Heating Up, 8+ is On Fire — the same scale Going Yard uses for hitters, not yet
-            checked against hockey results. Click a game card to filter to that matchup; 📋 opens its box score.
+            checked against hockey results. Tap a game card to open its box score; the matchup strip at the top narrows every page.
           </div>
 
           {!anyStarted && <div className="note">No game has started yet — the board fills in once the puck drops.</div>}
