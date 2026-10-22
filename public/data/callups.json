@@ -1,13 +1,249 @@
 {
  "_meta": {
-  "generated": "2026-10-22 12:06",
+  "generated": "2026-10-22 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 60,
-  "up": 37,
+  "count": 63,
+  "up": 41,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8485019,
+   "name": "Chase Pietila",
+   "team": "PIT",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2004-03-03",
+   "sweater": 44,
+   "draft": {
+    "year": 2024,
+    "teamAbbrev": "PIT",
+    "round": 4,
+    "overallPick": 111
+   },
+   "recalledOn": "2026-10-22",
+   "from": "Wilkes-Barre/Scranton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-22",
+     "type": "up",
+     "club": "Wilkes-Barre/Scranton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": 1,
+     "pim": 11,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    },
+    "last": {
+     "gamesPlayed": 66,
+     "goals": 2,
+     "assists": 14,
+     "points": 16,
+     "plusMinus": 27,
+     "pim": 85,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "team": "PIT",
+   "recalledOn": "2026-10-22",
+   "from": "Wilkes-Barre/Scranton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-10-22",
+     "type": "up",
+     "club": "Wilkes-Barre/Scranton"
+    }
+   ],
+   "playerId": null,
+   "name": "Rutger McGroarty and",
+   "position": "F",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
+   }
+  },
+  {
+   "playerId": 8477992,
+   "name": "Jonas Johansson",
+   "team": "OTT",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "1995-09-19",
+   "sweater": 31,
+   "draft": {
+    "year": 2014,
+    "teamAbbrev": "BUF",
+    "round": 3,
+    "overallPick": 61
+   },
+   "recalledOn": "2026-10-22",
+   "from": "Belleville",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-06",
+     "type": "up",
+     "club": "Belleville"
+    },
+    {
+     "date": "2026-10-08",
+     "type": "down",
+     "club": "Belleville"
+    },
+    {
+     "date": "2026-10-22",
+     "type": "up",
+     "club": "Belleville"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "wins": 3,
+     "losses": 1,
+     "otLosses": 1,
+     "shutouts": 0,
+     "goalsAgainst": 15,
+     "shotsAgainst": 170,
+     "team": "Belleville Senators",
+     "savePct": 0.912,
+     "gaa": 2.92
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 25,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 11,
+     "losses": 10,
+     "otLosses": 2,
+     "shutouts": 0,
+     "goalsAgainst": 78,
+     "shotsAgainst": 670,
+     "team": "Tampa Bay Lightning",
+     "savePct": 0.884,
+     "gaa": 3.29
+    },
+    "careerGp": 105,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8483424,
+   "name": "Owen Beck",
+   "team": "MTL",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2004-02-03",
+   "sweater": 62,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "MTL",
+    "round": 2,
+    "overallPick": 33
+   },
+   "recalledOn": "2026-10-22",
+   "from": "Laval",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-21",
+     "type": "down",
+     "club": "Laval"
+    },
+    {
+     "date": "2026-10-22",
+     "type": "up",
+     "club": "Laval"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 2,
+     "pim": 2,
+     "team": "Laval Rocket"
+    },
+    "last": {
+     "gamesPlayed": 58,
+     "goals": 13,
+     "assists": 20,
+     "points": 33,
+     "plusMinus": 6,
+     "pim": 28,
+     "team": "Laval Rocket"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -2,
+     "pim": 0,
+     "shots": 2,
+     "team": "Montr\u00e9al Canadiens"
+    },
+    "last": {
+     "gamesPlayed": 15,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": 4,
+     "pim": 6,
+     "shots": 11,
+     "team": "Montr\u00e9al Canadiens"
+    },
+    "careerGp": 30,
+    "careerG": 1,
+    "careerP": 2
+   }
+  },
   {
    "playerId": 8482125,
    "name": "Alexander Holtz",
@@ -571,7 +807,7 @@
    "from": "Charlotte",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -981,25 +1217,11 @@
    }
   },
   {
-   "playerId": 8482781,
-   "name": "Carson Lambos",
    "team": "MIN",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2003-01-14",
-   "sweater": 55,
-   "draft": {
-    "year": 2021,
-    "teamAbbrev": "MIN",
-    "round": 1,
-    "overallPick": 26
-   },
    "recalledOn": "2026-10-18",
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
-   "sentDownOn": null,
    "events": [
     {
      "date": "2026-10-15",
@@ -1017,41 +1239,20 @@
      "club": "Iowa"
     }
    ],
+   "playerId": null,
+   "name": "Carson Lambos",
+   "position": "LD",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
    "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": -1,
-     "pim": 5,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 70,
-     "goals": 8,
-     "assists": 11,
-     "points": 19,
-     "plusMinus": -4,
-     "pim": 48,
-     "team": "Iowa Wild"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
     "season": null,
-    "last": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 1,
-     "team": "Minnesota Wild"
-    },
-    "careerGp": 1,
-    "careerG": 0,
-    "careerP": 0
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -1420,7 +1621,7 @@
    "from": "Charlotte",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -1725,7 +1926,7 @@
    "from": "Henderson",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -2231,13 +2432,13 @@
      "team": "Rochester Americans"
     },
     "last": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 37,
      "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
-     "pim": 6,
-     "team": "Lehigh Valley Phantoms"
+     "assists": 13,
+     "points": 13,
+     "plusMinus": 0,
+     "pim": 33,
+     "team": "Lehigh Valley Phantoms / Belleville Senators"
     }
    },
    "nhl": {
@@ -3340,70 +3541,6 @@
    }
   },
   {
-   "playerId": 8477992,
-   "name": "Jonas Johansson",
-   "team": "OTT",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "1995-09-19",
-   "sweater": 31,
-   "draft": {
-    "year": 2014,
-    "teamAbbrev": "BUF",
-    "round": 3,
-    "overallPick": 61
-   },
-   "recalledOn": "2026-10-06",
-   "from": "Belleville",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-06",
-     "type": "up",
-     "club": "Belleville"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 5,
-     "wins": 3,
-     "losses": 1,
-     "otLosses": 1,
-     "shutouts": 0,
-     "goalsAgainst": 15,
-     "shotsAgainst": 170,
-     "team": "Belleville Senators",
-     "savePct": 0.912,
-     "gaa": 2.92
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 25,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 11,
-     "losses": 10,
-     "otLosses": 2,
-     "shutouts": 0,
-     "goalsAgainst": 78,
-     "shotsAgainst": 670,
-     "team": "Tampa Bay Lightning",
-     "savePct": 0.884,
-     "gaa": 3.29
-    },
-    "careerGp": 105,
-    "careerG": 0,
-    "careerP": null
-   }
-  },
-  {
    "playerId": 8482131,
    "name": "Donovan Sebrango",
    "team": "OTT",
@@ -3862,19 +3999,24 @@
    }
   },
   {
-   "playerId": 8484262,
-   "name": "Travis Mitchell",
+   "playerId": 8480070,
+   "name": "Ian Mitchell",
    "team": "ANA",
    "position": "D",
-   "shoots": "L",
-   "birthDate": "1999-11-25",
-   "sweater": 34,
-   "draft": null,
+   "shoots": "R",
+   "birthDate": "1999-01-18",
+   "sweater": null,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "CHI",
+    "round": 2,
+    "overallPick": 57
+   },
    "recalledOn": "2026-09-30",
    "from": "San Diego",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -3884,49 +4026,23 @@
     }
    ],
    "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -3,
-     "pim": 5,
-     "team": "San Diego Gulls"
-    },
+    "season": null,
     "last": {
-     "gamesPlayed": 58,
-     "goals": 1,
-     "assists": 16,
-     "points": 17,
-     "plusMinus": 3,
-     "pim": 87,
-     "team": "Bridgeport Islanders"
+     "gamesPlayed": 60,
+     "goals": 4,
+     "assists": 23,
+     "points": 27,
+     "plusMinus": 31,
+     "pim": 12,
+     "team": "Grand Rapids Griffins / Syracuse Crunch"
     }
    },
    "nhl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -3,
-     "pim": 9,
-     "shots": 3,
-     "team": "Anaheim Ducks"
-    },
-    "last": {
-     "gamesPlayed": 9,
-     "goals": 1,
-     "assists": 0,
-     "points": 1,
-     "plusMinus": 0,
-     "pim": 6,
-     "shots": 4,
-     "team": "New York Islanders"
-    },
-    "careerGp": 14,
-    "careerG": 1,
-    "careerP": 1
+    "season": null,
+    "last": null,
+    "careerGp": 110,
+    "careerG": 4,
+    "careerP": 19
    }
   },
   {
