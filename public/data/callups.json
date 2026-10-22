@@ -1,9 +1,9 @@
 {
  "_meta": {
-  "generated": "2026-10-21 17:34",
+  "generated": "2026-10-22 09:06",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 59,
+  "count": 60,
   "up": 35,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
@@ -158,6 +158,70 @@
     "careerGp": 24,
     "careerG": 0,
     "careerP": 4
+   }
+  },
+  {
+   "playerId": 8480291,
+   "name": "Skyler Brind'Amour",
+   "team": "CAR",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1999-07-27",
+   "sweater": 76,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "EDM",
+    "round": 6,
+    "overallPick": 177
+   },
+   "recalledOn": "2026-10-21",
+   "from": "Chicago",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-21",
+     "type": "up",
+     "club": "Chicago"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 2,
+     "assists": 1,
+     "points": 3,
+     "plusMinus": -6,
+     "pim": 4,
+     "team": "Chicago Wolves"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 16,
+     "assists": 18,
+     "points": 34,
+     "plusMinus": -12,
+     "pim": 36,
+     "team": "Chicago Wolves"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -2,
+     "pim": 2,
+     "shots": 2,
+     "team": "Carolina Hurricanes"
+    },
+    "careerGp": 6,
+    "careerG": 1,
+    "careerP": 1
    }
   },
   {
@@ -518,7 +582,16 @@
     "last": null
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 0,
+     "team": "Florida Panthers"
+    },
     "last": {
      "gamesPlayed": 29,
      "goals": 5,
@@ -529,7 +602,7 @@
      "shots": 25,
      "team": "Florida Panthers"
     },
-    "careerGp": 78,
+    "careerGp": 79,
     "careerG": 6,
     "careerP": 15
    }
@@ -588,19 +661,19 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
+     "gamesPlayed": 2,
+     "goals": 2,
      "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
+     "points": 2,
+     "plusMinus": 2,
      "pim": 0,
-     "shots": 1,
+     "shots": 5,
      "team": "Philadelphia Flyers"
     },
     "last": null,
-    "careerGp": 1,
-    "careerG": 0,
-    "careerP": 0
+    "careerGp": 2,
+    "careerG": 2,
+    "careerP": 2
    }
   },
   {
@@ -657,13 +730,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 5,
+     "shots": 8,
      "team": "Philadelphia Flyers"
     },
     "last": {
@@ -676,7 +749,7 @@
      "shots": 23,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 21,
+    "careerGp": 22,
     "careerG": 5,
     "careerP": 9
    }
@@ -730,13 +803,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 0,
+     "plusMinus": 2,
      "pim": 0,
-     "shots": 0,
+     "shots": 1,
      "team": "Philadelphia Flyers"
     },
     "last": {
@@ -749,7 +822,7 @@
      "shots": 4,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 9,
+    "careerGp": 10,
     "careerG": 0,
     "careerP": 0
    }
@@ -1224,12 +1297,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -1,
-     "pim": 0,
+     "pim": 5,
      "shots": 0,
      "team": "Philadelphia Flyers"
     },
@@ -1243,7 +1316,7 @@
      "shots": 0,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 2,
+    "careerGp": 3,
     "careerG": 0,
     "careerP": 1
    }
@@ -1532,7 +1605,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 0,
      "assists": 4,
      "points": 4,
@@ -1950,11 +2023,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
-     "goals": 1,
-     "assists": 2,
-     "points": 3,
-     "plusMinus": 1,
+     "gamesPlayed": 8,
+     "goals": 2,
+     "assists": 3,
+     "points": 5,
+     "plusMinus": 2,
      "pim": 4,
      "team": "Iowa Wild"
     },
@@ -2019,16 +2092,16 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "wins": 2,
-     "losses": 1,
+     "losses": 2,
      "otLosses": 0,
      "shutouts": 1,
-     "goalsAgainst": 6,
-     "shotsAgainst": 80,
+     "goalsAgainst": 10,
+     "shotsAgainst": 116,
      "team": "Syracuse Crunch",
-     "savePct": 0.925,
-     "gaa": 1.82
+     "savePct": 0.914,
+     "gaa": 2.33
     },
     "last": null
    },
@@ -2667,11 +2740,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 0,
-     "assists": 2,
-     "points": 2,
-     "plusMinus": -5,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": -3,
      "pim": 4,
      "shots": 5,
      "team": "Philadelphia Flyers"
@@ -2686,9 +2759,9 @@
      "shots": 1,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 6,
+    "careerGp": 7,
     "careerG": 1,
-    "careerP": 4
+    "careerP": 6
    }
   },
   {
@@ -3763,11 +3836,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": -3,
      "pim": 5,
      "team": "San Diego Gulls"
     },
