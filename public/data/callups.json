@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-22 09:06",
+  "generated": "2026-10-22 12:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 60,
-  "up": 35,
+  "up": 37,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -178,7 +178,7 @@
    "from": "Chicago",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -454,7 +454,18 @@
      "savePct": 0.882,
      "gaa": 2.94
     },
-    "last": null
+    "last": {
+     "gamesPlayed": 37,
+     "wins": 21,
+     "losses": 12,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 103,
+     "shotsAgainst": 1073,
+     "team": "Toronto Marlies",
+     "savePct": 0.904,
+     "gaa": 2.88
+    }
    },
    "nhl": {
     "season": null,
@@ -934,7 +945,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 3,
      "assists": 2,
      "points": 5,
@@ -1877,11 +1888,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
+     "gamesPlayed": 5,
+     "goals": 1,
      "assists": 2,
-     "points": 2,
-     "plusMinus": 3,
+     "points": 3,
+     "plusMinus": 4,
      "pim": 14,
      "team": "Laval Rocket"
     },
@@ -2103,7 +2114,18 @@
      "savePct": 0.914,
      "gaa": 2.33
     },
-    "last": null
+    "last": {
+     "gamesPlayed": 27,
+     "wins": 7,
+     "losses": 13,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 87,
+     "shotsAgainst": 690,
+     "team": "Belleville Senators",
+     "savePct": 0.874,
+     "gaa": 3.69
+    }
    },
    "nhl": {
     "season": null,
@@ -2283,12 +2305,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 12,
      "team": "Utica Comets"
     },
     "last": null
@@ -3318,24 +3340,24 @@
    }
   },
   {
-   "playerId": 8475149,
-   "name": "Marcus Johansson",
+   "playerId": 8477992,
+   "name": "Jonas Johansson",
    "team": "OTT",
-   "position": "L",
+   "position": "G",
    "shoots": "L",
-   "birthDate": "1990-10-06",
-   "sweater": 90,
+   "birthDate": "1995-09-19",
+   "sweater": 31,
    "draft": {
-    "year": 2009,
-    "teamAbbrev": "WSH",
-    "round": 1,
-    "overallPick": 24
+    "year": 2014,
+    "teamAbbrev": "BUF",
+    "round": 3,
+    "overallPick": 61
    },
    "recalledOn": "2026-10-06",
    "from": "Belleville",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -3345,24 +3367,40 @@
     }
    ],
    "ahl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 5,
+     "wins": 3,
+     "losses": 1,
+     "otLosses": 1,
+     "shutouts": 0,
+     "goalsAgainst": 15,
+     "shotsAgainst": 170,
+     "team": "Belleville Senators",
+     "savePct": 0.912,
+     "gaa": 2.92
+    },
     "last": null
    },
    "nhl": {
     "season": null,
     "last": {
-     "gamesPlayed": 75,
-     "goals": 15,
-     "assists": 34,
-     "points": 49,
-     "plusMinus": 18,
-     "pim": 12,
-     "shots": 106,
-     "team": "Minnesota Wild"
+     "gamesPlayed": 25,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 11,
+     "losses": 10,
+     "otLosses": 2,
+     "shutouts": 0,
+     "goalsAgainst": 78,
+     "shotsAgainst": 670,
+     "team": "Tampa Bay Lightning",
+     "savePct": 0.884,
+     "gaa": 3.29
     },
-    "careerGp": 1058,
-    "careerG": 200,
-    "careerP": 566
+    "careerGp": 105,
+    "careerG": 0,
+    "careerP": null
    }
   },
   {
@@ -3601,7 +3639,18 @@
    ],
    "ahl": {
     "season": null,
-    "last": null
+    "last": {
+     "gamesPlayed": 36,
+     "wins": 16,
+     "losses": 15,
+     "otLosses": 2,
+     "shutouts": 1,
+     "goalsAgainst": 95,
+     "shotsAgainst": 916,
+     "team": "Hartford Wolf Pack",
+     "savePct": 0.896,
+     "gaa": 2.83
+    }
    },
    "nhl": {
     "season": {
