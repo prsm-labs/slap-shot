@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@400;600;700;800&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -369,3 +369,24 @@ tr.signal-row{--row-bg:rgba(47,125,174,.05);}
 .box-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(560px,100%),1fr));gap:12px;margin-top:12px;}
 .box-grid .card{margin:0;}
 .box-title{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-family:'Oswald',sans-serif;font-size:16px;}
+
+/* 2026-10-22 (user, at 110% zoom: CourtIQ is the cleanest UI -- match its proportions). Same page width, 14 px Inter body,
+   plain-case brand / tabs / section titles, an unboxed header; Slap Shot's blue accent, mono tables and badges stay. */
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:14px;}
+.app{max-width:1280px;margin:0 auto;padding:0 16px 40px;width:100%;}
+.header{padding:16px 0 8px;border-bottom:0;background:none;position:static;backdrop-filter:none;}
+.logo{font-family:inherit;font-size:1.6rem;font-weight:800;text-transform:none;letter-spacing:-.02em;}
+.logo-mark{height:30px;width:30px;}
+.ticker-wrap{border:1px solid var(--border);border-radius:10px;margin:2px 0 4px;height:30px;}
+.ticker-viewport{border-radius:0 10px 10px 0;}
+.ticker-loading{line-height:30px;}
+.tabs{padding:0;background:none;margin-bottom:14px;gap:2px;}
+.tab{font-family:inherit;font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;padding:10px 12px;}
+.content{padding:0;max-width:none;}
+.section-title{font-family:inherit;font-size:1.2rem;font-weight:700;text-transform:none;letter-spacing:0;}
+.section-sub{font-family:inherit;font-size:14px;font-weight:400;letter-spacing:0;}
+@media (max-width:700px){.section-title{font-size:1.2rem;}}
+/* data text: CourtIQ's font with fixed-width digits (mono ran wide and wrapped names); the goal ticker keeps its mono */
+.mono,table.data-table{font-family:inherit;font-variant-numeric:tabular-nums;}
+.ticker-wrap,.ticker-wrap *{font-family:'DM Mono',monospace;}
+.note{font-family:inherit;font-size:.84rem;line-height:1.45;color:var(--text);background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);padding:10px 12px;}
