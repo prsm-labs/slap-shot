@@ -19,6 +19,7 @@ export default function PrismPicks({ players }) {
   const [data, setData] = useState(null);
   const [odds, setOdds] = useState(null);
   const [showBook, setShowBook] = useState(false);
+  const [open, setOpen] = useState(false);
   useEffect(() => { load("/data/prism_picks.json", setData); load("/data/prop_odds.json", setOdds); }, []);
   if (!data?.knots) return null;
   const picks = prismPicks(players, data, odds);
@@ -27,13 +28,15 @@ export default function PrismPicks({ players }) {
   const live = data.live;
   const past = [...data.nights].reverse();
   return (
-    <div className="card prism-card">
+    <div className={`card prism-card ${open ? 'open' : 'collapsed'}`}>
       <div className="prism-head">
         <span className="prism-gem" aria-hidden="true">💎</span>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div className="prism-title">PRISM Picks</div>
           <div className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>Tonight's best looks on real lines — the kind a book posts</div>
         </div>
+        {/* 2026-10-22 (user): collapsed by default -- tap to expand */}
+        <button type="button" className="prism-toggle" aria-expanded={open} onClick={() => setOpen((v) => !v)}>{open ? '▴ Hide' : `▾ Show${picks.length ? ` ${picks.length} pick${picks.length === 1 ? '' : 's'}` : ''}`}</button>
         {picks.length > 0 && (
           <button type="button" className={`prism-book-btn ${booksOk ? "" : "off"}`} disabled={!booksOk} onClick={() => setShowBook((v) => !v)}
             title={booksOk ? "Sportsbook lines for these props — context only, never an input" : "No fresh sportsbook lines for tonight (odds feed not pulling, or lines not posted yet)"}>

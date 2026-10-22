@@ -338,3 +338,10 @@ tr.signal-row{--row-bg:rgba(47,125,174,.05);}
 .stats-bar .b{align-self:end;width:14px;background:rgba(56,184,242,.35);border-radius:3px 3px 0 0;}
 .stats-bar .b.win{background:var(--accent);}
 .stats-bar .x{color:var(--muted);}
+
+/* 2026-10-22 PRISM Picks collapsible (default collapsed): only the header shows until opened */
+.prism-card.collapsed > :not(.prism-head) { display: none; }
+.prism-card.collapsed .prism-book-btn { display: none; }
+.prism-card .prism-head > div { flex: 1 1 0; min-width: 0; }  /* title takes the room, toggle stays on the right */
+.prism-toggle { margin-left: auto; background: transparent; border: 1px solid currentColor; border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 0.8rem; cursor: pointer; color: inherit; opacity: 0.85; }
+.prism-toggle:hover { opacity: 1; }
