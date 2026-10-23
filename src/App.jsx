@@ -16,6 +16,7 @@ import TrackRecordTab from "./tabs/TrackRecordTab.jsx";
 import LiveThemesTab from "./tabs/LiveThemesTab.jsx";
 import SplitsTab from "./tabs/SplitsTab.jsx";
 import StatsTab from "./tabs/StatsTab.jsx";
+import ScheduleTab from "./tabs/ScheduleTab.jsx";
 import CheatSheetsTab from "./tabs/CheatSheetsTab.jsx";
 import Top3Tab from "./tabs/Top3Tab.jsx";
 import MyPicksTab from "./tabs/MyPicksTab.jsx";
@@ -37,6 +38,7 @@ const TABS = [
   { key: "board", label: "🎯 Scouting", Component: MatchupsHubTab },
   // 2026-10-20: every skater / goalie / team, game by game, this season + last (build_stats.py).
   { key: "stats", label: "📊 Stats", Component: StatsTab },
+  { key: "schedule", label: "📅 Schedule", Component: ScheduleTab }, // 2026-10-23: upcoming games + recent scores
   { key: "projections", label: "🔮 Projections", Component: ProjectionsTab },
   { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab },
   { key: "calledup", label: "🆙 Called Up", Component: CalledUpTab },
