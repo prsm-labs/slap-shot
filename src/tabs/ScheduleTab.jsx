@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { teamsOf, useMatchup } from "../lib/matchupFilter.js";
+import { openGame } from "../lib/nav.js";
 
 // 📅 Schedule (2026-10-23, user: a way to see the upcoming schedule and recent scores -- Six Points has one; CourtIQ got
 // the same page today). NHL schedule + score feeds through api/schedule.js, 7 days at a time: 📅 Upcoming = today + the
@@ -62,7 +63,8 @@ function statusOf(g) {
   return timeEt(g.startUTC);
 }
 
-function GameRow({ g, focus }) {
+// 2026-10-23 (user): every game opens on the Live tab -- box score, team comparison, play-by-play (or the lineups before puck drop)
+function GameRow({ g, focus, date }) {
   const started = LIVE.has(g.state) || DONE.has(g.state);
   const side = (s) => (
     <div className={`sch-team ${s.winner ? "win" : ""} ${focus?.includes(s.team) ? "focus" : ""}`}>
@@ -75,7 +77,8 @@ function GameRow({ g, focus }) {
     </div>
   );
   return (
-    <div className="sch-row">
+    <div className="sch-row clickable" role="button" tabIndex={0} title="Open the box score"
+      onClick={() => openGame({ date, gameId: g.id })} onKeyDown={(e) => e.key === "Enter" && openGame({ date, gameId: g.id })}>
       <div className={`sch-status ${LIVE.has(g.state) ? "live" : ""}`}>{statusOf(g)}</div>
       <div className="sch-teams">{side(g.away)}{side(g.home)}</div>
       <div className="sch-side">
@@ -152,10 +155,10 @@ export default function ScheduleTab() {
             {d.date === today && <span className="badge">TODAY</span>}
             <span className="sch-muted">{d.games.length ? `${d.games.length} game${d.games.length > 1 ? "s" : ""}` : "No games"}</span>
           </div>
-          {[...d.games].sort((a, b) => String(a.startUTC).localeCompare(String(b.startUTC))).map((g) => <GameRow key={g.id} g={g} focus={focus} />)}
+          {[...d.games].sort((a, b) => String(a.startUTC).localeCompare(String(b.startUTC))).map((g) => <GameRow key={g.id} g={g} focus={focus} date={d.date} />)}
         </div>
       ))}
-      <p className="sch-muted">Refreshed every 30 seconds while a game is live. Start times are Eastern. Listed under each final: players with 2+ goals or 2+ points (hat tricks and 3+ point nights marked) and the winning goalie.</p>
+      <p className="sch-muted">Refreshed every 30 seconds while a game is live. Start times are Eastern. Tap a game for its box score. Listed under each final: players with 2+ goals or 2+ points (hat tricks and 3+ point nights marked) and the winning goalie.</p>
     </div>
   );
 }

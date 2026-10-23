@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchScoredPool, useViewDate } from "../lib/data.js";
+import { liveFocus } from "../lib/nav.js";
 import { easternToday } from "../lib/liveGoals.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -112,7 +113,10 @@ function GameCard({ g, selected, onSelect, onBox, boxOpen }) {
 
 export default function LiveTab() {
   const viewDate = useViewDate(); // 2026-10-23: opens on the date picker's night
-  const [date, setDate] = useState(() => viewDate || easternDate());
+  // 2026-10-23: opened from a Schedule row or a slideout's matchup (lib/nav.js openGame) -> that date + that game's box score
+  const focus = liveFocus.use();
+  const [date, setDate] = useState(() => focus?.date || viewDate || easternDate());
+  useEffect(() => { if (focus?.date) setDate(focus.date); }, [focus?.at]); // eslint-disable-line react-hooks/exhaustive-deps
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [pool, setPool] = useState(null);
@@ -193,9 +197,11 @@ export default function LiveTab() {
   useEffect(() => {
     const list = (data?.games || []).filter((g) => !gameFilter || gameKeys.get(g.gameId) === gameFilter);
     if (!list.length) return;
+    const want = focus && focus.date === date && list.find((g) => g.gameId === focus.gameId);
+    if (want && !focus.used) { focus.used = true; setBoxGame(want.gameId); return; }
     if (boxGame && list.some((g) => g.gameId === boxGame)) return;
     setBoxGame((list.find((g) => LIVE.has(g.state)) || list[0]).gameId);
-  }, [data, gameFilter, gameKeys, boxGame]);
+  }, [data, gameFilter, gameKeys, boxGame, focus, date]);
 
   const rows = useMemo(() => {
     if (!data) return [];

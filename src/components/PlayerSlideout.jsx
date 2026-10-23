@@ -17,6 +17,7 @@ import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { useTonightLine } from "../lib/tonightLine.js";
 import TonightCard from "./TonightCard.jsx";
+import MatchupChip from "./MatchupChip.jsx";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -190,6 +191,7 @@ export default function PlayerSlideout() {
               </div>
             )}
 
+            <MatchupChip player={player} t={tonight} />
             <TonightCard t={tonight} p={player} role={role} />
 
             {role === "skater" && <MatchupCard p={player} />}

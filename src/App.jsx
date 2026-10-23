@@ -8,6 +8,7 @@ import { installColumnResize } from "./lib/columnResize.js";
 import GameStrip from "./components/GameStrip.jsx";
 import DateBar, { PastNightGuard } from "./components/DateBar.jsx";
 import { useViewDate } from "./lib/data.js";
+import { tabRequest } from "./lib/nav.js";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
 import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
@@ -59,6 +60,9 @@ export default function App() {
   const viewDate = useViewDate();
   // Drag-to-resize table columns, app-wide (lib/columnResize.js).
   useEffect(() => installColumnResize(), []);
+  // 2026-10-23: a Schedule row / slideout matchup asks for the Live tab (lib/nav.js openGame)
+  const tabReq = tabRequest.use();
+  useEffect(() => { if (tabReq) setTab(tabReq.tab); }, [tabReq]);
 
   return (
     <div className="app">

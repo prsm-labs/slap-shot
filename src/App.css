@@ -436,3 +436,15 @@ p.sch-muted{margin:0 0 10px;}
 .actual-line{font-size:10px;color:var(--text);margin-top:1px;font-variant-numeric:tabular-nums;}
 .actual-line.dnp{color:var(--muted);}
 .hit-mark.miss{color:var(--red);}
+
+/* 2026-10-23 game links: Schedule rows + the slideout's matchup chip open the box score */
+.sch-row.clickable{cursor:pointer;border-radius:8px;}
+.sch-row.clickable:hover{background:color-mix(in srgb,var(--accent) 10%,transparent);}
+.matchup-chip{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:4px 0 10px;padding:5px 10px;border:1px solid var(--border);border-radius:999px;background:var(--surface2);color:var(--text);font:inherit;font-size:12px;cursor:pointer;font-variant-numeric:tabular-nums;}
+.matchup-chip img{vertical-align:-2px;}
+.matchup-chip:hover{border-color:var(--accent2);}
+.matchup-chip.live{border-color:var(--red);}
+.matchup-chip .mc-status{font-weight:700;color:var(--muted);}
+.matchup-chip.live .mc-status{color:var(--red);}
+.matchup-chip .mc-at{color:var(--muted);}
+.matchup-chip .mc-go{color:var(--accent2);}
