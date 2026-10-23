@@ -35,7 +35,9 @@ function useLiveScores() {
 export default function GameStrip() {
   const selected = useMatchup();
   const pool = useScoredPool({ includeStarted: true });
-  const live = useLiveScores();
+  const liveNow = useLiveScores();
+  // 2026-10-23 past night (date picker): the strip shows that night's games with their final scores
+  const live = pool?.past ? (pool.meta.slate || []).map((g) => ({ away: { abbrev: g.away, score: g.awayScore }, home: { abbrev: g.home, score: g.homeScore }, state: "OFF" })) : liveNow;
   useEffect(() => { fetchScoredPool().catch(() => {}); }, []);
   const slate = pool?.meta?.slate || [];
   if (!slate.length) return null;

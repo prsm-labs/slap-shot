@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { fetchScoredPool } from "../lib/data.js";
+import { fetchScoredPool, useViewDate } from "../lib/data.js";
 import { easternToday } from "../lib/liveGoals.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -111,7 +111,8 @@ function GameCard({ g, selected, onSelect, onBox, boxOpen }) {
 }
 
 export default function LiveTab() {
-  const [date, setDate] = useState(() => easternDate());
+  const viewDate = useViewDate(); // 2026-10-23: opens on the date picker's night
+  const [date, setDate] = useState(() => viewDate || easternDate());
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [pool, setPool] = useState(null);

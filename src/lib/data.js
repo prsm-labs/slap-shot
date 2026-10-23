@@ -189,7 +189,63 @@ function upcomingView(pool) {
   return upcomingViews.get(pool);
 }
 
+// ── Past nights (2026-10-23, user: one date picker that shows what any past night looked like and how it played out) ──
+// A picked date swaps every useScoredPool() reader to that night's pre-game snapshot (public/data/projections/<date>.json,
+// frozen before puck drop -- the same file Track Record grades) with each skater's real box line from results/<date>.json
+// on p.actual ({ played, g, a, p, sog, toi } or { played: false }). Every game is final (gameState OFF), so nothing is
+// hidden by "upcoming only". The snapshot keeps the numbers the app showed (grades, chances, Slap Score); season inputs it
+// doesn't keep come from tonight's pool when the skater is on it, else stay empty.
+let viewDate = null;
+const pastPools = {};
+const getJson = (url) => fetch(url, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+async function loadPastNight(date) {
+  pastPools[date] = "loading";
+  const [snap, res] = await Promise.all([getJson(`/data/projections/${date}.json`), getJson(`/data/results/${date}.json`)]);
+  if (!snap?.players) { pastPools[date] = { missing: true, meta: { slateDate: date, slate: [], past: true }, players: [], goalies: [], live: { games: 0, started: 0, final: 0, removed: [], swaps: [] }, past: true }; notify(); return; }
+  const box = new Map();
+  const gameRes = new Map();
+  for (const g of res?.games || []) {
+    gameRes.set(g.gameId, g);
+    for (const [id, line] of Object.entries(g.players || {})) box.set(Number(id), line);
+  }
+  const tonight = new Map((current?.players || []).map((p) => [p.playerId, p]));
+  const players = snap.players.map((p) => {
+    const line = box.get(p.playerId);
+    return {
+      ...(tonight.get(p.playerId) || {}), ...p,
+      opponentTeam: p.opponentTeam || p.opp, ShotsOnGoalPerGame: p.sogPg ?? tonight.get(p.playerId)?.ShotsOnGoalPerGame ?? null,
+      gameState: "OFF", gameStarted: true, lineupStatus: null,
+      actual: res ? (line ? { ...line } : { played: false }) : null,
+    };
+  });
+  // the oldest snapshots (before 10/2) don't keep a games list -> rebuild it from the skaters' matchups
+  const games = snap.games?.length ? snap.games : [...new Map(snap.players.filter((p) => p.gameId && p.matchup).map((p) => {
+    const [away, home] = p.matchup.split("@");
+    return [p.gameId, { gameId: p.gameId, away, home, startTimeUTC: null }];
+  })).values()];
+  const slate = games.map((g) => {
+    const r = gameRes.get(g.gameId);
+    return { ...g, gameState: "OFF", state: "OFF", awayScore: r?.awayScore ?? null, homeScore: r?.homeScore ?? null, firstGoal: r?.firstGoal || null };
+  });
+  pastPools[date] = {
+    meta: { ...(raw?._meta || {}), slateDate: date, generated: snap._meta?.poolGenerated, snapshotAt: snap._meta?.snapshotAt, slate, past: true, graded: Boolean(res) },
+    players, goalies: (snap.goalies || []).map((g) => ({ ...g, playerId: g.playerId ?? g.goalieId, name: g.name ?? g.goalie })),
+    live: { lineupsAt: null, lineupsLoaded: false, games: slate.length, started: slate.length, final: slate.length, officialTeams: 0, goaliesConfirmed: 0, goaliesTotal: 0, swaps: [], removed: [], poolGenerated: snap._meta?.poolGenerated },
+    past: true,
+  };
+  notify();
+}
+export function setViewDate(date) {
+  viewDate = date || null;
+  if (viewDate && !pastPools[viewDate]) loadPastNight(viewDate);
+  notify();
+}
+export function useViewDate() {
+  return useSyncExternalStore(subscribe, () => viewDate);
+}
+
 function snapshot(includeStarted) {
+  if (viewDate) { const p = pastPools[viewDate]; return p && p !== "loading" ? p : null; }
   if (!current || includeStarted || !upcomingFilterActive(current)) return current;
   return upcomingView(current);
 }

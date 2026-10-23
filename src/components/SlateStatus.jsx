@@ -11,7 +11,7 @@ export default function SlateStatus() {
   const pool = useScoredPool({ includeStarted: true });
   const upcomingOnly = useUpcomingOnly();
   const [open, setOpen] = useState(false);
-  if (!pool?.live) return null;
+  if (!pool?.live || pool.past) return null; // 2026-10-23: no lineup status on a past night (date picker)
   const l = pool.live;
   const allFinal = l.games > 0 && l.final === l.games;
   const allStarted = l.games > 0 && l.started === l.games;

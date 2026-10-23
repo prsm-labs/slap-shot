@@ -6,6 +6,8 @@ import GoalTicker from "./components/GoalTicker.jsx";
 import NotificationBar, { AlertBell } from "./components/NotificationBar.jsx";
 import { installColumnResize } from "./lib/columnResize.js";
 import GameStrip from "./components/GameStrip.jsx";
+import DateBar, { PastNightGuard } from "./components/DateBar.jsx";
+import { useViewDate } from "./lib/data.js";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
 import LiveTab from "./tabs/LiveTab.jsx";
 import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
@@ -54,6 +56,7 @@ export default function App() {
   const [tab, setTab] = useState("cheat");
   const active = useMemo(() => TABS.find((t) => t.key === tab) || TABS[0], [tab]);
   const ActiveComponent = active.Component;
+  const viewDate = useViewDate();
   // Drag-to-resize table columns, app-wide (lib/columnResize.js).
   useEffect(() => installColumnResize(), []);
 
@@ -77,6 +80,8 @@ export default function App() {
       <NotificationBar />
       <GoalTicker onClick={() => setTab("goals")} />
       {/* 2026-10-22: one CourtIQ-style matchup strip above the tabs; it narrows every page */}
+      {/* 2026-10-23: 📅 night picker -- a past night swaps every page to that night's frozen slate + results */}
+      <DateBar />
       <GameStrip />
 
       <nav className="tabs">
@@ -92,7 +97,9 @@ export default function App() {
       </nav>
 
       <main className="content">
-        <ActiveComponent />
+        <PastNightGuard key={`${tab}|${viewDate || ""}`} past={Boolean(viewDate)}>
+          <ActiveComponent key={viewDate || "tonight"} />
+        </PastNightGuard>
       </main>
 
       <div className="footer">

@@ -15,18 +15,22 @@ const amer = (n) => (n > 0 ? `+${n}` : `${n}`);
 const BOOK_FRESH_H = 18;
 const load = (url, set) => fetch(url, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).then(set).catch(() => set(null));
 
-export default function PrismPicks({ players }) {
+// 2026-10-23: `date` (the date picker's past night) -> that night's saved picks and results instead of tonight's; tonight's
+// view keeps only last night under "Last night" (older nights are one pick away in the date picker).
+export default function PrismPicks({ players, date }) {
   const [data, setData] = useState(null);
   const [odds, setOdds] = useState(null);
   const [showBook, setShowBook] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => { load("/data/prism_picks.json", setData); load("/data/prop_odds.json", setOdds); }, []);
   if (!data?.knots) return null;
+  const pastNight = date ? data.nights.find((n) => n.date === date) || { date, picks: [] } : null;
+  if (pastNight) return <PastNight night={pastNight} />;
   const picks = prismPicks(players, data, odds);
   const booksOk = Boolean(odds?.fetched_at) && Date.now() - Date.parse(odds.fetched_at) < BOOK_FRESH_H * 3600e3 && picks.some((c) => c.book);
   const bt = data.backtest;
   const live = data.live;
-  const past = [...data.nights].reverse();
+  const past = [...data.nights].slice(-1);
   return (
     <div className={`card prism-card ${open ? 'open' : 'collapsed'}`}>
       <div className="prism-head">
@@ -81,7 +85,8 @@ export default function PrismPicks({ players }) {
       </div>
       {past.length > 0 && (
         <details className="prism-past">
-          <summary>Past nights</summary>
+          <summary>Last night</summary>
+          <div className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>Pick any night in the 📅 date picker at the top to see its picks.</div>
           {past.map((n) => (
             <div key={n.date} className="prism-past-row mono">
               <b>{n.date.slice(5).replace("-", "/")}</b> {n.picks.filter((p) => p.result === "hit").length}/{n.picks.length}{" "}
@@ -90,6 +95,34 @@ export default function PrismPicks({ players }) {
           ))}
         </details>
       )}
+    </div>
+  );
+}
+
+function PastNight({ night }) {
+  const graded = night.picks.filter((p) => p.result === "hit" || p.result === "miss");
+  return (
+    <div className="card prism-card open">
+      <div className="prism-head">
+        <span className="prism-gem" aria-hidden="true">💎</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div className="prism-title">PRISM Picks</div>
+          <div className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>
+            {night.picks.length ? `That night's picks (frozen at puck drop) — ${graded.filter((p) => p.result === "hit").length} of ${graded.length} hit` : "No PRISM Picks were made that night."}
+          </div>
+        </div>
+      </div>
+      {night.picks.map((p, i) => (
+        <div key={`${p.playerId}-${p.stat}`} className="prism-row">
+          <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{i + 1}.</span>
+          <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={30} />
+          <div className="prism-main">
+            <div className="mono" style={{ fontSize: 12 }}>{p.name} <span style={{ color: "var(--muted)" }}>({p.team} vs {p.opp})</span></div>
+            <div className="prism-line">{p.label} <span className={`hit-mark ${p.result === "hit" ? "hit" : "miss"}`}>{p.result === "hit" ? "✅" : p.result === "miss" ? "✗" : "—"}{p.actual != null ? ` ${p.actual}` : ""}</span></div>
+          </div>
+          <div className="prism-stat"><b>{pct(p.chance)}</b><span className="mono">model</span></div>
+        </div>
+      ))}
     </div>
   );
 }

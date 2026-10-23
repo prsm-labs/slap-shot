@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { fetchGoalsLog } from "../lib/data.js";
+import { fetchGoalsLog, useViewDate } from "../lib/data.js";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -45,7 +45,8 @@ function exportCsv(rows, date) {
 export default function GoalTrackerTab() {
   const [all, setAll] = useState(null);
   const [meta, setMeta] = useState(null);
-  const [picked, setDate] = useState(null);
+  const viewDate = useViewDate(); // 2026-10-23: opens on the date picker's night
+  const [picked, setDate] = useState(viewDate);
   const [team, setTeam] = useState(null);
   const [search, setSearch] = useState("");
   const selected = useMatchup();

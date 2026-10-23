@@ -49,5 +49,7 @@ export function dueHeatMap(players) {
 
 export function dueHeatText(d) {
   if (!d) return "";
+  // past-night snapshots (date picker) keep only the multiplier, not the inputs
+  if (typeof d !== "object" || d.xgTrend == null) return `🔥 Due + heating up${typeof d === "number" ? `: goal chance x${d.toFixed(2)}` : d?.mult != null ? `: goal chance x${Number(d.mult).toFixed(2)}` : ""} (backtested, non-stars only)`;
   return `🔥 Due + heating up: no goal in ${d.drought >= 7 ? "7+" : d.drought} games, expected goals last 5 at ${d.xgTrend.toFixed(1)}x the season rate, soft defense tonight — goal chance x${d.mult.toFixed(2)} (backtested, non-stars only)`;
 }

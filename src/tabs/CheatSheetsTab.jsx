@@ -34,6 +34,22 @@ function GoalieStatus({ goalie }) {
 }
 
 // prop = the bet the list is about (Gambly button): goal / point / sog3.
+// 2026-10-23 past night (date picker): each row shows his real box line and ✅ / ✗ for the card's bet (prop).
+const hitOf = (item, prop) => {
+  const a = item.actual;
+  if (!a || a.played === false) return null;
+  if (prop === "point") return a.p >= 1;
+  if (prop === "sog3") return a.sog >= 3;
+  if (prop === "goal") return a.g >= 1;
+  return null;
+};
+function ActualLine({ item, prop }) {
+  const a = item.actual;
+  if (!a) return null;
+  if (a.played === false) return <div className="mono actual-line dnp">Final: did not play</div>;
+  const ok = hitOf(item, prop);
+  return <div className="mono actual-line">Final: {a.g} G · {a.a} A · {a.sog} SOG{a.toi ? ` · ${a.toi}` : ""}{ok != null && <span className={`hit-mark ${ok ? "hit" : "miss"}`}>{ok ? " ✅" : " ✗"}</span>}</div>;
+}
 function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf, prop = "goal" }) {
   return (
     <div className="card">
@@ -62,6 +78,7 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
                     vs {opp.name} <GoalieStatus goalie={opp} /> {item.goalieGrade && opp.playerId === item.opponentGoalieId && <GradeBadge grade={item.goalieGrade} />}
                   </div>
                 )}
+                <ActualLine item={item} prop={prop} />
               </div>
             </div>
             <span className="mono" style={{ fontWeight: 700, fontSize: 12, flexShrink: 0 }}>{renderRow(item)}</span>
@@ -82,7 +99,7 @@ function CheatSheetMain() {
   const [lineupFilter, setLineupFilter] = useState("notOut");
   const selected = useMatchup();
   const position = usePosition();
-  const lineups = useLineups(meta?.slateDate);
+  const lineups = useLineups(pool?.past ? null : meta?.slateDate); // past night: no live lineup marks
 
   const maps = useMemo(() => lineupMaps(lineups), [lineups]);
   const slateByTeam = useMemo(() => {
@@ -150,7 +167,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   return (
     <div>
       <SlateStatus />
-      <PrismPicks players={players} />
+      <PrismPicks players={players} date={pool?.past ? pool.meta.slateDate : null} />
 
       <div className="note">
         ℹ️ ✅ = in tonight's official lineup (posted by the NHL around warmups) or a confirmed starting goalie.
