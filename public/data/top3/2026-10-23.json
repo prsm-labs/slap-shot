@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-23",
+  "lockedAt": "2026-10-23T21:34:59.152Z",
+  "poolGenerated": "2026-10-23 17:31",
+  "eligible": 80,
+  "confirmed": 0,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 3% of tonight's slate by the grade model (42.5% to score), facing CHI (#1 softest defense of 4 tonight, 3.4 expected goals allowed a game). Matchup-adjusted chance 40.5%.",
+   "playerId": 8481540,
+   "name": "Cole Caufield",
+   "team": "MTL",
+   "opp": "CHI",
+   "position": "R",
+   "isHome": false,
+   "opponentGoalie": "Spencer Knight",
+   "opponentGoalieId": 8481519,
+   "goalieGrade": "B",
+   "grade": "A+",
+   "lineupStatus": null,
+   "modelGoalPct": 42.5,
+   "adjGoalPct": 40.5,
+   "oppXga": 3.4,
+   "softRank": 1,
+   "sogL5": 3.8,
+   "sogPg": 3.2
+  },
+  {
+   "tier": "mid",
+   "fallback": true,
+   "why": "No mid-tier skater cleared tonight's bar (soft matchup + shots trending up), so this is the best remaining mid-tier chance: 27.6% vs MTL (#2 softest defense of 4 tonight, 3.3 expected goals allowed a game).",
+   "playerId": 8483493,
+   "name": "Frank Nazar",
+   "team": "CHI",
+   "opp": "MTL",
+   "position": "C",
+   "isHome": true,
+   "opponentGoalie": "Jacob Fowler",
+   "opponentGoalieId": 8484170,
+   "goalieGrade": "A+",
+   "grade": "A",
+   "lineupStatus": null,
+   "modelGoalPct": 26.6,
+   "adjGoalPct": 27.6,
+   "oppXga": 3.3,
+   "softRank": 2,
+   "sogL5": 2.2,
+   "sogPg": 2.1
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
