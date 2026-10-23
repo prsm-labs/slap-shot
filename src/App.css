@@ -457,3 +457,6 @@ p.sch-muted{margin:0 0 10px;}
 .master-filter input{flex:1 1 200px;max-width:320px;min-width:0;}
 .master-filter .on{border-color:var(--accent2);box-shadow:0 0 0 1px var(--accent2);}
 @media (max-width:600px){.master-filter{justify-content:stretch;}.master-filter select{flex:0 1 38%;min-width:0;}.master-filter input{flex:1 1 50%;max-width:none;}.date-bar .date-hint{display:none;}}
+
+/* 2026-10-23 pick levels (PRISM Picks card) */
+.prism-levels { margin: 8px 0 4px; flex-wrap: wrap; width: fit-content; max-width: 100%; }

@@ -21,6 +21,20 @@ export const PAIR_CORR = {
 };
 import { breakoutBoard } from "./breakout.js";
 
+// Levels (2026-10-23, user: mid-range + long-shot pairs, data-backed): All = the board as before (every band; the default),
+// 🛡️ Safe = both-hit 25%+ (point / SOG pairs),
+// ⚖️ Mid-range = 10-25% (goal + point, star goal pairs), 🌠 Long shot = 3-10% (two goals, about +900 to +3200). Same legs and
+// factors at every level -- the factors were measured on the calibrated chances over four seasons, and Track Record's
+// chance buckets grade each band. Mid-range and long shots lead with the measured rise-together pairs (teammates' goal +
+// point / point + point, +12%: one can assist the other).
+export const LEVELS = [
+  { key: "all", label: "All levels", min: 0, max: 1.01, blurb: "Every chance band — the board as before" },
+  { key: "safe", label: "🛡️ Safe", min: 0.25, max: 1, blurb: "Both-hit 25% or better" },
+  { key: "mid", label: "⚖️ Mid-range", min: 0.1, max: 0.25, blurb: "Both-hit 10-25% (about +300 to +900 fair)" },
+  { key: "long", label: "🌠 Long shot", min: 0.03, max: 0.1, blurb: "Both-hit 3-10% — the stars-align pairs (about +900 to +3200 fair)" },
+];
+export const LEVEL_KEYS = LEVELS.map((l) => l.key);
+
 export const MAX_PAIRS = 10;
 const LEGS_PER_PROP = 40; // candidates per prop (by chance); keeps the search small
 // A player can appear in at most this many pairs. Balanced uses 1 so the board isn't the same few stars in
@@ -129,7 +143,7 @@ function take(sorted, n, state) {
   const got = [];
   for (const pr of sorted) {
     if (got.length >= n) break;
-    if (state.keys.has(pr.key)) continue;
+    if (state.keys.has(pr.key) || pr.chance < state.min || pr.chance >= state.max) continue;
     const ids = pr.legs.map((l) => l.p.playerId);
     if (ids.some((id) => (state.uses.get(id) || 0) >= state.cap)) continue;
     state.keys.add(pr.key);
@@ -143,14 +157,17 @@ function take(sorted, n, state) {
 // prop = null | "goal" | "point" | "sog3": only pairs whose two legs are both that prop (up to 10 of them).
 // includeStarted: keep games that already started (the page shows them as reference, pre-game numbers). The lock
 // script leaves it off, so a late lock only freezes games still to start.
-export function buildPairs(players, { mode = "balanced", boost = 0, prop = null, includeStarted = false } = {}) {
+export function buildPairs(players, { mode = "balanced", boost = 0, prop = null, includeStarted = false, level = "all" } = {}) {
   const live = players.filter((p) => (includeStarted || !p.gameStarted) && p.lineupStatus !== "out" && p.lineupStatus !== "scratched");
   const top = (k) => live.map((p) => legOf(p, k)).filter(Boolean).sort((a, b) => b.chance - a.chance).slice(0, LEGS_PER_PROP);
   const allGoal = top("goal"), allPoint = top("point"), allSog = top("sog3");
   const only = (k, list) => (prop && prop !== k ? [] : list);
   const goal = only("goal", allGoal), point = only("point", allPoint), sog = only("sog3", allSog);
   const universe = starUniverse(allGoal, allPoint, allSog);
-  return withStars(pickPairs({ goal, point, sog, live, mode, boost, prop }), universe);
+  const LV = LEVELS.find((l) => l.key === level) || LEVELS[0];
+  // "all" keeps the original board; safe / mid / long take only pairs inside their band
+  const band = { min: LV.min, max: LV.max };
+  return withStars(pickPairs({ goal, point, sog, live, mode, boost, prop, band, level }), universe);
 }
 
 // Sorted both-hit chances of every valid pair tonight, per prop combination (for the star strength percentile).
@@ -186,10 +203,10 @@ function withStars(list, universe) {
   return scored.map((pr) => ({ ...pr, starRank: rank.get(pr.key) ?? null }));
 }
 
-function pickPairs({ goal, point, sog, live, mode, boost, prop }) {
+function pickPairs({ goal, point, sog, live, mode, boost, prop, band = { min: 0, max: 1.01 }, level = "all" }) {
   const byChance = (a, b) => b.chance - a.chance;
   const byEv = (a, b) => b.ev - a.ev;
-  const state = { keys: new Set(), uses: new Map(), cap: MAX_PER_PLAYER[mode] ?? MAX_PER_PLAYER.default };
+  const state = { keys: new Set(), uses: new Map(), cap: MAX_PER_PLAYER[mode] ?? MAX_PER_PLAYER.default, ...band };
   const tag = (list, section) => list.map((pr) => ({ ...pr, section }));
 
   const goalPairs = allPairs(goal, (a, b) => relation(a, b) === "diff", boost).sort(byChance);
@@ -226,8 +243,10 @@ function pickPairs({ goal, point, sog, live, mode, boost, prop }) {
     const o = tag(take(oppStacks, MAX_PAIRS - t.length, state), "⚔️ Opponents");
     return [...t, ...tag(take(teamStacks, MAX_PAIRS - t.length - o.length, state), "🔗 Teammates"), ...o];
   }
-  // balanced
+  // balanced (mid / long lead with the measured teammate link)
+  const together = level !== "mid" && level !== "long" ? [] : tag(take(teamStacks, 2, state), "✨ Stars align: teammates");
   const out = [
+    ...together,
     ...tag(take(goalPairs, 2, state), "🚨 Goals"),
     ...tag(take(valuePairs, 2, state), "💰 Value"),
     ...tag(take(softPairs, 2, state), "▲ Soft matchup"),

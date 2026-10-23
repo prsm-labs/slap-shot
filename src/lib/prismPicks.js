@@ -67,6 +67,64 @@ export function bookFor(odds, name, stat, T) {
   return { ...o, same: false };
 }
 
+// 2026-10-23 pick levels (nhl_project/build_prism_picks.py TIERS): ⚖️ Mid-range / 🌠 Long shots beside the PRISM Picks --
+// wider lines (SOG median +0..+5, points 1-3, goals 1-2), the tier's own chance band and line floor, and a second
+// calibration step that sees how often he hit the line lately (data.tierCal[stat] = isotonic knots + logistic w).
+const TIER_LABEL = { SOG: "shots on goal", PTS: "point", G: "goal" };
+const TIER_STEPS = { SOG: 5, PTS: 2, G: 1 };
+const logit = (x) => { const q = Math.min(Math.max(x, 1e-4), 1 - 1e-4); return Math.log(q / (1 - q)); };
+function stackP(w, iso, own) {
+  const a = logit(iso), b = logit(own);
+  return 1 / (1 + Math.exp(-(w[0] + w[1] * a + w[2] * b + w[3] * a * b)));
+}
+export function tierTrack(chance, t) {
+  const bt = t.backtest;
+  const prior = Math.min(0.99, (chance * (bt.hits + t.live.hits)) / (bt.said * bt.n + t.live.said));
+  const band = t.bands.find(([lo, hi]) => chance >= lo && chance < hi) || t.bands[0];
+  return { rate: (band[3] + 40 * prior) / (band[2] + 40), n: band[2] };
+}
+export function tierPicks(players, data, odds, key, exclude = new Set()) {
+  const t = data?.tiers?.[key];
+  if (!players || !t || !data.tierCal) return [];
+  const R = data.rule, T = t.rule;
+  const cands = [];
+  for (const p of players) {
+    if (p.gameStarted || !p.modelProbs || p.roleFlag || exclude.has(p.playerId)) continue;
+    const f = data.form[p.playerId];
+    if (!f || f.s.length < R.min_games) continue;
+    const probs = { SOG: p.modelProbs?.sog3, PTS: p.anytimePointPct != null ? p.anytimePointPct / 100 : null, G: p.anytimeGoalPct != null ? p.anytimeGoalPct / 100 : null };
+    for (const [stat, vals] of [["SOG", f.s], ["PTS", f.p], ["G", f.g || []]]) {
+      const pr = probs[stat];
+      if (pr == null || vals.length < R.min_games) continue;
+      const med = median(vals), seen = new Set();
+      for (let d = 0; d <= TIER_STEPS[stat]; d++) {
+        const L = Math.max(Math.ceil(med) + d, T.min_line[stat]);
+        if (seen.has(L)) continue;
+        seen.add(L);
+        const hits = vals.filter((v) => v >= L).length;
+        if (hits / vals.length > T.real) continue;
+        const raw = stat === "SOG" ? tail(lamFor(pr, 3), L) : tail(-Math.log(Math.max(1e-6, 1 - Math.min(pr, 0.999))), L);
+        const own = (hits + 0.5) / (vals.length + 1);
+        const c = stackP(data.tierCal[stat].w, interp(raw, data.tierCal[stat].knots), own);
+        if (c < T.floor || c >= T.cap) continue;
+        cands.push({ p, stat, line: L, label: `${L}+ ${TIER_LABEL[stat]}${stat !== "SOG" && L > 1 ? "s" : ""}`, chance: c, lift: c / own,
+          last: [vals.length, hits], game: [p.team, p.opponentTeam].sort().join("-") });
+      }
+    }
+  }
+  cands.sort((a, b) => (T.rank === "lift" ? b.lift - a.lift : b.chance - a.chance));
+  const out = [], seen = new Set(), per = {}, ps = {};
+  for (const c of cands) {
+    if (seen.has(c.p.playerId) || (per[c.game] || 0) >= R.per_game || (ps[c.stat] || 0) >= T.stat_cap) continue;
+    seen.add(c.p.playerId);
+    per[c.game] = (per[c.game] || 0) + 1;
+    ps[c.stat] = (ps[c.stat] || 0) + 1;
+    out.push({ ...c, track: tierTrack(c.chance, t), book: c.stat === "G" ? null : bookFor(odds, c.p.name, c.stat, c.line) });
+    if (out.length === R.picks) break;
+  }
+  return out;
+}
+
 export function prismPicks(players, data, odds) {
   if (!players || !data?.knots) return [];
   const R = data.rule;

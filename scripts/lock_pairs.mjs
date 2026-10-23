@@ -20,7 +20,7 @@ import { scorePlayerPool } from "../src/scoring.js";
 import { computeGoalieGrades, gradeSlate } from "../src/lib/grades.js";
 import { applySlateScores } from "../src/lib/slapScore.js";
 import { applyLineups, STARTED } from "../src/lib/slateOverlay.js";
-import { buildPairs, MODE_KEYS, pairRecord } from "../src/lib/pairs.js";
+import { buildPairs, LEVEL_KEYS, MODE_KEYS, pairRecord } from "../src/lib/pairs.js";
 import { buildLineups } from "../api/lineups.js";
 import { h2hGrades } from "../src/lib/h2h.js";
 
@@ -100,6 +100,8 @@ const modes = {};
 for (const m of MODE_KEYS) modes[m] = buildPairs(players, { mode: m, boost: 0 }).map(pairRecord);
 // Balanced with one prop type (the page's 🚨 / 🍎 / 🏒 filters) — locked too so Track Record can grade each.
 for (const prop of ["goal", "point", "sog3"]) modes[`balanced:${prop}`] = buildPairs(players, { mode: "balanced", boost: 0, prop }).map(pairRecord);
+// 2026-10-23 levels: safe / mid-range / long-shot boards for every mode (plain mode keys stay the original "all" board)
+for (const level of LEVEL_KEYS.filter((l) => l !== "all")) for (const m of MODE_KEYS) modes[`${level}:${m}`] = buildPairs(players, { mode: m, boost: 0, level }).map(pairRecord);
 
 const teamsOfficial = [...new Set(active.filter((p) => p.lineupStatus === "dressed").map((p) => p.team))];
 const record = {

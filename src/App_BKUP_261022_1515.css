@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#080c10;--surface:#0d1318;--surface2:#131b22;--border:#1e2d3a;
+  --accent:#2f7dae;--accent2:#4a9fd4;--green:#27c97a;--red:#e5484d;
+  --text:#e8edf2;--muted:#5a7080;
+}
+body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-height:100vh;}
+.app{min-height:100vh;display:flex;flex-direction:column;}
+
+.header{
+  padding:16px 24px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(180deg,#0a1520 0%,var(--bg) 100%);
+  position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);
+  gap:12px;flex-wrap:wrap;
+}
+
+.logo{
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:26px;
+  text-transform:uppercase;letter-spacing:3px;color:var(--text);
+  display:flex;align-items:center;gap:10px;
+}
+.logo span{color:var(--accent);}
+.logo-mark{height:34px;width:34px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(47,125,174,.45));}
+.logo-dot{
+  width:9px;height:9px;background:var(--accent);border-radius:50%;
+  animation:pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+
+.badges{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.badge{
+  display:flex;align-items:center;gap:6px;
+  padding:4px 11px;border-radius:20px;font-size:11px;font-weight:600;
+  letter-spacing:1.2px;text-transform:uppercase;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+}
+.badge.live{background:rgba(39,201,122,.10);border:1px solid rgba(39,201,122,.25);color:var(--green);}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px rgba(39,201,122,.55);}
+
+.tabs{
+  display:flex;padding:0 16px;background:var(--surface);
+  border-bottom:1px solid var(--border);overflow-x:auto;
+}
+.tab{
+  padding:12px 14px;font-size:10px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;cursor:pointer;border:none;background:none;
+  color:var(--muted);border-bottom:2px solid transparent;transition:all .2s;
+  font-family:'Oswald',sans-serif;white-space:nowrap;
+}
+.tab:hover{color:var(--text);}
+.tab.active{color:var(--text);border-bottom-color:var(--accent);}
+
+/* ── Goal Ticker marquee — ported from Going Yard's real HRTicker ─────────────────────── */
+.ticker-wrap{
+  display:flex;align-items:center;background:var(--surface);border-bottom:1px solid var(--border);
+  overflow:hidden;cursor:pointer;height:34px;
+}
+.ticker-label{
+  flex-shrink:0;background:var(--accent);color:#fff;font-family:'DM Mono',monospace;font-weight:700;
+  font-size:10px;letter-spacing:1px;padding:0 12px;height:100%;display:flex;align-items:center;
+}
+.ticker-viewport{flex:1;overflow:hidden;position:relative;height:100%;}
+.ticker-loading{padding:0 14px;font-size:11px;color:var(--muted);line-height:34px;}
+.ticker-track{
+  display:inline-flex;white-space:nowrap;align-items:center;height:100%;
+  animation-name:ticker-scroll;animation-timing-function:linear;animation-iteration-count:infinite;
+}
+.ticker-track:hover{animation-play-state:paused;}
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-size:11px;color:var(--text);padding:0 2px;}
+.ticker-sep{color:var(--accent2);}
+
+.content{flex:1;padding:22px;max-width:1440px;margin:0 auto;width:100%;}
+.section-header{margin-bottom:16px;}
+.section-title{
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:26px;
+  text-transform:uppercase;letter-spacing:2px;color:var(--text);
+}
+.section-sub{
+  font-size:12px;color:var(--muted);margin-top:3px;
+  font-family:'Oswald',sans-serif;font-weight:300;letter-spacing:.5px;
+}
+
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:14px 16px;margin-bottom:14px;
+}
+.mono{font-family:'DM Mono',monospace;}
+/* Box score: team totals, team comparison, play-by-play (components/BoxScore.jsx, 2026-10-20) */
+.box-total-row td{border-top:2px solid var(--border);background:var(--surface2);}
+.cmp-card{max-width:720px;}
+.cmp-head{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;margin-bottom:8px;}
+.cmp-row{display:grid;grid-template-columns:90px 1fr 90px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);}
+.cmp-val{font-size:13px;}
+.cmp-val.r{text-align:right;}
+.cmp-val.lead{font-weight:700;color:var(--accent2);}
+.cmp-sub{font-size:10px;color:var(--muted);}
+.cmp-label{text-align:center;font-size:10px;color:var(--muted);margin-bottom:3px;}
+.cmp-bar{display:flex;gap:2px;height:6px;border-radius:3px;overflow:hidden;background:var(--surface2);}
+.cmp-bar span{background:rgba(90,112,128,.55);}
+.cmp-bar span.lead{background:var(--accent);}
+.pbp{max-height:70vh;overflow:auto;border:1px solid var(--border);border-radius:8px;padding:2px 10px;}
+.pbp-q{position:sticky;top:0;background:var(--surface);font-weight:700;font-size:11px;padding:6px 0 4px;border-bottom:1px solid var(--border);z-index:1;}
+.pbp-row{display:grid;grid-template-columns:42px 34px 1fr auto;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11px;}
+.pbp-row.goal{background:rgba(47,125,174,.16);font-weight:600;}
+.pbp-row.pen{color:#ffb020;}
+.pbp-clock,.pbp-team{color:var(--muted);font-size:10px;}
+.pbp-score{white-space:nowrap;color:var(--muted);}
+.pbp-row.goal .pbp-score{color:var(--text);}
+/* 💎 PRISM Picks -- gold glow card at the top of Cheat Sheets (components/PrismPicks.jsx) */
+.prism-card{--gold:#d4af37;border:1px solid rgba(212,175,55,.75);background:linear-gradient(180deg,rgba(212,175,55,.09),var(--surface) 70%);
+  box-shadow:0 0 0 1px rgba(212,175,55,.3),0 0 22px rgba(212,175,55,.38);animation:prism-glow 3.2s ease-in-out infinite;}
+@keyframes prism-glow{50%{box-shadow:0 0 0 1px rgba(212,175,55,.45),0 0 32px rgba(212,175,55,.55);}}
+@media (prefers-reduced-motion:reduce){.prism-card{animation:none;}}
+.prism-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.prism-gem{font-size:22px;filter:drop-shadow(0 0 6px rgba(212,175,55,.7));}
+.prism-title{font-weight:700;font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);}
+.prism-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(212,175,55,.18);cursor:pointer;}
+.prism-main{flex:1;min-width:0;}
+.prism-line{font-weight:600;font-size:15px;color:var(--gold);letter-spacing:.02em;}
+.prism-stat{display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;line-height:1.25;font-size:9px;color:var(--muted);}
+.prism-stat b{font-size:19px;color:var(--gold);font-family:'DM Mono',monospace;}
+.prism-foot{margin-top:8px;font-size:10px;color:var(--muted);line-height:1.55;}
+.prism-past{margin-top:6px;font-size:11px;}
+.prism-past summary{cursor:pointer;color:var(--gold);font-family:'DM Mono',monospace;}
+.prism-past-row{padding:4px 0;border-bottom:1px solid var(--border);font-size:10px;}
+.prism-head{flex-wrap:wrap;}
+.prism-book{font-size:10px;color:var(--muted);opacity:.9;}
+.prism-book-btn{border:1px solid rgba(212,175,55,.6);background:transparent;color:var(--gold);border-radius:999px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:10px;cursor:pointer;white-space:nowrap;}
+.prism-book-btn.off{color:var(--muted);border-color:var(--border);opacity:.6;cursor:not-allowed;}
+.note{
+  background:rgba(56,184,242,.06);border:1px solid rgba(56,184,242,.15);
+  border-radius:8px;padding:10px 14px;color:rgba(56,184,242,.85);
+  font-size:11px;line-height:1.6;font-family:'DM Mono',monospace;margin-bottom:14px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:7px;border:1px solid var(--border);
+  background:var(--surface2);color:var(--muted);cursor:pointer;
+  font-size:11px;font-family:'DM Mono',monospace;text-decoration:none;
+  transition:all .15s;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent);}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent);}
+.btn.primary:hover{background:var(--accent2);border-color:var(--accent2);color:#fff;}
+
+.embed{
+  border-radius:12px;overflow:hidden;border:1px solid var(--border);
+  background:var(--surface);position:relative;
+  padding-bottom:56.25%; /* 16:9 */
+  height:0;
+}
+.embed iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:none;
+}
+
+.footer{
+  text-align:center;padding:12px 0 10px;border-top:1px solid var(--border);
+  margin-top:22px;
+}
+.footer span{
+  font-size:10px;color:#2a3a48;font-family:'DM Mono',monospace;letter-spacing:1px;
+}
+
+/* ── Shared: sortable/scored tables ─────────────────────────────────── */
+.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface);
+  /* own scroll area so the header row stays pinned while scrolling down a long table (sticky th, top:0) */
+  max-height:max(360px,calc(100dvh - var(--header-h,60px) - 80px));overscroll-behavior-x:contain;}
+table.data-table{width:100%;border-collapse:collapse;font-family:'DM Mono',monospace;font-size:11.5px;white-space:nowrap;}
+table.data-table th{
+  text-align:left;padding:9px 12px;color:var(--muted);font-size:10px;letter-spacing:1px;
+  text-transform:uppercase;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;
+  position:sticky;top:0;background:var(--surface2);
+}
+table.data-table th:hover{color:var(--text);}
+table.data-table th.sorted{color:var(--accent);}
+table.data-table td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--text);}
+table.data-table tr:hover td{background:rgba(255,255,255,.02);}
+table.data-table tr.clickable{cursor:pointer;}
+/* Pinned first column (player / team name) on every data table, so it stays visible while scrolling
+   sideways. The cell is opaque (surface + the row's tint from --row-bg) so data doesn't show through. */
+table.data-table tr > th:first-child,
+table.data-table tr > td:first-child{position:sticky;left:0;z-index:1;}
+table.data-table tr > td:first-child{
+  background:linear-gradient(var(--row-bg,transparent),var(--row-bg,transparent)),var(--surface);
+  box-shadow:inset 3px 0 0 var(--row-bar,transparent),inset -1px 0 0 var(--border);
+}
+table.data-table tr > th:first-child{z-index:3;box-shadow:inset -1px 0 0 var(--border);}
+table.data-table tr:hover{--row-bg:rgba(255,255,255,.02);}
+/* Excel-style column resize handle (lib/columnResize.js): right edge of every header cell, mouse or touch. */
+table.data-table th .col-resize{position:absolute;top:0;right:0;width:12px;height:100%;cursor:col-resize;touch-action:none;z-index:4;}
+table.data-table th .col-resize::after{content:"";position:absolute;top:25%;bottom:25%;right:3px;width:2px;border-radius:1px;background:var(--border);}
+table.data-table th .col-resize:hover::after,table.data-table th .col-resize.active::after{background:var(--accent);top:0;bottom:0;}
+/* ⚙️ column chooser (lib/columnResize.js): gear in the pinned first header cell + floating panel. */
+table.data-table th .col-gear{background:none;border:0;padding:0 6px 0 0;margin:0;cursor:pointer;font-size:12px;line-height:1;opacity:.75;vertical-align:middle;}
+table.data-table th .col-gear:hover{opacity:1;}
+.col-chooser{position:fixed;z-index:1000;width:240px;max-width:calc(100vw - 16px);background:var(--surface2);border:1px solid var(--border);
+  border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.5);padding:10px;font-family:'DM Mono',monospace;font-size:11px;color:var(--text);}
+.col-chooser-head{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.col-chooser-list{max-height:min(50vh,360px);overflow-y:auto;display:flex;flex-direction:column;}
+.col-chooser-list label{display:flex;align-items:center;gap:8px;padding:5px 2px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04);}
+.col-chooser-list input{accent-color:var(--accent);width:15px;height:15px;}
+.col-chooser-foot{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.col-chooser-note{font-size:9px;color:var(--muted);margin-top:6px;}
+/* Phones: the pinned name column wraps instead of taking half the screen (drag its edge to change). */
+@media(max-width:600px){
+  table.data-table tr > td:first-child{white-space:normal;min-width:110px;max-width:150px;}
+}
+/* Clickable stat tiles (Track Record: tap a card to filter the table to those skaters). */
+.signal-tile.clickable{cursor:pointer;}
+.signal-tile.clickable:hover{border-color:var(--accent);}
+.signal-tile.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);}
+.player-name-link{color:var(--text);cursor:pointer;text-decoration:none;border-bottom:1px dotted var(--muted);}
+.player-name-link:hover{color:var(--accent2);border-bottom-color:var(--accent2);}
+
+/* ── Tier / grade pills — single accent hue only, brightness/saturation vary ── */
+.tier-pill{
+  display:inline-block;padding:2px 9px;border-radius:12px;font-size:9.5px;font-weight:700;
+  letter-spacing:.5px;text-transform:uppercase;font-family:'DM Mono',monospace;white-space:nowrap;
+}
+.tier-elite{background:rgba(74,159,212,.22);color:#8cc5ec;border:1px solid rgba(74,159,212,.45);}
+.tier-core{background:rgba(47,125,174,.16);color:var(--accent2);border:1px solid rgba(47,125,174,.35);}
+.tier-value{background:rgba(47,125,174,.08);color:var(--muted);border:1px solid rgba(47,125,174,.18);}
+.tier-ignore{background:rgba(255,255,255,.03);color:#3a4d5c;border:1px solid var(--border);}
+
+.pill-row{display:flex;gap:3px;background:var(--surface2);border-radius:6px;padding:2px;border:1px solid var(--border);}
+.pill-btn{
+  padding:3px 8px;border-radius:4px;font-size:9px;font-family:'DM Mono',monospace;
+  cursor:pointer;border:none;background:transparent;color:var(--muted);font-weight:400;
+}
+.pill-btn.active{background:var(--accent);color:#fff;font-weight:700;}
+
+.score-box{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-width:52px;padding:4px 0;
+}
+.score-box .num{font-family:'Oswald',sans-serif;font-weight:800;font-size:20px;line-height:1;}
+.score-box .lbl{font-size:8px;color:var(--muted);letter-spacing:1px;margin-top:2px;text-transform:uppercase;}
+
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+
+/* ── Signal Board — ported from Going Yard's real Barrel Lab/On Base stat-tile row ──────── */
+.signal-board{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;}
+.signal-tile{
+  flex:0 0 auto;min-width:118px;background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:10px 12px;
+}
+.signal-tile .lbl{font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;font-family:'DM Mono',monospace;}
+.signal-tile .val{font-family:'Oswald',sans-serif;font-weight:800;font-size:22px;margin-top:3px;color:var(--text);}
+.signal-tile .sub{font-size:9px;color:var(--muted);margin-top:2px;font-family:'DM Mono',monospace;}
+
+/* ── Top Reads — horizontal card strip ───────────────────────────────────────────────── */
+.top-reads{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;}
+.read-card{
+  flex:0 0 220px;background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:12px;cursor:pointer;transition:border-color .15s;
+}
+.read-card.signal{border-color:var(--accent);background:rgba(47,125,174,.06);}
+.read-card:hover{border-color:var(--accent2);}
+.signal-star{color:var(--accent2);}
+
+/* ── Row/table signal styling ────────────────────────────────────────────────────────── */
+tr.signal-row td{background:rgba(47,125,174,.05);}
+tr.signal-row{--row-bg:rgba(47,125,174,.05);}
+
+/* ── Slideout ──────────────────────────────────────────────────────── */
+.slide-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:899;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+}
+.slide-backdrop.open{opacity:1;pointer-events:auto;}
+.slide-panel{
+  position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);
+  background:var(--surface);border-left:1px solid var(--border);
+  z-index:900;transform:translateX(100%);transition:transform .25s ease;
+  overflow-y:auto;padding:20px;
+}
+.slide-panel.open{transform:translateX(0);}
+.slide-close{
+  position:absolute;top:14px;right:14px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:6px;color:var(--muted);cursor:pointer;padding:5px 9px;font-size:12px;
+}
+.slide-close:hover{color:var(--text);border-color:var(--accent);}
+
+@media(max-width:768px){
+  .content{padding:13px;}
+  .header{padding:12px 15px;}
+  .section-title{font-size:22px;}
+}
+
+/* Matchup picker strip (components/MatchupFilter.jsx): side-scrolling compact game cards, sticky under the header */
+.matchup-strip{
+  position:sticky;top:var(--header-h,0px);z-index:50;
+  margin:0 -4px 12px;padding:6px 4px;background:var(--bg);
+  border-bottom:1px solid var(--border);
+}
+.matchup-strip-scroll{
+  display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;
+  scrollbar-width:thin;padding-bottom:2px;
+}
+.matchup-chip{
+  flex:0 0 auto;scroll-snap-align:start;min-width:112px;max-width:170px;
+  display:flex;flex-direction:column;gap:2px;text-align:left;cursor:pointer;
+  padding:6px 10px;border-radius:8px;border:1px solid var(--border);
+  background:var(--surface);color:var(--text);transition:border-color .15s,opacity .15s;
+}
+.matchup-chip:hover{border-color:var(--accent);}
+.matchup-chip.on{border-color:var(--accent2);background:rgba(74,159,212,.14);}
+.matchup-chip.dim{opacity:.55;}
+.matchup-chip.all{min-width:92px;}
+.mc-teams{font-family:'Oswald',sans-serif;font-weight:700;font-size:13px;white-space:nowrap;display:flex;gap:8px;align-items:baseline;justify-content:space-between;}
+.mc-time{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:9px;color:var(--muted);}
+.mc-sub{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* 📊 Stats tab (2026-10-20) */
+.stats-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.stats-pills{display:inline-flex;flex-wrap:wrap;}
+.stats-pills .pill-btn{font-size:11px;padding:5px 10px;}
+.stats-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;}
+.stats-filters input:not([type=number]){flex:1 1 200px;min-width:0;max-width:340px;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:7px 10px;font-family:'DM Mono',monospace;font-size:12px;}
+.stats-filters select,.stats-filters input[type=number]{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:6px;font-family:'DM Mono',monospace;font-size:11px;}
+.stats-filters input[type=number]{width:56px;}
+.stats-muted{color:var(--muted);font-size:11px;}
+.stats-meta{color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;margin:6px 0 8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.stats-csv{border:1px solid var(--border)!important;}
+.stats-name{display:flex;align-items:center;gap:8px;}
+.stats-sorted{color:var(--accent)!important;font-weight:700;}
+.stats-row.open td{background:rgba(56,184,242,.08);}
+.stats-detail>td{padding:0!important;}
+.stats-log{padding:10px 12px;border-left:3px solid var(--accent);max-width:min(1100px,calc(100vw - 40px));position:sticky;left:0;white-space:normal;}
+.stats-log-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px;}
+.stats-bars{display:flex;gap:4px;align-items:flex-end;height:90px;overflow-x:auto;margin-bottom:8px;}
+.stats-bar{display:grid;grid-template-rows:auto 1fr auto;justify-items:center;min-width:28px;height:100%;font-size:10px;font-family:'DM Mono',monospace;}
+.stats-bar .b{align-self:end;width:14px;background:rgba(56,184,242,.35);border-radius:3px 3px 0 0;}
+.stats-bar .b.win{background:var(--accent);}
+.stats-bar .x{color:var(--muted);}

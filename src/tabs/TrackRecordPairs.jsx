@@ -6,7 +6,12 @@ const PROP_LOCKS = [
   { key: "balanced:goal", label: "🚨 Goal pairs" },
   { key: "balanced:point", label: "🍎 Point pairs" },
   { key: "balanced:sog3", label: "🏒 Shots pairs" },
+  // 2026-10-23 pair levels (Balanced board per level; other level boards are locked too and graded under All modes)
+  { key: "safe:balanced", label: "🛡️ Safe" },
+  { key: "mid:balanced", label: "⚖️ Mid-range" },
+  { key: "long:balanced", label: "🌠 Long shot" },
 ];
+const LEVEL_LABEL = { safe: "🛡️ Safe", mid: "⚖️ Mid-range", long: "🌠 Long shot" };
 import { fmtAmerican } from "../lib/bookOdds.js";
 
 // Track Record — Pairs: every mode's locked pairs (scripts/lock_pairs.mjs, ~20-45 min before the first puck drop)
@@ -131,6 +136,7 @@ export default function TrackRecordPairs() {
   const decided = inScope.filter((r) => r.result !== "void");
   const modeLabel = (k) => {
     const [m, prop] = k.split(":");
+    if (LEVEL_LABEL[m]) return `${LEVEL_LABEL[m]} · ${MODES.find((x) => x.key === prop)?.label || prop}`;
     const base = MODES.find((x) => x.key === m)?.label || m;
     return prop ? `${base} · ${PROPS[prop]?.emoji || prop}` : base;
   };

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
-import { buildPairs, MAX_PAIRS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican, toDecimal } from "../lib/pairs.js";
+import { buildPairs, LEVELS, MAX_PAIRS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican, toDecimal } from "../lib/pairs.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { useH2HGrades } from "../lib/h2h.js";
 import { BOOK_NAMES, fmtAmerican, pairBetUrl } from "../lib/bookOdds.js";
@@ -364,6 +364,7 @@ export default function PairsTab() {
   useListFilters(); // 2026-10-23: re-render on the header search (applied in filterPlayers)
   const h2hGrades = useH2HGrades();
   const [mode, setMode] = useState("balanced");
+  const [level, setLevel] = useState("all");
   const [boost, setBoost] = useState(0);
   const [lock, setLock] = useState(null); // locked record for tonight, if any
   const [showLive, setShowLive] = useState(false);
@@ -394,18 +395,19 @@ export default function PairsTab() {
 
   const livePairs = useMemo(() => {
     if (!allPlayers) return [];
-    return buildPairs(filterPlayers(allPlayers.players, selected), { mode, boost, prop: propFilter, includeStarted: true });
-  }, [allPlayers, selected, mode, boost, propFilter]);
+    return buildPairs(filterPlayers(allPlayers.players, selected), { mode, boost, prop: propFilter, includeStarted: true, level });
+  }, [allPlayers, selected, mode, boost, propFilter, level]);
   const lockedPairs = useMemo(() => {
     if (!lock) return [];
     const byId = new Map((allPlayers?.players || []).map((p) => [p.playerId, p]));
     const [ta, tb] = selected ? selected.split("@") : [];
-    const key = propFilter && mode === "balanced" ? `balanced:${propFilter}` : mode;
-    return (lock.modes[key] || lock.modes[mode] || [])
+    // all = the original boards; safe / mid / long = <level>:<mode> (locks before 10/23 have none -> nothing shown, Live builds them)
+    const key = level !== "all" ? `${level}:${mode}` : propFilter && mode === "balanced" ? `balanced:${propFilter}` : mode;
+    return (lock.modes[key] || (level === "all" ? lock.modes[mode] : null) || [])
       .filter((r) => !selected || r.legs.some((l) => l.team === ta || l.team === tb))
       .filter((r) => !propFilter || r.legs.every((l) => l.prop === propFilter))
       .map((r) => fromRecord(r, byId, boost));
-  }, [lock, allPlayers, mode, boost, selected, propFilter]);
+  }, [lock, allPlayers, mode, boost, selected, propFilter, level]);
   const board = locked ? lockedPairs : livePairs;
   const pairs = starFilter
     ? board.filter((pr) => pr.starRank && pr.starRank <= starFilter).sort((a, b) => a.starRank - b.starRank)
@@ -418,7 +420,7 @@ export default function PairsTab() {
   const [news, setNews] = useState({ at: null, keys: new Set() });
   const keyStr = pairs.map((p) => p.key).join(",");
   useEffect(() => {
-    const ctx = `${mode}|${selected}|${boost}|${locked}|${propFilter}|${starFilter}`;
+    const ctx = `${mode}|${level}|${selected}|${boost}|${locked}|${propFilter}|${starFilter}`;
     const last = prev.current;
     if (last.ctx === ctx && last.keys != null && last.keys !== keyStr) {
       const old = new Set(last.keys.split(","));
@@ -427,10 +429,11 @@ export default function PairsTab() {
       setNews({ at: null, keys: new Set() });
     }
     prev.current = { ctx, keys: keyStr };
-  }, [keyStr, mode, selected, boost, pairs, locked, propFilter, starFilter]);
+  }, [keyStr, mode, level, selected, boost, pairs, locked, propFilter, starFilter]);
 
   if (!pool) return <div className="mono" style={muted}>Loading tonight's slate…</div>;
   const modeInfo = MODES.find((m) => m.key === mode);
+  const levelInfo = LEVELS.find((l) => l.key === level);
   const games = new Set(pool.players.map((p) => p.team)).size / 2;
   const startedGames = new Set(pool.players.filter((p) => p.gameStarted).map((p) => p.team)).size / 2;
 
@@ -459,6 +462,9 @@ export default function PairsTab() {
         </div>
       )}
       <MatchupFilter />
+      <div className="pill-row" style={{ width: "fit-content", maxWidth: "100%", flexWrap: "wrap", marginTop: 10 }}>
+        {LEVELS.map((l) => <button key={l.key} className={`pill-btn ${level === l.key ? "active" : ""}`} onClick={() => setLevel(l.key)} title={l.blurb}>{l.label}</button>)}
+      </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center", margin: "10px 0" }}>
         <div className="pill-row">
           {MODES.map((m) => (
@@ -487,7 +493,7 @@ export default function PairsTab() {
         </div>
       </div>
       <div className="mono" style={{ fontSize: 10, ...muted, marginBottom: 10 }}>
-        {modeInfo.blurb}{propFilter ? ` — ${PROPS[propFilter].label} pairs only (both legs)` : ""}. Gold ★ = the {STAR_TOP} best pairs in this view, in order
+        {level !== "all" ? `${levelInfo.blurb} · ` : ""}{modeInfo.blurb}{propFilter ? ` — ${PROPS[propFilter].label} pairs only (both legs)` : ""}. Gold ★ = the {STAR_TOP} best pairs in this view, in order
         (strongest of its kind tonight, plus book value and official lineups — hover the badge for the math).
       </div>
 
@@ -496,6 +502,8 @@ export default function PairsTab() {
           {mode === "value" && propFilter && propFilter !== "goal" ? "Value vs book only exists for goal pairs (the only prop we have prices for)." :
             mode === "value" ? "No goal + goal pair with a positive expected return at one book right now." :
             locked && propFilter ? "No locked pairs of this prop type in this mode — switch to 🔄 Live to build them." :
+            locked && level !== "all" ? "No locked pairs at this level in this mode (levels lock from 10/23) — switch to 🔄 Live to build them." :
+            level !== "all" ? "No pairs in this chance band for this mode right now." :
             "No pairs — every game has started or no skaters qualify."}
         </div>
       ) : (
@@ -513,6 +521,8 @@ export default function PairsTab() {
         (e.g. +380 and +200 → 4.80 × 3.00 = 14.40 → +1340); a profit boost multiplies the profit part. Sportsbook prices exist only for anytime goals, so
         point and shot pairs carry no odds and are ranked on chance alone. Only "Value vs book" ranks by price. H2H and the 🔥 / soft-D tags are shown as context;
         H2H is not part of any chance. Max {MAX_PAIRS} pairs; a player appears in at most 1 Balanced pair (2 in other modes).
+        Levels: 🛡️ Safe (both hit 25%+), ⚖️ Mid-range (10-25%), 🌠 Long shot (3-10%) — the same legs and correlations, so a long-shot pair is
+        priced as honestly as a safe one (Track Record grades every chance band); mid-range and long shots lead with ✨ teammates whose legs rise together.
         Every mode is locked about 20–45 minutes before the first puck drop (after that game's official lineups) and graded in Track Record.
       </div>
     </div>
