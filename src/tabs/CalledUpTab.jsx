@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { lineupMaps, skaterStatus, useLineups } from "../lib/lineups.js";
-import { filterByTeam, useMatchup } from "../lib/matchupFilter.js";
+import { filterByTeam, useMatchup, useTeamFilter } from "../lib/matchupFilter.js";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { matchesSearch } from "../lib/teamSearch.js";
 import { useSort } from "../lib/useSort.js";
@@ -14,6 +14,7 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 // 🆙 Called Up — this season's minor-league call-ups (public/data/callups.json, nhl_project/build_callups.py:
 // ESPN transactions + NHL rosters / player pages): when and from where, their AHL line this season and last, NHL
@@ -48,8 +49,9 @@ export default function CalledUpTab() {
   const [status, setStatus] = useState("up");
   const [lineupOnly, setLineupOnly] = useState(false);
   const [tonightOnly, setTonightOnly] = useState(false);
-  const [team, setTeam] = useState("");
-  const [search, setSearch] = useState("");
+  // 2026-10-23: team + search come from the header (MasterFilter); this page's own boxes were retired
+  const team = useTeamFilter() || "";
+  const search = useListFilters().search;
   const live = useScoredPool({ includeStarted: true });
   const meta = live?.meta;
   const lineups = useLineups(meta?.slateDate);
@@ -141,13 +143,6 @@ export default function CalledUpTab() {
         {STATUS_OPTIONS.map(([k, label]) => pill(status === k, label, () => setStatus(k)))}
         {pill(tonightOnly, "Playing tonight", () => setTonightOnly(!tonightOnly))}
         {pill(lineupOnly, "✅ In official lineup", () => setLineupOnly(!lineupOnly), "Only players in tonight's posted lineup (around warmups)")}
-        <select className="mono" value={team} onChange={(e) => setTeam(e.target.value)}
-          style={{ background: "var(--surface)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "4px 8px", fontSize: 11 }}>
-          <option value="">All teams</option>
-          {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-        </select>
-        <input className="mono" placeholder="Search player or team" value={search} onChange={(e) => setSearch(e.target.value)}
-          style={{ background: "var(--surface)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "4px 8px", fontSize: 11, minWidth: 160 }} />
         <span className="mono" style={{ fontSize: 10, ...muted }}>{sorted.length} of {rows.length}</span>
       </div>
 

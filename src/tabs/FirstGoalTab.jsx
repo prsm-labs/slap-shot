@@ -8,7 +8,7 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { fmtToi } from "../lib/toi.js";
-import { matchupKey, playerMatchupKey, useMatchup } from "../lib/matchupFilter.js";
+import { matchupKey, playerMatchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
 import { firstGoalRate as rate, OPENING, openingShare } from "../lib/projections.js";
@@ -123,7 +123,7 @@ export default function FirstGoalTab() {
   }, [pool, meta]);
 
   const actualFirst = useMemo(() => firstGoalsByGame(live?.goals), [live]);
-  const shown = selected ? games.filter((g) => g.key === selected) : games;
+  const shown = games.filter((g) => inScope(g.key, selected));
   const h2h = useH2H();
   const [showAll, setShowAll] = useState(false);
   const candidates = useMemo(() => {

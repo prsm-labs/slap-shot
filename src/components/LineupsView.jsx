@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchScoredPool } from "../lib/data.js";
 import { useLineups, startingGoalie, lineupMaps } from "../lib/lineups.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
-import { useMatchup, toggleMatchup } from "../lib/matchupFilter.js";
+import { useMatchup, toggleMatchup, inScope } from "../lib/matchupFilter.js";
 
 // Lineups view inside the Live tab (same idea as Going Yard's lineup cards): for each game,
 // each team's starting goalie and status, power-play units, injuries, and — once the NHL posts
@@ -95,7 +95,7 @@ export default function LineupsView({ date, gameId = null }) {
   if (!data) return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading lineups…</div>;
   if (!data.games.length) return <div className="note">No NHL games on this date.</div>;
   const maps = lineupMaps(data);
-  const games = gameId ? data.games.filter((g) => g.gameId === gameId) : selected ? data.games.filter((g) => g.key === selected) : data.games;
+  const games = gameId ? data.games.filter((g) => g.gameId === gameId) : selected ? data.games.filter((g) => inScope(g.key, selected)) : data.games;
   if (gameId && !games.length) return <div className="note">No lineup report for this game yet.</div>;
 
   return (

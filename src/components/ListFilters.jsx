@@ -15,13 +15,7 @@ export default function ListFilters({ signalLabel = "★ Signals only", shown, t
     <div className="card" style={{ padding: "8px 12px", marginBottom: 12 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         <button className="btn" onClick={() => setOpen((v) => !v)}>⚙ Filters{n ? ` (${n})` : ""} {open ? "▲" : "▼"}</button>
-        <input
-          value={f.search}
-          onChange={(e) => setListFilter("search", e.target.value)}
-          placeholder="Search skater or team (TOR, Toronto, Leafs)"
-          className="mono"
-          style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "4px 8px", fontSize: 11, minWidth: 230 }}
-        />
+        {/* 2026-10-23: the skater / team search moved to the header (MasterFilter) -- one search for the whole app */}
         {shown != null && <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{shown} of {total} skaters</span>}
         {n > 0 && <button className="btn" onClick={clearListFilters}>✕ Clear</button>}
       </div>

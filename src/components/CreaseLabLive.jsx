@@ -3,7 +3,7 @@ import { useSort } from "../lib/useSort.js";
 import { openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import MatchupFilter from "./MatchupFilter.jsx";
-import { useMatchup } from "../lib/matchupFilter.js";
+import { useMatchup, inScope } from "../lib/matchupFilter.js";
 import { LIVE_POLL_MS } from "../lib/liveGoals.js";
 
 // Crease Lab "Live" view — every goalie who has played on the slate, from the NHL boxscore
@@ -114,7 +114,7 @@ export default function CreaseLabLive({ date, fallback }) {
     });
   }, [live, projByTeam]);
 
-  const shown = useMemo(() => rows.filter((r) => !selected || r.matchup === selected), [rows, selected]);
+  const shown = useMemo(() => rows.filter((r) => !selected || inScope(r.matchup, selected)), [rows, selected]);
   const { sorted, sortKey, sortDir, toggleSort } = useSort(shown, "rank", "asc");
 
   if (error && !live) return <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Couldn't load live goalie stats: {error}</div>;

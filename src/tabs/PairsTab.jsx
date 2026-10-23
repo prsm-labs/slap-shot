@@ -15,6 +15,7 @@ import GradeBadge from "../components/GradeBadge.jsx";
 import PickButton from "../components/PickButton.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 // 🤝 Pairs (Scouting): up to 10 auto-built 2-leg pairs from the live slate (lib/pairs.js). Rebuilt whenever the
 // live pool changes (lineups, goalie news, scratches), and pairs that are new since the last build get a NEW tag.
@@ -360,6 +361,7 @@ export default function PairsTab() {
   const allPlayers = useScoredPool({ includeStarted: true });
   const pool = allPlayers;
   const selected = useMatchup();
+  useListFilters(); // 2026-10-23: re-render on the header search (applied in filterPlayers)
   const h2hGrades = useH2HGrades();
   const [mode, setMode] = useState("balanced");
   const [boost, setBoost] = useState(0);

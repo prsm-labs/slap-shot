@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchGoalsLog } from "../lib/data.js";
 import { openSkaterSlide } from "../slideouts.js";
 import MatchupFilter from "../components/MatchupFilter.jsx";
-import { useMatchup } from "../lib/matchupFilter.js";
+import { useMatchup, inScope } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 
 // Goal Flurries — a team scoring 2+ goals within 3 minutes of game time (same gap-based
@@ -101,9 +101,9 @@ export default function LiveThemesTab() {
     () => [...new Set(dayGoals.map((g) => g.matchup))].sort().map((m) => ({ away: m.split("@")[0], home: m.split("@")[1] })),
     [dayGoals]
   );
-  const gameFilter = selected && dayGoals.some((g) => g.matchup === selected) ? selected : null;
+  const gameFilter = selected && dayGoals.some((g) => inScope(g.matchup, selected)) ? selected : null;
   const flurries = useMemo(
-    () => findFlurries(gameFilter ? dayGoals.filter((g) => g.matchup === gameFilter) : dayGoals),
+    () => findFlurries(gameFilter ? dayGoals.filter((g) => inScope(g.matchup, gameFilter)) : dayGoals),
     [dayGoals, gameFilter]
   );
 

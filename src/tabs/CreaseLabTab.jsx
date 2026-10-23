@@ -7,7 +7,7 @@ import { GOALIE_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
-import { matchupKey, useMatchup } from "../lib/matchupFilter.js";
+import { matchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { lineupMaps, startingGoalie, useLineups } from "../lib/lineups.js";
 import { projectGoalie, SAVE_LINES } from "../lib/crease.js";
 import CreaseLabLive from "../components/CreaseLabLive.jsx";
@@ -49,7 +49,7 @@ export default function CreaseLabTab() {
 
   const h2hGrades = useH2HGrades();
   const shown = useMemo(
-    () => withH2H(rows.filter((r) => (!selected || r.matchup === selected) && (!confirmedOnly || r.confirmed)), h2hGrades, true),
+    () => withH2H(rows.filter((r) => inScope(r.matchup, selected) && (!confirmedOnly || r.confirmed)), h2hGrades, true),
     [rows, selected, confirmedOnly, h2hGrades]
   );
   const { sorted, sortKey, sortDir, toggleSort } = useSort(shown, "saves", "desc");

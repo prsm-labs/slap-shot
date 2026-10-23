@@ -8,7 +8,7 @@ import BoxScore from "../components/BoxScore.jsx";
 import LineupsView from "../components/LineupsView.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
-import { matchupKey, toggleMatchup, setMatchup, useMatchup } from "../lib/matchupFilter.js";
+import { matchupKey, toggleMatchup, setMatchup, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
 
 // Live games + in-game "Heating Up" board (TopCheese-style), fed by /api/live (api/live.js),
@@ -193,9 +193,9 @@ export default function LiveTab() {
     [data]
   );
   // The shared matchup filter only applies if that game is on this date's list.
-  const gameFilter = selected && [...gameKeys.values()].includes(selected) ? selected : null;
+  const gameFilter = selected && [...gameKeys.values()].some((k) => inScope(k, selected)) ? selected : null;
   useEffect(() => {
-    const list = (data?.games || []).filter((g) => !gameFilter || gameKeys.get(g.gameId) === gameFilter);
+    const list = (data?.games || []).filter((g) => inScope(gameKeys.get(g.gameId), gameFilter));
     if (!list.length) return;
     const want = focus && focus.date === date && list.find((g) => g.gameId === focus.gameId);
     if (want && !focus.used) { focus.used = true; setBoxGame(want.gameId); return; }
@@ -206,7 +206,7 @@ export default function LiveTab() {
   const rows = useMemo(() => {
     if (!data) return [];
     return data.skaters
-      .filter((s) => !gameFilter || gameKeys.get(s.gameId) === gameFilter)
+      .filter((s) => inScope(gameKeys.get(s.gameId), gameFilter))
       .filter((s) => showAll || s.heat.points >= 5)
       .filter((s) => filterPositions([s], position).length > 0)
       .map((s) => ({ ...s, pre: poolById.get(s.playerId) }))
@@ -257,7 +257,7 @@ export default function LiveTab() {
       {/* 2026-10-22 (user: CourtIQ's Live is the standard): compact score cards; tap one to open its box score right below */}
       {view === "games" && data && data.games.length > 0 && (
         <div className="score-grid">
-          {data.games.filter((g) => !gameFilter || gameKeys.get(g.gameId) === gameFilter).map((g) => {
+          {data.games.filter((g) => inScope(gameKeys.get(g.gameId), gameFilter)).map((g) => {
             const live = LIVE.has(g.state), started = live || DONE.has(g.state);
             return (
               <button key={g.gameId} className={`score-card ${boxGame === g.gameId ? "active" : ""}`} onClick={() => setBoxGame(g.gameId)}>

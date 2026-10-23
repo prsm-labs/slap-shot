@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { expectedGoals, fairOdds, projectGame, useTeamRatings } from "../lib/gameModel.js";
 import { projectGoalie } from "../lib/crease.js";
-import { matchupKey, useMatchup } from "../lib/matchupFilter.js";
+import { matchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { useSort } from "../lib/useSort.js";
 import { openGoalieSlide, openSkaterSlide } from "../slideouts.js";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -292,7 +292,7 @@ export default function ProjectionsTab() {
   if (!pool || !ratings) {
     return <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>{pool && ratings === null ? "Loading team ratings…" : "Loading…"}</div>;
   }
-  const shown = games.filter((g) => !selected || g.matchup === selected);
+  const shown = games.filter((g) => inScope(g.matchup, selected));
   const toggle = (k) => setOpen((s) => { const n = new Set(s); if (n.has(k)) n.delete(k); else n.add(k); return n; });
 
   return (

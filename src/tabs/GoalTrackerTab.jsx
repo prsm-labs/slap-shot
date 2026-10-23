@@ -4,10 +4,11 @@ import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
-import { useMatchup } from "../lib/matchupFilter.js";
+import { useMatchup, inScope, useTeamFilter } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FASTEST_GOAL, FIRST_GOAL, fastestGoal, firstGoalsByGame, gameClock, isFirstGoal } from "../lib/goalBadges.js";
 import { matchesSearch } from "../lib/teamSearch.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 // Ported from Going Yard's real HRTrackerTab (mlb_project/going-yard/src/App.jsx:11821-12176):
 // a flat, sortable table of every real event for a selected date, native <input type="date">
@@ -47,8 +48,9 @@ export default function GoalTrackerTab() {
   const [meta, setMeta] = useState(null);
   const viewDate = useViewDate(); // 2026-10-23: opens on the date picker's night
   const [picked, setDate] = useState(viewDate);
-  const [team, setTeam] = useState(null);
-  const [search, setSearch] = useState("");
+  // 2026-10-23: team + search come from the header (MasterFilter); this page's own box and team pills were retired
+  const team = useTeamFilter();
+  const search = useListFilters().search;
   const selected = useMatchup();
   const [live, setLive] = useState(null);
   const today = easternToday();
@@ -106,9 +108,9 @@ export default function GoalTrackerTab() {
     [dayGoals]
   );
   // The shared matchup filter only applies if that game was played on this date.
-  const gameFilter = selected && dayGoals.some((g) => g.matchup === selected) ? selected : null;
+  const gameFilter = selected && dayGoals.some((g) => inScope(g.matchup, selected)) ? selected : null;
   const filtered = useMemo(() => {
-    let rows = gameFilter ? dayGoals.filter((g) => g.matchup === gameFilter) : dayGoals;
+    let rows = gameFilter ? dayGoals.filter((g) => inScope(g.matchup, gameFilter)) : dayGoals;
     if (team) rows = rows.filter((g) => g.scorerTeam === team || g.oppTeam === team);
     if (search.trim()) rows = rows.filter((g) => matchesSearch(search, [g.scorerName, g.goalieName], [g.scorerTeam]));
     return rows;
@@ -173,13 +175,6 @@ export default function GoalTrackerTab() {
         />
         <button className="btn" onClick={() => stepDate(1)} disabled={dates.indexOf(date) >= dates.length - 1}>▶</button>
         <button className="btn" onClick={() => setDate(latest)}>↩ Latest</button>
-        <input
-          className="mono"
-          placeholder="Search scorer, goalie or team…"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 9px", fontSize: 12, flex: 1, minWidth: 160 }}
-        />
         <button className="btn" onClick={() => exportCsv(sorted, date)} disabled={!sorted.length}>⬇ Export CSV</button>
       </div>
 
@@ -187,14 +182,6 @@ export default function GoalTrackerTab() {
         <MatchupFilter games={dayGames} />
       </div>
 
-      {teams.length > 0 && (
-        <div className="pill-row" style={{ marginBottom: 14, marginTop: 10, display: "inline-flex", flexWrap: "wrap" }}>
-          <button className={`pill-btn ${!team ? "active" : ""}`} onClick={() => setTeam(null)}>All</button>
-          {teams.map((t) => (
-            <button key={t} className={`pill-btn ${team === t ? "active" : ""}`} onClick={() => setTeam(t)}>{t}</button>
-          ))}
-        </div>
-      )}
 
       {stats && (
         <div className="grid-cards" style={{ marginBottom: 14 }}>

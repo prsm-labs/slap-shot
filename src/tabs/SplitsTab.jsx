@@ -14,6 +14,7 @@ import { fmtToi } from "../lib/toi.js";
 import { filterByTeam, filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 const SKATER_COLS = [
   ["name", "Player"], ["team", "Team"], ["position", "Pos"], ["estToi", "Est. TOI"], ["ppToi", "PP TOI/GP"], ["TotalGoals", "Goals"], ["multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed"],
@@ -35,6 +36,7 @@ export default function SplitsTab() {
   const skaters = pool?.players ?? null;
   const goalies = pool?.goalies ?? null;
   const selected = useMatchup();
+  useListFilters(); // 2026-10-23: re-render on the header search (applied in filterPlayers)
   const position = usePosition();
 
   const h2hGrades = useH2HGrades();

@@ -3,7 +3,7 @@ import { useSort } from "../lib/useSort.js";
 import { openGoalieSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
-import { useMatchup } from "../lib/matchupFilter.js";
+import { useMatchup, inScope } from "../lib/matchupFilter.js";
 import { SAVE_LINES } from "../lib/crease.js";
 import { RankCell } from "../components/CreaseLabLive.jsx";
 
@@ -72,9 +72,9 @@ export default function TrackRecordGoalies() {
     () => (date ? [...new Set(dayRows.map((g) => g.matchup))].sort().map((m) => ({ away: m.split("@")[0], home: m.split("@")[1] })) : []),
     [date, dayRows]
   );
-  const gameFilter = date && selected && dayGames.some((g) => `${g.away}@${g.home}` === selected) ? selected : null;
+  const gameFilter = date && selected && dayGames.some((g) => inScope(`${g.away}@${g.home}`, selected)) ? selected : null;
   const scope = useMemo(
-    () => dayRows.filter((g) => (!gameFilter || g.matchup === gameFilter) && (!rightStarterOnly || g.sameGoalie)),
+    () => dayRows.filter((g) => inScope(g.matchup, gameFilter) && (!rightStarterOnly || g.sameGoalie)),
     [dayRows, gameFilter, rightStarterOnly]
   );
   const { sorted, sortKey, sortDir, toggleSort } = useSort(scope, "rank", "asc");

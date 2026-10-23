@@ -7,6 +7,7 @@ import NotificationBar, { AlertBell } from "./components/NotificationBar.jsx";
 import { installColumnResize } from "./lib/columnResize.js";
 import GameStrip from "./components/GameStrip.jsx";
 import DateBar, { PastNightGuard } from "./components/DateBar.jsx";
+import MasterFilter from "./components/MasterFilter.jsx";
 import { useViewDate } from "./lib/data.js";
 import { tabRequest } from "./lib/nav.js";
 import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
@@ -85,7 +86,7 @@ export default function App() {
       <GoalTicker onClick={() => setTab("goals")} />
       {/* 2026-10-22: one CourtIQ-style matchup strip above the tabs; it narrows every page */}
       {/* 2026-10-23: 📅 night picker -- a past night swaps every page to that night's frozen slate + results */}
-      <DateBar />
+      <div className="master-bar"><DateBar /><MasterFilter /></div>
       <GameStrip />
 
       <nav className="tabs">

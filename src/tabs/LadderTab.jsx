@@ -3,7 +3,7 @@ import { useScoredPool } from "../lib/data.js";
 import { LADDER_BANDS, ladderPrice, teamLadder } from "../lib/ladder.js";
 import { projectGoalie } from "../lib/crease.js";
 import { fmtAmerican, fmtEdge, edgeColor, booksText } from "../lib/bookOdds.js";
-import { matchupKey, useMatchup } from "../lib/matchupFilter.js";
+import { matchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { lineupMaps, skaterStatus, useLineups } from "../lib/lineups.js";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
@@ -107,7 +107,7 @@ export default function LadderTab() {
     const players = filterPositions(pool.players, position);
     return (pool.meta.slate || [])
       .map((g) => ({ ...g, key: matchupKey(g.away, g.home) }))
-      .filter((g) => !selected || g.key === selected)
+      .filter((g) => inScope(g.key, selected))
       .map((g) => {
         const side = (team) => {
           const list = players.filter((p) => p.team === team && (p.opponentTeam === g.home || p.opponentTeam === g.away));

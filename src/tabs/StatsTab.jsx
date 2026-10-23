@@ -3,7 +3,8 @@ import { useScoredPool } from "../lib/data.js";
 import { openGoalieSlide, openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import { POSITION_OPTIONS, matchesPosition, setPosition, usePosition } from "../lib/positionFilter.js";
-import { useMatchup } from "../lib/matchupFilter.js";
+import { useMatchup, useTeamFilter } from "../lib/matchupFilter.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 // 📊 Stats (2026-10-20, user: "a 'stats' or 'splits' page that shows a player and teams stats throughout the year.
 // Filterable and searchable by team and/or player"). Every skater's, goalie's and team's regular-season line,
@@ -182,8 +183,9 @@ export default function StatsTab() {
   const [view, setView] = useState("skaters");
   const [win, setWin] = useState("season");
   const [perGame, setPerGame] = useState(false);
-  const [team, setTeam] = useState("all");
-  const [query, setQuery] = useState("");
+  // 2026-10-23: team + search come from the header (MasterFilter); this page's own boxes were retired
+  const team = useTeamFilter() || "all";
+  const query = useListFilters().search;
   const [minG, setMinG] = useState(1);
   const [open, setOpen] = useState(null);
   const position = usePosition();
@@ -225,8 +227,9 @@ export default function StatsTab() {
   if (!index || book?.error) return <div className="mono stats-muted">No stats yet.</div>;
 
   const teams = Object.keys(teamGames).sort();
-  const [mAway, mHome] = matchup ? matchup.split("@") : [];
-  const teamOk = (t) => (matchup ? t === mAway || t === mHome : team === "all" || t === team);
+  const gameKey = matchup && !matchup.startsWith("TEAM:") ? matchup : null;
+  const [mAway, mHome] = gameKey ? gameKey.split("@") : [];
+  const teamOk = (t) => (gameKey ? t === mAway || t === mHome : team === "all" || t === team);
   const q = fold(query.trim());
   const hit = (p) => !q || fold(p.n).includes(q) || p.t?.toLowerCase() === q;
   const winLabel = Object.fromEntries(WINDOWS)[win];
@@ -371,19 +374,14 @@ export default function StatsTab() {
         {pills([["t", "Totals"], ["p", "Per game"]], perGame ? "p" : "t", (k) => setPerGame(k === "p"))}
       </div>
       <div className="stats-filters">
-        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={view === "teams" ? "Search a team…" : "Search a player or team (e.g. TOR)…"} aria-label="Search" />
         {view === "skaters" && (
           <select value={position || ""} onChange={(e) => setPosition(e.target.value || null)} aria-label="Position">
             {POSITION_OPTIONS.map((o) => <option key={o.label} value={o.key || ""}>{o.label}</option>)}
           </select>
         )}
-        <select value={team} onChange={(e) => setTeam(e.target.value)} aria-label="Team">
-          <option value="all">All teams</option>
-          {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-        </select>
         {view === "skaters" && <label className="stats-muted">Min GP <input type="number" min={0} max={82} value={minG} onChange={(e) => setMinG(Number(e.target.value) || 0)} /></label>}
       </div>
-      {matchup && <div className="stats-meta">Showing {mAway} @ {mHome} only (matchup filter — clear it on Scouting / the game strip).</div>}
+      {gameKey && <div className="stats-meta">Showing {mAway} @ {mHome} only (matchup filter — clear it on Scouting / the game strip).</div>}
       {body}
       <div className="stats-meta">
         Regular season only. Goals and assists in all situations; PP = 5-on-4. 5v5 ± = on-ice 5-on-5 goals for minus against (not

@@ -6,9 +6,10 @@ import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
-import { useMatchup } from "../lib/matchupFilter.js";
+import { useMatchup, inScope } from "../lib/matchupFilter.js";
 import { FIRST_GOAL } from "../lib/goalBadges.js";
 import { matchesSearch } from "../lib/teamSearch.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 // 2026-27 Track Record — Going Yard style: every skater's saved pre-game projection (grade, Slap
 // Score, tier, sim odds) next to their real box line. Data: public/data/track_record_2026.json,
@@ -116,7 +117,7 @@ export default function TrackRecordLive() {
   const [goalsOnly, setGoalsOnly] = useState(false);
   const [tierFilter, setTierFilter] = useState(null);
   const [showDnp, setShowDnp] = useState(false);
-  const [search, setSearch] = useState("");
+  const search = useListFilters().search; // 2026-10-23: the header search (its own box retired)
   const [cardFilter, setCardFilter] = useState(null); // key of CARD_FILTERS
   const tableRef = useRef(null);
   const selected = useMatchup();
@@ -139,9 +140,9 @@ export default function TrackRecordLive() {
     () => (date ? [...new Set(dayRows.map((r) => r.matchup))].sort().map((m) => ({ away: m.split("@")[0], home: m.split("@")[1] })) : []),
     [date, dayRows]
   );
-  const gameFilter = date && selected && dayGames.some((g) => `${g.away}@${g.home}` === selected) ? selected : null;
+  const gameFilter = date && selected && dayGames.some((g) => inScope(`${g.away}@${g.home}`, selected)) ? selected : null;
   const scope = useMemo(
-    () => filterPositions(gameFilter ? dayRows.filter((r) => r.matchup === gameFilter) : dayRows, position),
+    () => filterPositions(gameFilter ? dayRows.filter((r) => inScope(r.matchup, gameFilter)) : dayRows, position),
     [dayRows, gameFilter, position]
   );
   const s = useMemo(() => summarize(scope), [scope]);
@@ -276,13 +277,6 @@ export default function TrackRecordLive() {
             <button key={t} className={`pill-btn ${tierFilter === t ? "active" : ""}`} onClick={() => setTierFilter(tierFilter === t ? null : t)}>{t}</button>
           ))}
         </div>
-        <input
-          className="mono"
-          placeholder="Search skater or team…"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 9px", fontSize: 12, flex: 1, minWidth: 160 }}
-        />
       </div>
 
       <div className="table-wrap">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { projectedPayout } from "../lib/iceBreakerPromo.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 // 📈 Ice Breaker payout graph (lib/iceBreakerPromo.js has the model). Every skater in the promo games is a dot:
 // across = chance to break the ice (market view by default: DraftKings first-goal odds), up = projected bonus-bet
@@ -12,7 +13,7 @@ const pctTxt = (p) => `${(p * 100).toFixed(p < 0.01 ? 2 : 1)}%`;
 // selectedIds: every player picked (search, a tap on the graph, or a row in the table) — each gets a label.
 // onSelect(id) toggles one; onSelect(null) clears all.
 export default function IcebreakerPayoutChart({ rows, selectedIds = [], onSelect, opts, xMode }) {
-  const [query, setQuery] = useState("");
+  const query = useListFilters().search; // 2026-10-23: the header search
   const isSel = (id) => selectedIds.includes(id);
   const xOf = (r) => (xMode === "market" ? r.marketP ?? r.iceP : r.iceP);
   const pts = rows.filter((r) => r.payout != null && xOf(r) > 0).sort((a, b) => xOf(b) - xOf(a)).slice(0, 90);
@@ -75,8 +76,8 @@ export default function IcebreakerPayoutChart({ rows, selectedIds = [], onSelect
   return (
     <div className="card" style={{ padding: 10, marginBottom: 12 }}>
       <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 6 }}>
-        <input className="mono" placeholder="Search players to add to the graph…" value={query} onChange={(e) => setQuery(e.target.value)}
-          style={{ background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 9px", fontSize: 12, flex: "1 1 200px", minWidth: 160, maxWidth: 320 }} />
+        {/* 2026-10-23: the header search (MasterFilter) finds players to add here -- its own box was retired */}
+        {matches.length > 0 && <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>Add to the graph:</span>}
         {matches.map((r) => (
           <button key={r.playerId} className={`pill-btn ${isSel(r.playerId) ? "active" : ""}`} style={{ fontSize: 10 }}
             title={isSel(r.playerId) ? "Remove from the graph" : "Add to the graph"} onClick={() => onSelect(r.playerId)}>

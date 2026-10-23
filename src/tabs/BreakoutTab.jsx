@@ -18,6 +18,7 @@ import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { useListFilters } from "../lib/listFilters.js";
 
 // Cheat Sheets -> Breakout Watch: not the usual top scorers, but skaters whose shot quality is
 // rising into a soft matchup (lib/breakout.js has the backtest behind every rule).
@@ -27,6 +28,7 @@ const pct = (v) => `${(v * 100).toFixed(0)}%`;
 export default function BreakoutTab() {
   const pool = useScoredPool();
   const selected = useMatchup();
+  useListFilters(); // 2026-10-23: re-render on the header search (applied in filterPlayers)
   const position = usePosition();
   const board = useMemo(() => (pool ? breakoutBoard(pool.players) : null), [pool]);
   const h2hGrades = useH2HGrades();

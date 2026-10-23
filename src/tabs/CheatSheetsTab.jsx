@@ -11,12 +11,13 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import LineupBadge from "../components/LineupBadge.jsx";
 import { filterPositions, usePosition } from "../lib/positionFilter.js";
-import { filterPlayers, matchupKey, useMatchup } from "../lib/matchupFilter.js";
+import { filterPlayers, matchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { lineupMaps, skaterStatus, startingGoalie, useLineups } from "../lib/lineups.js";
 import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from "../lib/bookOdds.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import PrismPicks from "../components/PrismPicks.jsx";
+import { useListFilters } from "../lib/listFilters.js";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -98,6 +99,7 @@ function CheatSheetMain() {
   const meta = pool?.meta ?? null;
   const [lineupFilter, setLineupFilter] = useState("notOut");
   const selected = useMatchup();
+  useListFilters(); // 2026-10-23: re-render on the header search (applied in filterPlayers)
   const position = usePosition();
   const lineups = useLineups(pool?.past ? null : meta?.slateDate); // past night: no live lineup marks
 
@@ -157,7 +159,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   );
 
   const attackable = starters
-    .filter((g) => !selected || g.matchup === selected)
+    .filter((g) => inScope(g.matchup, selected))
     .filter((g) => lineupFilter !== "official" || g.confirmed)
     .sort((a, b) => (a.grade?.score ?? 999) - (b.grade?.score ?? 999));
 

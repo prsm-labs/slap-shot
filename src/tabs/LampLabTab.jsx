@@ -60,7 +60,7 @@ export default function LampLabTab() {
   // (lib/slapScore.js). The old 10,000-run sim (public/lampWorker.js, left on disk) ran a third low.
   const live = useScoredPool();
   const merged = useMemo(() => (live ? live.players.filter(isRoleEligible) : null), [live]);
-  const [team, setTeam] = useState(null);
+  const team = null; // 2026-10-23: the team comes from the header (MasterFilter, applied in filterPlayers); this page's team pills were retired
   const selected = useMatchup();
   const position = usePosition();
   const listFilters = useListFilters();
@@ -111,14 +111,6 @@ export default function LampLabTab() {
       <ListFilters signalLabel="★ Goal Signals only" shown={filtered.length} total={merged?.length ?? 0} />
       <MatchupFilter />
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-        {teams.length > 0 && (
-          <div className="pill-row" style={{ flexWrap: "wrap" }}>
-            <button className={`pill-btn ${!team ? "active" : ""}`} onClick={() => setTeam(null)}>All</button>
-            {teams.map((t) => (
-              <button key={t} className={`pill-btn ${team === t ? "active" : ""}`} onClick={() => setTeam(t)}>{t}</button>
-            ))}
-          </div>
-        )}
         <div style={{ flex: 1 }} />
         <button className="btn" onClick={() => exportCsv(sortedWithSignalFirst, "lamp-lab.csv")} disabled={!sorted.length}>⬇ CSV</button>
       </div>

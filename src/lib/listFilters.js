@@ -31,6 +31,7 @@ export function clearListFilters() {
 export function activeFilterCount(f) {
   return Object.keys(DEFAULTS).filter((k) => f[k] !== DEFAULTS[k]).length;
 }
+export const getListSearch = () => state.search; // the header search (MasterFilter), read by matchupFilter.js
 export function useListFilters() {
   return useSyncExternalStore((fn) => {
     listeners.add(fn);

@@ -106,12 +106,13 @@ export default function ScheduleTab() {
   const today = easternToday();
   const [view, setView] = useState("upcoming");
   const [offset, setOffset] = useState(0);
-  const [team, setTeam] = useState("");
+  // 2026-10-23: the team comes from the header (MasterFilter) or the game strip; this page's own picker was retired
   const matchup = useMatchup();
   const stripTeams = matchup ? teamsOf(matchup) : null;
+  const team = stripTeams?.length === 1 ? stripTeams[0] : "";
   const start = view === "upcoming" ? addDays(today, offset * SPAN) : addDays(today, -SPAN + offset * SPAN);
   const data = useSchedule(start, SPAN);
-  const focus = team ? [team] : stripTeams;
+  const focus = stripTeams;
   let days = (data?.days || []).map((d) => ({ ...d, games: d.games.filter((g) => !focus || focus.includes(g.away.team) || focus.includes(g.home.team)) }));
   if (view === "results") days = days.filter((d) => d.date < today).reverse();
   if (focus) days = days.filter((d) => d.games.length);
@@ -138,12 +139,8 @@ export default function ScheduleTab() {
           <button className="btn" onClick={() => setOffset(offset + 1)}>Later ▶</button>
           {offset !== 0 && <button className="btn" onClick={() => setOffset(0)}>{view === "upcoming" ? "Today" : "Latest"}</button>}
         </div>
-        <select className="sch-team-pick" value={team} onChange={(e) => setTeam(e.target.value)} aria-label="Team">
-          <option value="">All teams</option>
-          {TEAMS.map((t) => <option key={t} value={t}>{t}</option>)}
-        </select>
       </div>
-      {!team && stripTeams && <p className="sch-muted">Showing {stripTeams.join(" and ")} games (the game strip above) -- tap All games to clear.</p>}
+      {stripTeams?.length === 2 && <p className="sch-muted">Showing {stripTeams.join(" and ")} games (the game strip above) -- tap All games to clear.</p>}
       {rec && rec.w + rec.l + rec.otl > 0 && <p className="sch-muted">{team}: {rec.w}-{rec.l}-{rec.otl} in the finished games shown.</p>}
       {!data && <div className="mono stats-muted">Loading the schedule…</div>}
       {data?.error && <div className="note">Couldn't reach the NHL schedule feed -- try again in a minute.</div>}

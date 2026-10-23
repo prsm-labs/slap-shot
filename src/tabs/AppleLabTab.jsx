@@ -54,7 +54,7 @@ export default function AppleLabTab() {
   const [results, setResults] = useState(null);
   const [resultsFor, setResultsFor] = useState(null); // the pool the shown results were simulated from
   const sentRef = useRef(null);
-  const [team, setTeam] = useState(null);
+  const team = null; // 2026-10-23: the team comes from the header (MasterFilter, applied in filterPlayers); this page's team pills were retired
   const selected = useMatchup();
   const position = usePosition();
   const listFilters = useListFilters();
@@ -140,14 +140,6 @@ export default function AppleLabTab() {
       <ListFilters signalLabel="★ Point Signals only" shown={filtered.length} total={merged?.length ?? 0} />
       <MatchupFilter />
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-        {teams.length > 0 && (
-          <div className="pill-row" style={{ flexWrap: "wrap" }}>
-            <button className={`pill-btn ${!team ? "active" : ""}`} onClick={() => setTeam(null)}>All</button>
-            {teams.map((t) => (
-              <button key={t} className={`pill-btn ${team === t ? "active" : ""}`} onClick={() => setTeam(t)}>{t}</button>
-            ))}
-          </div>
-        )}
         <div style={{ flex: 1 }} />
         <button className="btn" onClick={runSim} disabled={!pool || running}>
           {running ? "Simulating…" : "⟳ Refresh"}
