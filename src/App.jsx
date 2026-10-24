@@ -25,6 +25,7 @@ import Top3Tab from "./tabs/Top3Tab.jsx";
 import MyPicksTab from "./tabs/MyPicksTab.jsx";
 import MatchupLookupTab from "./tabs/MatchupLookupTab.jsx";
 import AboutTab from "./tabs/AboutTab.jsx";
+import TabMenu from "./components/TabMenu.jsx";
 
 const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
 
@@ -88,17 +89,8 @@ export default function App() {
       <div className="master-bar"><DateBar /><MasterFilter /></div>
       <GameStrip />
 
-      <nav className="tabs">
-        {TABS.map((t) => (
-          <button
-            key={t.key}
-            className={`tab ${tab === t.key ? "active" : ""}`}
-            onClick={() => setTab(t.key)}
-          >
-            {t.label}
-          </button>
-        ))}
-      </nav>
+      {/* 2026-10-24 (user): ☰ page menu replaces the scrolling tab bar */}
+      <TabMenu tabs={TABS} tab={tab} setTab={setTab} />
 
       <main className="content">
         <PastNightGuard key={`${tab}|${viewDate || ""}`} past={Boolean(viewDate)}>
