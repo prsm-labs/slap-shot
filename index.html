@@ -3,21 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 2026-10-23 moved to degenlabs.app (user). An old address sends the visitor to https://nhl.degenlabs.app and carries this browser's
+         saved data (My Picks, filters, settings: localStorage) along in the URL hash once, so nothing is lost; the new address
+         reads it in, keeps anything it already has, and clears the hash. API routes (/api/...) on the old address keep working. -->
+    <script>
+      (function () {
+        var OLD = {'nhl.thisisprism.app':1,'shot.prsmlabs.app':1}, TO = 'nhl.degenlabs.app', KEY = 'prism-migrate=';
+        try {
+          if (OLD[location.hostname]) {
+            var d = {}, s = '', i, k;
+            try { for (i = 0; i < localStorage.length; i++) { k = localStorage.key(i); d[k] = localStorage.getItem(k); } } catch (e) {}
+            try { s = JSON.stringify(d); } catch (e) {}
+            var hash = s && s.length > 2 && s.length < 60000 ? '#' + KEY + encodeURIComponent(s) : location.hash;
+            location.replace('https://' + TO + location.pathname + location.search + hash);
+            return;
+          }
+          var at = location.hash.indexOf(KEY);
+          if (at === 1) {
+            var o = JSON.parse(decodeURIComponent(location.hash.slice(1 + KEY.length)));
+            for (var key in o) { try { if (localStorage.getItem(key) === null) localStorage.setItem(key, o[key]); } catch (e) {} }
+            history.replaceState(null, '', location.pathname + location.search);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <title>Slap Shot</title>
     <!-- 2026-10-23 link preview (Open Graph / Twitter): the PRISM Labs card for this app, 1200x630 (public/og.png) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PRISM Labs" />
     <meta property="og:title" content="Slap Shot · NHL · PRISM Labs" />
     <meta property="og:description" content="Goal and point picks for every NHL slate." />
-    <meta property="og:url" content="https://nhl.thisisprism.app/" />
-    <meta property="og:image" content="https://nhl.thisisprism.app/og.png" />
+    <meta property="og:url" content="https://nhl.degenlabs.app/" />
+    <meta property="og:image" content="https://nhl.degenlabs.app/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Slap Shot — Goal and point picks for every NHL slate." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Slap Shot · NHL · PRISM Labs" />
     <meta name="twitter:description" content="Goal and point picks for every NHL slate." />
-    <meta name="twitter:image" content="https://nhl.thisisprism.app/og.png" />
+    <meta name="twitter:image" content="https://nhl.degenlabs.app/og.png" />
 
     <!-- Favicon (browser tab) -->
     <link rel="icon" href="/favicon.ico" sizes="any" />

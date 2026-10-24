@@ -11,7 +11,7 @@ export default function AboutTab() {
       <div className="card">
         <div className="mono" style={{ fontSize: 11, color: "var(--muted)", lineHeight: 1.8 }}>
           <div><span style={{ color: "var(--text)" }}>App:</span> Slap Shot</div>
-          <div><span style={{ color: "var(--text)" }}>Domain:</span> shot.prsmlabs.app</div>
+          <div><span style={{ color: "var(--text)" }}>Domain:</span> nhl.degenlabs.app</div>
           <div><span style={{ color: "var(--text)" }}>Build:</span> {BUILD_TIMESTAMP}</div>
         </div>
       </div>
