@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
-import logoMark from "./assets/logo-flame-puck.png";
 import PlayerSlideout from "./components/PlayerSlideout.jsx";
 import GoalTicker from "./components/GoalTicker.jsx";
 import NotificationBar, { AlertBell } from "./components/NotificationBar.jsx";
@@ -69,7 +68,7 @@ export default function App() {
     <div className="app">
       <header className="header">
         <div className="logo">
-          <img className="logo-mark" src={logoMark} alt="Slap Shot" />
+          {/* 2026-10-23 new logo (crossed sticks): dark tile, accent tile in light mode; flame-puck retired */}<picture><source media="(prefers-color-scheme: light)" srcSet="/logo-accent.svg" /><img className="logo-mark" src="/logo-dark.svg" alt="Slap Shot" /></picture>
           <span>SLAP</span> SHOT
         </div>
         <div className="badges">
