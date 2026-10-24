@@ -1,13 +1,272 @@
 {
  "_meta": {
-  "generated": "2026-10-23 17:34",
+  "generated": "2026-10-24 11:08",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 63,
-  "up": 42,
+  "count": 67,
+  "up": 44,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8484262,
+   "name": "Travis Mitchell",
+   "team": "ANA",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1999-11-25",
+   "sweater": 34,
+   "draft": null,
+   "recalledOn": "2026-10-23",
+   "from": "San Diego",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-23",
+     "type": "up",
+     "club": "San Diego"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -3,
+     "pim": 5,
+     "team": "San Diego Gulls"
+    },
+    "last": {
+     "gamesPlayed": 58,
+     "goals": 1,
+     "assists": 16,
+     "points": 17,
+     "plusMinus": 3,
+     "pim": 87,
+     "team": "Bridgeport Islanders"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -3,
+     "pim": 9,
+     "shots": 3,
+     "team": "Anaheim Ducks"
+    },
+    "last": {
+     "gamesPlayed": 9,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": 0,
+     "pim": 6,
+     "shots": 4,
+     "team": "New York Islanders"
+    },
+    "careerGp": 14,
+    "careerG": 1,
+    "careerP": 1
+   }
+  },
+  {
+   "playerId": 8484287,
+   "name": "Cole McWard",
+   "team": "TOR",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2001-06-09",
+   "sweater": 82,
+   "draft": null,
+   "recalledOn": "2026-10-23",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-23",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 1,
+     "pim": 2,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 6,
+     "assists": 21,
+     "points": 27,
+     "plusMinus": -11,
+     "pim": 24,
+     "team": "Bridgeport Islanders"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "New York Islanders"
+    },
+    "careerGp": 9,
+    "careerG": 1,
+    "careerP": 1
+   }
+  },
+  {
+   "playerId": 8477541,
+   "name": "Dakota Mermis",
+   "team": "TOR",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1994-01-05",
+   "sweater": 36,
+   "draft": null,
+   "recalledOn": "2026-10-23",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-23",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -1,
+     "pim": 2,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 27,
+     "goals": 1,
+     "assists": 6,
+     "points": 7,
+     "plusMinus": 2,
+     "pim": 36,
+     "team": "Toronto Marlies"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 11,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": -3,
+     "pim": 11,
+     "shots": 5,
+     "team": "Toronto Maple Leafs"
+    },
+    "careerGp": 89,
+    "careerG": 5,
+    "careerP": 14
+   }
+  },
+  {
+   "playerId": 8482953,
+   "name": "Taylor Makar",
+   "team": "COL",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2001-03-13",
+   "sweater": 16,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "COL",
+    "round": 7,
+    "overallPick": 220
+   },
+   "recalledOn": "2026-10-23",
+   "from": "Colorado",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-23",
+     "type": "up",
+     "club": "Colorado"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 3,
+     "assists": 1,
+     "points": 4,
+     "plusMinus": 4,
+     "pim": 8,
+     "team": "Colorado Eagles"
+    },
+    "last": {
+     "gamesPlayed": 52,
+     "goals": 14,
+     "assists": 10,
+     "points": 24,
+     "plusMinus": 12,
+     "pim": 56,
+     "team": "Colorado Eagles"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 0,
+     "team": "Colorado Avalanche"
+    },
+    "last": {
+     "gamesPlayed": 12,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 4,
+     "shots": 7,
+     "team": "Colorado Avalanche"
+    },
+    "careerGp": 13,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
   {
    "playerId": 8485019,
    "name": "Chase Pietila",
@@ -220,13 +479,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -2,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -1,
      "pim": 0,
-     "shots": 2,
+     "shots": 4,
      "team": "Montr\u00e9al Canadiens"
     },
     "last": {
@@ -239,9 +498,9 @@
      "shots": 11,
      "team": "Montr\u00e9al Canadiens"
     },
-    "careerGp": 30,
+    "careerGp": 31,
     "careerG": 1,
-    "careerP": 2
+    "careerP": 3
    }
   },
   {
@@ -687,6 +946,84 @@
    }
   },
   {
+   "playerId": 8484242,
+   "name": "Brayden Yager",
+   "team": "WPG",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2005-01-03",
+   "sweater": 29,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "PIT",
+    "round": 1,
+    "overallPick": 14
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Manitoba",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-23",
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Manitoba"
+    },
+    {
+     "date": "2026-10-23",
+     "type": "down",
+     "club": "Manitoba"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 5,
+     "assists": 4,
+     "points": 9,
+     "plusMinus": 4,
+     "pim": 4,
+     "team": "Manitoba Moose"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 10,
+     "assists": 20,
+     "points": 30,
+     "plusMinus": -15,
+     "pim": 10,
+     "team": "Manitoba Moose"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 1,
+     "team": "Winnipeg Jets"
+    },
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 2,
+     "team": "Winnipeg Jets"
+    },
+    "careerGp": 4,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "playerId": 8482515,
    "name": "Artur Akhtyamov",
    "team": "TOR",
@@ -764,79 +1101,6 @@
     "careerGp": 3,
     "careerG": 0,
     "careerP": null
-   }
-  },
-  {
-   "playerId": 8484242,
-   "name": "Brayden Yager",
-   "team": "WPG",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2005-01-03",
-   "sweater": 29,
-   "draft": {
-    "year": 2023,
-    "teamAbbrev": "PIT",
-    "round": 1,
-    "overallPick": 14
-   },
-   "recalledOn": "2026-10-19",
-   "from": "Manitoba",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Manitoba"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 5,
-     "assists": 4,
-     "points": 9,
-     "plusMinus": 4,
-     "pim": 4,
-     "team": "Manitoba Moose"
-    },
-    "last": {
-     "gamesPlayed": 68,
-     "goals": 10,
-     "assists": 20,
-     "points": 30,
-     "plusMinus": -15,
-     "pim": 10,
-     "team": "Manitoba Moose"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 1,
-     "team": "Winnipeg Jets"
-    },
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 2,
-     "shots": 2,
-     "team": "Winnipeg Jets"
-    },
-    "careerGp": 4,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -1231,12 +1495,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 3,
      "assists": 2,
      "points": 5,
      "plusMinus": 4,
-     "pim": 4,
+     "pim": 6,
      "team": "Iowa Wild"
     },
     "last": {
@@ -1876,12 +2140,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 0,
      "assists": 4,
      "points": 4,
-     "plusMinus": 4,
-     "pim": 6,
+     "plusMinus": 0,
+     "pim": 8,
      "team": "Coachella Valley Firebirds"
     },
     "last": {
@@ -2148,11 +2412,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 1,
      "assists": 2,
      "points": 3,
-     "plusMinus": 4,
+     "plusMinus": 5,
      "pim": 14,
      "team": "Laval Rocket"
     },
@@ -2205,7 +2469,7 @@
    "from": "Hartford",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -2294,12 +2558,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
-     "goals": 2,
+     "gamesPlayed": 9,
+     "goals": 3,
      "assists": 3,
-     "points": 5,
+     "points": 6,
      "plusMinus": 2,
-     "pim": 4,
+     "pim": 6,
      "team": "Iowa Wild"
     },
     "last": {
@@ -2363,16 +2627,16 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "wins": 2,
      "losses": 2,
-     "otLosses": 0,
+     "otLosses": 1,
      "shutouts": 1,
-     "goalsAgainst": 10,
-     "shotsAgainst": 116,
+     "goalsAgainst": 13,
+     "shotsAgainst": 141,
      "team": "Syracuse Crunch",
-     "savePct": 0.914,
-     "gaa": 2.33
+     "savePct": 0.908,
+     "gaa": 2.45
     },
     "last": {
      "gamesPlayed": 27,
@@ -2713,12 +2977,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 2,
-     "pim": 8,
+     "pim": 10,
      "team": "Springfield Thunderbirds"
     },
     "last": {
@@ -3109,7 +3373,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 1,
      "assists": 1,
      "points": 2,
@@ -3633,7 +3897,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 1,
      "assists": 2,
      "points": 3,
@@ -3779,11 +4043,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": 0,
      "pim": 0,
      "team": "Charlotte Checkers"
     },
