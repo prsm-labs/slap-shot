@@ -5,6 +5,17 @@
   --bg:#080c10;--surface:#0d1318;--surface2:#131b22;--border:#1e2d3a;
   --accent:#2f7dae;--accent2:#4a9fd4;--green:#27c97a;--red:#e5484d;
   --text:#e8edf2;--muted:#5a7080;
+  /* 2026-10-24 theme tokens for the light mode below */
+  --line:var(--line);--line2:var(--line2);--chip:var(--line);--chip-border:rgba(255,255,255,.08);
+  --header-top:#0a1520;--faint:#2a3a48;--elite-fg:#8cc5ec;--warn:#e0b04a;--hat:#ffb020;--hot:#ff8a7a;--gold-text:#d4af37;
+  color-scheme:dark light;
+}
+/* Light mode (2026-10-24): same single blue accent, CourtIQ-style light surfaces; follows the device setting like the other apps */
+@media (prefers-color-scheme: light){
+  :root{--bg:#f6f8fa;--surface:#ffffff;--surface2:#eef2f6;--border:#d8e0e8;
+    --accent:#2f7dae;--accent2:#1f6694;--green:#1d9a52;--red:#c63b2f;--text:#13202b;--muted:#5b6b79;
+    --line:rgba(0,0,0,.07);--line2:rgba(0,0,0,.08);--chip:rgba(0,0,0,.03);--chip-border:rgba(0,0,0,.1);
+    --header-top:#e9f1f7;--faint:#9aa8b4;--elite-fg:#1f6694;--warn:#a8780e;--hat:#b86e00;--hot:#c2412d;--gold-text:#8a6d0f;}
 }
 body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-height:100vh;}
 .app{min-height:100vh;display:flex;flex-direction:column;}
@@ -12,7 +23,7 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
 .header{
   padding:16px 24px;border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(180deg,#0a1520 0%,var(--bg) 100%);
+  background:linear-gradient(180deg,var(--header-top) 0%,var(--bg) 100%);
   position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);
   gap:12px;flex-wrap:wrap;
 }
@@ -35,7 +46,7 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
   display:flex;align-items:center;gap:6px;
   padding:4px 11px;border-radius:20px;font-size:11px;font-weight:600;
   letter-spacing:1.2px;text-transform:uppercase;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  background:var(--chip);border:1px solid var(--chip-border);
   color:var(--muted);
 }
 .badge.live{background:rgba(39,201,122,.10);border:1px solid rgba(39,201,122,.25);color:var(--green);}
@@ -105,9 +116,9 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
 .cmp-bar span.lead{background:var(--accent);}
 .pbp{max-height:70vh;overflow:auto;border:1px solid var(--border);border-radius:8px;padding:2px 10px;}
 .pbp-q{position:sticky;top:0;background:var(--surface);font-weight:700;font-size:11px;padding:6px 0 4px;border-bottom:1px solid var(--border);z-index:1;}
-.pbp-row{display:grid;grid-template-columns:42px 34px 1fr auto;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11px;}
+.pbp-row{display:grid;grid-template-columns:42px 34px 1fr auto;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid var(--line);font-size:11px;}
 .pbp-row.goal{background:rgba(47,125,174,.16);font-weight:600;}
-.pbp-row.pen{color:#ffb020;}
+.pbp-row.pen{color:var(--hat);}
 .pbp-clock,.pbp-team{color:var(--muted);font-size:10px;}
 .pbp-score{white-space:nowrap;color:var(--muted);}
 .pbp-row.goal .pbp-score{color:var(--text);}
@@ -163,7 +174,7 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
   margin-top:22px;
 }
 .footer span{
-  font-size:10px;color:#2a3a48;font-family:'DM Mono',monospace;letter-spacing:1px;
+  font-size:10px;color:var(--faint);font-family:'DM Mono',monospace;letter-spacing:1px;
 }
 
 /* ── Shared: sortable/scored tables ─────────────────────────────────── */
@@ -178,8 +189,8 @@ table.data-table th{
 }
 table.data-table th:hover{color:var(--text);}
 table.data-table th.sorted{color:var(--accent);}
-table.data-table td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--text);}
-table.data-table tr:hover td{background:rgba(255,255,255,.02);}
+table.data-table td{padding:8px 12px;border-bottom:1px solid var(--line);color:var(--text);}
+table.data-table tr:hover td{background:var(--chip);}
 table.data-table tr.clickable{cursor:pointer;}
 /* Pinned first column (player / team name) on every data table, so it stays visible while scrolling
    sideways. The cell is opaque (surface + the row's tint from --row-bg) so data doesn't show through. */
@@ -190,7 +201,7 @@ table.data-table tr > td:first-child{
   box-shadow:inset 3px 0 0 var(--row-bar,transparent),inset -1px 0 0 var(--border);
 }
 table.data-table tr > th:first-child{z-index:3;box-shadow:inset -1px 0 0 var(--border);}
-table.data-table tr:hover{--row-bg:rgba(255,255,255,.02);}
+table.data-table tr:hover{--row-bg:var(--chip);}
 /* Excel-style column resize handle (lib/columnResize.js): right edge of every header cell, mouse or touch. */
 table.data-table th .col-resize{position:absolute;top:0;right:0;width:12px;height:100%;cursor:col-resize;touch-action:none;z-index:4;}
 table.data-table th .col-resize::after{content:"";position:absolute;top:25%;bottom:25%;right:3px;width:2px;border-radius:1px;background:var(--border);}
@@ -202,7 +213,7 @@ table.data-table th .col-gear:hover{opacity:1;}
   border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.5);padding:10px;font-family:'DM Mono',monospace;font-size:11px;color:var(--text);}
 .col-chooser-head{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
 .col-chooser-list{max-height:min(50vh,360px);overflow-y:auto;display:flex;flex-direction:column;}
-.col-chooser-list label{display:flex;align-items:center;gap:8px;padding:5px 2px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04);}
+.col-chooser-list label{display:flex;align-items:center;gap:8px;padding:5px 2px;cursor:pointer;border-bottom:1px solid var(--line);}
 .col-chooser-list input{accent-color:var(--accent);width:15px;height:15px;}
 .col-chooser-foot{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
 .col-chooser-note{font-size:9px;color:var(--muted);margin-top:6px;}
@@ -222,10 +233,10 @@ table.data-table th .col-gear:hover{opacity:1;}
   display:inline-block;padding:2px 9px;border-radius:12px;font-size:9.5px;font-weight:700;
   letter-spacing:.5px;text-transform:uppercase;font-family:'DM Mono',monospace;white-space:nowrap;
 }
-.tier-elite{background:rgba(74,159,212,.22);color:#8cc5ec;border:1px solid rgba(74,159,212,.45);}
+.tier-elite{background:rgba(74,159,212,.22);color:var(--elite-fg);border:1px solid rgba(74,159,212,.45);}
 .tier-core{background:rgba(47,125,174,.16);color:var(--accent2);border:1px solid rgba(47,125,174,.35);}
 .tier-value{background:rgba(47,125,174,.08);color:var(--muted);border:1px solid rgba(47,125,174,.18);}
-.tier-ignore{background:rgba(255,255,255,.03);color:#3a4d5c;border:1px solid var(--border);}
+.tier-ignore{background:var(--chip);color:#3a4d5c;border:1px solid var(--border);}
 
 .pill-row{display:flex;gap:3px;background:var(--surface2);border-radius:6px;padding:2px;border:1px solid var(--border);}
 .pill-btn{
@@ -460,3 +471,6 @@ p.sch-muted{margin:0 0 10px;}
 
 /* 2026-10-23 pick levels (PRISM Picks card) */
 .prism-levels { margin: 8px 0 4px; flex-wrap: wrap; width: fit-content; max-width: 100%; }
+
+/* 2026-10-24 light mode: overrides that must come after the rules they change */
+@media (prefers-color-scheme: light){ .prism-card{--gold:#8a6d0f;} .logo-mark{filter:none;} }

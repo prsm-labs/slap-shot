@@ -33,13 +33,13 @@ import { dueHeatMap } from "./dueHeat.js";
 import { estimatedToi } from "./toi.js";
 
 export const TIERS = [
-  { key: "chalk", label: "Chalk", emoji: "🎯", color: "#8fd0f7", blurb: "Proven scorer, soft matchup" },
-  { key: "mid", label: "Mid-Tier", emoji: "⚖️", color: "#4a9fd4", blurb: "Shots trending up into a soft matchup" },
-  { key: "breakout", label: "Breakout", emoji: "🚀", color: "#2f6d96", blurb: "Rising shot quality into a soft defense" },
+  { key: "chalk", label: "Chalk", emoji: "🎯", color: "#8fd0f7", lightColor: "#1f78b0", blurb: "Proven scorer, soft matchup" },
+  { key: "mid", label: "Mid-Tier", emoji: "⚖️", color: "#4a9fd4", lightColor: "#2f7dae", blurb: "Shots trending up into a soft matchup" },
+  { key: "breakout", label: "Breakout", emoji: "🚀", color: "#2f6d96", lightColor: "#1f5a80", blurb: "Rising shot quality into a soft defense" },
 ];
 // Retired tiers that still appear on locked nights (Track Record / recent results).
 export const LEGACY_TIERS = [
-  { key: "longshot", label: "Longshot (retired)", emoji: "🎲", color: "#2f6d96", blurb: "Weaker form, softest matchups" },
+  { key: "longshot", label: "Longshot (retired)", emoji: "🎲", color: "#2f6d96", lightColor: "#1f5a80", blurb: "Weaker form, softest matchups" },
 ];
 export const TIER_INFO = Object.fromEntries([...TIERS, ...LEGACY_TIERS].map((t) => [t.key, t]));
 

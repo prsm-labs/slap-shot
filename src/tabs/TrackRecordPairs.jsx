@@ -225,7 +225,7 @@ export default function TrackRecordPairs() {
                   ))}
                 </td>
                 <td className="mono">{shortDate(r.date)}</td>
-                <td className="mono" style={{ fontSize: 10 }}>{modeLabel(r.mode)} #{r.rank}{r.starRank ? <span style={{ color: "#d4af37", fontWeight: 700 }}> ★{r.starRank}</span> : null}</td>
+                <td className="mono" style={{ fontSize: 10 }}>{modeLabel(r.mode)} #{r.rank}{r.starRank ? <span style={{ color: "var(--gold-text)", fontWeight: 700 }}> ★{r.starRank}</span> : null}</td>
                 <td style={{ fontSize: 11 }}>{r.section}</td>
                 <td className="mono">{r.chancePct}%</td>
                 <td className="mono" style={{ color: r.result === "hit" ? "var(--accent2)" : undefined, fontWeight: r.result === "hit" ? 700 : 400 }}>

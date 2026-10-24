@@ -63,7 +63,7 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
           <div
             key={item.playerId}
             className="clickable"
-            style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid rgba(255,255,255,.05)", cursor: "pointer", gap: 8 }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid var(--line2)", cursor: "pointer", gap: 8 }}
             onClick={() => onClick(item)}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
@@ -211,7 +211,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
             <div
               key={`${g.team}-${g.name}`}
               className="clickable"
-              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid rgba(255,255,255,.05)", cursor: "pointer", gap: 8 }}
+              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid var(--line2)", cursor: "pointer", gap: 8 }}
               onClick={() => g.playerId && openGoalieSlide({ ...g, name: g.name, team: g.team })}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>

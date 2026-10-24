@@ -76,8 +76,8 @@ function SkaterTable({ t, poolById, onIce, heatById, live }) {
                 <span className="mono" style={{ color: "var(--muted)", fontSize: 10 }}>#{p.number} {p.position} </span>
                 <span className="player-name-link">{p.name}</span>
                 {p.goals >= 3 && <span className="mono" style={{ fontSize: 9, marginLeft: 6, fontWeight: 800 }}>🎩 HAT TRICK</span>}
-                {p.goals === 2 && live && <span className="mono" style={{ fontSize: 9, marginLeft: 6, fontWeight: 800, color: "#ffb020" }}>👀 HAT WATCH</span>}
-                {HOT.has(heat) && <span className="mono" style={{ fontSize: 9, marginLeft: 6, color: "#ff8a7a" }}>{heat === "On Fire" ? "🔥 ON FIRE" : "HEATING UP"}</span>}
+                {p.goals === 2 && live && <span className="mono" style={{ fontSize: 9, marginLeft: 6, fontWeight: 800, color: "var(--hat)" }}>👀 HAT WATCH</span>}
+                {HOT.has(heat) && <span className="mono" style={{ fontSize: 9, marginLeft: 6, color: "var(--hot)" }}>{heat === "On Fire" ? "🔥 ON FIRE" : "HEATING UP"}</span>}
               </td>
               <td style={cell}>{p.goals}</td>
               <td style={cell}>{p.assists}</td>
@@ -305,7 +305,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
             <div style={{ marginTop: 12 }}>
               <div className="mono" style={{ color: "var(--muted)", fontSize: 9, marginBottom: 4 }}>SCORING</div>
               {box.scoring.map((g, i) => (
-                <div key={i} className="mono" style={{ fontSize: 11, padding: "3px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+                <div key={i} className="mono" style={{ fontSize: 11, padding: "3px 0", borderBottom: "1px solid var(--line)" }}>
                   <span style={{ color: "var(--muted)" }}>P{g.period} {g.time} </span>
                   <b>{g.team}</b> {g.scorer} ({g.goalsToDate})
                   {g.strength && g.strength !== "ev" ? <span style={{ color: "var(--accent2)" }}> {g.strength.toUpperCase()}</span> : null}
@@ -318,7 +318,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
           {LIVE.has(box.state) && (
             <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginTop: 12, display: "flex", gap: 14, flexWrap: "wrap" }}>
               <span><span style={{ color: ON_ICE }}>●</span> tan row = on the ice now {onIce ? "" : "(appears after the next box score update)"}</span>
-              <span><span style={{ color: "#ff8a7a" }}>■</span> dark red = Heating Up / On Fire</span>
+              <span><span style={{ color: "var(--hot)" }}>■</span> dark red = Heating Up / On Fire</span>
               <span>On-ice is estimated from the live box score's ice time and can trail a line change by ~30s.</span>
             </div>
           )}

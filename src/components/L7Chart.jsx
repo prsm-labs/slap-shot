@@ -43,7 +43,7 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
   const pct = Math.round((hitGames / g7.length) * 100);
   const maxVal = Math.max(threshold, ...g7.map(getValue));
   const BAR_H = 100;
-  const pctColor = pct >= 57 ? "var(--green)" : pct >= 43 ? "#e0b04a" : "var(--muted)";
+  const pctColor = pct >= 57 ? "var(--green)" : pct >= 43 ? "var(--warn)" : "var(--muted)";
 
   return (
     <div className="card" style={{ marginTop: 12 }}>

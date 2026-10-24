@@ -1,8 +1,9 @@
-import { GRADE_COLOR } from "../lib/grades.js";
+import { GRADE_COLOR, GRADE_COLOR_LIGHT } from "../lib/grades.js";
+import { isLight } from "../lib/theme.js";
 
 export default function GradeBadge({ grade, title }) {
   if (!grade) return <span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>—</span>;
-  const color = GRADE_COLOR[grade.letter] || "var(--muted)";
+  const color = (isLight() ? GRADE_COLOR_LIGHT : GRADE_COLOR)[grade.letter] || "var(--muted)";
   return (
     <span
       title={grade.tooltip || title}

@@ -156,7 +156,7 @@ export function AlertBell() {
           </div>
           {history.length === 0 && <div className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>No alerts yet.</div>}
           {history.map((a) => (
-            <div key={a.id} className="mono" style={{ fontSize: 11, padding: "5px 0", borderTop: "1px solid rgba(255,255,255,.05)" }}>
+            <div key={a.id} className="mono" style={{ fontSize: 11, padding: "5px 0", borderTop: "1px solid var(--line2)" }}>
               <span style={{ color: "var(--muted)" }}>{new Date(a.at).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</span> {a.icon} {a.title}
               <div style={{ color: "var(--muted)", fontSize: 10 }}>{a.body}</div>
             </div>

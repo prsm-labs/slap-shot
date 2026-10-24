@@ -203,7 +203,7 @@ export default function FirstGoalTab() {
                   key={p.playerId}
                   className="clickable"
                   onClick={() => openSkaterSlide(p)}
-                  style={{ display: "flex", alignItems: "center", gap: 8, padding: "5px 0", borderBottom: "1px solid rgba(255,255,255,.04)", cursor: "pointer" }}
+                  style={{ display: "flex", alignItems: "center", gap: 8, padding: "5px 0", borderBottom: "1px solid var(--line)", cursor: "pointer" }}
                 >
                   <span className="mono" style={{ fontSize: 10, color: "var(--muted)", width: 14 }}>{i + 1}.</span>
                   <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={24} />

@@ -8,6 +8,7 @@ import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
 import GamblyButton from "../components/GamblyButton.jsx";
+import { isLight } from "../lib/theme.js";
 import { betLine } from "../lib/gambly.js";
 
 // Top 3 Tonight — the best real matchup per tier (Chalk / Mid-Tier / Breakout), deterministic, no
@@ -28,7 +29,7 @@ function Pill({ color, children, title }) {
 
 function Top3Card({ pick, flipped, onFlip, poolById }) {
   const tier = TIER[pick.tier];
-  const c = tier.color;
+  const c = (isLight() && tier.lightColor) || tier.color;
   const frame = {
     position: "absolute", inset: 0, borderRadius: 14, border: `1px solid ${c}`, boxShadow: `0 0 18px ${c}40`,
     background: `linear-gradient(150deg, ${c}26 0%, var(--surface) 55%, var(--bg) 100%)`,

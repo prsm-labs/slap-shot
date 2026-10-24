@@ -112,7 +112,7 @@ export default function MyPicksTab() {
               const p = byId.get(pk.pid);
               const g = slateByTeam.get(pk.team);
               return (
-                <div key={pk.pid} style={{ display: "flex", alignItems: "center", gap: 10, padding: "7px 0", borderBottom: "1px solid rgba(255,255,255,.05)", flexWrap: "wrap" }}>
+                <div key={pk.pid} style={{ display: "flex", alignItems: "center", gap: 10, padding: "7px 0", borderBottom: "1px solid var(--line2)", flexWrap: "wrap" }}>
                   <div className="clickable" style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", flex: 1, minWidth: 200 }}
                     onClick={() => openSkaterSlide(p || { playerId: pk.pid, name: pk.name, team: pk.team })}>
                     <PlayerAvatar playerId={pk.pid} name={pk.name} team={pk.team} size={30} />

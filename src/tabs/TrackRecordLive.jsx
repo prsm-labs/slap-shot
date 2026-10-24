@@ -250,7 +250,7 @@ export default function TrackRecordLive() {
           )}
           <div style={{ maxHeight: 260, overflowY: "auto" }}>
             {[...scope.filter((r) => r.scored)].sort((a, b) => b.g - a.g || (b.simGoal ?? -1) - (a.simGoal ?? -1)).map((r) => (
-              <div key={`${r.date}-${r.playerId}`} className="mono" style={{ fontSize: 11, padding: "3px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+              <div key={`${r.date}-${r.playerId}`} className="mono" style={{ fontSize: 11, padding: "3px 0", borderBottom: "1px solid var(--line)" }}>
                 {r.g >= 3 ? "🎩 " : ""}{"🚨".repeat(Math.min(r.g, 3))}{r.firstGoal ? ` ${FIRST_GOAL}` : ""} <b>{r.name}</b> <span style={{ color: "var(--muted)" }}>{r.team}{!date ? ` · ${shortDate(r.date)}` : ""}</span>
                 <span style={{ color: "var(--muted)" }}>
                   {" "}— {r.inPool ? `Slap ${r.slapScore} (#${r.slapRank}) · ${r.tier} · goal ${r.simGoal}%` : "not in the projections (no NHL history)"}

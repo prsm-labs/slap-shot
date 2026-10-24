@@ -263,7 +263,7 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
                 <td className="clickable" onClick={(e) => { e.stopPropagation(); openSkaterSlide(p); }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <button className="pill-btn" title={selSet.has(p.playerId) ? "Remove from the graph" : "Show on the graph"}
-                      style={{ fontSize: 10, padding: "1px 5px", ...(selSet.has(p.playerId) ? { borderColor: "#d4af37", color: "#d4af37" } : {}) }}
+                      style={{ fontSize: 10, padding: "1px 5px", ...(selSet.has(p.playerId) ? { borderColor: "#d4af37", color: "var(--gold-text)" } : {}) }}
                       onClick={(e) => { e.stopPropagation(); toggleSel(p.playerId); }}>{selSet.has(p.playerId) ? "★" : "☆"}</button>
                     <span className="mono" style={{ fontSize: 10, ...muted, width: 22 }}>#{p.iceRank}</span>
                     <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={26} />
@@ -284,7 +284,7 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
                 {promoHere && (
                   <>
                     <td style={{ fontWeight: 700 }} title={p.payout != null ? `80% range ${money(p.payLo)} – ${money(p.payHi)} · ~${(p.pickShare * 100).toFixed(2)}% of entrants on him` : ""}>{money(p.payout)}</td>
-                    <td style={{ color: p.promoEv != null && p.promoEv >= 25 ? "#d4af37" : undefined }}>{money(p.promoEv)}</td>
+                    <td style={{ color: p.promoEv != null && p.promoEv >= 25 ? "var(--gold-text)" : undefined }}>{money(p.promoEv)}</td>
                     <td>{p.marketP != null ? pct(p.marketP, 2) : "—"}</td>
                     <td title={p.fgBook || ""}>{am(p.fgBest)}{p.fgBook ? <span className="mono" style={{ fontSize: 9, ...muted }}> {p.fgBook}</span> : null}</td>
                     <td>{p.betEv != null ? `${p.betEv >= 0 ? "+" : "-"}$${Math.abs(p.betEv).toFixed(2)}` : "—"}</td>

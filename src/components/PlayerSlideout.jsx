@@ -28,7 +28,7 @@ const TIER_CLASS = {
 
 function StatRow({ label, value }) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+    <div style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid var(--line)" }}>
       <span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>{label}</span>
       <span className="mono" style={{ fontSize: 12, color: "var(--text)", fontWeight: 600 }}>{value}</span>
     </div>
@@ -98,7 +98,7 @@ function SkaterStats({ p }) {
         />
       )}
       {p.pointHeat && (
-        <div className="mono" style={{ fontSize: 10, color: "var(--accent2)", padding: "6px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+        <div className="mono" style={{ fontSize: 10, color: "var(--accent2)", padding: "6px 0", borderBottom: "1px solid var(--line)" }}>
           {pointHeatText(p.pointHeat)}
         </div>
       )}
@@ -126,7 +126,7 @@ function SkaterStats({ p }) {
         />
       )}
       {p.effectiveGrade?.matchup && (
-        <div className="mono" style={{ fontSize: 10, color: "var(--muted)", padding: "6px 0", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+        <div className="mono" style={{ fontSize: 10, color: "var(--muted)", padding: "6px 0", borderBottom: "1px solid var(--line)" }}>
           <span style={{ color: p.effectiveGrade.matchup.tier === "soft" ? "var(--accent2)" : "var(--text)", fontWeight: 600 }}>
             {matchupText(p.effectiveGrade.matchup)}
           </span>

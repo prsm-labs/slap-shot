@@ -24,7 +24,7 @@ function etTime(iso) {
 function distanceColor(d) {
   if (d == null) return "var(--text)";
   if (d <= 10) return "var(--green)";
-  if (d <= 25) return "#e0b04a";
+  if (d <= 25) return "var(--warn)";
   return "var(--muted)";
 }
 

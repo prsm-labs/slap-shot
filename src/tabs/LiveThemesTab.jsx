@@ -173,7 +173,7 @@ export default function LiveThemesTab() {
                 <div
                   key={j}
                   className="mono clickable"
-                  style={{ fontSize: 12, padding: "4px 0", borderBottom: "1px solid rgba(255,255,255,.04)", cursor: "pointer" }}
+                  style={{ fontSize: 12, padding: "4px 0", borderBottom: "1px solid var(--line)", cursor: "pointer" }}
                   onClick={() => openSkaterSlide({ playerId: g.scorerId, name: g.scorerName, team: g.scorerTeam })}
                 >
                   <span style={{ color: "var(--muted)" }}>P{g.period} {g.timeInPeriod} </span>

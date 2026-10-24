@@ -130,7 +130,7 @@ export default function RinkTracker({ box }) {
               className="mono"
               onClick={() => p.x != null && setFocusId(active ? null : p.id)}
               style={{
-                fontSize: 11, padding: "4px 6px", borderBottom: "1px solid rgba(255,255,255,.04)",
+                fontSize: 11, padding: "4px 6px", borderBottom: "1px solid var(--line)",
                 cursor: p.x != null ? "pointer" : "default",
                 background: active ? "rgba(74,159,212,.15)" : p.type === "goal" ? "rgba(200,16,46,.12)" : undefined,
                 fontWeight: p.type === "goal" ? 700 : 400,

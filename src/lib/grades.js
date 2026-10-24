@@ -25,6 +25,10 @@ export function letterFromScore(score) {
 export const GRADE_COLOR = {
   "A+": "#4a9fd4", A: "#4a9fd4", B: "#2f7dae", C: "#5a7080", D: "#5a7080", F: "#3a4d5c",
 };
+// light mode (2026-10-24): same order, dark enough to read on white
+export const GRADE_COLOR_LIGHT = {
+  "A+": "#1f6694", A: "#1f6694", B: "#2f7dae", C: "#5b6b79", D: "#5b6b79", F: "#8a98a5",
+};
 
 // Skater's own form/skill grade — Ice Sig (usage/recent form) + Snipe Score (shot quality),
 // deliberately NOT including Breakaway Score, which is already opponent-adjusted. This is the
