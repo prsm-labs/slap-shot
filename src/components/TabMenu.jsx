@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import './TabMenu.css'
 
-// 2026-10-24 (user): the horizontally scrolling tab bar is now a ☰ button + the current page's name; tapping it slides out
-// a menu with every page. Same component in CourtIQ, Slap Shot, Six Points and Final Lap (Going Yard keeps its own tabs).
+// 2026-10-24 (user prototype): the scrolling tab bar is gone -- a ☰ button opens a slide-out menu with every page. It sits first in the
+// row under the logo (☰ · date / week picker · team · search; NASCAR / F1 switch in Final Lap). Same component in CourtIQ, Slap Shot,
+// Six Points and Final Lap (Going Yard keeps its own tabs).
 export default function TabMenu({ tabs, tab, setTab }) {
   const [open, setOpen] = useState(false)
   const panel = useRef(null)
@@ -26,12 +27,9 @@ export default function TabMenu({ tabs, tab, setTab }) {
 
   return (
     <>
-      <div className="tm-bar">
-        <button className="tm-toggle" aria-label="Open the page menu" aria-expanded={open} onClick={() => setOpen(true)}>
-          <span className="tm-burger" aria-hidden="true"><i /><i /><i /></span>
-          <span className="tm-current">{current.label}</span>
-        </button>
-      </div>
+      <button className="tm-toggle" aria-label={`Menu · ${current.label}`} title="Pages" aria-expanded={open} onClick={() => setOpen(true)}>
+        <span className="tm-burger" aria-hidden="true"><i /><i /><i /></span>
+      </button>
       <div className={`tm-backdrop${open ? ' open' : ''}`} onClick={() => setOpen(false)} aria-hidden="true" />
       <nav className={`tm-panel${open ? ' open' : ''}`} ref={panel} aria-label="Pages" aria-hidden={!open}>
         <div className="tm-head">

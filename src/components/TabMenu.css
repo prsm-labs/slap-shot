@@ -1,10 +1,8 @@
-/* 2026-10-24 ☰ page menu (TabMenu.jsx) -- replaces the scrolling tab bar. --fg falls back to --text for Slap Shot. */
-.tm-bar { position: sticky; top: 0; z-index: 60; background: var(--bg); border-bottom: 1px solid var(--border); margin-bottom: 14px; padding: 6px 0; }
-.tm-toggle { display: inline-flex; align-items: center; gap: 10px; background: none; border: 1px solid var(--border); border-radius: 10px; padding: 7px 12px 7px 10px; color: var(--fg, var(--text)); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
-.tm-toggle:hover { border-color: var(--accent); }
+/* 2026-10-24 ☰ page menu (TabMenu.jsx), user prototype: ☰ first in the row under the logo. --fg falls back to --text for Slap Shot. */
+.tm-toggle { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 34px; padding: 0; background: var(--surface, var(--bg)); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; }
+.tm-toggle:hover, .tm-toggle[aria-expanded="true"] { border-color: var(--accent); }
 .tm-burger { display: inline-grid; gap: 4px; width: 18px; }
 .tm-burger i { display: block; height: 2px; border-radius: 2px; background: var(--accent); }
-.tm-current { white-space: nowrap; }
 .tm-backdrop { position: fixed; inset: 0; z-index: 1100; background: rgba(0, 0, 0, .45); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
 .tm-backdrop.open { opacity: 1; pointer-events: auto; }
 .tm-panel { position: fixed; top: 0; left: 0; bottom: 0; z-index: 1101; width: min(290px, 84vw); display: flex; flex-direction: column; background: var(--surface, var(--bg)); border-right: 1px solid var(--border); box-shadow: 8px 0 24px rgba(0, 0, 0, .3); transform: translateX(-102%); transition: transform .22s ease; visibility: hidden; }
@@ -17,3 +15,23 @@
 .tm-item:hover { color: var(--fg, var(--text)); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .tm-item.active { color: var(--fg, var(--text)); font-weight: 600; border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
 @media (prefers-reduced-motion: reduce) { .tm-panel, .tm-backdrop { transition: none; } }
+
+/* The row under the logo: ☰ · date / week picker · team · search on one line. The past-night note drops to its own line below. */
+.master-bar.tm-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 0 10px; }
+.tm-row > .date-bar { display: contents; }
+.tm-row .date-bar > :not(.date-pick):not(.date-note) { display: none; }
+.tm-row .date-pick select { padding: 6px 9px; }
+.tm-row .date-note { order: 10; flex: 1 1 100%; padding: 8px 12px; border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--border)); border-radius: 10px; background: color-mix(in srgb, var(--accent) 7%, var(--surface, var(--bg))); font-size: 0.82rem; }
+.tm-row .master-filter { flex: 1 1 auto; flex-wrap: nowrap; justify-content: flex-start; min-width: 0; gap: 8px; }
+.tm-row .sport-switch { flex: 1 1 auto; margin: 0; }
+@media (max-width: 600px) {
+  .master-bar.tm-row { gap: 5px; }
+  .tm-toggle { width: 36px; height: 32px; }
+  .tm-row .date-pick { gap: 3px; min-width: 0; flex: 0 1 auto; }
+  .tm-row .date-pick > span { font-size: 12px; }
+  .tm-row .date-pick select, .tm-row .master-filter select, .tm-row .master-filter input { font-size: 11.5px; padding: 6px 5px; }
+  .tm-row .date-pick select { max-width: 33vw; min-width: 0; text-overflow: ellipsis; }
+  .tm-row .master-filter { flex: 1 1 0; gap: 5px; }
+  .tm-row .master-filter select { flex: 0 1 auto; max-width: 21vw; min-width: 0; text-overflow: ellipsis; }
+  .tm-row .master-filter input { flex: 1 1 0; min-width: 0; max-width: none; }
+}

@@ -81,16 +81,14 @@ export default function App() {
           <div className="badge">PRSM LABS</div>
         </div>
       </header>
+      {/* 2026-10-24 (user prototype): ☰ page menu first in the row under the logo, then the date picker, team and search */}
+      {/* 2026-10-23: 📅 night picker -- a past night swaps every page to that night's frozen slate + results */}
+      <div className="master-bar tm-row"><TabMenu tabs={TABS} tab={tab} setTab={setTab} /><DateBar /><MasterFilter /></div>
 
       <NotificationBar />
       <GoalTicker onClick={() => setTab("goals")} />
       {/* 2026-10-22: one CourtIQ-style matchup strip above the tabs; it narrows every page */}
-      {/* 2026-10-23: 📅 night picker -- a past night swaps every page to that night's frozen slate + results */}
-      <div className="master-bar"><DateBar /><MasterFilter /></div>
       <GameStrip />
-
-      {/* 2026-10-24 (user): ☰ page menu replaces the scrolling tab bar */}
-      <TabMenu tabs={TABS} tab={tab} setTab={setTab} />
 
       <main className="content">
         <PastNightGuard key={`${tab}|${viewDate || ""}`} past={Boolean(viewDate)}>
