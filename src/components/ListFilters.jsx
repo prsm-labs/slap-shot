@@ -1,47 +1,13 @@
-import { useState } from "react";
-import {
-  activeFilterCount, clearListFilters, GOAL_OPTIONS, GRADE_OPTIONS, setListFilter, TIER_OPTIONS, useListFilters,
-} from "../lib/listFilters.js";
+import FilterPanel, { withCounts } from "./FilterPanel.jsx";
+import { buildGroups, clearListFilters, setListFilter, useListFilters } from "../lib/listFilters.js";
 
-// Collapsible filter bar for the long skater lists (lib/listFilters.js holds the shared state).
-export default function ListFilters({ signalLabel = "★ Signals only", shown, total }) {
+// Collapsible filter panel for the long skater lists (lib/listFilters.js holds the shared state and the groups).
+// 2026-10-25: the shared FilterPanel (tags, Top 3 / PRISM Picks, grade + H2H letter scales); base = the list before these
+// filters (matchup / position / header team applied) so each pill shows how many skaters it would leave.
+export default function ListFilters({ shown, total, base, ctx }) {
   const f = useListFilters();
-  const [open, setOpen] = useState(false);
-  const n = activeFilterCount(f);
-  const pill = (active, label, onClick, title) => (
-    <button key={label} title={title} className={`pill-btn ${active ? "active" : ""}`} onClick={onClick}>{label}</button>
-  );
   return (
-    <div className="card" style={{ padding: "8px 12px", marginBottom: 12 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-        <button className="btn" onClick={() => setOpen((v) => !v)}>⚙ Filters{n ? ` (${n})` : ""} {open ? "▲" : "▼"}</button>
-        {/* 2026-10-23: the skater / team search moved to the header (MasterFilter) -- one search for the whole app */}
-        {shown != null && <span className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>{shown} of {total} skaters</span>}
-        {n > 0 && <button className="btn" onClick={clearListFilters}>✕ Clear</button>}
-      </div>
-      {open && (
-        <div style={{ display: "grid", gap: 8, marginTop: 10 }}>
-          <div className="pill-row" style={{ flexWrap: "wrap" }}>
-            {TIER_OPTIONS.map((t) => pill(f.tier === t.key, t.label, () => setListFilter("tier", t.key)))}
-          </div>
-          <div className="pill-row" style={{ flexWrap: "wrap" }}>
-            {GOAL_OPTIONS.map((g) => pill(f.minGoal === g, g ? `Goal ${g}%+` : "Any goal %", () => setListFilter("minGoal", g)))}
-          </div>
-          <div className="pill-row" style={{ flexWrap: "wrap" }}>
-            {GRADE_OPTIONS.map((g) => pill(f.minGrade === g, g ? `Grade ${g} or better` : "Any grade", () => setListFilter("minGrade", g)))}
-          </div>
-          <div className="pill-row" style={{ flexWrap: "wrap" }}>
-            {pill(f.signals, signalLabel, () => setListFilter("signals", !f.signals))}
-            {pill(f.soft, "Soft defense tonight", () => setListFilter("soft", !f.soft), "Opponent in tonight's softest third by expected goals allowed — the matchup factor that tested real")}
-            {pill(f.breakout, "🚀 Breakout Watch", () => setListFilter("breakout", !f.breakout), "Rising expected goals into a soft defense, outside the model's top 15%")}
-            {pill(f.due, "🔥 Due + heating up", () => setListFilter("due", !f.due), "No goal in 2+ games, expected goals last 5 at 1.3x+ the season rate, soft defense tonight, not a top-25% scorer — scored 6-13% above the model over 4 seasons")}
-            {pill(f.pointDue, "🍎 Points due", () => setListFilter("pointDue", !f.pointDue), "No point in 2+ games while the team's expected goals with them on the ice ran 1.2x+ the season rate, outside tonight's top 25% point chances — beat the model over 4 seasons; point chance raised x1.04-1.05")}
-            {pill(f.value, "💰 Value vs book", () => setListFilter("value", !f.value), "Our goal % at least 3 points above the chance the best sportsbook price implies")}
-            {pill(f.confirmed, "✅ In official lineup", () => setListFilter("confirmed", !f.confirmed), "Only skaters in tonight's posted lineup (around warmups)")}
-            {pill(f.strongH2H, "🔁 Strong H2H (A/A+)", () => setListFilter("strongH2H", !f.strongH2H), "History vs tonight's opponent well above their own norm — context, not a prediction")}
-          </div>
-        </div>
-      )}
-    </div>
+    <FilterPanel groups={withCounts(buildGroups(ctx), base)} value={f} shown={shown} total={total} noun="skaters"
+      onChange={setListFilter} onClear={clearListFilters} />
   );
 }

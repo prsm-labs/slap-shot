@@ -10,7 +10,7 @@ import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import ListFilters from "../components/ListFilters.jsx";
-import { applyListFilters, useListFilters } from "../lib/listFilters.js";
+import { applyListFilters, useListFilters, usePickSets } from "../lib/listFilters.js";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { fmtToi } from "../lib/toi.js";
@@ -65,12 +65,13 @@ export default function LampLabTab() {
   const position = usePosition();
   const listFilters = useListFilters();
   const h2hGrades = useH2HGrades();
+  const pickSets = usePickSets(live);
 
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
   const filtered = useMemo(() => {
-    const inGame = applyListFilters(filterPositions(filterPlayers(merged, selected), position), listFilters, { slate: live?.players, signal: "goal", h2h: h2hGrades.skaters });
+    const inGame = applyListFilters(filterPositions(filterPlayers(merged, selected), position), listFilters, { slate: live?.players, signal: "goal", h2h: h2hGrades.skaters, picks: pickSets, meta: live?.meta });
     return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades);
-  }, [merged, team, selected, position, listFilters, live, h2hGrades]);
+  }, [merged, team, selected, position, listFilters, live, h2hGrades, pickSets]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimeGoalPct", "desc");
   const sortedWithSignalFirst = useMemo(
@@ -108,7 +109,8 @@ export default function LampLabTab() {
       </div>
 
       <PositionFilter />
-      <ListFilters signalLabel="★ Goal Signals only" shown={filtered.length} total={merged?.length ?? 0} />
+      <ListFilters shown={filtered.length} total={merged?.length ?? 0} base={filterPositions(filterPlayers(merged, selected), position)}
+        ctx={{ slate: live?.players, signal: "goal", h2h: h2hGrades.skaters, picks: pickSets, meta: live?.meta }} />
       <MatchupFilter />
       <div className="card" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
         <div style={{ flex: 1 }} />

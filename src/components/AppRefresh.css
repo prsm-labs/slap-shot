@@ -1,0 +1,7 @@
+/* 2026-10-25 header app-refresh button (AppRefresh.jsx). Same file in every app. */
+.app-refresh { flex: 0 0 auto; display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0; border-radius: 999px; border: 1px solid var(--border); background: var(--surface, transparent); color: var(--accent); cursor: pointer; }
+.app-refresh:hover { border-color: var(--accent); }
+.app-refresh.busy svg { animation: app-refresh-spin 0.8s linear infinite; }
+@keyframes app-refresh-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .app-refresh.busy svg { animation: none; } }
+.hdr-right { display: flex; align-items: center; gap: 8px; }

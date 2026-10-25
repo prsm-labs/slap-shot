@@ -26,6 +26,7 @@ import MyPicksTab from "./tabs/MyPicksTab.jsx";
 import MatchupLookupTab from "./tabs/MatchupLookupTab.jsx";
 import AboutTab from "./tabs/AboutTab.jsx";
 import TabMenu from "./components/TabMenu.jsx";
+import AppRefresh from "./components/AppRefresh.jsx";
 
 const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
 
@@ -73,6 +74,8 @@ export default function App() {
           <span>SLAP</span> SHOT
         </div>
         <div className="badges">
+          {/* 2026-10-25 (user): app refresh button -- reloads the page with fresh data */}
+          <AppRefresh />
           <AlertBell />
           <div className="badge live">
             <div className="badge-dot" />

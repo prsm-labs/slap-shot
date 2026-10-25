@@ -10,7 +10,7 @@ import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 import ListFilters from "../components/ListFilters.jsx";
-import { applyListFilters, useListFilters } from "../lib/listFilters.js";
+import { applyListFilters, useListFilters, usePickSets } from "../lib/listFilters.js";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { fmtToi } from "../lib/toi.js";
@@ -68,7 +68,11 @@ export default function AllMatchupsTab() {
 
   const listFilters = useListFilters();
   const h2hGrades = useH2HGrades();
-  const shown = applyListFilters(filterPositions(filterPlayers(players, selected), position), listFilters, { slate: players, signal: "goal", h2h: h2hGrades.skaters });
+  const pickSets = usePickSets(pool);
+  // 2026-10-25 FilterPanel: base = before the panel's filters (its pill counts); ctx feeds the tag / pick / H2H groups
+  const base = filterPositions(filterPlayers(players, selected), position);
+  const fctx = { slate: players, signal: "goal", h2h: h2hGrades.skaters, picks: pickSets, meta };
+  const shown = applyListFilters(base, listFilters, fctx);
   // H2H grade + goal-game rates (vs team / goalie / venue / L5 / L10) for sorting; missing = sorts last.
   const rows = withH2H(shown, h2hGrades).map((p) => {
     const dvp = dvpFor(meta, p);
@@ -93,7 +97,7 @@ export default function AllMatchupsTab() {
       </div>
       {meta?.slate?.length > 0 && <MatchupFilter label={slateHeading(meta)} />}
       <PositionFilter />
-      <ListFilters signalLabel="★ Goal Signals only" shown={shown?.length} total={players?.length} />
+      <ListFilters shown={shown?.length} total={players?.length} base={base} ctx={fctx} />
       {!players && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
 
       {players && (

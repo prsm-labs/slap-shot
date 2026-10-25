@@ -1,0 +1,33 @@
+/* 2026-10-25 shared filter panel (FilterPanel.jsx). Same file in every app; --fg falls back to --text (Slap Shot). */
+.fp { padding: 8px 12px; margin-bottom: 12px; }
+.fp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.fp-toggle { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--fg, var(--text)); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; }
+.fp-toggle:hover, .fp.open .fp-toggle { border-color: var(--accent); }
+.fp-count { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--accent); color: var(--accent-fg, #fff); font-size: 0.7rem; }
+.fp-caret { color: var(--muted); font-size: 0.75rem; }
+.fp-shown { color: var(--muted); font-size: 0.78rem; }
+.fp-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; flex: 1 1 100%; }
+.fp-chip { display: inline-flex; align-items: center; gap: 4px; border: 1px solid color-mix(in srgb, var(--accent) 60%, var(--border)); background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--fg, var(--text)); border-radius: 999px; padding: 3px 9px; font: inherit; font-size: 0.74rem; cursor: pointer; white-space: nowrap; }
+.fp-chip:hover { border-color: var(--accent); }
+.fp-chip-g { color: var(--muted); }
+.fp-clear { background: none; border: 0; color: var(--muted); font: inherit; font-size: 0.74rem; text-decoration: underline; cursor: pointer; padding: 3px 4px; }
+.fp-body { display: grid; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.fp-group { display: grid; grid-template-columns: 96px 1fr; gap: 4px 10px; align-items: start; }
+.fp-label { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 6px; }
+.fp-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.fp-pill { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border); background: transparent; color: var(--fg, var(--text)); border-radius: 999px; padding: 4px 10px; font: inherit; font-size: 0.8rem; cursor: pointer; white-space: nowrap; }
+.fp-pill:hover:not(:disabled) { border-color: var(--accent); }
+.fp-pill.on { background: var(--accent); border-color: var(--accent); color: var(--accent-fg, #fff); }
+.fp-pill.empty { opacity: 0.4; cursor: default; }
+.fp-n { font-size: 0.68rem; opacity: 0.7; }
+.fp-pill.on .fp-n { opacity: 0.85; }
+.fp-mode { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; margin-left: 4px; }
+.fp-mode button { background: transparent; border: 0; color: var(--muted); font: inherit; font-size: 0.72rem; padding: 4px 9px; cursor: pointer; }
+.fp-mode button.on { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--fg, var(--text)); font-weight: 600; }
+.fp-hint { grid-column: 2; color: var(--muted); font-size: 0.72rem; }
+@media (max-width: 600px) {
+  .fp-group { grid-template-columns: 1fr; }
+  .fp-label { padding-top: 0; }
+  .fp-hint { grid-column: 1; }
+  .fp-pill { padding: 4px 9px; font-size: 0.76rem; }
+}
