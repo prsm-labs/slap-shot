@@ -1,0 +1,3771 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-25",
+  "market": "player_goal_scorer_anytime",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-10-25T16:06:43+00:00",
+    "games": [
+     "FLA@CHI",
+     "NYI@DAL",
+     "MTL@WPG",
+     "COL@NSH",
+     "MIN@VAN"
+    ],
+    "creditsLeft": 333
+   }
+  ],
+  "updated": "2026-10-25T16:06:43+00:00",
+  "creditsLeft": 333
+ },
+ "games": {
+  "FLA@CHI": {
+   "fetchedAt": "2026-10-25T16:06:43+00:00",
+   "eventId": "e13d36d055361cb7f59a37b7e5dca489",
+   "players": 38,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD"
+   ]
+  },
+  "NYI@DAL": {
+   "fetchedAt": "2026-10-25T16:06:43+00:00",
+   "eventId": "9c1309e10d95a3f6eb6b6b9105c565eb",
+   "players": 36,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD"
+   ]
+  },
+  "MTL@WPG": {
+   "fetchedAt": "2026-10-25T16:06:43+00:00",
+   "eventId": "cd9f65faa44f221a72638e49afb134fb",
+   "players": 38,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD"
+   ]
+  },
+  "COL@NSH": {
+   "fetchedAt": "2026-10-25T16:06:43+00:00",
+   "eventId": "61198113cc96cb987aad067a15911db8",
+   "players": 38,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD"
+   ]
+  },
+  "MIN@VAN": {
+   "fetchedAt": "2026-10-25T16:06:43+00:00",
+   "eventId": "ccf447f1bbe822d28f87352436f70c7c",
+   "players": 39,
+   "books": [
+    "BOV",
+    "BR",
+    "DK",
+    "FD"
+   ]
+  }
+ },
+ "players": {
+  "8480801": {
+   "name": "Brady Tkachuk",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 140,
+    "DK": 150,
+    "BR": 118,
+    "BOV": 139
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=20852680",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863281_13L42133Q1100180496Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458337|{wagerAmount}"
+   },
+   "best": 150,
+   "bestBook": "DK",
+   "bestImplied": 40.0,
+   "medianImplied": 41.8
+  },
+  "8477935": {
+   "name": "Sam Bennett",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 170,
+    "DK": 180,
+    "BR": 170,
+    "BOV": 172
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=12452422",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863376_13L42133Q11509694793Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464292|{wagerAmount}"
+   },
+   "best": 180,
+   "bestBook": "DK",
+   "bestImplied": 35.7,
+   "medianImplied": 36.9
+  },
+  "8477933": {
+   "name": "Sam Reinhart",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 170,
+    "DK": 165,
+    "BR": 165,
+    "BOV": 164
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=12496387",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863193_13L42133Q11622144764Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458331|{wagerAmount}"
+   },
+   "best": 170,
+   "bestBook": "FD",
+   "bestImplied": 37.0,
+   "medianImplied": 37.7
+  },
+  "8479314": {
+   "name": "Matthew Tkachuk",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 180,
+    "DK": 190,
+    "BR": 175,
+    "BOV": 180
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=12452414",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863223_13L42133Q1-648785476Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458399|{wagerAmount}"
+   },
+   "best": 190,
+   "bestBook": "DK",
+   "bestImplied": 34.5,
+   "medianImplied": 35.7
+  },
+  "8484144": {
+   "name": "Connor Bedard",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 190,
+    "DK": 190,
+    "BR": 180,
+    "BOV": 183
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=58195609",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862800_13L42133Q1472408738Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458315|{wagerAmount}"
+   },
+   "best": 190,
+   "bestBook": "FD",
+   "bestImplied": 34.5,
+   "medianImplied": 34.9
+  },
+  "8477409": {
+   "name": "Carter Verhaeghe",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 195,
+    "DK": 185,
+    "BR": 175,
+    "BOV": 185
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=28059650",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863331_13L42133Q1-1944035273Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458307|{wagerAmount}"
+   },
+   "best": 195,
+   "bestBook": "FD",
+   "bestImplied": 33.9,
+   "medianImplied": 35.1
+  },
+  "8477479": {
+   "name": "Tyler Bertuzzi",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 260,
+    "DK": 255,
+    "BR": 285,
+    "BOV": 255
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=21532119",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862483_13L42133Q1-924185390Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464282|{wagerAmount}"
+   },
+   "best": 285,
+   "bestBook": "BR",
+   "bestImplied": 26.0,
+   "medianImplied": 28.0
+  },
+  "8474141": {
+   "name": "Patrick Kane",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 270,
+    "DK": 275,
+    "BR": 295,
+    "BOV": 260
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=9552862",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862433_13L42133Q11027607872Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464286|{wagerAmount}"
+   },
+   "best": 295,
+   "bestBook": "BR",
+   "bestImplied": 25.3,
+   "medianImplied": 26.8
+  },
+  "8484390": {
+   "name": "Roman Kantserov",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 280,
+    "DK": 280,
+    "BR": 290,
+    "BOV": 270
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=100069242",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863164_13L42133Q1607677136Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464266|{wagerAmount}"
+   },
+   "best": 290,
+   "bestBook": "BR",
+   "bestImplied": 25.6,
+   "medianImplied": 26.3
+  },
+  "8482113": {
+   "name": "Anton Lundell",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 280,
+    "DK": 285,
+    "BR": 330,
+    "BOV": 270
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=36305281",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863427_13L42133Q11982014914Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458335|{wagerAmount}"
+   },
+   "best": 330,
+   "bestBook": "BR",
+   "bestImplied": 23.3,
+   "medianImplied": 26.1
+  },
+  "8485391": {
+   "name": "Anton Frondell",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 370,
+    "DK": 370,
+    "BR": 350,
+    "BOV": 350
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=83859815",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863131_13L42133Q1-762682105Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464272|{wagerAmount}"
+   },
+   "best": 370,
+   "bestBook": "FD",
+   "bestImplied": 21.3,
+   "medianImplied": 21.7
+  },
+  "8483493": {
+   "name": "Frank Nazar",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 390,
+    "DK": 360,
+    "BR": 410,
+    "BOV": 360
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=46259057",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862954_13L42133Q1-1047459488Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458311|{wagerAmount}"
+   },
+   "best": 410,
+   "bestBook": "BR",
+   "bestImplied": 19.6,
+   "medianImplied": 21.1
+  },
+  "8480185": {
+   "name": "Eetu Luostarinen",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 420,
+    "DK": 425,
+    "BR": 430,
+    "BOV": 400
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=38539008",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863401_13L42133Q11112808090Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458405|{wagerAmount}"
+   },
+   "best": 430,
+   "bestBook": "BR",
+   "bestImplied": 18.9,
+   "medianImplied": 19.1
+  },
+  "8476882": {
+   "name": "Teuvo Teravainen",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 480,
+    "DK": 450,
+    "BR": 440,
+    "BOV": 440
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=12449435",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862376_13L42133Q11236902954Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464262|{wagerAmount}"
+   },
+   "best": 480,
+   "bestBook": "FD",
+   "bestImplied": 17.2,
+   "medianImplied": 18.4
+  },
+  "8477495": {
+   "name": "Seth Jones",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 500,
+    "DK": 500,
+    "BR": 525,
+    "BOV": 460
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=12857542",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863241_13L42133Q11318054816Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464268|{wagerAmount}"
+   },
+   "best": 525,
+   "bestBook": "BR",
+   "bestImplied": 16.0,
+   "medianImplied": 16.7
+  },
+  "8477987": {
+   "name": "Ryan Donato",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 525,
+    "DK": 500,
+    "BR": 420,
+    "BOV": 475
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=20852701",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862663_13L42133Q1-920180572Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458269|{wagerAmount}"
+   },
+   "best": 525,
+   "bestBook": "FD",
+   "bestImplied": 16.0,
+   "medianImplied": 17.0
+  },
+  "8474189": {
+   "name": "Lars Eller",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 525,
+    "DK": 550,
+    "BR": 575,
+    "BOV": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=11127914",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863300_13L42133Q1437107043Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464190|{wagerAmount}"
+   },
+   "best": 575,
+   "bestBook": "BR",
+   "bestImplied": 14.8,
+   "medianImplied": 15.7
+  },
+  "8483771": {
+   "name": "Sandis Vilmanis",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 575,
+    "DK": 600,
+    "BR": 525,
+    "BOV": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=93684250",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333951909_13L42133Q1-1278264737Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458395|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "DK",
+   "bestImplied": 14.3,
+   "medianImplied": 15.4
+  },
+  "8478233": {
+   "name": "Andrew Mangiapane",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "BR": 600,
+    "BOV": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=23790789",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232334291896_13L42133Q1350935516Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388489658|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 13.8
+  },
+  "8483450": {
+   "name": "Ryan Greene",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 700,
+    "DK": 700,
+    "BR": 650,
+    "BOV": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=67730311",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862997_13L42133Q1-1721692889Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464179|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 12.9
+  },
+  "8481655": {
+   "name": "Cole Schwindt",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 800,
+    "DK": 850,
+    "BR": 510,
+    "BOV": 725
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=65253507",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863416_13L42133Q1-1822261228Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388489688|{wagerAmount}"
+   },
+   "best": 850,
+   "bestBook": "DK",
+   "bestImplied": 10.5,
+   "medianImplied": 11.6
+  },
+  "8478413": {
+   "name": "Jordan Greenway",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 850,
+    "DK": 850,
+    "BR": 650,
+    "BOV": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=20852672",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862718_13L42133Q1172214802Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388446563|{wagerAmount}"
+   },
+   "best": 850,
+   "bestBook": "FD",
+   "bestImplied": 10.5,
+   "medianImplied": 11.1
+  },
+  "8477932": {
+   "name": "Aaron Ekblad",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 850,
+    "DK": 900,
+    "BR": 850,
+    "BOV": 775
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=12449408",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863262_13L42133Q1-1714928949Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464274|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "DK",
+   "bestImplied": 10.0,
+   "medianImplied": 10.5
+  },
+  "8478147": {
+   "name": "Bokondji Imama",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 850,
+    "DK": 850,
+    "BR": 850,
+    "BOV": 775
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=68013174",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863458_13L42133Q1-2111624738Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388489656|{wagerAmount}"
+   },
+   "best": 850,
+   "bestBook": "FD",
+   "bestImplied": 10.5,
+   "medianImplied": 10.5
+  },
+  "8483506": {
+   "name": "Sam Rinzel",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 900,
+    "DK": 900,
+    "BR": 600,
+    "BOV": 800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=64280427",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863079_13L42133Q11458704391Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458299|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 10.6
+  },
+  "8478055": {
+   "name": "Gustav Forsling",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1000,
+    "DK": 1100,
+    "BR": 750,
+    "BOV": 875
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=39494153",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863408_13L42133Q1-1379274321Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458313|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "DK",
+   "bestImplied": 8.3,
+   "medianImplied": 9.7
+  },
+  "8482062": {
+   "name": "Cole Smith",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1100,
+    "DK": 1000,
+    "BR": 750,
+    "BOV": 900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=42357844",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862745_13L42133Q11692228722Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388446544|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 9.5
+  },
+  "8484304": {
+   "name": "Uvis Balinskis",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1300,
+    "DK": 1300,
+    "BOV": 1100
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=56342929",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863450_13L42133Q1-377787339Q20"
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 7.1
+  },
+  "8475179": {
+   "name": "Dmitry Kulikov",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1400,
+    "DK": 1800,
+    "BR": 950,
+    "BOV": 1300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=3969658",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863361_13L42133Q1850607184Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464248|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 6.9
+  },
+  "8484783": {
+   "name": "Artyom Levshunov",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1400,
+    "DK": 1400,
+    "BR": 700,
+    "BOV": 1200
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=70260732",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863042_13L42133Q11314943414Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458382|{wagerAmount}"
+   },
+   "best": 1400,
+   "bestBook": "FD",
+   "bestImplied": 6.7,
+   "medianImplied": 7.2
+  },
+  "8478859": {
+   "name": "Niko Mikkola",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1400,
+    "DK": 1300,
+    "BR": 750,
+    "BOV": 1200
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=39505362",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863389_13L42133Q1-2044065279Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388489684|{wagerAmount}"
+   },
+   "best": 1400,
+   "bestBook": "FD",
+   "bestImplied": 6.7,
+   "medianImplied": 7.4
+  },
+  "8482176": {
+   "name": "Wyatt Kaiser",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1600,
+    "DK": 1200,
+    "BR": 900,
+    "BOV": 1200
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=61544847",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862819_13L42133Q12112657433Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388458325|{wagerAmount}"
+   },
+   "best": 1600,
+   "bestBook": "FD",
+   "bestImplied": 5.9,
+   "medianImplied": 7.7
+  },
+  "8481568": {
+   "name": "Alex Vlasic",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1700,
+    "DK": 1800,
+    "BR": 950,
+    "BOV": 1600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=44333826",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862849_13L42133Q11447953116Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388446542|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 5.7
+  },
+  "8483466": {
+   "name": "Kevin Korchinski",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "FD": 1800,
+    "DK": 2000,
+    "BOV": 1800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619407363&selectionId=46259062",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232334291897_13L42133Q1-138862665Q20"
+   },
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
+   "medianImplied": 5.3
+  },
+  "8477903": {
+   "name": "Garnet Hathaway",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "DK": 750,
+    "BR": 750,
+    "BOV": 650
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333863346_13L42133Q11188382340Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388464284|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 11.8
+  },
+  "8474013": {
+   "name": "Ian Cole",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "DK": 2500,
+    "BR": 1000,
+    "BOV": 1700
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218093%232333862546_13L42133Q1594578967Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388446571|{wagerAmount}"
+   },
+   "best": 2500,
+   "bestBook": "DK",
+   "bestImplied": 3.8,
+   "medianImplied": 5.6
+  },
+  "8475462": {
+   "name": "Radko Gudas",
+   "team": "FLA",
+   "game": "FLA@CHI",
+   "books": {
+    "BR": 800
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388489660|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "BR",
+   "bestImplied": 11.1,
+   "medianImplied": 11.1
+  },
+  "8482807": {
+   "name": "Ethan Del Mastro",
+   "team": "CHI",
+   "game": "FLA@CHI",
+   "books": {
+    "BR": 900
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409852?coupon={pickType}|4388489694|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "BR",
+   "bestImplied": 10.0,
+   "medianImplied": 10.0
+  },
+  "8480027": {
+   "name": "Jason Robertson",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 145,
+    "DK": 145,
+    "BR": 150,
+    "BOV": 145
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=38764242",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755688_13L42133Q1-1819449052Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518816|{wagerAmount}"
+   },
+   "best": 150,
+   "bestBook": "BR",
+   "bestImplied": 40.0,
+   "medianImplied": 40.8
+  },
+  "8482740": {
+   "name": "Wyatt Johnston",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 150,
+    "DK": 160,
+    "BR": 155,
+    "BOV": 150
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=48699547",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755738_13L42133Q11626137145Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527600|{wagerAmount}"
+   },
+   "best": 160,
+   "bestBook": "DK",
+   "bestImplied": 38.5,
+   "medianImplied": 39.6
+  },
+  "8478420": {
+   "name": "Mikko Rantanen",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 170,
+    "DK": 185,
+    "BR": 175,
+    "BOV": 173
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=12449307",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333754969_13L42133Q1-470455693Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527469|{wagerAmount}"
+   },
+   "best": 185,
+   "bestBook": "DK",
+   "bestImplied": 35.1,
+   "medianImplied": 36.5
+  },
+  "8478449": {
+   "name": "Roope Hintz",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 210,
+    "DK": 215,
+    "BR": 210,
+    "BOV": 205
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=23791207",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755321_13L42133Q1-998789330Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527545|{wagerAmount}"
+   },
+   "best": 215,
+   "bestBook": "DK",
+   "bestImplied": 31.7,
+   "medianImplied": 32.3
+  },
+  "8477500": {
+   "name": "Bo Horvat",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 240,
+    "DK": 215,
+    "BR": 240,
+    "BOV": 225
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=12496305",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755978_13L42133Q1-1655556603Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388536004|{wagerAmount}"
+   },
+   "best": 240,
+   "bestBook": "FD",
+   "bestImplied": 29.4,
+   "medianImplied": 30.1
+  },
+  "8485366": {
+   "name": "Matthew Schaefer",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 280,
+    "DK": 285,
+    "BR": 300,
+    "BOV": 275
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=88169613",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756094_13L42133Q1-1455830909Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518910|{wagerAmount}"
+   },
+   "best": 300,
+   "bestBook": "BR",
+   "bestImplied": 25.0,
+   "medianImplied": 26.1
+  },
+  "8475794": {
+   "name": "Tyler Seguin",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 290,
+    "DK": 285,
+    "BR": 300,
+    "BOV": 275
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=12449293",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755063_13L42133Q1-829926103Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518839|{wagerAmount}"
+   },
+   "best": 300,
+   "bestBook": "BR",
+   "bestImplied": 25.0,
+   "medianImplied": 25.8
+  },
+  "8475151": {
+   "name": "Kyle Palmieri",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 350,
+    "DK": 320,
+    "BR": 325,
+    "BOV": 325
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=12449328",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755874_13L42133Q1190712845Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527575|{wagerAmount}"
+   },
+   "best": 350,
+   "bestBook": "FD",
+   "bestImplied": 22.2,
+   "medianImplied": 23.5
+  },
+  "8481601": {
+   "name": "Simon Holmstrom",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 400,
+    "DK": 340,
+    "BR": 380,
+    "BOV": 350
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=50617731",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756035_13L42133Q1355564601Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518849|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "FD",
+   "bestImplied": 20.0,
+   "medianImplied": 21.5
+  },
+  "8482476": {
+   "name": "Emil Heineman",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 420,
+    "DK": 370,
+    "BR": 390,
+    "BOV": 390
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=64198103",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756086_13L42133Q1-984146515Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388536039|{wagerAmount}"
+   },
+   "best": 420,
+   "bestBook": "FD",
+   "bestImplied": 19.2,
+   "medianImplied": 20.4
+  },
+  "8481641": {
+   "name": "Joel Kiviranta",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 430,
+    "DK": 550,
+    "BR": 430,
+    "BOV": 435
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=38764245",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755475_13L42133Q1857518899Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518912|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "DK",
+   "bestImplied": 15.4,
+   "medianImplied": 18.8
+  },
+  "8484829": {
+   "name": "Justin Hryckowian",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 440,
+    "DK": 500,
+    "BR": 440,
+    "BOV": 435
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=78385695",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755854_13L42133Q1-326469438Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518806|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 18.5
+  },
+  "8475170": {
+   "name": "Brayden Schenn",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 450,
+    "DK": 425,
+    "BR": 440,
+    "BOV": 415
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=3969602",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755936_13L42133Q1-1692933975Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388535957|{wagerAmount}"
+   },
+   "best": 450,
+   "bestBook": "FD",
+   "bestImplied": 18.2,
+   "medianImplied": 18.8
+  },
+  "8484938": {
+   "name": "Arttu Hyry",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 460,
+    "DK": 500,
+    "BR": 480,
+    "BOV": 435
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=78882516",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755831_13L42133Q1229160267Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388535962|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 17.5
+  },
+  "8480036": {
+   "name": "Miro Heiskanen",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 460,
+    "DK": 500,
+    "BR": 500,
+    "BOV": 435
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=20852689",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755360_13L42133Q1-397391014Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388535988|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 17.3
+  },
+  "8473994": {
+   "name": "Jamie Benn",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 480,
+    "DK": 500,
+    "BR": 475,
+    "BOV": 450
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=12449283",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755208_13L42133Q1-535624712Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518824|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 17.3
+  },
+  "8485388": {
+   "name": "Victor Eklund",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 500,
+    "DK": 550,
+    "BR": 440,
+    "BOV": 475
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=83859818",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756101_13L42133Q1-708600047Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518899|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "DK",
+   "bestImplied": 15.4,
+   "medianImplied": 17.0
+  },
+  "8476419": {
+   "name": "Jean-Gabriel Pageau",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 575,
+    "DK": 550,
+    "BR": 600,
+    "BOV": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=12449411",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755907_13L42133Q1-803892872Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518893|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "BR",
+   "bestImplied": 14.3,
+   "medianImplied": 15.1
+  },
+  "8481581": {
+   "name": "Thomas Harley",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 600,
+    "DK": 600,
+    "BR": 650,
+    "BOV": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=42871418",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755685_13L42133Q11995058745Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527565|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "BR",
+   "bestImplied": 13.3,
+   "medianImplied": 14.3
+  },
+  "8477407": {
+   "name": "Anthony Duclair",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 600,
+    "DK": 500,
+    "BR": 500,
+    "BOV": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=12496397",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755888_13L42133Q1-389028782Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388535976|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "FD",
+   "bestImplied": 14.3,
+   "medianImplied": 16.7
+  },
+  "8476278": {
+   "name": "Colin Blackwell",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 625,
+    "DK": 850,
+    "BR": 700,
+    "BOV": 625
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=28059134",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755523_13L42133Q1-261313456Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527539|{wagerAmount}"
+   },
+   "best": 850,
+   "bestBook": "DK",
+   "bestImplied": 10.5,
+   "medianImplied": 13.1
+  },
+  "8477950": {
+   "name": "Tony DeAngelo",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 750,
+    "DK": 650,
+    "BR": 750,
+    "BOV": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=22833683",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756047_13L42133Q1187787166Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518847|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "FD",
+   "bestImplied": 11.8,
+   "medianImplied": 12.5
+  },
+  "8476292": {
+   "name": "Ondrej Palat",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1100,
+    "DK": 800,
+    "BR": 550,
+    "BOV": 850
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=9552855",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755961_13L42133Q1-871113908Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518841|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 10.8
+  },
+  "8475231": {
+   "name": "Casey Cizikas",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1100,
+    "DK": 850,
+    "BR": 700,
+    "BOV": 875
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=23010457",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755999_13L42133Q11378737694Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518916|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 10.4
+  },
+  "8481237": {
+   "name": "Kyle MacLean",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1200,
+    "DK": 1100,
+    "BR": 750,
+    "BOV": 1000
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=65121381",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756025_13L42133Q132695854Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518845|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "FD",
+   "bestImplied": 7.7,
+   "medianImplied": 8.7
+  },
+  "8482070": {
+   "name": "Mitchell Chaffee",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1300,
+    "DK": 950,
+    "BR": 650,
+    "BOV": 1100
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=44414740",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756071_13L42133Q1-2057071748Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527594|{wagerAmount}"
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 8.9
+  },
+  "8483425": {
+   "name": "Lian Bichsel",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1700,
+    "DK": 1800,
+    "BR": 1000,
+    "BOV": 1600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=77758465",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755791_13L42133Q1-2125865955Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388536027|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 5.7
+  },
+  "8478476": {
+   "name": "Kyle Capobianco",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1800,
+    "DK": 1500,
+    "BR": 800,
+    "BOV": 1700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=43501946",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755650_13L42133Q1418189343Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527549|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "FD",
+   "bestImplied": 5.3,
+   "medianImplied": 5.9
+  },
+  "8474574": {
+   "name": "Tyler Myers",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1800,
+    "DK": 2000,
+    "BR": 1000,
+    "BOV": 1500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=17091399",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755577_13L42133Q11871201183Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527569|{wagerAmount}"
+   },
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
+   "medianImplied": 5.8
+  },
+  "8480878": {
+   "name": "Nils Lundkvist",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1800,
+    "DK": 2200,
+    "BR": 850,
+    "BOV": 1800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=41302811",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755609_13L42133Q1-1085972365Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388518837|{wagerAmount}"
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 5.3
+  },
+  "8482516": {
+   "name": "Matthew Kessel",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 1900,
+    "DK": 1900,
+    "BR": 1050,
+    "BOV": 1800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=64588710",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756080_13L42133Q1-2007800536Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388536043|{wagerAmount}"
+   },
+   "best": 1900,
+   "bestBook": "FD",
+   "bestImplied": 5.0,
+   "medianImplied": 5.1
+  },
+  "8477506": {
+   "name": "Ryan Pulock",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 2100,
+    "DK": 1700,
+    "BR": 950,
+    "BOV": 1900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=26351074",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755988_13L42133Q1896187277Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527462|{wagerAmount}"
+   },
+   "best": 2100,
+   "bestBook": "FD",
+   "bestImplied": 4.5,
+   "medianImplied": 5.3
+  },
+  "8476917": {
+   "name": "Adam Pelech",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 2400,
+    "DK": 2000,
+    "BR": 1050,
+    "BOV": 2100
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=38970890",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756012_13L42133Q1-329508521Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388527547|{wagerAmount}"
+   },
+   "best": 2400,
+   "bestBook": "FD",
+   "bestImplied": 4.0,
+   "medianImplied": 4.7
+  },
+  "8479378": {
+   "name": "Logan Stanley",
+   "team": "NYI",
+   "game": "NYI@DAL",
+   "books": {
+    "FD": 2800,
+    "DK": 2200,
+    "BR": 1050,
+    "BOV": 2400
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619421065&selectionId=41315498",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333756062_13L42133Q1-2031022205Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388535972|{wagerAmount}"
+   },
+   "best": 2800,
+   "bestBook": "FD",
+   "bestImplied": 3.4,
+   "medianImplied": 4.2
+  },
+  "8474102": {
+   "name": "David Perron",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "DK": 600,
+    "BR": 550,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232334063741_13L42133Q1-1142316015Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388535966|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "DK",
+   "bestImplied": 14.3,
+   "medianImplied": 15.4
+  },
+  "8476889": {
+   "name": "Radek Faksa",
+   "team": "DAL",
+   "game": "NYI@DAL",
+   "books": {
+    "DK": 1200,
+    "BR": 750,
+    "BOV": 1000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382188951%232333755398_13L42133Q1777549640Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409851?coupon={pickType}|4388536025|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "DK",
+   "bestImplied": 7.7,
+   "medianImplied": 9.1
+  },
+  "8481540": {
+   "name": "Cole Caufield",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 125,
+    "DK": 125,
+    "BR": 125,
+    "BOV": 125
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=24660529",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865339_13L42133Q1-635797582Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502143|{wagerAmount}"
+   },
+   "best": 125,
+   "bestBook": "FD",
+   "bestImplied": 44.4,
+   "medianImplied": 44.4
+  },
+  "8478398": {
+   "name": "Kyle Connor",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 140,
+    "DK": 125,
+    "BR": 128,
+    "BOV": 134
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=15710822",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864539_13L42133Q1-1777575323Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505223|{wagerAmount}"
+   },
+   "best": 140,
+   "bestBook": "FD",
+   "bestImplied": 41.7,
+   "medianImplied": 43.3
+  },
+  "8476460": {
+   "name": "Mark Scheifele",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 210,
+    "DK": 215,
+    "BR": 205,
+    "BOV": 200
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=12449347",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864518_13L42133Q11720292865Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502206|{wagerAmount}"
+   },
+   "best": 215,
+   "bestBook": "DK",
+   "bestImplied": 31.7,
+   "medianImplied": 32.5
+  },
+  "8480014": {
+   "name": "Gabriel Vilardi",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 230,
+    "DK": 225,
+    "BR": 240,
+    "BOV": 225
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=20852687",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864830_13L42133Q1-1188681863Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455365|{wagerAmount}"
+   },
+   "best": 240,
+   "bestBook": "BR",
+   "bestImplied": 29.4,
+   "medianImplied": 30.5
+  },
+  "8483515": {
+   "name": "Juraj Slafkovsky",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 230,
+    "DK": 230,
+    "BR": 230,
+    "BOV": 220
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=44992503",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865402_13L42133Q1660556265Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505260|{wagerAmount}"
+   },
+   "best": 230,
+   "bestBook": "FD",
+   "bestImplied": 30.3,
+   "medianImplied": 30.3
+  },
+  "8482149": {
+   "name": "Cole Perfetti",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 240,
+    "DK": 245,
+    "BR": 245,
+    "BOV": 235
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=36305276",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864998_13L42133Q1-99167314Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505268|{wagerAmount}"
+   },
+   "best": 245,
+   "bestBook": "DK",
+   "bestImplied": 29.0,
+   "medianImplied": 29.2
+  },
+  "8482775": {
+   "name": "Oliver Kapanen",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 260,
+    "DK": 270,
+    "BR": 280,
+    "BOV": 260
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=69203568",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865391_13L42133Q1691016580Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505256|{wagerAmount}"
+   },
+   "best": 280,
+   "bestBook": "BR",
+   "bestImplied": 26.3,
+   "medianImplied": 27.4
+  },
+  "8475184": {
+   "name": "Chris Kreider",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 320,
+    "DK": 320,
+    "BR": 310,
+    "BOV": 305
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=12496363",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865186_13L42133Q1454241221Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505292|{wagerAmount}"
+   },
+   "best": 320,
+   "bestBook": "FD",
+   "bestImplied": 23.8,
+   "medianImplied": 24.1
+  },
+  "8482110": {
+   "name": "Dawson Mercer",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 370,
+    "DK": 370,
+    "BR": 350,
+    "BOV": 345
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=41341496",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865068_13L42133Q1965495105Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502192|{wagerAmount}"
+   },
+   "best": 370,
+   "bestBook": "FD",
+   "bestImplied": 21.3,
+   "medianImplied": 21.7
+  },
+  "8481618": {
+   "name": "Alex Newhook",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 400,
+    "DK": 380,
+    "BR": 380,
+    "BOV": 365
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=39436093",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865317_13L42133Q11570509468Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502173|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "FD",
+   "bestImplied": 20.0,
+   "medianImplied": 20.8
+  },
+  "8482737": {
+   "name": "Zachary Bolduc",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 450,
+    "DK": 400,
+    "BR": 390,
+    "BOV": 400
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=66349390",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865381_13L42133Q11057525571Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455387|{wagerAmount}"
+   },
+   "best": 450,
+   "bestBook": "FD",
+   "bestImplied": 18.2,
+   "medianImplied": 20.0
+  },
+  "8476981": {
+   "name": "Josh Anderson",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 460,
+    "DK": 425,
+    "BR": 450,
+    "BOV": 415
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=12496311",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865276_13L42133Q1-1007415217Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502161|{wagerAmount}"
+   },
+   "best": 460,
+   "bestBook": "FD",
+   "bestImplied": 17.9,
+   "medianImplied": 18.6
+  },
+  "8480074": {
+   "name": "Alexandre Texier",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 500,
+    "DK": 450,
+    "BR": 440,
+    "BOV": 440
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=38682267",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865285_13L42133Q1-1871764362Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455405|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "FD",
+   "bestImplied": 16.7,
+   "medianImplied": 18.4
+  },
+  "8483457": {
+   "name": "Lane Hutson",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 550,
+    "DK": 500,
+    "BR": 525,
+    "BOV": 475
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=56172934",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865425_13L42133Q12048555841Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502171|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "FD",
+   "bestImplied": 15.4,
+   "medianImplied": 16.3
+  },
+  "8480865": {
+   "name": "Noah Dobson",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 550,
+    "DK": 550,
+    "BR": 500,
+    "BOV": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=38729930",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865300_13L42133Q11167120268Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455357|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "FD",
+   "bestImplied": 15.4,
+   "medianImplied": 16.0
+  },
+  "8486025": {
+   "name": "Viggo Bjorck",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 575,
+    "DK": 550,
+    "BR": 525,
+    "BOV": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=99667976",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865108_13L42133Q122179051Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455373|{wagerAmount}"
+   },
+   "best": 575,
+   "bestBook": "FD",
+   "bestImplied": 14.8,
+   "medianImplied": 15.7
+  },
+  "8480113": {
+   "name": "Alex Iafallo",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 575,
+    "DK": 550,
+    "BR": 550,
+    "BOV": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=16012616",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864435_13L42133Q1-1862841059Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505167|{wagerAmount}"
+   },
+   "best": 575,
+   "bestBook": "FD",
+   "bestImplied": 14.8,
+   "medianImplied": 15.4
+  },
+  "8475799": {
+   "name": "Nino Niederreiter",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 600,
+    "DK": 600,
+    "BR": 575,
+    "BOV": 550
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=11133532",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864380_13L42133Q1-597036145Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502094|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "FD",
+   "bestImplied": 14.3,
+   "medianImplied": 14.6
+  },
+  "8478133": {
+   "name": "Jake Evans",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 600,
+    "DK": 550,
+    "BR": 430,
+    "BOV": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=28082536",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865248_13L42133Q1-445766023Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455371|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "FD",
+   "bestImplied": 14.3,
+   "medianImplied": 15.7
+  },
+  "8480145": {
+   "name": "Neal Pionk",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 625,
+    "DK": 600,
+    "BR": 600,
+    "BOV": 550
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=22261592",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864646_13L42133Q1-2020268252Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505171|{wagerAmount}"
+   },
+   "best": 625,
+   "bestBook": "FD",
+   "bestImplied": 13.8,
+   "medianImplied": 14.3
+  },
+  "8481523": {
+   "name": "Kirby Dach",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 650,
+    "DK": 650,
+    "BR": 650,
+    "BOV": 575
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=24660531",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865226_13L42133Q1269751927Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505163|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "FD",
+   "bestImplied": 13.3,
+   "medianImplied": 13.3
+  },
+  "8476392": {
+   "name": "Adam Lowry",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "BR": 650,
+    "BOV": 625
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=12449358",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864748_13L42133Q1418581082Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455395|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 13.3
+  },
+  "8480289": {
+   "name": "Morgan Barron",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 700,
+    "DK": 600,
+    "BR": 700,
+    "BOV": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=42329403",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864888_13L42133Q1-1391169249Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502086|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 13.4
+  },
+  "8482765": {
+   "name": "Isak Rosen",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "BR": 600,
+    "BOV": 625
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=63293771",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865024_13L42133Q1172495423Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505282|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 13.6
+  },
+  "8481043": {
+   "name": "Cole Koepke",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 700,
+    "DK": 650,
+    "BOV": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=49281324",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232334500521_13L42133Q1-1550154425Q20"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 13.3
+  },
+  "8476479": {
+   "name": "Phillip Danault",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 750,
+    "DK": 750,
+    "BR": 550,
+    "BOV": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=12857528",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865134_13L42133Q1952013370Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505302|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "FD",
+   "bestImplied": 11.8,
+   "medianImplied": 12.5
+  },
+  "8476875": {
+   "name": "Mike Matheson",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 900,
+    "DK": 1000,
+    "BR": 700,
+    "BOV": 825
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=21135733",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865204_13L42133Q11040607941Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502098|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "DK",
+   "bestImplied": 9.1,
+   "medianImplied": 10.4
+  },
+  "8483424": {
+   "name": "Owen Beck",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 950,
+    "DK": 850,
+    "BR": 600,
+    "BOV": 800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=64280310",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865414_13L42133Q1507440556Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502179|{wagerAmount}"
+   },
+   "best": 950,
+   "bestBook": "FD",
+   "bestImplied": 9.5,
+   "medianImplied": 10.8
+  },
+  "8483510": {
+   "name": "Elias Salomonsson",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 1100
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=64603664"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 8.3
+  },
+  "8480049": {
+   "name": "Dylan Samberg",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 1600,
+    "DK": 2000,
+    "BR": 900,
+    "BOV": 1500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=42411158",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864938_13L42133Q11207917479Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502200|{wagerAmount}"
+   },
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
+   "medianImplied": 6.1
+  },
+  "8482087": {
+   "name": "Kaiden Guhle",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 1600,
+    "DK": 1700,
+    "BR": 850,
+    "BOV": 1400
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=48699551",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865351_13L42133Q1-740720994Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505229|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "DK",
+   "bestImplied": 5.6,
+   "medianImplied": 6.3
+  },
+  "8477938": {
+   "name": "Haydn Fleury",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 1800,
+    "DK": 1200,
+    "BR": 800,
+    "BOV": 1300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=41294841",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864681_13L42133Q1138137163Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505280|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "FD",
+   "bestImplied": 5.3,
+   "medianImplied": 7.4
+  },
+  "8479983": {
+   "name": "Mario Ferraro",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 1900,
+    "DK": 1400,
+    "BR": 850,
+    "BOV": 1600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=28058235",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864844_13L42133Q1-503557508Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455403|{wagerAmount}"
+   },
+   "best": 1900,
+   "bestBook": "FD",
+   "bestImplied": 5.0,
+   "medianImplied": 6.3
+  },
+  "8476331": {
+   "name": "Dylan DeMelo",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 2100,
+    "DK": 1700,
+    "BR": 900,
+    "BOV": 1900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=41315496",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333864809_13L42133Q1-672620324Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388502238|{wagerAmount}"
+   },
+   "best": 2100,
+   "bestBook": "FD",
+   "bestImplied": 4.5,
+   "medianImplied": 5.3
+  },
+  "8478851": {
+   "name": "Alexandre Carrier",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 2100,
+    "DK": 2200,
+    "BR": 850,
+    "BOV": 1700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=41328399",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865328_13L42133Q1-1133921251Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388505272|{wagerAmount}"
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 5.1
+  },
+  "8482964": {
+   "name": "Arber Xhekaj",
+   "team": "MTL",
+   "game": "MTL@WPG",
+   "books": {
+    "FD": 2200,
+    "DK": 2000,
+    "BR": 900,
+    "BOV": 1800
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619398891&selectionId=49320473",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382218791%232333865365_13L42133Q1-1390656268Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455375|{wagerAmount}"
+   },
+   "best": 2200,
+   "bestBook": "FD",
+   "bestImplied": 4.3,
+   "medianImplied": 5.0
+  },
+  "8482459": {
+   "name": "Tyrel Bauer",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "BR": 800
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455304|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "BR",
+   "bestImplied": 11.1,
+   "medianImplied": 11.1
+  },
+  "8483471": {
+   "name": "Brad Lambert",
+   "team": "WPG",
+   "game": "MTL@WPG",
+   "books": {
+    "BR": 650
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409864?coupon={pickType}|4388455346|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "BR",
+   "bestImplied": 13.3,
+   "medianImplied": 13.3
+  },
+  "8477492": {
+   "name": "Nathan MacKinnon",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 100,
+    "DK": -105,
+    "BR": -107,
+    "BOV": -105
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12449308",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867098_13L42133Q1-170743743Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491494|{wagerAmount}"
+   },
+   "best": 100,
+   "bestBook": "FD",
+   "bestImplied": 50.0,
+   "medianImplied": 51.2
+  },
+  "8480039": {
+   "name": "Martin Necas",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 170,
+    "DK": 170,
+    "BR": 180,
+    "BOV": 166
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=20852668",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867160_13L42133Q1-2054815757Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491421|{wagerAmount}"
+   },
+   "best": 180,
+   "bestBook": "BR",
+   "bestImplied": 35.7,
+   "medianImplied": 37.0
+  },
+  "8474564": {
+   "name": "Steven Stamkos",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 200,
+    "DK": 200,
+    "BR": 195,
+    "BOV": 195
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=9552860",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866595_13L42133Q11663238825Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491500|{wagerAmount}"
+   },
+   "best": 200,
+   "bestBook": "FD",
+   "bestImplied": 33.3,
+   "medianImplied": 33.6
+  },
+  "8476887": {
+   "name": "Filip Forsberg",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 220,
+    "DK": 195,
+    "BR": 220,
+    "BOV": 205
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12496374",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866402_13L42133Q1-1684754578Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508903|{wagerAmount}"
+   },
+   "best": 220,
+   "bestBook": "FD",
+   "bestImplied": 31.2,
+   "medianImplied": 32.0
+  },
+  "8477476": {
+   "name": "Artturi Lehkonen",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 230,
+    "DK": 210,
+    "BR": 205,
+    "BOV": 210
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12496401",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867132_13L42133Q1-1713761000Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500116|{wagerAmount}"
+   },
+   "best": 230,
+   "bestBook": "FD",
+   "bestImplied": 30.3,
+   "medianImplied": 32.3
+  },
+  "8475754": {
+   "name": "Brock Nelson",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 230,
+    "DK": 230,
+    "BR": 240,
+    "BOV": 225
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12496418",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867138_13L42133Q12082714192Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508861|{wagerAmount}"
+   },
+   "best": 240,
+   "bestBook": "BR",
+   "bestImplied": 29.4,
+   "medianImplied": 30.3
+  },
+  "8475172": {
+   "name": "Nazem Kadri",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 230,
+    "DK": 245,
+    "BR": 220,
+    "BOV": 230
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12449287",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867123_13L42133Q1-218511862Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508889|{wagerAmount}"
+   },
+   "best": 245,
+   "bestBook": "DK",
+   "bestImplied": 29.0,
+   "medianImplied": 30.3
+  },
+  "8475158": {
+   "name": "Ryan O'Reilly",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 260,
+    "DK": 250,
+    "BR": 260,
+    "BOV": 250
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=15695098",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866525_13L42133Q11082749584Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508806|{wagerAmount}"
+   },
+   "best": 260,
+   "bestBook": "FD",
+   "bestImplied": 27.8,
+   "medianImplied": 28.2
+  },
+  "8480069": {
+   "name": "Cale Makar",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 275,
+    "DK": 295,
+    "BR": 285,
+    "BOV": 270
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=25990567",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867186_13L42133Q11533347157Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491531|{wagerAmount}"
+   },
+   "best": 295,
+   "bestBook": "DK",
+   "bestImplied": 25.3,
+   "medianImplied": 26.3
+  },
+  "8476455": {
+   "name": "Gabriel Landeskog",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 290,
+    "DK": 285,
+    "BR": 285,
+    "BOV": 275
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12449309",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867112_13L42133Q12120579422Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508816|{wagerAmount}"
+   },
+   "best": 290,
+   "bestBook": "FD",
+   "bestImplied": 25.6,
+   "medianImplied": 26.0
+  },
+  "8475768": {
+   "name": "Jaden Schwartz",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 310,
+    "DK": 300,
+    "BR": 310,
+    "BOV": 295
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12449357",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867150_13L42133Q11701937553Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500176|{wagerAmount}"
+   },
+   "best": 310,
+   "bestBook": "FD",
+   "bestImplied": 24.4,
+   "medianImplied": 24.7
+  },
+  "8486171": {
+   "name": "T.J. Hughes",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 330,
+    "DK": 350,
+    "BR": 340,
+    "BOV": 325
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=67592636",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867269_13L42133Q1-556303293Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491502|{wagerAmount}"
+   },
+   "best": 350,
+   "bestBook": "DK",
+   "bestImplied": 22.2,
+   "medianImplied": 23.0
+  },
+  "8476539": {
+   "name": "Jonathan Marchessault",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 400,
+    "DK": 380,
+    "BR": 340,
+    "BOV": 355
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12449397",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866633_13L42133Q1-1117471613Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491508|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "FD",
+   "bestImplied": 20.0,
+   "medianImplied": 21.4
+  },
+  "8482145": {
+   "name": "Mavrik Bourque",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 490,
+    "DK": 475,
+    "BR": 460,
+    "BOV": 450
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=68013988",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866983_13L42133Q1-552948835Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500112|{wagerAmount}"
+   },
+   "best": 490,
+   "bestBook": "FD",
+   "bestImplied": 16.9,
+   "medianImplied": 17.6
+  },
+  "8484241": {
+   "name": "Matthew Wood",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 500,
+    "DK": 475,
+    "BR": 400,
+    "BOV": 450
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=57479036",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867075_13L42133Q11839997236Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508853|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "FD",
+   "bestImplied": 16.7,
+   "medianImplied": 17.8
+  },
+  "8474600": {
+   "name": "Roman Josi",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 500,
+    "DK": 550,
+    "BR": 500,
+    "BOV": 475
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12553603",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866490_13L42133Q1-849472823Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491535|{wagerAmount}"
+   },
+   "best": 550,
+   "bestBook": "DK",
+   "bestImplied": 15.4,
+   "medianImplied": 16.7
+  },
+  "8480448": {
+   "name": "Parker Kelly",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 525,
+    "DK": 600,
+    "BR": 500,
+    "BOV": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=41327608",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867238_13L42133Q1-1174590653Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500184|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "DK",
+   "bestImplied": 14.3,
+   "medianImplied": 16.3
+  },
+  "8477021": {
+   "name": "Alexander Kerfoot",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 600,
+    "DK": 550,
+    "BR": 525,
+    "BOV": 525
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=17400335",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866671_13L42133Q1193672125Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508845|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "FD",
+   "bestImplied": 14.3,
+   "medianImplied": 15.7
+  },
+  "8479525": {
+   "name": "Ross Colton",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 600,
+    "DK": 650,
+    "BR": 480,
+    "BOV": 550
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=38702742",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866863_13L42133Q199442034Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508847|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "DK",
+   "bestImplied": 13.3,
+   "medianImplied": 14.8
+  },
+  "8482953": {
+   "name": "Taylor Makar",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 625,
+    "DK": 800,
+    "BR": 650,
+    "BOV": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=90671385",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867279_13L42133Q1-620762205Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500106|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 13.6
+  },
+  "8481186": {
+   "name": "Logan O'Connor",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 650,
+    "DK": 750,
+    "BR": 540,
+    "BOV": 625
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=28037067",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867229_13L42133Q1268661876Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500178|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 13.6
+  },
+  "8482768": {
+   "name": "Fedor Svechkov",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 650,
+    "DK": 650,
+    "BR": 600,
+    "BOV": 575
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=40281219",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867247_13L42133Q1-410421883Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500151|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "FD",
+   "bestImplied": 13.3,
+   "medianImplied": 13.8
+  },
+  "8481726": {
+   "name": "Adam Edstrom",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 700,
+    "DK": 750,
+    "BR": 550,
+    "BOV": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=66280709",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866805_13L42133Q1272618333Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508859|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 12.9
+  },
+  "8481535": {
+   "name": "Nils Hoglander",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 725,
+    "DK": 800,
+    "BR": 480,
+    "BOV": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=38210015",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866840_13L42133Q11597154402Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508800|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 12.7
+  },
+  "8478038": {
+   "name": "Devon Toews",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 850,
+    "DK": 900,
+    "BR": 575,
+    "BOV": 775
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=23705333",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867179_13L42133Q1-477048164Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508827|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "DK",
+   "bestImplied": 10.0,
+   "medianImplied": 11.0
+  },
+  "8484258": {
+   "name": "Sam Malinski",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 900,
+    "DK": 850,
+    "BR": 650,
+    "BOV": 775
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=62809572",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867259_13L42133Q11012908799Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508777|{wagerAmount}"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 11.0
+  },
+  "8486189": {
+   "name": "Vitali Pinchuk",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 900,
+    "BOV": 750
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=103756360"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 10.9
+  },
+  "8480835": {
+   "name": "Jack Drury",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 1000,
+    "DK": 1000,
+    "BR": 800,
+    "BOV": 875
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=48699554",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866937_13L42133Q1-1906051133Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508812|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "FD",
+   "bestImplied": 9.1,
+   "medianImplied": 9.7
+  },
+  "8476869": {
+   "name": "Brady Skjei",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 1100,
+    "DK": 1000,
+    "BR": 700,
+    "BOV": 900
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=27590443",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866754_13L42133Q1540506964Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491414|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 9.5
+  },
+  "8482482": {
+   "name": "Adam Wilsby",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 1200,
+    "DK": 1200,
+    "BR": 750,
+    "BOV": 1100
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=77069500",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866909_13L42133Q1562488303Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491506|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "FD",
+   "bestImplied": 7.7,
+   "medianImplied": 8.0
+  },
+  "8470613": {
+   "name": "Brent Burns",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 1300,
+    "DK": 1000,
+    "BR": 750,
+    "BOV": 1000
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12456554",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867143_13L42133Q1-1474546298Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491533|{wagerAmount}"
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 9.1
+  },
+  "8476967": {
+   "name": "Brett Kulak",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 1400,
+    "DK": 1700,
+    "BR": 750,
+    "BOV": 1300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=39538892",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867194_13L42133Q12102706196Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500166|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "DK",
+   "bestImplied": 5.6,
+   "medianImplied": 6.9
+  },
+  "8476312": {
+   "name": "Josh Manson",
+   "team": "COL",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 1500,
+    "DK": 1800,
+    "BR": 750,
+    "BOV": 1400
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=12862608",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867210_13L42133Q11667695830Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491514|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 6.5
+  },
+  "8479980": {
+   "name": "Nicolas Hague",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 2100,
+    "DK": 1800,
+    "BR": 800,
+    "BOV": 1700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=38514309",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866880_13L42133Q1-264464288Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388491425|{wagerAmount}"
+   },
+   "best": 2100,
+   "bestBook": "FD",
+   "bestImplied": 4.5,
+   "medianImplied": 5.4
+  },
+  "8480246": {
+   "name": "Nick Perbix",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 2400,
+    "DK": 2200,
+    "BOV": 2200
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=49501370",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333866992_13L42133Q11713815786Q20"
+   },
+   "best": 2400,
+   "bestBook": "FD",
+   "bestImplied": 4.0,
+   "medianImplied": 4.3
+  },
+  "8481593": {
+   "name": "Jayden Struble",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "FD": 2500,
+    "DK": 2500,
+    "BR": 1000,
+    "BOV": 2000
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619413223&selectionId=63470435",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867051_13L42133Q1522966709Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388500120|{wagerAmount}"
+   },
+   "best": 2500,
+   "bestBook": "FD",
+   "bestImplied": 3.8,
+   "medianImplied": 4.3
+  },
+  "8483513": {
+   "name": "Reid Schaefer",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "DK": 1200,
+    "BR": 800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382219451%232333867023_13L42133Q1-169138419Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508779|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "DK",
+   "bestImplied": 7.7,
+   "medianImplied": 9.4
+  },
+  "8480950": {
+   "name": "Ilya Lyubushkin",
+   "team": "NSH",
+   "game": "COL@NSH",
+   "books": {
+    "BR": 950
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028450299?coupon={pickType}|4388508901|{wagerAmount}"
+   },
+   "best": 950,
+   "bestBook": "BR",
+   "bestImplied": 9.5,
+   "medianImplied": 9.5
+  },
+  "8478864": {
+   "name": "Kirill Kaprizov",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": -110,
+    "DK": -115,
+    "BR": -118,
+    "BOV": -113
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=18568084",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869197_13L42133Q1-32158734Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388517985|{wagerAmount}"
+   },
+   "best": -110,
+   "bestBook": "FD",
+   "bestImplied": 52.4,
+   "medianImplied": 53.3
+  },
+  "8481557": {
+   "name": "Matt Boldy",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 135,
+    "DK": 125,
+    "BR": 120,
+    "BOV": 126
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=40934206",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869211_13L42133Q1-1917141696Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486151|{wagerAmount}"
+   },
+   "best": 135,
+   "bestBook": "FD",
+   "bestImplied": 42.6,
+   "medianImplied": 44.3
+  },
+  "8478493": {
+   "name": "Joel Eriksson Ek",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 180,
+    "DK": 170,
+    "BR": 185,
+    "BOV": 176
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=26341087",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869155_13L42133Q11064216062Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526620|{wagerAmount}"
+   },
+   "best": 185,
+   "bestBook": "BR",
+   "bestImplied": 35.1,
+   "medianImplied": 36.0
+  },
+  "8478498": {
+   "name": "Jake DeBrusk",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 230,
+    "DK": 215,
+    "BR": 230,
+    "BOV": 215
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=21175008",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868851_13L42133Q1-88209466Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388517971|{wagerAmount}"
+   },
+   "best": 230,
+   "bestBook": "FD",
+   "bestImplied": 30.3,
+   "medianImplied": 31.0
+  },
+  "8478444": {
+   "name": "Brock Boeser",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 230,
+    "DK": 225,
+    "BR": 245,
+    "BOV": 225
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=15471739",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868774_13L42133Q1-1177886319Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388518054|{wagerAmount}"
+   },
+   "best": 245,
+   "bestBook": "BR",
+   "bestImplied": 29.0,
+   "medianImplied": 30.5
+  },
+  "8476399": {
+   "name": "Blake Coleman",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 240,
+    "DK": 255,
+    "BR": 270,
+    "BOV": 240
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=21621710",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869135_13L42133Q1292351880Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388518036|{wagerAmount}"
+   },
+   "best": 270,
+   "bestBook": "BR",
+   "bestImplied": 27.0,
+   "medianImplied": 28.8
+  },
+  "8483678": {
+   "open": {
+    "best": 1500,
+    "bestBook": "FD",
+    "bestImplied": 6.2,
+    "at": null
+   },
+   "name": "Elias Pettersson",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "DK": 1500,
+    "BR": 800,
+    "BOV": 1400
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869128_13L42133Q11873908977Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526676|{wagerAmount}"
+   },
+   "best": 1500,
+   "bestBook": "DK",
+   "bestImplied": 6.2,
+   "medianImplied": 6.7
+  },
+  "8483525": {
+   "name": "Danila Yurov",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 290,
+    "DK": 275,
+    "BR": 310,
+    "BOV": 280
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=44992502",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869214_13L42133Q11967640072Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526571|{wagerAmount}"
+   },
+   "best": 310,
+   "bestBook": "BR",
+   "bestImplied": 24.4,
+   "medianImplied": 26.0
+  },
+  "8483476": {
+   "name": "Jonathan Lekkerimaki",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 320,
+    "DK": 340,
+    "BR": 320,
+    "BOV": 315
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=46259061",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869120_13L42133Q11218811974Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526614|{wagerAmount}"
+   },
+   "best": 340,
+   "bestBook": "DK",
+   "bestImplied": 22.7,
+   "medianImplied": 23.8
+  },
+  "8477451": {
+   "name": "Ryan Hartman",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 330,
+    "DK": 340,
+    "BR": 430,
+    "BOV": 315
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=12502552",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869164_13L42133Q126081943Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388518084|{wagerAmount}"
+   },
+   "best": 430,
+   "bestBook": "BR",
+   "bestImplied": 18.9,
+   "medianImplied": 23.0
+  },
+  "8480800": {
+   "name": "Quinn Hughes",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 400,
+    "DK": 380,
+    "BR": 375,
+    "BOV": 365
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=23517980",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869194_13L42133Q1-1608491525Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388517977|{wagerAmount}"
+   },
+   "best": 400,
+   "bestBook": "FD",
+   "bestImplied": 20.0,
+   "medianImplied": 20.9
+  },
+  "8481024": {
+   "name": "Linus Karlsson",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 410,
+    "DK": 425,
+    "BR": 390,
+    "BOV": 395
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=63519142",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868965_13L42133Q1-1688868125Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486129|{wagerAmount}"
+   },
+   "best": 425,
+   "bestBook": "DK",
+   "bestImplied": 19.0,
+   "medianImplied": 19.9
+  },
+  "8485702": {
+   "name": "Maxim Shabanov",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 410,
+    "BR": 370,
+    "BOV": 380
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=85845000",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4389170358|{wagerAmount}"
+   },
+   "best": 410,
+   "bestBook": "FD",
+   "bestImplied": 19.6,
+   "medianImplied": 20.8
+  },
+  "8480078": {
+   "name": "Filip Chytil",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 420,
+    "DK": 360,
+    "BR": 400,
+    "BOV": 380
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=20852688",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868870_13L42133Q1-65545634Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486111|{wagerAmount}"
+   },
+   "best": 420,
+   "bestBook": "FD",
+   "bestImplied": 19.2,
+   "medianImplied": 20.4
+  },
+  "8482079": {
+   "name": "Marco Rossi",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 420,
+    "DK": 350,
+    "BR": 370,
+    "BOV": 375
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=36305284",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868938_13L42133Q1-1685356832Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526680|{wagerAmount}"
+   },
+   "best": 420,
+   "bestBook": "FD",
+   "bestImplied": 19.2,
+   "medianImplied": 21.2
+  },
+  "8481553": {
+   "name": "Bobby Brink",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 450,
+    "DK": 450,
+    "BR": 500,
+    "BOV": 420
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=44173253",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869219_13L42133Q1-89573497Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486143|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "BR",
+   "bestImplied": 16.7,
+   "medianImplied": 18.2
+  },
+  "8482055": {
+   "name": "Drew O'Connor",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 460,
+    "DK": 500,
+    "BR": 475,
+    "BOV": 440
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=38513561",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869005_13L42133Q1-353397574Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388535231|{wagerAmount}"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 17.6
+  },
+  "8477446": {
+   "name": "Michael McCarron",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 500,
+    "DK": 600,
+    "BR": 550,
+    "BOV": 500
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=41743750",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869203_13L42133Q1-335751876Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526608|{wagerAmount}"
+   },
+   "best": 600,
+   "bestBook": "DK",
+   "bestImplied": 14.3,
+   "medianImplied": 16.0
+  },
+  "8481032": {
+   "name": "Paul Cotter",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 575,
+    "DK": 500,
+    "BR": 450,
+    "BOV": 475
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=49283576",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868986_13L42133Q11464839482Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526618|{wagerAmount}"
+   },
+   "best": 575,
+   "bestBook": "FD",
+   "bestImplied": 14.8,
+   "medianImplied": 17.0
+  },
+  "8478508": {
+   "name": "Yakov Trenin",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 600,
+    "DK": 650,
+    "BR": 550,
+    "BOV": 550
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=39505239",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869190_13L42133Q1558562008Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486139|{wagerAmount}"
+   },
+   "best": 650,
+   "bestBook": "DK",
+   "bestImplied": 13.3,
+   "medianImplied": 14.8
+  },
+  "8481477": {
+   "name": "Nico Sturm",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 700,
+    "DK": 750,
+    "BR": 650,
+    "BOV": 625
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=38634906",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869200_13L42133Q1-1088875377Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388518028|{wagerAmount}"
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 12.9
+  },
+  "8484136": {
+   "name": "Max Sasson",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 700,
+    "DK": 700,
+    "BR": 600,
+    "BOV": 650
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=76812954",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869047_13L42133Q1551005560Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486107|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 12.9
+  },
+  "8479425": {
+   "name": "Filip Hronek",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 700,
+    "DK": 600,
+    "BR": 600,
+    "BOV": 600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=26396017",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868710_13L42133Q11575832914Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486119|{wagerAmount}"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 14.3
+  },
+  "8475848": {
+   "name": "Brendan Gallagher",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 750,
+    "DK": 800,
+    "BR": 575,
+    "BOV": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=12553078",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333868718_13L42133Q1693335256Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388535228|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 12.1
+  },
+  "8474716": {
+   "name": "Jared Spurgeon",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 800,
+    "DK": 800,
+    "BR": 700,
+    "BOV": 700
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=12858530",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869142_13L42133Q132526932Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526668|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "FD",
+   "bestImplied": 11.1,
+   "medianImplied": 11.8
+  },
+  "8483395": {
+   "name": "Arshdeep Bains",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 1000,
+    "BR": 600,
+    "BOV": 850
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=66359786",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486093|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "FD",
+   "bestImplied": 9.1,
+   "medianImplied": 10.5
+  },
+  "8484798": {
+   "name": "Zeev Buium",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 1000,
+    "DK": 950,
+    "BR": 700,
+    "BOV": 875
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=64280426",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869067_13L42133Q1-1257582422Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388517975|{wagerAmount}"
+   },
+   "best": 1000,
+   "bestBook": "FD",
+   "bestImplied": 9.1,
+   "medianImplied": 9.9
+  },
+  "8476463": {
+   "name": "Jonas Brodin",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 1100,
+    "DK": 1200,
+    "BR": 700,
+    "BOV": 1000
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=12572418",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869186_13L42133Q1-198699514Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526773|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "DK",
+   "bestImplied": 7.7,
+   "medianImplied": 8.7
+  },
+  "8475752": {
+   "name": "Tyler Pitlick",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 1100,
+    "DK": 900,
+    "BR": 650,
+    "BOV": 875
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=15778402",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869176_13L42133Q1-713309600Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388486121|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 10.1
+  },
+  "8476874": {
+   "name": "Olli Maatta",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 1400,
+    "DK": 1800,
+    "BR": 800,
+    "BOV": 1300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=12496356",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869182_13L42133Q12043875659Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526616|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 6.9
+  },
+  "8482641": {
+   "name": "Matt Kiersted",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 1500,
+    "DK": 1700,
+    "BR": 800,
+    "BOV": 1300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=49533590",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869206_13L42133Q1881122293Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388535234|{wagerAmount}"
+   },
+   "best": 1700,
+   "bestBook": "DK",
+   "bestImplied": 5.6,
+   "medianImplied": 6.7
+  },
+  "8484240": {
+   "name": "Tom Willander",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 1500,
+    "DK": 1600,
+    "BR": 750,
+    "BOV": 1300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=57479038",
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869087_13L42133Q11420181820Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388518040|{wagerAmount}"
+   },
+   "best": 1600,
+   "bestBook": "DK",
+   "bestImplied": 5.9,
+   "medianImplied": 6.7
+  },
+  "8476467": {
+   "name": "Jamie Oleksiak",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "FD": 2100,
+    "BR": 700,
+    "BOV": 1600
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.619411018&selectionId=38764243",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526592|{wagerAmount}"
+   },
+   "best": 2100,
+   "bestBook": "FD",
+   "bestImplied": 4.5,
+   "medianImplied": 5.9
+  },
+  "8483499": {
+   "name": "Liam Ohgren",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "DK": 550,
+    "BOV": 475
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232334505628_13L42133Q11193274319Q20"
+   },
+   "best": 550,
+   "bestBook": "DK",
+   "bestImplied": 15.4,
+   "medianImplied": 16.4
+  },
+  "8483478": {
+   "name": "Rieger Lorenz",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "DK": 750,
+    "BOV": 625
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869224_13L42133Q12064123209Q20"
+   },
+   "best": 750,
+   "bestBook": "DK",
+   "bestImplied": 11.8,
+   "medianImplied": 12.8
+  },
+  "8478465": {
+   "name": "Guillaume Brisebois",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "DK": 1700,
+    "BOV": 1300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232334505627_13L42133Q1-839911762Q20"
+   },
+   "best": 1700,
+   "bestBook": "DK",
+   "bestImplied": 5.6,
+   "medianImplied": 6.3
+  },
+  "8474567": {
+   "name": "Zach Bogosian",
+   "team": "MIN",
+   "game": "MIN@VAN",
+   "books": {
+    "DK": 1800,
+    "BR": 900,
+    "BOV": 1300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232333869170_13L42133Q11177483080Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526704|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 7.1
+  },
+  "8474568": {
+   "name": "Luke Schenn",
+   "team": "VAN",
+   "game": "MIN@VAN",
+   "books": {
+    "DK": 2800,
+    "BR": 900,
+    "BOV": 1000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA382220238%232334505626_13L42133Q11849224989Q20",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028409857?coupon={pickType}|4388526688|{wagerAmount}"
+   },
+   "best": 2800,
+   "bestBook": "DK",
+   "bestImplied": 3.4,
+   "medianImplied": 9.1
+  }
+ },
+ "unmatched": []
+}
