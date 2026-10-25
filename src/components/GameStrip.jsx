@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchScoredPool, useScoredPool } from "../lib/data.js";
-import { matchupKey, setMatchup, toggleMatchup, useMatchup } from "../lib/matchupFilter.js";
+import { keysOf, matchupKey, pickMatchup, setMatchup, setMultiPick, useMatchup, useMultiPick } from "../lib/matchupFilter.js";
+import "./MultiPick.css";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 
 // 2026-10-22 (user: CourtIQ's layout is the standard for every app): ONE matchup strip in the header, above the tabs -- an
@@ -34,6 +35,8 @@ function useLiveScores() {
 
 export default function GameStrip() {
   const selected = useMatchup();
+  const multi = useMultiPick();
+  const picked = keysOf(selected);
   const pool = useScoredPool({ includeStarted: true });
   const liveNow = useLiveScores();
   // 2026-10-23 past night (date picker): the strip shows that night's games with their final scores
@@ -44,11 +47,17 @@ export default function GameStrip() {
   const byKey = new Map((live || []).map((g) => [matchupKey(g.away?.abbrev, g.home?.abbrev), g]));
   const rank = (g) => { const s = byKey.get(matchupKey(g.away, g.home))?.state; return LIVE.has(s) ? 0 : DONE.has(s) ? 2 : 1; };
   const ordered = [...slate].sort((a, b) => rank(a) - rank(b) || String(a.startTimeUTC).localeCompare(String(b.startTimeUTC)));
-  const sel = selected ? slate.find((g) => matchupKey(g.away, g.home) === selected) : null;
+  const selGames = slate.filter((g) => picked.includes(matchupKey(g.away, g.home)));
+  const sel = selGames.length === 1 ? selGames[0] : null;
   return (
     <div className="game-strip">
       <button className={`game-chip all ${!selected ? "active" : ""}`} onClick={() => setMatchup(null)}>
         All games<span className="gc-status"> {slate.length}</span>
+      </button>
+      {/* 2026-10-25 multi-select: Ctrl / Cmd + click a game adds it; on touch this chip turns taps into add / remove */}
+      <button className={`game-chip all ms-toggle ${multi ? "on" : ""}`} aria-pressed={multi} onClick={() => setMultiPick(!multi)}
+        title="Pick several games at once (on a computer: hold Ctrl or Cmd and click)">
+        {multi ? "☑ Multi-select on" : "☐ Multi-select"}<span className="ms-hint">{multi ? "tap games to add / remove" : "or Ctrl / ⌘ + click"}</span>
       </button>
       {ordered.map((g) => {
         const k = matchupKey(g.away, g.home);
@@ -57,8 +66,9 @@ export default function GameStrip() {
         const started = LIVE.has(st) || DONE.has(st);
         const status = LIVE.has(st) ? `● ${lg.clock?.inIntermission ? "INT" : `P${lg.period ?? ""}`} ${lg.clock?.timeRemaining || ""}`.trim() : DONE.has(st) ? "Final" : timeOf(g.startTimeUTC);
         return (
-          <button key={k} className={`game-chip ${selected === k ? "active" : ""}`} onClick={() => toggleMatchup(k)}
-            title={selected === k ? "Tap again to show all games" : `Show only ${g.away} @ ${g.home} on every page`}>
+          <button key={k} className={`game-chip ${picked.includes(k) ? "active ms-picked" : ""}`} onClick={(e) => pickMatchup(k, multi || e.ctrlKey || e.metaKey)}
+            title={selected === k ? "Tap again to show all games" : `Show only ${g.away} @ ${g.home} on every page (Ctrl / ⌘ + click to add it)`}>
+            {picked.length > 1 && picked.includes(k) && <span className="ms-check" aria-hidden="true">✓</span>}
             {[["away", g.away], ["home", g.home]].map(([side, t]) => (
               <span key={side} className="gc-row"><img src={logo(t)} alt="" width="16" height="16" /> {t}{started && <b className="gc-score">{lg[side]?.score ?? ""}</b>}</span>
             ))}
@@ -69,6 +79,11 @@ export default function GameStrip() {
       {sel && (
         <button className="game-chip all" onClick={() => setMatchup(null)} title="Every page is narrowed to this game">
           Showing {sel.away} @ {sel.home} only<span className="gc-status"> ✕ all games</span>
+        </button>
+      )}
+      {selGames.length > 1 && (
+        <button className="game-chip all" onClick={() => setMatchup(null)} title="Every page is narrowed to these games">
+          Showing {selGames.length} games: {selGames.map((g) => `${g.away}-${g.home}`).join(", ")}<span className="gc-status"> ✕ all games</span>
         </button>
       )}
     </div>

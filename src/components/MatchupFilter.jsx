@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { fetchScoredPool, useScoredPool } from "../lib/data.js";
-import { matchupKey, setMatchup, toggleMatchup, useMatchup } from "../lib/matchupFilter.js";
+import { keysOf, matchupKey, pickMatchup, setMatchup, useMatchup, useMultiPick } from "../lib/matchupFilter.js";
 
 // Matchup picker — one side-scrolling strip of compact game cards that sticks under the header while
 // the page scrolls, so the matchup can be changed from anywhere on the page. Defaults to today's slate
@@ -44,6 +44,7 @@ export default function MatchupFilter({ games, label }) {
 
 function MatchupStrip({ games, label }) {
   const selected = useMatchup();
+  const multi = useMultiPick();
   const live = useScoredPool({ includeStarted: true });
   const scroller = useRef(null);
   useHeaderHeight();
@@ -54,7 +55,8 @@ function MatchupStrip({ games, label }) {
 
   const list = games || live?.meta?.slate || [];
   const keys = list.map((g) => matchupKey(g.away, g.home));
-  const outside = selected && list.length && !keys.includes(selected);
+  const picked = keysOf(selected); // 2026-10-25: one or several games
+  const outside = picked.length && list.length && !picked.some((k) => keys.includes(k));
 
   // Bring the selected game into view inside the strip (horizontal only — never scrolls the page).
   useEffect(() => {
@@ -78,20 +80,20 @@ function MatchupStrip({ games, label }) {
         </button>
         {outside && (
           <button className="matchup-chip on" data-on="1" onClick={() => setMatchup(null)} title="Not on this list — click to clear">
-            <span className="mc-teams">{selected.replace("@", " @ ")} ✕</span>
+            <span className="mc-teams">{picked.map((k) => k.replace("@", " @ ")).join(", ")} ✕</span>
             <span className="mc-sub">not on this date</span>
           </button>
         )}
         {list.map((g, i) => {
           const k = keys[i];
-          const on = selected === k;
+          const on = picked.includes(k);
           const tag = STATE_TAG[g.state];
           return (
             <button
               key={k}
               data-on={on ? "1" : undefined}
               className={`matchup-chip ${on ? "on" : ""} ${selected && !on ? "dim" : ""}`}
-              onClick={() => toggleMatchup(k)}
+              onClick={(e) => pickMatchup(k, multi || e.ctrlKey || e.metaKey)}
               title={on ? "Click again to show all games" : `Show only ${g.away} @ ${g.home}`}
             >
               <span className="mc-teams">

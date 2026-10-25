@@ -21,6 +21,21 @@ export function toggleMatchup(key) {
   setMatchup(selected === key ? null : key);
 }
 
+// 2026-10-25 (user: Ctrl-click several matchup cards for a multi-game view; a Multi-select option on touch): several games
+// are one key joined by "|" ("NYI@TOR|FLA@CHI"); inScope / filterPlayers / filterByTeam / teamsOf read every game in it.
+export const keysOf = (key) => (key && !key.startsWith("TEAM:") ? key.split("|") : []);
+export function pickMatchup(key, add) {
+  if (!add) return toggleMatchup(key);
+  const cur = keysOf(selected);
+  const next = cur.includes(key) ? cur.filter((k) => k !== key) : [...cur, key];
+  setMatchup(next.join("|") || null);
+}
+let multi = false; // the strip's Multi-select chip (touch: taps add / remove games)
+export function setMultiPick(v) {
+  multi = Boolean(v);
+  listeners.forEach((fn) => fn());
+}
+
 function subscribe(fn) {
   listeners.add(fn);
   return () => listeners.delete(fn);
@@ -29,6 +44,9 @@ function subscribe(fn) {
 const current = () => selected || (team ? `TEAM:${team}` : null);
 export function useMatchup() {
   return useSyncExternalStore(subscribe, current);
+}
+export function useMultiPick() {
+  return useSyncExternalStore(subscribe, () => multi);
 }
 export function setTeamFilter(t) {
   team = t || null;
@@ -43,7 +61,7 @@ export const teamOfKey = (key) => (key && key.startsWith("TEAM:") ? key.slice(5)
 export function inScope(matchup, key) {
   if (!key) return true;
   const t = teamOfKey(key);
-  return t ? String(matchup || "").split("@").includes(t) : matchup === key;
+  return t ? String(matchup || "").split("@").includes(t) : keysOf(key).includes(matchup);
 }
 
 export function matchupKey(away, home) {
@@ -58,7 +76,7 @@ export function playerMatchupKey(p) {
 
 export function teamsOf(key) {
   const t = teamOfKey(key);
-  return t ? [t] : key ? key.split("@") : [];
+  return t ? [t] : keysOf(key).flatMap((k) => k.split("@"));
 }
 const searched = (list, names, teams) => {
   const q = getListSearch();
@@ -69,7 +87,8 @@ const searched = (list, names, teams) => {
 export function filterPlayers(list, key) {
   if (!list) return list;
   const t = teamOfKey(key);
-  const base = !key ? list : t ? list.filter((p) => p.team === t) : list.filter((p) => playerMatchupKey(p) === key);
+  const ks = keysOf(key);
+  const base = !key ? list : t ? list.filter((p) => p.team === t) : list.filter((p) => ks.includes(playerMatchupKey(p)));
   return searched(base, (p) => [p.name], (p) => [p.team, p.opponentTeam]);
 }
 

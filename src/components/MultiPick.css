@@ -1,0 +1,7 @@
+/* 2026-10-25 multi-select game cards (Ctrl / Cmd + click, or the Multi-select chip on touch). Same file in CourtIQ, Slap Shot, Six Points. */
+.ms-toggle { font-weight: 600; }
+.ms-toggle.on { border-color: var(--accent) !important; background: color-mix(in srgb, var(--accent) 14%, var(--surface, transparent)) !important; color: var(--fg, var(--text)); }
+.ms-picked { position: relative; }
+.ms-check { position: absolute; top: 3px; right: 5px; display: inline-grid; place-items: center; width: 15px; height: 15px; border-radius: 999px; background: var(--accent); color: var(--accent-fg, #fff); font-size: 10px; font-weight: 700; line-height: 1; }
+.ms-hint { display: block; font-size: 0.68rem; color: var(--muted); font-weight: 400; }
+@media (max-width: 600px) { .ms-hint, .ms-toggle .matchup-card-status { display: none; } .ms-toggle { min-width: 0 !important; } }

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { buildPairs, LEVELS, MAX_PAIRS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican, toDecimal } from "../lib/pairs.js";
-import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
+import { filterPlayers, teamsOf, useMatchup } from "../lib/matchupFilter.js";
 import { useH2HGrades } from "../lib/h2h.js";
 import { BOOK_NAMES, fmtAmerican, pairBetUrl } from "../lib/bookOdds.js";
 import { AllBookLinks, BestPriceLink, BetAnchor, StatePicker } from "../components/BetLink.jsx";
@@ -400,11 +400,11 @@ export default function PairsTab() {
   const lockedPairs = useMemo(() => {
     if (!lock) return [];
     const byId = new Map((allPlayers?.players || []).map((p) => [p.playerId, p]));
-    const [ta, tb] = selected ? selected.split("@") : [];
+    const sideTeams = teamsOf(selected); // 2026-10-25: every picked game's teams
     // all = the original boards; safe / mid / long = <level>:<mode> (locks before 10/23 have none -> nothing shown, Live builds them)
     const key = level !== "all" ? `${level}:${mode}` : propFilter && mode === "balanced" ? `balanced:${propFilter}` : mode;
     return (lock.modes[key] || (level === "all" ? lock.modes[mode] : null) || [])
-      .filter((r) => !selected || r.legs.some((l) => l.team === ta || l.team === tb))
+      .filter((r) => !selected || r.legs.some((l) => sideTeams.includes(l.team)))
       .filter((r) => !propFilter || r.legs.every((l) => l.prop === propFilter))
       .map((r) => fromRecord(r, byId, boost));
   }, [lock, allPlayers, mode, boost, selected, propFilter, level]);
