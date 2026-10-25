@@ -22,7 +22,7 @@ export const GOAL_OPTIONS = [null, 10, 20, 30];
 const LETTERS = ["A+", "A", "B", "C", "D", "F"];
 
 // `soft` stays readable / settable on its own (First Goal's soft-defense pill) -- it's the "soft" tag underneath
-const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsMode: "all", top: [], prism: [], grades: [], h2h: [], search: "" };
+const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", top: [], prism: [], grades: [], h2h: [], search: "" };
 const withSoft = (s) => ({ ...s, soft: s.tags.includes("soft") });
 let state = withSoft({ ...DEFAULTS });
 const listeners = new Set();

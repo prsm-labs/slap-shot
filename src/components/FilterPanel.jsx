@@ -8,30 +8,38 @@ import './FilterPanel.css'
 // groups: [{ key, label, type, options: [{ v, label, title, n }], hint, match }]
 //   type 'one'   -- a single choice (value[key] = v or null), e.g. a chance floor
 //   type 'multi' -- pick any number (value[key] = [v, ...]); within a group a player needs ANY of them (A+ or A or A-)
-//   type 'tags'  -- pick any number of tags; value[`${key}Mode`] = 'all' (default: he must carry every one) or 'any'
+//   type 'tags'  -- each tag is three-way (user 2026-10-25: with / without): tap once = WITH (value[key], he must carry it;
+//                   value[`${key}Mode`] = 'all' (default) or 'any' when several), twice = WITHOUT (value[`${key}Not`], he must
+//                   not carry it), a third time = off
 // n = how many players on the list carry that option tonight (shown on the pill; 0 = greyed out unless already picked).
 // Across groups a player has to pass every group.
 const OPEN_KEY = 'filterPanelOpen'
 const readOpen = () => { try { return localStorage.getItem(OPEN_KEY) === '1' } catch { return false } }
 const saveOpen = (v) => { try { localStorage.setItem(OPEN_KEY, v ? '1' : '0') } catch { /* private mode */ } }
 
-export const isActive = (g, value) => (g.type === 'one' ? value[g.key] != null : (value[g.key] || []).length > 0)
+const notOf = (g, value) => (g.type === 'tags' ? value[`${g.key}Not`] || [] : [])
+export const isActive = (g, value) => (g.type === 'one' ? value[g.key] != null : (value[g.key] || []).length > 0 || notOf(g, value).length > 0)
 
 export default function FilterPanel({ groups, value, onChange, onClear, shown, total, noun = 'players' }) {
   const [open, setOpenState] = useState(readOpen)
   const setOpen = (v) => { setOpenState(v); saveOpen(v) }
   const live = groups.filter((g) => g.options.length)
-  const n = live.reduce((s, g) => s + (g.type === 'one' ? (value[g.key] != null ? 1 : 0) : (value[g.key] || []).length), 0)
+  const n = live.reduce((s, g) => s + (g.type === 'one' ? (value[g.key] != null ? 1 : 0) : (value[g.key] || []).length + notOf(g, value).length), 0)
   const toggle = (g, v) => {
     if (g.type === 'one') return onChange(g.key, value[g.key] === v ? null : v)
     const cur = value[g.key] || []
-    onChange(g.key, cur.includes(v) ? cur.filter((x) => x !== v) : [...cur, v])
+    if (g.type !== 'tags') return onChange(g.key, cur.includes(v) ? cur.filter((x) => x !== v) : [...cur, v])
+    const not = notOf(g, value)
+    if (cur.includes(v)) { onChange(g.key, cur.filter((x) => x !== v)); onChange(`${g.key}Not`, [...not, v]) } // with -> without
+    else if (not.includes(v)) onChange(`${g.key}Not`, not.filter((x) => x !== v)) // without -> off
+    else onChange(g.key, [...cur, v]) // off -> with
   }
+  const drop = (g, v, without) => (without ? onChange(`${g.key}Not`, notOf(g, value).filter((x) => x !== v)) : g.type === 'one' ? onChange(g.key, null) : onChange(g.key, (value[g.key] || []).filter((x) => x !== v)))
   const labelOf = (g, v) => g.options.find((o) => o.v === v)?.short || g.options.find((o) => o.v === v)?.label || String(v)
   // what's on, as removable chips -- visible with the panel closed too
   const chips = live.flatMap((g) => (g.type === 'one'
     ? (value[g.key] != null ? [{ g, v: value[g.key] }] : [])
-    : (value[g.key] || []).map((v) => ({ g, v }))))
+    : [...(value[g.key] || []).map((v) => ({ g, v })), ...notOf(g, value).map((v) => ({ g, v, without: true }))]))
   return (
     <div className={`fp card ${open ? 'open' : ''}`}>
       <div className="fp-head">
@@ -41,9 +49,9 @@ export default function FilterPanel({ groups, value, onChange, onClear, shown, t
         {shown != null && <span className="fp-shown">{shown} of {total} {noun}</span>}
         {chips.length > 0 && (
           <div className="fp-chips">
-            {chips.map(({ g, v }) => (
-              <button type="button" key={`${g.key}:${v}`} className="fp-chip" onClick={() => toggle(g, v)} title={`Remove: ${g.label} ${labelOf(g, v)}`}>
-                {(g.chip ?? g.label) && <span className="fp-chip-g">{g.chip ?? g.label}</span>} {labelOf(g, v)} <span aria-hidden="true">✕</span>
+            {chips.map(({ g, v, without }) => (
+              <button type="button" key={`${g.key}:${without ? '!' : ''}${v}`} className={`fp-chip ${without ? 'not' : ''}`} onClick={() => drop(g, v, without)} title={`Remove: ${without ? 'without ' : ''}${g.label} ${labelOf(g, v)}`}>
+                {without ? <span className="fp-chip-g">Without</span> : (g.chip ?? g.label) && <span className="fp-chip-g">{g.chip ?? g.label}</span>} {labelOf(g, v)} <span aria-hidden="true">✕</span>
               </button>
             ))}
             <button type="button" className="fp-clear" onClick={onClear}>Clear all</button>
@@ -54,19 +62,22 @@ export default function FilterPanel({ groups, value, onChange, onClear, shown, t
         <div className="fp-body">
           {live.map((g) => {
             const cur = value[g.key]
-            const any = g.type === 'one' ? cur == null : !(cur || []).length
+            const not = notOf(g, value)
+            const any = g.type === 'one' ? cur == null : !(cur || []).length && !not.length
             return (
               <div className="fp-group" key={g.key}>
                 <div className="fp-label" title={g.hint}>{g.label}</div>
                 <div className="fp-pills">
-                  <button type="button" className={`fp-pill ${any ? 'on' : ''}`} onClick={() => onChange(g.key, g.type === 'one' ? null : [])}>{g.anyLabel || 'Any'}</button>
+                  <button type="button" className={`fp-pill ${any ? 'on' : ''}`} onClick={() => { onChange(g.key, g.type === 'one' ? null : []); if (not.length) onChange(`${g.key}Not`, []) }}>{g.anyLabel || 'Any'}</button>
                   {g.options.map((o) => {
                     const on = g.type === 'one' ? cur === o.v : (cur || []).includes(o.v)
-                    const empty = o.n === 0 && !on
+                    const off = not.includes(o.v)
+                    const empty = o.n === 0 && !on && !off
+                    const tip = g.type === 'tags' ? `${o.title ? `${o.title}. ` : ''}${on ? 'Showing only players WITH it — tap for without' : off ? 'Hiding players with it — tap to clear' : 'Tap once = only players with it, twice = without it'}` : o.title
                     return (
-                      <button type="button" key={String(o.v)} className={`fp-pill ${on ? 'on' : ''} ${empty ? 'empty' : ''}`} disabled={empty}
-                        title={o.title} onClick={() => toggle(g, o.v)}>
-                        {o.label}{o.n != null && <span className="fp-n">{o.n}</span>}
+                      <button type="button" key={String(o.v)} className={`fp-pill ${on ? 'on' : ''} ${off ? 'not' : ''} ${empty ? 'empty' : ''}`} disabled={empty}
+                        title={tip} aria-pressed={on ? 'true' : off ? 'mixed' : 'false'} onClick={() => toggle(g, o.v)}>
+                        {off && <span className="fp-x" aria-hidden="true">✕</span>}{o.label}{o.n != null && <span className="fp-n">{off ? `−${o.n}` : o.n}</span>}
                       </button>
                     )
                   })}
@@ -78,7 +89,7 @@ export default function FilterPanel({ groups, value, onChange, onClear, shown, t
                     </span>
                   )}
                 </div>
-                {g.hint && <div className="fp-hint">{g.hint}</div>}
+                {(g.hint || g.type === 'tags') && <div className="fp-hint">{g.type === 'tags' ? 'Tap a tag once = only players with it, twice = without it (hide them), a third time = off.' : g.hint}</div>}
               </div>
             )
           })}
@@ -98,9 +109,11 @@ function optHit(g, p, v) {
 }
 export function passes(g, value, p) {
   if (!isActive(g, value)) return true
-  const sel = value[g.key]
-  if (g.type === 'one') return g.test(p, sel)
+  const sel = value[g.key] || []
+  if (g.type === 'one') return g.test(p, value[g.key])
   if (g.type === 'multi') return sel.some((v) => optHit(g, p, v))
+  if (notOf(g, value).some((v) => optHit(g, p, v))) return false
+  if (!sel.length) return true
   return (value[`${g.key}Mode`] || 'all') === 'any' ? sel.some((v) => optHit(g, p, v)) : sel.every((v) => optHit(g, p, v))
 }
 export const applyGroups = (list, groups, value) => (list ? list.filter((p) => groups.every((g) => passes(g, value, p))) : list)
