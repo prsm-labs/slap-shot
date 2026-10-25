@@ -16,7 +16,7 @@ import FirstGoalTab from "./tabs/FirstGoalTab.jsx";
 import CalledUpTab from "./tabs/CalledUpTab.jsx";
 import ProjectionsTab from "./tabs/ProjectionsTab.jsx";
 import TrackRecordTab from "./tabs/TrackRecordTab.jsx";
-import LiveThemesTab from "./tabs/LiveThemesTab.jsx";
+import TonightSoFarTab from "./tabs/TonightSoFarTab.jsx"; // 2026-10-25: holds Goal Flurries (LiveThemesTab) as its 2nd view
 import SplitsTab from "./tabs/SplitsTab.jsx";
 import StatsTab from "./tabs/StatsTab.jsx";
 import ScheduleTab from "./tabs/ScheduleTab.jsx";
@@ -49,7 +49,8 @@ const TABS = [
   { key: "calledup", label: "🆙 Called Up", Component: CalledUpTab },
   { key: "track", label: "📈 Track Record", Component: TrackRecordTab },
   // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".
-  { key: "live", label: "⚡ Goal Flurries", Component: LiveThemesTab },
+  // 2026-10-25: now 📡 Tonight so far (the slate vs our chances, context only) with ⚡ Goal Flurries as its second view.
+  { key: "live", label: "📡 Tonight so far", Component: TonightSoFarTab },
   { key: "splits", label: "📊 Splits", Component: SplitsTab },
   { key: "lookup", label: "🔍 Matchup Lookup", Component: MatchupLookupTab },
   { key: "about", label: "📌 About", Component: AboutTab },
