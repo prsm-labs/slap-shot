@@ -1,13 +1,125 @@
 {
  "_meta": {
-  "generated": "2026-10-25 13:01",
+  "generated": "2026-10-25 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 70,
-  "up": 45,
+  "count": 72,
+  "up": 47,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8483514,
+   "name": "Matthew Seminoff",
+   "team": "DAL",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2003-12-27",
+   "sweater": 43,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "DAL",
+    "round": 6,
+    "overallPick": 179
+   },
+   "recalledOn": "2026-10-25",
+   "from": "Texas",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-10-25",
+     "type": "up",
+     "club": "Texas"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 1,
+     "assists": 6,
+     "points": 7,
+     "plusMinus": -3,
+     "pim": 4,
+     "team": "Texas Stars"
+    },
+    "last": {
+     "gamesPlayed": 72,
+     "goals": 24,
+     "assists": 26,
+     "points": 50,
+     "plusMinus": 13,
+     "pim": 24,
+     "team": "Texas Stars"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8484829,
+   "name": "Justin Hryckowian",
+   "team": "DAL",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "2001-02-23",
+   "sweater": 49,
+   "draft": null,
+   "recalledOn": "2026-10-25",
+   "from": "Texas",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-25",
+     "type": "up",
+     "club": "Texas"
+    }
+   ],
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 11,
+     "team": "Dallas Stars"
+    },
+    "last": {
+     "gamesPlayed": 81,
+     "goals": 14,
+     "assists": 16,
+     "points": 30,
+     "plusMinus": 1,
+     "pim": 43,
+     "shots": 83,
+     "team": "Dallas Stars"
+    },
+    "careerGp": 96,
+    "careerG": 14,
+    "careerP": 31
+   }
+  },
   {
    "playerId": 8483497,
    "name": "Jani Nyman",
@@ -1170,6 +1282,84 @@
    }
   },
   {
+   "playerId": 8481848,
+   "name": "Jacob Gaucher",
+   "team": "PHI",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2001-03-09",
+   "sweater": 78,
+   "draft": null,
+   "recalledOn": "2026-10-19",
+   "from": "Lehigh Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-25",
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-25",
+     "type": "down",
+     "club": "Lehigh Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 4,
+     "assists": 4,
+     "points": 8,
+     "plusMinus": -3,
+     "pim": 4,
+     "team": "Lehigh Valley Phantoms"
+    },
+    "last": {
+     "gamesPlayed": 69,
+     "goals": 20,
+     "assists": 16,
+     "points": 36,
+     "plusMinus": -9,
+     "pim": 44,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 2,
+     "shots": 2,
+     "team": "Philadelphia Flyers"
+    },
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 4,
+     "team": "Philadelphia Flyers"
+    },
+    "careerGp": 11,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "playerId": 8484242,
    "name": "Brayden Yager",
    "team": "WPG",
@@ -1537,79 +1727,6 @@
     "careerGp": 23,
     "careerG": 5,
     "careerP": 9
-   }
-  },
-  {
-   "playerId": 8481848,
-   "name": "Jacob Gaucher",
-   "team": "PHI",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2001-03-09",
-   "sweater": 78,
-   "draft": null,
-   "recalledOn": "2026-10-19",
-   "from": "Lehigh Valley",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Lehigh Valley"
-    },
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Lehigh Valley"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 4,
-     "assists": 4,
-     "points": 8,
-     "plusMinus": -3,
-     "pim": 4,
-     "team": "Lehigh Valley Phantoms"
-    },
-    "last": {
-     "gamesPlayed": 69,
-     "goals": 20,
-     "assists": 16,
-     "points": 36,
-     "plusMinus": -9,
-     "pim": 44,
-     "team": "Lehigh Valley Phantoms"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 2,
-     "shots": 2,
-     "team": "Philadelphia Flyers"
-    },
-    "last": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 4,
-     "team": "Philadelphia Flyers"
-    },
-    "careerGp": 11,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
