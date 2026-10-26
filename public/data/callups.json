@@ -1,13 +1,77 @@
 {
  "_meta": {
-  "generated": "2026-10-26 12:07",
+  "generated": "2026-10-26 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 73,
-  "up": 48,
+  "count": 74,
+  "up": 45,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8480007,
+   "name": "Jonas Rondbjerg",
+   "team": "VGK",
+   "position": "R",
+   "shoots": "L",
+   "birthDate": "1999-03-31",
+   "sweater": 46,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "VGK",
+    "round": 3,
+    "overallPick": 65
+   },
+   "recalledOn": "2026-10-26",
+   "from": "Henderson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-26",
+     "type": "up",
+     "club": "Henderson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": 0,
+     "pim": 2,
+     "team": "Henderson Silver Knights"
+    },
+    "last": {
+     "gamesPlayed": 43,
+     "goals": 13,
+     "assists": 13,
+     "points": 26,
+     "plusMinus": 16,
+     "pim": 12,
+     "team": "Henderson Silver Knights"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -2,
+     "pim": 0,
+     "shots": 6,
+     "team": "Vegas Golden Knights"
+    },
+    "careerGp": 80,
+    "careerG": 3,
+    "careerP": 11
+   }
+  },
   {
    "playerId": 8483514,
    "name": "Matthew Seminoff",
@@ -404,6 +468,68 @@
    }
   },
   {
+   "playerId": 8480069,
+   "name": "Cale Makar",
+   "team": "COL",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "1998-10-30",
+   "sweater": 8,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "COL",
+    "round": 1,
+    "overallPick": 4
+   },
+   "recalledOn": "2026-10-23",
+   "from": "Colorado",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-26",
+   "events": [
+    {
+     "date": "2026-10-23",
+     "type": "up",
+     "club": "Colorado"
+    },
+    {
+     "date": "2026-10-26",
+     "type": "down",
+     "club": "Colorado"
+    }
+   ],
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 11,
+     "goals": 3,
+     "assists": 8,
+     "points": 11,
+     "plusMinus": 3,
+     "pim": 2,
+     "shots": 28,
+     "team": "Colorado Avalanche"
+    },
+    "last": {
+     "gamesPlayed": 75,
+     "goals": 20,
+     "assists": 59,
+     "points": 79,
+     "plusMinus": 32,
+     "pim": 24,
+     "shots": 199,
+     "team": "Colorado Avalanche"
+    },
+    "careerGp": 481,
+    "careerG": 139,
+    "careerP": 518
+   }
+  },
+  {
    "playerId": 8484262,
    "name": "Travis Mitchell",
    "team": "ANA",
@@ -599,63 +725,6 @@
    }
   },
   {
-   "playerId": 8480069,
-   "name": "Cale Makar",
-   "team": "COL",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "1998-10-30",
-   "sweater": 8,
-   "draft": {
-    "year": 2017,
-    "teamAbbrev": "COL",
-    "round": 1,
-    "overallPick": 4
-   },
-   "recalledOn": "2026-10-23",
-   "from": "Colorado",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-23",
-     "type": "up",
-     "club": "Colorado"
-    }
-   ],
-   "ahl": {
-    "season": null,
-    "last": null
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 11,
-     "goals": 3,
-     "assists": 8,
-     "points": 11,
-     "plusMinus": 3,
-     "pim": 2,
-     "shots": 28,
-     "team": "Colorado Avalanche"
-    },
-    "last": {
-     "gamesPlayed": 75,
-     "goals": 20,
-     "assists": 59,
-     "points": 79,
-     "plusMinus": 32,
-     "pim": 24,
-     "shots": 199,
-     "team": "Colorado Avalanche"
-    },
-    "careerGp": 481,
-    "careerG": 139,
-    "careerP": 518
-   }
-  },
-  {
    "playerId": 8485019,
    "name": "Chase Pietila",
    "team": "PIT",
@@ -802,9 +871,9 @@
      "otLosses": 0,
      "shutouts": 0,
      "goalsAgainst": 4,
-     "shotsAgainst": 28,
+     "shotsAgainst": 29,
      "team": "Ottawa Senators",
-     "savePct": 0.857,
+     "savePct": 0.862,
      "gaa": 4.03
     },
     "last": {
@@ -923,12 +992,17 @@
    "from": "Henderson",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-10-26",
    "events": [
     {
      "date": "2026-10-21",
      "type": "up",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-10-26",
+     "type": "down",
      "club": "Henderson"
     }
    ],
@@ -1084,7 +1158,7 @@
    "from": "Chicago",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -3833,8 +3907,8 @@
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-10-26",
    "events": [
     {
      "date": "2026-09-24",
@@ -3844,6 +3918,11 @@
     {
      "date": "2026-10-09",
      "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-26",
+     "type": "down",
      "club": "Iowa"
     }
    ],
