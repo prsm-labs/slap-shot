@@ -22,10 +22,14 @@
 //                  2025-26 backtest of that pool: 32% scored (base ~15%); 10/2-10/4: top 15% scored 27%.
 //   Point Signal = point % in tonight's top 15% AND simulated 3+ SOG >= 40%. 10/2-10/4: 66% got a point
 //                  (59 of 89; base 35%).
+// 2026-10-26: the 3+ SOG leg uses the calibrated grade-model chance (modelProbs.sog3) when there is one. The raw
+// shot sim ran high at the top (live 10/2-10/24: sim 50-65% -> 41% got 3+ SOG; calibrated 50-65% -> 53%). Same
+// >= 40 cut: top-15% point skaters 9/29-10/24, sim >= 40 589 rows / 62.5% got a point, calibrated >= 40 630 / 62.2%.
+const sog3Pct = (p) => (p.modelProbs?.sog3 != null ? p.modelProbs.sog3 * 100 : p.plus3SogPct);
 export function isGoalSignal(p) {
   return (p.slapScore ?? 0) >= 85 && (p.oppSoftPct ?? 0) >= 0.5;
 }
 
 export function isPointSignal(p) {
-  return (p.pointPct ?? 0) >= 0.85 && (p.plus3SogPct ?? 0) >= 40;
+  return (p.pointPct ?? 0) >= 0.85 && (sog3Pct(p) ?? 0) >= 40;
 }

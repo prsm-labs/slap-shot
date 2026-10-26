@@ -11,7 +11,7 @@ import { fmtToi } from "../lib/toi.js";
 import { matchupKey, playerMatchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 import { FIRST_GOAL, firstGoalsByGame } from "../lib/goalBadges.js";
-import { firstGoalRate as rate, OPENING, openingShare } from "../lib/projections.js";
+import { dressWeights, firstGoalRate as rate, OPENING, openingShare } from "../lib/projections.js";
 import { useH2H } from "../lib/h2h.js";
 import { useSort } from "../lib/useSort.js";
 import IcebreakerView from "../components/IcebreakerView.jsx";
@@ -59,7 +59,9 @@ const SHOW = 50;
 // Walk-forward backtest, 2025-26 regular season (1,131 games from Nov 1, each scored only with
 // goals/GP known before that game, actual lineups): the top pick scored the first goal 6.1% of
 // the time (model said 6.7% on average; picking at random would hit 2.8%), a top-3 pick 19.2%,
-// a top-5 pick 30.2%. Tonight's pool uses full rosters, not confirmed lineups, so scratched
+// a top-5 pick 30.2%. Until a team's dressed list is in, each skater's share is weighted by his chance to
+// dress (lib/projections.js dressWeights), so likely scratches take only a small share. Before 10/26 they
+// took a full one: tonight's pool uses full rosters, not confirmed lineups, so scratched
 // players still take a share — expect slightly worse than the backtest.
 // (rate formula lives in lib/projections.js so the Track Record snapshot uses the same one)
 
@@ -110,9 +112,10 @@ export default function FirstGoalTab() {
 
   const games = useMemo(() => {
     if (!pool || !meta?.slate) return [];
+    const dress = dressWeights(pool);
     return meta.slate.map((g) => {
       const key = matchupKey(g.away, g.home);
-      const skaters = pool.filter((p) => playerMatchupKey(p) === key).map((p) => ({ ...p, rate: rate(p) }));
+      const skaters = pool.filter((p) => playerMatchupKey(p) === key).map((p) => ({ ...p, rate: rate(p) * dress.get(p.playerId) }));
       // Official starting lineups (once posted) boost the opening-shift skaters for the first ~45 seconds.
       const share = openingShare(skaters, (p) => p.rate, 6.0 * OPENING.earlyPace);
       const ranked = skaters.map((p) => ({ ...p, firstGoalP: share.get(p.playerId) })).sort((a, b) => b.firstGoalP - a.firstGoalP);

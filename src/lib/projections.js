@@ -69,12 +69,42 @@ export function openingShare(group, rateOf, goalsPer60) {
     pw * ((rateOf(p) * (1 + OPENING.boost * s(p))) / (totOpen || 1)) + (1 - pw) * (rateOf(p) / (tot || 1))]));
 }
 
+// Dress weight (2026-10-26): the pool lists ~22 skaters a team but 18 dress, and before the official lineup every
+// listed skater took a first-goal share -- ~14% of each game's chance sat on players who didn't play (live 9/29-10/24:
+// dressed skaters scored 183 first goals vs 159 said). P(dresses) from the pool's last7: played the team's most recent
+// game + share of the team's last 5 he played (logistic, 7,717 pool rows over 25 nights: 96% if he played the last game
+// and all 5, 22% if none). Shares use P^2 (held out from 10/10 / 10/13 / 10/17: first-goal log loss 3.53 -> 3.42,
+// dressed got / said 1.17 -> 1.06; the true dressed list would score 3.37). Officially dressed = 1 (scratches are
+// already removed from the live pool once a team's dressed list is in).
+const DRESS = { intercept: -1.262, inLast: 2.765, share5: 1.668, power: 2 };
+export function dressWeights(players) {
+  const teamDates = new Map();
+  for (const p of players) {
+    for (const g of p.last7 || []) {
+      if (!teamDates.has(p.team)) teamDates.set(p.team, new Set());
+      teamDates.get(p.team).add(g.date);
+    }
+  }
+  const lastFive = new Map([...teamDates].map(([t, s]) => [t, [...s].sort().reverse().slice(0, 5)]));
+  const weight = (z) => Math.pow(1 / (1 + Math.exp(-z)), DRESS.power);
+  return new Map(players.map((p) => {
+    if (p.lineupStatus === "dressed") return [p.playerId, 1];
+    const five = lastFive.get(p.team) || [];
+    if (!five.length) return [p.playerId, weight(DRESS.intercept + DRESS.inLast + DRESS.share5)]; // team hasn't played yet
+    const mine = new Set((p.last7 || []).map((g) => g.date));
+    const share = five.filter((d) => mine.has(d)).length / five.length;
+    return [p.playerId, weight(DRESS.intercept + DRESS.inLast * (mine.has(five[0]) ? 1 : 0) + DRESS.share5 * share)];
+  }));
+}
+
 // Map of playerId -> P(scores the game's first goal), for players grouped by game key.
 export function firstGoalProbs(players, gameKeyOf) {
+  const dress = dressWeights(players);
+  const w = (p) => firstGoalRate(p) * dress.get(p.playerId);
   const totals = new Map();
   for (const p of players) {
     const k = gameKeyOf(p);
-    totals.set(k, (totals.get(k) || 0) + firstGoalRate(p));
+    totals.set(k, (totals.get(k) || 0) + w(p));
   }
-  return new Map(players.map((p) => [p.playerId, firstGoalRate(p) / (totals.get(gameKeyOf(p)) || 1)]));
+  return new Map(players.map((p) => [p.playerId, w(p) / (totals.get(gameKeyOf(p)) || 1)]));
 }

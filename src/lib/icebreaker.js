@@ -17,7 +17,7 @@
 //   Timing: median wait for the first goal, 1 early game 7.0 min (model 7.7), 2-3 games 4.0 (3.8),
 //   4+ games 1.8 (1.6); P(goal by 5 min) 39 / 60 / 87% actual vs 36 / 63 / 89% model.
 import { expectedGoals } from "./gameModel.js";
-import { firstGoalRate, OPENING, openingShare } from "./projections.js";
+import { dressWeights, firstGoalRate, OPENING, openingShare } from "./projections.js";
 
 export const EARLY_PACE = 0.909;
 
@@ -39,7 +39,8 @@ export function icebreakerBoard(players, games, ratings) {
     teamOf.set(g.away, { game: g, opp: g.home, isHome: false, oppGoalie: g.homeGoalieId });
     teamOf.set(g.home, { game: g, opp: g.away, isHome: true, oppGoalie: g.awayGoalieId });
   }
-  const sk = (players || []).filter((p) => teamOf.has(p.team)).map((p) => ({ ...p, w: firstGoalRate(p) }));
+  const dress = dressWeights(players || []); // likely scratches take a small share until the dressed list is in
+  const sk = (players || []).filter((p) => teamOf.has(p.team)).map((p) => ({ ...p, w: firstGoalRate(p) * dress.get(p.playerId) }));
   const teamW = new Map();
   for (const p of sk) {
     teamW.set(p.team, (teamW.get(p.team) || 0) + p.w);

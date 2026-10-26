@@ -90,7 +90,13 @@ export default function AppleLabTab() {
     if (!results || !pool) return null;
     // Results from the previous run can include skaters since scratched — keep only the current slate.
     const byId = new Map(pool.map((p) => [p.playerId, p]));
-    return results.filter((r) => byId.has(r.playerId)).map((r) => ({ ...r, ...byId.get(r.playerId) }));
+    // +3 SOG % = the calibrated grade-model chance (2026-10-26); the raw sim ran high at the top (sim 50-65% -> 41%
+    // got 3+ SOG live 10/2-10/24), so it is kept only as simSog3Pct.
+    return results.filter((r) => byId.has(r.playerId)).map((r) => {
+      const p = byId.get(r.playerId);
+      const cal = p.modelProbs?.sog3;
+      return { ...r, ...p, simSog3Pct: r.plus3SogPct, plus3SogPct: cal != null ? Math.round(cal * 1000) / 10 : r.plus3SogPct };
+    });
   }, [results, pool]);
 
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
@@ -124,12 +130,13 @@ export default function AppleLabTab() {
     <div>
       <div className="section-header">
         <div className="section-title">🍎 Apple Lab</div>
-        <div className="section-sub">Anytime-point chance from the calibrated grade model, plus a 3+ shots-on-goal sim</div>
+        <div className="section-sub">Anytime-point and 3+ shots-on-goal chances from the calibrated grade model</div>
       </div>
 
       <div className="note">
         ℹ️ "An apple" = an assist. Point % = the grade model's chance of a goal or assist (first week: 35.5% said vs 33.9% happened),
-        nudged for tonight's opponent. +3 SOG % comes from a 10,000-run shot simulation (first week: 21.0% said vs 22.1% happened).
+        nudged for tonight's opponent. +3 SOG % is the calibrated grade model's chance (10/2-10/24: 22.3% said vs 21.2% happened;
+        said 50-65% → 53%). Until 10/26 it came from a 10,000-run shot simulation that ran high at the top (said 50-65%, 41% happened).
         ★ Point Signal = point % in tonight's top 15% AND +3 SOG ≥40% — 66% of those got a point over the first week (base 35%).
         2+ / 3+ Pts % are fit on 4 seasons (plain Poisson over-states multi-point nights by ~15-40%). 🍎 PTS DUE = no point in 2+ games
         while the team's expected goals with them on the ice ran 1.2x+ their season rate, outside the top 25% — 12-14% more points than

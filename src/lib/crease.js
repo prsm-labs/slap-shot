@@ -8,6 +8,10 @@
 //     size tested (0 / 250 / 500 / 1,000 / 2,000 / 4,000 / league-only).
 //   - Saves vary around the projection with sd 6.07 (measured); the "N+ saves" odds use that
 //     spread and lined up with outcomes (e.g. 25+ saves: said 50%, happened 49%).
+//   - 2026-10-26: shots and save % are re-levelled to this season's league (meta.league.now, built by
+//     build_player_pool.py: this season + a 100-game prior at last season's rate). Both fall season after season, and
+//     the two-season pool lagged: live 9/29-10/24 starters ran 0.8 saves high (25+ saves said 51%, happened 45%);
+//     re-levelled -0.43 (said 49%). Most of the rest is pulled starters (17 of 332).
 const SV_PRIOR_SHOTS = 500;
 const SHRINK_TO_LEAGUE = 0.8;
 const SAVES_SD = 6.07;
@@ -28,11 +32,13 @@ export function projectGoalie(goalie, team, opp, meta) {
   const tm = meta?.teams?.[team];
   const op = meta?.teams?.[opp];
   const raw = tm && op ? (op.sogFor * tm.sogAgainst) / league.sogPerTeamGame : league.sogPerTeamGame;
-  const shots = league.sogPerTeamGame + SHRINK_TO_LEAGUE * (raw - league.sogPerTeamGame);
+  const now = league.now;
+  const level = now?.sogPerTeamGame ? now.sogPerTeamGame / league.sogPerTeamGame : 1;
+  const shots = (league.sogPerTeamGame + SHRINK_TO_LEAGUE * (raw - league.sogPerTeamGame)) * level;
 
   const faced = goalie?.sogFaced || 0;
   const saved = faced - (goalie?.goalsAllowed || 0);
-  const savePct = (saved + SV_PRIOR_SHOTS * league.savePct) / (faced + SV_PRIOR_SHOTS);
+  const savePct = (saved + SV_PRIOR_SHOTS * league.savePct) / (faced + SV_PRIOR_SHOTS) + (now?.savePct ? now.savePct - league.savePct : 0);
 
   const saves = shots * savePct;
   const lines = Object.fromEntries(
