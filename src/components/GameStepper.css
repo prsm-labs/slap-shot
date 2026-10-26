@@ -1,0 +1,13 @@
+/* ◀ ▶ Game stepper (GameStepper.jsx) -- same file in CourtIQ, Slap Shot and Six Points */
+.game-stepper{display:flex;align-items:center;gap:8px;margin:6px 0 4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--surface);}
+.gs-btn{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:6px;padding:7px 10px;border:0;border-radius:8px;background:transparent;color:var(--accent);font:inherit;font-size:13px;font-weight:700;cursor:pointer;}
+.gs-btn.r{justify-content:flex-end;}
+.gs-btn:hover:not(:disabled),.gs-btn:focus-visible{background:color-mix(in srgb,var(--accent) 14%,transparent);}
+.gs-btn:disabled{opacity:.3;cursor:default;}
+.gs-side{color:var(--muted);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.gs-now{flex:0 1 auto;display:flex;flex-direction:column;align-items:center;line-height:1.2;color:var(--fg,var(--text));white-space:nowrap;}
+.gs-count{font-size:11px;color:var(--muted);}
+.gs-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:1200;padding:8px 14px;border-radius:999px;background:var(--surface2,var(--surface));color:var(--fg,var(--text));border:1px solid var(--accent);box-shadow:0 6px 20px rgba(0,0,0,.35);font-size:13px;font-weight:600;white-space:nowrap;pointer-events:none;animation:gs-in .15s ease-out;}
+@keyframes gs-in{from{opacity:0;transform:translate(-50%,8px);}to{opacity:1;transform:translate(-50%,0);}}
+@media (max-width:600px){.gs-side{display:none;}.gs-btn{flex:0 0 auto;padding:8px 14px;font-size:15px;}.gs-now{flex:1 1 auto;}}
+@media (prefers-reduced-motion:reduce){.gs-toast{animation:none;}}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchScoredPool, useScoredPool } from "../lib/data.js";
 import { keysOf, matchupKey, pickMatchup, setMatchup, setMultiPick, useMatchup, useMultiPick } from "../lib/matchupFilter.js";
+import GameStepper from "./GameStepper.jsx";
 import "./MultiPick.css";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 
@@ -49,7 +50,11 @@ export default function GameStrip() {
   const ordered = [...slate].sort((a, b) => rank(a) - rank(b) || String(a.startTimeUTC).localeCompare(String(b.startTimeUTC)));
   const selGames = slate.filter((g) => picked.includes(matchupKey(g.away, g.home)));
   const sel = selGames.length === 1 ? selGames[0] : null;
+  // 2026-10-26 ◀ ▶ stepper (swipe / ← →) in strip order; off while several games are picked
+  const steps = picked.length > 1 ? [] : ordered.map((g) => ({ key: matchupKey(g.away, g.home), label: `${g.away} @ ${g.home}` }));
+  const stepAt = picked.length === 1 ? ordered.findIndex((g) => matchupKey(g.away, g.home) === picked[0]) : -1;
   return (
+    <>
     <div className="game-strip">
       <button className={`game-chip all ${!selected ? "active" : ""}`} onClick={() => setMatchup(null)}>
         All games<span className="gc-status"> {slate.length}</span>
@@ -87,5 +92,7 @@ export default function GameStrip() {
         </button>
       )}
     </div>
+    <GameStepper items={steps} index={stepAt} onPick={(k) => setMatchup(k)} activeSelector=".game-strip .game-chip.active:not(.all)" />
+    </>
   );
 }
