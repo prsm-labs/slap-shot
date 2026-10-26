@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import { batchFromBox, estimateOnIce, sameBatch } from "../lib/onIce.js";
 import RinkTracker from "./RinkTracker.jsx";
+import Momentum from "./Momentum.jsx";
 import LineupsView from "./LineupsView.jsx";
 import LiveProjection from "./LiveProjection.jsx";
 
@@ -272,6 +273,7 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
       </div>
       {error && <div className="note" style={{ borderColor: "var(--red)", color: "var(--red)" }}>Box score error: {error}</div>}
       {!box && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading box score…</div>}
+      {box && !pre && <Momentum box={box} />}
       {box && !pre && (
         <div className="pill-row" style={{ marginBottom: 10 }}>
           <button className={`pill-btn ${view === "box" ? "active" : ""}`} onClick={() => setView("box")}>📋 Box score</button>

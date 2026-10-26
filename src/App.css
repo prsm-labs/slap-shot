@@ -474,3 +474,23 @@ p.sch-muted{margin:0 0 10px;}
 
 /* 2026-10-24 light mode: overrides that must come after the rules they change */
 @media (prefers-color-scheme: light){ .prism-card{--gold:#8a6d0f;} .logo-mark{filter:none;} }
+
+/* 2026-10-26 ⚡ Momentum strip above the box-score views (components/Momentum.jsx) */
+.momentum{margin:0 0 12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;}
+.mo-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--text);}
+.mo-sub,.mo-lead,.mo-axis,.mo-note{font-size:12px;color:var(--muted);}
+.mo-tug{display:flex;align-items:center;gap:10px;margin:8px 0 2px;}
+.mo-team{font-weight:700;font-size:13px;min-width:40px;}
+.mo-team.r{text-align:right;}
+.mo-bar{position:relative;flex:1;display:flex;height:10px;}
+.mo-bar>span{height:100%;transition:width .8s ease;}
+.mo-bar>span:first-child{border-radius:5px 0 0 5px;}
+.mo-bar>span:nth-child(2){border-radius:0 5px 5px 0;}
+.mo-bar>i{position:absolute;top:-4px;width:4px;height:18px;margin-left:-2px;background:var(--text);border-radius:2px;transition:left .8s ease;}
+.mo-lead{text-align:center;margin-bottom:6px;}
+.mo-flow{display:block;width:100%;height:56px;}
+.mo-goals{position:relative;height:10px;}
+.mo-goal{position:absolute;top:2px;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;}
+.mo-axis{display:flex;margin-top:2px;}
+.mo-axis>span{text-align:center;}
+.mo-note{margin-top:6px;}
