@@ -14,9 +14,9 @@
         "awayGoalieId": 8475311,
         "awayGoalie": "Darcy Kuemper",
         "awayGoalieStatus": "Unconfirmed",
-        "homeGoalieId": 8482193,
-        "homeGoalie": "Dylan Garand",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieId": 8473503,
+        "homeGoalie": "James Reimer",
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020186,
@@ -29,7 +29,7 @@
         "awayGoalieStatus": "Unconfirmed",
         "homeGoalieId": 8482445,
         "homeGoalie": "Devin Cooley",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020187,
@@ -49,9 +49,9 @@
       2025,
       2026
     ],
-    "generated": "2026-10-26 07:04",
-    "player_count": 141,
-    "goalie_count": 65,
+    "generated": "2026-10-26 12:03",
+    "player_count": 140,
+    "goalie_count": 64,
     "skipped_no_history": 0,
     "teams": {
       "ANA": {
@@ -97,24 +97,24 @@
         "goalsAgainst": 2.98
       },
       "CHI": {
-        "gp": 92,
-        "sogFor": 24.02,
-        "sogAgainst": 29.79,
+        "gp": 93,
+        "sogFor": 24.0,
+        "sogAgainst": 29.82,
         "goalsFor": 2.39,
         "goalsAgainst": 3.17
       },
       "COL": {
-        "gp": 93,
-        "sogFor": 32.99,
-        "sogAgainst": 26.19,
-        "goalsFor": 3.47,
-        "goalsAgainst": 2.34
+        "gp": 94,
+        "sogFor": 32.86,
+        "sogAgainst": 26.29,
+        "goalsFor": 3.46,
+        "goalsAgainst": 2.38
       },
       "DAL": {
-        "gp": 92,
-        "sogFor": 25.36,
-        "sogAgainst": 25.48,
-        "goalsFor": 3.13,
+        "gp": 93,
+        "sogFor": 25.49,
+        "sogAgainst": 25.42,
+        "goalsFor": 3.16,
         "goalsAgainst": 2.45
       },
       "DET": {
@@ -132,11 +132,11 @@
         "goalsAgainst": 3.13
       },
       "FLA": {
-        "gp": 93,
-        "sogFor": 27.78,
-        "sogAgainst": 26.14,
+        "gp": 94,
+        "sogFor": 27.83,
+        "sogAgainst": 26.1,
         "goalsFor": 2.86,
-        "goalsAgainst": 3.05
+        "goalsAgainst": 3.04
       },
       "LAK": {
         "gp": 91,
@@ -146,18 +146,18 @@
         "goalsAgainst": 2.77
       },
       "MIN": {
-        "gp": 94,
-        "sogFor": 29.11,
-        "sogAgainst": 28.69,
-        "goalsFor": 3.01,
-        "goalsAgainst": 2.64
+        "gp": 95,
+        "sogFor": 29.16,
+        "sogAgainst": 28.57,
+        "goalsFor": 3.02,
+        "goalsAgainst": 2.63
       },
       "MTL": {
-        "gp": 92,
-        "sogFor": 26.48,
-        "sogAgainst": 27.41,
-        "goalsFor": 3.24,
-        "goalsAgainst": 2.93
+        "gp": 93,
+        "sogFor": 26.42,
+        "sogAgainst": 27.49,
+        "goalsFor": 3.23,
+        "goalsAgainst": 2.91
       },
       "NJD": {
         "gp": 93,
@@ -167,18 +167,18 @@
         "goalsAgainst": 2.94
       },
       "NSH": {
-        "gp": 92,
-        "sogFor": 27.29,
-        "sogAgainst": 29.46,
-        "goalsFor": 2.7,
-        "goalsAgainst": 3.02
+        "gp": 93,
+        "sogFor": 27.38,
+        "sogAgainst": 29.37,
+        "goalsFor": 2.73,
+        "goalsAgainst": 3.01
       },
       "NYI": {
-        "gp": 92,
-        "sogFor": 27.86,
-        "sogAgainst": 27.12,
+        "gp": 93,
+        "sogFor": 27.77,
+        "sogAgainst": 27.24,
         "goalsFor": 2.71,
-        "goalsAgainst": 2.62
+        "goalsAgainst": 2.66
       },
       "NYR": {
         "gp": 95,
@@ -251,9 +251,9 @@
         "goalsAgainst": 2.84
       },
       "VAN": {
-        "gp": 94,
-        "sogFor": 25.01,
-        "sogAgainst": 29.96,
+        "gp": 95,
+        "sogFor": 24.93,
+        "sogAgainst": 30.0,
         "goalsFor": 2.51,
         "goalsAgainst": 3.67
       },
@@ -265,11 +265,11 @@
         "goalsAgainst": 2.82
       },
       "WPG": {
-        "gp": 92,
-        "sogFor": 26.14,
-        "sogAgainst": 27.84,
-        "goalsFor": 2.64,
-        "goalsAgainst": 2.92
+        "gp": 93,
+        "sogFor": 26.24,
+        "sogAgainst": 27.76,
+        "goalsFor": 2.62,
+        "goalsAgainst": 2.91
       },
       "WSH": {
         "gp": 92,
@@ -281,7 +281,13 @@
     },
     "league": {
       "sogPerTeamGame": 27.53,
-      "savePct": 0.8944
+      "savePct": 0.8944,
+      "now": {
+        "sogPerTeamGame": 27.29,
+        "savePct": 0.8915,
+        "games": 184,
+        "priorGames": 100
+      }
     },
     "dvp": {
       "ANA": {
@@ -423,72 +429,72 @@
         }
       },
       "CHI": {
-        "gp": 92,
+        "gp": 93,
         "C": {
-          "g": 1.174,
-          "p": 3.152,
-          "sog": 9.79
+          "g": 1.172,
+          "p": 3.151,
+          "sog": 9.83
         },
         "D": {
-          "g": 0.652,
-          "p": 2.446,
-          "sog": 8.54
+          "g": 0.645,
+          "p": 2.441,
+          "sog": 8.56
         },
         "L": {
-          "g": 0.739,
-          "p": 1.587,
-          "sog": 5.87
+          "g": 0.753,
+          "p": 1.602,
+          "sog": 5.9
         },
         "R": {
-          "g": 0.804,
-          "p": 1.87,
-          "sog": 5.78
+          "g": 0.796,
+          "p": 1.849,
+          "sog": 5.73
         }
       },
       "COL": {
-        "gp": 93,
+        "gp": 94,
         "C": {
-          "g": 1.108,
-          "p": 2.312,
-          "sog": 9.28
+          "g": 1.149,
+          "p": 2.394,
+          "sog": 9.34
         },
         "D": {
-          "g": 0.29,
-          "p": 1.677,
-          "sog": 6.58
+          "g": 0.287,
+          "p": 1.702,
+          "sog": 6.64
         },
         "L": {
-          "g": 0.495,
-          "p": 1.097,
-          "sog": 5.2
+          "g": 0.5,
+          "p": 1.117,
+          "sog": 5.18
         },
         "R": {
-          "g": 0.581,
-          "p": 1.398,
+          "g": 0.574,
+          "p": 1.394,
           "sog": 5.29
         }
       },
       "DAL": {
-        "gp": 92,
+        "gp": 93,
         "C": {
-          "g": 1.043,
-          "p": 2.424,
-          "sog": 8.14
+          "g": 1.054,
+          "p": 2.441,
+          "sog": 8.15
         },
         "D": {
-          "g": 0.435,
-          "p": 1.793,
-          "sog": 7.65
+          "g": 0.441,
+          "p": 1.796,
+          "sog": 7.63
         },
         "L": {
-          "g": 0.587,
-          "p": 1.359,
-          "sog": 4.84
+          "g": 0.581,
+          "p": 1.366,
+          "sog": 4.82
         },
         "R": {
-          "g": 0.522,
-          "p": 1.348,
-          "sog": 5.07
+          "g": 0.516,
+          "p": 1.333,
+          "sog": 5.03
         }
       },
       "DET": {
@@ -538,26 +544,26 @@
         }
       },
       "FLA": {
-        "gp": 93,
+        "gp": 94,
         "C": {
-          "g": 1.409,
-          "p": 3.441,
-          "sog": 8.98
+          "g": 1.404,
+          "p": 3.426,
+          "sog": 8.97
         },
         "D": {
-          "g": 0.505,
-          "p": 2.301,
-          "sog": 8.22
+          "g": 0.5,
+          "p": 2.287,
+          "sog": 8.17
         },
         "L": {
-          "g": 0.731,
-          "p": 1.441,
-          "sog": 4.63
+          "g": 0.723,
+          "p": 1.436,
+          "sog": 4.62
         },
         "R": {
-          "g": 0.667,
-          "p": 1.634,
-          "sog": 4.67
+          "g": 0.67,
+          "p": 1.638,
+          "sog": 4.68
         }
       },
       "LAK": {
@@ -584,49 +590,49 @@
         }
       },
       "MIN": {
-        "gp": 94,
+        "gp": 95,
         "C": {
-          "g": 1.096,
-          "p": 2.968,
-          "sog": 10.49
+          "g": 1.095,
+          "p": 2.958,
+          "sog": 10.44
         },
         "D": {
-          "g": 0.489,
-          "p": 1.915,
-          "sog": 8.5
+          "g": 0.484,
+          "p": 1.916,
+          "sog": 8.47
         },
         "L": {
-          "g": 0.628,
-          "p": 1.298,
-          "sog": 5.21
+          "g": 0.621,
+          "p": 1.295,
+          "sog": 5.18
         },
         "R": {
-          "g": 0.585,
-          "p": 1.266,
-          "sog": 4.74
+          "g": 0.589,
+          "p": 1.263,
+          "sog": 4.73
         }
       },
       "MTL": {
-        "gp": 92,
+        "gp": 93,
         "C": {
-          "g": 1.196,
-          "p": 3.054,
-          "sog": 9.55
+          "g": 1.183,
+          "p": 3.032,
+          "sog": 9.62
         },
         "D": {
-          "g": 0.467,
-          "p": 2.109,
-          "sog": 7.5
+          "g": 0.462,
+          "p": 2.097,
+          "sog": 7.52
         },
         "L": {
-          "g": 0.717,
-          "p": 1.576,
-          "sog": 5.05
+          "g": 0.71,
+          "p": 1.559,
+          "sog": 5.08
         },
         "R": {
-          "g": 0.728,
-          "p": 1.75,
-          "sog": 5.49
+          "g": 0.731,
+          "p": 1.742,
+          "sog": 5.45
         }
       },
       "NJD": {
@@ -653,49 +659,49 @@
         }
       },
       "NSH": {
-        "gp": 92,
+        "gp": 93,
         "C": {
-          "g": 1.38,
-          "p": 3.239,
-          "sog": 10.6
+          "g": 1.366,
+          "p": 3.237,
+          "sog": 10.56
         },
         "D": {
-          "g": 0.402,
-          "p": 2.185,
-          "sog": 7.48
+          "g": 0.409,
+          "p": 2.183,
+          "sog": 7.44
         },
         "L": {
-          "g": 0.717,
-          "p": 1.62,
-          "sog": 5.79
+          "g": 0.72,
+          "p": 1.613,
+          "sog": 5.82
         },
         "R": {
-          "g": 0.739,
-          "p": 1.783,
-          "sog": 5.83
+          "g": 0.731,
+          "p": 1.763,
+          "sog": 5.78
         }
       },
       "NYI": {
-        "gp": 92,
+        "gp": 93,
         "C": {
-          "g": 0.967,
-          "p": 2.402,
-          "sog": 9.3
+          "g": 0.989,
+          "p": 2.452,
+          "sog": 9.33
         },
         "D": {
-          "g": 0.402,
-          "p": 1.989,
-          "sog": 7.51
+          "g": 0.398,
+          "p": 2.0,
+          "sog": 7.56
         },
         "L": {
-          "g": 0.663,
-          "p": 1.435,
-          "sog": 4.96
+          "g": 0.677,
+          "p": 1.462,
+          "sog": 4.97
         },
         "R": {
-          "g": 0.772,
-          "p": 1.663,
-          "sog": 5.68
+          "g": 0.774,
+          "p": 1.656,
+          "sog": 5.71
         }
       },
       "NYR": {
@@ -929,25 +935,25 @@
         }
       },
       "VAN": {
-        "gp": 94,
+        "gp": 95,
         "C": {
-          "g": 1.553,
-          "p": 3.798,
-          "sog": 10.71
+          "g": 1.537,
+          "p": 3.779,
+          "sog": 10.76
         },
         "D": {
-          "g": 0.553,
-          "p": 2.713,
-          "sog": 8.04
+          "g": 0.558,
+          "p": 2.705,
+          "sog": 8.01
         },
         "L": {
-          "g": 0.904,
-          "p": 2.0,
-          "sog": 5.6
+          "g": 0.905,
+          "p": 2.011,
+          "sog": 5.62
         },
         "R": {
-          "g": 0.926,
-          "p": 2.223,
+          "g": 0.937,
+          "p": 2.232,
           "sog": 5.96
         }
       },
@@ -975,25 +981,25 @@
         }
       },
       "WPG": {
-        "gp": 91,
+        "gp": 92,
         "C": {
-          "g": 1.154,
-          "p": 2.879,
-          "sog": 9.55
+          "g": 1.141,
+          "p": 2.848,
+          "sog": 9.51
         },
         "D": {
-          "g": 0.582,
-          "p": 2.253,
-          "sog": 8.29
+          "g": 0.598,
+          "p": 2.261,
+          "sog": 8.25
         },
         "L": {
-          "g": 0.736,
-          "p": 1.681,
-          "sog": 5.44
+          "g": 0.728,
+          "p": 1.674,
+          "sog": 5.43
         },
         "R": {
-          "g": 0.637,
-          "p": 1.681,
+          "g": 0.63,
+          "p": 1.685,
           "sog": 4.84
         }
       },
@@ -1116,11 +1122,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -1287,11 +1293,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -1458,11 +1464,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -1630,11 +1636,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -1802,11 +1808,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -1973,11 +1979,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -2144,11 +2150,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -2315,11 +2321,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -2487,11 +2493,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -2658,11 +2664,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -2829,11 +2835,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -3001,11 +3007,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -3172,11 +3178,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -3343,11 +3349,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -3515,11 +3521,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -3686,11 +3692,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -3858,11 +3864,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -4029,11 +4035,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -4200,11 +4206,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -4371,11 +4377,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -4542,11 +4548,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -4713,11 +4719,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -4884,11 +4890,11 @@
       "opponentTeamxGA60": 3.21,
       "opponentTeamHDCFAllowedPer60": 12.83,
       "opponentXGoalsAgainst": 305.4,
-      "opponentGoalieId": 8482193,
-      "opponentGoalie": "Dylan Garand",
-      "opponentGoalieGA60": 2.54,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.899,
+      "opponentGoalieId": 8473503,
+      "opponentGoalie": "James Reimer",
+      "opponentGoalieGA60": 2.42,
+      "opponentGoalieXGA60": 2.25,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -8431,178 +8437,6 @@
       "seasonGp": 13,
       "newTeam": true,
       "lastTeam": "VAN"
-    },
-    {
-      "playerId": 8481525,
-      "name": "Matthew Robertson",
-      "team": "NYR",
-      "position": "D",
-      "games_played": 72,
-      "icetime": 75187,
-      "ppIcetime": 270,
-      "shifts": 1639,
-      "ICF": 129,
-      "HDCF": 4,
-      "TotalGoals": 6,
-      "P1Attempts": 41,
-      "P1SOG": 25,
-      "xG": 3.23,
-      "onIceXgf": 45.21,
-      "I_F_primaryAssists": 5,
-      "I_F_secondaryAssists": 7,
-      "I_F_points": 18,
-      "I_F_highDangerShots": 0,
-      "I_F_mediumDangerShots": 4,
-      "RecentGoals": 1,
-      "RecentIntentScore": 0.0,
-      "RecentHighDangerShots": 0,
-      "RecentShotVolume": 6,
-      "HighDangerRate": 0.031,
-      "OnGoalIntentRate": 0.612,
-      "RecentIntentScoreLast5Games": 0.0,
-      "RecentShotVolumeLast5Games": 6,
-      "iSCF_5G": 6,
-      "iHDCF_5G": 0,
-      "Goals_Last5": 1,
-      "Assists_Last5": 0,
-      "Points_Last5": 1,
-      "Intent_Last5": 0.0,
-      "ShotsOnGoalPerGame": 1.1,
-      "ShotAttemptsPerGame": 1.79,
-      "AvgShotDistance": 52.0,
-      "iSCF": 129,
-      "iHDCF": 4,
-      "DaysSinceLastGoal": 1,
-      "onIce_corsiPercentage": 0.453,
-      "onIce_fenwickPercentage": 0.452,
-      "onIce_xGoalsPercentage": 0.433,
-      "oZoneShiftStarts": 84,
-      "dZoneShiftStarts": 197,
-      "neutralZoneShiftStarts": 194,
-      "oZoneStartPct": 0.299,
-      "isHome": true,
-      "opponentTeam": "LAK",
-      "opponentTeamGA60": 2.97,
-      "opponentTeamxGA60": 2.93,
-      "opponentTeamHDCFAllowedPer60": 13.02,
-      "opponentXGoalsAgainst": 266.4,
-      "opponentGoalieId": 8475311,
-      "opponentGoalie": "Darcy Kuemper",
-      "opponentGoalieGA60": 2.86,
-      "opponentGoalieXGA60": 2.73,
-      "opponentGoalieHighDangerSavePct": 0.883,
-      "isEligible": true,
-      "last7": [
-        {
-          "gameId": 2025021195,
-          "date": "2026-04-02",
-          "opp": "MTL",
-          "home": true,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "sog": 0,
-          "shotAttempts": 1,
-          "hd": 0,
-          "xg": 0.014,
-          "oxg": 0.594,
-          "icetime": 1054
-        },
-        {
-          "gameId": 2025021207,
-          "date": "2026-04-04",
-          "opp": "DET",
-          "home": true,
-          "goals": 0,
-          "assists": 1,
-          "points": 1,
-          "sog": 0,
-          "shotAttempts": 0,
-          "hd": 0,
-          "xg": 0.0,
-          "oxg": 0.574,
-          "icetime": 1098
-        },
-        {
-          "gameId": 2025021227,
-          "date": "2026-04-05",
-          "opp": "WSH",
-          "home": true,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "sog": 2,
-          "shotAttempts": 2,
-          "hd": 0,
-          "xg": 0.055,
-          "oxg": 0.341,
-          "icetime": 1070
-        },
-        {
-          "gameId": 2025021244,
-          "date": "2026-04-08",
-          "opp": "BUF",
-          "home": true,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "sog": 1,
-          "shotAttempts": 1,
-          "hd": 0,
-          "xg": 0.014,
-          "oxg": 0.364,
-          "icetime": 952
-        },
-        {
-          "gameId": 2025021268,
-          "date": "2026-04-11",
-          "opp": "DAL",
-          "home": false,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "sog": 0,
-          "shotAttempts": 1,
-          "hd": 0,
-          "xg": 0.015,
-          "oxg": 0.237,
-          "icetime": 799
-        },
-        {
-          "gameId": 2025021283,
-          "date": "2026-04-13",
-          "opp": "FLA",
-          "home": false,
-          "goals": 1,
-          "assists": 0,
-          "points": 1,
-          "sog": 1,
-          "shotAttempts": 1,
-          "hd": 0,
-          "xg": 0.027,
-          "oxg": 0.602,
-          "icetime": 1025
-        },
-        {
-          "gameId": 2025021302,
-          "date": "2026-04-15",
-          "opp": "TBL",
-          "home": false,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "sog": 0,
-          "shotAttempts": 1,
-          "hd": 0,
-          "xg": 0.017,
-          "oxg": 0.285,
-          "icetime": 1001
-        }
-      ],
-      "teamGp": 0,
-      "seasonGp": 0,
-      "newTeam": false,
-      "lastTeam": "NYR"
     },
     {
       "playerId": 8482073,
@@ -25239,6 +25073,102 @@
       ]
     },
     {
+      "playerId": 8481519,
+      "name": "Spencer Knight",
+      "team": "CHI",
+      "position": "G",
+      "games_played": 63,
+      "icetime": 225955,
+      "wins": 22,
+      "shutouts": 3,
+      "shotsFaced": 2817,
+      "sogFaced": 1832,
+      "goalsAllowed": 183,
+      "savePct": 0.9,
+      "GA60_proxy": 2.92,
+      "xGA60_proxy": 3.07,
+      "highDangerSavePct": 0.903,
+      "last7": [
+        {
+          "gameId": 2026020050,
+          "date": "2026-10-06",
+          "opp": "STL",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 28,
+          "savePct": 0.929,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020078,
+          "date": "2026-10-10",
+          "opp": "CAR",
+          "home": true,
+          "goalsAllowed": 5,
+          "sogFaced": 39,
+          "savePct": 0.872,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020098,
+          "date": "2026-10-13",
+          "opp": "PIT",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 27,
+          "savePct": 0.889,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020114,
+          "date": "2026-10-15",
+          "opp": "WPG",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 34,
+          "savePct": 0.912,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020130,
+          "date": "2026-10-17",
+          "opp": "DAL",
+          "home": true,
+          "goalsAllowed": 4,
+          "sogFaced": 32,
+          "savePct": 0.875,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020166,
+          "date": "2026-10-23",
+          "opp": "MTL",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 27,
+          "savePct": 0.889,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020180,
+          "date": "2026-10-25",
+          "opp": "FLA",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 32,
+          "savePct": 0.906,
+          "win": false,
+          "shutout": false
+        }
+      ]
+    },
+    {
       "playerId": 8480280,
       "name": "Jeremy Swayman",
       "team": "BOS",
@@ -25431,102 +25361,6 @@
       ]
     },
     {
-      "playerId": 8481519,
-      "name": "Spencer Knight",
-      "team": "CHI",
-      "position": "G",
-      "games_played": 62,
-      "icetime": 222497,
-      "wins": 22,
-      "shutouts": 3,
-      "shotsFaced": 2770,
-      "sogFaced": 1800,
-      "goalsAllowed": 180,
-      "savePct": 0.9,
-      "GA60_proxy": 2.91,
-      "xGA60_proxy": 3.07,
-      "highDangerSavePct": 0.904,
-      "last7": [
-        {
-          "gameId": 2026020022,
-          "date": "2026-10-03",
-          "opp": "BUF",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 28,
-          "savePct": 0.857,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020050,
-          "date": "2026-10-06",
-          "opp": "STL",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 28,
-          "savePct": 0.929,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020078,
-          "date": "2026-10-10",
-          "opp": "CAR",
-          "home": true,
-          "goalsAllowed": 5,
-          "sogFaced": 39,
-          "savePct": 0.872,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020098,
-          "date": "2026-10-13",
-          "opp": "PIT",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 27,
-          "savePct": 0.889,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020114,
-          "date": "2026-10-15",
-          "opp": "WPG",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 34,
-          "savePct": 0.912,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020130,
-          "date": "2026-10-17",
-          "opp": "DAL",
-          "home": true,
-          "goalsAllowed": 4,
-          "sogFaced": 32,
-          "savePct": 0.875,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020166,
-          "date": "2026-10-23",
-          "opp": "MTL",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 27,
-          "savePct": 0.889,
-          "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
       "playerId": 8480843,
       "name": "Lukas Dostal",
       "team": "ANA",
@@ -25627,29 +25461,18 @@
       "name": "Ilya Sorokin",
       "team": "NYI",
       "position": "G",
-      "games_played": 62,
-      "icetime": 218635,
+      "games_played": 63,
+      "icetime": 222231,
       "wins": 34,
       "shutouts": 8,
-      "shotsFaced": 2596,
-      "sogFaced": 1704,
-      "goalsAllowed": 156,
-      "savePct": 0.908,
-      "GA60_proxy": 2.57,
-      "xGA60_proxy": 3.12,
-      "highDangerSavePct": 0.913,
+      "shotsFaced": 2646,
+      "sogFaced": 1742,
+      "goalsAllowed": 162,
+      "savePct": 0.907,
+      "GA60_proxy": 2.62,
+      "xGA60_proxy": 3.13,
+      "highDangerSavePct": 0.911,
       "last7": [
-        {
-          "gameId": 2026020008,
-          "date": "2026-09-30",
-          "opp": "TOR",
-          "home": false,
-          "goalsAllowed": 2,
-          "sogFaced": 26,
-          "savePct": 0.923,
-          "win": false,
-          "shutout": false
-        },
         {
           "gameId": 2026020029,
           "date": "2026-10-03",
@@ -25714,6 +25537,17 @@
           "sogFaced": 17,
           "savePct": 0.882,
           "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020181,
+          "date": "2026-10-25",
+          "opp": "DAL",
+          "home": false,
+          "goalsAllowed": 6,
+          "sogFaced": 38,
+          "savePct": 0.842,
+          "win": false,
           "shutout": false
         }
       ]
@@ -26107,29 +25941,18 @@
       "name": "Stuart Skinner",
       "team": "WPG",
       "position": "G",
-      "games_played": 57,
-      "icetime": 200914,
+      "games_played": 58,
+      "icetime": 204419,
       "wins": 26,
       "shutouts": 2,
-      "shotsFaced": 2387,
-      "sogFaced": 1472,
-      "goalsAllowed": 162,
+      "shotsFaced": 2429,
+      "sogFaced": 1493,
+      "goalsAllowed": 164,
       "savePct": 0.89,
-      "GA60_proxy": 2.9,
+      "GA60_proxy": 2.89,
       "xGA60_proxy": 3.08,
-      "highDangerSavePct": 0.889,
+      "highDangerSavePct": 0.89,
       "last7": [
-        {
-          "gameId": 2026020019,
-          "date": "2026-10-02",
-          "opp": "BOS",
-          "home": true,
-          "goalsAllowed": 4,
-          "sogFaced": 30,
-          "savePct": 0.867,
-          "win": false,
-          "shutout": false
-        },
         {
           "gameId": 2026020035,
           "date": "2026-10-04",
@@ -26194,6 +26017,113 @@
           "sogFaced": 38,
           "savePct": 0.921,
           "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020182,
+          "date": "2026-10-25",
+          "opp": "MTL",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 21,
+          "savePct": 0.905,
+          "win": false,
+          "shutout": false
+        }
+      ]
+    },
+    {
+      "playerId": 8479979,
+      "name": "Jake Oettinger",
+      "team": "DAL",
+      "position": "G",
+      "games_played": 63,
+      "icetime": 224445,
+      "wins": 41,
+      "shutouts": 7,
+      "shotsFaced": 2371,
+      "sogFaced": 1556,
+      "goalsAllowed": 152,
+      "savePct": 0.902,
+      "GA60_proxy": 2.44,
+      "xGA60_proxy": 2.61,
+      "highDangerSavePct": 0.896,
+      "last7": [
+        {
+          "gameId": 2026020057,
+          "date": "2026-10-08",
+          "opp": "BUF",
+          "home": false,
+          "goalsAllowed": 0,
+          "sogFaced": 25,
+          "savePct": 1.0,
+          "win": true,
+          "shutout": true
+        },
+        {
+          "gameId": 2026020077,
+          "date": "2026-10-10",
+          "opp": "PIT",
+          "home": false,
+          "goalsAllowed": 1,
+          "sogFaced": 20,
+          "savePct": 0.95,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020100,
+          "date": "2026-10-13",
+          "opp": "COL",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 25,
+          "savePct": 0.88,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020130,
+          "date": "2026-10-17",
+          "opp": "CHI",
+          "home": false,
+          "goalsAllowed": 0,
+          "sogFaced": 19,
+          "savePct": 1.0,
+          "win": true,
+          "shutout": true
+        },
+        {
+          "gameId": 2026020147,
+          "date": "2026-10-20",
+          "opp": "BOS",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 20,
+          "savePct": 0.9,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020161,
+          "date": "2026-10-22",
+          "opp": "WPG",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 19,
+          "savePct": 0.895,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020181,
+          "date": "2026-10-25",
+          "opp": "NYI",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 20,
+          "savePct": 0.85,
+          "win": true,
           "shutout": false
         }
       ]
@@ -26386,102 +26316,6 @@
           "sogFaced": 35,
           "savePct": 0.886,
           "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8479979,
-      "name": "Jake Oettinger",
-      "team": "DAL",
-      "position": "G",
-      "games_played": 62,
-      "icetime": 220845,
-      "wins": 40,
-      "shutouts": 7,
-      "shotsFaced": 2341,
-      "sogFaced": 1536,
-      "goalsAllowed": 149,
-      "savePct": 0.903,
-      "GA60_proxy": 2.43,
-      "xGA60_proxy": 2.62,
-      "highDangerSavePct": 0.898,
-      "last7": [
-        {
-          "gameId": 2026020043,
-          "date": "2026-10-05",
-          "opp": "SJS",
-          "home": true,
-          "goalsAllowed": 0,
-          "sogFaced": 13,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2026020057,
-          "date": "2026-10-08",
-          "opp": "BUF",
-          "home": false,
-          "goalsAllowed": 0,
-          "sogFaced": 25,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2026020077,
-          "date": "2026-10-10",
-          "opp": "PIT",
-          "home": false,
-          "goalsAllowed": 1,
-          "sogFaced": 20,
-          "savePct": 0.95,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020100,
-          "date": "2026-10-13",
-          "opp": "COL",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 25,
-          "savePct": 0.88,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020130,
-          "date": "2026-10-17",
-          "opp": "CHI",
-          "home": false,
-          "goalsAllowed": 0,
-          "sogFaced": 19,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2026020147,
-          "date": "2026-10-20",
-          "opp": "BOS",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 20,
-          "savePct": 0.9,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020161,
-          "date": "2026-10-22",
-          "opp": "WPG",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 19,
-          "savePct": 0.895,
-          "win": true,
           "shutout": false
         }
       ]
@@ -27735,6 +27569,102 @@
       ]
     },
     {
+      "playerId": 8475809,
+      "name": "Scott Wedgewood",
+      "team": "COL",
+      "position": "G",
+      "games_played": 49,
+      "icetime": 167422,
+      "wins": 33,
+      "shutouts": 4,
+      "shotsFaced": 1866,
+      "sogFaced": 1223,
+      "goalsAllowed": 102,
+      "savePct": 0.917,
+      "GA60_proxy": 2.19,
+      "xGA60_proxy": 2.6,
+      "highDangerSavePct": 0.889,
+      "last7": [
+        {
+          "gameId": 2025021238,
+          "date": "2026-04-07",
+          "opp": "STL",
+          "home": false,
+          "goalsAllowed": 1,
+          "sogFaced": 19,
+          "savePct": 0.947,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021289,
+          "date": "2026-04-13",
+          "opp": "EDM",
+          "home": false,
+          "goalsAllowed": 1,
+          "sogFaced": 31,
+          "savePct": 0.968,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021312,
+          "date": "2026-04-16",
+          "opp": "SEA",
+          "home": true,
+          "goalsAllowed": 0,
+          "sogFaced": 22,
+          "savePct": 1.0,
+          "win": true,
+          "shutout": true
+        },
+        {
+          "gameId": 2026020064,
+          "date": "2026-10-08",
+          "opp": "CGY",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 29,
+          "savePct": 0.897,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020107,
+          "date": "2026-10-14",
+          "opp": "DAL",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 22,
+          "savePct": 0.909,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020142,
+          "date": "2026-10-20",
+          "opp": "NJD",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 41,
+          "savePct": 0.902,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020183,
+          "date": "2026-10-25",
+          "opp": "NSH",
+          "home": false,
+          "goalsAllowed": 6,
+          "sogFaced": 35,
+          "savePct": 0.829,
+          "win": false,
+          "shutout": false
+        }
+      ]
+    },
+    {
       "playerId": 8474593,
       "name": "Jacob Markstrom",
       "team": "FLA",
@@ -27922,102 +27852,6 @@
           "sogFaced": 13,
           "savePct": 0.923,
           "win": true,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8475809,
-      "name": "Scott Wedgewood",
-      "team": "COL",
-      "position": "G",
-      "games_played": 48,
-      "icetime": 163828,
-      "wins": 33,
-      "shutouts": 4,
-      "shotsFaced": 1818,
-      "sogFaced": 1188,
-      "goalsAllowed": 96,
-      "savePct": 0.919,
-      "GA60_proxy": 2.11,
-      "xGA60_proxy": 2.58,
-      "highDangerSavePct": 0.895,
-      "last7": [
-        {
-          "gameId": 2025021209,
-          "date": "2026-04-04",
-          "opp": "DAL",
-          "home": false,
-          "goalsAllowed": 0,
-          "sogFaced": 18,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2025021238,
-          "date": "2026-04-07",
-          "opp": "STL",
-          "home": false,
-          "goalsAllowed": 1,
-          "sogFaced": 19,
-          "savePct": 0.947,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025021289,
-          "date": "2026-04-13",
-          "opp": "EDM",
-          "home": false,
-          "goalsAllowed": 1,
-          "sogFaced": 31,
-          "savePct": 0.968,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025021312,
-          "date": "2026-04-16",
-          "opp": "SEA",
-          "home": true,
-          "goalsAllowed": 0,
-          "sogFaced": 22,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2026020064,
-          "date": "2026-10-08",
-          "opp": "CGY",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 29,
-          "savePct": 0.897,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020107,
-          "date": "2026-10-14",
-          "opp": "DAL",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 22,
-          "savePct": 0.909,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020142,
-          "date": "2026-10-20",
-          "opp": "NJD",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 41,
-          "savePct": 0.902,
-          "win": false,
           "shutout": false
         }
       ]
@@ -28887,6 +28721,102 @@
       ]
     },
     {
+      "playerId": 8481033,
+      "name": "Akira Schmid",
+      "team": "FLA",
+      "position": "G",
+      "games_played": 40,
+      "icetime": 138428,
+      "wins": 19,
+      "shutouts": 2,
+      "shotsFaced": 1521,
+      "sogFaced": 937,
+      "goalsAllowed": 104,
+      "savePct": 0.889,
+      "GA60_proxy": 2.7,
+      "xGA60_proxy": 2.63,
+      "highDangerSavePct": 0.873,
+      "last7": [
+        {
+          "gameId": 2025021100,
+          "date": "2026-03-21",
+          "opp": "NSH",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 20,
+          "savePct": 0.8,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020016,
+          "date": "2026-10-01",
+          "opp": "SJS",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 32,
+          "savePct": 0.875,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020087,
+          "date": "2026-10-12",
+          "opp": "BUF",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 21,
+          "savePct": 0.857,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020091,
+          "date": "2026-10-13",
+          "opp": "CBJ",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 26,
+          "savePct": 0.885,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020112,
+          "date": "2026-10-15",
+          "opp": "VAN",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 17,
+          "savePct": 0.882,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020153,
+          "date": "2026-10-21",
+          "opp": "OTT",
+          "home": false,
+          "goalsAllowed": 5,
+          "sogFaced": 30,
+          "savePct": 0.833,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020180,
+          "date": "2026-10-25",
+          "opp": "CHI",
+          "home": false,
+          "goalsAllowed": 2,
+          "sogFaced": 22,
+          "savePct": 0.909,
+          "win": true,
+          "shutout": false
+        }
+      ]
+    },
+    {
       "playerId": 8479312,
       "name": "Alex Lyon",
       "team": "BUF",
@@ -28977,102 +28907,6 @@
           "goalsAllowed": 3,
           "sogFaced": 5,
           "savePct": 0.4,
-          "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8481033,
-      "name": "Akira Schmid",
-      "team": "FLA",
-      "position": "G",
-      "games_played": 39,
-      "icetime": 134833,
-      "wins": 18,
-      "shutouts": 2,
-      "shotsFaced": 1477,
-      "sogFaced": 915,
-      "goalsAllowed": 102,
-      "savePct": 0.889,
-      "GA60_proxy": 2.72,
-      "xGA60_proxy": 2.62,
-      "highDangerSavePct": 0.872,
-      "last7": [
-        {
-          "gameId": 2025021091,
-          "date": "2026-03-19",
-          "opp": "UTA",
-          "home": true,
-          "goalsAllowed": 0,
-          "sogFaced": 14,
-          "savePct": 1.0,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025021100,
-          "date": "2026-03-21",
-          "opp": "NSH",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 20,
-          "savePct": 0.8,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020016,
-          "date": "2026-10-01",
-          "opp": "SJS",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 32,
-          "savePct": 0.875,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020087,
-          "date": "2026-10-12",
-          "opp": "BUF",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 21,
-          "savePct": 0.857,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020091,
-          "date": "2026-10-13",
-          "opp": "CBJ",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 26,
-          "savePct": 0.885,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020112,
-          "date": "2026-10-15",
-          "opp": "VAN",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 17,
-          "savePct": 0.882,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020153,
-          "date": "2026-10-21",
-          "opp": "OTT",
-          "home": false,
-          "goalsAllowed": 5,
-          "sogFaced": 30,
-          "savePct": 0.833,
           "win": false,
           "shutout": false
         }
@@ -29943,6 +29777,102 @@
       ]
     },
     {
+      "playerId": 8481020,
+      "name": "Justus Annunen",
+      "team": "NSH",
+      "position": "G",
+      "games_played": 30,
+      "icetime": 97232,
+      "wins": 11,
+      "shutouts": 1,
+      "shotsFaced": 1195,
+      "sogFaced": 763,
+      "goalsAllowed": 75,
+      "savePct": 0.902,
+      "GA60_proxy": 2.78,
+      "xGA60_proxy": 3.04,
+      "highDangerSavePct": 0.894,
+      "last7": [
+        {
+          "gameId": 2025021144,
+          "date": "2026-03-26",
+          "opp": "NJD",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 29,
+          "savePct": 0.897,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021168,
+          "date": "2026-03-29",
+          "opp": "TBL",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 28,
+          "savePct": 0.893,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021243,
+          "date": "2026-04-07",
+          "opp": "ANA",
+          "home": false,
+          "goalsAllowed": 0,
+          "sogFaced": 43,
+          "savePct": 1.0,
+          "win": true,
+          "shutout": true
+        },
+        {
+          "gameId": 2025021267,
+          "date": "2026-04-11",
+          "opp": "MIN",
+          "home": true,
+          "goalsAllowed": 1,
+          "sogFaced": 22,
+          "savePct": 0.955,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021287,
+          "date": "2026-04-13",
+          "opp": "SJS",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 22,
+          "savePct": 0.909,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020154,
+          "date": "2026-10-22",
+          "opp": "BOS",
+          "home": false,
+          "goalsAllowed": 6,
+          "sogFaced": 31,
+          "savePct": 0.806,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020183,
+          "date": "2026-10-25",
+          "opp": "COL",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 21,
+          "savePct": 0.905,
+          "win": true,
+          "shutout": false
+        }
+      ]
+    },
+    {
       "playerId": 8478971,
       "name": "Connor Ingram",
       "team": "EDM",
@@ -30129,102 +30059,6 @@
           "goalsAllowed": 2,
           "sogFaced": 21,
           "savePct": 0.905,
-          "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8481020,
-      "name": "Justus Annunen",
-      "team": "NSH",
-      "position": "G",
-      "games_played": 29,
-      "icetime": 93632,
-      "wins": 10,
-      "shutouts": 1,
-      "shotsFaced": 1160,
-      "sogFaced": 742,
-      "goalsAllowed": 73,
-      "savePct": 0.902,
-      "GA60_proxy": 2.81,
-      "xGA60_proxy": 3.06,
-      "highDangerSavePct": 0.893,
-      "last7": [
-        {
-          "gameId": 2025021100,
-          "date": "2026-03-21",
-          "opp": "VGK",
-          "home": true,
-          "goalsAllowed": 1,
-          "sogFaced": 40,
-          "savePct": 0.975,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025021144,
-          "date": "2026-03-26",
-          "opp": "NJD",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 29,
-          "savePct": 0.897,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025021168,
-          "date": "2026-03-29",
-          "opp": "TBL",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 28,
-          "savePct": 0.893,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025021243,
-          "date": "2026-04-07",
-          "opp": "ANA",
-          "home": false,
-          "goalsAllowed": 0,
-          "sogFaced": 43,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2025021267,
-          "date": "2026-04-11",
-          "opp": "MIN",
-          "home": true,
-          "goalsAllowed": 1,
-          "sogFaced": 22,
-          "savePct": 0.955,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025021287,
-          "date": "2026-04-13",
-          "opp": "SJS",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 22,
-          "savePct": 0.909,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020154,
-          "date": "2026-10-22",
-          "opp": "BOS",
-          "home": false,
-          "goalsAllowed": 6,
-          "sogFaced": 31,
-          "savePct": 0.806,
           "win": false,
           "shutout": false
         }
@@ -30711,96 +30545,96 @@
       ]
     },
     {
-      "playerId": 8483710,
-      "name": "Dennis Hildeby",
-      "team": "TBL",
+      "playerId": 8482447,
+      "name": "Leevi Merilainen",
+      "team": "VAN",
       "position": "G",
-      "games_played": 23,
-      "icetime": 71396,
-      "wins": 7,
-      "shutouts": 1,
-      "shotsFaced": 973,
-      "sogFaced": 624,
-      "goalsAllowed": 57,
-      "savePct": 0.909,
-      "GA60_proxy": 2.87,
-      "xGA60_proxy": 3.39,
-      "highDangerSavePct": 0.899,
+      "games_played": 28,
+      "icetime": 89872,
+      "wins": 9,
+      "shutouts": 0,
+      "shotsFaced": 990,
+      "sogFaced": 691,
+      "goalsAllowed": 85,
+      "savePct": 0.877,
+      "GA60_proxy": 3.4,
+      "xGA60_proxy": 2.86,
+      "highDangerSavePct": 0.876,
       "last7": [
         {
-          "gameId": 2025020733,
-          "date": "2026-01-13",
-          "opp": "UTA",
+          "gameId": 2026020033,
+          "date": "2026-10-03",
+          "opp": "CGY",
+          "home": true,
+          "goalsAllowed": 1,
+          "sogFaced": 24,
+          "savePct": 0.958,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020061,
+          "date": "2026-10-08",
+          "opp": "CAR",
           "home": false,
-          "goalsAllowed": 6,
-          "sogFaced": 40,
-          "savePct": 0.85,
+          "goalsAllowed": 1,
+          "sogFaced": 15,
+          "savePct": 0.933,
           "win": false,
           "shutout": false
         },
         {
-          "gameId": 2025020762,
-          "date": "2026-01-17",
-          "opp": "WPG",
+          "gameId": 2026020071,
+          "date": "2026-10-10",
+          "opp": "NJD",
           "home": false,
           "goalsAllowed": 3,
-          "sogFaced": 30,
-          "savePct": 0.9,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020774,
-          "date": "2026-01-19",
-          "opp": "MIN",
-          "home": true,
-          "goalsAllowed": 0,
-          "sogFaced": 9,
-          "savePct": 1.0,
+          "sogFaced": 34,
+          "savePct": 0.912,
           "win": false,
           "shutout": false
         },
         {
-          "gameId": 2025021304,
-          "date": "2026-04-15",
-          "opp": "OTT",
+          "gameId": 2026020097,
+          "date": "2026-10-13",
+          "opp": "NYI",
           "home": false,
-          "goalsAllowed": 2,
-          "sogFaced": 37,
-          "savePct": 0.946,
+          "goalsAllowed": 3,
+          "sogFaced": 38,
+          "savePct": 0.921,
           "win": false,
           "shutout": false
         },
         {
-          "gameId": 2026020060,
-          "date": "2026-10-08",
-          "opp": "MIN",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 35,
-          "savePct": 0.943,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020123,
-          "date": "2026-10-17",
-          "opp": "VAN",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 14,
-          "savePct": 0.857,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020177,
-          "date": "2026-10-24",
-          "opp": "UTA",
+          "gameId": 2026020112,
+          "date": "2026-10-15",
+          "opp": "FLA",
           "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 39,
+          "savePct": 0.923,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020150,
+          "date": "2026-10-20",
+          "opp": "CAR",
+          "home": true,
           "goalsAllowed": 5,
-          "sogFaced": 28,
-          "savePct": 0.821,
+          "sogFaced": 42,
+          "savePct": 0.881,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020184,
+          "date": "2026-10-25",
+          "opp": "MIN",
+          "home": true,
+          "goalsAllowed": 4,
+          "sogFaced": 34,
+          "savePct": 0.882,
           "win": false,
           "shutout": false
         }
@@ -30898,102 +30732,6 @@
           "sogFaced": 20,
           "savePct": 0.95,
           "win": true,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8477484,
-      "name": "Spencer Martin",
-      "team": "NYR",
-      "position": "G",
-      "games_played": 7,
-      "icetime": 19560,
-      "wins": 1,
-      "shutouts": 0,
-      "shotsFaced": 244,
-      "sogFaced": 166,
-      "goalsAllowed": 24,
-      "savePct": 0.855,
-      "GA60_proxy": 4.42,
-      "xGA60_proxy": 3.32,
-      "highDangerSavePct": 0.855,
-      "last7": [
-        {
-          "gameId": 2025020697,
-          "date": "2026-01-10",
-          "opp": "BOS",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 14,
-          "savePct": 0.714,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020737,
-          "date": "2026-01-14",
-          "opp": "OTT",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 14,
-          "savePct": 0.857,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020755,
-          "date": "2026-01-17",
-          "opp": "PHI",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 28,
-          "savePct": 0.893,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020779,
-          "date": "2026-01-19",
-          "opp": "ANA",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 25,
-          "savePct": 0.84,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020808,
-          "date": "2026-01-23",
-          "opp": "SJS",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 31,
-          "savePct": 0.903,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020842,
-          "date": "2026-01-28",
-          "opp": "NYI",
-          "home": false,
-          "goalsAllowed": 5,
-          "sogFaced": 36,
-          "savePct": 0.861,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020113,
-          "date": "2026-10-15",
-          "opp": "NJD",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 18,
-          "savePct": 0.833,
-          "win": false,
           "shutout": false
         }
       ]
