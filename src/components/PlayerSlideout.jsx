@@ -10,7 +10,7 @@ import { DVP_NOTE, matchupText } from "../lib/grades.js";
 import { dvpFor } from "../lib/dvp.js";
 import { useScoredPool } from "../lib/data.js";
 import GoalieProfile from "./GoalieProfile.jsx";
-import { booksText, edgeColor, fmtAmerican, fmtEdge } from "../lib/bookOdds.js";
+import { booksText, fmtAmerican, fmtEdge, MARKET_NOTE } from "../lib/bookOdds.js";
 import { AllBookLinks, StatePicker } from "./BetLink.jsx";
 import { pointHeatText } from "../lib/pointHeat.js";
 import GamblyButton from "../components/GamblyButton.jsx";
@@ -105,7 +105,8 @@ function SkaterStats({ p }) {
       {p.book && (
         <StatRow
           label="Sportsbook anytime goal (best price)"
-          value={<span title={booksText(p.book)}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImplied}% vs ours {p.anytimeGoalPct}% · <span style={{ color: edgeColor(p.edge), fontWeight: 700 }}>edge {fmtEdge(p.edge)}</span></span>}
+          value={<span title={`${booksText(p.book)}
+${MARKET_NOTE}`}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImplied}% vs ours {p.anytimeGoalPct}% ({fmtEdge(p.edge)}) · market check <b>{p.market}%</b></span>}
         />
       )}
       <StatRow

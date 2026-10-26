@@ -9,6 +9,7 @@ import { estimatedToi, ppToiPerGame } from "./toi.js";
 import { last120 } from "./last120.js";
 import { fetchLineups, lineupPollMs } from "./lineups.js";
 import { applyLineups, STARTED } from "./slateOverlay.js";
+import { marketPct } from "./market.js";
 
 // ── Live slate pool ──────────────────────────────────────────────────────────
 // todays_pool.json is written by the pipeline (9 AM / 12 PM / 5:30 PM ET) with each skater's
@@ -78,7 +79,8 @@ function build() {
 }
 
 // Sportsbook price per skater: best anytime-goal price across US books (what you'd actually bet), its
-// implied chance (vig included — books' anytime prices are one-sided), and edge = our goal % minus it.
+// implied chance (vig included — books' anytime prices are one-sided), and edge = our goal % minus it, plus the
+// context-only market check (lib/market.js: half ours, half the book, vig out).
 function withBookOdds(players) {
   const book = odds?.players;
   const first = odds?.firstGoal; // first goal scorer prices — Ice Breaker promo nights only (build_odds.py)
@@ -89,7 +91,7 @@ function withBookOdds(players) {
     const o = book?.[p.playerId];
     if (!o) return p;
     const edge = p.anytimeGoalPct != null ? Math.round((p.anytimeGoalPct - o.bestImplied) * 10) / 10 : null;
-    return { ...p, book: o, bookBest: o.best, bookImplied: o.bestImplied, edge };
+    return { ...p, book: o, bookBest: o.best, bookImplied: o.bestImplied, edge, market: marketPct(p.anytimeGoalPct, o) };
   });
 }
 
@@ -198,6 +200,14 @@ function upcomingView(pool) {
 let viewDate = null;
 const pastPools = {};
 const getJson = (url) => fetch(url, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+// That night's own book price from the snapshot (2026-10-26): before this, a skater also on tonight's slate showed
+// tonight's price / edge on a past night (tonight's row is spread in first).
+function pastBook(p) {
+  if (p.bookBest == null) return { book: null, edge: null, market: null };
+  const book = { best: p.bookBest, bestBook: p.bookBestBook ?? null, bestImplied: p.bookImplied, medianImplied: p.bookMedianImplied ?? null, books: {} };
+  const edge = p.anytimeGoalPct != null && p.bookImplied != null ? Math.round((p.anytimeGoalPct - p.bookImplied) * 10) / 10 : null;
+  return { book, edge, market: marketPct(p.anytimeGoalPct, book) };
+}
 async function loadPastNight(date) {
   pastPools[date] = "loading";
   const [snap, res] = await Promise.all([getJson(`/data/projections/${date}.json`), getJson(`/data/results/${date}.json`)]);
@@ -212,7 +222,7 @@ async function loadPastNight(date) {
   const players = snap.players.map((p) => {
     const line = box.get(p.playerId);
     return {
-      ...(tonight.get(p.playerId) || {}), ...p,
+      ...(tonight.get(p.playerId) || {}), ...p, ...pastBook(p),
       opponentTeam: p.opponentTeam || p.opp, ShotsOnGoalPerGame: p.sogPg ?? tonight.get(p.playerId)?.ShotsOnGoalPerGame ?? null,
       gameState: "OFF", gameStarted: true, lineupStatus: null,
       actual: res ? (line ? { ...line } : { played: false }) : null,

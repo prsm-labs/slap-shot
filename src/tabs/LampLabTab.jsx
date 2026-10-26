@@ -190,7 +190,7 @@ export default function LampLabTab() {
                   <td className="mono" title={booksText(p.book)} style={{ whiteSpace: "nowrap" }}>
                     {p.book ? <BestPriceLink book={p.book} /> : "—"}
                   </td>
-                  <td className="mono" title={p.book ? edgeText(p) : undefined} style={{ color: edgeColor(p.edge), fontWeight: p.edge >= 3 ? 700 : undefined }}>{fmtEdge(p.edge)}</td>
+                  <td className="mono" title={p.book ? edgeText(p) : undefined} style={{ color: edgeColor(p.edge) }}>{fmtEdge(p.edge)}</td>
                   <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td>{p.slapScore}</td>
                   <td>{p.tier}</td>

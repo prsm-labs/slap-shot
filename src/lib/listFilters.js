@@ -128,7 +128,7 @@ export function buildGroups(ctx = {}) {
       { v: "breakout", label: "🚀 Breakout Watch", title: "Rising expected goals into a soft defense, outside the model's top 15%" },
       { v: "due", label: "🔥 Due + heating up", title: "No goal in 2+ games, expected goals last 5 at 1.3x+ the season rate, soft defense tonight, not a top-25% scorer — scored 6-13% above the model over 4 seasons" },
       { v: "pointDue", label: "🍎 Points due", title: "No point in 2+ games while his on-ice expected goals ran 1.2x+ the season rate, outside tonight's top 25% point chances" },
-      { v: "value", label: "💰 Value vs book", title: "Our goal % at least 3 points above the chance the best sportsbook price implies" },
+      { v: "value", label: "📖 Above book", title: "Our goal % at least 3 points above the chance the best sportsbook price implies. Context, not value: this group has scored nearer the book's number (9/29-10/24: we said 25.5%, book 20.6%, 18.9% scored)" },
       { v: "confirmed", label: "✅ In official lineup", title: "Only skaters in tonight's posted lineup (around warmups)" },
       { v: "role", label: "🪑? Role check", title: "Under 3 games for his team and off tonight's power-play units — kept out of Top 3 / PRISM Picks" },
       { v: "first", label: "📅 New to team", title: "No games with his team yet" },

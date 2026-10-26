@@ -20,6 +20,7 @@ export const PAIR_CORR = {
   team: { gg: 1.0, gp: 1.12, pp: 1.12 },
 };
 import { breakoutBoard } from "./breakout.js";
+import { marketPct } from "./market.js";
 
 // Levels (2026-10-23, user: mid-range + long-shot pairs, data-backed): All = the board as before (every band; the default),
 // 🛡️ Safe = both-hit 25%+ (point / SOG pairs),
@@ -50,7 +51,7 @@ export const PROPS = {
 
 export const MODES = [
   { key: "balanced", label: "⚖️ Balanced", blurb: "Strongest goal pairs by the model, best value goal pairs, teammate stacks, point and SOG pairs" },
-  { key: "value", label: "💰 Value vs book", blurb: "Goal + goal pairs, different games, ranked by expected return at the best book" },
+  { key: "value", label: "💰 Value vs book", blurb: "Goal + goal pairs, different games, ranked by expected return at the best book, using the market check chance (half ours, half the book)" },
   { key: "safest", label: "🛡️ Safest", blurb: "Highest chance both legs hit, any prop" },
   { key: "due", label: "🔥 Due & heating", blurb: "At least one leg is 🔥 Due + heating up, 🍎 Points due or on Breakout Watch" },
   { key: "soft", label: "▲ Soft matchups", blurb: "Both legs face one of tonight's softest defenses (top third by xGA allowed), any prop" },
@@ -108,6 +109,18 @@ function bookParlay(a, b, boost) {
   return { ...best, american: toAmerican(best.dec), boostedDec: boosted, boostedAmerican: toAmerican(boosted) };
 }
 
+// Expected return uses the market check chance (2026-10-26): each priced goal leg's chance is moved to half ours, half the
+// book (lib/market.js). With our chance alone the "value" pairs were just the ones we rated above the book -- and where we
+// disagreed, the book was closer. Locked records recompute it the same way (PairsTab fromRecord).
+export function marketPairChance(chance, legs) {
+  let c = chance;
+  for (const l of legs) {
+    const m = l.prop === "goal" && l.book ? marketPct(l.chance * 100, l.book) : null;
+    if (m != null && l.chance > 0) c *= m / 100 / l.chance;
+  }
+  return Math.min(0.99, c);
+}
+
 function makePair(a, b, boost) {
   const rel = relation(a, b);
   const ck = corrKey(a, b);
@@ -116,7 +129,7 @@ function makePair(a, b, boost) {
   const chance = Math.min(0.99, a.chance * b.chance * corr);
   const sameGame = rel !== "diff";
   const parlay = !sameGame && a.prop === "goal" && b.prop === "goal" ? bookParlay(a, b, boost) : null;
-  const ev = parlay ? chance * parlay.boostedDec - 1 : null;
+  const ev = parlay ? marketPairChance(chance, [a, b]) * parlay.boostedDec - 1 : null;
   const [x, y] = a.p.playerId < b.p.playerId ? [a, b] : [b, a];
   return {
     key: `${x.p.playerId}:${x.prop}|${y.p.playerId}:${y.prop}`,
@@ -266,7 +279,7 @@ function hotIds(players) {
 }
 
 // Blind-spot check: notable skaters tonight who aren't in any shown pair, with why they're notable and their
-// strongest prop. Notable = A/A+ grade, 🔥 due, 🍎 points due, 🚀 Breakout Watch, value vs book (edge >= 3), or a
+// strongest prop. Notable = A/A+ grade, 🔥 due, 🍎 points due, 🚀 Breakout Watch (rated-above-book dropped 2026-10-26), or a
 // B-or-better grade against a soft defense.
 export function notInPairs(players, pairs, { includeStarted = false } = {}) {
   const used = new Set(pairs.flatMap((pr) => pr.legs.map((l) => l.p.playerId)));
@@ -281,7 +294,6 @@ export function notInPairs(players, pairs, { includeStarted = false } = {}) {
     if (p.dueHeat) why.push("🔥 due");
     if (p.pointHeat) why.push("🍎 points due");
     if (hot.breakout.has(p.playerId)) why.push("🚀 breakout");
-    if (p.edge != null && p.edge >= 3) why.push(`💰 edge +${p.edge.toFixed(1)}`);
     if (p.oppSoftPct >= SOFT_D && /^[AB]/.test(g)) why.push("▲ soft D");
     if (!why.length) continue;
     const legs = ["goal", "point", "sog3"].map((k) => legOf(p, k)).filter(Boolean);

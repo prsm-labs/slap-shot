@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useScoredPool } from "../lib/data.js";
 import { LADDER_BANDS, ladderPrice, teamLadder } from "../lib/ladder.js";
 import { projectGoalie } from "../lib/crease.js";
-import { fmtAmerican, fmtEdge, edgeColor, booksText } from "../lib/bookOdds.js";
+import { fmtAmerican, booksText, MARKET_NOTE } from "../lib/bookOdds.js";
 import { matchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { lineupMaps, skaterStatus, useLineups } from "../lib/lineups.js";
@@ -40,7 +40,7 @@ function PickLine({ p, statusOf, alt }) {
           <span title={p.book ? booksText(p.book) : "No sportsbook price yet — band uses our fair price"}>
             {price?.priced ? <BestPriceLink book={p.book} /> : <span style={muted}>fair {fmtAmerican(price?.am)}</span>}
           </span>
-          {p.edge != null && <span style={{ color: edgeColor(p.edge), fontWeight: 700 }}> {fmtEdge(p.edge)}</span>}
+          {p.market != null && <span style={muted} title={MARKET_NOTE}> · mkt {p.market}%</span>}
         </div>
       </div>
       {!alt && <GradeBadge grade={p.effectiveGrade} />}
@@ -86,7 +86,7 @@ function TeamSide({ team, players, goalieInfo, statusOf }) {
         </div>
       ))}
       <div style={{ display: "grid", gridTemplateColumns: "54px 1fr", gap: 6, padding: "5px 0", borderTop: "1px solid var(--border)" }}>
-        <div className="mono" title="Best value on the team not already shown above" style={{ fontSize: 9, fontWeight: 700, ...muted, paddingTop: 6 }}>HM</div>
+        <div className="mono" title="Highest market check on the team not already shown above" style={{ fontSize: 9, fontWeight: 700, ...muted, paddingTop: 6 }}>HM</div>
         <div>{ladder.honorable ? <PickLine p={ladder.honorable} statusOf={statusOf} /> : <span className="mono" style={{ fontSize: 10, ...muted }}>—</span>}</div>
       </div>
     </div>
@@ -131,8 +131,9 @@ export default function LadderTab() {
     <div>
       <div className="note">
         🪜 <b>Game Ladder</b> — each team's anytime-goal picks from favorite to super-deep longshot, banded by the best sportsbook
-        price ({LADDER_BANDS.map((b) => `${b.short} ${b.title.replace("Best price ", "")}`).join(" · ")}). Inside a band the pick is the
-        best value — our goal % minus the book's implied % — with the next two below it. HM = best value left on the team. No price
+        price ({LADDER_BANDS.map((b) => `${b.short} ${b.title.replace("Best price ", "")}`).join(" · ")}). Inside a band the pick has the
+        highest market check (mkt: half our goal %, half the book's, vig out — where we and the book disagreed, the book was closer),
+        with the next two below it. HM = highest market check left on the team. No price
         yet = banded by our fair price. Goalie and defense lines are context: tonight's goal % already includes the opponent's
         defense; goalie save % / GSAx and defense-vs-position added nothing in our backtests.
       </div>

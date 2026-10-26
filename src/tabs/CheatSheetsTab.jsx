@@ -13,7 +13,7 @@ import LineupBadge from "../components/LineupBadge.jsx";
 import { filterPositions, usePosition } from "../lib/positionFilter.js";
 import { filterPlayers, matchupKey, useMatchup, inScope } from "../lib/matchupFilter.js";
 import { lineupMaps, skaterStatus, startingGoalie, useLineups } from "../lib/lineups.js";
-import { booksText, edgeColor, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from "../lib/bookOdds.js";
+import { booksText, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from "../lib/bookOdds.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import PrismPicks from "../components/PrismPicks.jsx";
@@ -146,15 +146,16 @@ function CheatSheetMain() {
     .sort((a, b) => (b.anytimePointPct ?? 0) - (a.anytimePointPct ?? 0))
     .slice(0, 5);
   const shotCandidates = [...inGame].sort((a, b) => (b.ShotsOnGoalPerGame || 0) - (a.ShotsOnGoalPerGame || 0)).slice(0, 5);
-  // Our goal % vs the best sportsbook anytime-goal price (lib/data.js): biggest gaps either way.
+  // Our goal % vs the best sportsbook anytime-goal price (lib/data.js): biggest gaps either way. 2026-10-26: context lists with
+  // the market check, no longer value / fade -- where we disagreed, the book was closer (lib/market.js).
   const priced = inGame.filter((p) => p.edge != null);
   const bestValue = [...priced].filter((p) => p.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5);
   const overvalued = [...priced].filter((p) => p.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5);
   const edgeRow = (p) => (
     <span title={`${edgeText(p)}
 ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
-      <span style={{ color: edgeColor(p.edge) }}>{fmtEdge(p.edge)}</span>
-      <div style={{ fontSize: 9, fontWeight: 400, color: "var(--muted)" }}>{p.anytimeGoalPct}% vs {p.book.bestImplied}% · {fmtAmerican(p.book.best)}</div>
+      <span>mkt {p.market}%</span>
+      <div style={{ fontSize: 9, fontWeight: 400, color: "var(--muted)" }}>{p.anytimeGoalPct}% vs {p.book.bestImplied}% ({fmtEdge(p.edge)}) · {fmtAmerican(p.book.best)}</div>
     </span>
   );
 
@@ -194,9 +195,9 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
           renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
         {priced.length > 0 && (
           <>
-            <ListCard title="💰 Best Value vs Book" sub="Anytime goal: our chance most above the best sportsbook price" items={bestValue}
+            <ListCard title="📖 We Rate Higher Than the Book" sub="Anytime goal, our chance most above the best price. Context, not value: this group has scored nearer the book's number (we said 25.5%, book 20.6%, 18.9% scored). mkt = market check" items={bestValue}
               renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
-            <ListCard title="📉 Overvalued by Books" sub="Priced shorter than our chance supports — the popular names to fade" items={overvalued}
+            <ListCard title="📖 Book Rates Higher Than Us" sub="Priced shorter than our chance. Not a fade: these have scored at about the book's number (we said 17.4%, book 22.5%, 24.0% scored). mkt = market check" items={overvalued}
               renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
           </>
         )}

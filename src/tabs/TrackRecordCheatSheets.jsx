@@ -6,6 +6,7 @@ import { fmtAmerican } from "../lib/bookOdds.js";
 // (public/data/projections/<date>.json -> track_record_2026.json "rows"), same ranking as CheatSheetsTab.jsx:
 //   Goal Candidates = top 5 by goal %, Point Candidates = top 5 by point %, Shots on Goal Candidates = top 5 by SOG/GP,
 //   Best Value vs Book = goal % minus best-price implied >= 3 (top 5 by edge), Overvalued by Books = most negative edge.
+//   (2026-10-26: titled "We Rate Higher Than the Book" / "Book Rates Higher Than Us" -- context lists, not value / fade.)
 // Ranked among skaters who played (Cheat Sheets hides OUT players and, once lineups are official, scratches), so a
 // scratch never takes a slot. The page itself re-scores with live goalie / lineup news, so a list seen just before puck
 // drop can differ slightly from the snapshot (taken at the last pipeline run before first puck).
@@ -37,16 +38,16 @@ const LISTS = [
     note: "Ranked by season SOG per game (as on the page) and graded on 3+ shots on goal; expected = our 3+ SOG chance.",
   },
   {
-    key: "value", label: "💰 Best Value vs Book", short: "scored", since: "2026-10-13", priced: true,
+    key: "value", label: "📖 We Rate Higher Than the Book", short: "scored", since: "2026-10-13", priced: true,
     pick: (rs) => rs.filter((r) => edgeOf(r) != null && edgeOf(r) >= VALUE_EDGE && r.proj.bookBest != null).sort((a, b) => edgeOf(b) - edgeOf(a)),
     chance: (r) => r.proj.anytimeGoalPct, hit: (a) => a.g >= 1, stat: (a) => `${a.g} G`, shown: (r) => `+${edgeOf(r).toFixed(1)} · ${fmtAmerican(r.proj.bookBest)}`,
-    note: "Anytime goal, our chance at least 3 points above the best sportsbook price. Units = 1 unit on each at that best price. Odds started 10/13.",
+    note: "Anytime goal, our chance at least 3 points above the best sportsbook price (the old 💰 Best Value list). Units = 1 unit on each at that best price. Odds started 10/13.",
   },
   {
-    key: "over", label: "📉 Overvalued by Books", short: "scored", since: "2026-10-13", priced: true,
+    key: "over", label: "📖 Book Rates Higher Than Us", short: "scored", since: "2026-10-13", priced: true,
     pick: (rs) => rs.filter((r) => edgeOf(r) != null && edgeOf(r) < 0 && r.proj.bookBest != null).sort((a, b) => edgeOf(a) - edgeOf(b)),
     chance: (r) => r.proj.anytimeGoalPct, hit: (a) => a.g >= 1, stat: (a) => `${a.g} G`, shown: (r) => `${edgeOf(r).toFixed(1)} · ${fmtAmerican(r.proj.bookBest)}`,
-    note: "The names to fade: the book priced them shorter than our chance. A fade works if they score LESS than the book said; units = 1 unit backing each (negative is good for the fade).",
+    note: "The book priced them shorter than our chance (the old 📉 Overvalued / fade list). Units = 1 unit backing each at the best price; a fade would have worked only if they scored LESS than the book said.",
   },
 ];
 

@@ -1,9 +1,10 @@
 // Game ladder (Scouting -> 🪜 Game Ladder): for each team tonight, the best anytime-goal pick in each price band —
 // favorite down to super-deep longshot — the way a handicapper lays out a game sheet.
 // Band = the skater's best sportsbook price (anytime goal); with no price yet, the fair price from our goal %.
-// Within a band the pick is the best value: our goal % minus the book's implied % (vig included), so the
-// comparison is like-for-like inside a band. Unpriced skaters rank after priced ones, by our goal %.
-// Honorable mention = the best value on the team not already shown (band pick or alternate).
+// Within a band the pick has the highest market check (lib/market.js: half our goal %, half the book's, vig out); until
+// 2026-10-26 it was the biggest edge (ours minus the book), but where we disagreed the book was closer.
+// Unpriced skaters rank after priced ones, by our goal %.
+// Honorable mention = the highest market check on the team not already shown (band pick or alternate).
 export const LADDER_BANDS = [
   { key: "fav", label: "Favorite", short: "FAV", max: 249, title: "Best price +249 or shorter" },
   { key: "second", label: "Secondary", short: "2ND", max: 399, title: "+250 to +399" },
@@ -27,7 +28,7 @@ export function ladderPrice(p) {
 
 const bandOf = (am) => LADDER_BANDS.find((b) => am <= b.max) || LADDER_BANDS[LADDER_BANDS.length - 1];
 const valueSort = (a, b) =>
-  (b.edge != null) - (a.edge != null) || (b.edge ?? 0) - (a.edge ?? 0) || (b.anytimeGoalPct ?? 0) - (a.anytimeGoalPct ?? 0);
+  (b.market != null) - (a.market != null) || (b.market ?? 0) - (a.market ?? 0) || (b.anytimeGoalPct ?? 0) - (a.anytimeGoalPct ?? 0);
 
 // players: one team's skaters tonight (already filtered for scratches / position). Returns
 // { bands: [{ ...band, pick, alts: [up to 2] }], honorable, count }.
@@ -43,6 +44,6 @@ export function teamLadder(players, { alts = 2 } = {}) {
     for (const p of inBand.slice(0, 1 + alts)) used.add(p.playerId);
     return { ...band, pick, alts: inBand.slice(1, 1 + alts), size: inBand.length };
   });
-  const honorable = rows.map((r) => r.p).filter((p) => !used.has(p.playerId) && p.edge != null).sort(valueSort)[0] || null;
+  const honorable = rows.map((r) => r.p).filter((p) => !used.has(p.playerId) && p.market != null).sort(valueSort)[0] || null;
   return { bands, honorable, count: rows.length };
 }

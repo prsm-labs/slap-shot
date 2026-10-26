@@ -42,7 +42,8 @@ const COLUMNS = [
   ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
   ["bookBest", "Book Odds", "Best anytime-goal price across US sportsbooks (hover for each book). Priced once per game at the last pipeline run before puck drop"],
-  ["edge", "Edge", "Our goal % minus the chance the best book price implies (vig included). Positive = we rate him higher than the book. Note: our A/A+ goal % have run a few points high this season"],
+  ["edge", "vs Book", "Our goal % minus the chance the best book price implies (vig included). Not a value signal: where we and the book disagree, the book has been closer (rated 3+ pts above it: we said 25.5%, book 20.6%, 18.9% scored, 9/29-10/24)"],
+  ["market", "Market %", "Market check: half our goal %, half the book's best price with the vig taken out — beat both on 9/29-10/24. Context only, not in our grades"],
   ["multiGoalPct", "2+ Goals %", "Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed"],
   ["tier", "Tier"],
   ["dvpSoft", "D vs Pos", "What tonight's opponent allows to this position per game (rank of 32, 1 = most) — context only: the position split wasn't predictive beyond overall defense (▲ / ▼ on the grade)"],
@@ -134,9 +135,11 @@ export default function AllMatchupsTab() {
                   <td className="mono" title={p.book ? Object.entries(p.book.books).map(([b, v]) => `${b} ${fmtAmerican(v)}`).join(" · ") + (p.book.open ? ` — opened ${fmtAmerican(p.book.open.best)} ${p.book.open.bestBook}` : "") : "No sportsbook price"} style={{ whiteSpace: "nowrap" }}>
                     {p.book ? <BestPriceLink book={p.book} /> : "—"}
                   </td>
-                  <td className="mono" title={p.book ? `Ours ${p.anytimeGoalPct}% vs book ${p.book.bestImplied}% (${fmtAmerican(p.book.best)})` : undefined}
-                    style={{ color: p.edge == null ? undefined : p.edge >= 3 ? "var(--accent2)" : p.edge < 0 ? "var(--muted)" : undefined, fontWeight: p.edge >= 3 ? 700 : undefined }}>
+                  <td className="mono" title={p.book ? `Ours ${p.anytimeGoalPct}% vs book ${p.book.bestImplied}% (${fmtAmerican(p.book.best)})` : undefined}>
                     {p.edge == null ? "—" : `${p.edge > 0 ? "+" : ""}${p.edge.toFixed(1)}`}
+                  </td>
+                  <td className="mono" title={p.market != null ? `Ours ${p.anytimeGoalPct}% · book ${p.book.bestImplied}% → market check ${p.market}%` : "No sportsbook price yet"}>
+                    {p.market != null ? `${p.market}%` : "—"}
                   </td>
                   <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
                   <td><span className={`tier-pill ${TIER_CLASS[p.tier] || "tier-ignore"}`}>{p.tier}</span></td>

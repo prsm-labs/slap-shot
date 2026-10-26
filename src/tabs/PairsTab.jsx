@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useScoredPool } from "../lib/data.js";
-import { buildPairs, LEVELS, MAX_PAIRS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican, toDecimal } from "../lib/pairs.js";
+import { buildPairs, LEVELS, marketPairChance, MAX_PAIRS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican, toDecimal } from "../lib/pairs.js";
 import { filterPlayers, teamsOf, useMatchup } from "../lib/matchupFilter.js";
 import { useH2HGrades } from "../lib/h2h.js";
 import { BOOK_NAMES, fmtAmerican, pairBetUrl } from "../lib/bookOdds.js";
@@ -43,7 +43,7 @@ function fromRecord(r, byId, boost) {
   }
   return {
     key: r.key, section: r.section, rel: r.rel, corr: r.corr, chance, fair: r.fair, sameGame: r.rel !== "diff", legs, parlay,
-    ev: parlay ? chance * parlay.boostedDec - 1 : null, starRank: r.starRank ?? null, star: r.star != null ? { score: r.star } : null,
+    ev: parlay ? marketPairChance(chance, legs) * parlay.boostedDec - 1 : null, starRank: r.starRank ?? null, star: r.star != null ? { score: r.star } : null,
   };
 }
 
@@ -217,7 +217,7 @@ function PriceLine({ pr, boost }) {
       {boost > 0 && <span>{Math.round(boost * 100)}% boost → <b>{fmtAmerican(parlay.boostedAmerican)}</b></span>}
       <span style={muted}>fair {fmtAmerican(pr.fair)}</span>
       <PairBet pr={pr} />
-      <span style={{ color: pr.ev > 0 ? "var(--accent2)" : "var(--muted)", fontWeight: 700 }} title="Expected return per 1 unit: chance both hit x payout - 1">
+      <span style={{ color: pr.ev > 0 ? "var(--accent2)" : "var(--muted)", fontWeight: 700 }} title="Expected return per 1 unit at the market check: chance both hit (each goal leg half ours, half the book, vig out) x payout - 1">
         EV {pr.ev > 0 ? "+" : ""}{(pr.ev * 100).toFixed(0)}%
       </span>
     </div>
@@ -237,7 +237,7 @@ function whyLine(pr, defRank) {
   if (hot.length) out.push(`${hot.map((l) => l.p.name.split(" ").pop()).join(" & ")} due + heating`);
   if (pr.rel === "team" && pr.corr > 1) out.push("teammates — a goal by one is often a point for the other");
   if (pr.legs.every((l) => l.p.lineupStatus === "dressed")) out.push("both in official lineups");
-  if (pr.ev != null && pr.ev > 0) out.push(`priced ${Math.round(pr.ev * 100)}% above fair`);
+  if (pr.ev != null && pr.ev > 0) out.push(`pays ${Math.round(pr.ev * 100)}% above the market check`);
   const tough = pr.legs.filter((l) => { const d = defRank.get(l.p.opponentTeam); return d && d.rank > d.of * 0.67; });
   if (tough.length) out.push(`watch: ${tough.map((l) => l.p.name.split(" ").pop()).join(" & ")} vs a tough defense`);
   return out;

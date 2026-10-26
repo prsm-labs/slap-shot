@@ -1,13 +1,17 @@
 import { useSyncExternalStore } from "react";
+import { marketPct, MARKET_NOTE } from "./market.js";
+
+export { MARKET_DEVIG, MARKET_NOTE, marketPct } from "./market.js";
 
 // Sportsbook anytime-goal prices on a skater (set in lib/data.js from public/data/odds/<date>.json):
-// p.book = { best, bestBook, bestImplied, medianImplied, books, open? }, p.edge = our goal % minus bestImplied.
-// Edge >= VALUE_EDGE = "value" (same cut as the 💰 Value vs book filter).
-export const VALUE_EDGE = 3;
+// p.book = { best, bestBook, bestImplied, medianImplied, books, open? }, p.edge = our goal % minus bestImplied,
+// p.market = the market check (lib/market.js). 2026-10-26: the edge is shown neutrally ("vs book"), not as value --
+// where we and the book disagreed, the book was closer.
+export const VALUE_EDGE = 3; // "rated 3+ pts above the book" cut (filter tag / Cheat Sheets list) -- not a value signal
 
 export const fmtAmerican = (v) => (v == null ? "—" : v > 0 ? `+${v}` : `${v}`);
 export const fmtEdge = (e) => (e == null ? "—" : `${e > 0 ? "+" : ""}${e.toFixed(1)}`);
-export const edgeColor = (e) => (e == null ? undefined : e >= VALUE_EDGE ? "var(--accent2)" : e < 0 ? "var(--muted)" : undefined);
+export const edgeColor = () => undefined; // neutral since 2026-10-26 (was accent at >= VALUE_EDGE, muted below 0)
 
 // "DK +150 · FD +150 · MGM +165 — opened +140 DK"
 export function booksText(book) {
@@ -16,10 +20,12 @@ export function booksText(book) {
   return book.open ? `${all} — opened ${fmtAmerican(book.open.best)} ${book.open.bestBook}` : all;
 }
 
-// "Ours 49.2% vs book 37.7% (+165 MGM)"
+// "Ours 49.2% vs book 37.7% (+165 MGM) — +11.5 pts vs the book · market check 41.5%" + the market note
 export function edgeText(p) {
   if (!p.book) return "No sportsbook price yet";
-  return `Ours ${p.anytimeGoalPct}% vs book ${p.book.bestImplied}% (${fmtAmerican(p.book.best)} ${p.book.bestBook}) — edge ${fmtEdge(p.edge)} pts`;
+  const mkt = p.market ?? marketPct(p.anytimeGoalPct, p.book);
+  return `Ours ${p.anytimeGoalPct}% vs book ${p.book.bestImplied}% (${fmtAmerican(p.book.best)} ${p.book.bestBook}) — ${fmtEdge(p.edge)} pts vs the book · market check ${mkt}%
+${MARKET_NOTE}`;
 }
 
 // ── Tap-to-bet links (build_odds.py stores p.book.links {DK, FD, MGM, BR} from The Odds API; no credits per click) ──

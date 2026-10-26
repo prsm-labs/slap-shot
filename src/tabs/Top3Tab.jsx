@@ -87,7 +87,7 @@ function Top3Card({ pick, flipped, onFlip, poolById }) {
                 {full?.book && (
                   <Pill color={c} title={`${edgeText(full)}
 ${booksText(full.book)}`}>
-                    Book {fmtAmerican(full.book.best)} · edge <span style={{ color: edgeColor(full.edge) }}>{fmtEdge(full.edge)}</span>
+                    Book {fmtAmerican(full.book.best)} · <span style={{ color: edgeColor(full.edge) }}>{fmtEdge(full.edge)}</span> vs book · mkt {full.market}%
                   </Pill>
                 )}
                 <H2HCell playerId={p.playerId} compact />
