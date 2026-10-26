@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-25 17:35",
+  "generated": "2026-10-26 07:08",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 72,
-  "up": 47,
+  "count": 73,
+  "up": 48,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -61,11 +61,20 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 2,
+     "team": "Dallas Stars"
+    },
     "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -96,13 +105,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 10,
-     "goals": 0,
+     "gamesPlayed": 11,
+     "goals": 1,
      "assists": 0,
-     "points": 0,
+     "points": 1,
      "plusMinus": 0,
      "pim": 2,
-     "shots": 11,
+     "shots": 13,
      "team": "Dallas Stars"
     },
     "last": {
@@ -115,9 +124,73 @@
      "shots": 83,
      "team": "Dallas Stars"
     },
-    "careerGp": 96,
-    "careerG": 14,
-    "careerP": 31
+    "careerGp": 97,
+    "careerG": 15,
+    "careerP": 32
+   }
+  },
+  {
+   "playerId": 8486130,
+   "name": "Dylan Hryckowian",
+   "team": "DAL",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2004-05-19",
+   "sweater": 46,
+   "draft": null,
+   "recalledOn": "2026-10-25",
+   "from": "Texas",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-24",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-10-25",
+     "type": "up",
+     "club": "Texas"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 3,
+     "assists": 5,
+     "points": 8,
+     "plusMinus": 1,
+     "pim": 8,
+     "team": "Texas Stars"
+    },
+    "last": {
+     "gamesPlayed": 12,
+     "goals": 3,
+     "assists": 3,
+     "points": 6,
+     "plusMinus": 2,
+     "pim": 8,
+     "team": "Texas Stars"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Dallas Stars"
+    },
+    "last": null,
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -232,7 +305,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Winnipeg Jets"
+    },
     "last": {
      "gamesPlayed": 32,
      "goals": 1,
@@ -243,7 +325,7 @@
      "shots": 37,
      "team": "Winnipeg Jets"
     },
-    "careerGp": 32,
+    "careerGp": 33,
     "careerG": 1,
     "careerP": 5
    }
@@ -565,13 +647,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 0,
      "pim": 2,
-     "shots": 0,
+     "shots": 1,
      "team": "Colorado Avalanche"
     },
     "last": {
@@ -584,7 +666,7 @@
      "shots": 7,
      "team": "Colorado Avalanche"
     },
-    "careerGp": 13,
+    "careerGp": 14,
     "careerG": 0,
     "careerP": 0
    }
@@ -1315,7 +1397,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 4,
      "assists": 4,
      "points": 8,
@@ -1471,16 +1553,16 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "wins": 2,
-     "losses": 1,
+     "losses": 2,
      "otLosses": 0,
      "shutouts": 0,
-     "goalsAgainst": 12,
-     "shotsAgainst": 94,
+     "goalsAgainst": 15,
+     "shotsAgainst": 118,
      "team": "Toronto Marlies",
-     "savePct": 0.872,
-     "gaa": 2.96
+     "savePct": 0.873,
+     "gaa": 2.97
     },
     "last": {
      "gamesPlayed": 37,
@@ -1558,13 +1640,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 0,
-     "shots": 1,
+     "shots": 2,
      "team": "Florida Panthers"
     },
     "last": {
@@ -1577,7 +1659,7 @@
      "shots": 25,
      "team": "Florida Panthers"
     },
-    "careerGp": 80,
+    "careerGp": 81,
     "careerG": 6,
     "careerP": 15
    }
@@ -1773,12 +1855,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -1,
-     "pim": 5,
+     "pim": 7,
      "shots": 2,
      "team": "New York Islanders"
     },
@@ -1792,7 +1874,7 @@
      "shots": 9,
      "team": "Tampa Bay Lightning"
     },
-    "careerGp": 111,
+    "careerGp": 112,
     "careerG": 16,
     "careerP": 26
    }
@@ -2675,11 +2757,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": -6,
+     "plusMinus": -7,
      "pim": 2,
      "team": "Chicago Wolves"
     },
@@ -3403,13 +3485,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -1,
      "pim": 2,
-     "shots": 8,
+     "shots": 9,
      "team": "Minnesota Wild"
     },
     "last": {
@@ -3422,7 +3504,7 @@
      "shots": 26,
      "team": "Minnesota Wild"
     },
-    "careerGp": 458,
+    "careerGp": 459,
     "careerG": 58,
     "careerP": 111
    }
@@ -3862,11 +3944,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": 5,
+     "plusMinus": 4,
      "pim": 0,
      "shots": 8,
      "team": "Minnesota Wild"
@@ -3881,7 +3963,7 @@
      "shots": 4,
      "team": "Minnesota Wild"
     },
-    "careerGp": 49,
+    "careerGp": 50,
     "careerG": 2,
     "careerP": 9
    }
@@ -3968,10 +4050,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 1,
-     "assists": 1,
-     "points": 2,
+     "assists": 2,
+     "points": 3,
      "plusMinus": -2,
      "pim": 0,
      "team": "Rockford IceHogs"
@@ -4525,13 +4607,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 3,
      "assists": 0,
      "points": 3,
-     "plusMinus": 1,
+     "plusMinus": 2,
      "pim": 7,
-     "shots": 15,
+     "shots": 18,
      "team": "Dallas Stars"
     },
     "last": {
@@ -4544,7 +4626,7 @@
      "shots": 24,
      "team": "Dallas Stars"
     },
-    "careerGp": 35,
+    "careerGp": 36,
     "careerG": 6,
     "careerP": 9
    }
@@ -4582,13 +4664,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -2,
      "pim": 2,
-     "shots": 9,
+     "shots": 13,
      "team": "Dallas Stars"
     },
     "last": {
@@ -4601,7 +4683,7 @@
      "shots": 61,
      "team": "Dallas Stars"
     },
-    "careerGp": 376,
+    "careerGp": 377,
     "careerG": 45,
     "careerP": 106
    }
