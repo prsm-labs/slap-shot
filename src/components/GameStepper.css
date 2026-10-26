@@ -11,3 +11,10 @@
 @keyframes gs-in{from{opacity:0;transform:translate(-50%,8px);}to{opacity:1;transform:translate(-50%,0);}}
 @media (max-width:600px){.gs-side{display:none;}.gs-btn{flex:0 0 auto;padding:8px 14px;font-size:15px;}.gs-now{flex:1 1 auto;}}
 @media (prefers-reduced-motion:reduce){.gs-toast{animation:none;}}
+/* ▾ Expand / ▴ Collapse: the strip opens into a full grid of game cards */
+.strip-expanded{display:grid !important;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));overflow-x:visible !important;scroll-snap-type:none !important;}
+.strip-expanded > *{width:auto !important;min-width:0 !important;}
+.strip-toggle{display:flex !important;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:64px !important;width:64px;text-align:center !important;}
+.strip-expanded > .strip-toggle{width:auto;}
+.strip-toggle .st-icon{font-size:16px;line-height:1;color:var(--accent);}
+.strip-toggle .st-label{font-size:11px;color:var(--muted);}

@@ -216,6 +216,8 @@ export default function LiveTab() {
   const anyStarted = data?.games.some((g) => LIVE.has(g.state) || DONE.has(g.state));
   const anyLive = data?.games.some((g) => LIVE.has(g.state));
   const today = easternDate();
+  // 2026-10-26 (user): on the strip's own night the header strip (▾ Expand for a full grid) picks the game -- no second set of cards
+  const stripNight = date === (viewDate || today);
 
   return (
     <div>
@@ -255,7 +257,11 @@ export default function LiveTab() {
       {view === "games" && data && data.games.length === 0 && <div className="note">No NHL games on this date.</div>}
 
       {/* 2026-10-22 (user: CourtIQ's Live is the standard): compact score cards; tap one to open its box score right below */}
-      {view === "games" && data && data.games.length > 0 && (
+      {view === "games" && data && data.games.length > 1 && stripNight && boxGame && (() => {
+        const g = data.games.find((x) => x.gameId === boxGame);
+        return g ? <div className="mono" style={{ fontSize: 11, color: "var(--muted)", margin: "0 0 8px" }}>Showing {g.away.abbrev} @ {g.home.abbrev} · pick another game in the strip up top (▾ Expand to see them all, or swipe / ← →).</div> : null;
+      })()}
+      {view === "games" && data && data.games.length > 0 && !stripNight && (
         <div className="score-grid">
           {data.games.filter((g) => inScope(gameKeys.get(g.gameId), gameFilter)).map((g) => {
             const live = LIVE.has(g.state), started = live || DONE.has(g.state);

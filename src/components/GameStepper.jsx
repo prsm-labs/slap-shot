@@ -9,6 +9,31 @@ import './GameStepper.css'
 //    something that scrolls sideways (tables, the strip itself), a form field, an open menu / slideout / dialog, or the
 //    screen edge (the phone's own back gesture).
 // A short toast names the new game, since the strip may be scrolled out of view. No wrap-around at either end.
+//
+// ▾ Expand / ▴ Collapse (2026-10-26, user: the Live pages repeated the strip's cards as a grid -- drop that and let the strip
+// itself open into a full grid): StripToggle is the first chip in each strip; useStripExpanded() gives the strip its
+// .strip-expanded class. Starts collapsed (the one-row strip) on every page load; the choice holds while the app is open.
+
+let expandedNow = false
+const expandSubs = new Set()
+export function setStripExpanded(v) {
+  expandedNow = v
+  expandSubs.forEach((f) => f(v))
+}
+export function useStripExpanded() {
+  const [v, setV] = useState(expandedNow)
+  useEffect(() => { expandSubs.add(setV); return () => { expandSubs.delete(setV) } }, [])
+  return v
+}
+export function StripToggle({ className = '' }) {
+  const v = useStripExpanded()
+  return (
+    <button type="button" className={`${className} strip-toggle`} aria-expanded={v} onClick={() => setStripExpanded(!v)}
+      title={v ? 'Back to one scrolling row' : 'Show every game at once'}>
+      <span className="st-icon" aria-hidden="true">{v ? '▴' : '▾'}</span><span className="st-label">{v ? 'Collapse' : 'Expand'}</span>
+    </button>
+  )
+}
 
 const SKIP = 'input, textarea, select, [contenteditable="true"], [role="dialog"], [class*="slide"], [class*="modal"], [class*="tm-panel"], [class*="tm-backdrop"]'
 // an open player / team slideout, the page menu or a notice: arrows and swipes belong to it, not the strip

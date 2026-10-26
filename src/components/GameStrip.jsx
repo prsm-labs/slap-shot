@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchScoredPool, useScoredPool } from "../lib/data.js";
 import { keysOf, matchupKey, pickMatchup, setMatchup, setMultiPick, useMatchup, useMultiPick } from "../lib/matchupFilter.js";
-import GameStepper from "./GameStepper.jsx";
+import GameStepper, { StripToggle, useStripExpanded } from "./GameStepper.jsx";
 import "./MultiPick.css";
 import { easternToday, fetchLiveGoals, LIVE_POLL_MS } from "../lib/liveGoals.js";
 
@@ -38,6 +38,7 @@ export default function GameStrip() {
   const selected = useMatchup();
   const multi = useMultiPick();
   const picked = keysOf(selected);
+  const expanded = useStripExpanded();
   const pool = useScoredPool({ includeStarted: true });
   const liveNow = useLiveScores();
   // 2026-10-23 past night (date picker): the strip shows that night's games with their final scores
@@ -55,7 +56,8 @@ export default function GameStrip() {
   const stepAt = picked.length === 1 ? ordered.findIndex((g) => matchupKey(g.away, g.home) === picked[0]) : -1;
   return (
     <>
-    <div className="game-strip">
+    <div className={`game-strip ${expanded ? "strip-expanded" : ""}`}>
+      <StripToggle className="game-chip all" />
       <button className={`game-chip all ${!selected ? "active" : ""}`} onClick={() => setMatchup(null)}>
         All games<span className="gc-status"> {slate.length}</span>
       </button>
