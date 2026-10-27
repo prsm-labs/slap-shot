@@ -1,0 +1,64 @@
+/* 🎚️ Risk slider + L7 hit strips (2026-10-27). Same file in CourtIQ, Slap Shot and Six Points; colors from each app's tokens. */
+.risk-board, .hit-strip { --rb-good: var(--good, var(--green, #3fcf7a)); --rb-bad: var(--bad, var(--red, #e5584b)); --rb-fg: var(--fg, var(--text, #e8edf2)); }
+.rb-muted { color: var(--muted); }
+.rb-small { font-size: 0.78rem; }
+.rb-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rb-yes { color: var(--rb-good); font-weight: 600; }
+.rb-no { color: var(--rb-bad); font-weight: 600; }
+.rb-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+.rb-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.rb-level { font-weight: 700; font-size: 1.05rem; }
+.rb-target b { font-size: 1.05rem; }
+.rb-slider { width: 100%; margin: 6px 0 2px; accent-color: var(--accent); height: 28px; cursor: pointer;
+  background: transparent; }
+.rb-slider::-webkit-slider-runnable-track { height: 8px; border-radius: 999px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--rb-good) 75%, transparent), color-mix(in srgb, var(--accent) 60%, transparent), color-mix(in srgb, var(--rb-bad) 75%, transparent)); }
+.rb-slider::-moz-range-track { height: 8px; border-radius: 999px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--rb-good) 75%, transparent), color-mix(in srgb, var(--accent) 60%, transparent), color-mix(in srgb, var(--rb-bad) 75%, transparent)); }
+.rb-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; margin-top: -7px;
+  background: var(--rb-fg); border: 3px solid var(--accent); box-shadow: 0 1px 4px rgba(0, 0, 0, .35); }
+.rb-slider::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--rb-fg); border: 3px solid var(--accent); }
+.rb-slider { -webkit-appearance: none; appearance: none; }
+.rb-ends { display: flex; justify-content: space-between; font-size: 0.74rem; color: var(--muted); gap: 8px; }
+.rb-presets, .rb-group { display: flex; flex-wrap: wrap; gap: 6px; }
+.rb-presets { margin: 10px 0 6px; }
+.rb-controls { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 6px; }
+.rb-meta { margin-top: 8px; line-height: 1.4; }
+.rb-table td { vertical-align: middle; }
+.rb-pick > div { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; white-space: nowrap; }
+.rb-prop { background: none; border: 1px solid var(--border); color: var(--rb-fg); border-radius: 6px; padding: 3px 8px; font: inherit; font-weight: 600;
+  cursor: pointer; white-space: nowrap; }
+.rb-prop:hover, .rb-open .rb-prop { border-color: var(--accent); }
+.rb-prob { display: inline-block; min-width: 46px; font-variant-numeric: tabular-nums; font-weight: 700; border-radius: 4px; padding: 0 4px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 24%, transparent) var(--w), transparent var(--w)); }
+.rb-open td { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+.rb-ladder-row > td { padding: 0 !important; background: var(--surface2, var(--surface)); }
+.rb-ladder { position: sticky; left: 0; max-width: min(100%, calc(100vw - 40px)); padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+.rb-ladder-stat { display: flex; flex-direction: column; gap: 4px; }
+.rb-ladder-label { font-weight: 700; font-size: 0.8rem; }
+.rb-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.rb-chip { display: inline-flex; flex-direction: column; align-items: center; min-width: 50px; padding: 4px 6px; border-radius: 7px; cursor: pointer;
+  border: 1px solid var(--border); color: var(--rb-fg); font: inherit; font-size: 0.74rem; line-height: 1.2;
+  background: linear-gradient(0deg, color-mix(in srgb, var(--accent) 22%, transparent) var(--w), var(--surface) var(--w)); }
+.rb-chip b { font-size: 0.8rem; }
+.rb-chip small { color: var(--muted); font-size: 0.66rem; min-height: 0.66rem; }
+.rb-chip.in { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.rb-chip.y { outline: 2px solid color-mix(in srgb, var(--rb-good) 70%, transparent); outline-offset: -2px; }
+.rb-chip.n { opacity: 0.7; }
+/* L7 strip: green = cleared the line, red = didn't (oldest left) */
+.hit-strip { display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
+.hit-strip i { display: inline-block; width: 13px; height: 13px; border-radius: 3px; }
+.hit-strip i.y { background: color-mix(in srgb, var(--rb-good) 85%, transparent); }
+.hit-strip i.n { background: color-mix(in srgb, var(--rb-bad) 80%, transparent); }
+.hit-strip b { margin-left: 4px; font-size: 0.74rem; font-variant-numeric: tabular-nums; font-weight: 600; }
+@media (max-width: 600px) {
+  .hit-strip i { width: 10px; height: 10px; }
+  .hit-strip { gap: 2px; }
+  .rb-chip { min-width: 44px; }
+  /* phone: a narrow player column so prop / chance / L7 stay on screen */
+  .rb-table tr > td:first-child, .rb-table tr > th:first-child { min-width: 118px; max-width: 136px; white-space: normal; }
+  .rb-table tr > td:first-child img, .rb-table tr > td:first-child .avatar { display: none; }
+  .rb-table tr > td:first-child * { white-space: normal; }
+  .rb-table tr > td:first-child { font-size: 0.82rem; }
+  .rb-table tr.rb-ladder-row > td:first-child { max-width: none; }
+}

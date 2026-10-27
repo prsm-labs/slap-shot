@@ -20,6 +20,7 @@ import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { HitStrip } from "../components/RiskBoard.jsx";
 
 // Structural port of Going Yard's real OnBaseTab (mlb_project/going-yard/src/App.jsx:
 // 33607-34567) — parallel structure to Barrel Lab/Lamp Lab with its own score field and its own
@@ -106,6 +107,9 @@ export default function AppleLabTab() {
   }, [merged, team, selected, position, listFilters, live, h2hGrades, pickSets]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimePointPct", "desc");
+  // 2026-10-27 L7 strip (user): his last 7 games against the line the table is sorted by (else 1+ point)
+  const strip = { multiPoint2Pct: { stat: "PTS", line: 2, label: "2+ pts" }, multiPoint3Pct: { stat: "PTS", line: 3, label: "3+ pts" }, plus3SogPct: { stat: "SOG", line: 3, label: "3+ SOG" } }[sortKey] || { stat: "PTS", line: 1, label: "1+ pt" };
+  const recentOf = (p) => (p.last7 || []).map((g) => ({ d: g.date, o: g.opp, v: { G: g.goals, PTS: g.points, SOG: g.sog } }));
   const sortedWithSignalFirst = useMemo(
     () => [...sorted].sort((a, b) => (isPointSignal(b) ? 1 : 0) - (isPointSignal(a) ? 1 : 0)),
     [sorted]
@@ -200,6 +204,7 @@ export default function AppleLabTab() {
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
                 <th className={sortKey === "anytimePointPct" ? "sorted" : ""} onClick={() => toggleSort("anytimePointPct")}>Anytime Point %{sortKey === "anytimePointPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ / 3+ Pts % or +3 SOG % to switch.">L7 · {strip.label}</th>
                 <th title="Chance of 2+ points tonight" className={sortKey === "multiPoint2Pct" ? "sorted" : ""} onClick={() => toggleSort("multiPoint2Pct")}>2+ Pts %{sortKey === "multiPoint2Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Chance of 3+ points tonight" className={sortKey === "multiPoint3Pct" ? "sorted" : ""} onClick={() => toggleSort("multiPoint3Pct")}>3+ Pts %{sortKey === "multiPoint3Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "plus3SogPct" ? "sorted" : ""} onClick={() => toggleSort("plus3SogPct")}>+3 SOG %{sortKey === "plus3SogPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -231,6 +236,7 @@ export default function AppleLabTab() {
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimePointPct}%</td>
+                  <td><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
                   <td>{p.multiPoint2Pct != null ? `${p.multiPoint2Pct}%` : "—"}</td>
                   <td>{p.multiPoint3Pct != null ? `${p.multiPoint3Pct}%` : "—"}</td>
                   <td>{p.plus3SogPct}%</td>

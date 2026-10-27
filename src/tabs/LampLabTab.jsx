@@ -22,6 +22,7 @@ import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { HitStrip } from "../components/RiskBoard.jsx";
 
 // Structural port of Going Yard's real BarrelLabTab (mlb_project/going-yard/src/App.jsx:
 // 32419-33537, researched in full this session): toolbar + aggregate card + Signal Board tiles
@@ -74,6 +75,9 @@ export default function LampLabTab() {
   }, [merged, team, selected, position, listFilters, live, h2hGrades, pickSets]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimeGoalPct", "desc");
+  // 2026-10-27 L7 strip (user): his last 7 games against the line the table is sorted by (else 1+ goal)
+  const strip = { multiGoalPct: { stat: "G", line: 2, label: "2+ G" } }[sortKey] || { stat: "G", line: 1, label: "1+ G" };
+  const recentOf = (p) => (p.last7 || []).map((g) => ({ d: g.date, o: g.opp, v: { G: g.goals, PTS: g.points, SOG: g.sog } }));
   const sortedWithSignalFirst = useMemo(
     () => [...sorted].sort((a, b) => (isGoalSignal(b) ? 1 : 0) - (isGoalSignal(a) ? 1 : 0)),
     [sorted]
@@ -155,6 +159,7 @@ export default function LampLabTab() {
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
                 <th className={sortKey === "anytimeGoalPct" ? "sorted" : ""} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ Goals % to switch.">L7 · {strip.label}</th>
                 <th title="Best anytime-goal price across US sportsbooks (hover a price for each book)" className={sortKey === "bookBest" ? "sorted" : ""} onClick={() => toggleSort("bookBest")}>Book Odds{sortKey === "bookBest" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Our goal % minus the chance the best book price implies (vig included). Positive = we rate him higher than the book" className={sortKey === "edge" ? "sorted" : ""} onClick={() => toggleSort("edge")}>Edge{sortKey === "edge" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed" className={sortKey === "multiGoalPct" ? "sorted" : ""} onClick={() => toggleSort("multiGoalPct")}>2+ Goals %{sortKey === "multiGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -187,6 +192,7 @@ export default function LampLabTab() {
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <td>{p.anytimeGoalPct}%</td>
+                  <td><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
                   <td className="mono" title={booksText(p.book)} style={{ whiteSpace: "nowrap" }}>
                     {p.book ? <BestPriceLink book={p.book} /> : "—"}
                   </td>
