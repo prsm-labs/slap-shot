@@ -30,12 +30,12 @@ function useTeamXg(date, gameId) {
   return g;
 }
 
-const scoreZ = (margin) => {
+export const scoreZ = (margin) => {
   const m = Math.max(-3, Math.min(3, margin));
   return { z_m: m, z_lead12: m === 1 || m === 2 ? 1 : 0, z_trail: m < 0 ? 1 : 0 };
 };
 
-function projSkater(s, p, f, margin) {
+export function projSkater(s, p, f, margin) {
   // the live box score has shots on goal, not attempts: volume = SOG so far vs his SOG per game
   const sogPre = p?.sogPg ?? p?.ShotsOnGoalPerGame;
   const z = { ...scoreZ(margin), z_vol: ratio(s.sog, f, sogPre, 2) };

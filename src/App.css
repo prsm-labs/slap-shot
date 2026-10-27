@@ -190,6 +190,20 @@ table.data-table th{
 table.data-table th:hover{color:var(--text);}
 table.data-table th.sorted{color:var(--accent);}
 table.data-table td{padding:8px 12px;border-bottom:1px solid var(--line);color:var(--text);}
+/* 2026-10-26 My Picks 📡 Live table (components/PicksLive.jsx) */
+.pl-summary{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:8px;}
+.pl-table td{vertical-align:top;padding:6px 8px;}
+.pl-table th{text-align:right;}
+.pl-table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+.pl-cell b,.pl-game b{display:block;font-size:13px;}
+.pl-sub{display:block;font-size:10px;color:var(--muted);white-space:nowrap;font-weight:400;}
+.pl-name{display:flex;flex-direction:column;white-space:nowrap;}
+.pl-game{white-space:nowrap;font-size:11px;}
+.pl-up{color:var(--green);}
+.pl-down{color:var(--red);}
+/* the pinned first column is capped at 150px on phones: let the player cell's small lines wrap inside it */
+table.data-table.pl-table tr > td:first-child{min-width:150px;max-width:170px;}
+table.data-table.pl-table tr > td:first-child .pl-sub{white-space:normal;}
 table.data-table tr:hover td{background:var(--chip);}
 table.data-table tr.clickable{cursor:pointer;}
 /* Pinned first column (player / team name) on every data table, so it stays visible while scrolling

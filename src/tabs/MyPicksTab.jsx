@@ -6,6 +6,7 @@ import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine, betText, PICK_PROP } from "../lib/gambly.js";
+import PicksLive from "../components/PicksLive.jsx";
 
 // My Picks — every skater picked with a [+] button (lib/picks.js, saved in this browser), grouped by
 // category, with tonight's matchup from the live slate pool and a CSV export.
@@ -29,6 +30,8 @@ export default function MyPicksTab() {
   const picks = usePicks();
   const pool = useScoredPool({ includeStarted: true });
   const [confirmClear, setConfirmClear] = useState(false);
+  // 2026-10-26 (user): 📡 Live = a box score of my picks vs our pre-game + live projections; By category = the old list
+  const [view, setView] = useState("live");
 
   const byId = useMemo(() => new Map((pool?.players || []).map((p) => [p.playerId, p])), [pool]);
   const slateByTeam = useMemo(() => {
@@ -69,6 +72,16 @@ export default function MyPicksTab() {
         <div className="section-title">⭐ My Picks</div>
         <div className="section-sub">Skaters you've tagged with the ＋ button — saved in this browser, with tonight's matchup</div>
       </div>
+
+      {list.length > 0 && (
+        <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
+          {[["live", "📡 Live"], ["cat", "🗂 By category"]].map(([k, l]) => (
+            <button key={k} className={`pill-btn ${view === k ? "active" : ""}`} onClick={() => setView(k)}>{l}</button>
+          ))}
+        </div>
+      )}
+      {view === "live" && list.length > 0 && <PicksLive pool={pool} picks={list} />}
+      {(view === "cat" || !list.length) && <>
 
       {list.length > 0 && (
         <div style={{ display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap" }}>
@@ -141,6 +154,7 @@ export default function MyPicksTab() {
           </div>
         );
       })}
+      </>}
     </div>
   );
 }
