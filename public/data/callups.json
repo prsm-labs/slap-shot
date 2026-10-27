@@ -1,13 +1,261 @@
 {
  "_meta": {
-  "generated": "2026-10-27 12:07",
+  "generated": "2026-10-27 17:37",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 76,
+  "count": 77,
   "up": 45,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8478057,
+   "name": "Dakota Joshua",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1996-05-15",
+   "sweater": 81,
+   "draft": {
+    "year": 2014,
+    "teamAbbrev": "TOR",
+    "round": 5,
+    "overallPick": 128
+   },
+   "recalledOn": "2026-10-27",
+   "from": "his conditioning assignment with Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-17",
+     "type": "down",
+     "club": "Toronto (AHL) for conditioning"
+    },
+    {
+     "date": "2026-10-27",
+     "type": "up",
+     "club": "his conditioning assignment with Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "team": "Toronto Marlies"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 10,
+     "assists": 8,
+     "points": 18,
+     "plusMinus": -2,
+     "pim": 49,
+     "shots": 52,
+     "team": "Toronto Maple Leafs"
+    },
+    "careerGp": 296,
+    "careerG": 50,
+    "careerP": 96
+   }
+  },
+  {
+   "playerId": 8481848,
+   "name": "Jacob Gaucher",
+   "team": "PHI",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2001-03-09",
+   "sweater": 78,
+   "draft": null,
+   "recalledOn": "2026-10-27",
+   "from": "Lehigh Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-25",
+     "type": "down",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-27",
+     "type": "up",
+     "club": "Lehigh Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 4,
+     "assists": 4,
+     "points": 8,
+     "plusMinus": -3,
+     "pim": 4,
+     "team": "Lehigh Valley Phantoms"
+    },
+    "last": {
+     "gamesPlayed": 69,
+     "goals": 20,
+     "assists": 16,
+     "points": 36,
+     "plusMinus": -9,
+     "pim": 44,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 2,
+     "shots": 2,
+     "team": "Philadelphia Flyers"
+    },
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 4,
+     "team": "Philadelphia Flyers"
+    },
+    "careerGp": 11,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8485352,
+   "name": "Kashawn Aitcheson",
+   "team": "NYI",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2006-09-21",
+   "sweater": 37,
+   "draft": {
+    "year": 2025,
+    "teamAbbrev": "NYI",
+    "round": 1,
+    "overallPick": 17
+   },
+   "recalledOn": "2026-10-26",
+   "from": "Hamilton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-27",
+   "events": [
+    {
+     "date": "2026-10-26",
+     "type": "up",
+     "club": "Hamilton"
+    },
+    {
+     "date": "2026-10-27",
+     "type": "down",
+     "club": "Hamilton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -7,
+     "pim": 9,
+     "team": "Hamilton Hammers"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8478115,
+   "name": "Pierre Engvall",
+   "team": "NYI",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "1996-05-31",
+   "sweater": 18,
+   "draft": {
+    "year": 2014,
+    "teamAbbrev": "TOR",
+    "round": 7,
+    "overallPick": 188
+   },
+   "recalledOn": "2026-10-26",
+   "from": "Hamilton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-27",
+   "events": [
+    {
+     "date": "2026-10-26",
+     "type": "up",
+     "club": "Hamilton"
+    },
+    {
+     "date": "2026-10-27",
+     "type": "down",
+     "club": "Hamilton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 2,
+     "assists": 4,
+     "points": 6,
+     "plusMinus": -2,
+     "pim": 2,
+     "team": "Hamilton Hammers"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 380,
+    "careerG": 65,
+    "careerP": 135
+   }
+  },
   {
    "playerId": 8480007,
    "name": "Jonas Rondbjerg",
@@ -70,100 +318,6 @@
     "careerGp": 80,
     "careerG": 3,
     "careerP": 11
-   }
-  },
-  {
-   "playerId": 8485352,
-   "name": "Kashawn Aitcheson",
-   "team": "NYI",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2006-09-21",
-   "sweater": 37,
-   "draft": {
-    "year": 2025,
-    "teamAbbrev": "NYI",
-    "round": 1,
-    "overallPick": 17
-   },
-   "recalledOn": "2026-10-26",
-   "from": "Hamilton",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-26",
-     "type": "up",
-     "club": "Hamilton"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": -7,
-     "pim": 9,
-     "team": "Hamilton Hammers"
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
-   }
-  },
-  {
-   "playerId": 8478115,
-   "name": "Pierre Engvall",
-   "team": "NYI",
-   "position": "L",
-   "shoots": "L",
-   "birthDate": "1996-05-31",
-   "sweater": 18,
-   "draft": {
-    "year": 2014,
-    "teamAbbrev": "TOR",
-    "round": 7,
-    "overallPick": 188
-   },
-   "recalledOn": "2026-10-26",
-   "from": "Hamilton",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-26",
-     "type": "up",
-     "club": "Hamilton"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 2,
-     "assists": 4,
-     "points": 6,
-     "plusMinus": -2,
-     "pim": 2,
-     "team": "Hamilton Hammers"
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 380,
-    "careerG": 65,
-    "careerP": 135
    }
   },
   {
@@ -1180,11 +1334,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 2,
      "assists": 1,
      "points": 3,
-     "plusMinus": -6,
+     "plusMinus": -7,
      "pim": 4,
      "team": "Chicago Wolves"
     },
@@ -1310,6 +1464,84 @@
     "careerGp": 26,
     "careerG": 0,
     "careerP": 4
+   }
+  },
+  {
+   "playerId": 8480259,
+   "name": "Ben Jones",
+   "team": "CGY",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1999-02-26",
+   "sweater": 18,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "VGK",
+    "round": 7,
+    "overallPick": 189
+   },
+   "recalledOn": "2026-10-20",
+   "from": "Calgary",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-10-27",
+   "events": [
+    {
+     "date": "2026-10-20",
+     "type": "up",
+     "club": "Calgary"
+    },
+    {
+     "date": "2026-10-27",
+     "type": "down",
+     "club": "Calgary"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 7,
+     "assists": 2,
+     "points": 9,
+     "plusMinus": -1,
+     "pim": 2,
+     "team": "Calgary Wranglers"
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "goals": 12,
+     "assists": 20,
+     "points": 32,
+     "plusMinus": 1,
+     "pim": 26,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 0,
+     "team": "Calgary Flames"
+    },
+    "last": {
+     "gamesPlayed": 28,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": -10,
+     "pim": 0,
+     "shots": 26,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 58,
+    "careerG": 1,
+    "careerP": 3
    }
   },
   {
@@ -1448,157 +1680,6 @@
    }
   },
   {
-   "playerId": 8480259,
-   "name": "Ben Jones",
-   "team": "CGY",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1999-02-26",
-   "sweater": 18,
-   "draft": {
-    "year": 2017,
-    "teamAbbrev": "VGK",
-    "round": 7,
-    "overallPick": 189
-   },
-   "recalledOn": "2026-10-20",
-   "from": "Calgary",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-20",
-     "type": "up",
-     "club": "Calgary"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 7,
-     "goals": 7,
-     "assists": 2,
-     "points": 9,
-     "plusMinus": -1,
-     "pim": 2,
-     "team": "Calgary Wranglers"
-    },
-    "last": {
-     "gamesPlayed": 37,
-     "goals": 12,
-     "assists": 20,
-     "points": 32,
-     "plusMinus": 1,
-     "pim": 26,
-     "team": "Iowa Wild"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 0,
-     "team": "Calgary Flames"
-    },
-    "last": {
-     "gamesPlayed": 28,
-     "goals": 1,
-     "assists": 2,
-     "points": 3,
-     "plusMinus": -10,
-     "pim": 0,
-     "shots": 26,
-     "team": "Minnesota Wild"
-    },
-    "careerGp": 58,
-    "careerG": 1,
-    "careerP": 3
-   }
-  },
-  {
-   "playerId": 8481848,
-   "name": "Jacob Gaucher",
-   "team": "PHI",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2001-03-09",
-   "sweater": 78,
-   "draft": null,
-   "recalledOn": "2026-10-19",
-   "from": "Lehigh Valley",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-25",
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Lehigh Valley"
-    },
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Lehigh Valley"
-    },
-    {
-     "date": "2026-10-25",
-     "type": "down",
-     "club": "Lehigh Valley"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 7,
-     "goals": 4,
-     "assists": 4,
-     "points": 8,
-     "plusMinus": -3,
-     "pim": 4,
-     "team": "Lehigh Valley Phantoms"
-    },
-    "last": {
-     "gamesPlayed": 69,
-     "goals": 20,
-     "assists": 16,
-     "points": 36,
-     "plusMinus": -9,
-     "pim": 44,
-     "team": "Lehigh Valley Phantoms"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 2,
-     "shots": 2,
-     "team": "Philadelphia Flyers"
-    },
-    "last": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 4,
-     "team": "Philadelphia Flyers"
-    },
-    "careerGp": 11,
-    "careerG": 0,
-    "careerP": 0
-   }
-  },
-  {
    "playerId": 8484242,
    "name": "Brayden Yager",
    "team": "WPG",
@@ -1632,11 +1713,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 6,
      "assists": 5,
      "points": 11,
-     "plusMinus": 5,
+     "plusMinus": 4,
      "pim": 4,
      "team": "Manitoba Moose"
     },
@@ -2923,11 +3004,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": -7,
+     "gamesPlayed": 6,
+     "goals": 2,
+     "assists": 2,
+     "points": 4,
+     "plusMinus": -6,
      "pim": 2,
      "team": "Chicago Wolves"
     },
