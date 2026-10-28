@@ -1,13 +1,115 @@
 {
  "_meta": {
-  "generated": "2026-10-28 15:18",
+  "generated": "2026-10-28 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 76,
-  "up": 44,
+  "count": 78,
+  "up": 45,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8479333,
+   "name": "Libor Hajek",
+   "team": "SJS",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1998-02-04",
+   "sweater": 24,
+   "draft": {
+    "year": 2016,
+    "teamAbbrev": "TBL",
+    "round": 2,
+    "overallPick": 37
+   },
+   "recalledOn": "2026-10-28",
+   "from": "San Jose",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-28",
+     "type": "up",
+     "club": "San Jose"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 1,
+     "pim": 7,
+     "team": "San Jose Barracuda"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 110,
+    "careerG": 4,
+    "careerP": 12
+   }
+  },
+  {
+   "playerId": 8483428,
+   "name": "Filip Bystedt",
+   "team": "SJS",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "2004-02-04",
+   "sweater": 18,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "SJS",
+    "round": 1,
+    "overallPick": 27
+   },
+   "recalledOn": "2026-10-28",
+   "from": "San Jose",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-28",
+     "type": "up",
+     "club": "San Jose"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 4,
+     "assists": 4,
+     "points": 8,
+     "plusMinus": -8,
+     "pim": 6,
+     "team": "San Jose Barracuda"
+    },
+    "last": {
+     "gamesPlayed": 65,
+     "goals": 22,
+     "assists": 38,
+     "points": 60,
+     "plusMinus": -2,
+     "pim": 22,
+     "team": "San Jose Barracuda"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
   {
    "playerId": 8478057,
    "name": "Dakota Joshua",
@@ -596,7 +698,7 @@
    "from": "Wilkes-Barre/Scranton",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -914,25 +1016,11 @@
    }
   },
   {
-   "playerId": 8485019,
-   "name": "Chase Pietila",
    "team": "PIT",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "2004-03-03",
-   "sweater": 44,
-   "draft": {
-    "year": 2024,
-    "teamAbbrev": "PIT",
-    "round": 4,
-    "overallPick": 111
-   },
    "recalledOn": "2026-10-22",
    "from": "Wilkes-Barre/Scranton",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
    "events": [
     {
      "date": "2026-10-22",
@@ -940,32 +1028,20 @@
      "club": "Wilkes-Barre/Scranton"
     }
    ],
+   "playerId": null,
+   "name": "Chase Pietila",
+   "position": "D",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
    "ahl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 0,
-     "assists": 2,
-     "points": 2,
-     "plusMinus": 1,
-     "pim": 11,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    },
-    "last": {
-     "gamesPlayed": 66,
-     "goals": 2,
-     "assists": 14,
-     "points": 16,
-     "plusMinus": 27,
-     "pim": 85,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
     "season": null,
     "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
+    "careerGp": 0
    }
   },
   {
