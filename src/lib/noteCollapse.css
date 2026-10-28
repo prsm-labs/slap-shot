@@ -1,0 +1,16 @@
+/* 2026-10-28 collapsible explanation boxes (noteCollapse.js): two lines + fade while closed, glow until read once */
+.note.nc { position: relative; cursor: pointer; padding-right: 76px; }
+.note.nc:not(.nc-open) { max-height: calc(2.9em + 20px); overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); }
+.note.nc.nc-open { cursor: auto; -webkit-mask-image: none; mask-image: none; }
+.note.nc .nc-btn { position: absolute; top: 8px; right: 8px; z-index: 1; font: inherit; font-size: 0.74rem; font-weight: 600;
+  padding: 2px 9px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); color: inherit; cursor: pointer;
+  -webkit-mask-image: none; mask-image: none; }
+.note.nc .nc-btn:hover { border-color: var(--accent); }
+.note.nc.nc-unread { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 12px -2px var(--accent); animation: nc-glow 2.4s ease-in-out infinite; }
+.note.nc.nc-unread .nc-btn { border-color: var(--accent); color: var(--accent); }
+@keyframes nc-glow { 0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 0 6px -2px var(--accent); } 50% { box-shadow: 0 0 0 1px var(--accent), 0 0 16px 0 var(--accent); } }
+@media (prefers-reduced-motion: reduce) { .note.nc.nc-unread { animation: none; } }
+.note.nc.nc-fits { cursor: auto; padding-right: 12px; -webkit-mask-image: none; mask-image: none; }
+.note.nc.nc-fits.nc-unread { animation: none; box-shadow: none; border-color: var(--border); }
+.note.nc.nc-fits .nc-btn { display: none; }
