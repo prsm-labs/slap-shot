@@ -19,6 +19,7 @@ import MatchupFilter from "../components/MatchupFilter.jsx";
 import { dvpFor, dvpText } from "../lib/dvp.js";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
+import { OppDefCell, OPP_DEF_NOTE, oppDefSort } from "../lib/oppDef.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 
@@ -35,6 +36,7 @@ const TIER_CLASS = {
 const COLUMNS = [
   ["name", "Skater"],
   ["opponentGoalie", "Opp Goalie"],
+  ["oppD", "Opp D", OPP_DEF_NOTE],
   ["estToi", "Est. TOI"],
   ["sogPg", "SOG/GP", "Shots on goal per game, last season + this season"],
   ["sog60", "SOG/60", "Shots on goal per 60 minutes of ice time"],
@@ -77,7 +79,7 @@ export default function AllMatchupsTab() {
   // H2H grade + goal-game rates (vs team / goalie / venue / L5 / L10) for sorting; missing = sorts last.
   const rows = withH2H(shown, h2hGrades).map((p) => {
     const dvp = dvpFor(meta, p);
-    return { ...p, dvp, dvpSoft: dvp ? dvp.of + 1 - dvp.rank : null };
+    return { ...p, dvp, dvpSoft: dvp ? dvp.of + 1 - dvp.rank : null, oppD: oppDefSort(p, meta) };
   });
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "slapScore", "desc");
 
@@ -92,6 +94,7 @@ export default function AllMatchupsTab() {
         ℹ️ Ranked by Slap Score (0-99): where each skater's chance to score ranks on tonight's slate — the calibrated grade model, adjusted for the opponent's defense. Tiers: Elite Add-On 90+, Core Target 70-89, Value Upside 50-69.
         Goalies and scratches update as lineups are confirmed (✅ = confirmed or in net); Projected / Expected are not yet confirmed.
         <span style={{ display: "block", marginTop: 4 }}>
+          Opp D = the opponent's rank among the league's defenses by expected goals allowed (green = 10 softest, red = 10 stingiest; ⚙ Filters → Opponent defense).
           ▲ / ▼ on a grade = facing one of tonight's softest / stingiest third of defenses (expected goals allowed). Defense-vs-position
           splits aren't used — over 4 seasons they only echoed the team's overall defense. Hover a grade or open a player for details.
         </span>
@@ -126,6 +129,7 @@ export default function AllMatchupsTab() {
                     </div>
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
+                  <OppDefCell p={p} meta={meta} />
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>

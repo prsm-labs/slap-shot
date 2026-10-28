@@ -8,6 +8,7 @@ import H2HCell, { H2HStatCell } from "../components/H2HCell.jsx";
 import { SKATER_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
+import { OppDefCell, OPP_DEF_NOTE, oppDefSort } from "../lib/oppDef.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import ListFilters from "../components/ListFilters.jsx";
 import { applyListFilters, useListFilters, usePickSets } from "../lib/listFilters.js";
@@ -71,7 +72,8 @@ export default function LampLabTab() {
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
   const filtered = useMemo(() => {
     const inGame = applyListFilters(filterPositions(filterPlayers(merged, selected), position), listFilters, { slate: live?.players, signal: "goal", h2h: h2hGrades.skaters, picks: pickSets, meta: live?.meta });
-    return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades);
+    // 2026-10-28 Opp D column (league defense rank, lib/oppDef.jsx)
+    return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades).map((p) => ({ ...p, oppD: oppDefSort(p, live?.meta) }));
   }, [merged, team, selected, position, listFilters, live, h2hGrades, pickSets]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimeGoalPct", "desc");
@@ -158,6 +160,7 @@ export default function LampLabTab() {
               <tr>
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
+                <th title={OPP_DEF_NOTE} className={sortKey === "oppD" ? "sorted" : ""} onClick={() => toggleSort("oppD")}>Opp D{sortKey === "oppD" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "anytimeGoalPct" ? "sorted" : ""} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ Goals % to switch.">L7 · {strip.label}</th>
                 <th title="Best anytime-goal price across US sportsbooks (hover a price for each book)" className={sortKey === "bookBest" ? "sorted" : ""} onClick={() => toggleSort("bookBest")}>Book Odds{sortKey === "bookBest" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -191,6 +194,7 @@ export default function LampLabTab() {
                     </div>
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
+                  <OppDefCell p={p} meta={live?.meta} />
                   <td>{p.anytimeGoalPct}%</td>
                   <td><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
                   <td className="mono" title={booksText(p.book)} style={{ whiteSpace: "nowrap" }}>

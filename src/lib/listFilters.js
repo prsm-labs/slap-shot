@@ -11,6 +11,7 @@ import { matchesSearch } from "./teamSearch.js";
 import { eligibleForTop3, selectTop3, TIER_INFO } from "./top3.js";
 import { prismPicks, tierPicks } from "./prismPicks.js";
 import { applyGroups } from "../components/FilterPanel.jsx";
+import { DEF_TIERS, oppDefOf } from "./oppDef.jsx";
 
 export const TIER_OPTIONS = [
   { key: null, label: "All tiers" },
@@ -22,7 +23,7 @@ export const GOAL_OPTIONS = [null, 10, 20, 30];
 const LETTERS = ["A+", "A", "B", "C", "D", "F"];
 
 // `soft` stays readable / settable on its own (First Goal's soft-defense pill) -- it's the "soft" tag underneath
-const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", top: [], prism: [], grades: [], h2h: [], search: "" };
+const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", top: [], prism: [], grades: [], h2h: [], oppd: [], search: "" };
 const withSoft = (s) => ({ ...s, soft: s.tags.includes("soft") });
 let state = withSoft({ ...DEFAULTS });
 const listeners = new Set();
@@ -124,7 +125,7 @@ export function buildGroups(ctx = {}) {
       { v: "b2bnext", label: "B2B tmrw", title: "His team plays again tomorrow" },
       { v: "limited", label: "⚠️ Data limited", title: "Fewer than 10 games this season — his numbers lean on last season" },
       { v: "signal", label: signal === "point" ? "★ Point Signal" : "★ Goal Signal", title: signal === "point" ? "Point % in tonight's top 15% and 3+ SOG 40%+" : "Slap Score 85+ into a softer-half defense" },
-      { v: "soft", label: "▲ Soft defense", title: "Opponent in tonight's softest third by expected goals allowed — the matchup factor that tested real" },
+      { v: "soft", label: "▲ Softer third tonight", title: "Opponent in tonight's softest third by expected goals allowed — the matchup factor that tested real" },
       { v: "breakout", label: "🚀 Breakout Watch", title: "Rising expected goals into a soft defense, outside the model's top 15%" },
       { v: "due", label: "🔥 Due + heating up", title: "No goal in 2+ games, expected goals last 5 at 1.3x+ the season rate, soft defense tonight, not a top-25% scorer — scored 6-13% above the model over 4 seasons" },
       { v: "pointDue", label: "🍎 Points due", title: "No point in 2+ games while his on-ice expected goals ran 1.2x+ the season rate, outside tonight's top 25% point chances" },
@@ -137,6 +138,8 @@ export function buildGroups(ctx = {}) {
       hint: "Pick the exact letters — his effective grade (own form vs the goalie he faces)" },
     { key: "h2h", label: "H2H grade", chip: "H2H", type: "multi", get: (p) => h2h?.get(p.playerId)?.letter, options: LETTERS.map((l) => ({ v: l, label: l })),
       hint: "History vs tonight's opponent against his own norm — context, not a prediction" },
+    { key: "oppd", label: "Opponent defense", chip: "Opp D", type: "multi", get: (p) => oppDefOf(p, meta).tier, options: DEF_TIERS,
+      hint: "Tonight's opponent among the league's defenses by expected goals allowed — Soft = 10 softest, Tough = 10 stingiest" },
   ];
 }
 

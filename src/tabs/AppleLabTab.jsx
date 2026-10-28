@@ -7,6 +7,7 @@ import H2HCell, { H2HStatCell } from "../components/H2HCell.jsx";
 import { SKATER_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
+import { OppDefCell, OPP_DEF_NOTE, oppDefSort } from "../lib/oppDef.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import ListFilters from "../components/ListFilters.jsx";
 import { applyListFilters, useListFilters, usePickSets } from "../lib/listFilters.js";
@@ -103,7 +104,8 @@ export default function AppleLabTab() {
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
   const filtered = useMemo(() => {
     const inGame = applyListFilters(filterPositions(filterPlayers(merged, selected), position), listFilters, { slate: live?.players, signal: "point", h2h: h2hGrades.skaters, picks: pickSets, meta: live?.meta });
-    return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades);
+    // 2026-10-28 Opp D column (league defense rank, lib/oppDef.jsx)
+    return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades).map((p) => ({ ...p, oppD: oppDefSort(p, live?.meta) }));
   }, [merged, team, selected, position, listFilters, live, h2hGrades, pickSets]);
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimePointPct", "desc");
@@ -203,6 +205,7 @@ export default function AppleLabTab() {
               <tr>
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
+                <th title={OPP_DEF_NOTE} className={sortKey === "oppD" ? "sorted" : ""} onClick={() => toggleSort("oppD")}>Opp D{sortKey === "oppD" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "anytimePointPct" ? "sorted" : ""} onClick={() => toggleSort("anytimePointPct")}>Anytime Point %{sortKey === "anytimePointPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ / 3+ Pts % or +3 SOG % to switch.">L7 · {strip.label}</th>
                 <th title="Chance of 2+ points tonight" className={sortKey === "multiPoint2Pct" ? "sorted" : ""} onClick={() => toggleSort("multiPoint2Pct")}>2+ Pts %{sortKey === "multiPoint2Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -235,6 +238,7 @@ export default function AppleLabTab() {
                     </div>
                   </td>
                   <td><OpponentGoalieCell player={p} /></td>
+                  <OppDefCell p={p} meta={live?.meta} />
                   <td>{p.anytimePointPct}%</td>
                   <td><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
                   <td>{p.multiPoint2Pct != null ? `${p.multiPoint2Pct}%` : "—"}</td>
