@@ -26,10 +26,10 @@
         "home": "EDM",
         "awayGoalieId": 8482445,
         "awayGoalie": "Devin Cooley",
-        "awayGoalieStatus": "Unconfirmed",
+        "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8477465,
         "homeGoalie": "Tristan Jarry",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020201,
@@ -42,7 +42,7 @@
         "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8478406,
         "homeGoalie": "Mackenzie Blackwood",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020202,
@@ -50,20 +50,20 @@
         "gameState": "FUT",
         "away": "TOR",
         "home": "SEA",
-        "awayGoalieId": 8476932,
-        "awayGoalie": "Anthony Stolarz",
+        "awayGoalieId": 8475683,
+        "awayGoalie": "Sergei Bobrovsky",
         "awayGoalieStatus": "Unconfirmed",
         "homeGoalieId": 8475831,
         "homeGoalie": "Philipp Grubauer",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Likely"
       }
     ],
     "seasons": [
       2025,
       2026
     ],
-    "generated": "2026-10-28 12:19",
-    "player_count": 185,
+    "generated": "2026-10-28 15:15",
+    "player_count": 186,
     "goalie_count": 61,
     "skipped_no_history": 1,
     "teams": {
@@ -1090,6 +1090,136 @@
         "WPG",
         "WSH"
       ]
+    },
+    "defRank": {
+      "VAN": {
+        "rank": 1,
+        "xga": 3.55
+      },
+      "TOR": {
+        "rank": 2,
+        "xga": 3.45
+      },
+      "ANA": {
+        "rank": 3,
+        "xga": 3.39
+      },
+      "CHI": {
+        "rank": 4,
+        "xga": 3.39
+      },
+      "NYI": {
+        "rank": 5,
+        "xga": 3.36
+      },
+      "MTL": {
+        "rank": 6,
+        "xga": 3.34
+      },
+      "SJS": {
+        "rank": 7,
+        "xga": 3.32
+      },
+      "BOS": {
+        "rank": 8,
+        "xga": 3.31
+      },
+      "CGY": {
+        "rank": 9,
+        "xga": 3.29
+      },
+      "NSH": {
+        "rank": 10,
+        "xga": 3.29
+      },
+      "WPG": {
+        "rank": 11,
+        "xga": 3.23
+      },
+      "WSH": {
+        "rank": 12,
+        "xga": 3.22
+      },
+      "NYR": {
+        "rank": 13,
+        "xga": 3.21
+      },
+      "SEA": {
+        "rank": 14,
+        "xga": 3.21
+      },
+      "BUF": {
+        "rank": 15,
+        "xga": 3.2
+      },
+      "CBJ": {
+        "rank": 16,
+        "xga": 3.19
+      },
+      "FLA": {
+        "rank": 17,
+        "xga": 3.17
+      },
+      "PIT": {
+        "rank": 18,
+        "xga": 3.16
+      },
+      "EDM": {
+        "rank": 19,
+        "xga": 3.08
+      },
+      "DET": {
+        "rank": 20,
+        "xga": 3.05
+      },
+      "UTA": {
+        "rank": 21,
+        "xga": 3.03
+      },
+      "STL": {
+        "rank": 22,
+        "xga": 3.0
+      },
+      "LAK": {
+        "rank": 23,
+        "xga": 2.94
+      },
+      "MIN": {
+        "rank": 24,
+        "xga": 2.92
+      },
+      "TBL": {
+        "rank": 25,
+        "xga": 2.91
+      },
+      "NJD": {
+        "rank": 26,
+        "xga": 2.9
+      },
+      "PHI": {
+        "rank": 27,
+        "xga": 2.9
+      },
+      "COL": {
+        "rank": 28,
+        "xga": 2.82
+      },
+      "DAL": {
+        "rank": 29,
+        "xga": 2.81
+      },
+      "CAR": {
+        "rank": 30,
+        "xga": 2.8
+      },
+      "VGK": {
+        "rank": 31,
+        "xga": 2.72
+      },
+      "OTT": {
+        "rank": 32,
+        "xga": 2.71
+      }
     }
   },
   "players": [
@@ -25175,6 +25305,178 @@
       "newTeam": false
     },
     {
+      "playerId": 8478057,
+      "name": "Dakota Joshua",
+      "team": "TOR",
+      "position": "C",
+      "games_played": 55,
+      "icetime": 40419,
+      "ppIcetime": 812,
+      "shifts": 953,
+      "ICF": 80,
+      "HDCF": 48,
+      "TotalGoals": 10,
+      "P1Attempts": 23,
+      "P1SOG": 16,
+      "xG": 8.05,
+      "onIceXgf": 25.79,
+      "I_F_primaryAssists": 6,
+      "I_F_secondaryAssists": 2,
+      "I_F_points": 18,
+      "I_F_highDangerShots": 10,
+      "I_F_mediumDangerShots": 26,
+      "RecentGoals": 0,
+      "RecentIntentScore": 0.7,
+      "RecentHighDangerShots": 7,
+      "RecentShotVolume": 10,
+      "HighDangerRate": 0.6,
+      "OnGoalIntentRate": 0.65,
+      "RecentIntentScoreLast5Games": 0.7,
+      "RecentShotVolumeLast5Games": 10,
+      "iSCF_5G": 10,
+      "iHDCF_5G": 7,
+      "Goals_Last5": 0,
+      "Assists_Last5": 2,
+      "Points_Last5": 2,
+      "Intent_Last5": 0.7,
+      "ShotsOnGoalPerGame": 0.95,
+      "ShotAttemptsPerGame": 1.45,
+      "AvgShotDistance": 20.7,
+      "iSCF": 80,
+      "iHDCF": 48,
+      "DaysSinceLastGoal": 5,
+      "onIce_corsiPercentage": 0.433,
+      "onIce_fenwickPercentage": 0.423,
+      "onIce_xGoalsPercentage": 0.44,
+      "oZoneShiftStarts": 43,
+      "dZoneShiftStarts": 126,
+      "neutralZoneShiftStarts": 197,
+      "oZoneStartPct": 0.254,
+      "isHome": false,
+      "opponentTeam": "SEA",
+      "opponentTeamGA60": 3.18,
+      "opponentTeamxGA60": 3.21,
+      "opponentTeamHDCFAllowedPer60": 14.19,
+      "opponentXGoalsAgainst": 301.7,
+      "opponentGoalieId": 8475831,
+      "opponentGoalie": "Philipp Grubauer",
+      "opponentGoalieGA60": 2.64,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.886,
+      "isEligible": true,
+      "last7": [
+        {
+          "gameId": 2025021120,
+          "date": "2026-03-24",
+          "opp": "BOS",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 5,
+          "shotAttempts": 7,
+          "hd": 4,
+          "xg": 0.543,
+          "oxg": 0.764,
+          "icetime": 778
+        },
+        {
+          "gameId": 2025021136,
+          "date": "2026-03-25",
+          "opp": "NYR",
+          "home": true,
+          "goals": 1,
+          "assists": 1,
+          "points": 2,
+          "sog": 1,
+          "shotAttempts": 1,
+          "hd": 0,
+          "xg": 0.051,
+          "oxg": 0.633,
+          "icetime": 871
+        },
+        {
+          "gameId": 2025021160,
+          "date": "2026-03-28",
+          "opp": "STL",
+          "home": false,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "sog": 1,
+          "shotAttempts": 3,
+          "hd": 2,
+          "xg": 0.399,
+          "oxg": 0.711,
+          "icetime": 903
+        },
+        {
+          "gameId": 2025021176,
+          "date": "2026-03-30",
+          "opp": "ANA",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 0,
+          "shotAttempts": 2,
+          "hd": 2,
+          "xg": 0.413,
+          "oxg": 0.812,
+          "icetime": 860
+        },
+        {
+          "gameId": 2025021202,
+          "date": "2026-04-02",
+          "opp": "SJS",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 2,
+          "shotAttempts": 2,
+          "hd": 1,
+          "xg": 0.159,
+          "oxg": 0.644,
+          "icetime": 869
+        },
+        {
+          "gameId": 2025021217,
+          "date": "2026-04-04",
+          "opp": "LAK",
+          "home": false,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "sog": 0,
+          "shotAttempts": 0,
+          "hd": 0,
+          "xg": 0.0,
+          "oxg": 0.545,
+          "icetime": 638
+        },
+        {
+          "gameId": 2025021245,
+          "date": "2026-04-08",
+          "opp": "WSH",
+          "home": true,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 1,
+          "shotAttempts": 3,
+          "hd": 2,
+          "xg": 0.41,
+          "oxg": 1.027,
+          "icetime": 510
+        }
+      ],
+      "teamGp": 0,
+      "seasonGp": 0,
+      "newTeam": false,
+      "lastTeam": "TOR"
+    },
+    {
       "playerId": 8479968,
       "name": "Vinni Lettieri",
       "team": "TOR",
@@ -28678,11 +28980,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -28849,11 +29151,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -29020,11 +29322,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -29192,11 +29494,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -29363,11 +29665,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -29534,11 +29836,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -29705,11 +30007,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -29876,11 +30178,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -30048,11 +30350,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -30219,11 +30521,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -30390,11 +30692,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -30562,11 +30864,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -30734,11 +31036,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -30905,11 +31207,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -31076,11 +31378,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -31247,11 +31549,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -31418,11 +31720,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -31589,11 +31891,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -31760,11 +32062,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -31931,11 +32233,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -32102,11 +32404,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -32273,11 +32575,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {
@@ -32444,11 +32746,11 @@
       "opponentTeamxGA60": 3.45,
       "opponentTeamHDCFAllowedPer60": 14.71,
       "opponentXGoalsAgainst": 331.5,
-      "opponentGoalieId": 8476932,
-      "opponentGoalie": "Anthony Stolarz",
-      "opponentGoalieGA60": 3.2,
-      "opponentGoalieXGA60": 3.03,
-      "opponentGoalieHighDangerSavePct": 0.886,
+      "opponentGoalieId": 8475683,
+      "opponentGoalie": "Sergei Bobrovsky",
+      "opponentGoalieGA60": 3.06,
+      "opponentGoalieXGA60": 2.89,
+      "opponentGoalieHighDangerSavePct": 0.854,
       "isEligible": true,
       "last7": [
         {

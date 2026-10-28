@@ -1,9 +1,9 @@
 {
  "_meta": {
-  "generated": "2026-10-28 12:30",
+  "generated": "2026-10-28 15:18",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 77,
+  "count": 76,
   "up": 44,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
@@ -26,7 +26,7 @@
    "from": "his conditioning assignment with Toronto",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -406,6 +406,11 @@
    "sentDownOn": null,
    "events": [
     {
+     "date": "2026-09-24",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
      "date": "2026-10-25",
      "type": "up",
      "club": "Texas"
@@ -439,70 +444,6 @@
     "careerGp": 98,
     "careerG": 16,
     "careerP": 33
-   }
-  },
-  {
-   "playerId": 8486130,
-   "name": "Dylan Hryckowian",
-   "team": "DAL",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2004-05-19",
-   "sweater": 46,
-   "draft": null,
-   "recalledOn": "2026-10-25",
-   "from": "Texas",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-24",
-     "type": "down",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-10-25",
-     "type": "up",
-     "club": "Texas"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 8,
-     "goals": 3,
-     "assists": 5,
-     "points": 8,
-     "plusMinus": 1,
-     "pim": 8,
-     "team": "Texas Stars"
-    },
-    "last": {
-     "gamesPlayed": 12,
-     "goals": 3,
-     "assists": 3,
-     "points": 6,
-     "plusMinus": 2,
-     "pim": 8,
-     "team": "Texas Stars"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 1,
-     "team": "Dallas Stars"
-    },
-    "last": null,
-    "careerGp": 2,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
