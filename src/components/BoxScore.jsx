@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import ViewPicker from "./ViewPicker.jsx";
 import { openSkaterSlide, openGoalieSlide } from "../slideouts.js";
 import { batchFromBox, estimateOnIce, sameBatch } from "../lib/onIce.js";
 import RinkTracker from "./RinkTracker.jsx";
@@ -275,14 +276,9 @@ export default function BoxScore({ gameId, poolById, onClose, refreshKey = 0, he
       {!box && !error && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading box score…</div>}
       {box && !pre && <Momentum box={box} />}
       {box && !pre && (
-        <div className="pill-row" style={{ marginBottom: 10 }}>
-          <button className={`pill-btn ${view === "box" ? "active" : ""}`} onClick={() => setView("box")}>📋 Box score</button>
-          <button className={`pill-btn ${view === "proj" ? "active" : ""}`} onClick={() => setView("proj")}>📈 Live projection</button>
-          <button className={`pill-btn ${view === "lineups" ? "active" : ""}`} onClick={() => setView("lineups")}>👥 Lineups</button>
-          <button className={`pill-btn ${view === "compare" ? "active" : ""}`} onClick={() => setView("compare")}>⚖️ Team comparison</button>
-          <button className={`pill-btn ${view === "pbp" ? "active" : ""}`} onClick={() => setView("pbp")}>📜 Play-by-play</button>
-          <button className={`pill-btn ${view === "tracker" ? "active" : ""}`} onClick={() => setView("tracker")}>🏒 Game Tracker</button>
-        </div>
+        <ViewPicker pillClass="pill-btn" style={{ marginBottom: 10 }} value={view} onChange={setView} options={[
+          ["box", "📋 Box score"], ["proj", "📈 Live projection"], ["lineups", "👥 Lineups"], ["compare", "⚖️ Team comparison"],
+          ["pbp", "📜 Play-by-play"], ["tracker", "🏒 Game Tracker"]]} />
       )}
       {box && shown === "lineups" && <LineupsView date={date} gameId={gameId} />}
       {box && shown === "proj" && <LiveProjection box={box} poolById={poolById} date={date} />}

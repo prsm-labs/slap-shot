@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ViewPicker from "../components/ViewPicker.jsx";
 import AllMatchupsTab from "./AllMatchupsTab.jsx";
 import LampLabTab from "./LampLabTab.jsx";
 import AppleLabTab from "./AppleLabTab.jsx";
@@ -25,13 +26,8 @@ export default function MatchupsHubTab() {
   const Active = (VIEWS.find((v) => v.key === view) || VIEWS[0]).Component;
   return (
     <div>
-      <div className="pill-row" style={{ display: "inline-flex", flexWrap: "wrap", marginBottom: 14 }}>
-        {VIEWS.map((v) => (
-          <button key={v.key} className={`pill-btn ${view === v.key ? "active" : ""}`} onClick={() => setView(v.key)}>
-            {v.label}
-          </button>
-        ))}
-      </div>
+      <ViewPicker options={VIEWS.map((v) => [v.key, v.label])} value={view} onChange={setView} pillClass="pill-btn" label="Scouting"
+        style={{ display: "inline-flex", flexWrap: "wrap", marginBottom: 14 }} />
       <SlateStatus />
       <Active />
     </div>

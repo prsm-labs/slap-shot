@@ -1,0 +1,14 @@
+/* 2026-10-28 shared view picker (same file in every PRISM Labs app): the phone dropdown; the pill row keeps each app's own
+   pill styles. Colours fall back across the apps' token names. */
+.vp { position: relative; display: flex; align-items: center; gap: 10px; width: 100%; margin: 0 0 12px; }
+.vp-label { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; opacity: .7; white-space: nowrap; }
+.vp-select {
+  -webkit-appearance: none; appearance: none; flex: 1; min-width: 0;
+  font: inherit; font-size: 16px; font-weight: 600; line-height: 1.2;   /* 16px: no iOS zoom on focus */
+  padding: 11px 38px 11px 14px; border-radius: 12px; cursor: pointer;
+  color: var(--text, var(--fg, var(--ink, inherit)));
+  background-color: var(--surface2, var(--card, var(--surface, #1b1b22)));
+  border: 1px solid var(--accent, currentColor);
+}
+.vp-select:focus-visible { outline: 2px solid var(--accent, currentColor); outline-offset: 2px; }
+.vp-chev { position: absolute; right: 14px; pointer-events: none; color: var(--accent, currentColor); font-size: 14px; }
