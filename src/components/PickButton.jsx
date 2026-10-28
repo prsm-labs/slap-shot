@@ -6,6 +6,7 @@ import { PICK_TYPE, PICK_TYPES, removePick, setPick, usePicks } from "../lib/pic
 // on-screen rectangle, so it isn't clipped or shifted by a parent using CSS transforms (the Top 3
 // flip cards) or overflow (scrolling tables). It opens below the button, or above when there's no room.
 const MENU_W = 170;
+const pageZoom = () => parseFloat(getComputedStyle(document.documentElement).zoom) || 1 // 2026-10-28 big-screen zoom (CSS --z);
 
 export default function PickButton({ player, size = "sm" }) {
   const picks = usePicks();
@@ -18,10 +19,12 @@ export default function PickButton({ player, size = "sm" }) {
 
   function toggle() {
     if (open) return setOpen(false);
-    const r = btnRef.current.getBoundingClientRect();
+    // measured in window pixels; the menu is placed in page pixels (they differ by the big-screen zoom)
+    const z = pageZoom(), b = btnRef.current.getBoundingClientRect();
+    const r = { left: b.left / z, top: b.top / z, bottom: b.bottom / z };
     const menuH = (PICK_TYPES.length + (current ? 1 : 0)) * 30 + 10;
-    const left = Math.min(Math.max(8, r.left), window.innerWidth - MENU_W - 8);
-    const below = r.bottom + 4 + menuH <= window.innerHeight;
+    const left = Math.min(Math.max(8, r.left), window.innerWidth / z - MENU_W - 8);
+    const below = r.bottom + 4 + menuH <= window.innerHeight / z;
     setPos({ left, top: below ? r.bottom + 4 : Math.max(8, r.top - 4 - menuH) });
     setOpen(true);
   }

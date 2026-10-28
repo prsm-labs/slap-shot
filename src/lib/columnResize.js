@@ -95,13 +95,15 @@ function startDrag(e, th) {
   }
   lastTap = { label, t: now };
   const handle = e.currentTarget;
+  // window pixels -> page pixels (big-screen zoom, 2026-10-28)
+  const z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
   const startX = e.clientX;
-  const startW = th.getBoundingClientRect().width;
+  const startW = th.getBoundingClientRect().width / z;
   let moved = false;
   handle.setPointerCapture?.(e.pointerId);
   handle.classList.add("active");
   const move = (ev) => {
-    const dx = ev.clientX - startX;
+    const dx = (ev.clientX - startX) / z;
     if (!moved && Math.abs(dx) < 3) return;
     moved = true;
     widths[label] = Math.max(MIN_W, Math.round(startW + dx));
@@ -175,11 +177,13 @@ function openChooser(table, gear) {
   };
   render();
   document.body.appendChild(panel);
-  const r = gear.getBoundingClientRect();
+  const z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1; // big-screen zoom: window -> page pixels
+  const g = gear.getBoundingClientRect();
+  const r = { left: g.left / z, top: g.top / z, bottom: g.bottom / z };
   const pw = panel.offsetWidth, ph = panel.offsetHeight;
-  const left = Math.max(8, Math.min(r.left, window.innerWidth - pw - 8));
+  const left = Math.max(8, Math.min(r.left, window.innerWidth / z - pw - 8));
   const below = r.bottom + 6;
-  const top = below + ph > window.innerHeight - 8 ? Math.max(8, r.top - ph - 6) : below;
+  const top = below + ph > window.innerHeight / z - 8 ? Math.max(8, r.top - ph - 6) : below;
   panel.style.left = `${left}px`;
   panel.style.top = `${top}px`;
   document.addEventListener("pointerdown", outside, true);

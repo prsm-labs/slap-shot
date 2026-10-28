@@ -17,8 +17,8 @@
     --line:rgba(0,0,0,.07);--line2:rgba(0,0,0,.08);--chip:rgba(0,0,0,.03);--chip-border:rgba(0,0,0,.1);
     --header-top:#e9f1f7;--faint:#9aa8b4;--elite-fg:#1f6694;--warn:#a8780e;--hat:#b86e00;--hot:#c2412d;--gold-text:#8a6d0f;}
 }
-body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-height:100vh;}
-.app{min-height:100vh;display:flex;flex-direction:column;}
+body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-height:calc(100vh / var(--z, 1));}
+.app{min-height:calc(100vh / var(--z, 1));display:flex;flex-direction:column;}
 
 .header{
   padding:16px 24px;border-bottom:1px solid var(--border);
@@ -114,7 +114,7 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
 .cmp-bar{display:flex;gap:2px;height:6px;border-radius:3px;overflow:hidden;background:var(--surface2);}
 .cmp-bar span{background:rgba(90,112,128,.55);}
 .cmp-bar span.lead{background:var(--accent);}
-.pbp{max-height:70vh;overflow:auto;border:1px solid var(--border);border-radius:8px;padding:2px 10px;}
+.pbp{max-height:calc(70vh / var(--z, 1));overflow:auto;border:1px solid var(--border);border-radius:8px;padding:2px 10px;}
 .pbp-q{position:sticky;top:0;background:var(--surface);font-weight:700;font-size:11px;padding:6px 0 4px;border-bottom:1px solid var(--border);z-index:1;}
 .pbp-row{display:grid;grid-template-columns:42px 34px 1fr auto;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid var(--line);font-size:11px;}
 .pbp-row.goal{background:rgba(47,125,174,.16);font-weight:600;}
@@ -180,7 +180,7 @@ body{background:var(--bg);color:var(--text);font-family:'Oswald',sans-serif;min-
 /* ── Shared: sortable/scored tables ─────────────────────────────────── */
 .table-wrap{overflow:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface);
   /* own scroll area so the header row stays pinned while scrolling down a long table (sticky th, top:0) */
-  max-height:max(360px,calc(100dvh - var(--header-h,60px) - 80px));overscroll-behavior-x:contain;}
+  max-height:max(360px,calc(100dvh / var(--z, 1) - var(--header-h,60px) - 80px));overscroll-behavior-x:contain;}
 table.data-table{width:100%;border-collapse:collapse;font-family:'DM Mono',monospace;font-size:11.5px;white-space:nowrap;}
 table.data-table th{
   text-align:left;padding:9px 12px;color:var(--muted);font-size:10px;letter-spacing:1px;
@@ -226,7 +226,7 @@ table.data-table th .col-gear:hover{opacity:1;}
 .col-chooser{position:fixed;z-index:1000;width:240px;max-width:calc(100vw - 16px);background:var(--surface2);border:1px solid var(--border);
   border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.5);padding:10px;font-family:'DM Mono',monospace;font-size:11px;color:var(--text);}
 .col-chooser-head{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-.col-chooser-list{max-height:min(50vh,360px);overflow-y:auto;display:flex;flex-direction:column;}
+.col-chooser-list{max-height:min(calc(50vh / var(--z, 1)),360px);overflow-y:auto;display:flex;flex-direction:column;}
 .col-chooser-list label{display:flex;align-items:center;gap:8px;padding:5px 2px;cursor:pointer;border-bottom:1px solid var(--line);}
 .col-chooser-list input{accent-color:var(--accent);width:15px;height:15px;}
 .col-chooser-foot{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
@@ -508,3 +508,31 @@ p.sch-muted{margin:0 0 10px;}
 .mo-axis{display:flex;margin-top:2px;}
 .mo-axis>span{text-align:center;}
 .mo-note{margin-top:6px;}
+
+/* 2026-10-28 big screens (user: on a 1920 monitor at 100% scaling the apps only filled the middle -- had to zoom the
+   browser to 150%; users shouldn't need settings). Wide windows zoom the whole page so it fills the width: --z = window
+   width / 1340 (the 1280 page + gutters + scrollbar), in 5% steps from 1.10, capped at 2.0. Under 1474 px (phones,
+   tablets, laptops) nothing changes. Media queries read the real window width, so the zoom never feeds back. Anything
+   sized to the window height (vh / dvh) divides by --z, and code that places pop-ups from measured positions divides by
+   pageZoom() -- otherwise both come out --z times too big / too far. */
+:root { --z: 1; }
+@media (min-width: 1475px) { :root { --z: 1.10; } }
+@media (min-width: 1541px) { :root { --z: 1.15; } }
+@media (min-width: 1608px) { :root { --z: 1.20; } }
+@media (min-width: 1675px) { :root { --z: 1.25; } }
+@media (min-width: 1742px) { :root { --z: 1.30; } }
+@media (min-width: 1810px) { :root { --z: 1.35; } }
+@media (min-width: 1876px) { :root { --z: 1.40; } }
+@media (min-width: 1943px) { :root { --z: 1.45; } }
+@media (min-width: 2010px) { :root { --z: 1.50; } }
+@media (min-width: 2077px) { :root { --z: 1.55; } }
+@media (min-width: 2144px) { :root { --z: 1.60; } }
+@media (min-width: 2211px) { :root { --z: 1.65; } }
+@media (min-width: 2278px) { :root { --z: 1.70; } }
+@media (min-width: 2345px) { :root { --z: 1.75; } }
+@media (min-width: 2412px) { :root { --z: 1.80; } }
+@media (min-width: 2479px) { :root { --z: 1.85; } }
+@media (min-width: 2546px) { :root { --z: 1.90; } }
+@media (min-width: 2613px) { :root { --z: 1.95; } }
+@media (min-width: 2680px) { :root { --z: 2.00; } }
+html { zoom: var(--z); }
