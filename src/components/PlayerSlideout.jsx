@@ -18,6 +18,19 @@ import { betLine } from "../lib/gambly.js";
 import { useTonightLine } from "../lib/tonightLine.js";
 import TonightCard from "./TonightCard.jsx";
 import MatchupChip from "./MatchupChip.jsx";
+import HitRateCard from "./HitRateCard.jsx";
+import Fold from "./Fold.jsx";
+import { useHitGames } from "../lib/hitGames.js";
+
+// 2026-10-28 hit-rate card: goals / assists / points at 1+, shots on goal at his per-game average (where a book line sits)
+const HR_STATS = (p) => [
+  { k: "G", label: "Goals", unit: "goals", step: 1, min: 1, def: 1 },
+  { k: "A", label: "Assists", unit: "assists", step: 1, min: 1, def: 1 },
+  { k: "PTS", label: "Points", unit: "points", step: 1, min: 1, def: 1 },
+  { k: "SOG", label: "SOG", unit: "SOG", step: 1, min: 1, def: Math.max(1, Math.round(p.ShotsOnGoalPerGame ?? 2)) },
+];
+const HR_REST = [{ label: "Back-to-back", test: (r) => r === 0 }, { label: "1 day off", test: (r) => r === 1 }, { label: "2+ days off", test: (r) => r >= 2 }];
+const seasonOf = (d) => { const [y, m] = String(d).split("-").map(Number); return m >= 8 ? `${y}-${String(y + 1).slice(2)}` : `${y - 1}-${String(y).slice(2)}`; };
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -128,17 +141,20 @@ ${MARKET_NOTE}`}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImp
       )}
       {p.effectiveGrade?.matchup && (
         <div className="mono" style={{ fontSize: 10, color: "var(--muted)", padding: "6px 0", borderBottom: "1px solid var(--line)" }}>
-          <span style={{ color: p.effectiveGrade.matchup.tier === "soft" ? "var(--accent2)" : "var(--text)", fontWeight: 600 }}>
+          <Fold summary={<span style={{ color: p.effectiveGrade.matchup.tier === "soft" ? "var(--accent2)" : "var(--text)", fontWeight: 600 }}>
             {matchupText(p.effectiveGrade.matchup)}
-          </span>
+          </span>}>
           <div style={{ marginTop: 3 }}>{DVP_NOTE}</div>
           {dvp && (
             <div style={{ marginTop: 3 }}>
               D vs Pos (context): {dvp.opp} allows {dvp.g.toFixed(2)} G / {dvp.p.toFixed(2)} P / {dvp.sog.toFixed(1)} SOG per game to {dvp.label}s — #{dvp.rank} most of {dvp.of}.
             </div>
           )}
+          </Fold>
         </div>
       )}
+      <div style={{ padding: "6px 0" }}>
+      <Fold summary={<span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>Season (last + this): {p.games_played ?? "—"} GP · {p.TotalGoals ?? "—"} G · {p.ShotsOnGoalPerGame ?? "—"} SOG/gm · {fmtToi(p.ppToi)} PP TOI</span>}>
       <StatRow label="PP TOI / game" value={fmtToi(p.ppToi)} />
       <StatRow label="Games Played" value={p.games_played} />
       <StatRow label="Goals" value={p.TotalGoals} />
@@ -147,6 +163,19 @@ ${MARKET_NOTE}`}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImp
       <StatRow label="HDCF (High-Danger)" value={p.HDCF} />
       <StatRow label="Avg Shot Distance" value={p.AvgShotDistance != null ? `${p.AvgShotDistance} ft` : "—"} />
       <StatRow label="Goals, Last 5 GP" value={p.Goals_Last5} />
+      </Fold>
+      </div>
+    </div>
+  );
+}
+
+function SkaterHitRates({ p }) {
+  const hit = useHitGames(p.playerId, seasonOf(new Date().toISOString().slice(0, 10)));
+  return (
+    <div className="card">
+      <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6, textTransform: "uppercase", letterSpacing: 1 }}>Hit rates</div>
+      <HitRateCard games={hit.games} ready={hit.ready} stats={HR_STATS(p)} opp={p.opponentTeam} rest={HR_REST}
+        played={{ label: "Ice time", unit: "min", round: (m) => Math.round(m) }} tierLabels={["🟢 Soft (10 softest)", "Average", "🔴 Stingy (10 stingiest)"]} />
     </div>
   );
 }
@@ -203,6 +232,7 @@ export default function PlayerSlideout() {
             ) : (
               <>
                 <SkaterStats p={player} />
+                <SkaterHitRates p={player} />
                 <SkaterCharts player={player} tonight={tonight} />
               </>
             )}

@@ -1,0 +1,38 @@
+/* 2026-10-28 hit-rate card in the player slideout (HitRateCard.jsx) -- same file in CourtIQ, Slap Shot, Six Points */
+.hr-card { border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin: 6px 0 14px; }
+.hr-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.hr-stats { display: flex; flex-wrap: wrap; gap: 4px; }
+.hr-stats button { font: inherit; font-size: 0.74rem; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: inherit; cursor: pointer; }
+.hr-stats button.on { background: var(--accent); border-color: var(--accent); color: var(--accent-fg, #fff); }
+.hr-line { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+.hr-line button { font: inherit; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: inherit; cursor: pointer; line-height: 1; }
+.hr-line button:hover { border-color: var(--accent); }
+.hr-line b { min-width: 64px; text-align: center; }
+.hr-tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.hr-tile { border-radius: 8px; padding: 6px 2px; text-align: center; background: color-mix(in srgb, var(--fg, var(--text)) 5%, transparent); min-width: 0; }
+.hr-tile b { display: block; font-size: 0.95rem; }
+.hr-tile span { display: block; font-size: 0.66rem; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px; }
+.hr-tile i { display: block; font-style: normal; font-size: 0.64rem; opacity: .55; }
+.hr-tile.good { background: color-mix(in srgb, var(--good, var(--green, #2fae5c)) 16%, transparent); }
+.hr-tile.good b { color: var(--good, var(--green, #2fae5c)); }
+.hr-tile.bad { background: color-mix(in srgb, var(--bad, var(--red, #e5484d)) 14%, transparent); }
+.hr-tile.bad b { color: var(--bad, var(--red, #e5484d)); }
+.hr-more { font: inherit; font-size: 0.76rem; margin-top: 8px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: inherit; cursor: pointer; }
+.hr-more:hover { border-color: var(--accent); }
+.hr-splits { margin-top: 8px; }
+.hr-splits table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.hr-splits th, .hr-splits td { padding: 4px 6px; border-bottom: 1px solid var(--border); }
+.hr-splits th { font-size: 0.7rem; font-weight: 600; opacity: .7; }
+.hr-splits td:not(:first-child), .hr-splits th:not(:first-child) { text-align: right; }
+.hr-splits tr.hr-group td { font-size: 0.68rem; text-transform: uppercase; letter-spacing: .06em; opacity: .6; padding-top: 8px; }
+.hr-splits td.good { color: var(--good, var(--green, #2fae5c)); font-weight: 600; }
+.hr-splits td.bad { color: var(--bad, var(--red, #e5484d)); font-weight: 600; }
+.hr-wait { margin: 4px 0; }
+@media (max-width: 420px) { .hr-tiles { grid-template-columns: repeat(3, 1fr); } }
+
+/* folded paragraph block (Fold) */
+.fold-sum { display: flex; align-items: flex-start; gap: 8px; }
+.fold-sum > div { flex: 1; min-width: 0; }
+.fold-btn { flex: 0 0 auto; font: inherit; font-size: 0.74rem; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: inherit; cursor: pointer; white-space: nowrap; }
+.fold-btn:hover { border-color: var(--accent); }
+.fold-body { margin-top: 6px; }
