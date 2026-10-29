@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-10-28 17:35",
+  "generated": "2026-10-29 07:08",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 78,
@@ -230,12 +230,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 1,
-     "pim": 2,
+     "pim": 6,
      "shots": 2,
      "team": "Philadelphia Flyers"
     },
@@ -249,7 +249,7 @@
      "shots": 4,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 11,
+    "careerGp": 12,
     "careerG": 0,
     "careerP": 0
    }
@@ -423,6 +423,68 @@
    }
   },
   {
+   "playerId": 8484829,
+   "name": "Justin Hryckowian",
+   "team": "DAL",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "2001-02-23",
+   "sweater": 49,
+   "draft": null,
+   "recalledOn": "2026-10-25",
+   "from": "Texas",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-24",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-10-25",
+     "type": "up",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-10-28",
+     "type": "down",
+     "club": "Texas"
+    }
+   ],
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 2,
+     "assists": 0,
+     "points": 2,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 14,
+     "team": "Dallas Stars"
+    },
+    "last": {
+     "gamesPlayed": 81,
+     "goals": 14,
+     "assists": 16,
+     "points": 30,
+     "plusMinus": 1,
+     "pim": 43,
+     "shots": 83,
+     "team": "Dallas Stars"
+    },
+    "careerGp": 98,
+    "careerG": 16,
+    "careerP": 33
+   }
+  },
+  {
    "playerId": 8483514,
    "name": "Matthew Seminoff",
    "team": "DAL",
@@ -492,60 +554,81 @@
    }
   },
   {
-   "playerId": 8484829,
-   "name": "Justin Hryckowian",
-   "team": "DAL",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "2001-02-23",
-   "sweater": 49,
+   "playerId": 8482993,
+   "name": "Avery Hayes",
+   "team": "PIT",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2002-10-10",
+   "sweater": 85,
    "draft": null,
-   "recalledOn": "2026-10-25",
-   "from": "Texas",
+   "recalledOn": "2026-10-24",
+   "from": "Wilkes-Barre/Scranton",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-10-28",
    "events": [
     {
-     "date": "2026-09-24",
+     "date": "2026-09-25",
      "type": "down",
-     "club": "Texas"
+     "club": "Wilkes-Barre/Scranton"
     },
     {
-     "date": "2026-10-25",
+     "date": "2026-10-24",
      "type": "up",
-     "club": "Texas"
+     "club": "Wilkes-Barre/Scranton"
+    },
+    {
+     "date": "2026-10-28",
+     "type": "down",
+     "club": "Wilkes-Barre/Scranton"
     }
    ],
    "ahl": {
-    "season": null,
-    "last": null
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 5,
+     "assists": 4,
+     "points": 9,
+     "plusMinus": 6,
+     "pim": 2,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    },
+    "last": {
+     "gamesPlayed": 42,
+     "goals": 24,
+     "assists": 15,
+     "points": 39,
+     "plusMinus": 10,
+     "pim": 48,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    }
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
-     "goals": 2,
+     "gamesPlayed": 1,
+     "goals": 0,
      "assists": 0,
-     "points": 2,
+     "points": 0,
      "plusMinus": 0,
-     "pim": 2,
-     "shots": 14,
-     "team": "Dallas Stars"
+     "pim": 0,
+     "shots": 5,
+     "team": "Pittsburgh Penguins"
     },
     "last": {
-     "gamesPlayed": 81,
-     "goals": 14,
-     "assists": 16,
-     "points": 30,
-     "plusMinus": 1,
-     "pim": 43,
-     "shots": 83,
-     "team": "Dallas Stars"
+     "gamesPlayed": 16,
+     "goals": 5,
+     "assists": 0,
+     "points": 5,
+     "plusMinus": -4,
+     "pim": 12,
+     "shots": 25,
+     "team": "Pittsburgh Penguins"
     },
-    "careerGp": 98,
-    "careerG": 16,
-    "careerP": 33
+    "careerGp": 17,
+    "careerG": 5,
+    "careerP": 5
    }
   },
   {
@@ -596,7 +679,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Seattle Kraken"
+    },
     "last": {
      "gamesPlayed": 28,
      "goals": 4,
@@ -686,79 +778,6 @@
    }
   },
   {
-   "playerId": 8482993,
-   "name": "Avery Hayes",
-   "team": "PIT",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2002-10-10",
-   "sweater": 85,
-   "draft": null,
-   "recalledOn": "2026-10-24",
-   "from": "Wilkes-Barre/Scranton",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Wilkes-Barre/Scranton"
-    },
-    {
-     "date": "2026-10-24",
-     "type": "up",
-     "club": "Wilkes-Barre/Scranton"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 5,
-     "assists": 4,
-     "points": 9,
-     "plusMinus": 6,
-     "pim": 2,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    },
-    "last": {
-     "gamesPlayed": 42,
-     "goals": 24,
-     "assists": 15,
-     "points": 39,
-     "plusMinus": 10,
-     "pim": 48,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 5,
-     "team": "Pittsburgh Penguins"
-    },
-    "last": {
-     "gamesPlayed": 16,
-     "goals": 5,
-     "assists": 0,
-     "points": 5,
-     "plusMinus": -4,
-     "pim": 12,
-     "shots": 25,
-     "team": "Pittsburgh Penguins"
-    },
-    "careerGp": 17,
-    "careerG": 5,
-    "careerP": 5
-   }
-  },
-  {
    "playerId": 8480069,
    "name": "Cale Makar",
    "team": "COL",
@@ -796,13 +815,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 3,
      "assists": 8,
      "points": 11,
-     "plusMinus": 3,
+     "plusMinus": 1,
      "pim": 2,
-     "shots": 28,
+     "shots": 34,
      "team": "Colorado Avalanche"
     },
     "last": {
@@ -815,7 +834,7 @@
      "shots": 199,
      "team": "Colorado Avalanche"
     },
-    "careerGp": 481,
+    "careerGp": 482,
     "careerG": 139,
     "careerP": 518
    }
@@ -991,12 +1010,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 2,
-     "pim": 2,
+     "plusMinus": 1,
+     "pim": 4,
      "shots": 1,
      "team": "Toronto Maple Leafs"
     },
@@ -1730,11 +1749,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 6,
      "assists": 5,
      "points": 11,
-     "plusMinus": 4,
+     "plusMinus": 3,
      "pim": 4,
      "team": "Manitoba Moose"
     },
@@ -1973,17 +1992,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 2,
      "assists": 0,
      "points": 2,
-     "plusMinus": -2,
+     "plusMinus": -4,
      "pim": 0,
-     "shots": 9,
+     "shots": 11,
      "team": "Philadelphia Flyers"
     },
     "last": null,
-    "careerGp": 4,
+    "careerGp": 5,
     "careerG": 2,
     "careerP": 2
    }
@@ -2042,13 +2061,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 0,
+     "plusMinus": -1,
      "pim": 0,
-     "shots": 16,
+     "shots": 19,
      "team": "Philadelphia Flyers"
     },
     "last": {
@@ -2061,7 +2080,7 @@
      "shots": 23,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 24,
+    "careerGp": 25,
     "careerG": 5,
     "careerP": 9
    }
@@ -2291,12 +2310,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 1,
      "assists": 0,
      "points": 1,
      "plusMinus": -2,
-     "pim": 7,
+     "pim": 14,
      "shots": 7,
      "team": "Toronto Maple Leafs"
     },
@@ -2501,13 +2520,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -2,
      "pim": 10,
-     "shots": 2,
+     "shots": 3,
      "team": "Philadelphia Flyers"
     },
     "last": {
@@ -2520,7 +2539,7 @@
      "shots": 0,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 5,
+    "careerGp": 6,
     "careerG": 0,
     "careerP": 1
    }
@@ -2559,7 +2578,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 2,
      "assists": 4,
      "points": 6,
@@ -2689,7 +2708,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 2,
      "assists": 4,
      "points": 6,
@@ -3595,7 +3614,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 1,
      "points": 1,
@@ -3982,13 +4001,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 5,
      "points": 5,
      "plusMinus": -6,
      "pim": 4,
-     "shots": 9,
+     "shots": 10,
      "team": "Philadelphia Flyers"
     },
     "last": {
@@ -4001,7 +4020,7 @@
      "shots": 1,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 9,
+    "careerGp": 10,
     "careerG": 1,
     "careerP": 7
    }
@@ -4413,17 +4432,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 1,
      "points": 1,
      "plusMinus": 0,
-     "pim": 8,
+     "pim": 10,
      "shots": 6,
      "team": "Calgary Flames"
     },
     "last": null,
-    "careerGp": 8,
+    "careerGp": 9,
     "careerG": 0,
     "careerP": 1
    }
@@ -4477,11 +4496,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 3,
      "assists": 1,
      "points": 4,
-     "plusMinus": -4,
+     "plusMinus": -5,
      "pim": 2,
      "shots": 16,
      "team": "Calgary Flames"
@@ -4496,7 +4515,7 @@
      "shots": 9,
      "team": "Calgary Flames"
     },
-    "careerGp": 15,
+    "careerGp": 16,
     "careerG": 3,
     "careerP": 5
    }
