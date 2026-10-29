@@ -1,7 +1,7 @@
 import { fmtToi } from "../lib/toi.js";
 import ProfileLinks from "./ProfileLinks.jsx";
 import { positionLabel } from "../lib/positionFilter.js";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { registerSlide, closeAllSlides, openGoalieSlide } from "../slideouts.js";
 import SkaterCharts from "./SkaterCharts.jsx";
 import PlayerAvatar from "./PlayerAvatar.jsx";
@@ -169,8 +169,7 @@ ${MARKET_NOTE}`}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImp
   );
 }
 
-function SkaterHitRates({ p }) {
-  const hit = useHitGames(p.playerId, seasonOf(new Date().toISOString().slice(0, 10)));
+function SkaterHitRates({ p, hit }) {
   return (
     <div className="card">
       <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6, textTransform: "uppercase", letterSpacing: 1 }}>Hit rates</div>
@@ -192,6 +191,19 @@ export default function PlayerSlideout() {
   const role = goalie ? "goalie" : "skater";
   // 2026-10-20 live slideout: tonight's line while the game is on and after it ends
   const tonight = useTonightLine(player);
+  // 2026-10-28 (CourtIQ fix, same gap here): a past night's frozen snapshot has no last7, so the Last 7 chart comes from the season
+  // game logs (the hit-rate card's), games before that night only -- the hit rates use that cutoff too
+  const pool = useScoredPool({ includeStarted: true });
+  const cutoff = pool?.meta?.past ? pool.meta.slateDate : null;
+  const hitRaw = useHitGames(skater?.playerId, seasonOf(cutoff || new Date().toISOString().slice(0, 10)));
+  const hit = useMemo(() => ({ ...hitRaw, games: hitRaw.games && cutoff ? hitRaw.games.filter((g) => g.date < cutoff) : hitRaw.games }), [hitRaw, cutoff]);
+  const skaterView = useMemo(() => {
+    if (!skater || skater.last7?.length || !hit.games?.length) return skater;
+    const last7 = [...hit.games].sort((a, b) => (a.date < b.date ? -1 : 1)).slice(-7).map((g) => ({
+      gameId: g.date, date: g.date, opp: g.opp, home: g.home, goals: g.v.G, assists: g.v.A, points: g.v.PTS, sog: g.v.SOG,
+      shotAttempts: g.att, xg: g.xg, icetime: Math.round(g.played * 60) }));
+    return { ...skater, last7 };
+  }, [skater, hit.games]);
 
   return (
     <>
@@ -232,8 +244,8 @@ export default function PlayerSlideout() {
             ) : (
               <>
                 <SkaterStats p={player} />
-                <SkaterHitRates p={player} />
-                <SkaterCharts player={player} tonight={tonight} />
+                <SkaterHitRates p={player} hit={hit} />
+                <SkaterCharts player={skaterView || player} tonight={tonight} />
               </>
             )}
           </div>

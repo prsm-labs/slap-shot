@@ -44,7 +44,7 @@ function rowsFor(S, id, which) {
     const v = (c) => Number(r[pix[c]] || 0);
     return {
       date: d, season: which, opp, home: r[pix.ha] === "vs", played: v("toi"),
-      v: { G: v("g"), A: v("a"), PTS: v("pts"), SOG: v("sog") },
+      v: { G: v("g"), A: v("a"), PTS: v("pts"), SOG: v("sog") }, att: v("att"), xg: v("xg"), // att / xg: past-night Last 7 chart
       afterLoss: prev ? lost(prev.res) : null, rest: prev ? Math.round(day(d) - day(prev.d)) - 1 : null, tier: tier[opp] || {},
     };
   });
