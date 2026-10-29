@@ -20,8 +20,11 @@ const saveOpen = (v) => { try { localStorage.setItem(OPEN_KEY, v ? '1' : '0') } 
 const notOf = (g, value) => (g.type === 'tags' ? value[`${g.key}Not`] || [] : [])
 export const isActive = (g, value) => (g.type === 'one' ? value[g.key] != null : (value[g.key] || []).length > 0 || notOf(g, value).length > 0)
 
-export default function FilterPanel({ groups, value, onChange, onClear, shown, total, noun = 'players' }) {
+// onSave(name) (2026-10-28, optional): shows "🔔 Alert me" while any filter is on -- the app saves the filter as an alert
+// (lib/savedFilters.js); name = the active chips
+export default function FilterPanel({ groups, value, onChange, onClear, shown, total, noun = 'players', onSave }) {
   const [open, setOpenState] = useState(readOpen)
+  const [saved, setSaved] = useState(false)
   const setOpen = (v) => { setOpenState(v); saveOpen(v) }
   const live = groups.filter((g) => g.options.length)
   const n = live.reduce((s, g) => s + (g.type === 'one' ? (value[g.key] != null ? 1 : 0) : (value[g.key] || []).length + notOf(g, value).length), 0)
@@ -55,6 +58,9 @@ export default function FilterPanel({ groups, value, onChange, onClear, shown, t
               </button>
             ))}
             <button type="button" className="fp-clear" onClick={onClear}>Clear all</button>
+            {onSave && <button type="button" className="fp-clear fp-save" title="Get an alert (while the app is open) when a player starts matching these filters — manage them under 🔔" disabled={saved}
+              onClick={() => { onSave(chips.map(({ g, v, without }) => `${without ? 'no ' : ''}${g.chip ?? g.label ?? ''} ${labelOf(g, v)}`.trim()).join(' · ')); setSaved(true); setTimeout(() => setSaved(false), 2500) }}>
+              {saved ? '✓ Alert saved' : '🔔 Alert me'}</button>}
           </div>
         )}
       </div>

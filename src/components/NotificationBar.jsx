@@ -6,6 +6,26 @@ import { usePicks } from "../lib/picks.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import { installHornUnlock, playGoalHorn } from "../lib/goalHorn.js";
+import { checkSavedFilters, removeFilter, useSavedFilters } from "../lib/savedFilters.js";
+import { applyListFilters, usePickSets } from "../lib/listFilters.js";
+import { useH2HGrades } from "../lib/h2h.js";
+import { filterPositions } from "../lib/positionFilter.js";
+
+// 2026-10-28 saved filter alerts (⚙ Filters -> 🔔 Alert me, lib/savedFilters.js): re-checked whenever tonight's scored
+// pool loads or changes -- one summary per night, then each skater who newly matches.
+function useSavedFilterWatcher(pool) {
+  const saved = useSavedFilters();
+  const h2h = useH2HGrades();
+  const picks = usePickSets(pool);
+  useEffect(() => {
+    if (!pool?.players?.length || pool.meta?.past || !saved.length) return;
+    checkSavedFilters(pool.meta?.slateDate, (f) => {
+      const ctx = { slate: pool.players, signal: f.scope?.signal || "goal", h2h: h2h.skaters, picks, meta: pool.meta };
+      const base = filterPositions(pool.players, f.scope?.pos || null); // no position picked = null
+      return (applyListFilters(base, { ...f.value, search: "" }, ctx) || []).map((p) => ({ id: p.playerId, name: p.name, player: p }));
+    }, (a) => pushAlert({ kind: "filter", icon: "🔔", title: a.title.replace(/^🔔 /, ""), body: a.body, player: a.player }));
+  }, [pool, saved, h2h, picks]);
+}
 
 installHornUnlock(); // browsers only allow sound after the first tap / click
 
@@ -154,6 +174,7 @@ export function AlertBell() {
           <div className="mono" style={{ fontSize: 9, color: "var(--muted)", margin: "6px 0 8px" }}>
             Shows while Slap Shot is open (any tab). Goals arrive ~15-45s after they're scored. The horn needs one tap on the page first, and stays quiet with an iPhone on silent.
           </div>
+          <SavedFilterList />
           {history.length === 0 && <div className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>No alerts yet.</div>}
           {history.map((a) => (
             <div key={a.id} className="mono" style={{ fontSize: 11, padding: "5px 0", borderTop: "1px solid var(--line2)" }}>
@@ -163,6 +184,21 @@ export function AlertBell() {
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+function SavedFilterList() {
+  const saved = useSavedFilters();
+  return (
+    <div style={{ margin: "0 0 8px" }}>
+      <div style={{ fontWeight: 700, fontSize: 12, marginBottom: 4 }}>🔔 Saved filter alerts</div>
+      {!saved.length ? <div className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>None yet — set filters on a skater list, then tap 🔔 Alert me in the ⚙ Filters bar.</div>
+        : saved.map((f) => (
+          <div key={f.id} className="mono" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6, fontSize: 11, padding: "2px 0" }}>
+            <span>{f.name}</span><button className="pill-btn" style={{ fontSize: 10 }} onClick={() => removeFilter(f.id)}>Remove</button>
+          </div>
+        ))}
     </div>
   );
 }
@@ -177,6 +213,7 @@ export default function NotificationBar() {
   const today = useTodayGoals();
   useGoalWatcher(prefs.goals, today, picksRef, picksOnlyRef);
   useLineupWatcher(prefs.lineups, pool);
+  useSavedFilterWatcher(pool);
 
   if (!visible.length) return null;
   return (
