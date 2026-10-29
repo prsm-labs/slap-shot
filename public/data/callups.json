@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-29 07:08",
+  "generated": "2026-10-29 12:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 78,
-  "up": 45,
+  "up": 44,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -184,7 +184,7 @@
    "from": "Lehigh Valley",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -387,11 +387,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 2,
      "points": 2,
-     "plusMinus": 0,
+     "plusMinus": 1,
      "pim": 2,
      "team": "Henderson Silver Knights"
     },
@@ -699,7 +699,7 @@
      "shots": 33,
      "team": "Seattle Kraken"
     },
-    "careerGp": 40,
+    "careerGp": 41,
     "careerG": 7,
     "careerP": 13
    }
@@ -1029,7 +1029,7 @@
      "shots": 5,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 91,
+    "careerGp": 92,
     "careerG": 5,
     "careerP": 14
    }
@@ -1292,11 +1292,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
-     "goals": 4,
-     "assists": 4,
-     "points": 8,
-     "plusMinus": -1,
+     "gamesPlayed": 6,
+     "goals": 5,
+     "assists": 5,
+     "points": 10,
+     "plusMinus": 0,
      "pim": 6,
      "team": "Henderson Silver Knights"
     },
@@ -2320,7 +2320,7 @@
      "team": "Toronto Maple Leafs"
     },
     "last": null,
-    "careerGp": 160,
+    "careerGp": 161,
     "careerG": 16,
     "careerP": 33
    }
@@ -2846,11 +2846,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 4,
      "points": 4,
-     "plusMinus": 0,
+     "plusMinus": -2,
      "pim": 8,
      "team": "Coachella Valley Firebirds"
     },
@@ -4617,7 +4617,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 9,
+     "gamesPlayed": 10,
      "goals": 1,
      "assists": 2,
      "points": 3,
