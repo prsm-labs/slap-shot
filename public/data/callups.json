@@ -1,33 +1,19 @@
 {
  "_meta": {
-  "generated": "2026-10-30 07:06",
+  "generated": "2026-10-30 12:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 80,
-  "up": 45,
+  "up": 44,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
   {
-   "playerId": 8482781,
-   "name": "Carson Lambos",
    "team": "MIN",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2003-01-14",
-   "sweater": 55,
-   "draft": {
-    "year": 2021,
-    "teamAbbrev": "MIN",
-    "round": 1,
-    "overallPick": 26
-   },
    "recalledOn": "2026-10-29",
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 3,
-   "status": "up",
-   "sentDownOn": null,
    "events": [
     {
      "date": "2026-10-15",
@@ -50,41 +36,20 @@
      "club": "Iowa"
     }
    ],
+   "playerId": null,
+   "name": "Carson Lambos",
+   "position": "D",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
    "ahl": {
-    "season": {
-     "gamesPlayed": 8,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": -2,
-     "pim": 7,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 70,
-     "goals": 8,
-     "assists": 11,
-     "points": 19,
-     "plusMinus": -4,
-     "pim": 48,
-     "team": "Iowa Wild"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
     "season": null,
-    "last": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 1,
-     "team": "Minnesota Wild"
-    },
-    "careerGp": 1,
-    "careerG": 0,
-    "careerP": 0
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -787,7 +752,7 @@
    "from": "Texas",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -1192,7 +1157,7 @@
      "shots": 4,
      "team": "New York Islanders"
     },
-    "careerGp": 16,
+    "careerGp": 17,
     "careerG": 1,
     "careerP": 2
    }
@@ -3072,7 +3037,7 @@
      "shots": 38,
      "team": "Los Angeles Kings"
     },
-    "careerGp": 39,
+    "careerGp": 40,
     "careerG": 5,
     "careerP": 9
    }
@@ -3717,9 +3682,9 @@
      "team": "Anaheim Ducks"
     },
     "last": null,
-    "careerGp": 7,
-    "careerG": 0,
-    "careerP": 0
+    "careerGp": 8,
+    "careerG": 1,
+    "careerP": 1
    }
   },
   {
@@ -3800,7 +3765,7 @@
      "shots": 2,
      "team": "Ottawa Senators"
     },
-    "careerGp": 123,
+    "careerGp": 124,
     "careerG": 4,
     "careerP": 23
    }
@@ -5336,7 +5301,7 @@
      "team": "Anaheim Ducks"
     },
     "last": null,
-    "careerGp": 12,
+    "careerGp": 13,
     "careerG": 0,
     "careerP": 4
    }
@@ -5401,9 +5366,9 @@
      "shots": 2,
      "team": "Anaheim Ducks"
     },
-    "careerGp": 26,
-    "careerG": 3,
-    "careerP": 10
+    "careerGp": 27,
+    "careerG": 4,
+    "careerP": 11
    }
   }
  ]
