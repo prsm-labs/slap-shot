@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-29 17:36",
+  "generated": "2026-10-30 07:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 80,
-  "up": 44,
+  "up": 45,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -135,11 +135,20 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 0,
+     "team": "Dallas Stars"
+    },
     "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -195,6 +204,79 @@
     "careerGp": 0,
     "careerG": null,
     "careerP": null
+   }
+  },
+  {
+   "playerId": 8480326,
+   "name": "Sheldon Dries",
+   "team": "DET",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1994-04-23",
+   "sweater": 15,
+   "draft": null,
+   "recalledOn": "2026-10-29",
+   "from": "Grand Rapids",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Grand Rapids"
+    },
+    {
+     "date": "2026-10-29",
+     "type": "up",
+     "club": "Grand Rapids"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 5,
+     "assists": 3,
+     "points": 8,
+     "plusMinus": 4,
+     "pim": 6,
+     "team": "Grand Rapids Griffins"
+    },
+    "last": {
+     "gamesPlayed": 57,
+     "goals": 23,
+     "assists": 22,
+     "points": 45,
+     "plusMinus": 20,
+     "pim": 13,
+     "team": "Grand Rapids Griffins"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -3,
+     "pim": 0,
+     "shots": 6,
+     "team": "Detroit Red Wings"
+    },
+    "last": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 2,
+     "team": "Detroit Red Wings"
+    },
+    "careerGp": 134,
+    "careerG": 16,
+    "careerP": 26
    }
   },
   {
@@ -292,11 +374,20 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 2,
+     "team": "San Jose Sharks"
+    },
     "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -482,11 +573,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 9,
+     "gamesPlayed": 10,
      "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": -7,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": -8,
      "pim": 9,
      "team": "Hamilton Hammers"
     },
@@ -534,12 +625,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 9,
+     "gamesPlayed": 10,
      "goals": 2,
-     "assists": 4,
-     "points": 6,
+     "assists": 5,
+     "points": 7,
      "plusMinus": -2,
-     "pim": 2,
+     "pim": 4,
      "team": "Hamilton Hammers"
     },
     "last": null
@@ -654,13 +745,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 2,
      "assists": 0,
      "points": 2,
-     "plusMinus": 0,
+     "plusMinus": -1,
      "pim": 2,
-     "shots": 14,
+     "shots": 15,
      "team": "Dallas Stars"
     },
     "last": {
@@ -673,7 +764,7 @@
      "shots": 83,
      "team": "Dallas Stars"
     },
-    "careerGp": 98,
+    "careerGp": 99,
     "careerG": 16,
     "careerP": 33
    }
@@ -732,17 +823,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 0,
      "shots": 4,
      "team": "Dallas Stars"
     },
     "last": null,
-    "careerGp": 2,
+    "careerGp": 3,
     "careerG": 0,
     "careerP": 0
    }
@@ -947,13 +1038,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -2,
+     "plusMinus": -4,
      "pim": 0,
-     "shots": 3,
+     "shots": 5,
      "team": "Winnipeg Jets"
     },
     "last": {
@@ -966,7 +1057,7 @@
      "shots": 37,
      "team": "Winnipeg Jets"
     },
-    "careerGp": 34,
+    "careerGp": 35,
     "careerG": 1,
     "careerP": 5
    }
@@ -1045,10 +1136,15 @@
    "recalledOn": "2026-10-23",
    "from": "San Diego",
    "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
+   "timesRecalled": 2,
+   "status": "up",
    "sentDownOn": null,
    "events": [
+    {
+     "date": "2026-09-30",
+     "type": "up",
+     "club": "San Diego"
+    },
     {
      "date": "2026-10-23",
      "type": "up",
@@ -1077,11 +1173,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": -2,
+     "plusMinus": -1,
      "pim": 13,
      "shots": 5,
      "team": "Anaheim Ducks"
@@ -1340,7 +1436,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 1,
      "pim": 0,
@@ -1348,11 +1444,11 @@
      "losses": 1,
      "otLosses": 0,
      "shutouts": 0,
-     "goalsAgainst": 6,
-     "shotsAgainst": 56,
+     "goalsAgainst": 10,
+     "shotsAgainst": 72,
      "team": "Ottawa Senators",
-     "savePct": 0.893,
-     "gaa": 3.06
+     "savePct": 0.861,
+     "gaa": 4.04
     },
     "last": {
      "gamesPlayed": 25,
@@ -1369,7 +1465,7 @@
      "savePct": 0.884,
      "gaa": 3.29
     },
-    "careerGp": 107,
+    "careerGp": 108,
     "careerG": 0,
     "careerP": null
    }
@@ -1735,11 +1831,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
-     "goals": 7,
-     "assists": 2,
-     "points": 9,
-     "plusMinus": -1,
+     "gamesPlayed": 8,
+     "goals": 8,
+     "assists": 3,
+     "points": 11,
+     "plusMinus": 1,
      "pim": 2,
      "team": "Calgary Wranglers"
     },
@@ -1827,11 +1923,20 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 4,
+     "team": "Utah Mammoth"
+    },
     "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -2328,11 +2433,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 7,
      "shots": 2,
      "team": "New York Islanders"
@@ -2347,7 +2452,7 @@
      "shots": 9,
      "team": "Tampa Bay Lightning"
     },
-    "careerGp": 113,
+    "careerGp": 114,
     "careerG": 16,
     "careerP": 26
    }
@@ -2503,7 +2608,7 @@
    "from": "Springfield",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -2948,7 +3053,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 1,
      "assists": 0,
      "points": 1,
@@ -3287,12 +3392,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 1,
      "assists": 2,
      "points": 3,
      "plusMinus": 4,
-     "pim": 14,
+     "pim": 16,
      "team": "Laval Rocket"
     },
     "last": {
@@ -3355,10 +3460,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 1,
-     "assists": 2,
-     "points": 3,
+     "assists": 4,
+     "points": 5,
      "plusMinus": -2,
      "pim": 4,
      "team": "Hartford Wolf Pack"
@@ -3549,11 +3654,25 @@
    }
   },
   {
+   "playerId": 8485400,
+   "name": "Roger McQueen",
    "team": "ANA",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2006-10-02",
+   "sweater": 95,
+   "draft": {
+    "year": 2025,
+    "teamAbbrev": "ANA",
+    "round": 1,
+    "overallPick": 10
+   },
    "recalledOn": "2026-10-13",
    "from": "San Diego",
    "fromLeague": "AHL",
    "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
    "events": [
     {
      "date": "2026-09-30",
@@ -3566,20 +3685,41 @@
      "club": "San Diego"
     }
    ],
-   "playerId": null,
-   "name": "Roger McQueen",
-   "position": "F",
-   "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
    "ahl": {
-    "season": null,
-    "last": null
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 3,
+     "assists": 0,
+     "points": 3,
+     "plusMinus": 2,
+     "pim": 2,
+     "team": "San Diego Gulls"
+    },
+    "last": {
+     "gamesPlayed": 7,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": -2,
+     "pim": 6,
+     "team": "San Diego Gulls"
+    }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": -4,
+     "pim": 6,
+     "shots": 10,
+     "team": "Anaheim Ducks"
+    },
     "last": null,
-    "careerGp": 0
+    "careerGp": 7,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -3641,12 +3781,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 1,
      "assists": 1,
      "points": 2,
-     "plusMinus": 1,
-     "pim": 4,
+     "plusMinus": 2,
+     "pim": 6,
      "shots": 1,
      "team": "Buffalo Sabres"
     },
@@ -3937,7 +4077,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 0,
      "points": 0,
@@ -3956,7 +4096,7 @@
      "shots": 26,
      "team": "Minnesota Wild"
     },
-    "careerGp": 460,
+    "careerGp": 461,
     "careerG": 58,
     "careerP": 111
    }
@@ -4248,10 +4388,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 9,
+     "gamesPlayed": 10,
      "goals": 2,
-     "assists": 1,
-     "points": 3,
+     "assists": 2,
+     "points": 4,
      "plusMinus": -4,
      "pim": 2,
      "team": "Hartford Wolf Pack"
@@ -4401,7 +4541,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 0,
      "assists": 1,
      "points": 1,
@@ -4420,7 +4560,7 @@
      "shots": 4,
      "team": "Minnesota Wild"
     },
-    "careerGp": 51,
+    "careerGp": 52,
     "careerG": 2,
     "careerP": 9
    }
@@ -5064,13 +5204,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 3,
      "assists": 0,
      "points": 3,
-     "plusMinus": 1,
+     "plusMinus": -2,
      "pim": 7,
-     "shots": 19,
+     "shots": 22,
      "team": "Dallas Stars"
     },
     "last": {
@@ -5083,7 +5223,7 @@
      "shots": 24,
      "team": "Dallas Stars"
     },
-    "careerGp": 37,
+    "careerGp": 38,
     "careerG": 6,
     "careerP": 9
    }
@@ -5121,11 +5261,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": -3,
+     "plusMinus": -5,
      "pim": 2,
      "shots": 13,
      "team": "Dallas Stars"
@@ -5140,7 +5280,7 @@
      "shots": 61,
      "team": "Dallas Stars"
     },
-    "careerGp": 378,
+    "careerGp": 379,
     "careerG": 45,
     "careerP": 107
    }
@@ -5186,11 +5326,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 0,
      "assists": 4,
      "points": 4,
-     "plusMinus": 3,
+     "plusMinus": 1,
      "pim": 2,
      "shots": 9,
      "team": "Anaheim Ducks"
@@ -5199,53 +5339,6 @@
     "careerGp": 12,
     "careerG": 0,
     "careerP": 4
-   }
-  },
-  {
-   "playerId": 8480070,
-   "name": "Ian Mitchell",
-   "team": "ANA",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "1999-01-18",
-   "sweater": null,
-   "draft": {
-    "year": 2017,
-    "teamAbbrev": "CHI",
-    "round": 2,
-    "overallPick": 57
-   },
-   "recalledOn": "2026-09-30",
-   "from": "San Diego",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-30",
-     "type": "up",
-     "club": "San Diego"
-    }
-   ],
-   "ahl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 60,
-     "goals": 4,
-     "assists": 23,
-     "points": 27,
-     "plusMinus": 31,
-     "pim": 12,
-     "team": "Grand Rapids Griffins / Syracuse Crunch"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 110,
-    "careerG": 4,
-    "careerP": 19
    }
   },
   {
@@ -5289,13 +5382,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
-     "goals": 1,
+     "gamesPlayed": 13,
+     "goals": 2,
      "assists": 5,
-     "points": 6,
+     "points": 7,
      "plusMinus": 1,
      "pim": 0,
-     "shots": 11,
+     "shots": 14,
      "team": "Anaheim Ducks"
     },
     "last": {
