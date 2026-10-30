@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-10-30",
+  "lockedAt": "2026-10-30T21:35:41.987Z",
+  "poolGenerated": "2026-10-30 17:32",
+  "eligible": 120,
+  "confirmed": 79,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 2% of tonight's slate by the grade model (42.9% to score), facing WPG (#2 softest defense of 6 tonight, 3.2 expected goals allowed a game). Matchup-adjusted chance 38.5%.",
+   "playerId": 8477933,
+   "name": "Sam Reinhart",
+   "team": "FLA",
+   "opp": "WPG",
+   "position": "C",
+   "isHome": true,
+   "opponentGoalie": "Nico Daws",
+   "opponentGoalieId": 8482076,
+   "goalieGrade": "C",
+   "grade": "A+",
+   "lineupStatus": "dressed",
+   "modelGoalPct": 42.9,
+   "adjGoalPct": 38.5,
+   "oppXga": 3.2,
+   "softRank": 2,
+   "sogL5": 2.6,
+   "sogPg": 2.6
+  },
+  {
+   "tier": "mid",
+   "fallback": false,
+   "why": "1.8 shots a game over the last 5 games vs 1.3 on the season, into CGY (#1 softest defense of 6 tonight, 3.3 expected goals allowed a game) — the combination that scored 14-24% above the model last season. 16.9% to score.",
+   "playerId": 8484800,
+   "name": "Berkly Catton",
+   "team": "SEA",
+   "opp": "CGY",
+   "position": "C",
+   "isHome": false,
+   "opponentGoalie": "Dustin Wolf",
+   "opponentGoalieId": 8481692,
+   "goalieGrade": "C",
+   "grade": "B",
+   "lineupStatus": null,
+   "modelGoalPct": 13.6,
+   "adjGoalPct": 16.9,
+   "oppXga": 3.3,
+   "softRank": 1,
+   "sogL5": 1.8,
+   "sogPg": 1.3
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
