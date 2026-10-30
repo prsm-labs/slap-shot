@@ -5,9 +5,9 @@ import { useScoredPool } from '../lib/data.js'
 import NhlSimReplay, { NHL_TEAMS } from '../components/NhlSimReplay.jsx'
 import '../components/NhlSimReplay.css'
 
-// 🎬 Game Sim (2026-10-29, user: RotoBot-style "we simulated this game 10,000 times" replays, same as CourtIQ / Six Points). Tonight's
-// games, each played 10,000 times shift by shift (scripts/build_game_sims.mjs + src/sim/nhlSim.js), tuned to Slap Shot's own game model
-// and skater chances: the most typical game as a replay, then the 10,000-game averages.
+// 🎬 Game Sim (2026-10-29, user: RotoBot-style "we simulated this game 15,000 times" replays, same as CourtIQ / Six Points). Tonight's
+// games, each played 15,000 times shift by shift (scripts/build_game_sims.mjs + src/sim/nhlSim.js), tuned to Slap Shot's own game model
+// and skater chances: the most typical game as a replay, then the 15,000-game averages.
 const f1 = (v) => (v == null ? '—' : (Math.round(v * 10) / 10).toFixed(1))
 const f2 = (v) => (v == null ? '—' : (Math.round(v * 100) / 100).toFixed(2))
 const pc = (v) => (v == null ? '—' : `${Math.round(v * 100)}%`)
@@ -71,12 +71,12 @@ export default function GameSimTab() {
   const fav = sim ? (hw >= 0.5 ? sim.home : sim.away) : null
   return (
     <div>
-      <p className="note">Every game tonight is played 10,000 times, shift by shift: forward lines and defence pairs take turns by their usual ice
+      <p className="note">Every game tonight is played 15,000 times, shift by shift: forward lines and defence pairs take turns by their usual ice
         time, minor penalties bring on the power-play units and the penalty kill, shots on goal come at each team's rate at that strength, the
         shooter is drawn from the skaters on the ice, goals depend on his finishing and the goalie, assists go to his linemates, the trailing
-        team pulls its goalie late, and ties go to 3-on-3 overtime and a shootout. It's tuned so the 10,000-game averages match Slap Shot's own
+        team pulls its goalie late, and ties go to 3-on-3 overtime and a shootout. It's tuned so the 15,000-game averages match Slap Shot's own
         numbers -- each team's goals from the backtested game model (the win % shown is that model's), each skater's goals, assists and shots
-        from his grade-model chances -- so the sim adds the game itself, not new picks. The replay is the most typical of the 10,000 games: the
+        from his grade-model chances -- so the sim adds the game itself, not new picks. The replay is the most typical of the 15,000 games: the
         winner most of them pick, closest to the average score and the top shooters' usual shots. Simulated games, not predictions; each game
         locks at puck drop.</p>
       {err && !index && <p className="empty-state">No simulations yet ({err}).</p>}
@@ -95,19 +95,21 @@ export default function GameSimTab() {
       {sim && (
         <>
           <div className="slate-status nhs-sum">
-            <span><b>10,000 games:</b> {sim.away} {f1(sim.summary.away.mean)} @ {sim.home} {f1(sim.summary.home.mean)} goals on average · shots
+            <span><b>{(sim.n || 15000).toLocaleString('en-US')} games:</b> {sim.away} {f1(sim.summary.away.mean)} @ {sim.home} {f1(sim.summary.home.mean)} goals on average · shots
               {' '}{f1(sim.summary.away.sog)}-{f1(sim.summary.home.sog)} · {Math.round(100 * sim.summary.otRate)}% reach overtime</span>
             <span>Game model: {fav} wins {Math.round(100 * Math.max(hw, 1 - hw))}% (the sims: {Math.round(100 * Math.max(sim.summary.homeWin, 1 - sim.summary.homeWin))}%)
               · goalies {sim.goalies.away.full || sim.goalies.away.name} vs {sim.goalies.home.full || sim.goalies.home.name}</span>
             {sim.frozen && <span>🔒 Locked at puck drop -- this is the pre-game simulation.</span>}
+            {!sim.frozen && sim.lineups && <span>👥 {['away', 'home'].map((s) => `${sim[s]} ${sim.lineups[s].dressed ? 'dressed list posted' : 'projected lineup'}, goalie ${sim.lineups[s].goalie ? 'confirmed' : 'expected'}`).join(' · ')}
+              {' '}-- re-simmed whenever the lineups or starting goalies change, up to puck drop.</span>}
           </div>
           <NhlSimReplay sim={sim} />
-          <h3 className="nhs-h">📊 10,000-game box score (averages)</h3>
+          <h3 className="nhs-h">📊 {(sim.n || 15000).toLocaleString('en-US')}-game box score (averages)</h3>
           <div className="nhs-boxes">
             <Box sim={sim} side="away" pool={players} />
             <Box sim={sim} side="home" pool={players} />
           </div>
-          <p className="meta-line small">Averages over all 10,000 games; Goal % / Point % / 3+ SOG = share of the games he did it. Lines and pairs by
+          <p className="meta-line small">Averages over all {(sim.n || 15000).toLocaleString('en-US')} games; Goal % / Point % / 3+ SOG = share of the games he did it. Lines and pairs by
             estimated ice time, power-play units from RotoWire when posted. The grade-model chances on the other pages are the official numbers --
             these are tuned to match them. Updated {new Date(sim.generated_at).toLocaleString()}.</p>
         </>

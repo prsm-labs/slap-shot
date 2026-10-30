@@ -1,11 +1,15 @@
-// build_game_sims.mjs -- Slap Shot 🎬 Game Sim (2026-10-29, user: RotoBot-style "we simulated this game 10,000 times" replays).
+// build_game_sims.mjs -- Slap Shot 🎬 Game Sim (2026-10-29, user: RotoBot-style "we simulated this game 15,000 times" replays).
 // Run from nhl_project after build_player_pool.py / build_team_ratings.py:  node slap-shot/scripts/build_game_sims.mjs
 // For each game on the slate that hasn't started: each team's 18 skaters (the NHL's dressed list once it's posted, else the likeliest
 // to dress by Slap Shot's dress model), lines and pairs by estimated ice time, PP units from RotoWire (else PP ice time), then short
 // calibration passes so the sims match Slap Shot's own numbers: each team's regulation goals = the backtested game model
 // (lib/gameModel.js), each team's shots = its shots-for / the opponent's shots-against, each skater's goals / assists / shots = his
-// grade-model chances (lib/grades.js) converted to averages. 10,000 games are then played (src/sim/nhlSim.js). Writes
+// grade-model chances (lib/grades.js) converted to averages. 15,000 games are then played (src/sim/nhlSim.js). Writes
 // public/data/sims/<gameId>.json + sims/index.json. A game that has started keeps its pre-game file.
+// 2026-10-30 (user: 15,000 sims that adjust once lineups are confirmed): a goalie RotoWire lists as Confirmed replaces the pool's
+// starter (the game model is re-run with him), and each file keeps a lineup key (dressed list, PP units, goalies, pool build). With
+// SIM_WATCH=1 (pipeline_shared/sim_watch.py, every few minutes before puck drop) only games whose key changed are re-simmed, and
+// nothing is written when nothing changed.
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -18,7 +22,8 @@ import { estimatedToi, ppToiPerGame } from '../src/lib/toi.js'
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const DATA = path.resolve(HERE, '../public/data')
 const OUTDIR = process.env.SIM_OUT || path.join(DATA, 'sims')
-const N = 10000
+const N = 15000
+const WATCH = process.env.SIM_WATCH === '1'
 const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'))
 const pool = read(process.env.SIM_POOL || path.join(DATA, 'todays_pool.json'))
 const ratings = read(path.join(DATA, 'team_ratings.json'))
@@ -77,11 +82,16 @@ function teamIn(team, opp, isHome, gm) {
     sk[r.p.playerId] = { name: lastName(r.p.name), full: r.p.name, pos: r.p.position, shotW: ls, finish: Math.min(0.3, lg / Math.max(0.2, ls)), astW: lam(g.assist ?? 0.1) + 0.01 }
     tgt[r.p.playerId] = { g: lg, a: lam(g.assist ?? 0.1), sog: ls, probs: { goal: g.goal, assist: g.assist, point: g.point, sog3: g.sog3 } }
   }
-  const goalieId = isHome ? gm.homeGoalieId : gm.awayGoalieId
-  const goalieName = isHome ? gm.homeGoalie : gm.awayGoalie
+  let goalieId = isHome ? gm.homeGoalieId : gm.awayGoalieId
+  let goalieName = isHome ? gm.homeGoalie : gm.awayGoalie
+  if (lu?.goalie?.status === 'Confirmed' && lu.goalie.playerId && lu.goalie.playerId !== goalieId) {
+    goalieId = lu.goalie.playerId
+    goalieName = pool.goalies?.find?.((x) => x.playerId === goalieId)?.name || lu.goalie.name
+  }
   const tm = teamsMeta[team] || {}, om = teamsMeta[opp] || {}
   const sogTarget = ((tm.sogFor || 27.5) + (om.sogAgainst || 27.5)) / 2
-  return { team, goalie: { id: goalieId, name: lastName(goalieName) || `${team} goalie`, full: goalieName }, sogRate: sogTarget / 3600, finMult: 1,
+  return { team, dressedPosted: dressed.size >= 18, goalieConfirmed: lu?.goalie?.status === 'Confirmed',
+    goalie: { id: goalieId, name: lastName(goalieName) || `${team} goalie`, full: goalieName }, sogRate: sogTarget / 3600, finMult: 1,
     lines, pairs, lineW: norm(lineW), pairW: norm(pairW), pp1, pp2, pk: [...pkF, ...pkD], sk, tgt, sogTarget }
 }
 
@@ -115,19 +125,26 @@ const r3 = (v) => Math.round(v * 1000) / 1000
 const hash = (s) => { let h = 2166136261; for (const c of String(s)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return (h >>> 0) % 1000000 }
 const now = Date.now()
 const index = []
+let changed = 0
 for (const gm of slate) {
   const file = path.join(OUTDIR, `${gm.gameId}.json`)
   if (gm.startTimeUTC && now >= Date.parse(gm.startTimeUTC)) {
     if (fs.existsSync(file)) {
       const old = read(file)
-      if (!old.frozen) { old.frozen = true; fs.writeFileSync(file, JSON.stringify(old)) }
+      if (!old.frozen) { old.frozen = true; fs.writeFileSync(file, JSON.stringify(old)); changed++ }
       if (old.slateDate === meta.slateDate) index.push(old.indexRow)
     }
     continue
   }
   const home = teamIn(gm.home, gm.away, true, gm), away = teamIn(gm.away, gm.home, false, gm)
   if (!home || !away) { console.log(`${gm.away} @ ${gm.home}: not enough skaters, skipped`); continue }
-  const model = projectGame(ratings, { away: gm.away, home: gm.home, awayGoalieId: gm.awayGoalieId, homeGoalieId: gm.homeGoalieId })
+  const lineupKey = String(hash(JSON.stringify([meta.generated, ...[home, away].map((T) => [T.goalie.id, T.lines, T.pairs, T.pp1, T.pp2])])))
+  if (WATCH && fs.existsSync(file)) {
+    const old = read(file)
+    if (old.lineupKey === lineupKey) { index.push(old.indexRow); continue }
+  }
+  changed++
+  const model = projectGame(ratings, { away: gm.away, home: gm.home, awayGoalieId: away.goalie.id, homeGoalieId: home.goalie.id })
   const game = { home, away }
   calibrate(game, [model.xgHome, model.xgAway])
   const res = runMany(game, N, hash(gm.gameId))
@@ -144,9 +161,10 @@ for (const gm of slate) {
     homeWin: Math.round(model.winHome * 100) / 100, typical: tg.score }
   const out = {
     gameId: gm.gameId, slateDate: meta.slateDate, home: gm.home, away: gm.away, startTimeUTC: gm.startTimeUTC, generated_at: new Date().toISOString(),
-    n: N, frozen: false, indexRow,
-    goalies: { home: { ...home.goalie, sa: r1(res.goalies[0].sa), ga: r1(res.goalies[0].ga), status: gm.homeGoalieStatus },
-      away: { ...away.goalie, sa: r1(res.goalies[1].sa), ga: r1(res.goalies[1].ga), status: gm.awayGoalieStatus } },
+    n: N, frozen: false, indexRow, lineupKey,
+    lineups: { checkedAt: lineups?.generated || null, home: { dressed: home.dressedPosted, goalie: home.goalieConfirmed }, away: { dressed: away.dressedPosted, goalie: away.goalieConfirmed } },
+    goalies: { home: { ...home.goalie, sa: r1(res.goalies[0].sa), ga: r1(res.goalies[0].ga), status: home.goalieConfirmed ? "Confirmed" : gm.homeGoalieStatus },
+      away: { ...away.goalie, sa: r1(res.goalies[1].sa), ga: r1(res.goalies[1].ga), status: away.goalieConfirmed ? "Confirmed" : gm.awayGoalieStatus } },
     model: { winHome: r3(model.winHome), xgHome: r3(model.xgHome), xgAway: r3(model.xgAway), ot: r3(model.ot) },
     summary: { homeWin: r3(res.homeWin), otRate: r3(res.otRate), home: { mean: r1(res.home.mean), median: res.home.median, p10: res.home.p10, p90: res.home.p90, sog: r1(res.home.sog) },
       away: { mean: r1(res.away.mean), median: res.away.median, p10: res.away.p10, p90: res.away.p90, sog: r1(res.away.sog) }, medTotal: res.medTotal },
@@ -159,5 +177,6 @@ for (const gm of slate) {
     .map((id) => `${T.sk[id].name} g ${r3(res.players[t][id].g)}/${r3(T.tgt[id].g)} sog ${r1(res.players[t][id].sog)}/${r1(T.tgt[id].sog)}`).join(', ')
   console.log(`${gm.away} @ ${gm.home}: reg goals ${r1(res.regMean[1])}/${r1(model.xgAway)}-${r1(res.regMean[0])}/${r1(model.xgHome)}, sog ${r1(res.away.sog)}-${r1(res.home.sog)}, ${gm.home} wins sim ${Math.round(100 * res.homeWin)}% model ${Math.round(100 * model.winHome)}%, OT ${Math.round(100 * res.otRate)}% (model ${Math.round(100 * model.ot)}%), typical ${tg.score[1]}-${tg.score[0]} (${tg.log.length} events) | ${top(home, 0)} | ${top(away, 1)}`)
 }
-fs.writeFileSync(path.join(OUTDIR, 'index.json'), JSON.stringify({ slateDate: meta.slateDate, generated_at: new Date().toISOString(), games: index }))
+if (!WATCH || changed) fs.writeFileSync(path.join(OUTDIR, 'index.json'), JSON.stringify({ slateDate: meta.slateDate, generated_at: new Date().toISOString(), games: index }))
 console.log(`sims: ${index.length} games, ${meta.slateDate}`)
+console.log(`SIMS CHANGED ${changed}`)
