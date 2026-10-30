@@ -15,6 +15,7 @@ import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
 import FirstGoalTab from "./tabs/FirstGoalTab.jsx";
 import CalledUpTab from "./tabs/CalledUpTab.jsx";
 import ProjectionsTab from "./tabs/ProjectionsTab.jsx";
+import GameSimTab from "./tabs/GameSimTab.jsx"; // 2026-10-29: 🎬 10,000 simulated games per matchup + replay
 import TrackRecordTab from "./tabs/TrackRecordTab.jsx";
 import TonightSoFarTab from "./tabs/TonightSoFarTab.jsx"; // 2026-10-25: holds Goal Flurries (LiveThemesTab) as its 2nd view
 import SplitsTab from "./tabs/SplitsTab.jsx";
@@ -45,6 +46,7 @@ const TABS = [
   { key: "stats", label: "📊 Stats", Component: StatsTab },
   { key: "schedule", label: "📅 Schedule", Component: ScheduleTab }, // 2026-10-23: upcoming games + recent scores
   { key: "projections", label: "🔮 Projections", Component: ProjectionsTab },
+  { key: "gamesim", label: "🎬 Game Sim", Component: GameSimTab }, // 2026-10-29: RotoBot-style simulated games (replay + 10,000-game box score)
   { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab },
   { key: "calledup", label: "🆙 Called Up", Component: CalledUpTab },
   { key: "track", label: "📈 Track Record", Component: TrackRecordTab },

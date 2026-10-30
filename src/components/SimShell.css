@@ -1,0 +1,78 @@
+/* 🎬 Sim replay shell -- same file in Six Points, CourtIQ and Slap Shot (2026-10-29). Uses each app's --accent / --border / --muted. */
+.ss { --ss-bg: #0d1117; --ss-card: #151b23; --ss-line: rgba(255,255,255,.08); --ss-fg: #e9edf2; --ss-mut: #8b96a5;
+  background: radial-gradient(120% 90% at 50% 0%, #18202b 0%, var(--ss-bg) 60%); color: var(--ss-fg); border-radius: 14px;
+  padding: 12px; border: 1px solid var(--border); margin: 8px 0 14px; }
+.ss-top { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.ss-bug { display: grid; grid-template-columns: 1fr auto 1fr; width: 100%; max-width: 760px; background: var(--ss-card);
+  border-radius: 10px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+.ss-team { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 12px;
+  border-bottom: 3px solid var(--tc); background: linear-gradient(90deg, color-mix(in srgb, var(--tc) 22%, transparent), transparent); }
+.ss-home { background: linear-gradient(270deg, color-mix(in srgb, var(--tc) 22%, transparent), transparent); }
+.ss-tname { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.02rem; min-width: 0; }
+.ss-tname span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 6px; }
+.ss-tname img { flex: none; object-fit: contain; }
+.ss-tname em { font-style: normal; }
+.ss-abbr { display: none; }
+.ss-score { font-size: 2.1rem; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; min-width: 1.6em; text-align: center; }
+.ss-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #f4c542; box-shadow: 0 0 8px #f4c542; }
+.ss-clock { display: flex; align-items: center; justify-content: center; padding: 0 14px; font-weight: 800; font-size: 1.05rem;
+  font-variant-numeric: tabular-nums; background: #10151c; min-width: 92px; white-space: nowrap; }
+.ss-wp { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; width: 100%;
+  max-width: 760px; background: var(--ss-card); border-radius: 10px; padding: 14px 12px 6px; }
+.ss-wp b { font-size: 1.15rem; font-weight: 900; font-style: italic; min-width: 3ch; text-align: center; }
+.ss-wp svg { width: 100%; height: 46px; display: block; }
+.ss-wp-mid { stroke: rgba(255,255,255,.18); stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+.ss-wp-q { stroke: rgba(255,255,255,.09); vector-effect: non-scaling-stroke; }
+.ss-wp-label { position: absolute; top: 3px; left: 50%; transform: translateX(-50%); font-size: .62rem; letter-spacing: .14em; color: var(--ss-mut); font-weight: 700; }
+.ss-mid { display: grid; grid-template-columns: 200px 1fr 200px; gap: 12px; margin-top: 12px; align-items: start; }
+.ss-surface { min-width: 0; }
+.ss-panel { background: var(--ss-card); border-radius: 10px; padding: 8px 10px; border-top: 3px solid var(--tc); font-size: .82rem; }
+.ss-panel-h { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: .95rem; padding-bottom: 6px; border-bottom: 1px solid var(--ss-line); margin-bottom: 4px; }
+.ss-sec-t { color: color-mix(in srgb, var(--tc) 55%, #fff); font-weight: 700; font-size: .72rem; margin: 6px 0 2px; text-transform: none; }
+.ss-row { display: flex; justify-content: space-between; gap: 6px; padding: 2px 0; }
+.ss-row span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ss-row b { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 700; }
+.ss-none { color: var(--ss-mut); }
+.ss-play { display: flex; align-items: center; gap: 12px; margin: 12px auto 0; max-width: 900px; min-height: 46px; background: var(--ss-card);
+  border-radius: 10px; padding: 6px 12px; transition: box-shadow .3s; }
+.ss-play-score { box-shadow: 0 0 0 2px #f4c542, 0 0 18px rgba(244,197,66,.35); }
+.ss-chip { flex: none; font-weight: 900; font-style: italic; color: #f4c542; border-left: 3px solid #f4c542; padding: 2px 8px; font-size: .95rem; white-space: nowrap; }
+.ss-text { font-size: .95rem; font-weight: 600; }
+.ss-ctrl { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; justify-content: center; margin-top: 10px; }
+.ss-ctrl button { background: #1d2530; color: var(--ss-fg); border: 1px solid var(--ss-line); border-radius: 8px; padding: 6px 10px; font-size: .85rem; cursor: pointer; }
+.ss-ctrl button:hover { border-color: var(--accent); }
+.ss-ctrl .ss-play-btn { background: var(--accent); color: #fff; border-color: var(--accent); min-width: 44px; font-weight: 800; }
+.ss-speed { display: inline-flex; gap: 2px; }
+.ss-speed button { padding: 6px 8px; }
+.ss-speed button.on { background: color-mix(in srgb, var(--accent) 35%, #1d2530); border-color: var(--accent); }
+.ss-ctrl input[type=range] { flex: 1 1 180px; max-width: 360px; accent-color: var(--accent); }
+.ss-count { color: var(--ss-mut); font-size: .78rem; font-variant-numeric: tabular-nums; min-width: 6ch; }
+.ss-foot { text-align: right; color: var(--ss-mut); font-size: .7rem; margin-top: 8px; }
+
+@media (max-width: 900px) {
+  /* narrow: scoreboard, surface, last play, controls, then the two box panels side by side */
+  .ss { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 8px; }
+  .ss > * { grid-column: 1 / -1; }
+  .ss-mid { display: contents; }
+  .ss-top { order: 0; }
+  .ss-surface { grid-column: 1 / -1; order: 1; margin-top: 8px; }
+  .ss-play { order: 2; width: 100%; }
+  .ss-ctrl { order: 3; }
+  .ss-panel { order: 4; grid-column: auto; margin-top: 10px; }
+  .ss-foot { order: 5; }
+}
+@media (max-width: 520px) {
+  .ss { padding: 8px; }
+  .ss-score { font-size: 1.6rem; }
+  .ss-tname { font-size: .85rem; gap: 5px; }
+  .ss-full { display: none; }
+  .ss-abbr { display: inline; }
+  .ss-tname img { width: 22px; height: 22px; }
+  .ss-team { padding: 6px 8px; }
+  .ss-clock { min-width: 70px; padding: 0 6px; font-size: .9rem; }
+  .ss-mid { gap: 8px; }
+  .ss-panel { font-size: .74rem; padding: 6px 7px; }
+  .ss-chip { font-size: .8rem; }
+  .ss-text { font-size: .82rem; }
+  .ss-play { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
