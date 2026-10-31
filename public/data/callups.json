@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-10-31 07:07",
+  "generated": "2026-10-31 12:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 85,
@@ -219,11 +219,25 @@
    }
   },
   {
+   "playerId": 8480879,
+   "name": "Jacob Bernard-Docker",
    "team": "DET",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2000-06-30",
+   "sweater": 25,
+   "draft": {
+    "year": 2018,
+    "teamAbbrev": "OTT",
+    "round": 1,
+    "overallPick": 26
+   },
    "recalledOn": "2026-10-30",
    "from": "Grand Rapids",
    "fromLeague": "AHL",
    "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
    "events": [
     {
      "date": "2026-10-18",
@@ -236,20 +250,33 @@
      "club": "Grand Rapids"
     }
    ],
-   "playerId": null,
-   "name": "Jacob Bernard-Docker",
-   "position": "D",
-   "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
    "ahl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 4,
+     "team": "Grand Rapids Griffins"
+    },
     "last": null
    },
    "nhl": {
     "season": null,
-    "last": null,
-    "careerGp": 0
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 1,
+     "assists": 4,
+     "points": 5,
+     "plusMinus": 0,
+     "pim": 25,
+     "shots": 41,
+     "team": "Detroit Red Wings"
+    },
+    "careerGp": 207,
+    "careerG": 7,
+    "careerP": 29
    }
   },
   {
@@ -1896,7 +1923,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 2,
      "assists": 1,
      "points": 3,
@@ -1974,11 +2001,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 5,
      "assists": 5,
      "points": 10,
-     "plusMinus": 0,
+     "plusMinus": -1,
      "pim": 6,
      "team": "Henderson Silver Knights"
     },
@@ -3410,12 +3437,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 4,
      "points": 4,
-     "plusMinus": -2,
-     "pim": 8,
+     "plusMinus": -1,
+     "pim": 10,
      "team": "Coachella Valley Firebirds"
     },
     "last": {
