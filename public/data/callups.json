@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-10-31 12:06",
+  "generated": "2026-10-31 17:35",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 85,
-  "up": 49,
+  "up": 48,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -194,13 +194,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": 0,
+     "plusMinus": -2,
      "pim": 0,
-     "shots": 3,
+     "shots": 4,
      "team": "St. Louis Blues"
     },
     "last": {
@@ -213,7 +213,7 @@
      "shots": 20,
      "team": "St. Louis Blues"
     },
-    "careerGp": 21,
+    "careerGp": 22,
     "careerG": 2,
     "careerP": 5
    }
@@ -640,13 +640,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -3,
+     "plusMinus": -2,
      "pim": 0,
-     "shots": 6,
+     "shots": 7,
      "team": "Detroit Red Wings"
     },
     "last": {
@@ -659,7 +659,7 @@
      "shots": 2,
      "team": "Detroit Red Wings"
     },
-    "careerGp": 134,
+    "careerGp": 135,
     "careerG": 16,
     "careerP": 26
    }
@@ -2759,13 +2759,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -2,
+     "plusMinus": -3,
      "pim": 7,
-     "shots": 2,
+     "shots": 3,
      "team": "New York Islanders"
     },
     "last": {
@@ -3080,7 +3080,7 @@
    "from": "Lehigh Valley",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
