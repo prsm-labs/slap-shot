@@ -8,12 +8,12 @@
       {
         "gameId": 2026020227,
         "startTimeUTC": "2026-11-01T18:00:00Z",
-        "gameState": "FUT",
+        "gameState": "OFF",
         "away": "WPG",
         "home": "CAR",
         "awayGoalieId": 8479973,
         "awayGoalie": "Stuart Skinner",
-        "awayGoalieStatus": "Unconfirmed",
+        "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8481611,
         "homeGoalie": "Pyotr Kochetkov",
         "homeGoalieStatus": "Confirmed"
@@ -21,7 +21,7 @@
       {
         "gameId": 2026020228,
         "startTimeUTC": "2026-11-01T20:30:00Z",
-        "gameState": "FUT",
+        "gameState": "LIVE",
         "away": "MIN",
         "home": "WSH",
         "awayGoalieId": 8482661,
@@ -29,25 +29,25 @@
         "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8480313,
         "homeGoalie": "Logan Thompson",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020229,
         "startTimeUTC": "2026-11-01T21:00:00Z",
-        "gameState": "FUT",
+        "gameState": "LIVE",
         "away": "UTA",
         "home": "PHI",
         "awayGoalieId": 8478872,
         "awayGoalie": "Karel Vejmelka",
-        "awayGoalieStatus": "Unconfirmed",
+        "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8478435,
         "homeGoalie": "Dan Vladar",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020230,
         "startTimeUTC": "2026-11-01T23:00:00Z",
-        "gameState": "FUT",
+        "gameState": "PRE",
         "away": "EDM",
         "home": "NYR",
         "awayGoalieId": 8477035,
@@ -75,7 +75,7 @@
       2025,
       2026
     ],
-    "generated": "2026-11-01 12:02",
+    "generated": "2026-11-01 17:32",
     "player_count": 230,
     "goalie_count": 69,
     "skipped_no_history": 1,

@@ -1,13 +1,256 @@
 {
  "_meta": {
-  "generated": "2026-11-01 12:05",
+  "generated": "2026-11-01 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 89,
+  "count": 92,
   "up": 49,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8481827,
+   "name": "Ben McCartney",
+   "team": "UTA",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2001-07-13",
+   "sweater": 62,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "ARI",
+    "round": 7,
+    "overallPick": 204
+   },
+   "recalledOn": "2026-11-01",
+   "from": "Tucson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-01",
+     "type": "up",
+     "club": "Tucson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 11,
+     "goals": 4,
+     "assists": 10,
+     "points": 14,
+     "plusMinus": 10,
+     "pim": 6,
+     "team": "Tucson Roadrunners"
+    },
+    "last": {
+     "gamesPlayed": 59,
+     "goals": 21,
+     "assists": 30,
+     "points": 51,
+     "plusMinus": 0,
+     "pim": 75,
+     "team": "Tucson Roadrunners"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 2,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8485138,
+   "name": "Viliam Kmec",
+   "team": "VGK",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2004-01-02",
+   "sweater": 74,
+   "draft": null,
+   "recalledOn": "2026-11-01",
+   "from": "Henderson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-01",
+     "type": "up",
+     "club": "Henderson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 0,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 1,
+     "pim": 10,
+     "team": "Henderson Silver Knights"
+    },
+    "last": {
+     "gamesPlayed": 65,
+     "goals": 4,
+     "assists": 12,
+     "points": 16,
+     "plusMinus": 12,
+     "pim": 27,
+     "team": "Henderson Silver Knights"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8481077,
+   "name": "John Leonard",
+   "team": "DET",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "1998-08-07",
+   "sweater": 43,
+   "draft": {
+    "year": 2018,
+    "teamAbbrev": "SJS",
+    "round": 6,
+    "overallPick": 182
+   },
+   "recalledOn": "2026-11-01",
+   "from": "Grand Rapids",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Grand Rapids"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "up",
+     "club": "Grand Rapids"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 5,
+     "assists": 2,
+     "points": 7,
+     "plusMinus": 1,
+     "pim": 2,
+     "team": "Grand Rapids Griffins"
+    },
+    "last": {
+     "gamesPlayed": 47,
+     "goals": 33,
+     "assists": 21,
+     "points": 54,
+     "plusMinus": 8,
+     "pim": 12,
+     "team": "Grand Rapids Griffins"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 11,
+     "goals": 2,
+     "assists": 2,
+     "points": 4,
+     "plusMinus": -3,
+     "pim": 0,
+     "shots": 11,
+     "team": "Detroit Red Wings"
+    },
+    "careerGp": 81,
+    "careerG": 8,
+    "careerP": 21
+   }
+  },
+  {
+   "playerId": 8483448,
+   "name": "Isaiah George",
+   "team": "NYI",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2004-02-15",
+   "sweater": 36,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "NYI",
+    "round": 4,
+    "overallPick": 98
+   },
+   "recalledOn": "2026-10-31",
+   "from": "Hamilton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-01",
+   "events": [
+    {
+     "date": "2026-10-31",
+     "type": "up",
+     "club": "Hamilton"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "down",
+     "club": "Hamilton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 2,
+     "pim": 2,
+     "team": "Hamilton Hammers"
+    },
+    "last": {
+     "gamesPlayed": 47,
+     "goals": 2,
+     "assists": 16,
+     "points": 18,
+     "plusMinus": 10,
+     "pim": 20,
+     "team": "Bridgeport Islanders"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 2,
+     "team": "New York Islanders"
+    },
+    "careerGp": 37,
+    "careerG": 1,
+    "careerP": 6
+   }
+  },
   {
    "playerId": 8479972,
    "name": "Mason Shaw",
@@ -202,70 +445,6 @@
     "careerGp": 74,
     "careerG": 6,
     "careerP": 18
-   }
-  },
-  {
-   "playerId": 8483448,
-   "name": "Isaiah George",
-   "team": "NYI",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2004-02-15",
-   "sweater": 36,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "NYI",
-    "round": 4,
-    "overallPick": 98
-   },
-   "recalledOn": "2026-10-31",
-   "from": "Hamilton",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-31",
-     "type": "up",
-     "club": "Hamilton"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 2,
-     "pim": 2,
-     "team": "Hamilton Hammers"
-    },
-    "last": {
-     "gamesPlayed": 47,
-     "goals": 2,
-     "assists": 16,
-     "points": 18,
-     "plusMinus": 10,
-     "pim": 20,
-     "team": "Bridgeport Islanders"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 2,
-     "team": "New York Islanders"
-    },
-    "careerGp": 37,
-    "careerG": 1,
-    "careerP": 6
    }
   },
   {
@@ -707,6 +886,75 @@
    }
   },
   {
+   "playerId": 8485468,
+   "name": "Trey Taylor",
+   "team": "DAL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2002-02-04",
+   "sweater": 27,
+   "draft": null,
+   "recalledOn": "2026-10-29",
+   "from": "Texas",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-01",
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-10-29",
+     "type": "up",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "down",
+     "club": "Texas"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 0,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": -6,
+     "pim": 6,
+     "team": "Texas Stars"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 8,
+     "assists": 18,
+     "points": 26,
+     "plusMinus": -2,
+     "pim": 34,
+     "team": "Texas Stars"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 0,
+     "team": "Dallas Stars"
+    },
+    "last": null,
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "team": "MIN",
    "recalledOn": "2026-10-29",
    "from": "Iowa",
@@ -753,70 +1001,6 @@
     "season": null,
     "last": null,
     "careerGp": 0
-   }
-  },
-  {
-   "playerId": 8485468,
-   "name": "Trey Taylor",
-   "team": "DAL",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2002-02-04",
-   "sweater": 27,
-   "draft": null,
-   "recalledOn": "2026-10-29",
-   "from": "Texas",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-10-29",
-     "type": "up",
-     "club": "Texas"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 8,
-     "goals": 0,
-     "assists": 3,
-     "points": 3,
-     "plusMinus": -6,
-     "pim": 6,
-     "team": "Texas Stars"
-    },
-    "last": {
-     "gamesPlayed": 70,
-     "goals": 8,
-     "assists": 18,
-     "points": 26,
-     "plusMinus": -2,
-     "pim": 34,
-     "team": "Texas Stars"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 0,
-     "team": "Dallas Stars"
-    },
-    "last": null,
-    "careerGp": 1,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -1665,13 +1849,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -4,
-     "pim": 0,
-     "shots": 7,
+     "plusMinus": -5,
+     "pim": 2,
+     "shots": 10,
      "team": "Winnipeg Jets"
     },
     "last": {
@@ -1684,7 +1868,7 @@
      "shots": 37,
      "team": "Winnipeg Jets"
     },
-    "careerGp": 36,
+    "careerGp": 37,
     "careerG": 1,
     "careerP": 5
    }
@@ -2758,16 +2942,16 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "wins": 2,
-     "losses": 2,
+     "losses": 3,
      "otLosses": 0,
      "shutouts": 0,
-     "goalsAgainst": 15,
-     "shotsAgainst": 118,
+     "goalsAgainst": 19,
+     "shotsAgainst": 143,
      "team": "Toronto Marlies",
-     "savePct": 0.873,
-     "gaa": 2.97
+     "savePct": 0.867,
+     "gaa": 3.14
     },
     "last": {
      "gamesPlayed": 37,
@@ -3852,8 +4036,8 @@
    "from": "Henderson",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-11-01",
    "events": [
     {
      "date": "2026-10-11",
@@ -3868,6 +4052,11 @@
     {
      "date": "2026-10-15",
      "type": "up",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "down",
      "club": "Henderson"
     }
    ],
@@ -4137,6 +4326,94 @@
    }
   },
   {
+   "playerId": 8478502,
+   "name": "Dennis Gilbert",
+   "team": "BUF",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1996-10-30",
+   "sweater": 44,
+   "draft": {
+    "year": 2015,
+    "teamAbbrev": "CHI",
+    "round": 3,
+    "overallPick": 91
+   },
+   "recalledOn": "2026-10-13",
+   "from": "Rochester",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": "2026-11-01",
+   "events": [
+    {
+     "date": "2026-10-01",
+     "type": "up",
+     "club": "Rochester"
+    },
+    {
+     "date": "2026-10-02",
+     "type": "down",
+     "club": "Rochester"
+    },
+    {
+     "date": "2026-10-13",
+     "type": "up",
+     "club": "Rochester"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "down",
+     "club": "Rochester"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 6,
+     "team": "Rochester Americans"
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "goals": 0,
+     "assists": 13,
+     "points": 13,
+     "plusMinus": 0,
+     "pim": 33,
+     "team": "Lehigh Valley Phantoms / Belleville Senators"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 2,
+     "pim": 6,
+     "shots": 1,
+     "team": "Buffalo Sabres"
+    },
+    "last": {
+     "gamesPlayed": 8,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 2,
+     "team": "Ottawa Senators"
+    },
+    "careerGp": 124,
+    "careerG": 4,
+    "careerP": 23
+   }
+  },
+  {
    "playerId": 8477993,
    "name": "Justin Kirkland",
    "team": "MIN",
@@ -4352,89 +4629,6 @@
     "careerGp": 8,
     "careerG": 1,
     "careerP": 1
-   }
-  },
-  {
-   "playerId": 8478502,
-   "name": "Dennis Gilbert",
-   "team": "BUF",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "1996-10-30",
-   "sweater": 44,
-   "draft": {
-    "year": 2015,
-    "teamAbbrev": "CHI",
-    "round": 3,
-    "overallPick": 91
-   },
-   "recalledOn": "2026-10-13",
-   "from": "Rochester",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-01",
-     "type": "up",
-     "club": "Rochester"
-    },
-    {
-     "date": "2026-10-02",
-     "type": "down",
-     "club": "Rochester"
-    },
-    {
-     "date": "2026-10-13",
-     "type": "up",
-     "club": "Rochester"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 6,
-     "team": "Rochester Americans"
-    },
-    "last": {
-     "gamesPlayed": 37,
-     "goals": 0,
-     "assists": 13,
-     "points": 13,
-     "plusMinus": 0,
-     "pim": 33,
-     "team": "Lehigh Valley Phantoms / Belleville Senators"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": 2,
-     "pim": 6,
-     "shots": 1,
-     "team": "Buffalo Sabres"
-    },
-    "last": {
-     "gamesPlayed": 8,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 0,
-     "pim": 2,
-     "shots": 2,
-     "team": "Ottawa Senators"
-    },
-    "careerGp": 124,
-    "careerG": 4,
-    "careerP": 23
    }
   },
   {
