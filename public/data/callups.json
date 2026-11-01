@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-01 07:05",
+  "generated": "2026-11-01 12:05",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 89,
-  "up": 50,
+  "up": 49,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -161,7 +161,7 @@
    "from": "Hartford",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -222,7 +222,7 @@
    "from": "Hamilton",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -1746,9 +1746,9 @@
      "shots": 199,
      "team": "Colorado Avalanche"
     },
-    "careerGp": 482,
+    "careerGp": 483,
     "careerG": 139,
-    "careerP": 518
+    "careerP": 522
    }
   },
   {
@@ -2303,10 +2303,10 @@
    "ahl": {
     "season": {
      "gamesPlayed": 8,
-     "goals": 5,
+     "goals": 6,
      "assists": 6,
-     "points": 11,
-     "plusMinus": 1,
+     "points": 12,
+     "plusMinus": 2,
      "pim": 6,
      "team": "Henderson Silver Knights"
     },
@@ -4372,7 +4372,7 @@
    "from": "Rochester",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -5374,7 +5374,7 @@
      "team": "Calgary Flames"
     },
     "last": null,
-    "careerGp": 10,
+    "careerGp": 11,
     "careerG": 0,
     "careerP": 1
    }
@@ -5447,7 +5447,7 @@
      "shots": 9,
      "team": "Calgary Flames"
     },
-    "careerGp": 17,
+    "careerGp": 18,
     "careerG": 4,
     "careerP": 6
    }
