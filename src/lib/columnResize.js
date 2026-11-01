@@ -8,6 +8,7 @@
 const KEY = "slapshot.colw.v1";
 const HIDE_KEY = "slapshot.colhide.v1";
 const MIN_W = 44;
+const MAX_W = 360;
 
 const load = (k) => { try { return JSON.parse(localStorage.getItem(k) || "{}") || {}; } catch { return {}; } };
 let widths = load(KEY);
@@ -40,7 +41,9 @@ function rules() {
       const label = colLabel(th);
       const sel = `table.data-table[data-rt="${table.dataset.rt}"] > * > tr > :nth-child(${i + 1})`;
       if (i > 0 && hidden[label]) { css += `${sel}{display:none;}\n`; return; }
-      const w = widths[label];
+      // 2026-11-01 (Six Points 1st TD Stats showed only Player): a saved width is shared by every table with that column
+      // name, and one stretched width (a stray drag on a phone header) pushed every other column off screen -> capped.
+      const w = widths[label] && Math.min(widths[label], MAX_W);
       if (!w) return;
       const pad = w < 140 ? "padding-left:6px;padding-right:6px;" : "";
       css += `${sel}{width:${w}px;min-width:${w}px;max-width:${w}px;white-space:normal;overflow:hidden;overflow-wrap:break-word;${pad}}\n`;
@@ -106,7 +109,7 @@ function startDrag(e, th) {
     const dx = (ev.clientX - startX) / z;
     if (!moved && Math.abs(dx) < 3) return;
     moved = true;
-    widths[label] = Math.max(MIN_W, Math.round(startW + dx));
+    widths[label] = Math.min(MAX_W, Math.max(MIN_W, Math.round(startW + dx)));
     apply();
   };
   const up = () => {
