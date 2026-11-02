@@ -43,7 +43,10 @@ const lineups = await buildLineups(date).catch((e) => {
 const { meta, players: active } = applyLineups(pool, lineups, new Date().toISOString());
 const goalieGrades = computeGoalieGrades(pool.goalies);
 const scored = scorePlayerPool(active);
-const grades = gradeSlate(scored);
+// 2026-11-02 opposing-starter term in gradeSlate (lib/grades.js GOALIE_COEF) -- same goalie ratings the app reads
+const ratingsFile = path.join(root, "public/data/team_ratings.json");
+const goalieRatings = fs.existsSync(ratingsFile) ? JSON.parse(fs.readFileSync(ratingsFile, "utf8")).goalies : null;
+const grades = gradeSlate(scored, goalieRatings);
 const graded = scored.map((p) => {
   const g = grades.get(p.playerId);
   return { ...p, effectiveGrade: g, modelProbs: g?.probs ?? null, goalieGrade: p.opponentGoalieId != null ? goalieGrades[p.opponentGoalieId] : null };

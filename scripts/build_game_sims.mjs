@@ -39,7 +39,9 @@ try {
 } catch (e) { console.log('lineups unavailable:', e.message) }
 const luGame = (away, home) => lineups?.games?.find((g) => g.away === away && g.home === home)
 
-const grades = gradeSlate(pool.players)
+// 2026-11-02 opposing-starter term in gradeSlate (lib/grades.js GOALIE_COEF) -- same goalie ratings the app reads
+const goalieRatings = fs.existsSync(path.join(DATA, 'team_ratings.json')) ? read(path.join(DATA, 'team_ratings.json')).goalies : null
+const grades = gradeSlate(pool.players, goalieRatings)
 const dress = dressWeights(pool.players)
 const lam = (p) => -Math.log(1 - Math.min(0.97, Math.max(0.001, p)))
 // Poisson mean with P(X >= 3) = p

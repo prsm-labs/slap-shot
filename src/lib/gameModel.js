@@ -32,6 +32,7 @@ export function useTeamRatings() {
 }
 
 const MAXG = 13;
+const WIN_STRETCH = 1.15;
 function pmf(lambda) {
   const out = [Math.exp(-lambda)];
   for (let k = 1; k <= MAXG; k++) out.push((out[k - 1] * lambda) / k);
@@ -94,13 +95,20 @@ export function projectGame(ratings, { away, home, awayGoalieId, homeGoalieId })
   const homeBy2 = scores.filter((s) => s.home - s.away >= 2).reduce((t, s) => t + s.p, 0);
   const awayBy2 = scores.filter((s) => s.away - s.home >= 2).reduce((t, s) => t + s.p, 0);
 
-  const pHome = hReg * scale + tieAdj * otHome;
+  // 2026-11-02 win chance stretched (weekend review: 60%+ favorites said 63-71%, won 73-83%). Walk-forward ratings + Poisson
+  // refit leave-one-season-out, 2023-26: favorites 62%+ said 65%, won 71-81% every season; logit x 1.15 log loss -13 / -16 / +5 /
+  // -36e-4 (2023-24 / 24-25 / 25-26 / 2026 live). Regulation / OT win parts are scaled by side so they still add up to the win;
+  // the score grid, totals and puck line are unchanged.
+  const pRaw = hReg * scale + tieAdj * otHome;
+  const pHome = 1 / (1 + Math.exp(-WIN_STRETCH * Math.log(pRaw / (1 - pRaw))));
+  const kH = pHome / pRaw, kA = (1 - pHome) / (1 - pRaw);
+  const otH = tieAdj * otHome * kH, otA = tieAdj * (1 - otHome) * kA;
   return {
     away, home,
     xgAway: lA, xgHome: lH,
     winAway: 1 - pHome, winHome: pHome,
-    regAway: aReg * scale, regHome: hReg * scale, ot: tieAdj,
-    otWinHome: otHome,
+    regAway: aReg * scale * kA, regHome: hReg * scale * kH, ot: otH + otA,
+    otWinHome: otH / (otH + otA),
     scores, overs,
     puckLine: { home: homeBy2, away: awayBy2 }, // win by 2+ (-1.5)
     expTotal: scores.reduce((t, s) => t + (s.away + s.home) * s.p, 0),

@@ -10,6 +10,7 @@ import { last120 } from "./last120.js";
 import { fetchLineups, lineupPollMs } from "./lineups.js";
 import { applyLineups, STARTED } from "./slateOverlay.js";
 import { marketPct } from "./market.js";
+import { fetchTeamRatings } from "./gameModel.js";
 
 // ── Live slate pool ──────────────────────────────────────────────────────────
 // todays_pool.json is written by the pipeline (9 AM / 12 PM / 5:30 PM ET) with each skater's
@@ -31,6 +32,7 @@ let raw = null;
 let lineups = null;
 let lineupsAt = null;
 let odds = null; // public/data/odds/<slateDate>.json (build_odds.py) — sportsbook anytime-goal prices
+let goalieRatings = null; // team_ratings.json goalies (GSAx per shot) — 2026-11-02 opposing-starter term in gradeSlate
 let current = null;
 let currentSig = null;
 let firstBuild = null;
@@ -55,7 +57,7 @@ function build() {
 
   const scored = scorePlayerPool(active);
   const goalieGrades = computeGoalieGrades(raw.goalies);
-  const grades = gradeSlate(scored);
+  const grades = gradeSlate(scored, goalieRatings);
   const graded = scored.map((p) => {
     const goalieGrade = p.opponentGoalieId != null ? goalieGrades[p.opponentGoalieId] : null;
     // One grade per skater (lib/grades.js gradeSlate); baseGrade kept as an alias for older views.
@@ -111,6 +113,7 @@ async function checkPool() {
   const newSlate = !raw || data._meta.slateDate !== raw._meta.slateDate;
   raw = data;
   odds = await fetchOdds(data._meta.slateDate);
+  goalieRatings = (await fetchTeamRatings())?.goalies || null;
   if (newSlate) {
     lineups = null;
     lineupsAt = null;

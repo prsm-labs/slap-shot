@@ -91,7 +91,10 @@ for (const g of meta.slate) {
 
 const goalieGrades = computeGoalieGrades(pool.goalies);
 const scoredRaw = scorePlayerPool(pool.players);
-const grades = gradeSlate(scoredRaw);
+// 2026-11-02 opposing-starter term in gradeSlate (lib/grades.js GOALIE_COEF) -- same goalie ratings the app reads
+const ratingsFile = path.join(root, "public/data/team_ratings.json");
+const goalieRatings = fs.existsSync(ratingsFile) ? JSON.parse(fs.readFileSync(ratingsFile, "utf8")).goalies : null;
+const grades = gradeSlate(scoredRaw, goalieRatings);
 // Slap Score v2 (lib/slapScore.js): Slap Score, tier, gGOAL and goal / point % from the grade model,
 // exactly as the app shows them. The 3+ SOG % still comes from the shot sim (lib/projections.js).
 const scored = applySlateScores(scoredRaw.map((p) => {

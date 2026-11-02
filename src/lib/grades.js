@@ -99,6 +99,12 @@ export function computeEffectiveGrade(baseGrade, goalieGrade) {
 // pool per skater, so xGA is used for all four. Defense vs position (allowed to C / W / D) was tested
 // too: once overall defense is removed it adds nothing and doesn't repeat half to half.
 export const MATCHUP_COEF = { goal: 0.114, assist: 0.117, point: 0.138, sog3: 0.126 };
+// 2026-11-02 opposing starter (weekend review: goal % barely moved with the goalie -- said ~15.5% vs every quintile, scored 16.8%
+// vs the weakest fifth, 14.5% vs the best). Logit term per SD of the starter's GSAx per shot (team_ratings.json goalies, 600 shots
+// of zero), on top of the full stack: held out by season on 68,809 Feb-Apr skater-games 2022-26 (actual starter), point
+// -74 / -1 / -50 / -23e-5 log loss (4 of 4), goal -27 / -1 / -15 / +1e-5; 3+ SOG ~0 (not used); assist not tested.
+export const GOALIE_COEF = { goal: -0.045, point: -0.065 };
+export const GOALIE_GSAX = { mean: 0.00292, sd: 0.00618 };
 // Since 2026-10-14 goal and point are then calibrated (top end was over-confident, middle under) and the point
 // chance uses last-120-minutes form — lib/calibration.js. uncal = with matchup, before calibration.
 // 3+ SOG calibrated too since 2026-10-14 (same top-end over-confidence; calibration.js header).
@@ -176,7 +182,7 @@ export function matchupText(m) {
 
 // Grade every skater in a slate. Returns Map playerId -> { letter, score (0-100 slate
 // percentile), probs, tooltip }.
-export function gradeSlate(players) {
+export function gradeSlate(players, goalies = null) {
   const xs = players.map((p) => p.opponentTeamxGA60).filter((v) => v != null);
   const mean = xs.reduce((a, b) => a + b, 0) / Math.max(xs.length, 1);
   const sd = Math.sqrt(xs.reduce((a, b) => a + (b - mean) ** 2, 0) / Math.max(xs.length, 1)) || 1;
@@ -197,6 +203,12 @@ export function gradeSlate(players) {
     // 2026-10-21 role / ice-time trend (calibration.js ROLE): last 3 games' ice time vs his usual, after calibration
     probs.role = roleTrend(p);
     for (const k of ["goal", "point", "assist", "sog3"]) probs[k] = applyRole(probs[k], k, probs.role);
+    // opposing starter (GOALIE_COEF above); unknown goalie -> no change. goalieZ + = better goalie.
+    const g = goalies && p.opponentGoalieId != null ? goalies[String(p.opponentGoalieId)] : null;
+    probs.goalieZ = g?.gsax != null ? (g.gsax - GOALIE_GSAX.mean) / GOALIE_GSAX.sd : 0;
+    for (const [k, c] of Object.entries(GOALIE_COEF)) {
+      if (probs[k] != null && probs.goalieZ) probs[k] = 1 / (1 + Math.exp(-(Math.log(probs[k] / (1 - probs[k])) + c * probs.goalieZ)));
+    }
     return { id: p.playerId, probs };
   });
   const n = rows.length;
