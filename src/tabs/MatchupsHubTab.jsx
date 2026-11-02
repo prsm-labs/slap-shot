@@ -7,6 +7,7 @@ import CreaseLabTab from "./CreaseLabTab.jsx";
 import PairsTab from "./PairsTab.jsx";
 import LadderTab from "./LadderTab.jsx";
 import RiskSliderTab from "./RiskSliderTab.jsx";
+import RadarTab from "./RadarTab.jsx";
 import SlateStatus from "../components/SlateStatus.jsx";
 
 // "Scouting" top-level tab: All Matchups (the default view) plus every lab, switched by a button row in the
@@ -14,6 +15,7 @@ import SlateStatus from "../components/SlateStatus.jsx";
 const VIEWS = [
   { key: "board", label: "🏒 All Matchups", Component: AllMatchupsTab },
   { key: "risk", label: "🎚️ Risk Slider", Component: RiskSliderTab },  // 2026-10-27: safe -> long shot over every skater's ladder
+  { key: "radar", label: "🔦 Under the radar", Component: RadarTab },  // 2026-11-02: lines he rarely hits that the model likes tonight
   { key: "lamp", label: "💡 Lamp Lab", Component: LampLabTab },
   { key: "apple", label: "🍎 Apple Lab", Component: AppleLabTab },
   { key: "crease", label: "🥅 Crease Lab", Component: CreaseLabTab },

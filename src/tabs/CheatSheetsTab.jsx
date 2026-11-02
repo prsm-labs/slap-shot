@@ -18,6 +18,8 @@ import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import PrismPicks from "../components/PrismPicks.jsx";
 import { useListFilters } from "../lib/listFilters.js";
+import { useRadar } from "../lib/radar.js";
+import { RadarCard } from "./RadarTab.jsx";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -104,6 +106,9 @@ function CheatSheetMain() {
   const lineups = useLineups(pool?.past ? null : meta?.slateDate); // past night: no live lineup marks
 
   const maps = useMemo(() => lineupMaps(lineups), [lineups]);
+  // 2026-11-02 🔦 Under the radar (lib/radar.js): lines he rarely hits that the model likes tonight
+  const radarPool = useMemo(() => (players ? filterPositions(filterPlayers(players, selected), position) : null), [players, selected, position]);
+  const radar = useRadar(radarPool, Boolean(pool?.past), meta?.slateDate);
   const slateByTeam = useMemo(() => {
     const m = new Map();
     for (const g of meta?.slate || []) { m.set(g.away, g); m.set(g.home, g); }
@@ -189,6 +194,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
       <div className="grid-cards">
         <ListCard title="🥅 Goal Candidates" sub="Top 5 by chance to score" items={goalCandidates} renderRow={(p) => `${p.anytimeGoalPct}%`}
           onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+        <RadarCard picks={radar.picks} data={radar.data} />
         <ListCard title="🎯 Point Candidates" sub="Top 5 by chance of a point" items={pointCandidates} prop="point"
           renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
         <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates} prop="sog3"
