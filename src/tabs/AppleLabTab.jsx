@@ -96,7 +96,7 @@ export default function AppleLabTab() {
     // got 3+ SOG live 10/2-10/24), so it is kept only as simSog3Pct.
     return results.filter((r) => byId.has(r.playerId)).map((r) => {
       const p = byId.get(r.playerId);
-      const cal = p.modelProbs?.sog3;
+      const cal = p.modelProbs?.sog3 ?? (p.modelSog3Pct != null ? p.modelSog3Pct / 100 : null); // 2026-11-02: past nights too
       return { ...r, ...p, simSog3Pct: r.plus3SogPct, plus3SogPct: cal != null ? Math.round(cal * 1000) / 10 : r.plus3SogPct };
     });
   }, [results, pool]);

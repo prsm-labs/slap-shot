@@ -45,7 +45,7 @@ function flatten(r) {
     tier: p.tier ?? null,
     grade: p.effectiveGrade ?? null,
     simGoal: p.anytimeGoalPct ?? null,
-    sim3Sog: p.plus3SogPct ?? null,
+    sim3Sog: p.modelSog3Pct ?? p.plus3SogPct ?? null, // 2026-11-02: calibrated chance (frozen with the slate); raw sim only on old nights
     firstGoalPct: p.firstGoalPct ?? null,
     goalSignal: Boolean(p.goalSignal),
     pointSignal: Boolean(p.pointSignal),
@@ -215,7 +215,7 @@ export default function TrackRecordLive() {
         <StatCard label="Top 10 Slap goal rate" value={rate(s.top10.filter((r) => r.scored).length, s.top10.length)} sub={`${s.top10.filter((r) => r.scored).length}/${s.top10.length}`} {...card("top10")} />
         <StatCard label="★ Goal Signal rate" value={rate(s.goalSig.filter((r) => r.scored).length, s.goalSig.length)} sub={`${s.goalSig.filter((r) => r.scored).length}/${s.goalSig.length}`} {...card("goalSig")} />
         <StatCard label="★ Point Signal rate" value={rate(s.pointSig.filter((r) => r.pts > 0).length, s.pointSig.length)} sub={`${s.pointSig.filter((r) => r.pts > 0).length}/${s.pointSig.length} got a point`} {...card("pointSig")} />
-        <StatCard label="3+ SOG / expected" value={`${s.actual3Sog} / ${s.expected3Sog.toFixed(1)}`} sub="actual vs sum of sim %" {...card("sog3")} />
+        <StatCard label="3+ SOG / expected" value={`${s.actual3Sog} / ${s.expected3Sog.toFixed(1)}`} sub="actual vs sum of model %" {...card("sog3")} />
         <StatCard
           {...card("firstGoal")}
           label={`${FIRST_GOAL} First-goal pick rank`}
@@ -290,7 +290,7 @@ export default function TrackRecordLive() {
               {th("slapScore", "Slap")}
               {th("tier", "Tier")}
               {th("simGoal", "Goal %")}
-              {th("sim3Sog", "Sim 3+SOG")}
+              {th("sim3Sog", "3+ SOG %")}
               {th("firstGoalPct", `${FIRST_GOAL}%`)}
               {th("g", "G")}
               {th("ast", "A")}
