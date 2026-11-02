@@ -1,5 +1,5 @@
 import { Component, useEffect, useState } from "react";
-import { setViewDate, useViewDate } from "../lib/data.js";
+import { setViewDate, useScoredPool, useViewDate } from "../lib/data.js";
 import { setMatchup } from "../lib/matchupFilter.js";
 import { easternToday } from "../lib/liveGoals.js";
 
@@ -12,7 +12,13 @@ const label = (d, opts = { weekday: "short", month: "short", day: "numeric" }) =
 export default function DateBar() {
   const date = useViewDate();
   const [dates, setDates] = useState([]);
-  const today = easternToday();
+  // 2026-11-02 (user: "showing yesterday's games for today's date"): the day rolls at 4 AM ET but the new slate posts with the
+  // 7 AM pipeline run -- in between, "Tonight" is the slate actually loaded (its own date), not the clock's date.
+  const live = useScoredPool({ includeStarted: true });
+  const [liveSlate, setLiveSlate] = useState(null);
+  useEffect(() => { if (!date && live?.meta?.slateDate) setLiveSlate(live.meta.slateDate); }, [date, live]);
+  const today = liveSlate || easternToday();
+  const stale = liveSlate && liveSlate < easternToday();
   useEffect(() => {
     fetch("/data/projections/index.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null))
       .then((d) => setDates((d?.dates || []).filter((x) => x < today).sort().reverse())).catch(() => {});
@@ -24,7 +30,7 @@ export default function DateBar() {
       <label className="date-pick">
         <span aria-hidden="true">📅</span>
         <select value={date || ""} onChange={(e) => pick(e.target.value)} aria-label="Pick a night">
-          <option value="">Tonight · {label(today)}</option>
+          <option value="">{stale ? `Last night · ${label(today)} (today's slate posts ~7 AM ET)` : `Tonight · ${label(today)}`}</option>
           {dates.map((d) => <option key={d} value={d}>{label(d)}</option>)}
         </select>
       </label>
