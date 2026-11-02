@@ -39,10 +39,10 @@
         "home": "CHI",
         "awayGoalieId": 8478406,
         "awayGoalie": "Mackenzie Blackwood",
-        "awayGoalieStatus": "Unconfirmed",
+        "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8481519,
         "homeGoalie": "Spencer Knight",
-        "homeGoalieStatus": "Likely"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020235,
@@ -52,19 +52,19 @@
         "home": "SJS",
         "awayGoalieId": 8481692,
         "awayGoalie": "Dustin Wolf",
-        "awayGoalieStatus": "Unconfirmed",
+        "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8482137,
         "homeGoalie": "Yaroslav Askarov",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       }
     ],
     "seasons": [
       2025,
       2026
     ],
-    "generated": "2026-11-02 12:01",
+    "generated": "2026-11-02 17:32",
     "player_count": 176,
-    "goalie_count": 64,
+    "goalie_count": 63,
     "skipped_no_history": 1,
     "teams": {
       "ANA": {
@@ -37024,36 +37024,6 @@
           "goalsAllowed": 5,
           "sogFaced": 33,
           "savePct": 0.848,
-          "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8484900,
-      "name": "Cooper Black",
-      "team": "FLA",
-      "position": "G",
-      "games_played": 1,
-      "icetime": 3425,
-      "wins": 0,
-      "shutouts": 0,
-      "shotsFaced": 30,
-      "sogFaced": 20,
-      "goalsAllowed": 3,
-      "savePct": 0.85,
-      "GA60_proxy": 3.15,
-      "xGA60_proxy": 2.09,
-      "highDangerSavePct": 0.8,
-      "last7": [
-        {
-          "gameId": 2026020158,
-          "date": "2026-10-22",
-          "opp": "PIT",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 20,
-          "savePct": 0.85,
           "win": false,
           "shutout": false
         }

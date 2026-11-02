@@ -1,13 +1,128 @@
 {
  "_meta": {
-  "generated": "2026-11-02 12:05",
+  "generated": "2026-11-02 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 92,
-  "up": 48,
+  "count": 94,
+  "up": 49,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8479387,
+   "name": "Keaton Middleton",
+   "team": "COL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1998-02-10",
+   "sweater": 67,
+   "draft": {
+    "year": 2016,
+    "teamAbbrev": "TOR",
+    "round": 4,
+    "overallPick": 101
+   },
+   "recalledOn": "2026-11-02",
+   "from": "Colorado",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-02",
+     "type": "up",
+     "club": "Colorado"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 11,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 2,
+     "pim": 7,
+     "team": "Colorado Eagles"
+    },
+    "last": {
+     "gamesPlayed": 66,
+     "goals": 4,
+     "assists": 10,
+     "points": 14,
+     "plusMinus": 17,
+     "pim": 63,
+     "team": "Colorado Eagles"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -1,
+     "pim": 4,
+     "shots": 0,
+     "team": "Colorado Avalanche"
+    },
+    "careerGp": 47,
+    "careerG": 0,
+    "careerP": 3
+   }
+  },
+  {
+   "playerId": 8479638,
+   "name": "Justin Brazeau",
+   "team": "PIT",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "1998-02-02",
+   "sweater": 16,
+   "draft": null,
+   "recalledOn": "2026-11-02",
+   "from": "Wilkes-Barre/Scranton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-02",
+     "type": "up",
+     "club": "Wilkes-Barre/Scranton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -1,
+     "pim": 0,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 64,
+     "goals": 17,
+     "assists": 17,
+     "points": 34,
+     "plusMinus": 5,
+     "pim": 14,
+     "shots": 104,
+     "team": "Pittsburgh Penguins"
+    },
+    "careerGp": 159,
+    "careerG": 33,
+    "careerP": 63
+   }
+  },
   {
    "playerId": 8481827,
    "name": "Ben McCartney",
@@ -375,9 +490,9 @@
      "otLosses": 0,
      "shutouts": 0,
      "goalsAgainst": 3,
-     "shotsAgainst": 22,
+     "shotsAgainst": 23,
      "team": "Anaheim Ducks",
-     "savePct": 0.864,
+     "savePct": 0.87,
      "gaa": 3.0
     },
     "last": {
@@ -874,9 +989,9 @@
      "otLosses": 0,
      "shutouts": 0,
      "goalsAgainst": 5,
-     "shotsAgainst": 33,
+     "shotsAgainst": 34,
      "team": "Calgary Flames",
-     "savePct": 0.848,
+     "savePct": 0.853,
      "gaa": 5.0
     },
     "last": {
@@ -2777,7 +2892,7 @@
    "from": "Charlotte",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -2842,6 +2957,89 @@
     "careerGp": 1,
     "careerG": 0,
     "careerP": null
+   }
+  },
+  {
+   "playerId": 8483731,
+   "name": "Alex Bump",
+   "team": "PHI",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2003-11-20",
+   "sweater": 20,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "PHI",
+    "round": 5,
+    "overallPick": 133
+   },
+   "recalledOn": "2026-10-19",
+   "from": "Lehigh Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-02",
+   "events": [
+    {
+     "date": "2026-10-07",
+     "type": "down",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Lehigh Valley"
+    },
+    {
+     "date": "2026-11-02",
+     "type": "down",
+     "club": "Lehigh Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 7,
+     "assists": 1,
+     "points": 8,
+     "plusMinus": 1,
+     "pim": 4,
+     "team": "Lehigh Valley Phantoms"
+    },
+    "last": {
+     "gamesPlayed": 36,
+     "goals": 11,
+     "assists": 15,
+     "points": 26,
+     "plusMinus": -2,
+     "pim": 22,
+     "team": "Lehigh Valley Phantoms"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 19,
+     "team": "Philadelphia Flyers"
+    },
+    "last": {
+     "gamesPlayed": 17,
+     "goals": 5,
+     "assists": 4,
+     "points": 9,
+     "plusMinus": 3,
+     "pim": 2,
+     "shots": 23,
+     "team": "Philadelphia Flyers"
+    },
+    "careerGp": 25,
+    "careerG": 5,
+    "careerP": 9
    }
   },
   {
@@ -3134,84 +3332,6 @@
     "careerGp": 6,
     "careerG": 3,
     "careerP": 3
-   }
-  },
-  {
-   "playerId": 8483731,
-   "name": "Alex Bump",
-   "team": "PHI",
-   "position": "L",
-   "shoots": "L",
-   "birthDate": "2003-11-20",
-   "sweater": 20,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "PHI",
-    "round": 5,
-    "overallPick": 133
-   },
-   "recalledOn": "2026-10-19",
-   "from": "Lehigh Valley",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-07",
-     "type": "down",
-     "club": "Lehigh Valley"
-    },
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Lehigh Valley"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 7,
-     "assists": 1,
-     "points": 8,
-     "plusMinus": 1,
-     "pim": 4,
-     "team": "Lehigh Valley Phantoms"
-    },
-    "last": {
-     "gamesPlayed": 36,
-     "goals": 11,
-     "assists": 15,
-     "points": 26,
-     "plusMinus": -2,
-     "pim": 22,
-     "team": "Lehigh Valley Phantoms"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 8,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 19,
-     "team": "Philadelphia Flyers"
-    },
-    "last": {
-     "gamesPlayed": 17,
-     "goals": 5,
-     "assists": 4,
-     "points": 9,
-     "plusMinus": 3,
-     "pim": 2,
-     "shots": 23,
-     "team": "Philadelphia Flyers"
-    },
-    "careerGp": 25,
-    "careerG": 5,
-    "careerP": 9
    }
   },
   {
@@ -5983,9 +6103,9 @@
      "otLosses": 1,
      "shutouts": 1,
      "goalsAgainst": 26,
-     "shotsAgainst": 252,
+     "shotsAgainst": 251,
      "team": "New York Rangers",
-     "savePct": 0.897,
+     "savePct": 0.896,
      "gaa": 2.73
     },
     "last": {
