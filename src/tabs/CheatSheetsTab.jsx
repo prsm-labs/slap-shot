@@ -20,6 +20,7 @@ import PrismPicks from "../components/PrismPicks.jsx";
 import { useListFilters } from "../lib/listFilters.js";
 import { useRadar } from "../lib/radar.js";
 import { RadarCard } from "./RadarTab.jsx";
+import { OppDefBadge } from "../lib/oppDef.jsx";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -53,7 +54,8 @@ function ActualLine({ item, prop }) {
   const ok = hitOf(item, prop);
   return <div className="mono actual-line">Final: {a.g} G · {a.a} A · {a.sog} SOG{a.toi ? ` · ${a.toi}` : ""}{ok != null && <span className={`hit-mark ${ok ? "hit" : "miss"}`}>{ok ? " ✅" : " ✗"}</span>}</div>;
 }
-function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf, prop = "goal" }) {
+// 2026-11-03 meta -> Soft D / Tough D badge (lib/oppDef.jsx)
+function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf, prop = "goal", meta }) {
   return (
     <div className="card">
       <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 2 }}>{title}</div>
@@ -74,7 +76,7 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
               <div style={{ minWidth: 0 }}>
                 <div className="mono" style={{ fontSize: 12 }}>
                   {item.name} <span style={{ color: "var(--muted)" }}>({item.team})</span>
-                  {statusOf && <LineupBadge status={statusOf(item)} />} <PickButton player={item} /> <GamblyButton text={betLine(item, prop)} /> <H2HCell playerId={item.playerId} compact />
+                  {statusOf && <LineupBadge status={statusOf(item)} />} <PickButton player={item} /> <GamblyButton text={betLine(item, prop)} /> <H2HCell playerId={item.playerId} compact />{meta && <> <OppDefBadge p={item} meta={meta} /></>}
                 </div>
                 {opp && (
                   <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>
@@ -193,18 +195,18 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
 
       <div className="grid-cards">
         <ListCard title="🥅 Goal Candidates" sub="Top 5 by chance to score" items={goalCandidates} renderRow={(p) => `${p.anytimeGoalPct}%`}
-          onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
-        <RadarCard picks={radar.picks} data={radar.data} />
+          onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
+        <RadarCard picks={radar.picks} data={radar.data} meta={meta} />
         <ListCard title="🎯 Point Candidates" sub="Top 5 by chance of a point" items={pointCandidates} prop="point"
-          renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+          renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
         <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates} prop="sog3"
-          renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+          renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
         {priced.length > 0 && (
           <>
             <ListCard title="📖 We Rate Higher Than the Book" sub="Anytime goal, our chance most above the best price. Context, not value: this group has scored nearer the book's number (we said 25.5%, book 20.6%, 18.9% scored). mkt = market check" items={bestValue}
-              renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+              renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
             <ListCard title="📖 Book Rates Higher Than Us" sub="Priced shorter than our chance. Not a fade: these have scored at about the book's number (we said 17.4%, book 22.5%, 24.0% scored). mkt = market check" items={overvalued}
-              renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} />
+              renderRow={edgeRow} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
           </>
         )}
 

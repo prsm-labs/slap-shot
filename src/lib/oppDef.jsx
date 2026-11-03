@@ -37,4 +37,18 @@ export function OppDefCell({ p, meta }) {
   );
 }
 
+// 2026-11-03 cheat-sheet badge (user: soft / tough matchup badges on the prop cheat sheets): only the league's 10 softest /
+// 10 stingiest by xGA; average shows nothing. Context only -- the chance already counts the matchup.
+export function OppDefBadge({ p, meta }) {
+  const d = oppDefOf(p, meta);
+  if (d.tier !== "soft" && d.tier !== "tough") return null;
+  const where = d.tier === "soft" ? `${ord(d.rank)} softest` : `${ord(d.n - d.rank + 1)} stingiest`;
+  return (
+    <span className={`def-badge ${d.tier}`}
+      title={`${p.opponentTeam} allows ${d.xga?.toFixed(2)} expected goals a game: ${where} of ${d.n}${d.slate ? " on that night's slate" : ""}. Context — tonight's chance already counts it`}>
+      {d.tier === "soft" ? "Soft D" : "Tough D"}
+    </span>
+  );
+}
+
 export const OPP_DEF_NOTE = "Opp D = where tonight's opponent ranks among the league's defenses by expected goals allowed per game (1st softest = allows the most). Green = 10 softest, red = 10 stingiest. Team level: defense vs position tested as noise.";

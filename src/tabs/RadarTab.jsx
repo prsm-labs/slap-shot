@@ -9,6 +9,7 @@ import { filterPositions, positionLabel, usePosition } from "../lib/positionFilt
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { useListFilters } from "../lib/listFilters.js";
 import { radarLabel, useRadar } from "../lib/radar.js";
+import { OppDefBadge } from "../lib/oppDef.jsx";
 
 // 🔦 Under the radar (2026-11-02): Scouting view + the Cheat Sheets card (RadarCard). lib/radar.js has the rule and the backtest.
 const pct = (v) => (v == null ? "—" : `${Math.round(v * 100)}%`);
@@ -22,7 +23,7 @@ function hitOf(f) {
   return v == null ? null : v >= f.line;
 }
 
-export function RadarCard({ picks, data }) {
+export function RadarCard({ picks, data, meta }) {
   const bt = data?.backtest;
   return (
     <div className="card">
@@ -41,7 +42,7 @@ export function RadarCard({ picks, data }) {
               <span className="mono" style={{ fontSize: 10, ...muted }}>{i + 1}.</span>
               <PlayerAvatar playerId={f.playerId} name={f.p.name} team={f.p.team} size={26} />
               <div style={{ minWidth: 0 }}>
-                <div className="mono" style={{ fontSize: 12 }}>{f.p.name} <span style={muted}>({f.p.team})</span> <PickButton player={f.p} /></div>
+                <div className="mono" style={{ fontSize: 12 }}>{f.p.name} <span style={muted}>({f.p.team})</span> <PickButton player={f.p} />{meta && <> <OppDefBadge p={f.p} meta={meta} /></>}</div>
                 <div className="mono" style={{ fontSize: 9, ...muted }}>{radarLabel(f)} · had it in {f.hits} of his last {f.n}</div>
               </div>
             </div>
