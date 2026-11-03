@@ -21,6 +21,7 @@ import MatchupChip from "./MatchupChip.jsx";
 import HitRateCard from "./HitRateCard.jsx";
 import Fold from "./Fold.jsx";
 import { useHitGames } from "../lib/hitGames.js";
+import LinedUp from "./LinedUp.jsx";
 
 // 2026-10-28 hit-rate card: goals / assists / points at 1+, shots on goal at his per-game average (where a book line sits)
 const HR_STATS = (p) => [
@@ -237,6 +238,7 @@ export default function PlayerSlideout() {
             <TonightCard t={tonight} p={player} role={role} />
 
             {role === "skater" && <MatchupCard p={player} />}
+            {role === "skater" && <LinedUp p={player} />}
 
             {role === "goalie" ? (
               // Season lines, recent games chart and tonight's projection — for any goalie, however it was opened.

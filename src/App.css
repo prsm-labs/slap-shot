@@ -536,3 +536,13 @@ p.sch-muted{margin:0 0 10px;}
 @media (min-width: 2613px) { :root { --z: 1.95; } }
 @media (min-width: 2680px) { :root { --z: 2.00; } }
 html { zoom: var(--z); }
+
+/* 2026-11-03 🔗 Lined up tonight (slideout): tested edges as a short narrative + "show players like this" */
+.lined-up{border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin:12px 0;background:var(--surface2)}
+.lu-row{padding:6px 0;border-bottom:1px solid var(--border)}
+.lu-row:last-of-type{border-bottom:0}
+.lu-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:2px}
+.lu-kind{font-size:11px;padding:1px 6px;border-radius:999px;border:1px solid currentColor}
+.lu-kind.boost{color:var(--green)}
+.lu-kind.avoid{color:var(--red)}
+.lu-btn{margin-top:6px}
