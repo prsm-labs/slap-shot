@@ -21,6 +21,8 @@ import { useListFilters } from "../lib/listFilters.js";
 import { useRadar } from "../lib/radar.js";
 import { RadarCard } from "./RadarTab.jsx";
 import { OppDefBadge } from "../lib/oppDef.jsx";
+import { useMulti } from "../lib/multi.js";
+import { MultiCard } from "./MultiTab.jsx";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -111,6 +113,8 @@ function CheatSheetMain() {
   // 2026-11-02 🔦 Under the radar (lib/radar.js): lines he rarely hits that the model likes tonight
   const radarPool = useMemo(() => (players ? filterPositions(filterPlayers(players, selected), position) : null), [players, selected, position]);
   const radar = useRadar(radarPool, Boolean(pool?.past), meta?.slateDate);
+  // 2026-11-03 🎯 / 🍎 multi-point + multi-assist lists (lib/multi.js), right after the point card
+  const multi = useMulti(radarPool, Boolean(pool?.past), meta?.slateDate);
   const slateByTeam = useMemo(() => {
     const m = new Map();
     for (const g of meta?.slate || []) { m.set(g.away, g); m.set(g.home, g); }
@@ -199,6 +203,8 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
         <RadarCard picks={radar.picks} data={radar.data} meta={meta} />
         <ListCard title="🎯 Point Candidates" sub="Top 5 by chance of a point" items={pointCandidates} prop="point"
           renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
+        <MultiCard k="PTS" picks={multi.lists.PTS} data={multi.data} meta={meta} />
+        <MultiCard k="A" picks={multi.lists.A} data={multi.data} meta={meta} />
         <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates} prop="sog3"
           renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
         {priced.length > 0 && (
