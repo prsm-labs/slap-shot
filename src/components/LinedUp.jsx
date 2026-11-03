@@ -29,7 +29,7 @@ export default function LinedUp({ p: p1 }) {
         return (
           <div key={k} className="lu-row">
             <div className="lu-head"><b>{e.label}</b><span className={`lu-kind ${avoid ? "avoid" : "boost"}`}>{avoid ? "runs under our chance" : "runs over our chance"}</span></div>
-            <div className="section-sub">{e.title}</div>
+            <div className="section-sub">{e.title.replace(/ — tap twice to hide them$/, "")}</div>
             <button className="pill-btn lu-btn" onClick={() => likeThis(k)}>🔎 Show players like this</button>
           </div>
         );
