@@ -1,6 +1,7 @@
 // Thin fetch wrappers for the real static data files under public/data/ (see
 // slap-shot-build.md §4/§5/§13 — no live pipeline/API is wired up yet, this reads the
 // real historical/aggregated JSON+CSV produced by the one-off scripts documented there).
+import { streakCheck } from "./edges.js";
 import { useSyncExternalStore } from "react";
 import { scorePlayerPool } from "../scoring.js";
 import { computeGoalieGrades, gradeSlate } from "./grades.js";
@@ -80,7 +81,8 @@ function build() {
       try { const pg = projectGame(teamRatings, g); win[g.home] = pg.winHome; win[g.away] = pg.winAway; } catch { /* team missing from ratings */ }
     }
   }
-  const players = withBookOdds(applySlateScores(graded)).map((p) => (win[p.team] != null ? { ...p, teamWin: win[p.team] } : p));
+  // 2026-11-03 🧊 Streak check (lib/edges.js): hot run into a defense that isn't soft -- a caution badge, nothing re-scored
+  const players = withBookOdds(applySlateScores(graded)).map((p) => ({ ...p, ...(win[p.team] != null ? { teamWin: win[p.team] } : {}), streakCheck: streakCheck(p, meta) }));
   const goalies = raw.goalies.map((g) => ({ ...g, grade: goalieGrades[g.playerId] || null }));
 
   currentSig = sig;

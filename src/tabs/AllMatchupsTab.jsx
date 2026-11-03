@@ -3,7 +3,7 @@ import { BestPriceLink } from "../components/BetLink.jsx";
 import { useSort } from "../lib/useSort.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
-import DueTag from "../components/DueTag.jsx";
+import DueTag, { StreakTag } from "../components/DueTag.jsx";
 import H2HCell, { H2HStatCell } from "../components/H2HCell.jsx";
 import { SKATER_H2H_COLS, useH2HGrades, withH2H } from "../lib/h2h.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -123,7 +123,7 @@ export default function AllMatchupsTab() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /><DueTag due={p.dueHeat} />
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /><DueTag due={p.dueHeat} /><StreakTag p={p} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>

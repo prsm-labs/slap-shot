@@ -1,4 +1,4 @@
-import { EDGES, edgeKeys } from "../lib/edges.js";
+import { EDGES, STREAK, edgeKeys } from "../lib/edges.js";
 import { useScoredPool } from "../lib/data.js";
 import { setListFilter } from "../lib/listFilters.js";
 import { tabRequest } from "../lib/nav.js";
@@ -11,7 +11,8 @@ export default function LinedUp({ p: p1 }) {
   const pool = useScoredPool({ includeStarted: true });
   const p = pool?.players?.find((x) => x.playerId === p1.playerId) || p1;
   const keys = edgeKeys(p, pool?.meta);
-  if (!keys.length) return null;
+  const sc = p.streakCheck;
+  if (!keys.length && !sc) return null;
   const likeThis = (k) => {
     setListFilter("edge", Array.isArray(k) ? k : [k]);
     setListFilter("edgeNot", []);
@@ -34,8 +35,15 @@ export default function LinedUp({ p: p1 }) {
           </div>
         );
       })}
+      {sc && (
+        <div className="lu-row">
+          <div className="lu-head"><b>{STREAK.label}</b><span className="lu-kind caution">caution · a lean</span></div>
+          <div className="section-sub">{sc.l5} points in his last 5 (usual {(sc.ppg * 5).toFixed(1)}) into {p.opponentTeam}, {sc.rank} of {sc.n} by expected goals allowed (1 = softest). Hot runs into defenses like this came in ~2 pts under our point chance in 3 of 4 seasons (2022-26) — his chance already counts the run.</div>
+          <button className="pill-btn lu-btn" onClick={() => { setListFilter("tags", ["streak"]); setListFilter("tagsNot", []); tabRequest.set({ tab: "board", at: Date.now() }); closeAllSlides(); }}>🔎 Show players like this</button>
+        </div>
+      )}
       {keys.length > 1 && <button className="pill-btn lu-btn" onClick={() => likeThis(keys)}>🔎 Players with all {keys.length} of these</button>}
-      <div className="section-sub">Context only — his chances already count tonight's matchup; these spots beat (or missed) those chances in every season tested.</div>
+      <div className="section-sub">Context only — his chances already count tonight's matchup and his recent form.{keys.length ? " The edges above beat (or missed) those chances in every season tested." : ""}</div>
     </div>
   );
 }

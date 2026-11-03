@@ -12,7 +12,7 @@ import { eligibleForTop3, selectTop3, TIER_INFO } from "./top3.js";
 import { prismPicks, tierPicks } from "./prismPicks.js";
 import { applyGroups } from "../components/FilterPanel.jsx";
 import { DEF_TIERS, oppDefOf } from "./oppDef.jsx";
-import { EDGES, edgeKeys } from "./edges.js";
+import { EDGES, STREAK, edgeKeys } from "./edges.js";
 
 export const TIER_OPTIONS = [
   { key: null, label: "All tiers" },
@@ -108,6 +108,7 @@ export function buildGroups(ctx = {}) {
     if (p.lineupStatus === "dressed") t.push("confirmed");
     if (p.roleFlag) t.push("role");
     if (!p.roleFlag && p.teamGp === 0) t.push("first");
+    if (p.streakCheck) t.push("streak"); // 2026-11-03 caution lean (lib/edges.js)
     return t;
   };
   const tops = [...new Set([...(picks?.values() || [])].flatMap((e) => e.top))];
@@ -134,6 +135,7 @@ export function buildGroups(ctx = {}) {
       { v: "confirmed", label: "✅ In official lineup", title: "Only skaters in tonight's posted lineup (around warmups)" },
       { v: "role", label: "🪑? Role check", title: "Under 3 games for his team and off tonight's power-play units — kept out of Top 3 / PRISM Picks" },
       { v: "first", label: "📅 New to team", title: "No games with his team yet" },
+      STREAK,
     ] },
     // 2026-11-02 tested edges (lib/edges.js): spots that beat -- or missed -- our own chance every held-out season
     { key: "edge", label: "Edges (tested)", chip: "Edge", type: "tags", get: (p) => edgeKeys(p, meta), options: EDGES },

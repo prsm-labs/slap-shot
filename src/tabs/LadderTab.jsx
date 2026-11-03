@@ -11,7 +11,7 @@ import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import PickButton from "../components/PickButton.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
-import DueTag from "../components/DueTag.jsx";
+import DueTag, { StreakTag } from "../components/DueTag.jsx";
 import LineupBadge from "../components/LineupBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
@@ -33,7 +33,7 @@ function PickLine({ p, statusOf, alt }) {
         <div style={{ fontSize: alt ? 11 : 12, fontWeight: alt ? 400 : 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
           <span className="clickable player-name-link" onClick={() => openSkaterSlide(p)}>{p.name}</span>
           <span className="mono" style={{ fontSize: 9, ...muted }}> {positionLabel(p.position)}</span>
-          {statusOf && <LineupBadge status={statusOf(p)} />}<DueTag due={p.dueHeat} />
+          {statusOf && <LineupBadge status={statusOf(p)} />}<DueTag due={p.dueHeat} /><StreakTag p={p} />
         </div>
         <div className="mono" style={{ fontSize: 10 }}>
           <b>{p.anytimeGoalPct}%</b>{" "}

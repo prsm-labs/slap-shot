@@ -33,3 +33,20 @@ export function edgeKeys(p, meta) {
   if (yest.has(p.team) && !p.isHome && ALTITUDE.has(p.opponentTeam)) e.push("altb2b");
   return e;
 }
+
+// 2026-11-03 (user: Seth Jones -- hot run, then a defense that isn't soft and the run stopped; a caution, not an avoid).
+// Tested on the live stack, Feb-Apr 2022-26 (scratch conv/nhl_hot_d.py): hot = 3+ points in his last 5 and 1.5x his usual rate.
+// Into the toughest third by expected goals allowed: points 2.3 pts under our chance (3 of 4 seasons); hot defensemen vs any
+// non-soft defense: points -2.2, assists -1.9. A LEAN (2025-26 went the other way, +1.3), shown as a caution badge only.
+export const STREAK = { v: "streak", label: "🧊 Streak check", title: "Hot run (3+ points in his last 5, 1.5x his usual) into a defense that isn't soft. 2022-26: these runs came in ~2 pts under our point chance in 3 of 4 seasons (a lean, not a tested edge) — his chance already counts the run" };
+export function streakCheck(p, meta) {
+  const gp = p.games_played || 0;
+  if (gp < 15 || p.Points_Last5 == null) return null;
+  const ppg = (p.I_F_points || 0) / gp, l5 = p.Points_Last5;
+  if (ppg < 0.3 || l5 < Math.max(3, 7.5 * ppg)) return null;
+  const r = meta?.defRank?.[p.opponentTeam]?.rank, n = Object.keys(meta?.defRank || {}).length || 32;
+  if (!r) return null;
+  const tough = r > (2 * n) / 3, notSoft = r > n / 3;
+  if (!(tough || (p.position === "D" && notSoft))) return null;
+  return { l5, ppg, rank: r, n };
+}
