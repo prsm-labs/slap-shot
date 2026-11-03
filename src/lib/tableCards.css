@@ -1,0 +1,46 @@
+/* 📱 Phone cards (lib/tableCards.js) -- same file in CourtIQ, Slap Shot, Six Points and Final Lap. Phone width only. */
+[data-tc-toggle] { display: none; }
+@media (max-width: 640px) {
+  [data-tc-toggle] { display: inline-flex; margin: 4px 0 8px; border: 1px solid var(--border, rgba(127,127,127,.3)); border-radius: 999px; overflow: hidden; }
+  [data-tc-toggle] button { font: inherit; font-size: 12px; font-weight: 600; min-height: 32px; padding: 0 14px; border: 0; background: transparent; color: var(--muted, inherit); cursor: pointer; }
+  [data-tc-toggle] button.on { background: var(--surface2, rgba(127,127,127,.18)); color: inherit; }
+
+  table[data-cards] { display: block; width: 100% !important; min-width: 0 !important; border: 0 !important; border-collapse: separate; }
+  .table-wrap:has(> table[data-cards]), div:has(> table[data-cards]) { overflow: visible !important; max-height: none !important; }
+
+  /* header row -> sort chips */
+  table[data-cards] > thead { display: block; position: sticky; top: 0; z-index: 4; background: var(--bg, #111); padding: 4px 0 8px; }
+  table[data-cards] > thead > tr:not(:last-child) { display: none; }
+  table[data-cards] > thead > tr:last-child { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  table[data-cards] > thead > tr:last-child::-webkit-scrollbar { display: none; }
+  table[data-cards] > thead th { display: flex; align-items: center; flex: 0 0 auto; min-height: 34px; padding: 0 12px !important;
+    width: auto !important; min-width: 0 !important; max-width: none !important; position: static !important;
+    border: 1px solid var(--border, rgba(127,127,127,.3)) !important; border-radius: 999px; white-space: nowrap; font-size: 12px; background: var(--surface, transparent) !important; }
+  table[data-cards] > thead th.sorted, table[data-cards] > thead th[aria-sort] { border-color: var(--accent) !important; color: var(--accent); }
+  table[data-cards] > thead th:first-child { order: 99; }
+  table[data-cards] > thead th > * { position: static !important; }
+
+  /* rows -> cards */
+  table[data-cards] > tbody { display: flex; flex-direction: column; gap: 10px; }
+  table[data-cards] > tbody > tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 10px; padding: 12px 12px 10px;
+    border: 1px solid var(--border, rgba(127,127,127,.3)); border-radius: 14px; background: var(--surface, transparent) !important; }
+  table[data-cards] > tbody > tr > td { display: block; min-width: 0 !important; width: auto !important; max-width: none !important;
+    padding: 0 !important; border: 0 !important; position: static !important; text-align: left !important; white-space: normal; overflow-wrap: anywhere;
+    background: none !important; font-size: 13px; }
+  table[data-cards] > tbody > tr > td::before { content: attr(data-label); display: block; font-size: 10px; font-weight: 600; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--muted, inherit); margin-bottom: 1px; }
+  table[data-cards] > tbody > tr > td[data-label=""]::before { display: none; }
+  table[data-cards] > tbody > tr > td:first-child { grid-column: 1 / -1; grid-row: 1; font-size: 15px; font-weight: 600; padding-bottom: 6px !important;
+    border-bottom: 1px solid var(--border, rgba(127,127,127,.2)) !important; }
+  table[data-cards] > tbody > tr[data-tc-prim] > td:first-child { grid-column: 1 / 3; border-bottom: 0 !important; padding-bottom: 0 !important; }
+  table[data-cards] > tbody > tr > td:first-child::before { display: none; }
+  table[data-cards] > tbody > tr > td[data-primary] { grid-column: 3; grid-row: 1; text-align: right !important; font-size: 20px; font-weight: 800;
+    color: var(--accent); align-self: center; }
+  table[data-cards] > tbody > tr > td[data-primary]::before { text-align: right; }
+  table[data-cards] > tbody > tr:not([data-tc-full]) > td:nth-child(n+10):not([data-primary]):not([data-keep]) { display: none; }
+  table[data-cards] > tbody > tr[data-tc-full] { display: block; padding: 10px 12px; }
+  table[data-cards] > tbody > tr[data-tc-full] > td { display: block; }
+  table[data-cards] > tbody > tr[data-tc-full] > td::before { display: none; }
+  table[data-cards] > tfoot { display: block; }
+  table[data-cards] > tfoot > tr { display: flex; flex-wrap: wrap; gap: 8px; }
+}

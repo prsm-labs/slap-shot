@@ -14,7 +14,10 @@ import './FilterPanel.css'
 // n = how many players on the list carry that option tonight (shown on the pill; 0 = greyed out unless already picked).
 // Across groups a player has to pass every group.
 const OPEN_KEY = 'filterPanelOpen'
-const readOpen = () => { try { return localStorage.getItem(OPEN_KEY) === '1' } catch { return false } }
+// 2026-11-03 (user: an Outlier-style filter pop-up on phones): at 640 px or less the open panel is a bottom sheet with a
+// "Show N" button, and it never re-opens by itself on page load there.
+const isPhone = () => typeof window !== 'undefined' && window.matchMedia?.('(max-width: 640px)').matches
+const readOpen = () => { try { return !isPhone() && localStorage.getItem(OPEN_KEY) === '1' } catch { return false } }
 const saveOpen = (v) => { try { localStorage.setItem(OPEN_KEY, v ? '1' : '0') } catch { /* private mode */ } }
 
 const notOf = (g, value) => (g.type === 'tags' ? value[`${g.key}Not`] || [] : [])
@@ -64,8 +67,14 @@ export default function FilterPanel({ groups, value, onChange, onClear, shown, t
           </div>
         )}
       </div>
+      {open && <div className="fp-backdrop" aria-hidden="true" onClick={() => setOpen(false)} />}
       {open && (
         <div className="fp-body">
+          <div className="fp-sheet-head">
+            <b>Filters{n ? ` · ${n} on` : ''}</b>
+            {n > 0 && <button type="button" className="fp-clear" onClick={onClear}>Clear all</button>}
+            <button type="button" className="fp-sheet-x" aria-label="Close filters" onClick={() => setOpen(false)}>✕</button>
+          </div>
           {live.map((g) => {
             const cur = value[g.key]
             const not = notOf(g, value)
@@ -99,6 +108,9 @@ export default function FilterPanel({ groups, value, onChange, onClear, shown, t
               </div>
             )
           })}
+          <div className="fp-sheet-foot">
+            <button type="button" className="fp-show" onClick={() => setOpen(false)}>Show {shown != null ? `${shown} ${noun}` : 'results'}</button>
+          </div>
         </div>
       )}
     </div>

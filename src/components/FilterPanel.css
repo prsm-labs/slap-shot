@@ -36,3 +36,19 @@
   .fp-hint { grid-column: 1; }
   .fp-pill { padding: 4px 9px; font-size: 0.76rem; }
 }
+/* 2026-11-03 phone bottom sheet (Outlier-style pop-up): the open panel slides up from the bottom with a Show N button */
+.fp-backdrop, .fp-sheet-head, .fp-sheet-foot { display: none; }
+@media (max-width: 640px) {
+  .fp-backdrop { display: block; position: fixed; inset: 0; z-index: 2990; background: rgba(0, 0, 0, 0.55); }
+  .fp.open .fp-body { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3000; max-height: 86vh; overflow-y: auto; overscroll-behavior: contain;
+    margin: 0; padding: 0 16px; border: 1px solid var(--border); border-bottom: 0; border-radius: 22px 22px 0 0;
+    background: var(--surface, var(--bg)); box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45); gap: 0; }
+  .fp-sheet-head { display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 1; padding: 14px 0 10px; background: inherit; border-bottom: 1px solid var(--border); }
+  .fp-sheet-head b { flex: 1 1 auto; font-size: 1.05rem; }
+  .fp-sheet-x { width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: var(--fg, var(--text)); font: inherit; cursor: pointer; }
+  .fp.open .fp-group { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .fp.open .fp-label { font-size: 0.78rem; }
+  .fp.open .fp-pill { min-height: 36px; padding: 0 12px; font-size: 0.82rem; }
+  .fp-sheet-foot { display: block; position: sticky; bottom: 0; padding: 12px 0 calc(14px + env(safe-area-inset-bottom)); background: inherit; }
+  .fp-show { width: 100%; min-height: 50px; border: 0; border-radius: 14px; background: var(--accent); color: var(--accent-fg, #fff); font: inherit; font-size: 0.95rem; font-weight: 800; cursor: pointer; }
+}

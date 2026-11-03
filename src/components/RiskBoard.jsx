@@ -48,12 +48,33 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
   const [slider, setSliderRaw] = useState(() => load(`${storeKey}.slider`, toSlider(0.6)))
   const [stat, setStatRaw] = useState(() => load(`${storeKey}.stat`, 'all'))
   const [every, setEveryRaw] = useState(() => load(`${storeKey}.every`, false))
+  // 2026-11-03 (user: make the props adjustable -- not every player is a 30+ guy): His line = each player's own line near the slider
+  // (as before); Set line = one line for everyone on one stat, stepped with − / +, every player's chance at it, best first.
+  const [lineMode, setLineModeRaw] = useState(() => load(`${storeKey}.lineMode`, 'his'))
+  const [setLineV, setSetLineRaw] = useState(() => load(`${storeKey}.setLine`, {}))
   const [open, setOpen] = useState(null)
   const [sortKey, setSortKey] = useState('chance')
   const [dir, setDir] = useState('desc')
   const setSlider = (v) => { setSliderRaw(v); save(`${storeKey}.slider`, v) }
   const setStat = (v) => { setStatRaw(v); save(`${storeKey}.stat`, v) }
   const setEvery = (v) => { setEveryRaw(v); save(`${storeKey}.every`, v) }
+  const setLineMode = (v) => { setLineModeRaw(v); save(`${storeKey}.lineMode`, v) }
+  const fixedStat = stat === 'all' ? stats[0]?.k : stat
+  const lineOptions = useMemo(() => {
+    const set = new Set()
+    for (const p of players) for (const [T] of p.lines?.[fixedStat] || []) set.add(T)
+    return [...set].sort((a, b) => a - b)
+  }, [players, fixedStat])
+  const fixedLine = (() => {
+    const want = setLineV?.[fixedStat]
+    if (lineOptions.includes(want)) return want
+    return lineOptions[Math.floor((lineOptions.length - 1) / 2)] ?? null
+  })()
+  const stepLine = (d) => {
+    const i = lineOptions.indexOf(fixedLine), T = lineOptions[Math.max(0, Math.min(lineOptions.length - 1, i + d))]
+    if (T == null) return
+    const v = { ...setLineV, [fixedStat]: T }; setSetLineRaw(v); save(`${storeKey}.setLine`, v)
+  }
   const target = toTarget(slider)
   const lo = Math.max(0.02, target - WINDOW), hi = Math.min(0.98, target + WINDOW)
   const [emo, lvl] = level(target)
@@ -61,6 +82,13 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
 
   const rows = useMemo(() => {
     const out = []
+    if (lineMode === 'set') {
+      for (const p of players) {
+        const hit = (p.lines?.[fixedStat] || []).find(([T]) => T === fixedLine)
+        if (hit) out.push({ key: `${p.id}|${fixedStat}|${fixedLine}`, p, stat: fixedStat, line: fixedLine, chance: hit[1], hits: hit[2], dist: 0 })
+      }
+      return out
+    }
     for (const p of players) {
       const cands = []
       for (const s of stats) {
@@ -73,7 +101,7 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
       else if (cands.length) out.push(cands.reduce((a, b) => (b.dist < a.dist ? b : a)))
     }
     return out
-  }, [players, stats, stat, every, lo, hi, target])
+  }, [players, stats, stat, every, lo, hi, target, lineMode, fixedStat, fixedLine])
 
   const get = {
     chance: (r) => r.chance, name: (r) => r.p.name, prop: (r) => `${r.stat}${String(r.line).padStart(4, '0')}`,
@@ -108,31 +136,44 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
     <div className="risk-board">
       {intro && <div className="note">{intro}</div>}
       <div className="rb-panel">
-        <div className="rb-head">
+        {lineMode !== 'set' && <div className="rb-head">
           <span className="rb-level">{emo} {lvl}</span>
           <span className="rb-target">around <b>{pct(target)}</b> <span className="rb-muted">({pct(lo)}–{pct(hi)})</span></span>
+        </div>}
+        <div className="rb-group rb-linemode">
+          <button className={`${pillClass} ${lineMode !== 'set' ? 'active' : ''}`} onClick={() => setLineMode('his')} title="Each player's own line, near the slider">His line</button>
+          <button className={`${pillClass} ${lineMode === 'set' ? 'active' : ''}`} onClick={() => setLineMode('set')} title="One line for every player">Set line</button>
+          {lineMode === 'set' && (
+            <span className="rb-stepper">
+              <button type="button" aria-label="Lower the line" onClick={() => stepLine(-1)} disabled={lineOptions.indexOf(fixedLine) <= 0}>−</button>
+              <b>{fixedLine != null ? label(fixedStat, fixedLine) : '—'}</b>
+              <button type="button" aria-label="Raise the line" onClick={() => stepLine(1)} disabled={lineOptions.indexOf(fixedLine) >= lineOptions.length - 1}>+</button>
+            </span>
+          )}
         </div>
+        {lineMode !== 'set' && <>
         <input className="rb-slider" type="range" min="0" max="100" step="1" value={slider} aria-label="Risk level: safe to long shot"
           onChange={(e) => setSlider(Number(e.target.value))} />
         <div className="rb-ends"><span>🛡️ Safe · higher chance</span><span>Long shot · bigger payoff 🌠</span></div>
-        <div className="rb-presets">
+        </>}
+        {lineMode !== 'set' && <div className="rb-presets">
           {[['🛡️ Safe', 0.75], ['⚖️ Mid-range', 0.42], ['🌠 Long shot', 0.17], ['🎲 Moonshot', 0.07]].map(([l, t]) => (
             <button key={l} className={`${pillClass} ${Math.abs(target - t) < 0.02 ? 'active' : ''}`} onClick={() => setSlider(toSlider(t))}>{l}</button>
           ))}
-        </div>
+        </div>}
         <div className="rb-controls">
           <div className="rb-group">
-            <button className={`${pillClass} ${stat === 'all' ? 'active' : ''}`} onClick={() => setStat('all')}>All props</button>
-            {stats.map((s) => <button key={s.k} className={`${pillClass} ${stat === s.k ? 'active' : ''}`} onClick={() => setStat(s.k)}>{s.label}</button>)}
+            {lineMode !== 'set' && <button className={`${pillClass} ${stat === 'all' ? 'active' : ''}`} onClick={() => setStat('all')}>All props</button>}
+            {stats.map((s) => <button key={s.k} className={`${pillClass} ${(lineMode === 'set' ? fixedStat : stat) === s.k ? 'active' : ''}`} onClick={() => setStat(s.k)}>{s.label}</button>)}
           </div>
-          <div className="rb-group">
+          {lineMode !== 'set' && <div className="rb-group">
             <button className={`${pillClass} ${!every ? 'active' : ''}`} onClick={() => setEvery(false)} title="Each player's line closest to the slider">One per player</button>
             <button className={`${pillClass} ${every ? 'active' : ''}`} onClick={() => setEvery(true)} title="Every line in the range">Every line</button>
-          </div>
+          </div>}
         </div>
         <div className="rb-meta rb-muted rb-small">
-          {rows.length} {every ? 'lines' : 'players'} in range.
-          {sel && <> Backtest of this slider spot (top 10 a {unit} by chance, one line each, held out by season): <b>{pct(sel.hits / sel.n)}</b> hit, said {pct(sel.said)} ({sel.n.toLocaleString()} picks).</>}
+          {lineMode === 'set' ? <>{rows.length} players priced at {fixedLine != null ? label(fixedStat, fixedLine) : '—'}, best first.</> : <>{rows.length} {every ? 'lines' : 'players'} in range.</>}
+          {lineMode !== 'set' && sel && <> Backtest of this slider spot (top 10 a {unit} by chance, one line each, held out by season): <b>{pct(sel.hits / sel.n)}</b> hit, said {pct(sel.said)} ({sel.n.toLocaleString()} picks).</>}
           {graded && done.length > 0 && <> {unit === 'week' ? "This week's" : "That night's"} list: <b>{done.filter((r) => r.p.actual[r.stat] >= r.line).length}/{done.length}</b> hit.</>}
         </div>
       </div>

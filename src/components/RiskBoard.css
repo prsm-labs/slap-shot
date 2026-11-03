@@ -62,3 +62,15 @@
   .rb-table tr > td:first-child { font-size: 0.82rem; }
   .rb-table tr.rb-ladder-row > td:first-child { max-width: none; }
 }
+/* 2026-11-03 His line / Set line + phone cards (lib/tableCards.js) */
+.rb-linemode { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 8px; }
+.rb-stepper { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--border, rgba(127,127,127,.3)); border-radius: 12px; padding: 2px; }
+.rb-stepper button { min-width: 40px; min-height: 36px; border: 0; border-radius: 10px; background: transparent; color: inherit; font: inherit; font-size: 18px; font-weight: 700; cursor: pointer; }
+.rb-stepper button:disabled { opacity: .35; cursor: default; }
+.rb-stepper b { min-width: 92px; text-align: center; font-size: 13px; }
+@media (max-width: 640px) {
+  table.rb-table[data-cards] > tbody > tr > td.rb-pick { grid-column: 1 / -1; grid-row: 2; text-align: left !important; font-size: 14px; font-weight: 400; color: inherit; }
+  table.rb-table[data-cards] > tbody > tr > td.rb-pick::before { text-align: left; }
+  table.rb-table[data-cards] > tbody > tr[data-tc-prim] > td:first-child { grid-column: 1 / -1; }
+  table.rb-table[data-cards] .rb-prob { font-size: 20px; font-weight: 800; color: var(--accent); }
+}
