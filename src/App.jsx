@@ -27,6 +27,8 @@ import MyPicksTab from "./tabs/MyPicksTab.jsx";
 import MatchupLookupTab from "./tabs/MatchupLookupTab.jsx";
 import AboutTab from "./tabs/AboutTab.jsx";
 import TabMenu from "./components/TabMenu.jsx";
+import { OfflineBanner, OfflineMenuButton } from "./components/Offline.jsx";
+import offlineConfig from "./lib/offlineConfig.js";
 import AppRefresh from "./components/AppRefresh.jsx";
 
 const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
@@ -89,7 +91,9 @@ export default function App() {
       </header>
       {/* 2026-10-24 (user prototype): ☰ page menu first in the row under the logo, then the date picker, team and search */}
       {/* 2026-10-23: 📅 night picker -- a past night swaps every page to that night's frozen slate + results */}
-      <div className="master-bar tm-row"><TabMenu tabs={TABS} tab={tab} setTab={setTab} /><DateBar /><MasterFilter /></div>
+      {/* 2026-11-02 (user): ☰ > 📦 Offline & data (save a time-stamped offline copy, download the numbers); banner while on the copy */}
+      <div className="master-bar tm-row"><TabMenu tabs={TABS} tab={tab} setTab={setTab} footer={(close) => <OfflineMenuButton config={offlineConfig} onOpen={close} />} /><DateBar /><MasterFilter /></div>
+      <OfflineBanner />
 
       <NotificationBar />
       <GoalTicker onClick={() => setTab("goals")} />

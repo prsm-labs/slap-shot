@@ -4,7 +4,8 @@ import './TabMenu.css'
 // 2026-10-24 (user prototype): the scrolling tab bar is gone -- a ☰ button opens a slide-out menu with every page. It sits first in the
 // row under the logo (☰ · date / week picker · team · search; NASCAR / F1 switch in Final Lap). Same component in CourtIQ, Slap Shot,
 // Six Points and Final Lap (Going Yard keeps its own tabs).
-export default function TabMenu({ tabs, tab, setTab }) {
+// 2026-11-02: optional `footer(close)` renders under the pages (📦 Offline & data).
+export default function TabMenu({ tabs, tab, setTab, footer }) {
   const [open, setOpen] = useState(false)
   const panel = useRef(null)
   const current = tabs.find((t) => t.key === tab) || tabs[0]
@@ -42,6 +43,7 @@ export default function TabMenu({ tabs, tab, setTab }) {
               {t.label}
             </button>
           ))}
+          {footer?.(() => setOpen(false))}
         </div>
       </nav>
     </>

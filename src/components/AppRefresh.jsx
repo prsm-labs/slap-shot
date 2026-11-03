@@ -15,7 +15,8 @@ export default function AppRefresh() {
   const go = async () => {
     if (busy) return
     setBusy(true)
-    try { if (window.caches) for (const k of await window.caches.keys()) await window.caches.delete(k) } catch { /* none */ }
+    // 2026-11-02: a saved 📦 offline snapshot (degen-offline-*) is kept -- Update in ☰ > Offline & data re-saves it
+    try { if (window.caches) for (const k of await window.caches.keys()) if (!k.startsWith('degen-offline')) await window.caches.delete(k) } catch { /* none */ }
     try { for (const r of (await navigator.serviceWorker?.getRegistrations?.()) || []) await r.update() } catch { /* none */ }
     const u = new URL(window.location.href)
     u.searchParams.set('refresh', Date.now().toString(36))
