@@ -12,6 +12,7 @@ import { eligibleForTop3, selectTop3, TIER_INFO } from "./top3.js";
 import { prismPicks, tierPicks } from "./prismPicks.js";
 import { applyGroups } from "../components/FilterPanel.jsx";
 import { DEF_TIERS, oppDefOf } from "./oppDef.jsx";
+import { EDGES, edgeKeys } from "./edges.js";
 
 export const TIER_OPTIONS = [
   { key: null, label: "All tiers" },
@@ -23,7 +24,7 @@ export const GOAL_OPTIONS = [null, 10, 20, 30];
 const LETTERS = ["A+", "A", "B", "C", "D", "F"];
 
 // `soft` stays readable / settable on its own (First Goal's soft-defense pill) -- it's the "soft" tag underneath
-const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", top: [], prism: [], grades: [], h2h: [], oppd: [], search: "" };
+const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", edge: [], edgeNot: [], edgeMode: "all", top: [], prism: [], grades: [], h2h: [], oppd: [], search: "" };
 const withSoft = (s) => ({ ...s, soft: s.tags.includes("soft") });
 let state = withSoft({ ...DEFAULTS });
 const listeners = new Set();
@@ -134,6 +135,8 @@ export function buildGroups(ctx = {}) {
       { v: "role", label: "🪑? Role check", title: "Under 3 games for his team and off tonight's power-play units — kept out of Top 3 / PRISM Picks" },
       { v: "first", label: "📅 New to team", title: "No games with his team yet" },
     ] },
+    // 2026-11-02 tested edges (lib/edges.js): spots that beat -- or missed -- our own chance every held-out season
+    { key: "edge", label: "Edges (tested)", chip: "Edge", type: "tags", get: (p) => edgeKeys(p, meta), options: EDGES },
     { key: "grades", label: "Grade", type: "multi", get: (p) => p.effectiveGrade?.letter, options: LETTERS.map((l) => ({ v: l, label: l })),
       hint: "Pick the exact letters — his effective grade (own form vs the goalie he faces)" },
     { key: "h2h", label: "H2H grade", chip: "H2H", type: "multi", get: (p) => h2h?.get(p.playerId)?.letter, options: LETTERS.map((l) => ({ v: l, label: l })),

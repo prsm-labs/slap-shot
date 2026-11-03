@@ -10,7 +10,7 @@ import { last120 } from "./last120.js";
 import { fetchLineups, lineupPollMs } from "./lineups.js";
 import { applyLineups, STARTED } from "./slateOverlay.js";
 import { marketPct } from "./market.js";
-import { fetchTeamRatings } from "./gameModel.js";
+import { fetchTeamRatings, projectGame } from "./gameModel.js";
 
 // ── Live slate pool ──────────────────────────────────────────────────────────
 // todays_pool.json is written by the pipeline (9 AM / 12 PM / 5:30 PM ET) with each skater's
@@ -33,6 +33,7 @@ let lineups = null;
 let lineupsAt = null;
 let odds = null; // public/data/odds/<slateDate>.json (build_odds.py) — sportsbook anytime-goal prices
 let goalieRatings = null; // team_ratings.json goalies (GSAx per shot) — 2026-11-02 opposing-starter term in gradeSlate
+let teamRatings = null; // the whole team_ratings.json -- 2026-11-02 each skater's team win chance (p.teamWin, lib/edges.js)
 let current = null;
 let currentSig = null;
 let firstBuild = null;
@@ -72,7 +73,14 @@ function build() {
     };
   });
   // Slap Score / tiers / goal % / point % from the grade model (lib/slapScore.js).
-  const players = withBookOdds(applySlateScores(graded));
+  // 2026-11-02 team win chance from the game model (same number as the Projections tab) for the 🏠 / 🧳 edge filters
+  const win = {};
+  if (teamRatings?._meta?.model) {
+    for (const g of meta.slate || []) {
+      try { const pg = projectGame(teamRatings, g); win[g.home] = pg.winHome; win[g.away] = pg.winAway; } catch { /* team missing from ratings */ }
+    }
+  }
+  const players = withBookOdds(applySlateScores(graded)).map((p) => (win[p.team] != null ? { ...p, teamWin: win[p.team] } : p));
   const goalies = raw.goalies.map((g) => ({ ...g, grade: goalieGrades[g.playerId] || null }));
 
   currentSig = sig;
@@ -113,7 +121,8 @@ async function checkPool() {
   const newSlate = !raw || data._meta.slateDate !== raw._meta.slateDate;
   raw = data;
   odds = await fetchOdds(data._meta.slateDate);
-  goalieRatings = (await fetchTeamRatings())?.goalies || null;
+  teamRatings = (await fetchTeamRatings()) || null;
+  goalieRatings = teamRatings?.goalies || null;
   if (newSlate) {
     lineups = null;
     lineupsAt = null;
