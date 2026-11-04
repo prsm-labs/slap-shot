@@ -29,9 +29,12 @@ function qualifies(table) {
 }
 
 function primaryIndex(cells) {
-  const sorted = cells.findIndex((th, i) => i > 0 && (th.classList.contains("sorted") || /[↓↑]/.test(th.textContent || "")));
+  const band = (th) => th.classList.contains("tc-band");
+  const fixed = cells.findIndex((th, i) => i > 0 && th.classList.contains("tc-prim"));  // a page can name its big number (labs with a prop band)
+  if (fixed > 0) return fixed;
+  const sorted = cells.findIndex((th, i) => i > 0 && !band(th) && (th.classList.contains("sorted") || /[↓↑]/.test(th.textContent || "")));
   if (sorted > 0) return sorted;
-  return cells.findIndex((th, i) => i > 0 && /%/.test(th.textContent || ""));
+  return cells.findIndex((th, i) => i > 0 && !band(th) && /%/.test(th.textContent || ""));
 }
 
 function setMode(m) {
@@ -81,7 +84,7 @@ function apply() {
           const p = i === prim;
           if (p !== td.hasAttribute("data-primary")) { if (p) td.setAttribute("data-primary", ""); else td.removeAttribute("data-primary"); }
           // a cell with a photo (e.g. Slap Shot's Opp Goalie: photo + name + grade) gets two card columns so the name isn't split mid-word
-          const w = i > 0 && !p && !!td.querySelector("img");
+          const w = i > 0 && !p && !td.classList.contains("tc-band") && !!td.querySelector("img");
           if (w !== td.hasAttribute("data-wide")) { if (w) td.setAttribute("data-wide", ""); else td.removeAttribute("data-wide"); }
         });
         const has = prim > 0;

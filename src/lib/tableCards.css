@@ -1,5 +1,7 @@
 /* 📱 Phone cards (lib/tableCards.js) -- same file in CourtIQ, Slap Shot, Six Points and Final Lap. Phone width only. */
 [data-tc-toggle] { display: none; }
+/* prop band (PropBand.jsx): its own column, shown only in phone cards; tc-more cells fold behind the band's More ▾ there */
+th.tc-band, td.tc-band { display: none; }
 @media (max-width: 640px) {
   [data-tc-toggle] { display: inline-flex; margin: 4px 0 8px; border: 1px solid var(--border, rgba(127,127,127,.3)); border-radius: 999px; overflow: hidden; }
   [data-tc-toggle] button { font: inherit; font-size: 12px; font-weight: 600; min-height: 32px; padding: 0 14px; border: 0; background: transparent; color: var(--muted, inherit); cursor: pointer; }
@@ -39,6 +41,11 @@
     color: var(--accent); align-self: center; }
   table[data-cards] > tbody > tr > td[data-primary]::before { text-align: right; }
   table[data-cards] > tbody > tr:not([data-tc-full]) > td:nth-child(n+10):not([data-primary]):not([data-keep]) { display: none; }
+  table[data-cards] > tbody > tr > td.tc-band { display: block; grid-column: 1 / -1; grid-row: 2; }
+  table[data-cards] > tbody > tr > td.tc-band::before { display: none; }
+  table[data-cards] > tbody > tr:not([data-tc-open]) > td.tc-more { display: none; }
+  table[data-cards] > thead th.tc-more:not(.sortable) { display: none !important; }
+  table[data-cards] > tbody > tr:has(> td.tc-band) > td:first-child .gambly-btn { display: none; }
   table[data-cards] > tbody > tr[data-tc-full] { display: block; padding: 10px 12px; }
   table[data-cards] > tbody > tr[data-tc-full] > td { display: block; }
   table[data-cards] > tbody > tr[data-tc-full] > td::before { display: none; }
