@@ -45,7 +45,14 @@ th.tc-band, td.tc-band { display: none; }
   table[data-cards] > tbody > tr > td.tc-band::before { display: none; }
   table[data-cards] > tbody > tr:not([data-tc-open]) > td.tc-more { display: none; }
   table[data-cards] > thead th.tc-more:not(.sortable) { display: none !important; }
-  table[data-cards] > tbody > tr:has(> td.tc-band) > td:first-child :is(.gambly-btn, button:has(> img[src*="gambly"])) { display: none !important; }
+  table[data-cards] > tbody > tr:has(> td.tc-band) > td:is(:first-child, .tc-head) :is(.gambly-btn, button:has(> img[src*="gambly"])) { display: none !important; }
+  /* a page can name its card header cell (tc-head) when the first column isn't the player (Six Points labs start with Team) */
+  table[data-cards] > tbody > tr:has(> td.tc-head) > td:first-child { grid-column: auto; grid-row: auto; font-size: 13px; font-weight: 400;
+    padding-bottom: 0 !important; border-bottom: 0 !important; }
+  table[data-cards] > tbody > tr:has(> td.tc-head) > td:first-child::before { display: block; }
+  table[data-cards] > tbody > tr > td.tc-head { grid-column: 1 / -1; grid-row: 1; font-size: 15px; font-weight: 600; }
+  table[data-cards] > tbody > tr[data-tc-prim] > td.tc-head { grid-column: 1 / 3; }
+  table[data-cards] > tbody > tr > td.tc-head::before { display: none; }
   table[data-cards] > tbody > tr[data-tc-full] { display: block; padding: 10px 12px; }
   table[data-cards] > tbody > tr[data-tc-full] > td { display: block; }
   table[data-cards] > tbody > tr[data-tc-full] > td::before { display: none; }
