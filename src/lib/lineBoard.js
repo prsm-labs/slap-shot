@@ -37,7 +37,11 @@ export function ladderFor(probs, form, model) {
       const raw = tail(lam, T);
       if (!(raw > 0.01 && raw < 0.99)) continue;
       const hits = vals.filter((v) => v >= T).length;
-      const a = logit(interp(raw, c.knots)), b = logit((hits + 0.5) / (vals.length + 1)), w = c.w;
+      // 2026-11-03: goals' top isotonic block is thin (raw 45.7%+ -> 69%; held out those lines hit 44%): follow the raw chance
+      // above the third-to-last knot (same in build_line_board.py and prism-home/api/claw.js)
+      const [kx, ky] = c.knots, k = kx.length - 3;
+      const iso = st === "G" && raw > kx[k] ? ky[k] + (raw - kx[k]) : interp(raw, c.knots);
+      const a = logit(iso), b = logit((hits + 0.5) / (vals.length + 1)), w = c.w;
       const ch = 1 / (1 + Math.exp(-(w[0] + w[1] * a + w[2] * b + w[3] * a * b)));
       if (ch >= 0.02 && ch <= 0.98) rows.push([T, ch, hits]);
     }

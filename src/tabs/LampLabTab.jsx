@@ -24,6 +24,7 @@ import { L120_COLS } from "../lib/last120.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { HitStrip } from "../components/RiskBoard.jsx";
+import { useLabBand } from "../lib/labBand.jsx";
 
 // Structural port of Going Yard's real BarrelLabTab (mlb_project/going-yard/src/App.jsx:
 // 32419-33537, researched in full this session): toolbar + aggregate card + Signal Board tiles
@@ -68,6 +69,8 @@ export default function LampLabTab() {
   const listFilters = useListFilters();
   const h2hGrades = useH2HGrades();
   const pickSets = usePickSets(live);
+  // 2026-11-03 📱 prop band on the phone cards (lib/labBand.jsx): one G line per card, − / + for the whole lab
+  const band = useLabBand("G", live);
 
   const teams = useMemo(() => (merged ? [...new Set(merged.map((p) => p.team))].sort() : []), [merged]);
   const filtered = useMemo(() => {
@@ -76,7 +79,9 @@ export default function LampLabTab() {
     return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades).map((p) => ({ ...p, oppD: oppDefSort(p, live?.meta) }));
   }, [merged, team, selected, position, listFilters, live, h2hGrades, pickSets]);
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimeGoalPct", "desc");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const banded = useMemo(() => filtered.map((p) => ({ ...p, _band: band.chance(p) })), [filtered, band.labLine, band.ready]);
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(banded, "anytimeGoalPct", "desc");
   // 2026-10-27 L7 strip (user): his last 7 games against the line the table is sorted by (else 1+ goal)
   const strip = { multiGoalPct: { stat: "G", line: 2, label: "2+ G" } }[sortKey] || { stat: "G", line: 1, label: "1+ G" };
   const recentOf = (p) => (p.last7 || []).map((g) => ({ d: g.date, o: g.opp, v: { G: g.goals, PTS: g.points, SOG: g.sog } }));
@@ -159,24 +164,25 @@ export default function LampLabTab() {
             <thead>
               <tr>
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-band ${sortKey === "_band" ? "sorted" : ""}`} onClick={() => toggleSort("_band")}>Chance at line{sortKey === "_band" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
                 <th title={OPP_DEF_NOTE} className={sortKey === "oppD" ? "sorted" : ""} onClick={() => toggleSort("oppD")}>Opp D{sortKey === "oppD" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th className={sortKey === "anytimeGoalPct" ? "sorted" : ""} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ Goals % to switch.">L7 · {strip.label}</th>
-                <th title="Best anytime-goal price across US sportsbooks (hover a price for each book)" className={sortKey === "bookBest" ? "sorted" : ""} onClick={() => toggleSort("bookBest")}>Book Odds{sortKey === "bookBest" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="Our goal % minus the chance the best book price implies (vig included). Positive = we rate him higher than the book" className={sortKey === "edge" ? "sorted" : ""} onClick={() => toggleSort("edge")}>Edge{sortKey === "edge" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed" className={sortKey === "multiGoalPct" ? "sorted" : ""} onClick={() => toggleSort("multiGoalPct")}>2+ Goals %{sortKey === "multiGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th className={sortKey === "tier" ? "sorted" : ""} onClick={() => toggleSort("tier")}>Tier{sortKey === "tier" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-prim ${sortKey === "anytimeGoalPct" ? "sorted" : ""}`} onClick={() => toggleSort("anytimeGoalPct")}>Anytime Goal %{sortKey === "anytimeGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className="tc-more" title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ Goals % to switch.">L7 · {strip.label}</th>
+                <th title="Best anytime-goal price across US sportsbooks (hover a price for each book)" className={`tc-more ${sortKey === "bookBest" ? "sorted" : ""}`} onClick={() => toggleSort("bookBest")}>Book Odds{sortKey === "bookBest" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Our goal % minus the chance the best book price implies (vig included). Positive = we rate him higher than the book" className={`tc-more ${sortKey === "edge" ? "sorted" : ""}`} onClick={() => toggleSort("edge")}>Edge{sortKey === "edge" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Chance of 2+ goals tonight: model goal chance (top scorers bent down — they get a second goal less often than a simple Poisson says) + opponent's expected goals allowed" className={`tc-more ${sortKey === "multiGoalPct" ? "sorted" : ""}`} onClick={() => toggleSort("multiGoalPct")}>2+ Goals %{sortKey === "multiGoalPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-more ${sortKey === "slapScore" ? "sorted" : ""}`} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-more ${sortKey === "tier" ? "sorted" : ""}`} onClick={() => toggleSort("tier")}>Tier{sortKey === "tier" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Shots on goal per game, last season + this season" className={sortKey === "sogPg" ? "sorted" : ""} onClick={() => toggleSort("sogPg")}>SOG/GP{sortKey === "sogPg" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="Shots on goal per 60 minutes of ice time" className={sortKey === "sog60" ? "sorted" : ""} onClick={() => toggleSort("sog60")}>SOG/60{sortKey === "sog60" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Shots on goal per 60 minutes of ice time" className={`tc-more ${sortKey === "sog60" ? "sorted" : ""}`} onClick={() => toggleSort("sog60")}>SOG/60{sortKey === "sog60" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {L120_COLS.map(([k, label, title]) => (
-                  <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                  <th key={k} title={title} className={`tc-more ${sortKey === k ? "sorted" : ""}`} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 ))}
-                <th title="H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)" className={sortKey === "h2hScore" ? "sorted" : ""} onClick={() => toggleSort("h2hScore")}>H2H{sortKey === "h2hScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)" className={`tc-more ${sortKey === "h2hScore" ? "sorted" : ""}`} onClick={() => toggleSort("h2hScore")}>H2H{sortKey === "h2hScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {SKATER_H2H_COLS.map(([k, , label, title]) => (
-                  <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                  <th key={k} title={title} className={`tc-more ${sortKey === k ? "sorted" : ""}`} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 ))}
               </tr>
             </thead>
@@ -193,23 +199,24 @@ export default function LampLabTab() {
                       </div>
                     </div>
                   </td>
+                  <td className="tc-band">{band.render(p)}</td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <OppDefCell p={p} meta={live?.meta} />
                   <td>{p.anytimeGoalPct}%</td>
-                  <td><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
-                  <td className="mono" title={booksText(p.book)} style={{ whiteSpace: "nowrap" }}>
+                  <td className="tc-more"><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
+                  <td className="mono tc-more" title={booksText(p.book)} style={{ whiteSpace: "nowrap" }}>
                     {p.book ? <BestPriceLink book={p.book} /> : "—"}
                   </td>
-                  <td className="mono" title={p.book ? edgeText(p) : undefined} style={{ color: edgeColor(p.edge) }}>{fmtEdge(p.edge)}</td>
-                  <td>{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
-                  <td>{p.slapScore}</td>
-                  <td>{p.tier}</td>
+                  <td className="mono tc-more" title={p.book ? edgeText(p) : undefined} style={{ color: edgeColor(p.edge) }}>{fmtEdge(p.edge)}</td>
+                  <td className="tc-more">{p.multiGoalPct != null ? `${p.multiGoalPct}%` : "—"}</td>
+                  <td className="tc-more">{p.slapScore}</td>
+                  <td className="tc-more">{p.tier}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
-                  <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
-                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} />)}
-                  <td><H2HCell playerId={p.playerId} /></td>
-                  {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
+                  <td className="mono tc-more">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
+                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} className="tc-more" />)}
+                  <td className="tc-more"><H2HCell playerId={p.playerId} /></td>
+                  {SKATER_H2H_COLS.map(([k, stat]) => <td key={k} className="tc-more"><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>
               ))}
             </tbody>

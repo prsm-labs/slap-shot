@@ -22,6 +22,7 @@ import { L120_COLS } from "../lib/last120.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { HitStrip } from "../components/RiskBoard.jsx";
+import { useLabBand } from "../lib/labBand.jsx";
 
 // Structural port of Going Yard's real OnBaseTab (mlb_project/going-yard/src/App.jsx:
 // 33607-34567) — parallel structure to Barrel Lab/Lamp Lab with its own score field and its own
@@ -62,6 +63,8 @@ export default function AppleLabTab() {
   const listFilters = useListFilters();
   const h2hGrades = useH2HGrades();
   const pickSets = usePickSets(live);
+  // 2026-11-03 📱 prop band on the phone cards (lib/labBand.jsx): one PTS line per card, − / + for the whole lab
+  const band = useLabBand("PTS", live);
   const workerRef = useRef(null);
 
   useEffect(() => {
@@ -108,7 +111,9 @@ export default function AppleLabTab() {
     return withH2H((inGame && team ? inGame.filter((p) => p.team === team) : inGame) || [], h2hGrades).map((p) => ({ ...p, oppD: oppDefSort(p, live?.meta) }));
   }, [merged, team, selected, position, listFilters, live, h2hGrades, pickSets]);
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, "anytimePointPct", "desc");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const banded = useMemo(() => filtered.map((p) => ({ ...p, _band: band.chance(p) })), [filtered, band.labLine, band.ready]);
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(banded, "anytimePointPct", "desc");
   // 2026-10-27 L7 strip (user): his last 7 games against the line the table is sorted by (else 1+ point)
   const strip = { multiPoint2Pct: { stat: "PTS", line: 2, label: "2+ pts" }, multiPoint3Pct: { stat: "PTS", line: 3, label: "3+ pts" }, plus3SogPct: { stat: "SOG", line: 3, label: "3+ SOG" } }[sortKey] || { stat: "PTS", line: 1, label: "1+ pt" };
   const recentOf = (p) => (p.last7 || []).map((g) => ({ d: g.date, o: g.opp, v: { G: g.goals, PTS: g.points, SOG: g.sog } }));
@@ -204,23 +209,24 @@ export default function AppleLabTab() {
             <thead>
               <tr>
                 <th className={sortKey === "name" ? "sorted" : ""} onClick={() => toggleSort("name")}>Skater{sortKey === "name" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-band ${sortKey === "_band" ? "sorted" : ""}`} onClick={() => toggleSort("_band")}>Chance at line{sortKey === "_band" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th>Opp Goalie</th>
                 <th title={OPP_DEF_NOTE} className={sortKey === "oppD" ? "sorted" : ""} onClick={() => toggleSort("oppD")}>Opp D{sortKey === "oppD" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th className={sortKey === "anytimePointPct" ? "sorted" : ""} onClick={() => toggleSort("anytimePointPct")}>Anytime Point %{sortKey === "anytimePointPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ / 3+ Pts % or +3 SOG % to switch.">L7 · {strip.label}</th>
-                <th title="Chance of 2+ points tonight" className={sortKey === "multiPoint2Pct" ? "sorted" : ""} onClick={() => toggleSort("multiPoint2Pct")}>2+ Pts %{sortKey === "multiPoint2Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="Chance of 3+ points tonight" className={sortKey === "multiPoint3Pct" ? "sorted" : ""} onClick={() => toggleSort("multiPoint3Pct")}>3+ Pts %{sortKey === "multiPoint3Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th className={sortKey === "plus3SogPct" ? "sorted" : ""} onClick={() => toggleSort("plus3SogPct")}>+3 SOG %{sortKey === "plus3SogPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th className={sortKey === "slapScore" ? "sorted" : ""} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-prim ${sortKey === "anytimePointPct" ? "sorted" : ""}`} onClick={() => toggleSort("anytimePointPct")}>Anytime Point %{sortKey === "anytimePointPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className="tc-more" title="His last 7 games against this line (green = hit it), oldest to newest. Sort by 2+ / 3+ Pts % or +3 SOG % to switch.">L7 · {strip.label}</th>
+                <th title="Chance of 2+ points tonight" className={`tc-more ${sortKey === "multiPoint2Pct" ? "sorted" : ""}`} onClick={() => toggleSort("multiPoint2Pct")}>2+ Pts %{sortKey === "multiPoint2Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Chance of 3+ points tonight" className={`tc-more ${sortKey === "multiPoint3Pct" ? "sorted" : ""}`} onClick={() => toggleSort("multiPoint3Pct")}>3+ Pts %{sortKey === "multiPoint3Pct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-more ${sortKey === "plus3SogPct" ? "sorted" : ""}`} onClick={() => toggleSort("plus3SogPct")}>+3 SOG %{sortKey === "plus3SogPct" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th className={`tc-more ${sortKey === "slapScore" ? "sorted" : ""}`} onClick={() => toggleSort("slapScore")}>Slap Score{sortKey === "slapScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Shots on goal per game, last season + this season" className={sortKey === "sogPg" ? "sorted" : ""} onClick={() => toggleSort("sogPg")}>SOG/GP{sortKey === "sogPg" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
-                <th title="Shots on goal per 60 minutes of ice time" className={sortKey === "sog60" ? "sorted" : ""} onClick={() => toggleSort("sog60")}>SOG/60{sortKey === "sog60" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Shots on goal per 60 minutes of ice time" className={`tc-more ${sortKey === "sog60" ? "sorted" : ""}`} onClick={() => toggleSort("sog60")}>SOG/60{sortKey === "sog60" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {L120_COLS.map(([k, label, title]) => (
-                  <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                  <th key={k} title={title} className={`tc-more ${sortKey === k ? "sorted" : ""}`} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 ))}
-                <th title="H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)" className={sortKey === "h2hScore" ? "sorted" : ""} onClick={() => toggleSort("h2hScore")}>H2H{sortKey === "h2hScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)" className={`tc-more ${sortKey === "h2hScore" ? "sorted" : ""}`} onClick={() => toggleSort("h2hScore")}>H2H{sortKey === "h2hScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {SKATER_H2H_COLS.map(([k, , label, title]) => (
-                  <th key={k} title={title} className={sortKey === k ? "sorted" : ""} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                  <th key={k} title={title} className={`tc-more ${sortKey === k ? "sorted" : ""}`} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 ))}
               </tr>
             </thead>
@@ -237,20 +243,21 @@ export default function AppleLabTab() {
                       </div>
                     </div>
                   </td>
+                  <td className="tc-band">{band.render(p)}</td>
                   <td><OpponentGoalieCell player={p} /></td>
                   <OppDefCell p={p} meta={live?.meta} />
                   <td>{p.anytimePointPct}%</td>
-                  <td><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
-                  <td>{p.multiPoint2Pct != null ? `${p.multiPoint2Pct}%` : "—"}</td>
-                  <td>{p.multiPoint3Pct != null ? `${p.multiPoint3Pct}%` : "—"}</td>
-                  <td>{p.plus3SogPct}%</td>
-                  <td>{p.slapScore}</td>
+                  <td className="tc-more"><HitStrip recent={recentOf(p)} stat={strip.stat} line={strip.line} /></td>
+                  <td className="tc-more">{p.multiPoint2Pct != null ? `${p.multiPoint2Pct}%` : "—"}</td>
+                  <td className="tc-more">{p.multiPoint3Pct != null ? `${p.multiPoint3Pct}%` : "—"}</td>
+                  <td className="tc-more">{p.plus3SogPct}%</td>
+                  <td className="tc-more">{p.slapScore}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
-                  <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
-                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} />)}
-                  <td><H2HCell playerId={p.playerId} /></td>
-                  {SKATER_H2H_COLS.map(([k, stat]) => <td key={k}><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
+                  <td className="mono tc-more">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
+                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} className="tc-more" />)}
+                  <td className="tc-more"><H2HCell playerId={p.playerId} /></td>
+                  {SKATER_H2H_COLS.map(([k, stat]) => <td key={k} className="tc-more"><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>
               ))}
             </tbody>

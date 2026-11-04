@@ -8,17 +8,17 @@ const KINDS = {
   p: ["p120", "p120x", "p120Count", "p60Season", "points"],
 };
 
-export default function L120Cell({ p, kind }) {
+export default function L120Cell({ p, kind, className = "" }) {
   const [rk, xk, ck, sk, label] = KINDS[kind] || KINDS.sog;
   const rate = p[rk];
   const ratio = p[xk];
-  if (rate == null) return <td className="mono" title="Under 90 minutes on ice in the recent games log">—</td>;
+  if (rate == null) return <td className={`mono ${className}`} title="Under 90 minutes on ice in the recent games log">—</td>;
   const count = p[ck];
   const season = p[sk];
   const title = `${count} ${label} in the last ${p.l120Min} min on ice = ${rate.toFixed(1)}/60` +
     (season != null ? ` (season ${season.toFixed(kind === "a" || kind === "p" ? 2 : 1)}/60)` : "");
   return (
-    <td className="mono" title={title} style={{ whiteSpace: "nowrap" }}>
+    <td className={`mono ${className}`} title={title} style={{ whiteSpace: "nowrap" }}>
       {rate.toFixed(1)}
       {ratio != null && (
         <span style={{ marginLeft: 4, fontSize: 10, color: ratio >= 1.2 ? "var(--accent2)" : "var(--muted)", fontWeight: ratio >= 1.2 ? 700 : 400 }}>

@@ -40,12 +40,12 @@ th.tc-band, td.tc-band { display: none; }
   table[data-cards] > tbody > tr > td[data-primary] { grid-column: 3; grid-row: 1; text-align: right !important; font-size: 20px; font-weight: 800;
     color: var(--accent); align-self: center; }
   table[data-cards] > tbody > tr > td[data-primary]::before { text-align: right; }
-  table[data-cards] > tbody > tr:not([data-tc-full]) > td:nth-child(n+10):not([data-primary]):not([data-keep]) { display: none; }
+  table[data-cards] > tbody > tr:not([data-tc-full]):not([data-tc-open]):not(:has(> td.tc-band)) > td:nth-child(n+10):not([data-primary]):not([data-keep]) { display: none; }
   table[data-cards] > tbody > tr > td.tc-band { display: block; grid-column: 1 / -1; grid-row: 2; }
   table[data-cards] > tbody > tr > td.tc-band::before { display: none; }
   table[data-cards] > tbody > tr:not([data-tc-open]) > td.tc-more { display: none; }
   table[data-cards] > thead th.tc-more:not(.sortable) { display: none !important; }
-  table[data-cards] > tbody > tr:has(> td.tc-band) > td:first-child .gambly-btn { display: none; }
+  table[data-cards] > tbody > tr:has(> td.tc-band) > td:first-child :is(.gambly-btn, button:has(> img[src*="gambly"])) { display: none !important; }
   table[data-cards] > tbody > tr[data-tc-full] { display: block; padding: 10px 12px; }
   table[data-cards] > tbody > tr[data-tc-full] > td { display: block; }
   table[data-cards] > tbody > tr[data-tc-full] > td::before { display: none; }

@@ -1,0 +1,25 @@
+/* 📱 Prop band (PropBand.jsx) -- same file in CourtIQ, Slap Shot and Six Points. Shown only inside phone cards (tableCards.css). */
+.pb { display: flex; flex-direction: column; gap: 8px; padding: 8px 10px; border-radius: 12px;
+  background: var(--surface2, rgba(127,127,127,.1)); border: 1px solid var(--border, rgba(127,127,127,.25)); }
+.pb-line { display: flex; align-items: center; gap: 8px; }
+.pb-step { display: inline-flex; align-items: center; gap: 2px; border: 1px solid var(--border, rgba(127,127,127,.3)); border-radius: 999px; padding: 2px; }
+.pb-step button { width: 30px; height: 30px; border-radius: 999px; border: 0; background: transparent; color: inherit; font-size: 18px; line-height: 1; cursor: pointer; }
+.pb-step button:disabled { opacity: .3; cursor: default; }
+.pb-step b { min-width: 64px; text-align: center; font-size: 14px; white-space: nowrap; }
+.pb-mode { font-size: 11px; color: var(--muted, inherit); white-space: nowrap; }
+.pb-mode button { font: inherit; font-size: 11px; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; }
+.pb-chance { margin-left: auto; font-size: 24px; font-weight: 800; color: var(--accent); line-height: 1; }
+.pb-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.pb-rate { display: inline-flex; align-items: baseline; gap: 4px; padding: 3px 8px; border-radius: 999px; font-size: 12px; font-weight: 700;
+  background: var(--surface, rgba(127,127,127,.12)); white-space: nowrap; }
+.pb-rate i { font-style: normal; font-size: 10px; font-weight: 600; color: var(--muted, inherit); letter-spacing: .04em; }
+.pb-rate.up { color: #3fb871; background: rgba(63,184,113,.14); }
+.pb-rate.down { color: #e5534b; background: rgba(229,83,75,.13); }
+.pb-bars { position: relative; display: inline-flex; align-items: flex-end; gap: 3px; height: 30px; padding: 0 2px; }
+.pb-bars i { position: relative; width: 9px; border-radius: 2px 2px 0 0; background: #e5534b; opacity: .85; }
+.pb-bars i.y { background: #3fb871; }
+.pb-bars i em { display: none; }
+.pb-bars s { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--muted, #888); text-decoration: none; }
+.pb-act { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; }
+.pb-more { font: inherit; font-size: 12px; font-weight: 600; color: var(--muted, inherit); background: none; border: 1px solid var(--border, rgba(127,127,127,.3));
+  border-radius: 999px; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
