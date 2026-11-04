@@ -25,8 +25,9 @@
   table[data-cards] > tbody > tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 10px; padding: 12px 12px 10px;
     border: 1px solid var(--border, rgba(127,127,127,.3)); border-radius: 14px; background: var(--surface, transparent) !important; }
   table[data-cards] > tbody > tr > td { display: block; min-width: 0 !important; width: auto !important; max-width: none !important;
-    padding: 0 !important; border: 0 !important; position: static !important; text-align: left !important; white-space: normal; overflow-wrap: anywhere;
+    padding: 0 !important; border: 0 !important; position: static !important; text-align: left !important; white-space: normal; overflow-wrap: break-word; word-break: normal;
     background: none !important; font-size: 13px; }
+  table[data-cards] > tbody > tr > td[data-wide] { grid-column: span 2; }
   table[data-cards] > tbody > tr > td::before { content: attr(data-label); display: block; font-size: 10px; font-weight: 600; letter-spacing: .06em;
     text-transform: uppercase; color: var(--muted, inherit); margin-bottom: 1px; }
   table[data-cards] > tbody > tr > td[data-label=""]::before { display: none; }

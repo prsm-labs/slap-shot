@@ -80,6 +80,9 @@ function apply() {
           if (k !== td.hasAttribute("data-keep")) { if (k) td.setAttribute("data-keep", ""); else td.removeAttribute("data-keep"); }
           const p = i === prim;
           if (p !== td.hasAttribute("data-primary")) { if (p) td.setAttribute("data-primary", ""); else td.removeAttribute("data-primary"); }
+          // a cell with a photo (e.g. Slap Shot's Opp Goalie: photo + name + grade) gets two card columns so the name isn't split mid-word
+          const w = i > 0 && !p && !!td.querySelector("img");
+          if (w !== td.hasAttribute("data-wide")) { if (w) td.setAttribute("data-wide", ""); else td.removeAttribute("data-wide"); }
         });
         const has = prim > 0;
         if (has !== tr.hasAttribute("data-tc-prim")) { if (has) tr.setAttribute("data-tc-prim", ""); else tr.removeAttribute("data-tc-prim"); }
