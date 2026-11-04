@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-04 12:04",
+  "generated": "2026-11-04 17:34",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 97,
-  "up": 49,
+  "up": 47,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -520,6 +520,71 @@
    }
   },
   {
+   "playerId": 8479972,
+   "name": "Mason Shaw",
+   "team": "MIN",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1998-11-03",
+   "sweater": 18,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "MIN",
+    "round": 4,
+    "overallPick": 97
+   },
+   "recalledOn": "2026-10-31",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-04",
+   "events": [
+    {
+     "date": "2026-10-30",
+     "type": "down",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-31",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-11-04",
+     "type": "down",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 4,
+     "assists": 6,
+     "points": 10,
+     "plusMinus": 0,
+     "pim": 13,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 71,
+     "goals": 15,
+     "assists": 29,
+     "points": 44,
+     "plusMinus": 7,
+     "pim": 67,
+     "team": "Manitoba Moose"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 82,
+    "careerG": 8,
+    "careerP": 20
+   }
+  },
+  {
    "playerId": 8483448,
    "name": "Isaiah George",
    "team": "NYI",
@@ -586,66 +651,6 @@
     "careerGp": 37,
     "careerG": 1,
     "careerP": 6
-   }
-  },
-  {
-   "playerId": 8479972,
-   "name": "Mason Shaw",
-   "team": "MIN",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1998-11-03",
-   "sweater": 18,
-   "draft": {
-    "year": 2017,
-    "teamAbbrev": "MIN",
-    "round": 4,
-    "overallPick": 97
-   },
-   "recalledOn": "2026-10-31",
-   "from": "Iowa",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-30",
-     "type": "down",
-     "club": "Iowa"
-    },
-    {
-     "date": "2026-10-31",
-     "type": "up",
-     "club": "Iowa"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 10,
-     "goals": 4,
-     "assists": 6,
-     "points": 10,
-     "plusMinus": 0,
-     "pim": 13,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 71,
-     "goals": 15,
-     "assists": 29,
-     "points": 44,
-     "plusMinus": 7,
-     "pim": 67,
-     "team": "Manitoba Moose"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 82,
-    "careerG": 8,
-    "careerP": 20
    }
   },
   {
@@ -816,7 +821,7 @@
    "from": "Henderson",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -1449,7 +1454,7 @@
    "from": "San Jose",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {

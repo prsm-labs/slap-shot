@@ -1,8 +1,8 @@
 {
  "_meta": {
   "slateDate": "2026-11-04",
-  "snapshotAt": "2026-11-04T17:05:06.363Z",
-  "poolGenerated": "2026-11-04 12:01",
+  "snapshotAt": "2026-11-04T22:35:03.683Z",
+  "poolGenerated": "2026-11-04 17:31",
   "games": [
    {
     "gameId": 2026020247,
@@ -30,9 +30,9 @@
     "home": "LAK",
     "startTimeUTC": "2026-11-05T03:00:00Z",
     "awayGoalie": "Yaroslav Askarov",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Confirmed",
     "homeGoalie": "Darcy Kuemper",
-    "homeGoalieStatus": "Unconfirmed"
+    "homeGoalieStatus": "Likely"
    },
    {
     "gameId": 2026020250,
@@ -40,9 +40,9 @@
     "home": "SEA",
     "startTimeUTC": "2026-11-05T03:00:00Z",
     "awayGoalie": "Dustin Wolf",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Confirmed",
     "homeGoalie": "Joey Daccord",
-    "homeGoalieStatus": "Unconfirmed"
+    "homeGoalieStatus": "Likely"
    }
   ],
   "scoreVersion": 5,
@@ -8391,8 +8391,8 @@
    "isHome": true,
    "goalieId": 8481551,
    "goalie": "Colten Ellis",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 28.5,
    "saves": 25.4,
@@ -8414,8 +8414,8 @@
    "isHome": false,
    "goalieId": 8481519,
    "goalie": "Spencer Knight",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 29.3,
    "saves": 26.2,
@@ -8460,8 +8460,8 @@
    "isHome": false,
    "goalieId": 8482137,
    "goalie": "Yaroslav Askarov",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 29.1,
    "saves": 25.7,
@@ -8483,8 +8483,8 @@
    "isHome": true,
    "goalieId": 8475311,
    "goalie": "Darcy Kuemper",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 25.5,
    "saves": 22.6,
@@ -8506,8 +8506,8 @@
    "isHome": false,
    "goalieId": 8481692,
    "goalie": "Dustin Wolf",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 27,
    "saves": 24.1,
@@ -8527,20 +8527,20 @@
    "team": "SEA",
    "opp": "CGY",
    "isHome": true,
-   "goalieId": 8475831,
-   "goalie": "Philipp Grubauer",
-   "confirmed": false,
-   "status": "Expected",
+   "goalieId": 8478916,
+   "goalie": "Joey Daccord",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 29,
-   "saves": 26,
-   "goalsAllowed": 2.98,
-   "savePct": 0.8971,
+   "saves": 25.8,
+   "goalsAllowed": 3.22,
+   "savePct": 0.8891,
    "lines": {
-    "20": 85.9,
-    "25": 59.9,
-    "30": 28.4,
-    "35": 8.1
+    "20": 85,
+    "25": 58.5,
+    "30": 27.1,
+    "35": 7.6
    },
    "teamsDataPresent": true
   }
@@ -8597,14 +8597,14 @@
    "away": "CGY",
    "home": "SEA",
    "awayGoalieId": 8481692,
-   "homeGoalieId": 8475831,
-   "xgAway": 2.935,
+   "homeGoalieId": 8478916,
+   "xgAway": 2.847,
    "xgHome": 3.255,
-   "winAway": 0.44,
-   "winHome": 0.56,
-   "ot": 0.216,
+   "winAway": 0.423,
+   "winHome": 0.577,
+   "ot": 0.217,
    "likely": "2-3",
-   "over55": 0.584
+   "over55": 0.57
   }
  ]
 }
