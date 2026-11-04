@@ -108,6 +108,7 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
     own: (r) => (r.p.n ? r.hits / r.p.n : null), proj: (r) => r.p.proj?.[r.stat],
     l7: (r) => { const g = (r.p.recent || []).filter((x) => x.v?.[r.stat] != null).slice(-7); return g.length ? g.filter((x) => x.v[r.stat] >= r.line).length / g.length : null },
     result: (r) => (r.p.actual ? (r.p.actual[r.stat] >= r.line ? 1 : 0) : null),
+    past: (r) => { const b = bandOf(model?.bands, r.chance); return b ? b.hits / b.n : null },  // 2026-11-03 (user: Past hit % wouldn't sort)
   }
   const sorted = useMemo(() => {
     const g = get[sortKey] || get.chance
@@ -116,11 +117,12 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
       if (av == null && bv == null) return 0
       if (av == null) return 1
       if (bv == null) return -1
+      if (av === bv) return b.chance - a.chance  // ties (Past hit % is per chance band): best chance first
       if (typeof av === 'string') return dir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av)
       return dir === 'asc' ? av - bv : bv - av
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows, sortKey, dir])
+  }, [rows, sortKey, dir, model])
   const th = (k, l, title, cls = '') => (
     <th className={`sortable ${sortKey === k ? 'sorted' : ''} ${cls}`} title={title}
       onClick={() => { if (k === sortKey) setDir(dir === 'asc' ? 'desc' : 'asc'); else { setSortKey(k); setDir(k === 'name' || k === 'prop' ? 'asc' : 'desc') } }}>
@@ -184,7 +186,7 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
             <thead><tr>
               {th('name', 'Player', null, stickyClass)}
               {th('chance', 'Prop · chance · L7', 'The line, our calibrated chance, and his last 7 games against it (green = cleared it, oldest to newest)')}
-              <th title="How often lines we gave this chance actually hit: the held-out backtest, then this season's graded lines">Past hit %</th>
+              {th('past', 'Past hit %', "How often lines we gave this chance actually hit: the held-out backtest, then this season's graded lines")}
               {th('own', lastLabel, `How often he cleared this line in his last ${lastLabel.slice(1)} games`)}
               {th('proj', 'Proj', 'Our projection for this stat')}
               {graded && th('result', 'Result')}
