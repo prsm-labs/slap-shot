@@ -50,10 +50,19 @@ export function applyLineups(data, lu, lineupsAt = null) {
     const st = skaterStatus(maps, p);
     const dayToDay = /DTD|day/i.test(st?.out || "");
     let lineupStatus = null;
+    let reason = null;
+    // 2026-11-05 (user: injured players appearing): until the official lineup posts, a skater who has missed his team's last 2+ games,
+    // or the last 1+ while RotoWire lists him day-to-day, is off the lists (9/29-11/04: they played 22% of the next games). A posted
+    // lineup that dresses him brings him back. missedStreak from build_player_pool.py.
+    const streak = p.missedStreak ?? 0;
     if (maps.officialTeams.has(p.team)) lineupStatus = st?.dressed ? "dressed" : "scratched";
     else if (st?.out && !dayToDay) lineupStatus = "out";
+    else if (streak >= 2 || (dayToDay && streak >= 1)) {
+      lineupStatus = "out";
+      reason = `${dayToDay ? "day-to-day, " : ""}missed his team's last ${streak} game${streak > 1 ? "s" : ""}`;
+    }
     if (lineupStatus === "scratched" || lineupStatus === "out") {
-      removed.push({ playerId: p.playerId, name: p.name, team: p.team, reason: lineupStatus === "out" ? st.out : "not dressed" });
+      removed.push({ playerId: p.playerId, name: p.name, team: p.team, reason: reason || (lineupStatus === "out" ? st.out : "not dressed") });
       continue;
     }
 
