@@ -1,8 +1,8 @@
 {
  "_meta": {
   "slateDate": "2026-11-05",
-  "snapshotAt": "2026-11-05T16:09:05.536Z",
-  "poolGenerated": "2026-11-05 11:02",
+  "snapshotAt": "2026-11-05T17:05:43.158Z",
+  "poolGenerated": "2026-11-05 12:02",
   "games": [
    {
     "gameId": 2026020251,
@@ -12,7 +12,7 @@
     "awayGoalie": "Sebastian Cossa",
     "awayGoalieStatus": "Unconfirmed",
     "homeGoalie": "Jakub Dobes",
-    "homeGoalieStatus": "Likely"
+    "homeGoalieStatus": "Confirmed"
    },
    {
     "gameId": 2026020252,
@@ -42,7 +42,7 @@
     "awayGoalie": "Joel Hofer",
     "awayGoalieStatus": "Unconfirmed",
     "homeGoalie": "Connor Hellebuyck",
-    "homeGoalieStatus": "Unconfirmed"
+    "homeGoalieStatus": "Likely"
    },
    {
     "gameId": 2026020255,
@@ -52,7 +52,7 @@
     "awayGoalie": "Brandon Bussi",
     "awayGoalieStatus": "Unconfirmed",
     "homeGoalie": "Semyon Varlamov",
-    "homeGoalieStatus": "Likely"
+    "homeGoalieStatus": "Confirmed"
    },
    {
     "gameId": 2026020256,
@@ -60,7 +60,7 @@
     "home": "NYR",
     "startTimeUTC": "2026-11-06T00:00:00Z",
     "awayGoalie": "Joseph Woll",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Confirmed",
     "homeGoalie": "Dylan Garand",
     "homeGoalieStatus": "Confirmed"
    },
@@ -72,7 +72,7 @@
     "awayGoalie": "Jeremy Swayman",
     "awayGoalieStatus": "Unconfirmed",
     "homeGoalie": "Arturs Silovs",
-    "homeGoalieStatus": "Likely"
+    "homeGoalieStatus": "Confirmed"
    },
    {
     "gameId": 2026020258,
@@ -82,7 +82,7 @@
     "awayGoalie": "Jake Oettinger",
     "awayGoalieStatus": "Unconfirmed",
     "homeGoalie": "Cam Talbot",
-    "homeGoalieStatus": "Likely"
+    "homeGoalieStatus": "Confirmed"
    },
    {
     "gameId": 2026020259,
@@ -22784,19 +22784,19 @@
    "team": "PHI",
    "opp": "NYR",
    "isHome": false,
-   "goalieId": 8478435,
-   "goalie": "Dan Vladar",
-   "confirmed": false,
-   "status": "Expected",
+   "goalieId": 8479361,
+   "goalie": "Joseph Woll",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 24,
-   "saves": 21.5,
-   "goalsAllowed": 2.54,
-   "savePct": 0.8943,
+   "saves": 21.4,
+   "goalsAllowed": 2.59,
+   "savePct": 0.8923,
    "lines": {
-    "20": 62.8,
-    "25": 30.9,
-    "30": 9.3,
+    "20": 62.5,
+    "25": 30.7,
+    "30": 9.2,
     "35": 1.6
    },
    "teamsDataPresent": true
@@ -22901,8 +22901,8 @@
    "isHome": true,
    "goalieId": 8475660,
    "goalie": "Cam Talbot",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 25.9,
    "saves": 22.9,
@@ -22991,20 +22991,20 @@
    "team": "EDM",
    "opp": "ANA",
    "isHome": true,
-   "goalieId": 8477465,
-   "goalie": "Tristan Jarry",
-   "confirmed": false,
-   "status": "Expected",
+   "goalieId": 8477035,
+   "goalie": "Matt Tomkins",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 28.1,
-   "saves": 24.8,
-   "goalsAllowed": 3.25,
-   "savePct": 0.884,
+   "saves": 25.1,
+   "goalsAllowed": 2.98,
+   "savePct": 0.8938,
    "lines": {
-    "20": 80.9,
-    "25": 52,
-    "30": 21.9,
-    "35": 5.5
+    "20": 82.1,
+    "25": 53.8,
+    "30": 23.3,
+    "35": 6
    },
    "teamsDataPresent": true
   },
@@ -23136,15 +23136,15 @@
    "matchup": "PHI@NYR",
    "away": "PHI",
    "home": "NYR",
-   "awayGoalieId": 8478435,
+   "awayGoalieId": 8479361,
    "homeGoalieId": 8482193,
    "xgAway": 2.579,
-   "xgHome": 3.281,
-   "winAway": 0.366,
-   "winHome": 0.634,
-   "ot": 0.215,
+   "xgHome": 3.172,
+   "winAway": 0.385,
+   "winHome": 0.615,
+   "ot": 0.22,
    "likely": "2-3",
-   "over55": 0.531
+   "over55": 0.513
   },
   {
    "gameId": 2026020257,
@@ -23197,14 +23197,14 @@
    "away": "ANA",
    "home": "EDM",
    "awayGoalieId": 8480843,
-   "homeGoalieId": 8477465,
-   "xgAway": 2.926,
+   "homeGoalieId": 8477035,
+   "xgAway": 2.872,
    "xgHome": 3.69,
-   "winAway": 0.363,
-   "winHome": 0.637,
+   "winAway": 0.353,
+   "winHome": 0.647,
    "ot": 0.201,
-   "likely": "3-4",
-   "over55": 0.647
+   "likely": "2-3",
+   "over55": 0.639
   },
   {
    "gameId": 2026020261,
