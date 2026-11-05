@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import ViewPicker from "./ViewPicker.jsx";
 import { actualIcebreaker, icebreakerBoard, startGroups } from "../lib/icebreaker.js";
 import { useTeamRatings } from "../lib/gameModel.js";
 import { filterPositions, positionLabel } from "../lib/positionFilter.js";
@@ -107,12 +108,10 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
       <PromoBar promo={promo} date={date} group={pGroup} />
 
       {groups.length > 1 && (
-        <div className="pill-row" style={{ display: "inline-flex", flexWrap: "wrap", marginBottom: 12 }}>
-          {groups.map((g) => (
-            <button key={g.start} className={`pill-btn ${g === group ? "active" : ""}`} onClick={() => setStartPick(g.start)}>
-              {timeEt(g.start)} · {g.games.length} game{g.games.length > 1 ? "s" : ""}
-            </button>
-          ))}
+        <div className="vp-row">
+          {/* 2026-11-05 (user: single-choice button rows -> dropdowns) */}
+          <ViewPicker select compact label="Start" value={group.start} onChange={setStartPick}
+            options={groups.map((g) => [g.start, `${timeEt(g.start)} · ${g.games.length} game${g.games.length > 1 ? "s" : ""}`])} />
         </div>
       )}
 
@@ -152,11 +151,8 @@ export default function IcebreakerView({ players, slate, goals, position, soft =
       <IcebreakerTracker games={group.games} liveGames={liveGames} goals={goals} actual={actual} rows={allRows}
         promoHere={promoHere} onPick={pickFromChart} />
 
-      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 10 }}>
-        <button className={`pill-btn ${mode === "players" ? "active" : ""}`} onClick={() => setMode("players")}>👤 Players</button>
-        <button className={`pill-btn ${mode === "teams" ? "active" : ""}`} onClick={() => setMode("teams")}>🏒 Teams</button>
-        {promoHere && <button className={`pill-btn ${mode === "graph" ? "active" : ""}`} onClick={() => setMode("graph")}>📈 Payout graph</button>}
-      </div>
+      <ViewPicker pillClass="pill-btn" rowClass="pill-row" label="Show" value={mode} onChange={setMode}
+        options={[["players", "👤 Players"], ["teams", "🏒 Teams"], ...(promoHere ? [["graph", "📈 Payout graph"]] : [])]} />
       {promo.on && !promoHere && (
         <div className="mono" style={{ fontSize: 10, ...muted, marginBottom: 8 }}>
           The Ice Breaker covers the {pGroup ? timeEt(pGroup.start) : "7 PM ET"} games — pick that start time for payouts and the graph.

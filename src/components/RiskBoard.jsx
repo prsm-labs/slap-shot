@@ -1,4 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import './RiskBoard.css'
 
 // 🎚️ Risk slider (2026-10-27, user: a slider in Scouting from safe to long shot -- the player list shows the props in that chance
@@ -164,10 +165,9 @@ export default function RiskBoard({ players, stats, model, live, liveLabel = 'th
           ))}
         </div>}
         <div className="rb-controls">
-          <div className="rb-group">
-            {lineMode !== 'set' && <button className={`${pillClass} ${stat === 'all' ? 'active' : ''}`} onClick={() => setStat('all')}>All props</button>}
-            {stats.map((s) => <button key={s.k} className={`${pillClass} ${(lineMode === 'set' ? fixedStat : stat) === s.k ? 'active' : ''}`} onClick={() => setStat(s.k)}>{s.label}</button>)}
-          </div>
+          {/* 2026-11-05: the prop is one choice -> a dropdown */}
+          <ViewPicker select compact label="Prop" value={lineMode === 'set' ? fixedStat : stat} onChange={setStat}
+            options={[...(lineMode !== 'set' ? [['all', 'All props']] : []), ...stats.map((s) => [s.k, s.label])]} />
           {lineMode !== 'set' && <div className="rb-group">
             <button className={`${pillClass} ${!every ? 'active' : ''}`} onClick={() => setEvery(false)} title="Each player's line closest to the slider">One per player</button>
             <button className={`${pillClass} ${every ? 'active' : ''}`} onClick={() => setEvery(true)} title="Every line in the range">Every line</button>

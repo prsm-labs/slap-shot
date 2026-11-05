@@ -59,9 +59,10 @@ export default function HitRateCard({ games, ready, stats, opp, rest, played, se
   return (
     <div className="hr-card">
       <div className="hr-top">
-        <div className="hr-stats" role="tablist">
-          {stats.map((s) => <button key={s.k} type="button" className={s.k === k ? 'on' : ''} onClick={() => setK(s.k)}>{s.label}</button>)}
-        </div>
+        {/* 2026-11-05: the stat is one choice -> a dropdown */}
+        <select className="hr-stat-sel" value={k} onChange={(e) => setK(e.target.value)} aria-label="Stat">
+          {stats.map((s) => <option key={s.k} value={s.k}>{s.label}</option>)}
+        </select>
         <div className="hr-line">
           <button type="button" aria-label="Lower line" onClick={() => setLine((l) => Math.max(stat.min ?? 1, +(l - stat.step).toFixed(2)))}>−</button>
           <b>{fmt(line)}+ {stat.unit}</b>

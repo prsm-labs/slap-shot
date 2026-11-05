@@ -164,9 +164,10 @@ export default function SimShell({ teams, frames, Surface, panels, footnote, per
         <button onClick={() => go(idx + 1)} title="Next" aria-label="Next play">▶▏</button>
         <button onClick={nextScore} title="Next score">Next score</button>
         <button onClick={() => go(n - 1)} title="Final" aria-label="Jump to the final">⏭</button>
-        <span className="ss-speed">
-          {[1, 2, 4, 8].map((s) => <button key={s} className={speed === s ? 'on' : ''} onClick={() => setSpeed(s)}>{s}x</button>)}
-        </span>
+        {/* 2026-11-05: speed is one choice -> a small dropdown */}
+        <select className="ss-speed-sel" value={speed} onChange={(e) => setSpeed(Number(e.target.value))} aria-label="Replay speed">
+          {[1, 2, 4, 8].map((s) => <option key={s} value={s}>{s}x</option>)}
+        </select>
         <input type="range" min={0} max={n - 1} value={idx} onChange={(e) => go(+e.target.value)} aria-label="Scrub through the game" />
         <span className="ss-count">{idx + 1}/{n}</span>
       </div>

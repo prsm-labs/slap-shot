@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import ViewPicker from "../components/ViewPicker.jsx";
 import { fetchTrackRecord } from "../lib/data.js";
 import TrackRecordLive from "./TrackRecordLive.jsx";
 import TrackRecordGoalies from "./TrackRecordGoalies.jsx";
@@ -138,12 +139,10 @@ export default function TrackRecordTab() {
         <div className="section-title">📈 Track Record</div>
         <div className="section-sub">What we projected before each game vs. what actually happened — who scored, their box score, and how they were graded</div>
       </div>
-      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
-        <button className={`pill-btn ${view === "live" ? "active" : ""}`} onClick={() => setView("live")}>2026-27 Skaters</button>
-        <button className={`pill-btn ${view === "goalies" ? "active" : ""}`} onClick={() => setView("goalies")}>🥅 2026-27 Goalies (Crease Lab)</button>
-        <button className={`pill-btn ${view === "pairs" ? "active" : ""}`} onClick={() => setView("pairs")}>🤝 Pairs</button>
-        <button className={`pill-btn ${view === "cheat" ? "active" : ""}`} onClick={() => setView("cheat")}>📋 Cheat Sheets</button>
-        <button className={`pill-btn ${view === "pbix" ? "active" : ""}`} onClick={() => setView("pbix")}>Mar 2026 backtest (Power BI model)</button>
+      {/* 2026-11-05: one dropdown for the record shown (was five buttons) */}
+      <div className="vp-row">
+        <ViewPicker select compact label="Record" value={view} onChange={setView} options={[["live", "🏒 2026-27 Skaters"], ["goalies", "🥅 2026-27 Goalies (Crease Lab)"],
+          ["pairs", "🤝 Pairs"], ["cheat", "📋 Cheat Sheets"], ["pbix", "Mar 2026 backtest (Power BI model)"]]} />
       </div>
       {view === "live" ? <TrackRecordLive /> : view === "goalies" ? <TrackRecordGoalies /> : view === "pairs" ? <TrackRecordPairs /> : view === "cheat" ? <TrackRecordCheatSheets /> : <PbixBacktest />}
     </div>

@@ -12,6 +12,7 @@ import LineupBadge from "../components/LineupBadge.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
+import ViewPicker from "../components/ViewPicker.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { useListFilters } from "../lib/listFilters.js";
@@ -140,7 +141,8 @@ export default function CalledUpTab() {
       <MatchupFilter />
       <PositionFilter />
       <div className="pill-row" style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10, alignItems: "center" }}>
-        {STATUS_OPTIONS.map(([k, label]) => pill(status === k, label, () => setStatus(k)))}
+        {/* 2026-11-05: status is one choice -> a dropdown; the two on / off filters stay buttons */}
+        <ViewPicker select compact label="Status" options={STATUS_OPTIONS.map(([k, label]) => [k, label])} value={status} onChange={setStatus} />
         {pill(tonightOnly, "Playing tonight", () => setTonightOnly(!tonightOnly))}
         {pill(lineupOnly, "✅ In official lineup", () => setLineupOnly(!lineupOnly), "Only players in tonight's posted lineup (around warmups)")}
         <span className="mono" style={{ fontSize: 10, ...muted }}>{sorted.length} of {rows.length}</span>

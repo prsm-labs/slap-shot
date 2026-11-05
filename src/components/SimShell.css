@@ -76,3 +76,5 @@
   .ss-text { font-size: .82rem; }
   .ss-play { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
+/* 2026-11-05 speed dropdown (was four buttons) */
+.ss-speed-sel { font: inherit; font-size: 13px; padding: 5px 6px; border-radius: 8px; border: 1px solid var(--border, #2a2f3a); background: var(--surface2, var(--surface, transparent)); color: inherit; cursor: pointer; }

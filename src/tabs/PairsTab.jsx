@@ -10,6 +10,7 @@ import { dueHeatText } from "../lib/dueHeat.js";
 import { pointHeatText } from "../lib/pointHeat.js";
 import { openSkaterSlide } from "../slideouts.js";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import ViewPicker from "../components/ViewPicker.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import PickButton from "../components/PickButton.jsx";
@@ -462,35 +463,14 @@ export default function PairsTab() {
         </div>
       )}
       <MatchupFilter />
-      <div className="pill-row" style={{ width: "fit-content", maxWidth: "100%", flexWrap: "wrap", marginTop: 10 }}>
-        {LEVELS.map((l) => <button key={l.key} className={`pill-btn ${level === l.key ? "active" : ""}`} onClick={() => setLevel(l.key)} title={l.blurb}>{l.label}</button>)}
-      </div>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center", margin: "10px 0" }}>
-        <div className="pill-row">
-          {MODES.map((m) => (
-            <button key={m.key} className={`pill-btn ${mode === m.key ? "active" : ""}`} onClick={() => setMode(m.key)} title={m.blurb}>{m.label}</button>
-          ))}
-        </div>
+      {/* 2026-11-05 (user: dropdowns, not rows of single-choice buttons): level · sort · props · top N · boost */}
+      <div className="vp-row" style={{ marginTop: 10 }}>
+        <ViewPicker select compact label="Level" options={LEVELS.map((l) => [l.key, l.label])} value={level} onChange={setLevel} />
+        <ViewPicker select compact label="Sort" options={MODES.map((m) => [m.key, m.label])} value={mode} onChange={setMode} />
+        <ViewPicker select compact label="Props" options={PROP_FILTERS.map((f) => [f.key, f.label])} value={propFilter} onChange={setPropFilter} />
+        <ViewPicker select compact label="Show" options={[[null, "All pairs"], [3, "★ Top 3"], [5, "★ Top 5"]]} value={starFilter} onChange={setStarFilter} />
+        <ViewPicker select compact label="Boost" options={BOOSTS.map((b) => [b, b ? `${b * 100}%` : "None"])} value={boost} onChange={setBoost} />
         <StatePicker />
-        <div className="pill-row" title="Profit boost on the parlay (only changes goal + goal pairs with a book price)">
-          <span className="mono" style={{ fontSize: 10, ...muted, alignSelf: "center", marginRight: 4 }}>Boost</span>
-          {BOOSTS.map((b) => (
-            <button key={b} className={`pill-btn ${boost === b ? "active" : ""}`} onClick={() => setBoost(b)}>{b ? `${b * 100}%` : "None"}</button>
-          ))}
-        </div>
-      </div>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center", marginBottom: 8 }}>
-        <div className="pill-row">
-          {[[null, "All pairs"], [3, "★ Top 3"], [5, "★ Top 5"]].map(([k, l]) => (
-            <button key={l} className={`pill-btn ${starFilter === k ? "active" : ""}`} onClick={() => setStarFilter(k)}
-              style={k ? { borderColor: GOLD, color: starFilter === k ? undefined : GOLD } : undefined}>{l}</button>
-          ))}
-        </div>
-        <div className="pill-row">
-          {PROP_FILTERS.map((f) => (
-            <button key={f.label} className={`pill-btn ${propFilter === f.key ? "active" : ""}`} onClick={() => setPropFilter(f.key)}>{f.label}</button>
-          ))}
-        </div>
       </div>
       <div className="mono" style={{ fontSize: 10, ...muted, marginBottom: 10 }}>
         {level !== "all" ? `${levelInfo.blurb} · ` : ""}{modeInfo.blurb}{propFilter ? ` — ${PROPS[propFilter].label} pairs only (both legs)` : ""}. Gold ★ = the {STAR_TOP} best pairs in this view, in order

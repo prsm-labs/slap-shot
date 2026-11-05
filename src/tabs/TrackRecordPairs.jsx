@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import ViewPicker from "../components/ViewPicker.jsx";
 import { openSkaterSlide } from "../slideouts.js";
 import { MODES, PROPS } from "../lib/pairs.js";
 
@@ -154,11 +155,8 @@ export default function TrackRecordPairs() {
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginBottom: 10 }}>
-        <div className="pill-row">
-          {[{ key: "all", label: "All modes" }, ...MODES, ...PROP_LOCKS].map((m) => (
-            <button key={m.key} className={`pill-btn ${mode === m.key ? "active" : ""}`} onClick={() => setMode(m.key)}>{m.label}</button>
-          ))}
-        </div>
+        {/* 2026-11-05 (user: single-choice button rows -> dropdowns) */}
+        <ViewPicker select compact label="Board" options={[{ key: "all", label: "All modes" }, ...MODES, ...PROP_LOCKS].map((m) => [m.key, m.label])} value={mode} onChange={setMode} />
         <select className="mono" value={date} onChange={(e) => setDate(e.target.value)} style={{ background: "var(--surface)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 8, padding: "4px 8px" }}>
           <option value="all">Whole season ({dates.length} nights)</option>
           {dates.map((d) => <option key={d} value={d}>{shortDate(d)}{locks[d]?.lockedAt == null ? " (backfilled)" : ""}</option>)}
@@ -191,16 +189,10 @@ export default function TrackRecordPairs() {
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 8 }}>
-        <div className="pill-row">
-          {[["all", "All"], ["hit", "✅ Hit"], ["miss", "✗ Miss"], ["void", "Void"]].map(([k, l]) => (
-            <button key={k} className={`pill-btn ${result === k ? "active" : ""}`} onClick={() => setResult(k)}>{l}</button>
-          ))}
-        </div>
-        <div className="pill-row" title="Legs vs a top-third-softest defense with an H2H grade of A/A+ — tracked as a watch, not used in any pick (4-season test: at most a small edge)">
-          {SH_FILTERS.map(([k, l]) => (
-            <button key={k} className={`pill-btn ${sh === k ? "active" : ""}`} onClick={() => setSh(k)}>{l}</button>
-          ))}
-        </div>
+        <ViewPicker select compact label="Result" options={[["all", "All"], ["hit", "✅ Hit"], ["miss", "✗ Miss"], ["void", "Void"]]} value={result} onChange={setResult} />
+        <span title="Legs vs a top-third-softest defense with an H2H grade of A/A+ — tracked as a watch, not used in any pick (4-season test: at most a small edge)">
+          <ViewPicker select compact label="Soft + H2H" options={SH_FILTERS} value={sh} onChange={setSh} />
+        </span>
       </div>
       {sh !== "all" && <div className="mono" style={{ fontSize: 10, ...muted, marginBottom: 6 }}>
         Tiles and tables above now show only pairs with {sh === "2" ? "both legs" : "1+ leg"} soft D + H2H A/A+. H2H letters: stored at lock from 10/18, rebuilt

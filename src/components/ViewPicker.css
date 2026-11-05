@@ -12,3 +12,11 @@
 }
 .vp-select:focus-visible { outline: 2px solid var(--accent, currentColor); outline-offset: 2px; }
 .vp-chev { position: absolute; right: 14px; pointer-events: none; color: var(--accent, currentColor); font-size: 14px; }
+/* 2026-11-05 compact dropdowns for filter rows (ViewPicker select compact), several per row in .vp-row */
+.vp-row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0 0 12px; }
+.vp-row > .vp { margin: 0; }
+.vp.vp-compact { display: inline-flex; width: auto; gap: 6px; flex: 0 1 auto; min-width: 0; }
+.vp.vp-compact .vp-label { font-size: 11px; }
+.vp.vp-compact .vp-select { flex: 0 1 auto; font-size: 14px; font-weight: 600; padding: 7px 30px 7px 11px; border-radius: 10px; max-width: 100%; }
+.vp.vp-compact .vp-chev { right: 11px; font-size: 12px; }
+@media (max-width: 640px) { .vp.vp-compact .vp-select { font-size: 16px; } .vp-row > .vp.vp-compact { flex: 1 1 calc(50% - 12px); } .vp-row > .vp.vp-compact .vp-select { flex: 1 1 auto; width: 100%; } }

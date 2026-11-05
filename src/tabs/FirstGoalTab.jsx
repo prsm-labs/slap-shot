@@ -5,6 +5,7 @@ import { openSkaterSlide } from "../slideouts.js";
 import PickButton from "../components/PickButton.jsx";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import ViewPicker from "../components/ViewPicker.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { fmtToi } from "../lib/toi.js";
@@ -157,11 +158,8 @@ export default function FirstGoalTab() {
 
       <SlateStatus />
 
-      <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
-        <button className={`pill-btn ${view === "first" ? "active" : ""}`} onClick={() => setView("first")}>{FIRST_GOAL} First goal by game</button>
-        <button className={`pill-btn ${view === "ice" ? "active" : ""}`} onClick={() => setView("ice")}>🧊 Icebreaker (fastest goal)</button>
-        <button className={`pill-btn ${view === "concede" ? "active" : ""}`} onClick={() => setView("concede")}>⏱️ Fastest to concede</button>
-      </div>
+      <ViewPicker pillClass="pill-btn" rowClass="pill-row" label="First Goal" value={view} onChange={setView}
+        options={[["first", `${FIRST_GOAL} First goal by game`], ["ice", "🧊 Icebreaker (fastest goal)"], ["concede", "⏱️ Fastest to concede"]]} />
 
       {view === "concede" ? <FirstConcedeView /> : view === "ice" ? (<>
         <PositionFilter />

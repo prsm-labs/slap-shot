@@ -4,6 +4,7 @@ import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
+import ViewPicker from "../components/ViewPicker.jsx";
 import PositionFilter from "../components/PositionFilter.jsx";
 import { filterPositions, positionLabel, usePosition } from "../lib/positionFilter.js";
 import { useMatchup, inScope } from "../lib/matchupFilter.js";
@@ -271,12 +272,7 @@ export default function TrackRecordLive() {
           <button className={`pill-btn ${goalsOnly ? "active" : ""}`} onClick={() => setGoalsOnly((v) => !v)}>🚨 Goals only</button>
           <button className={`pill-btn ${showDnp ? "active" : ""}`} onClick={() => setShowDnp((v) => !v)}>Show scratches</button>
         </div>
-        <div className="pill-row">
-          <button className={`pill-btn ${!tierFilter ? "active" : ""}`} onClick={() => setTierFilter(null)}>All tiers</button>
-          {TIERS.map((t) => (
-            <button key={t} className={`pill-btn ${tierFilter === t ? "active" : ""}`} onClick={() => setTierFilter(tierFilter === t ? null : t)}>{t}</button>
-          ))}
-        </div>
+        <ViewPicker select compact label="Tier" options={[[null, "All tiers"], ...TIERS.map((t) => [t, t])]} value={tierFilter} onChange={setTierFilter} />
       </div>
 
       <div className="table-wrap">

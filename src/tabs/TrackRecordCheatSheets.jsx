@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import ViewPicker from "../components/ViewPicker.jsx";
 import { openSkaterSlide } from "../slideouts.js";
 import { fmtAmerican } from "../lib/bookOdds.js";
 
@@ -124,11 +125,8 @@ export default function TrackRecordCheatSheets() {
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginBottom: 10 }}>
-        <div className="pill-row">
-          {LISTS.map((l) => (
-            <button key={l.key} className={`pill-btn ${listKey === l.key ? "active" : ""}`} onClick={() => { setListKey(l.key); setDate("all"); }}>{l.label}</button>
-          ))}
-        </div>
+        {/* 2026-11-05 (user: single-choice button rows -> dropdowns) */}
+        <ViewPicker select compact label="List" options={LISTS.map((l) => [l.key, l.label])} value={listKey} onChange={(k) => { setListKey(k); setDate("all"); }} />
         <select className="mono" value={date} onChange={(e) => setDate(e.target.value)} style={{ background: "var(--surface)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 8, padding: "4px 8px" }}>
           <option value="all">Whole season ({nights.length} nights)</option>
           {nights.map((n) => <option key={n.date} value={n.date}>{shortDate(n.date)}</option>)}

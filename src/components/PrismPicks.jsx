@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ViewPicker from "./ViewPicker.jsx";
 import { openSkaterSlide } from "../slideouts.js";
 import PickButton from "./PickButton.jsx";
 import PlayerAvatar from "./PlayerAvatar.jsx";
@@ -63,12 +64,9 @@ export default function PrismPicks({ players, date }) {
         )}
       </div>
       {data.tiers && (
-        <div className="pill-row prism-levels">
-          {LEVELS.map((x) => (
-            <button key={x.key} type="button" className={`pill-btn ${level === x.key ? "active" : ""}`} onClick={() => setLevel(x.key)}>
-              {x.label}{byLevel[x.key].length ? ` · ${byLevel[x.key].length}` : ""}
-            </button>
-          ))}
+        <div className="vp-row prism-levels">
+          {/* 2026-11-05: the level is one choice -> a dropdown */}
+          <ViewPicker select compact label="Level" value={level} onChange={setLevel} options={LEVELS.map((x) => [x.key, `${x.label}${byLevel[x.key].length ? ` · ${byLevel[x.key].length}` : ""}`])} />
         </div>
       )}
       {picks.length === 0 && (
@@ -147,8 +145,8 @@ function PastNight({ night }) {
         </div>
       </div>
       {night.tiers && (
-        <div className="pill-row prism-levels">
-          {LEVELS.map((x) => <button key={x.key} type="button" className={`pill-btn ${level === x.key ? "active" : ""}`} onClick={() => setLevel(x.key)}>{x.label}</button>)}
+        <div className="vp-row prism-levels">
+          <ViewPicker select compact label="Level" value={level} onChange={setLevel} options={LEVELS.map((x) => [x.key, x.label])} />
         </div>
       )}
       {list.map((p, i) => (

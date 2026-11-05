@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ViewPicker from "../components/ViewPicker.jsx";
 import { useMatchup, keysOf } from '../lib/matchupFilter.js'
 import { openSkaterSlide } from '../slideouts.js'
 import { useScoredPool } from '../lib/data.js'
@@ -81,17 +82,14 @@ export default function GameSimTab() {
         locks at puck drop.</p>
       {err && !index && <p className="empty-state">No simulations yet ({err}).</p>}
       {index && !games.length && <p className="empty-state">No simulations for tonight yet -- they're built with the slate and lock at each puck drop.</p>}
-      <div className="nhs-games">
-        {games.map((g) => {
+      {/* 2026-11-05 (user: the games are already in the matchup cards up top): one dropdown, each game with its simulated favorite and
+          typical score; picking a game in the header strip picks it here too */}
+      {games.length > 0 && <div className="vp-row">
+        <ViewPicker select compact label="Game" value={gid} onChange={setGid} options={games.map((g) => {
           const fv = g.homeWin >= 0.5 ? g.home : g.away
-          return (
-            <button key={g.gameId} className={`nhs-game${gid === g.gameId ? ' active' : ''}`} onClick={() => setGid(g.gameId)}>
-              <span className="nhs-game-t"><img src={logo(g.away)} alt="" width={16} height={16} />{g.away} @ {g.home}<img src={logo(g.home)} alt="" width={16} height={16} /></span>
-              <span className="meta-line small">{fv} {Math.round(100 * Math.max(g.homeWin, 1 - g.homeWin))}% · typ. {g.typical[1]}-{g.typical[0]}</span>
-            </button>
-          )
-        })}
-      </div>
+          return [g.gameId, `${g.away} @ ${g.home} · ${fv} ${Math.round(100 * Math.max(g.homeWin, 1 - g.homeWin))}% · ${g.typical[1]}-${g.typical[0]}`]
+        })} />
+      </div>}
       {sim && (
         <>
           <div className="slate-status nhs-sum">

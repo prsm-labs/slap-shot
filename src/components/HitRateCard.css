@@ -36,3 +36,6 @@
 .fold-btn { flex: 0 0 auto; font: inherit; font-size: 0.74rem; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: inherit; cursor: pointer; white-space: nowrap; }
 .fold-btn:hover { border-color: var(--accent); }
 .fold-body { margin-top: 6px; }
+/* 2026-11-05 stat dropdown (was a chip row) */
+.hr-stat-sel { font: inherit; font-size: 14px; font-weight: 600; padding: 6px 28px 6px 10px; border-radius: 10px; border: 1px solid var(--accent, currentColor);
+  background: var(--surface2, var(--surface, transparent)); color: inherit; cursor: pointer; }

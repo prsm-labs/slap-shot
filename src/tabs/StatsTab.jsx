@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
+import ViewPicker from "../components/ViewPicker.jsx";
 import { useScoredPool } from "../lib/data.js";
 import { openGoalieSlide, openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -352,11 +353,12 @@ export default function StatsTab() {
     );
   }
 
-  const pills = (opts, value, onChange) => (
-    <div className="pill-row stats-pills">
-      {opts.map(([k, label]) => <button key={k} className={`pill-btn ${value === k ? "active" : ""}`} onClick={() => onChange(k)}>{label}</button>)}
-    </div>
-  );
+  // 2026-11-05 (user: single-choice button rows -> dropdowns): two-way toggles stay buttons, three or more become a dropdown
+  const pills = (opts, value, onChange, label) => (opts.length >= 3
+    ? <ViewPicker select compact label={label} options={opts} value={value} onChange={onChange} />
+    : <div className="pill-row stats-pills">
+      {opts.map(([k, l]) => <button key={k} className={`pill-btn ${value === k ? "active" : ""}`} onClick={() => onChange(k)}>{l}</button>)}
+    </div>);
   const seasons = index.seasons.filter((s) => s.n_games || s.season === index.current).map((s) => [s.season, s.season]);
 
   return (
@@ -368,10 +370,12 @@ export default function StatsTab() {
         </div>
       </div>
       <div className="stats-controls">
-        {pills(seasons, season, (s) => { setSeason(s); setOpen(null); })}
-        {pills(VIEWS, view, (v) => { setView(v); setOpen(null); })}
-        {pills(WINDOWS, win, setWin)}
-        {pills([["t", "Totals"], ["p", "Per game"]], perGame ? "p" : "t", (k) => setPerGame(k === "p"))}
+        {pills(seasons, season, (s) => { setSeason(s); setOpen(null); }, "Season")}
+        <div className="vp-row">
+          {pills(VIEWS, view, (v) => { setView(v); setOpen(null); }, "Show")}
+          {pills(WINDOWS, win, setWin, "Games")}
+          <ViewPicker select compact label="As" options={[["p", "Per game"], ["t", "Totals"]]} value={perGame ? "p" : "t"} onChange={(k) => setPerGame(k === "p")} />
+        </div>
       </div>
       <div className="stats-filters">
         {view === "skaters" && (

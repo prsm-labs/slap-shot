@@ -22,6 +22,7 @@ import { useRadar } from "../lib/radar.js";
 import { RadarCard } from "./RadarTab.jsx";
 import { OppDefBadge } from "../lib/oppDef.jsx";
 import { useJson, useMulti } from "../lib/multi.js";
+import ViewPicker from "../components/ViewPicker.jsx";
 import { MultiCard } from "./MultiTab.jsx";
 import ShortList from "../components/ShortList.jsx";
 import { prismPicks, tierPicks } from "../lib/prismPicks.js";
@@ -230,10 +231,9 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
         {lineups ? ` Right now: ${confirmedGoalies} of ${starters.length} starting goalies confirmed, ${officialCount} team lineups official.` : " Loading lineup news…"}
       </div>
 
-      <div className="pill-row" style={{ display: "inline-flex", flexWrap: "wrap", marginBottom: 12, marginRight: 10 }}>
-        {LINEUP_FILTERS.map(([key, label]) => (
-          <button key={key} className={`pill-btn ${lineupFilter === key ? "active" : ""}`} onClick={() => setLineupFilter(key)}>{label}</button>
-        ))}
+      {/* 2026-11-05: lineup + position as two dropdowns on one row */}
+      <div className="vp-row">
+        <ViewPicker select compact label="Lineup" options={LINEUP_FILTERS} value={lineupFilter} onChange={setLineupFilter} />
       </div>
       <PositionFilter />
       <MatchupFilter />
