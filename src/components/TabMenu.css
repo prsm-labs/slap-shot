@@ -15,6 +15,9 @@
 .tm-item:hover { color: var(--fg, var(--text)); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .tm-item.active { color: var(--fg, var(--text)); font-weight: 600; border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
 @media (prefers-reduced-motion: reduce) { .tm-panel, .tm-backdrop { transition: none; } }
+/* 2026-11-05 menu groups (Today / Research / Track Record / App) */
+.tm-group { padding: 14px 18px 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.tm-entry:first-child .tm-group { padding-top: 6px; }
 
 /* The row under the logo: ☰ · date / week picker · team · search on one line. The past-night note drops to its own line below. */
 .master-bar.tm-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 0 10px; }

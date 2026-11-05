@@ -9,7 +9,7 @@ import { ladderFor } from "./lineBoard.js";
 
 export const multiLabel = (f) => `${f.line}+ ${f.stat === "A" ? "assists" : "points"}`;
 
-function useJson(url) {
+export function useJson(url) {
   const [d, setD] = useState(undefined);
   useEffect(() => {
     let alive = true;

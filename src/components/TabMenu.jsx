@@ -5,6 +5,8 @@ import './TabMenu.css'
 // row under the logo (☰ · date / week picker · team · search; NASCAR / F1 switch in Final Lap). Same component in CourtIQ, Slap Shot,
 // Six Points and Final Lap (Going Yard keeps its own tabs).
 // 2026-11-02: optional `footer(close)` renders under the pages (📦 Offline & data).
+// 2026-11-05 (user: too many pages, nothing says where to start): a tab's optional `group` (Today / Research / Track Record / App) puts
+// a small heading over the first page of each group; tabs without groups render as before (Final Lap).
 export default function TabMenu({ tabs, tab, setTab, footer }) {
   const [open, setOpen] = useState(false)
   const panel = useRef(null)
@@ -38,10 +40,13 @@ export default function TabMenu({ tabs, tab, setTab, footer }) {
           <button className="tm-close" aria-label="Close the menu" onClick={() => setOpen(false)}>✕</button>
         </div>
         <div className="tm-list">
-          {tabs.map((t) => (
-            <button key={t.key} className={`tm-item${t.key === current.key ? ' active' : ''}`} aria-current={t.key === current.key ? 'page' : undefined} onClick={() => pick(t.key)}>
-              {t.label}
-            </button>
+          {tabs.map((t, i) => (
+            <div key={t.key} className="tm-entry">
+              {t.group && t.group !== tabs[i - 1]?.group && <div className="tm-group">{t.group}</div>}
+              <button className={`tm-item${t.key === current.key ? ' active' : ''}`} aria-current={t.key === current.key ? 'page' : undefined} onClick={() => pick(t.key)}>
+                {t.label}
+              </button>
+            </div>
           ))}
           {footer?.(() => setOpen(false))}
         </div>

@@ -6,10 +6,14 @@
 // tables. Cards show the first 8 columns plus Opp D, last-N hit rates and the big number (Table view has the rest).
 // A "Table view" chip above each card list switches every list back (remembered in this browser).
 // Only data attributes are added to the table's own nodes (React never sets them), plus one toggle chip placed before the table.
+// 2026-11-05 (user: lists ran 65-104 phone screens): on a phone a list longer than CAP rows shows its first CAP (cards or table) and a
+// "Show all N" button after it; sorting and filters still work on the whole list (the hidden rows are only hidden). Wider screens: no cap.
 const KEY = "degen.tableMode";
 const SKIP = ".mini, .box-table, .nbs-t, .nhs-t, .gs-t, .pl-table, .no-cards";
 const MIN_COLS = 5;
 const ARROWS = /[↓↑▲▼]|⚙️?/g;
+const CAP = 25;
+const openCaps = new WeakSet();
 
 let mode = (() => { try { return localStorage.getItem(KEY) || "cards"; } catch { return "cards"; } })();
 let frame = 0;
@@ -57,16 +61,54 @@ function toggleFor(table, on) {
   for (const b of t.querySelectorAll("button")) b.classList.toggle("on", (b.dataset.m === "cards") === on);
 }
 
+function capFor(table) {
+  let b = table.nextElementSibling;
+  if (b && !b.hasAttribute("data-tc-cap")) b = null;
+  const n = table.tBodies[0]?.rows.length || 0;
+  if (!phone.matches || n <= CAP) {
+    b?.remove();
+    if (table.hasAttribute("data-cap")) table.removeAttribute("data-cap");
+    return;
+  }
+  const open = openCaps.has(table);
+  if (!table.hasAttribute("data-cap")) table.setAttribute("data-cap", "");
+  if (open !== table.hasAttribute("data-cap-open")) { if (open) table.setAttribute("data-cap-open", ""); else table.removeAttribute("data-cap-open"); }
+  if (!b) {
+    b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("data-tc-cap", "");
+    b.addEventListener("click", () => {
+      const t = b.previousElementSibling;
+      if (!t || t.tagName !== "TABLE") return;
+      if (openCaps.has(t)) { openCaps.delete(t); t.scrollIntoView({ block: "start" }); } else openCaps.add(t);
+      schedule();
+    });
+    table.parentNode.insertBefore(b, table.nextSibling);
+  }
+  const label = open ? `▴ Show the top ${CAP}` : `▾ Show all ${n}`;
+  if (b.textContent !== label) b.textContent = label;
+}
+
 function apply() {
   frame = 0;
   for (const t of document.querySelectorAll("[data-tc-toggle]")) {
     const nx = t.nextElementSibling;
     if (!nx || nx.tagName !== "TABLE") t.remove();
   }
+  for (const b of document.querySelectorAll("[data-tc-cap]")) {
+    const pv = b.previousElementSibling;
+    if (!pv || pv.tagName !== "TABLE") b.remove();
+  }
   for (const table of document.querySelectorAll("table")) {
-    if (!qualifies(table)) { if (table.hasAttribute("data-cards")) table.removeAttribute("data-cards"); continue; }
+    if (!qualifies(table)) {
+      if (table.hasAttribute("data-cards")) table.removeAttribute("data-cards");
+      if (table.hasAttribute("data-cap")) table.removeAttribute("data-cap");
+      if (table.nextElementSibling?.hasAttribute("data-tc-cap")) table.nextElementSibling.remove();
+      continue;
+    }
     const on = phone.matches && mode === "cards";
     toggleFor(table, on);
+    capFor(table);
     if (!on) { if (table.hasAttribute("data-cards")) table.removeAttribute("data-cards"); continue; }
     const cells = [...headerRow(table).cells];
     const labels = cells.map((th) => (th.textContent || "").replace(ARROWS, "").trim());

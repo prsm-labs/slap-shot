@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchScoredPool, useViewDate } from "../lib/data.js";
 import { liveFocus } from "../lib/nav.js";
+import { addDays, useSchedule } from "./ScheduleTab.jsx";
 import { easternToday } from "../lib/liveGoals.js";
 import { openSkaterSlide } from "../slideouts.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
@@ -111,7 +112,31 @@ function GameCard({ g, selected, onSelect, onBox, boxOpen }) {
   );
 }
 
-export default function LiveTab() {
+// 2026-11-05 📺 Scores (user: one page for this slate plus past and future games): a 7-day rail around the shown date -- each day's
+// game count from the NHL schedule feed; tap a day for its games (box scores after puck drop, lineups before)
+function DayRail({ date, onPick, today }) {
+  const start = addDays(date, -3);
+  const data = useSchedule(start, 7);
+  const days = Array.from({ length: 7 }, (_, i) => addDays(start, i));
+  const count = Object.fromEntries((data?.days || []).map((d) => [d.date, d.games]));
+  return (
+    <div className="day-rail" role="tablist" aria-label="Pick a day">
+      {days.map((d) => {
+        const g = count[d];
+        const live = g?.some((x) => LIVE.has(x.state));
+        return (
+          <button key={d} role="tab" aria-selected={d === date} className={`day-chip ${d === date ? "active" : ""} ${g && !g.length ? "empty" : ""}`} onClick={() => onPick(d)}>
+            <span className="dc-wd">{d === today ? "Today" : new Date(`${d}T12:00:00`).toLocaleDateString([], { weekday: "short" })}</span>
+            <span className="dc-day">{new Date(`${d}T12:00:00`).toLocaleDateString([], { month: "numeric", day: "numeric" })}</span>
+            <span className={`dc-n ${live ? "live" : ""}`}>{g ? (live ? "● live" : g.length ? `${g.length} game${g.length > 1 ? "s" : ""}` : "—") : "·"}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+export default function LiveTab({ embedded }) {
   const viewDate = useViewDate(); // 2026-10-23: opens on the date picker's night
   // 2026-10-23: opened from a Schedule row or a slideout's matchup (lib/nav.js openGame) -> that date + that game's box score
   const focus = liveFocus.use();
@@ -221,10 +246,11 @@ export default function LiveTab() {
 
   return (
     <div>
-      <div className="section-header">
+      {!embedded && <div className="section-header">
         <div className="section-title">🔴 Live</div>
         <div className="section-sub">Tonight's games and who's heating up — built from every real shot in the NHL's live feed</div>
-      </div>
+      </div>}
+      <DayRail date={date} onPick={setDate} today={today} />
 
       <div className="pill-row" style={{ display: "inline-flex", marginBottom: 12 }}>
         <button className={`pill-btn ${view === "games" ? "active" : ""}`} onClick={() => setView("games")}>🔴 Games & Heating Up</button>

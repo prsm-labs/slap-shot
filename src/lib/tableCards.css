@@ -1,5 +1,6 @@
 /* 📱 Phone cards (lib/tableCards.js) -- same file in CourtIQ, Slap Shot, Six Points and Final Lap. Phone width only. */
 [data-tc-toggle] { display: none; }
+[data-tc-cap] { display: none; }
 /* prop band (PropBand.jsx): its own column, shown only in phone cards; tc-more cells fold behind the band's More ▾ there */
 th.tc-band, td.tc-band { display: none; }
 @media (max-width: 640px) {
@@ -58,4 +59,10 @@ th.tc-band, td.tc-band { display: none; }
   table[data-cards] > tbody > tr[data-tc-full] > td::before { display: none; }
   table[data-cards] > tfoot { display: block; }
   table[data-cards] > tfoot > tr { display: flex; flex-wrap: wrap; gap: 8px; }
+}
+/* 2026-11-05 phone cap: first 25 rows, then a Show all button (tableCards.js capFor) */
+@media (max-width: 640px) {
+  table[data-cap]:not([data-cap-open]) > tbody > tr:nth-child(n+26) { display: none !important; }
+  [data-tc-cap] { display: block; width: 100%; margin: 8px 0 14px; min-height: 40px; border: 1px solid var(--accent); border-radius: 12px;
+    background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--accent); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
 }

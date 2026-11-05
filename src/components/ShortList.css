@@ -1,0 +1,20 @@
+/* ⚡ Today's short list (ShortList.jsx) -- same file in CourtIQ, Slap Shot and Six Points */
+.short-list { border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--border)); background: color-mix(in srgb, var(--accent) 5%, var(--surface, var(--bg))); margin: 8px 0 12px; }
+.sl-head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
+.sl-head b { font-size: 15px; }
+.sl-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-top: 1px solid var(--border); cursor: pointer; }
+.sl-row:first-of-type { border-top: 0; }
+.sl-tag { font-size: 10.5px; font-weight: 700; padding: 3px 7px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--border); color: var(--muted); }
+.sl-tag.safe { color: #d4a72c; border-color: #d4a72c; }
+.sl-tag.mid { color: var(--accent); border-color: var(--accent); }
+.sl-tag.radar { color: #8b6cff; border-color: #8b6cff; }
+.sl-tag.edge { color: #2fae5c; border-color: #2fae5c; }
+.sl-tag.long { color: #e5484d; border-color: #e5484d; }
+.sl-main { min-width: 0; }
+.sl-name { font-weight: 600; overflow-wrap: break-word; }
+.sl-line { font-size: 13px; }
+.sl-why { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sl-big { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.sl-big b { font-size: 19px; color: var(--accent); }
+.sl-res.hit { color: #2fae5c; } .sl-res.miss { color: #e5484d; }
+@media (max-width: 640px) { .sl-row { grid-template-columns: minmax(0, 1fr) auto; } .sl-tag { grid-column: 1 / -1; justify-self: start; } }

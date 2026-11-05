@@ -9,22 +9,16 @@ import DateBar, { PastNightGuard } from "./components/DateBar.jsx";
 import MasterFilter from "./components/MasterFilter.jsx";
 import { useViewDate } from "./lib/data.js";
 import { tabRequest } from "./lib/nav.js";
-import GoalTrackerTab from "./tabs/GoalTrackerTab.jsx";
-import LiveTab from "./tabs/LiveTab.jsx";
+import ScoresTab, { showScoresView } from "./tabs/ScoresTab.jsx"; // 2026-11-05: Live + Schedule + Tonight so far + Goal Tracker
 import MatchupsHubTab from "./tabs/MatchupsHubTab.jsx";
 import FirstGoalTab from "./tabs/FirstGoalTab.jsx";
 import CalledUpTab from "./tabs/CalledUpTab.jsx";
-import ProjectionsTab from "./tabs/ProjectionsTab.jsx";
-import GameSimTab from "./tabs/GameSimTab.jsx"; // 2026-10-29: 🎬 10,000 simulated games per matchup + replay
+import GameHubTab from "./tabs/GameHubTab.jsx"; // 2026-11-05: 🎬 Game Sim + 🔮 Projections (win model)
 import TrackRecordTab from "./tabs/TrackRecordTab.jsx";
-import TonightSoFarTab from "./tabs/TonightSoFarTab.jsx"; // 2026-10-25: holds Goal Flurries (LiveThemesTab) as its 2nd view
-import SplitsTab from "./tabs/SplitsTab.jsx";
-import StatsTab from "./tabs/StatsTab.jsx";
-import ScheduleTab from "./tabs/ScheduleTab.jsx";
+import StatsHubTab from "./tabs/StatsHubTab.jsx"; // 2026-11-05: 📊 Stats + Splits + Matchup Lookup
 import CheatSheetsTab from "./tabs/CheatSheetsTab.jsx";
 import Top3Tab from "./tabs/Top3Tab.jsx";
 import MyPicksTab from "./tabs/MyPicksTab.jsx";
-import MatchupLookupTab from "./tabs/MatchupLookupTab.jsx";
 import AboutTab from "./tabs/AboutTab.jsx";
 import TabMenu from "./components/TabMenu.jsx";
 import { OfflineBanner, OfflineMenuButton } from "./components/Offline.jsx";
@@ -36,28 +30,23 @@ const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
 // Odds Calculator removed per direct user feedback ("we don't need the odds calculator") —
 // OddsCalculatorTab.jsx / lib/odds.js are left on disk, unreferenced, same convention as other
 // superseded assets in this repo (not deleted without being asked).
+// 2026-11-05 (user: too many pages for a 5-10 minute visit): grouped menu -- Today / Research / Track Record / App. Live + Schedule +
+// Tonight so far + Goal Tracker are one 📺 Scores page (key "livegames" kept so every "open the game" link lands there); Splits +
+// Matchup Lookup fold into 📊 Stats; 🔮 Projections (the win model) sits beside 🎬 Game Sim. Every old page is still there as a view.
 const TABS = [
-  { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab },
-  { key: "top3", label: "🏆 Top 3 Tonight", Component: Top3Tab },
-  { key: "picks", label: "⭐ My Picks", Component: MyPicksTab },
-  { key: "livegames", label: "🔴 Live", Component: LiveTab },
-  { key: "goals", label: "🚨 Goal Tracker", Component: GoalTrackerTab },
+  { key: "cheat", label: "📋 Cheat Sheets", Component: CheatSheetsTab, group: "Today" },
+  { key: "top3", label: "🏆 Top 3 Tonight", Component: Top3Tab, group: "Today" },
+  { key: "picks", label: "⭐ My Picks", Component: MyPicksTab, group: "Today" },
+  { key: "livegames", label: "📺 Scores", Component: ScoresTab, group: "Today" },
   // Scouting holds All Matchups (default) plus Lamp / Apple / Crease Lab as in-page buttons.
-  { key: "board", label: "🎯 Scouting", Component: MatchupsHubTab },
+  { key: "board", label: "🎯 Scouting", Component: MatchupsHubTab, group: "Research" },
   // 2026-10-20: every skater / goalie / team, game by game, this season + last (build_stats.py).
-  { key: "stats", label: "📊 Stats", Component: StatsTab },
-  { key: "schedule", label: "📅 Schedule", Component: ScheduleTab }, // 2026-10-23: upcoming games + recent scores
-  { key: "projections", label: "🔮 Projections", Component: ProjectionsTab },
-  { key: "gamesim", label: "🎬 Game Sim", Component: GameSimTab }, // 2026-10-29: RotoBot-style simulated games (replay + 10,000-game box score)
-  { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab },
-  { key: "calledup", label: "🆙 Called Up", Component: CalledUpTab },
-  { key: "track", label: "📈 Track Record", Component: TrackRecordTab },
-  // Goal flurries by date (live tonight, nightly log before). Formerly "Live Themes".
-  // 2026-10-25: now 📡 Tonight so far (the slate vs our chances, context only) with ⚡ Goal Flurries as its second view.
-  { key: "live", label: "📡 Tonight so far", Component: TonightSoFarTab },
-  { key: "splits", label: "📊 Splits", Component: SplitsTab },
-  { key: "lookup", label: "🔍 Matchup Lookup", Component: MatchupLookupTab },
-  { key: "about", label: "📌 About", Component: AboutTab },
+  { key: "stats", label: "📊 Stats", Component: StatsHubTab, group: "Research" },
+  { key: "gamesim", label: "🎬 Game Sim", Component: GameHubTab, group: "Research" }, // 2026-10-29: RotoBot-style simulated games (replay + 10,000-game box score)
+  { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab, group: "Research" },
+  { key: "calledup", label: "🆙 Called Up", Component: CalledUpTab, group: "Research" },
+  { key: "track", label: "📈 Track Record", Component: TrackRecordTab, group: "Track Record" },
+  { key: "about", label: "📌 About", Component: AboutTab, group: "App" },
 ];
 
 export default function App() {
@@ -96,7 +85,7 @@ export default function App() {
       <OfflineBanner />
 
       <NotificationBar />
-      <GoalTicker onClick={() => setTab("goals")} />
+      <GoalTicker onClick={() => { showScoresView("goals"); setTab("livegames"); }} />
       {/* 2026-10-22: one CourtIQ-style matchup strip above the tabs; it narrows every page */}
       <GameStrip />
 

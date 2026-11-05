@@ -21,8 +21,11 @@ import { useListFilters } from "../lib/listFilters.js";
 import { useRadar } from "../lib/radar.js";
 import { RadarCard } from "./RadarTab.jsx";
 import { OppDefBadge } from "../lib/oppDef.jsx";
-import { useMulti } from "../lib/multi.js";
+import { useJson, useMulti } from "../lib/multi.js";
 import { MultiCard } from "./MultiTab.jsx";
+import ShortList from "../components/ShortList.jsx";
+import { prismPicks, tierPicks } from "../lib/prismPicks.js";
+import { radarLabel } from "../lib/radar.js";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -115,6 +118,43 @@ function CheatSheetMain() {
   const radar = useRadar(radarPool, Boolean(pool?.past), meta?.slateDate);
   // 2026-11-03 🎯 / 🍎 multi-point + multi-assist lists (lib/multi.js), right after the point card
   const multi = useMulti(radarPool, Boolean(pool?.past), meta?.slateDate);
+  // 2026-11-05 ⚡ Today's short list: PRISM Pick, mid-range, under the radar, multi-point, long shot -- the top of each tested list,
+  // one player each. PRISM levels are picked on the whole slate (same picks as the card below), then kept to the filtered players.
+  const ppData = useJson("/data/prism_picks.json");
+  const ppOdds = useJson("/data/prop_odds.json");
+  const shortItems = useMemo(() => {
+    if (!radarPool || !ppData?.knots) return [];
+    const ids = new Set(radarPool.map((p) => p.playerId));
+    const byId = new Map(radarPool.map((p) => [p.playerId, p]));
+    const pct = (v) => (v == null ? "—" : `${Math.round(v * 100)}%`);
+    const vs = (p) => `${p.team} ${p.isHome === false ? "@" : "vs"} ${p.opponentTeam}`;
+    let lv;
+    if (pool?.past) {
+      const n = ppData.nights?.find((x) => x.date === meta?.slateDate);
+      const conv = (arr) => (arr || []).filter((c) => byId.has(c.playerId)).map((c) => ({ ...c, p: byId.get(c.playerId), shown: pct(c.chance), shownSub: "model" }));
+      lv = { safe: conv(n?.picks), mid: conv(n?.tiers?.mid), long: conv(n?.tiers?.long) };
+    } else {
+      const safe = prismPicks(players, ppData, ppOdds);
+      const mid = tierPicks(players, ppData, ppOdds, "mid", new Set(safe.map((c) => c.p.playerId)));
+      const long = tierPicks(players, ppData, ppOdds, "long", new Set([...safe, ...mid].map((c) => c.p.playerId)));
+      const keep = (arr) => arr.filter((c) => ids.has(c.p.playerId)).map((c) => ({ ...c, shown: pct(c.track.rate), shownSub: "track record",
+        why: `had it in ${c.last[1]} of his last ${c.last[0]}` }));
+      lv = { safe: keep(safe), mid: keep(mid), long: keep(long) };
+    }
+    const item = (c, tag, cls) => c && { key: `${cls}-${c.p.playerId}`, tag, tagCls: cls, name: c.p.name, team: vs(c.p), line: c.label, big: c.shown, bigSub: c.shownSub,
+      why: c.why || (c.last ? `had it in ${c.last[1]} of his last ${c.last[0]}` : ""), result: c.result, onOpen: () => openSkaterSlide(c.p),
+      action: <><PickButton player={c.p} /> <GamblyButton text={`${c.p.name} (${c.p.team}) — ${c.label}`} /></> };
+    const listItem = (f, tag, cls, label) => f && { key: `${cls}-${f.playerId}`, tag, tagCls: cls, name: f.p.name, team: vs(f.p), line: label(f), big: pct(f.chance),
+      bigSub: `his ${pct(f.own)}`, why: `had it in ${f.hits} of his last ${f.n}`, onOpen: () => openSkaterSlide(f.p), action: <PickButton player={f.p} /> };
+    const top5 = (arr, fn) => (arr || []).slice(0, 5).map(fn);
+    return [
+      top5(lv.safe, (c) => item(c, "💎 PRISM Pick", "safe")),
+      top5(lv.mid, (c) => item(c, "⚖️ Mid-range", "mid")),
+      top5(radar.picks, (f) => listItem(f, "🔦 Under the radar", "radar", radarLabel)),
+      top5(multi.lists?.PTS, (f) => listItem(f, "🎯 Multi-point", "edge", (x) => `${x.line}+ points`)),
+      top5(lv.long, (c) => item(c, "🌠 Long shot", "long")),
+    ];
+  }, [radarPool, players, ppData, ppOdds, radar.picks, multi.lists, pool?.past, meta?.slateDate]);
   const slateByTeam = useMemo(() => {
     const m = new Map();
     for (const g of meta?.slate || []) { m.set(g.away, g); m.set(g.home, g); }
@@ -181,6 +221,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   return (
     <div>
       <SlateStatus />
+      <ShortList items={shortItems} past={pool?.past} />
       <PrismPicks players={players} date={pool?.past ? pool.meta.slateDate : null} />
 
       <div className="note">

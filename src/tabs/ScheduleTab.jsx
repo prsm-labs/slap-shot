@@ -22,7 +22,7 @@ function easternToday() {
     .formatToParts(new Date()).map((x) => [x.type, x.value]));
   return `${p.year}-${p.month}-${p.day}`;
 }
-function addDays(ymd, n) {
+export function addDays(ymd, n) {
   const d = new Date(`${ymd}T12:00:00Z`);
   d.setUTCDate(d.getUTCDate() + n);
   return d.toISOString().slice(0, 10);
@@ -30,7 +30,7 @@ function addDays(ymd, n) {
 const dayLabel = (ymd, opts) => new Date(`${ymd}T12:00:00`).toLocaleDateString([], opts);
 const timeEt = (utc) => (utc ? new Date(utc).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }) + " ET" : "");
 
-function useSchedule(start, days) {
+export function useSchedule(start, days) {
   const [data, setData] = useState(null);
   useEffect(() => {
     let alive = true, timer = null;
@@ -102,7 +102,7 @@ function GameRow({ g, focus, date }) {
   );
 }
 
-export default function ScheduleTab() {
+export default function ScheduleTab({ embedded }) {
   const today = easternToday();
   const [view, setView] = useState("upcoming");
   const [offset, setOffset] = useState(0);
@@ -124,10 +124,10 @@ export default function ScheduleTab() {
   const pick = (v) => { setView(v); setOffset(0); };
   return (
     <div>
-      <div className="section-header">
+      {!embedded && <div className="section-header">
         <div className="section-title">📅 Schedule</div>
         <div className="section-sub">Upcoming games and recent scores, from the NHL's schedule feed.</div>
-      </div>
+      </div>}
       <div className="sch-controls">
         <div className="pill-row">
           <button className={`pill-btn ${view === "upcoming" ? "active" : ""}`} onClick={() => pick("upcoming")}>📅 Upcoming</button>
