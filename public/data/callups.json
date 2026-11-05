@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-11-04 17:34",
+  "generated": "2026-11-05 07:05",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 97,
@@ -205,11 +205,20 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 0,
+     "team": "Chicago Blackhawks"
+    },
     "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -337,6 +346,61 @@
    }
   },
   {
+   "playerId": 8485138,
+   "name": "Viliam Kmec",
+   "team": "VGK",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2004-01-02",
+   "sweater": 74,
+   "draft": null,
+   "recalledOn": "2026-11-01",
+   "from": "Henderson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-04",
+   "events": [
+    {
+     "date": "2026-11-01",
+     "type": "up",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-11-04",
+     "type": "down",
+     "club": "Henderson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 0,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 1,
+     "pim": 10,
+     "team": "Henderson Silver Knights"
+    },
+    "last": {
+     "gamesPlayed": 65,
+     "goals": 4,
+     "assists": 12,
+     "points": 16,
+     "plusMinus": 12,
+     "pim": 27,
+     "team": "Henderson Silver Knights"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
    "playerId": 8481827,
    "name": "Ben McCartney",
    "team": "UTA",
@@ -389,56 +453,6 @@
     "careerGp": 2,
     "careerG": 0,
     "careerP": 0
-   }
-  },
-  {
-   "playerId": 8485138,
-   "name": "Viliam Kmec",
-   "team": "VGK",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "2004-01-02",
-   "sweater": 74,
-   "draft": null,
-   "recalledOn": "2026-11-01",
-   "from": "Henderson",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-01",
-     "type": "up",
-     "club": "Henderson"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 10,
-     "goals": 0,
-     "assists": 3,
-     "points": 3,
-     "plusMinus": 1,
-     "pim": 10,
-     "team": "Henderson Silver Knights"
-    },
-    "last": {
-     "gamesPlayed": 65,
-     "goals": 4,
-     "assists": 12,
-     "points": 16,
-     "plusMinus": 12,
-     "pim": 27,
-     "team": "Henderson Silver Knights"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
    }
   },
   {
@@ -553,7 +567,7 @@
     {
      "date": "2026-11-04",
      "type": "down",
-     "club": "minors"
+     "club": "Iowa"
     }
    ],
    "ahl": {
@@ -618,11 +632,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 3,
+     "plusMinus": 2,
      "pim": 2,
      "team": "Hamilton Hammers"
     },
@@ -822,7 +836,7 @@
    "fromLeague": "AHL",
    "timesRecalled": 2,
    "status": "down",
-   "sentDownOn": null,
+   "sentDownOn": "2026-11-04",
    "events": [
     {
      "date": "2026-10-26",
@@ -832,6 +846,11 @@
     {
      "date": "2026-10-30",
      "type": "up",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-11-04",
+     "type": "down",
      "club": "Henderson"
     }
    ],
@@ -1132,13 +1151,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 1,
      "assists": 0,
      "points": 1,
      "plusMinus": 2,
      "pim": 0,
-     "shots": 2,
+     "shots": 3,
      "team": "Calgary Flames"
     },
     "last": {
@@ -1348,17 +1367,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 1,
+     "shots": 3,
      "team": "Los Angeles Kings"
     },
     "last": null,
-    "careerGp": 1,
+    "careerGp": 2,
     "careerG": 0,
     "careerP": 0
    }
@@ -1455,11 +1474,16 @@
    "fromLeague": "AHL",
    "timesRecalled": 1,
    "status": "down",
-   "sentDownOn": null,
+   "sentDownOn": "2026-11-04",
    "events": [
     {
      "date": "2026-10-28",
      "type": "up",
+     "club": "San Jose"
+    },
+    {
+     "date": "2026-11-04",
+     "type": "down",
      "club": "San Jose"
     }
    ],
@@ -1532,17 +1556,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -2,
-     "pim": 0,
-     "shots": 3,
+     "plusMinus": -3,
+     "pim": 2,
+     "shots": 5,
      "team": "San Jose Sharks"
     },
     "last": null,
-    "careerGp": 3,
+    "careerGp": 4,
     "careerG": 0,
     "careerP": 0
    }
@@ -1739,12 +1763,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 0,
      "assists": 2,
      "points": 2,
-     "plusMinus": -10,
-     "pim": 30,
+     "plusMinus": -14,
+     "pim": 37,
      "team": "Hamilton Hammers"
     },
     "last": null
@@ -1791,11 +1815,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 2,
      "assists": 5,
      "points": 7,
-     "plusMinus": -2,
+     "plusMinus": -5,
      "pim": 8,
      "team": "Hamilton Hammers"
     },
@@ -1848,11 +1872,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 9,
+     "gamesPlayed": 10,
      "goals": 1,
      "assists": 7,
      "points": 8,
-     "plusMinus": -5,
+     "plusMinus": -7,
      "pim": 6,
      "team": "Texas Stars"
     },
@@ -2072,13 +2096,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 1,
      "pim": 0,
-     "shots": 1,
+     "shots": 3,
      "team": "Seattle Kraken"
     },
     "last": {
@@ -2328,11 +2352,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 0,
-     "assists": 3,
-     "points": 3,
-     "plusMinus": 1,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": 4,
      "pim": 2,
      "team": "Toronto Marlies"
     },
@@ -3165,12 +3189,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
-     "goals": 7,
+     "gamesPlayed": 6,
+     "goals": 8,
      "assists": 1,
-     "points": 8,
-     "plusMinus": 1,
-     "pim": 4,
+     "points": 9,
+     "plusMinus": -1,
+     "pim": 8,
      "team": "Lehigh Valley Phantoms"
     },
     "last": {
@@ -3408,7 +3432,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 0,
      "assists": 0,
      "points": 0,
@@ -3427,7 +3451,7 @@
      "shots": 25,
      "team": "Florida Panthers"
     },
-    "careerGp": 84,
+    "careerGp": 85,
     "careerG": 6,
     "careerP": 15
    }
@@ -3603,11 +3627,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 1,
      "assists": 2,
      "points": 3,
-     "plusMinus": 1,
+     "plusMinus": 2,
      "pim": 2,
      "team": "Lehigh Valley Phantoms"
     },
@@ -4033,11 +4057,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 2,
      "assists": 5,
      "points": 7,
-     "plusMinus": 2,
+     "plusMinus": 1,
      "pim": 4,
      "team": "Hershey Bears"
     },
@@ -4163,11 +4187,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 2,
      "assists": 5,
      "points": 7,
-     "plusMinus": 2,
+     "plusMinus": 1,
      "pim": 4,
      "team": "Hershey Bears"
     },
@@ -4288,10 +4312,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 3,
-     "assists": 2,
-     "points": 5,
+     "assists": 3,
+     "points": 6,
      "plusMinus": 2,
      "pim": 2,
      "team": "Hartford Wolf Pack"
@@ -4519,12 +4543,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 9,
-     "goals": 1,
+     "gamesPlayed": 10,
+     "goals": 2,
      "assists": 3,
-     "points": 4,
-     "plusMinus": 6,
-     "pim": 16,
+     "points": 5,
+     "plusMinus": 7,
+     "pim": 18,
      "team": "Laval Rocket"
     },
     "last": {
@@ -4587,7 +4611,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 2,
      "assists": 6,
      "points": 8,
@@ -4675,11 +4699,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": 2,
      "pim": 6,
      "team": "Rochester Americans"
     },
@@ -5046,11 +5070,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": -1,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 0,
      "pim": 0,
      "team": "Hershey Bears"
     },
@@ -5520,7 +5544,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 3,
      "assists": 4,
      "points": 7,
@@ -5864,7 +5888,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 0,
      "assists": 3,
      "points": 3,
@@ -5928,13 +5952,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 4,
      "assists": 1,
      "points": 5,
      "plusMinus": -5,
      "pim": 4,
-     "shots": 19,
+     "shots": 21,
      "team": "Calgary Flames"
     },
     "last": {
