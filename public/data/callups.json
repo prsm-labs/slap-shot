@@ -1,13 +1,151 @@
 {
  "_meta": {
-  "generated": "2026-11-05 12:05",
+  "generated": "2026-11-05 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 97,
-  "up": 47,
+  "count": 98,
+  "up": 48,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8483442,
+   "name": "Jagger Firkus",
+   "team": "SEA",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2004-04-29",
+   "sweater": 57,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "SEA",
+    "round": 2,
+    "overallPick": 35
+   },
+   "recalledOn": "2026-11-05",
+   "from": "Coachella Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-05",
+     "type": "up",
+     "club": "Coachella Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 4,
+     "assists": 8,
+     "points": 12,
+     "plusMinus": 1,
+     "pim": 4,
+     "team": "Coachella Valley Firebirds"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 21,
+     "assists": 35,
+     "points": 56,
+     "plusMinus": 13,
+     "pim": 18,
+     "team": "Coachella Valley Firebirds"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8484242,
+   "name": "Brayden Yager",
+   "team": "WPG",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2005-01-03",
+   "sweater": 29,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "PIT",
+    "round": 1,
+    "overallPick": 14
+   },
+   "recalledOn": "2026-11-05",
+   "from": "Manitoba",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Manitoba"
+    },
+    {
+     "date": "2026-10-23",
+     "type": "down",
+     "club": "Manitoba"
+    },
+    {
+     "date": "2026-11-05",
+     "type": "up",
+     "club": "Manitoba"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 7,
+     "assists": 5,
+     "points": 12,
+     "plusMinus": 5,
+     "pim": 4,
+     "team": "Manitoba Moose"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 10,
+     "assists": 20,
+     "points": 30,
+     "plusMinus": -15,
+     "pim": 10,
+     "team": "Manitoba Moose"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 1,
+     "team": "Winnipeg Jets"
+    },
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 2,
+     "team": "Winnipeg Jets"
+    },
+    "careerGp": 4,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
   {
    "playerId": 8486169,
    "name": "Jake Livanavage",
@@ -572,12 +710,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 4,
      "assists": 6,
      "points": 10,
      "plusMinus": 0,
-     "pim": 13,
+     "pim": 17,
      "team": "Iowa Wild"
     },
     "last": {
@@ -815,6 +953,105 @@
     "careerGp": 74,
     "careerG": 6,
     "careerP": 18
+   }
+  },
+  {
+   "playerId": 8482949,
+   "name": "Arsenii Sergeev",
+   "team": "CGY",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2002-12-16",
+   "sweater": 35,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "CGY",
+    "round": 7,
+    "overallPick": 205
+   },
+   "recalledOn": "2026-10-30",
+   "from": "Calgary",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-05",
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Calgary"
+    },
+    {
+     "date": "2026-10-30",
+     "type": "up",
+     "club": "Calgary"
+    },
+    {
+     "date": "2026-11-05",
+     "type": "down",
+     "club": "Calgary"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "wins": 4,
+     "losses": 2,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 17,
+     "shotsAgainst": 183,
+     "team": "Calgary Wranglers",
+     "savePct": 0.907,
+     "gaa": 2.86
+    },
+    "last": {
+     "gamesPlayed": 29,
+     "wins": 6,
+     "losses": 13,
+     "otLosses": 7,
+     "shutouts": 0,
+     "goalsAgainst": 91,
+     "shotsAgainst": 889,
+     "team": "Calgary Wranglers",
+     "savePct": 0.898,
+     "gaa": 3.35
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 0,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 5,
+     "shotsAgainst": 34,
+     "team": "Calgary Flames",
+     "savePct": 0.853,
+     "gaa": 5.0
+    },
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 1,
+     "losses": 0,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 1,
+     "shotsAgainst": 28,
+     "team": "Calgary Flames",
+     "savePct": 0.964,
+     "gaa": 1.0
+    },
+    "careerGp": 2,
+    "careerG": 0,
+    "careerP": null
    }
   },
   {
@@ -1173,100 +1410,6 @@
     "careerGp": 5,
     "careerG": 1,
     "careerP": 1
-   }
-  },
-  {
-   "playerId": 8482949,
-   "name": "Arsenii Sergeev",
-   "team": "CGY",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2002-12-16",
-   "sweater": 35,
-   "draft": {
-    "year": 2021,
-    "teamAbbrev": "CGY",
-    "round": 7,
-    "overallPick": 205
-   },
-   "recalledOn": "2026-10-30",
-   "from": "Calgary",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Calgary"
-    },
-    {
-     "date": "2026-10-30",
-     "type": "up",
-     "club": "Calgary"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "wins": 4,
-     "losses": 2,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 17,
-     "shotsAgainst": 183,
-     "team": "Calgary Wranglers",
-     "savePct": 0.907,
-     "gaa": 2.86
-    },
-    "last": {
-     "gamesPlayed": 29,
-     "wins": 6,
-     "losses": 13,
-     "otLosses": 7,
-     "shutouts": 0,
-     "goalsAgainst": 91,
-     "shotsAgainst": 889,
-     "team": "Calgary Wranglers",
-     "savePct": 0.898,
-     "gaa": 3.35
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 0,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 5,
-     "shotsAgainst": 34,
-     "team": "Calgary Flames",
-     "savePct": 0.853,
-     "gaa": 5.0
-    },
-    "last": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 1,
-     "losses": 0,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 1,
-     "shotsAgainst": 28,
-     "team": "Calgary Flames",
-     "savePct": 0.964,
-     "gaa": 1.0
-    },
-    "careerGp": 2,
-    "careerG": 0,
-    "careerP": null
    }
   },
   {
@@ -3234,84 +3377,6 @@
    }
   },
   {
-   "playerId": 8484242,
-   "name": "Brayden Yager",
-   "team": "WPG",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2005-01-03",
-   "sweater": 29,
-   "draft": {
-    "year": 2023,
-    "teamAbbrev": "PIT",
-    "round": 1,
-    "overallPick": 14
-   },
-   "recalledOn": "2026-10-19",
-   "from": "Manitoba",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-23",
-   "events": [
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Manitoba"
-    },
-    {
-     "date": "2026-10-23",
-     "type": "down",
-     "club": "Manitoba"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 10,
-     "goals": 7,
-     "assists": 5,
-     "points": 12,
-     "plusMinus": 5,
-     "pim": 4,
-     "team": "Manitoba Moose"
-    },
-    "last": {
-     "gamesPlayed": 68,
-     "goals": 10,
-     "assists": 20,
-     "points": 30,
-     "plusMinus": -15,
-     "pim": 10,
-     "team": "Manitoba Moose"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 1,
-     "team": "Winnipeg Jets"
-    },
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 2,
-     "shots": 2,
-     "team": "Winnipeg Jets"
-    },
-    "careerGp": 4,
-    "careerG": 0,
-    "careerP": 0
-   }
-  },
-  {
    "playerId": 8482515,
    "name": "Artur Akhtyamov",
    "team": "TOR",
@@ -3710,7 +3775,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 3,
      "assists": 3,
      "points": 6,
@@ -4777,10 +4842,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
-     "goals": 6,
+     "gamesPlayed": 13,
+     "goals": 7,
      "assists": 4,
-     "points": 10,
+     "points": 11,
      "plusMinus": 2,
      "pim": 6,
      "team": "Iowa Wild"
@@ -5618,7 +5683,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 2,
      "assists": 1,
      "points": 3,
@@ -5803,12 +5868,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 1,
-     "assists": 3,
-     "points": 4,
+     "assists": 5,
+     "points": 6,
      "plusMinus": -7,
-     "pim": 4,
+     "pim": 6,
      "team": "Rockford IceHogs"
     },
     "last": {
