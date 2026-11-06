@@ -31,14 +31,15 @@ export default function SlateStatus() {
           {l.swaps.length} goalie change{l.swaps.length === 1 ? "" : "s"} · {l.removed.length} out/scratched {open ? "▲" : "▼"}
         </button>
       )}
-      {l.started > 0 && !allStarted && (
+      {/* 2026-11-05: hides finished games only (live games stay) -- lib/data.js */}
+      {l.final > 0 && !allFinal && (
         <button className={`pill-btn ${upcomingOnly ? "active" : ""}`} onClick={() => setUpcomingOnly(!upcomingOnly)}>
-          {upcomingOnly ? "Upcoming games only ✓" : "Showing started games too"}
+          {upcomingOnly ? "🏁 Hide completed games ✓" : "🏁 Showing completed games"}
         </button>
       )}
       {allFinal && <span>All games final — the next slate posts after the 9 AM ET update.</span>}
       {!allFinal && allStarted && <span>Every game has started — these are pre-game projections.</span>}
-      {filtering && <span style={{ color: "var(--muted)" }}>{l.started} started game{l.started === 1 ? "" : "s"} hidden.</span>}
+      {filtering && <span style={{ color: "var(--muted)" }}>{l.final} finished game{l.final === 1 ? "" : "s"} hidden (live games stay). Tap to see how they did.</span>}
       {open && (
         <div className="mono" style={{ flexBasis: "100%", fontSize: 11, marginTop: 4 }}>
           {l.swaps.map((s) => (

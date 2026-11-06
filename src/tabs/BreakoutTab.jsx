@@ -117,7 +117,7 @@ export default function BreakoutTab() {
       )}
       <div className="mono" style={{ fontSize: 9, color: "var(--muted)", marginTop: 6 }}>
         {board.list.length} of {board.eligible} eligible skaters qualify tonight. Early in the season "last 5 games" can include
-        last season's final games. Started games drop off while "upcoming games only" is on.
+        last season's final games. Finished games drop off while "🏁 Hide completed games" is on.
       </div>
     </div>
   );

@@ -42,6 +42,7 @@ function subscribe(fn) {
 }
 
 const current = () => selected || (team ? `TEAM:${team}` : null);
+export const currentMatchupKey = current; // 2026-11-05: lib/data.js keeps a picked game on the lists even when it's final
 export function useMatchup() {
   return useSyncExternalStore(subscribe, current);
 }

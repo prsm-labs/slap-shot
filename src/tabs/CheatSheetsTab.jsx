@@ -102,7 +102,7 @@ function ListCard({ title, sub, items, renderRow, onClick, statusOf, oppGoalieOf
 
 function CheatSheetMain() {
   // Live slate pool (lib/data.js): opposing goalies, scratches and scores follow lineup news, and
-  // games already under way drop off while "upcoming games only" is on.
+  // finished games drop off while "🏁 Hide completed games" is on (2026-11-05; live games stay).
   const pool = useScoredPool();
   const players = pool?.players ?? null;
   const goalies = pool?.goalies ?? null;

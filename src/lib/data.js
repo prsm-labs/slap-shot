@@ -9,7 +9,8 @@ import { applySlateScores } from "./slapScore.js";
 import { estimatedToi, ppToiPerGame } from "./toi.js";
 import { last120 } from "./last120.js";
 import { fetchLineups, lineupPollMs } from "./lineups.js";
-import { applyLineups, STARTED } from "./slateOverlay.js";
+import { applyLineups, DONE } from "./slateOverlay.js";
+import { currentMatchupKey, teamsOf } from "./matchupFilter.js";
 import { marketPct } from "./market.js";
 import { fetchTeamRatings, projectGame } from "./gameModel.js";
 
@@ -183,6 +184,9 @@ function subscribe(fn) {
 
 // "Upcoming games only" (app-wide, on by default): pre-game projections for games already under
 // way are hidden — unless every game has started, then everything stays visible, marked LIVE/FINAL.
+// 2026-11-05 (user: across the apps, hide only COMPLETED games -- live games stay; a finished game's pre-game numbers are
+// already frozen for the Track Record): now 🏁 Hide completed games -- FINAL / OFF games' skaters are hidden, live ones stay,
+// unless every game is final; a game picked in the strip (or the header team) stays even when it's final. Names kept.
 let upcomingOnly = true;
 const upcomingViews = new WeakMap();
 export function setUpcomingOnly(v) {
@@ -190,19 +194,24 @@ export function setUpcomingOnly(v) {
   notify();
 }
 export function upcomingFilterActive(pool) {
-  return Boolean(upcomingOnly && pool && pool.live.started > 0 && pool.live.started < pool.live.games);
+  return Boolean(upcomingOnly && pool && pool.live.final > 0 && pool.live.final < pool.live.games);
 }
 
-// The pool with started games taken out — one cached copy per pool, so components get a stable object.
+// The pool with finished games taken out — one cached copy per pool + picked games, so components get a stable object.
 function upcomingView(pool) {
-  if (!upcomingViews.has(pool)) {
-    upcomingViews.set(pool, {
+  const keep = teamsOf(currentMatchupKey());
+  const k = keep.join(",");
+  if (!upcomingViews.has(pool)) upcomingViews.set(pool, {});
+  const byKey = upcomingViews.get(pool);
+  if (!byKey[k]) {
+    const done = (s) => DONE.has(s);
+    byKey[k] = {
       ...pool,
-      players: pool.players.filter((p) => !p.gameStarted),
-      meta: { ...pool.meta, slate: pool.meta.slate.filter((g) => !STARTED.has(g.state)) },
-    });
+      players: pool.players.filter((p) => !done(p.gameState) || keep.includes(p.team)),
+      meta: { ...pool.meta, slate: pool.meta.slate.filter((g) => !done(g.state) || keep.includes(g.away) || keep.includes(g.home)) },
+    };
   }
-  return upcomingViews.get(pool);
+  return byKey[k];
 }
 
 // ── Past nights (2026-10-23, user: one date picker that shows what any past night looked like and how it played out) ──
@@ -275,7 +284,7 @@ function snapshot(includeStarted) {
 }
 
 // The live pool for React components; re-renders when lineups or the pool file change.
-// { includeStarted: true } skips the "upcoming games only" filter.
+// { includeStarted: true } skips the 🏁 hide completed games filter (named before 2026-11-05, when it hid started games).
 export function useScoredPool({ includeStarted = false } = {}) {
   return useSyncExternalStore(subscribe, () => snapshot(includeStarted));
 }
