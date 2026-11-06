@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-11-06 12:28",
+  "generated": "2026-11-06 17:35",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 98,
@@ -8,6 +8,76 @@
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8479972,
+   "name": "Mason Shaw",
+   "team": "MIN",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1998-11-03",
+   "sweater": 18,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "MIN",
+    "round": 4,
+    "overallPick": 97
+   },
+   "recalledOn": "2026-11-06",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-30",
+     "type": "down",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-31",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-11-04",
+     "type": "down",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-11-06",
+     "type": "up",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 11,
+     "goals": 4,
+     "assists": 6,
+     "points": 10,
+     "plusMinus": 0,
+     "pim": 17,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 71,
+     "goals": 15,
+     "assists": 29,
+     "points": 44,
+     "plusMinus": 7,
+     "pim": 67,
+     "team": "Manitoba Moose"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 82,
+    "careerG": 8,
+    "careerP": 20
+   }
+  },
   {
    "playerId": 8483442,
    "name": "Jagger Firkus",
@@ -157,14 +227,19 @@
      "date": "2026-11-03",
      "type": "up",
      "club": "minors"
+    },
+    {
+     "date": "2026-11-06",
+     "type": "down",
+     "club": "Wilkes-Barre/Scranton"
     }
    ],
    "playerId": null,
    "name": "Jake Livanavage",
    "position": "D",
    "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-11-06",
    "ahl": {
     "season": null,
     "last": null
@@ -647,71 +722,6 @@
     "careerGp": 83,
     "careerG": 8,
     "careerP": 21
-   }
-  },
-  {
-   "playerId": 8479972,
-   "name": "Mason Shaw",
-   "team": "MIN",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1998-11-03",
-   "sweater": 18,
-   "draft": {
-    "year": 2017,
-    "teamAbbrev": "MIN",
-    "round": 4,
-    "overallPick": 97
-   },
-   "recalledOn": "2026-10-31",
-   "from": "Iowa",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-04",
-   "events": [
-    {
-     "date": "2026-10-30",
-     "type": "down",
-     "club": "Iowa"
-    },
-    {
-     "date": "2026-10-31",
-     "type": "up",
-     "club": "Iowa"
-    },
-    {
-     "date": "2026-11-04",
-     "type": "down",
-     "club": "Iowa"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 11,
-     "goals": 4,
-     "assists": 6,
-     "points": 10,
-     "plusMinus": 0,
-     "pim": 17,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 71,
-     "goals": 15,
-     "assists": 29,
-     "points": 44,
-     "plusMinus": 7,
-     "pim": 67,
-     "team": "Manitoba Moose"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 82,
-    "careerG": 8,
-    "careerP": 20
    }
   },
   {

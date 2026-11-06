@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-11-06",
+  "lockedAt": "2026-11-06T22:35:25.020Z",
+  "poolGenerated": "2026-11-06 17:32",
+  "eligible": 115,
+  "confirmed": 41,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 1% of tonight's slate by the grade model (51.5% to score), facing SJS (#2 softest defense of 6 tonight, 3.4 expected goals allowed a game). Matchup-adjusted chance 45.8%.",
+   "playerId": 8478864,
+   "name": "Kirill Kaprizov",
+   "team": "MIN",
+   "opp": "SJS",
+   "position": "L",
+   "isHome": true,
+   "opponentGoalie": "Yaroslav Askarov",
+   "opponentGoalieId": 8482137,
+   "goalieGrade": "C",
+   "grade": "A+",
+   "lineupStatus": null,
+   "modelGoalPct": 51.5,
+   "adjGoalPct": 45.8,
+   "oppXga": 3.4,
+   "softRank": 2,
+   "sogL5": 2.4,
+   "sogPg": 3.4
+  },
+  {
+   "tier": "mid",
+   "fallback": false,
+   "why": "2.2 shots a game over the last 5 games vs 1.8 on the season, into ANA (#1 softest defense of 6 tonight, 3.4 expected goals allowed a game) — the combination that scored 14-24% above the model last season. 23.5% to score.",
+   "playerId": 8480797,
+   "name": "Joel Farabee",
+   "team": "CGY",
+   "opp": "ANA",
+   "position": "L",
+   "isHome": true,
+   "opponentGoalie": "Lukas Dostal",
+   "opponentGoalieId": 8480843,
+   "goalieGrade": "B",
+   "grade": "B",
+   "lineupStatus": null,
+   "modelGoalPct": 19.2,
+   "adjGoalPct": 23.5,
+   "oppXga": 3.4,
+   "softRank": 1,
+   "sogL5": 2.2,
+   "sogPg": 1.8
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
