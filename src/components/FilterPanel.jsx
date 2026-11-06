@@ -23,9 +23,13 @@ const saveOpen = (v) => { try { localStorage.setItem(OPEN_KEY, v ? '1' : '0') } 
 const notOf = (g, value) => (g.type === 'tags' ? value[`${g.key}Not`] || [] : [])
 export const isActive = (g, value) => (g.type === 'one' ? value[g.key] != null : (value[g.key] || []).length > 0 || notOf(g, value).length > 0)
 
+// presets (2026-11-06, optional; user: a "🔒 Locked in" button next to the filters = one tap to the strong players in good spots):
+// [{ key, label, title, set: { groupKey: [values] } }] -- tap = those groups set exactly to `set` (other filters kept), tap
+// again = those groups cleared. Lit while every group in `set` holds exactly those values.
+const sameSet = (a = [], b = []) => a.length === b.length && b.every((x) => a.includes(x))
 // onSave(name) (2026-10-28, optional): shows "🔔 Alert me" while any filter is on -- the app saves the filter as an alert
 // (lib/savedFilters.js); name = the active chips
-export default function FilterPanel({ groups, value, onChange, onClear, shown, total, noun = 'players', onSave }) {
+export default function FilterPanel({ groups, value, onChange, onClear, shown, total, noun = 'players', onSave, presets }) {
   const [open, setOpenState] = useState(readOpen)
   const [saved, setSaved] = useState(false)
   const setOpen = (v) => { setOpenState(v); saveOpen(v) }
@@ -52,6 +56,15 @@ export default function FilterPanel({ groups, value, onChange, onClear, shown, t
         <button type="button" className="fp-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
           <span aria-hidden="true">⚙</span> Filters{n ? <b className="fp-count">{n}</b> : null}<span className="fp-caret" aria-hidden="true">{open ? '▴' : '▾'}</span>
         </button>
+        {(presets || []).map((ps) => {
+          const on = Object.entries(ps.set).every(([k, v]) => sameSet(value[k], v))
+          return (
+            <button type="button" key={ps.key} className={`fp-preset ${on ? 'on' : ''}`} aria-pressed={on} title={ps.title}
+              onClick={() => Object.entries(ps.set).forEach(([k, v]) => onChange(k, on ? [] : v))}>
+              {ps.label}{on ? ' ✓' : ''}
+            </button>
+          )
+        })}
         {shown != null && <span className="fp-shown">{shown} of {total} {noun}</span>}
         {chips.length > 0 && (
           <div className="fp-chips">

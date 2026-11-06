@@ -52,3 +52,6 @@
   .fp-sheet-foot { display: block; position: sticky; bottom: 0; padding: 12px 0 calc(14px + env(safe-area-inset-bottom)); background: inherit; }
   .fp-show { width: 100%; min-height: 50px; border: 0; border-radius: 14px; background: var(--accent); color: var(--accent-fg, #fff); font: inherit; font-size: 0.95rem; font-weight: 800; cursor: pointer; }
 }
+.fp-preset { display: inline-flex; align-items: center; gap: 4px; background: transparent; color: var(--fg, var(--text)); border: 1px solid var(--accent); border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; }
+.fp-preset:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.fp-preset.on { background: var(--accent); color: #fff; }
