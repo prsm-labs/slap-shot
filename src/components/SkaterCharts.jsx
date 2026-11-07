@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import L7Chart from "./L7Chart.jsx";
+import { lamFor } from "../lib/lineBoard.js";
 import { useH2H } from "../lib/h2h.js";
 import { useScoredPool } from "../lib/data.js";
 import { lineupMaps, useLineups } from "../lib/lineups.js";
@@ -37,6 +38,12 @@ export default function SkaterCharts({ player, tonight = null }) {
   const oo = onOffGames(onoff?.team === live.team ? onoff : null, player.playerId, sel, how);
   const active = oo.match ? "onoff" : mode === "team" && !vsTeam ? "l7" : mode === "goalie" && !vsGoalie ? "l7" : mode === "venue" && !venue ? "l7" : mode;
 
+  // 2026-11-07 dashed projection line on the Last 7 chart: expected count behind tonight's calibrated chances (the Risk Slider's
+  // Poisson means): goals / points from the 1+ chance, shots on goal from the 3+ SOG chance
+  const lam1 = (pc) => (pc == null ? null : -Math.log(Math.max(1e-6, 1 - Math.min(pc / 100, 0.999))));
+  const sog3 = live.modelProbs?.sog3 ?? (live.modelSog3Pct != null ? live.modelSog3Pct / 100 : null);
+  const proj = { goal: lam1(live.anytimeGoalPct), point: lam1(live.anytimePointPct), sog3: sog3 != null ? lamFor(sog3, 3) : null };
+
   const btn = (key, label) => (
     <button key={key} className={`pill-btn ${active === key ? "active" : ""}`} onClick={() => setMode(key)}>{label}</button>
   );
@@ -61,7 +68,7 @@ export default function SkaterCharts({ player, tonight = null }) {
       {active === "l7" && <L7Chart key="l7" games={[
         ...(live.last7 || player.last7 || []).filter((g) => !tonight?.skater || String(g.gameId) !== String(tonight.gameId)),
         ...(tonight?.started && tonight.skater ? [{ ...tonight.skater, gameId: tonight.gameId, opp: tonight.them.abbrev, home: tonight.home.abbrev === tonight.us.abbrev, today: true, live: tonight.live }] : []),
-      ]} role="skater" />}
+      ]} role="skater" trend proj={proj} />}
 
       {active === "venue" && (
         <>

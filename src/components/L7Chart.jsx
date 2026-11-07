@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { rolling, TrendKey, TrendProj, TrendSeg } from "./Trend.jsx";
 
 // Plain-div, no-library bar chart — direct analogue of Going Yard's real Last7HRChart
 // (mlb_project/going-yard/src/App.jsx:19921), confirmed this session to have zero chart
@@ -28,7 +29,9 @@ const GOALIE_VIEWS = [
 ];
 
 // views / showYear / emptyText: optional, for the H2H views in the skater slideout.
-export default function L7Chart({ games, role = "skater", views: customViews, showYear = false, emptyText }) {
+// trend (2026-11-07): last-5 rolling average through the bars + proj = { goal, point, sog3 } tonight's expected count (dashed),
+// only on the skater's recent-games view (SkaterCharts passes them there)
+export default function L7Chart({ games, role = "skater", views: customViews, showYear = false, emptyText, trend = false, proj = null }) {
   const views = customViews || (role === "goalie" ? GOALIE_VIEWS : SKATER_VIEWS);
   const [viewKey, setViewKey] = useState(views[0][0]);
   const view = views.find((v) => v[0] === viewKey) || views[0];
@@ -44,6 +47,10 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
   const maxVal = Math.max(threshold, ...g7.map(getValue));
   const BAR_H = 100;
   const pctColor = pct >= 57 ? "var(--green)" : pct >= 43 ? "var(--warn)" : "var(--muted)";
+  // trend over every game passed in (rolling needs the games before the 7 shown), on the bars' scale (value / max)
+  const allVals = games.map(getValue);
+  const tr = trend ? rolling(allVals, games.map((g) => g.today)).slice(-g7.length).map((v) => (v == null ? null : (v / maxVal) * 100)) : [];
+  const pj = trend && proj?.[viewKey] != null ? proj[viewKey] : null;
 
   return (
     <div className="card" style={{ marginTop: 12 }}>
@@ -67,7 +74,9 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
           const isHit = val >= threshold;
           const barH = isHit ? Math.max(Math.round(BAR_H * (val / maxVal)), Math.round(BAR_H * 0.25)) : 2;
           return (
-            <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-end", height: "100%", gap: 2 }}>
+            <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-end", height: "100%", gap: 2, position: "relative" }}>
+              <TrendSeg y={tr[i]} next={tr[i + 1]} gap={4} title={tr[i] != null ? `Last-5 average: ${((tr[i] / 100) * maxVal).toFixed(2)}` : undefined} />
+              <TrendProj y={pj != null ? Math.min(100, (pj / maxVal) * 100) : null} gap={4} title={pj != null ? `Tonight's projection: ${pj.toFixed(2)}` : undefined} />
               <span className="mono" style={{ fontSize: 10, fontWeight: 700, color: isHit ? "var(--accent2)" : "var(--red)" }}>{val}</span>
               <div style={{
                 width: "100%", borderRadius: "4px 4px 0 0", height: barH,
@@ -87,6 +96,7 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
           </div>
         ))}
       </div>
+      {trend && <TrendKey proj={pj != null} projLabel="tonight's expected count (from our chance)" />}
     </div>
   );
 }

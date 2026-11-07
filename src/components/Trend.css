@@ -1,0 +1,10 @@
+/* 📈 slideout chart trend lines (Trend.jsx; same file in CourtIQ, Slap Shot, Six Points, Final Lap) */
+.trend-seg { position: absolute; left: 50%; top: 0; height: 100%; overflow: visible; pointer-events: none; z-index: 2; color: var(--fg, var(--text, #ddd)); }
+.trend-seg line { stroke: currentColor; stroke-width: 2; stroke-linecap: round; opacity: .85; }
+.trend-seg circle { fill: currentColor; opacity: .95; }
+.trend-proj { position: absolute; height: 0; border-top: 1.5px dashed var(--fg, var(--text, #ddd)); opacity: .5; pointer-events: none; z-index: 1; }
+.trend-key { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 4px 0 0; font-size: 0.68rem; color: var(--muted); }
+.trend-key-solid, .trend-key-dash { display: inline-block; width: 16px; height: 0; border-top: 2px solid var(--fg, var(--text, #ddd)); opacity: .85; }
+.trend-key-dash { border-top: 1.5px dashed var(--fg, var(--text, #ddd)); opacity: .6; margin-left: 6px; }
+.trend-key-note { opacity: .8; }
+.bar-v { position: relative; z-index: 3; } /* bar value numbers draw over the trend line */

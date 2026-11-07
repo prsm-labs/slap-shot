@@ -8,7 +8,7 @@ function tail(lam, T) {
   for (let k = 0; k < T; k++) { s += term; term *= lam / (k + 1); }
   return 1 - s;
 }
-function lamFor(p, k) {
+export function lamFor(p, k) { // exported 2026-11-07 for the slideout chart's projection line (L7Chart.jsx)
   let lo = 1e-4, hi = 15;
   const q = Math.min(Math.max(p, 1e-4), 0.9999);
   for (let i = 0; i < 60; i++) { const mid = (lo + hi) / 2; if (tail(mid, k) < q) lo = mid; else hi = mid; }
