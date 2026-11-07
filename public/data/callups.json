@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-07 07:35",
+  "generated": "2026-11-07 12:05",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 99,
-  "up": 49,
+  "up": 48,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -26,7 +26,7 @@
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -621,11 +621,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 0,
      "assists": 3,
      "points": 3,
-     "plusMinus": 1,
+     "plusMinus": 2,
      "pim": 10,
      "team": "Henderson Silver Knights"
     },
@@ -1137,12 +1137,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 2,
      "points": 2,
      "plusMinus": 1,
-     "pim": 2,
+     "pim": 4,
      "team": "Henderson Silver Knights"
     },
     "last": {
@@ -2993,7 +2993,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 6,
      "assists": 6,
      "points": 12,
@@ -4501,7 +4501,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 1,
      "assists": 4,
      "points": 5,
