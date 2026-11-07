@@ -9,6 +9,7 @@ import LadderTab from "./LadderTab.jsx";
 import RiskSliderTab from "./RiskSliderTab.jsx";
 import RadarTab from "./RadarTab.jsx";
 import MultiTab from "./MultiTab.jsx";
+import LongshotTab from "./LongshotTab.jsx";
 import SlateStatus from "../components/SlateStatus.jsx";
 
 // "Scouting" top-level tab: All Matchups (the default view) plus every lab, switched by a button row in the
@@ -18,6 +19,7 @@ const VIEWS = [
   { key: "risk", label: "🎚️ Risk Slider", Component: RiskSliderTab },  // 2026-10-27: safe -> long shot over every skater's ladder
   { key: "radar", label: "🔦 Under the radar", Component: RadarTab },  // 2026-11-02: lines he rarely hits that the model likes tonight
   { key: "multi", label: "🎯 Multi-point", Component: MultiTab },  // 2026-11-03: 2+ points / 2+ assists beyond his usual
+  { key: "longshot", label: "🎯 Long-shot creators", Component: LongshotTab },  // 2026-11-07: 12-30% goal chances ranked by recent own xG/60 vs position
   { key: "lamp", label: "💡 Lamp Lab", Component: LampLabTab },
   { key: "apple", label: "🍎 Apple Lab", Component: AppleLabTab },
   { key: "crease", label: "🥅 Crease Lab", Component: CreaseLabTab },

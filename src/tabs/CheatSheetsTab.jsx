@@ -24,6 +24,8 @@ import { OppDefBadge } from "../lib/oppDef.jsx";
 import { useJson, useMulti } from "../lib/multi.js";
 import ViewPicker from "../components/ViewPicker.jsx";
 import { MultiCard } from "./MultiTab.jsx";
+import { useLongshot } from "../lib/longshot.js";
+import { LongshotCard } from "./LongshotTab.jsx";
 import ShortList from "../components/ShortList.jsx";
 import { prismPicks, tierPicks } from "../lib/prismPicks.js";
 import { radarLabel } from "../lib/radar.js";
@@ -119,6 +121,8 @@ function CheatSheetMain() {
   const radar = useRadar(radarPool, Boolean(pool?.past), meta?.slateDate);
   // 2026-11-03 🎯 / 🍎 multi-point + multi-assist lists (lib/multi.js), right after the point card
   const multi = useMulti(radarPool, Boolean(pool?.past), meta?.slateDate);
+  // 2026-11-07 🎯 Long-shot creators (lib/longshot.js): 12-30% goal chances ranked by recent own xG/60 vs his position
+  const longshot = useLongshot(players, radarPool, Boolean(pool?.past), meta?.slateDate);
   // 2026-11-05 ⚡ Today's short list: PRISM Pick, mid-range, under the radar, multi-point, long shot -- the top of each tested list,
   // one player each. PRISM levels are picked on the whole slate (same picks as the card below), then kept to the filtered players.
   const ppData = useJson("/data/prism_picks.json");
@@ -246,6 +250,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
           renderRow={(p) => `${p.anytimePointPct}%`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
         <MultiCard k="PTS" picks={multi.lists.PTS} data={multi.data} meta={meta} />
         <MultiCard k="A" picks={multi.lists.A} data={multi.data} meta={meta} />
+        <LongshotCard picks={longshot.picks} data={longshot.data} meta={meta} limit={5} />
         <ListCard title="⚡ Shots on Goal Candidates" sub="Top 5 by shots on goal per game" items={shotCandidates} prop="sog3"
           renderRow={(p) => `${p.ShotsOnGoalPerGame}/gm`} onClick={openSkaterSlide} statusOf={statusOf} oppGoalieOf={oppGoalieOf} meta={meta} />
         {priced.length > 0 && (
