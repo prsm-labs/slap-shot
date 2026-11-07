@@ -1,13 +1,183 @@
 {
  "_meta": {
-  "generated": "2026-11-07 12:38",
+  "generated": "2026-11-07 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 99,
-  "up": 48,
+  "count": 101,
+  "up": 50,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "team": "SEA",
+   "recalledOn": "2026-11-07",
+   "from": "Coachella Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-11-07",
+     "type": "up",
+     "club": "Coachella Valley"
+    }
+   ],
+   "playerId": null,
+   "name": "Niklas Kokko",
+   "position": "G",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
+   }
+  },
+  {
+   "playerId": 8482515,
+   "name": "Artur Akhtyamov",
+   "team": "TOR",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-10-31",
+   "sweater": 70,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "TOR",
+    "round": 4,
+    "overallPick": 106
+   },
+   "recalledOn": "2026-11-07",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "down",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-07",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "wins": 2,
+     "losses": 3,
+     "otLosses": 1,
+     "shutouts": 0,
+     "goalsAgainst": 21,
+     "shotsAgainst": 169,
+     "team": "Toronto Marlies",
+     "savePct": 0.876,
+     "gaa": 2.97
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "wins": 21,
+     "losses": 12,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 103,
+     "shotsAgainst": 1073,
+     "team": "Toronto Marlies",
+     "savePct": 0.904,
+     "gaa": 2.88
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 0,
+     "losses": 2,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 11,
+     "shotsAgainst": 81,
+     "team": "Toronto Maple Leafs",
+     "savePct": 0.864,
+     "gaa": 5.24
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8479591,
+   "name": "Michael Eyssimont",
+   "team": "BOS",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1996-09-09",
+   "sweater": 81,
+   "draft": {
+    "year": 2016,
+    "teamAbbrev": "LAK",
+    "round": 5,
+    "overallPick": 142
+   },
+   "recalledOn": "2026-11-07",
+   "from": "Providence",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-07",
+     "type": "up",
+     "club": "Providence"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 13,
+     "assists": 3,
+     "points": 16,
+     "plusMinus": 5,
+     "pim": 10,
+     "team": "Providence Bruins"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 56,
+     "goals": 8,
+     "assists": 10,
+     "points": 18,
+     "plusMinus": -3,
+     "pim": 31,
+     "shots": 109,
+     "team": "Boston Bruins"
+    },
+    "careerGp": 269,
+    "careerG": 33,
+    "careerP": 74
+   }
+  },
   {
    "playerId": 8479972,
    "name": "Mason Shaw",
@@ -27,7 +197,7 @@
    "fromLeague": "AHL",
    "timesRecalled": 2,
    "status": "down",
-   "sentDownOn": null,
+   "sentDownOn": "2026-11-07",
    "events": [
     {
      "date": "2026-10-30",
@@ -47,6 +217,11 @@
     {
      "date": "2026-11-06",
      "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-11-07",
+     "type": "down",
      "club": "Iowa"
     }
    ],
@@ -2325,7 +2500,7 @@
    "from": "Manitoba",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -3421,86 +3596,6 @@
    }
   },
   {
-   "playerId": 8482515,
-   "name": "Artur Akhtyamov",
-   "team": "TOR",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2001-10-31",
-   "sweater": 70,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "TOR",
-    "round": 4,
-    "overallPick": 106
-   },
-   "recalledOn": "2026-10-19",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-21",
-   "events": [
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Toronto"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "down",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 7,
-     "wins": 2,
-     "losses": 3,
-     "otLosses": 1,
-     "shutouts": 0,
-     "goalsAgainst": 21,
-     "shotsAgainst": 169,
-     "team": "Toronto Marlies",
-     "savePct": 0.876,
-     "gaa": 2.97
-    },
-    "last": {
-     "gamesPlayed": 37,
-     "wins": 21,
-     "losses": 12,
-     "otLosses": 4,
-     "shutouts": 1,
-     "goalsAgainst": 103,
-     "shotsAgainst": 1073,
-     "team": "Toronto Marlies",
-     "savePct": 0.904,
-     "gaa": 2.88
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 0,
-     "losses": 2,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 11,
-     "shotsAgainst": 81,
-     "team": "Toronto Maple Leafs",
-     "savePct": 0.864,
-     "gaa": 5.24
-    },
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": null
-   }
-  },
-  {
    "playerId": 8481655,
    "name": "Cole Schwindt",
    "team": "FLA",
@@ -3541,11 +3636,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -4,
+     "plusMinus": -5,
      "pim": 0,
      "shots": 4,
      "team": "Florida Panthers"
@@ -3560,7 +3655,7 @@
      "shots": 25,
      "team": "Florida Panthers"
     },
-    "careerGp": 85,
+    "careerGp": 86,
     "careerG": 6,
     "careerP": 15
    }
@@ -4243,13 +4338,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -2,
      "pim": 0,
-     "shots": 0,
+     "shots": 3,
      "team": "Florida Panthers"
     },
     "last": {
@@ -4262,7 +4357,7 @@
      "shots": 49,
      "team": "Vegas Golden Knights / Florida Panthers"
     },
-    "careerGp": 78,
+    "careerGp": 79,
     "careerG": 10,
     "careerP": 17
    }
@@ -6245,13 +6340,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 1,
      "assists": 1,
      "points": 2,
      "plusMinus": -1,
      "pim": 4,
-     "shots": 7,
+     "shots": 10,
      "team": "Nashville Predators"
     },
     "last": null,
