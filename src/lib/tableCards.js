@@ -36,7 +36,8 @@ function primaryIndex(cells) {
   const band = (th) => th.classList.contains("tc-band");
   const fixed = cells.findIndex((th, i) => i > 0 && th.classList.contains("tc-prim"));  // a page can name its big number (labs with a prop band)
   if (fixed > 0) return fixed;
-  const sorted = cells.findIndex((th, i) => i > 0 && !band(th) && (th.classList.contains("sorted") || /[↓↑]/.test(th.textContent || "")));
+  // 2026-11-08: Six Points' sort headers mark the column with a ▼ / ▲ .sort-arrow (not ↓ / ↑), so its cards kept the first % column
+  const sorted = cells.findIndex((th, i) => i > 0 && !band(th) && (th.classList.contains("sorted") || th.querySelector(".sort-arrow") || /[↓↑▲▼]/.test(th.textContent || "")));
   if (sorted > 0) return sorted;
   return cells.findIndex((th, i) => i > 0 && !band(th) && /%/.test(th.textContent || ""));
 }
