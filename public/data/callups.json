@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-08 09:21",
+  "generated": "2026-11-08 12:04",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 102,
-  "up": 50,
+  "count": 103,
+  "up": 47,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -55,7 +55,7 @@
    "from": "Manitoba (AHL) under emergency conditions",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -959,7 +959,7 @@
    "from": "Grand Rapids",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -1771,7 +1771,7 @@
    "from": "Ontario",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -2965,15 +2965,10 @@
    "recalledOn": "2026-10-22",
    "from": "Belleville",
    "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "up",
+   "timesRecalled": 1,
+   "status": "down",
    "sentDownOn": null,
    "events": [
-    {
-     "date": "2026-10-06",
-     "type": "up",
-     "club": "Belleville"
-    },
     {
      "date": "2026-10-08",
      "type": "down",
@@ -4035,7 +4030,7 @@
    "from": "Toronto",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -6314,6 +6309,54 @@
     "careerGp": 279,
     "careerG": 0,
     "careerP": null
+   }
+  },
+  {
+   "playerId": 8475149,
+   "name": "Marcus Johansson",
+   "team": "OTT",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "1990-10-06",
+   "sweater": 90,
+   "draft": {
+    "year": 2009,
+    "teamAbbrev": "WSH",
+    "round": 1,
+    "overallPick": 24
+   },
+   "recalledOn": "2026-10-06",
+   "from": "Belleville",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-06",
+     "type": "up",
+     "club": "Belleville"
+    }
+   ],
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 75,
+     "goals": 15,
+     "assists": 34,
+     "points": 49,
+     "plusMinus": 18,
+     "pim": 12,
+     "shots": 106,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 1058,
+    "careerG": 200,
+    "careerP": 566
    }
   },
   {
