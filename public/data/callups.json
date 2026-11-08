@@ -1,13 +1,456 @@
 {
  "_meta": {
-  "generated": "2026-11-08 12:04",
+  "generated": "2026-11-08 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 103,
-  "up": 47,
+  "count": 107,
+  "up": 50,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8483012,
+   "name": "Logan Morrison",
+   "team": "SEA",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2002-07-09",
+   "sweater": 96,
+   "draft": null,
+   "recalledOn": "2026-11-08",
+   "from": "minors",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 3,
+     "assists": 6,
+     "points": 9,
+     "plusMinus": -3,
+     "pim": 0,
+     "team": "Coachella Valley Firebirds"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 29,
+     "assists": 32,
+     "points": 61,
+     "plusMinus": 23,
+     "pim": 42,
+     "team": "Coachella Valley Firebirds"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 4,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8483433,
+   "name": "Jack Devine",
+   "team": "FLA",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2003-10-01",
+   "sweater": 38,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "FLA",
+    "round": 7,
+    "overallPick": 221
+   },
+   "recalledOn": "2026-11-08",
+   "from": "minors",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 13,
+     "goals": 9,
+     "assists": 3,
+     "points": 12,
+     "plusMinus": 4,
+     "pim": 2,
+     "team": "Charlotte Checkers"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 18,
+     "assists": 25,
+     "points": 43,
+     "plusMinus": 16,
+     "pim": 57,
+     "team": "Charlotte Checkers"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 6,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -3,
+     "pim": 2,
+     "shots": 6,
+     "team": "Florida Panthers"
+    },
+    "careerGp": 6,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8479968,
+   "name": "Vinni Lettieri",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "1995-02-06",
+   "sweater": 71,
+   "draft": null,
+   "recalledOn": "2026-11-08",
+   "from": "minors",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": "2026-11-08",
+   "events": [
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "down",
+     "club": "minors"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 3,
+     "assists": 6,
+     "points": 9,
+     "plusMinus": 3,
+     "pim": 0,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 14,
+     "assists": 28,
+     "points": 42,
+     "plusMinus": 1,
+     "pim": 32,
+     "team": "Toronto Marlies"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": -2,
+     "pim": 14,
+     "shots": 8,
+     "team": "Toronto Maple Leafs"
+    },
+    "last": null,
+    "careerGp": 163,
+    "careerG": 16,
+    "careerP": 33
+   }
+  },
+  {
+   "playerId": 8484287,
+   "name": "Cole McWard",
+   "team": "TOR",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "2001-06-09",
+   "sweater": 82,
+   "draft": null,
+   "recalledOn": "2026-11-08",
+   "from": "minors",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-23",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 0,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": 3,
+     "pim": 2,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 6,
+     "assists": 21,
+     "points": 27,
+     "plusMinus": -11,
+     "pim": 24,
+     "team": "Bridgeport Islanders"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "New York Islanders"
+    },
+    "careerGp": 9,
+    "careerG": 1,
+    "careerP": 1
+   }
+  },
+  {
+   "playerId": 8481743,
+   "name": "Marc Del Gaizo",
+   "team": "NYR",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1999-10-11",
+   "sweater": 27,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "NSH",
+    "round": 4,
+    "overallPick": 109
+   },
+   "recalledOn": "2026-11-08",
+   "from": "minors",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 15,
+     "goals": 2,
+     "assists": 9,
+     "points": 11,
+     "plusMinus": -7,
+     "pim": 8,
+     "team": "Hartford Wolf Pack"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 9,
+     "assists": 18,
+     "points": 27,
+     "plusMinus": 23,
+     "pim": 38,
+     "team": "Laval Rocket"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 55,
+    "careerG": 2,
+    "careerP": 12
+   }
+  },
+  {
+   "playerId": 8481167,
+   "name": "Brayden Pachal",
+   "team": "CGY",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "1999-08-23",
+   "sweater": 94,
+   "draft": null,
+   "recalledOn": "2026-11-08",
+   "from": "minors",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 11,
+     "goals": 0,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 3,
+     "pim": 9,
+     "team": "Calgary Wranglers"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 39,
+     "goals": 1,
+     "assists": 6,
+     "points": 7,
+     "plusMinus": -1,
+     "pim": 47,
+     "shots": 28,
+     "team": "Calgary Flames"
+    },
+    "careerGp": 177,
+    "careerG": 6,
+    "careerP": 28
+   }
+  },
+  {
+   "playerId": 8482515,
+   "name": "Artur Akhtyamov",
+   "team": "TOR",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-10-31",
+   "sweater": 70,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "TOR",
+    "round": 4,
+    "overallPick": 106
+   },
+   "recalledOn": "2026-11-07",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": "2026-11-08",
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "down",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-07",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "down",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "wins": 2,
+     "losses": 3,
+     "otLosses": 1,
+     "shutouts": 0,
+     "goalsAgainst": 21,
+     "shotsAgainst": 169,
+     "team": "Toronto Marlies",
+     "savePct": 0.876,
+     "gaa": 2.97
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "wins": 21,
+     "losses": 12,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 103,
+     "shotsAgainst": 1073,
+     "team": "Toronto Marlies",
+     "savePct": 0.904,
+     "gaa": 2.88
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 0,
+     "losses": 2,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 11,
+     "shotsAgainst": 81,
+     "team": "Toronto Maple Leafs",
+     "savePct": 0.864,
+     "gaa": 5.24
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
   {
    "team": "SEA",
    "recalledOn": "2026-11-07",
@@ -102,91 +545,6 @@
    }
   },
   {
-   "playerId": 8482515,
-   "name": "Artur Akhtyamov",
-   "team": "TOR",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2001-10-31",
-   "sweater": 70,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "TOR",
-    "round": 4,
-    "overallPick": 106
-   },
-   "recalledOn": "2026-11-07",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Toronto"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "down",
-     "club": "Toronto"
-    },
-    {
-     "date": "2026-11-07",
-     "type": "up",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 7,
-     "wins": 2,
-     "losses": 3,
-     "otLosses": 1,
-     "shutouts": 0,
-     "goalsAgainst": 21,
-     "shotsAgainst": 169,
-     "team": "Toronto Marlies",
-     "savePct": 0.876,
-     "gaa": 2.97
-    },
-    "last": {
-     "gamesPlayed": 37,
-     "wins": 21,
-     "losses": 12,
-     "otLosses": 4,
-     "shutouts": 1,
-     "goalsAgainst": 103,
-     "shotsAgainst": 1073,
-     "team": "Toronto Marlies",
-     "savePct": 0.904,
-     "gaa": 2.88
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 0,
-     "losses": 2,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 11,
-     "shotsAgainst": 81,
-     "team": "Toronto Maple Leafs",
-     "savePct": 0.864,
-     "gaa": 5.24
-    },
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": null
-   }
-  },
-  {
    "playerId": 8479591,
    "name": "Michael Eyssimont",
    "team": "BOS",
@@ -226,7 +584,16 @@
     "last": null
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 3,
+     "team": "Boston Bruins"
+    },
     "last": {
      "gamesPlayed": 56,
      "goals": 8,
@@ -832,6 +1199,89 @@
    }
   },
   {
+   "playerId": 8481077,
+   "name": "John Leonard",
+   "team": "DET",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "1998-08-07",
+   "sweater": 43,
+   "draft": {
+    "year": 2018,
+    "teamAbbrev": "SJS",
+    "round": 6,
+    "overallPick": 182
+   },
+   "recalledOn": "2026-11-01",
+   "from": "Grand Rapids",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-08",
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Grand Rapids"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "up",
+     "club": "Grand Rapids"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "down",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 5,
+     "assists": 2,
+     "points": 7,
+     "plusMinus": 1,
+     "pim": 2,
+     "team": "Grand Rapids Griffins"
+    },
+    "last": {
+     "gamesPlayed": 47,
+     "goals": 33,
+     "assists": 21,
+     "points": 54,
+     "plusMinus": 8,
+     "pim": 12,
+     "team": "Grand Rapids Griffins"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -2,
+     "pim": 0,
+     "shots": 8,
+     "team": "Detroit Red Wings"
+    },
+    "last": {
+     "gamesPlayed": 11,
+     "goals": 2,
+     "assists": 2,
+     "points": 4,
+     "plusMinus": -3,
+     "pim": 0,
+     "shots": 11,
+     "team": "Detroit Red Wings"
+    },
+    "careerGp": 84,
+    "careerG": 8,
+    "careerP": 21
+   }
+  },
+  {
    "playerId": 8485138,
    "name": "Viliam Kmec",
    "team": "VGK",
@@ -939,84 +1389,6 @@
     "careerGp": 2,
     "careerG": 0,
     "careerP": 0
-   }
-  },
-  {
-   "playerId": 8481077,
-   "name": "John Leonard",
-   "team": "DET",
-   "position": "L",
-   "shoots": "L",
-   "birthDate": "1998-08-07",
-   "sweater": 43,
-   "draft": {
-    "year": 2018,
-    "teamAbbrev": "SJS",
-    "round": 6,
-    "overallPick": 182
-   },
-   "recalledOn": "2026-11-01",
-   "from": "Grand Rapids",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Grand Rapids"
-    },
-    {
-     "date": "2026-11-01",
-     "type": "up",
-     "club": "Grand Rapids"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 5,
-     "assists": 2,
-     "points": 7,
-     "plusMinus": 1,
-     "pim": 2,
-     "team": "Grand Rapids Griffins"
-    },
-    "last": {
-     "gamesPlayed": 47,
-     "goals": 33,
-     "assists": 21,
-     "points": 54,
-     "plusMinus": 8,
-     "pim": 12,
-     "team": "Grand Rapids Griffins"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -2,
-     "pim": 0,
-     "shots": 8,
-     "team": "Detroit Red Wings"
-    },
-    "last": {
-     "gamesPlayed": 11,
-     "goals": 2,
-     "assists": 2,
-     "points": 4,
-     "plusMinus": -3,
-     "pim": 0,
-     "shots": 11,
-     "team": "Detroit Red Wings"
-    },
-    "careerGp": 84,
-    "careerG": 8,
-    "careerP": 21
    }
   },
   {
@@ -1705,6 +2077,75 @@
    }
   },
   {
+   "playerId": 8482160,
+   "name": "Martin Chromiak",
+   "team": "LAK",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2002-08-20",
+   "sweater": 42,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "LAK",
+    "round": 5,
+    "overallPick": 128
+   },
+   "recalledOn": "2026-10-29",
+   "from": "Ontario",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-08",
+   "events": [
+    {
+     "date": "2026-10-29",
+     "type": "up",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "down",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 6,
+     "assists": 2,
+     "points": 8,
+     "plusMinus": -3,
+     "pim": 6,
+     "team": "Ontario Reign"
+    },
+    "last": {
+     "gamesPlayed": 71,
+     "goals": 28,
+     "assists": 28,
+     "points": 56,
+     "plusMinus": 1,
+     "pim": 14,
+     "team": "Ontario Reign"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 3,
+     "team": "Los Angeles Kings"
+    },
+    "last": null,
+    "careerGp": 2,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "team": "MIN",
    "recalledOn": "2026-10-29",
    "from": "Iowa",
@@ -1751,70 +2192,6 @@
     "season": null,
     "last": null,
     "careerGp": 0
-   }
-  },
-  {
-   "playerId": 8482160,
-   "name": "Martin Chromiak",
-   "team": "LAK",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2002-08-20",
-   "sweater": 42,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "LAK",
-    "round": 5,
-    "overallPick": 128
-   },
-   "recalledOn": "2026-10-29",
-   "from": "Ontario",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-29",
-     "type": "up",
-     "club": "Ontario"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 6,
-     "assists": 2,
-     "points": 8,
-     "plusMinus": -3,
-     "pim": 6,
-     "team": "Ontario Reign"
-    },
-    "last": {
-     "gamesPlayed": 71,
-     "goals": 28,
-     "assists": 28,
-     "points": 56,
-     "plusMinus": 1,
-     "pim": 14,
-     "team": "Ontario Reign"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 3,
-     "team": "Los Angeles Kings"
-    },
-    "last": null,
-    "careerGp": 2,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -2764,65 +3141,6 @@
    }
   },
   {
-   "playerId": 8484287,
-   "name": "Cole McWard",
-   "team": "TOR",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "2001-06-09",
-   "sweater": 82,
-   "draft": null,
-   "recalledOn": "2026-10-23",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-23",
-     "type": "up",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 7,
-     "goals": 0,
-     "assists": 4,
-     "points": 4,
-     "plusMinus": 3,
-     "pim": 2,
-     "team": "Toronto Marlies"
-    },
-    "last": {
-     "gamesPlayed": 63,
-     "goals": 6,
-     "assists": 21,
-     "points": 27,
-     "plusMinus": -11,
-     "pim": 24,
-     "team": "Bridgeport Islanders"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 1,
-     "team": "New York Islanders"
-    },
-    "careerGp": 9,
-    "careerG": 1,
-    "careerP": 1
-   }
-  },
-  {
    "playerId": 8477541,
    "name": "Dakota Mermis",
    "team": "TOR",
@@ -2891,6 +3209,94 @@
    }
   },
   {
+   "playerId": 8477992,
+   "name": "Jonas Johansson",
+   "team": "OTT",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "1995-09-19",
+   "sweater": 31,
+   "draft": {
+    "year": 2014,
+    "teamAbbrev": "BUF",
+    "round": 3,
+    "overallPick": 61
+   },
+   "recalledOn": "2026-10-22",
+   "from": "Belleville",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-08",
+   "events": [
+    {
+     "date": "2026-10-08",
+     "type": "down",
+     "club": "Belleville"
+    },
+    {
+     "date": "2026-10-22",
+     "type": "up",
+     "club": "Belleville"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "down",
+     "club": "minors"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "wins": 3,
+     "losses": 1,
+     "otLosses": 1,
+     "shutouts": 0,
+     "goalsAgainst": 15,
+     "shotsAgainst": 170,
+     "team": "Belleville Senators",
+     "savePct": 0.912,
+     "gaa": 2.92
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 1,
+     "pim": 0,
+     "wins": 1,
+     "losses": 2,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 16,
+     "shotsAgainst": 105,
+     "team": "Ottawa Senators",
+     "savePct": 0.848,
+     "gaa": 4.6
+    },
+    "last": {
+     "gamesPlayed": 25,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 11,
+     "losses": 10,
+     "otLosses": 2,
+     "shutouts": 0,
+     "goalsAgainst": 78,
+     "shotsAgainst": 670,
+     "team": "Tampa Bay Lightning",
+     "savePct": 0.884,
+     "gaa": 3.29
+    },
+    "careerGp": 109,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
    "team": "PIT",
    "recalledOn": "2026-10-22",
    "from": "Wilkes-Barre/Scranton",
@@ -2946,89 +3352,6 @@
     "season": null,
     "last": null,
     "careerGp": 0
-   }
-  },
-  {
-   "playerId": 8477992,
-   "name": "Jonas Johansson",
-   "team": "OTT",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "1995-09-19",
-   "sweater": 31,
-   "draft": {
-    "year": 2014,
-    "teamAbbrev": "BUF",
-    "round": 3,
-    "overallPick": 61
-   },
-   "recalledOn": "2026-10-22",
-   "from": "Belleville",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-08",
-     "type": "down",
-     "club": "Belleville"
-    },
-    {
-     "date": "2026-10-22",
-     "type": "up",
-     "club": "Belleville"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 5,
-     "wins": 3,
-     "losses": 1,
-     "otLosses": 1,
-     "shutouts": 0,
-     "goalsAgainst": 15,
-     "shotsAgainst": 170,
-     "team": "Belleville Senators",
-     "savePct": 0.912,
-     "gaa": 2.92
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 1,
-     "pim": 0,
-     "wins": 1,
-     "losses": 2,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 16,
-     "shotsAgainst": 105,
-     "team": "Ottawa Senators",
-     "savePct": 0.848,
-     "gaa": 4.6
-    },
-    "last": {
-     "gamesPlayed": 25,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 11,
-     "losses": 10,
-     "otLosses": 2,
-     "shutouts": 0,
-     "goalsAgainst": 78,
-     "shotsAgainst": 670,
-     "team": "Tampa Bay Lightning",
-     "savePct": 0.884,
-     "gaa": 3.29
-    },
-    "careerGp": 109,
-    "careerG": 0,
-    "careerP": null
    }
   },
   {
@@ -3704,13 +4027,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -5,
      "pim": 0,
-     "shots": 4,
+     "shots": 5,
      "team": "Florida Panthers"
     },
     "last": {
@@ -4015,65 +4338,6 @@
     "careerGp": 9,
     "careerG": 1,
     "careerP": 2
-   }
-  },
-  {
-   "playerId": 8479968,
-   "name": "Vinni Lettieri",
-   "team": "TOR",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "1995-02-06",
-   "sweater": 71,
-   "draft": null,
-   "recalledOn": "2026-10-18",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-18",
-     "type": "up",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 3,
-     "assists": 6,
-     "points": 9,
-     "plusMinus": 3,
-     "pim": 0,
-     "team": "Toronto Marlies"
-    },
-    "last": {
-     "gamesPlayed": 55,
-     "goals": 14,
-     "assists": 28,
-     "points": 42,
-     "plusMinus": 1,
-     "pim": 32,
-     "team": "Toronto Marlies"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 8,
-     "goals": 1,
-     "assists": 0,
-     "points": 1,
-     "plusMinus": -2,
-     "pim": 14,
-     "shots": 8,
-     "team": "Toronto Maple Leafs"
-    },
-    "last": null,
-    "careerGp": 163,
-    "careerG": 16,
-    "careerP": 33
    }
   },
   {
@@ -4406,13 +4670,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -2,
-     "pim": 0,
-     "shots": 3,
+     "plusMinus": -4,
+     "pim": 2,
+     "shots": 4,
      "team": "Florida Panthers"
     },
     "last": {
