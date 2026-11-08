@@ -10,7 +10,6 @@ import { estimatedToi, ppToiPerGame } from "./toi.js";
 import { last120 } from "./last120.js";
 import { fetchLineups, lineupPollMs } from "./lineups.js";
 import { applyLineups, DONE } from "./slateOverlay.js";
-import { currentMatchupKey, teamsOf } from "./matchupFilter.js";
 import { marketPct } from "./market.js";
 import { fetchTeamRatings, projectGame } from "./gameModel.js";
 
@@ -197,9 +196,16 @@ export function upcomingFilterActive(pool) {
   return Boolean(upcomingOnly && pool && pool.live.final > 0 && pool.live.final < pool.live.games);
 }
 
+// Teams of the picked game(s), registered by lib/matchupFilter.js. (2026-11-08: importing it here pulled FilterPanel.jsx into
+// scripts/lock_pairs.mjs via lib/h2h.js, and node can't load .jsx -- every Pairs lock failed from 11/06.)
+let keptTeams = () => [];
+export function setKeptTeams(fn) {
+  keptTeams = fn;
+}
+
 // The pool with finished games taken out — one cached copy per pool + picked games, so components get a stable object.
 function upcomingView(pool) {
-  const keep = teamsOf(currentMatchupKey());
+  const keep = keptTeams();
   const k = keep.join(",");
   if (!upcomingViews.has(pool)) upcomingViews.set(pool, {});
   const byKey = upcomingViews.get(pool);

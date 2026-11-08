@@ -39,7 +39,7 @@ export function useRadar(players, past, date) {
       if (!form || form.s.length < board.model.min_games) continue;
       const probs = {
         PTS: p.anytimePointPct != null ? p.anytimePointPct / 100 : null,
-        G: p.anytimeGoalPct != null ? p.anytimeGoalPct / 100 : null,
+        G: (p.goalLadderPct ?? p.anytimeGoalPct) != null ? (p.goalLadderPct ?? p.anytimeGoalPct) / 100 : null, // 2026-11-08: ladder prices from the chance before the top-end fix
         A: p.modelProbs?.assist ?? null,
       };
       const lad = ladderFor(probs, past ? formBefore(form, date) : form, board.model);

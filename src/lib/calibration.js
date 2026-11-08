@@ -59,6 +59,17 @@ export function formRatios(p, lg) {
   return out;
 }
 
+// 2026-11-08 top-end goal fix (user: the slate's heaviest shooters / top Locked in skaters scored less than said). Held out
+// Feb-Apr 2022-26 (live stack): shown 30-40% scored 2.5 pts under, 40%+ 6.0 under; live 2026-27 40%+ 4.6 under (n 223); it's the
+// top of the range, not shot volume (SOG/GP within a band: nothing). Above 30% the log-odds slope is cut by 37%: log loss better
+// in 4 of 4 held-out seasons (-49 / -31 / -18 / -55e-5) and live 2026-27 (-6.7e-5). 35% -> 33, 40 -> 36, 45 -> 39, 50 -> 42.
+// Applied last (after role + goalie); the line ladders keep the chance before it (goalLadderPct) -- they calibrate their own top.
+export const GOAL_TOP = { knot: 0.3, c: -0.371 };
+export function goalTop(p) {
+  const L = logit(Math.min(Math.max(p, 1e-4), 1 - 1e-4)), K = logit(GOAL_TOP.knot);
+  return L > K ? sigmoid(L + GOAL_TOP.c * (L - K)) : p;
+}
+
 export function calibrateGoal(p) {
   const L = logit(Math.min(Math.max(p, 1e-4), 1 - 1e-4)), c = CALIBRATION.goal;
   return sigmoid(c.a * L + c.b * L * L + c.c);

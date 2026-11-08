@@ -14,7 +14,7 @@ function probsOf(p, past) {
   return {
     SOG: past ? (p.modelSog3Pct != null ? p.modelSog3Pct / 100 : null) : p.modelProbs?.sog3 ?? null,
     PTS: p.anytimePointPct != null ? p.anytimePointPct / 100 : null,
-    G: p.anytimeGoalPct != null ? p.anytimeGoalPct / 100 : null,
+    G: (p.goalLadderPct ?? p.anytimeGoalPct) != null ? (p.goalLadderPct ?? p.anytimeGoalPct) / 100 : null, // 2026-11-08: ladder prices from the chance before the top-end fix
     A: past ? null : p.modelProbs?.assist ?? null,
   };
 }

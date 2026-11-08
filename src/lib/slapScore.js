@@ -82,6 +82,7 @@ export function applySlateScores(players) {
       // multi-point fit was on the pre-calibration point chance
       pointUncal: Math.min(0.95, (p.modelProbs.uncal?.point ?? p.modelProbs.point) * ptMult),
       goal: Math.min(0.95, p.modelProbs.goal * (due.get(p.playerId)?.mult ?? 1)),
+      goalPre: Math.min(0.95, (p.modelProbs.goalPre ?? p.modelProbs.goal) * (due.get(p.playerId)?.mult ?? 1)),
       point: Math.min(0.95, p.modelProbs.point * ptMult),
       // fit on the pre-matchup chance + its own defense term
       multi: multiGoalChance(p.modelProbs.base?.goal ?? p.modelProbs.goal, z),
@@ -92,7 +93,7 @@ export function applySlateScores(players) {
   const softRank = pctRank(scored, (p) => p.opponentTeamxGA60 ?? mean);
   return players.map((p) => {
     const a = adj.get(p.playerId);
-    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, anytimePointPct: null, multiGoalPct: null, multiPoint2Pct: null, multiPoint3Pct: null, dueHeat: null, pointHeat: null };
+    if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, goalLadderPct: null, anytimePointPct: null, multiGoalPct: null, multiPoint2Pct: null, multiPoint3Pct: null, dueHeat: null, pointHeat: null };
     const slapScore = Math.round(goalRank.get(p.playerId) * 99);
     return {
       ...p,
@@ -100,6 +101,7 @@ export function applySlateScores(players) {
       tier: tierFor(slapScore),
       gGoal: pct1(a.goal),
       anytimeGoalPct: pct1(a.goal),
+      goalLadderPct: pct1(a.goalPre), // before the 11/08 top-end fix: what the line ladders price from
       anytimePointPct: pct1(a.point),
       multiGoalPct: pct1(a.multi),
       multiPoint2Pct: pct1(multiPointChance(a.pointUncal, 2)),

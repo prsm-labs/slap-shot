@@ -145,6 +145,7 @@ const players = scored.map((p) => {
     snipeScore: p.snipeScore,
     breakawayScore: p.breakawayScore,
     anytimeGoalPct: p.anytimeGoalPct,
+    goalLadderPct: p.goalLadderPct ?? null, // 2026-11-08: before the top-end goal fix (line ladders)
     anytimePointPct: p.anytimePointPct,
     multiGoalPct: p.multiGoalPct,
     dueHeat: p.dueHeat ? { drought: p.dueHeat.drought, mult: p.dueHeat.mult } : null,

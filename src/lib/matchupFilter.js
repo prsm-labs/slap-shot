@@ -4,6 +4,7 @@
 import { useSyncExternalStore } from "react";
 import { matchesSearch } from "./teamSearch.js";
 import { getListSearch } from "./listFilters.js";
+import { setKeptTeams } from "./data.js";
 
 // 2026-10-23 (user: one header team dropdown + player search for the whole app): with no matchup picked, the header's team
 // is the selection, keyed "TEAM:TOR". teamsOf / filterPlayers / filterByTeam / inScope understand both, so every page that
@@ -99,3 +100,6 @@ export function filterByTeam(list, key, teamField = "team") {
   const base = key ? list.filter((x) => teams.includes(x[teamField])) : list;
   return searched(base, (x) => [x.name || x.player || ""], (x) => [x[teamField]]);
 }
+
+// 2026-11-08: lib/data.js keeps the picked game(s) on the lists even when final (Hide completed games).
+setKeptTeams(() => teamsOf(currentMatchupKey()));
