@@ -8,8 +8,10 @@
 //   ... --goalies-only   # add/replace only the Crease Lab goalie section of an existing snapshot
 //                          (used to backfill days snapshotted before goalies were tracked)
 //
-// A snapshot is locked once the slate's first game has started: later runs leave it alone, so
-// the record always reflects what was shown before the games, never a re-run after the fact.
+// Each game is locked once it has started: later runs keep its saved rows and refresh only the games
+// still to come, so the record always reflects what was shown before each game, never a re-run after
+// the fact. (Until 2026-11-07 the whole slate locked at the first puck drop, so on weekend matinee days
+// every evening game froze at noon.) Once every game has started the file is left alone.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -78,8 +80,13 @@ if (goaliesOnly) {
   console.log(`Added ${existing.goalies.length} goalie projections to ${outPath}${existing._meta.goaliesBackfilled ? " (backfilled after puck drop)" : ""}`);
   process.exit(0);
 }
-if (fs.existsSync(outPath) && Date.now() >= firstPuck && !force) {
-  console.log(`Locked: ${meta.slateDate} snapshot already exists and the first game has started — left unchanged.`);
+// 2026-11-07 (user: weekend goal projections froze at noon): lock per game, not per slate.
+const prior = fs.existsSync(outPath) && !force ? JSON.parse(fs.readFileSync(outPath, "utf8")) : null;
+const started = new Set(meta.slate.filter((g) => Date.now() >= Date.parse(g.startTimeUTC)).map((g) => g.gameId));
+// games to keep as saved: started, and the earlier snapshot has them
+const keepIds = new Set((prior?.players || []).map((p) => p.gameId).filter((id) => started.has(id)));
+if (prior && started.size === meta.slate.length) {
+  console.log(`Locked: ${meta.slateDate} snapshot already exists and every game has started — left unchanged.`);
   process.exit(0);
 }
 
@@ -172,23 +179,33 @@ const gameRows = ratings ? meta.slate.map((g) => {
   };
 }) : [];
 
+const nowIso = new Date().toISOString();
+const priorGame = new Map((prior?._meta?.games || []).map((g) => [g.gameId, g]));
+const kept = (rows) => (prior ? (rows || []).filter((r) => keepIds.has(r.gameId)) : []);
+const fresh = (rows) => rows.filter((r) => !keepIds.has(r.gameId));
 const snapshot = {
   _meta: {
     slateDate: meta.slateDate,
-    snapshotAt: new Date().toISOString(),
+    snapshotAt: nowIso, // last write; each game's own lock time is games[].frozenAt
+    firstSnapshotAt: prior?._meta?.firstSnapshotAt || prior?._meta?.snapshotAt || nowIso,
     poolGenerated: meta.generated,
-    games: meta.slate.map((g) => ({
-      gameId: g.gameId, away: g.away, home: g.home, startTimeUTC: g.startTimeUTC,
-      awayGoalie: g.awayGoalie, awayGoalieStatus: g.awayGoalieStatus,
-      homeGoalie: g.homeGoalie, homeGoalieStatus: g.homeGoalieStatus,
-    })),
+    games: meta.slate.map((g) => {
+      const old = keepIds.has(g.gameId) ? priorGame.get(g.gameId) : null;
+      if (old) return { ...old, frozenAt: old.frozenAt || prior._meta.snapshotAt, poolGenerated: old.poolGenerated || prior._meta.poolGenerated };
+      return {
+        gameId: g.gameId, away: g.away, home: g.home, startTimeUTC: g.startTimeUTC,
+        awayGoalie: g.awayGoalie, awayGoalieStatus: g.awayGoalieStatus,
+        homeGoalie: g.homeGoalie, homeGoalieStatus: g.homeGoalieStatus,
+        frozenAt: nowIso, poolGenerated: meta.generated,
+      };
+    }),
     scoreVersion: 5, // 4 = goal / point calibrated + 120-minute form on points (lib/calibration.js), 2026-10-14
     // 5 = modelSog3Pct calibrated too (top end ran high), 2026-10-14 12:20
     note: "Pre-game projections as shown in the app. Slap Score v3 (2026-10-13): grade-model chances (goal / assist / point / 3+ SOG, and the grade letter) adjusted for the opponent's xGA allowed, refit on 4 seasons (lib/grades.js); plus3SogPct still from the shot sim.",
   },
-  players,
-  goalies: goalieRows,
-  games: gameRows,
+  players: [...kept(prior?.players), ...fresh(players)],
+  goalies: [...kept(prior?.goalies), ...fresh(goalieRows)],
+  games: [...kept(prior?.games), ...fresh(gameRows)],
 };
 
 fs.mkdirSync(outDir, { recursive: true });
@@ -198,4 +215,5 @@ fs.writeFileSync(outPath, JSON.stringify(snapshot, null, 1));
 const dates = fs.readdirSync(outDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map((f) => f.slice(0, 10)).sort();
 fs.writeFileSync(path.join(outDir, "index.json"), JSON.stringify({ dates }, null, 1));
 
-console.log(`Wrote ${outPath}: ${players.length} skaters, ${snapshot.goalies.length} goalies, ${meta.slate.length} games (${gameRows.length} game projections) (${dates.length} snapshot dates total)`);
+if (keepIds.size) console.log(`Kept ${keepIds.size} started game(s) as saved; refreshed ${meta.slate.length - keepIds.size}.`);
+console.log(`Wrote ${outPath}: ${snapshot.players.length} skaters, ${snapshot.goalies.length} goalies, ${meta.slate.length} games (${gameRows.length} game projections) (${dates.length} snapshot dates total)`);
