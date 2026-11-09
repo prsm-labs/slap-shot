@@ -36,7 +36,7 @@ function Board({ pool, board, slip }) {
     return (pool.players || [])
       .filter((p) => (p.team === game.away || p.team === game.home) && p.lineupStatus !== "out" && p.lineupStatus !== "scratched")
       .filter((p) => !q || p.name.toLowerCase().includes(q.toLowerCase()))
-      .map((p) => ({ p, ladder: (laddersOf(p, board)[stat] || []).filter(([, ch]) => ch >= 0.03 && ch <= 0.97) }))
+      .map((p) => ({ p, ladder: (laddersOf(p, board)[stat] || []).filter(([, ch]) => ch >= 0.02 && ch <= 0.97) })) // 2026-11-09 (user: assists stopped at 2+): 2% floor = the ladder's own
       .filter((r) => r.ladder.length)
       .sort((x, y) => y.ladder[0][1] - x.ladder[0][1]);
   }, [pool, board, game, stat, q]);

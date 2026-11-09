@@ -20,7 +20,7 @@ export default function CoinLadder({ p: p0 }) {
   if (!Object.keys(lad).length) return null;
   const open = isOpenPick(gameOf(m, p.team)?.startTimeUTC);
   const mine = slip.filter((t) => t.playerId === p.playerId);
-  const ladder = (lad[stat] || []).filter(([, ch]) => ch >= 0.05 && ch <= 0.95);
+  const ladder = (lad[stat] || []).filter(([, ch]) => ch >= 0.02 && ch <= 0.97); // 2026-11-09: 3+ assists / 2+ goals are 2-18% lines
   const goSlip = () => { closeAllSlides(); tabRequest.set({ tab: "coins", at: Date.now() }); };
   return (
     <div className="card" style={{ marginTop: 12 }}>
