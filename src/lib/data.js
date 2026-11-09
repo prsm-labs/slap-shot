@@ -159,6 +159,13 @@ function startPolling() {
     setTimeout(tick, lineups ? lineupPollMs(lineups) : LINEUP_CHECK_MS);
   };
   tick();
+  // 2026-11-08 (user: finished games' players still on Scouting): phones pause timers while the app is in the background, so
+  // coming back showed the game states from when it was left. Re-check right away when the page is shown again.
+  if (typeof document !== "undefined") {
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") refreshPool();
+    });
+  }
 }
 
 // Re-check the pool file and lineup news now (the Top 3 page's refresh button). /api/lineups is
