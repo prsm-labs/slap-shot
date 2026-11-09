@@ -5,7 +5,7 @@ import './ShortList.css'
 // CourtIQ, Slap Shot and Six Points; each Cheat Sheets page builds its own items (its own lists, its own numbers).
 // item = { key, tag, name, team, sub, line, big, bigSub, why, onOpen, action, result }, or a list of them (that list's top few, best
 // first): the first one whose player isn't already on the card is shown, so every row is a different player.
-export default function ShortList({ items, sub, past }) {
+export default function ShortList({ items, sub, past, title }) {  // title (2026-11-09): 🔎 Today's finds
   const seen = new Set()
   const rows = []
   for (const x of items || []) {
@@ -15,7 +15,7 @@ export default function ShortList({ items, sub, past }) {
   return (
     <div className="card short-list">
       <div className="sl-head">
-        <b>⚡ {past ? "That day's short list" : "Today's short list"}</b>
+        <b>{title || `⚡ ${past ? "That day's short list" : "Today's short list"}`}</b>
         <span className="muted small">{sub || 'The top look from each tested list below — one player each. Tap a name for his card.'}</span>
       </div>
       {rows.length === 0 && <div className="muted small">Nothing qualifies yet — the lists fill in once the slate is built.</div>}

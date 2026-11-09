@@ -152,13 +152,14 @@ function CheatSheetMain() {
     const listItem = (f, tag, cls, label) => f && { key: `${cls}-${f.playerId}`, tag, tagCls: cls, name: f.p.name, team: vs(f.p), line: label(f), big: pct(f.chance),
       bigSub: `his ${pct(f.own)}`, why: `had it in ${f.hits} of his last ${f.n}`, onOpen: () => openSkaterSlide(f.p), action: <PickButton player={f.p} /> };
     const top5 = (arr, fn) => (arr || []).slice(0, 5).map(fn);
-    return [
-      top5(lv.safe, (c) => item(c, "💎 PRISM Pick", "safe")),
-      top5(lv.mid, (c) => item(c, "⚖️ Mid-range", "mid")),
-      top5(radar.picks, (f) => listItem(f, "🔦 Under the radar", "radar", radarLabel)),
-      top5(multi.lists?.PTS, (f) => listItem(f, "🎯 Multi-point", "edge", (x) => `${x.line}+ points`)),
-      top5(lv.long, (c) => item(c, "🌠 Long shot", "long")),
-    ];
+    // 2026-11-09 🔎 Today's finds (user: reveal the edge in 2-3 clicks -- only the lists that add value, not the obvious favorites): Under the
+    // radar and Multi-point / Multi-assist (each beats the players' own rates; Long-shot creators hit exactly our chance -> left out; PRISM Picks /
+    // mid-range / long shots stay in their own card). ShortList takes the first unseen player from each entry: 2 radar, 2 multi-point, 1 multi-assist.
+    void item; void lv;
+    const radarRows = top5(radar.picks, (f) => listItem(f, "🔦 Under the radar", "radar", radarLabel));
+    const ptsRows = top5(multi.lists?.PTS, (f) => listItem(f, "🎯 Multi-point", "edge", (x) => `${x.line}+ points`));
+    const aRows = top5(multi.lists?.A, (f) => listItem(f, "🍎 Multi-assist", "edge", (x) => `${x.line}+ assists`));
+    return [radarRows, radarRows, ptsRows, ptsRows, aRows];
   }, [radarPool, players, ppData, ppOdds, radar.picks, multi.lists, pool?.past, meta?.slateDate]);
   const slateByTeam = useMemo(() => {
     const m = new Map();
@@ -226,7 +227,9 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   return (
     <div>
       <SlateStatus />
-      <ShortList items={shortItems} past={pool?.past} />
+      <ShortList items={shortItems} past={pool?.past} title={`🔎 ${pool?.past ? "That night's finds" : "Today's finds"}`}
+        sub={(() => { const r = radar.data?.record?.all, mp = multi.data?.record?.PTS?.all, ma = multi.data?.record?.A?.all, f = (x) => (x?.n ? `${x.hits}/${x.n} (said ${Math.round(x.said * 100)}%)` : "—");
+          return `Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${f(r)} · 🎯 2+ pts ${f(mp)} · 🍎 2+ ast ${f(ma)}. Tap a name for his card.`; })()} />
       <PrismPicks players={players} date={pool?.past ? pool.meta.slateDate : null} />
 
       <div className="note">
