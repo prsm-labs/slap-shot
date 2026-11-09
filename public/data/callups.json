@@ -1,13 +1,400 @@
 {
  "_meta": {
-  "generated": "2026-11-09 12:04",
+  "generated": "2026-11-09 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 109,
-  "up": 52,
+  "count": 113,
+  "up": 53,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8481708,
+   "name": "Zac Jones",
+   "team": "UTA",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2000-10-18",
+   "sweater": 15,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "NYR",
+    "round": 3,
+    "overallPick": 68
+   },
+   "recalledOn": "2026-11-09",
+   "from": "Tucson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-09",
+     "type": "up",
+     "club": "Tucson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 13,
+     "goals": 3,
+     "assists": 8,
+     "points": 11,
+     "plusMinus": 1,
+     "pim": 6,
+     "team": "Tucson Roadrunners"
+    },
+    "last": {
+     "gamesPlayed": 60,
+     "goals": 10,
+     "assists": 52,
+     "points": 62,
+     "plusMinus": -11,
+     "pim": 14,
+     "team": "Rochester Americans"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 115,
+    "careerG": 4,
+    "careerP": 28
+   }
+  },
+  {
+   "playerId": 8475718,
+   "name": "Justin Holl",
+   "team": "WSH",
+   "position": "D",
+   "shoots": "R",
+   "birthDate": "1992-01-30",
+   "sweater": 4,
+   "draft": {
+    "year": 2010,
+    "teamAbbrev": "CHI",
+    "round": 2,
+    "overallPick": 54
+   },
+   "recalledOn": "2026-11-09",
+   "from": "Hershey",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-12",
+     "type": "up",
+     "club": "Hershey"
+    },
+    {
+     "date": "2026-10-18",
+     "type": "down",
+     "club": "Hershey"
+    },
+    {
+     "date": "2026-11-09",
+     "type": "up",
+     "club": "Hershey"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 0,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 0,
+     "pim": 0,
+     "team": "Hershey Bears"
+    },
+    "last": {
+     "gamesPlayed": 41,
+     "goals": 2,
+     "assists": 12,
+     "points": 14,
+     "plusMinus": 19,
+     "pim": 10,
+     "team": "Grand Rapids Griffins"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 2,
+     "assists": 0,
+     "points": 2,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 2,
+     "team": "Washington Capitals"
+    },
+    "last": {
+     "gamesPlayed": 9,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 5,
+     "pim": 6,
+     "shots": 7,
+     "team": "St. Louis Blues"
+    },
+    "careerGp": 408,
+    "careerG": 16,
+    "careerP": 99
+   }
+  },
+  {
+   "playerId": 8480157,
+   "name": "Calle Rosen",
+   "team": "STL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1994-02-02",
+   "sweater": 43,
+   "draft": null,
+   "recalledOn": "2026-11-09",
+   "from": "Springfield",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-09",
+     "type": "up",
+     "club": "Springfield"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 3,
+     "assists": 3,
+     "points": 6,
+     "plusMinus": -4,
+     "pim": 4,
+     "team": "Springfield Thunderbirds"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 9,
+     "assists": 29,
+     "points": 38,
+     "plusMinus": -8,
+     "pim": 26,
+     "team": "Hershey Bears / Springfield Thunderbirds"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 93,
+    "careerG": 11,
+    "careerP": 31
+   }
+  },
+  {
+   "playerId": 8482942,
+   "name": "Alex Gagne",
+   "team": "COL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2002-08-12",
+   "sweater": 45,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "TBL",
+    "round": 6,
+    "overallPick": 192
+   },
+   "recalledOn": "2026-11-09",
+   "from": "Colorado",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-09",
+     "type": "up",
+     "club": "Colorado"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 14,
+     "goals": 2,
+     "assists": 0,
+     "points": 2,
+     "plusMinus": 2,
+     "pim": 14,
+     "team": "Colorado Eagles"
+    },
+    "last": {
+     "gamesPlayed": 58,
+     "goals": 1,
+     "assists": 12,
+     "points": 13,
+     "plusMinus": 14,
+     "pim": 53,
+     "team": "Colorado Eagles"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8479362,
+   "name": "Riley Tufte",
+   "team": "NJD",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "1998-04-10",
+   "sweater": 10,
+   "draft": {
+    "year": 2016,
+    "teamAbbrev": "DAL",
+    "round": 1,
+    "overallPick": 25
+   },
+   "recalledOn": "2026-11-09",
+   "from": "Utica",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-09",
+     "type": "up",
+     "club": "Utica"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": -6,
+     "pim": 16,
+     "team": "Utica Comets"
+    },
+    "last": {
+     "gamesPlayed": 64,
+     "goals": 32,
+     "assists": 24,
+     "points": 56,
+     "plusMinus": 28,
+     "pim": 71,
+     "team": "Providence Bruins"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 4,
+     "team": "Boston Bruins"
+    },
+    "careerGp": 28,
+    "careerG": 3,
+    "careerP": 4
+   }
+  },
+  {
+   "playerId": 8482123,
+   "name": "Drew Commesso",
+   "team": "CHI",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2002-07-19",
+   "sweater": 33,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "CHI",
+    "round": 2,
+    "overallPick": 46
+   },
+   "recalledOn": "2026-11-09",
+   "from": "Rockford",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "Rockford"
+    },
+    {
+     "date": "2026-11-09",
+     "type": "up",
+     "club": "Rockford"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 7,
+     "wins": 2,
+     "losses": 4,
+     "otLosses": 1,
+     "shutouts": 1,
+     "goalsAgainst": 19,
+     "shotsAgainst": 172,
+     "team": "Rockford IceHogs",
+     "savePct": 0.89,
+     "gaa": 2.74
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "wins": 13,
+     "losses": 20,
+     "otLosses": 2,
+     "shutouts": 1,
+     "goalsAgainst": 107,
+     "shotsAgainst": 1077,
+     "team": "Rockford IceHogs",
+     "savePct": 0.901,
+     "gaa": 3.08
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 2,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 1,
+     "goalsAgainst": 7,
+     "shotsAgainst": 85,
+     "team": "Chicago Blackhawks",
+     "savePct": 0.918,
+     "gaa": 2.31
+    },
+    "careerGp": 5,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
   {
    "playerId": 8483012,
    "name": "Logan Morrison",
@@ -395,81 +782,6 @@
     "careerGp": 55,
     "careerG": 2,
     "careerP": 12
-   }
-  },
-  {
-   "playerId": 8482123,
-   "name": "Drew Commesso",
-   "team": "CHI",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2002-07-19",
-   "sweater": 33,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "CHI",
-    "round": 2,
-    "overallPick": 46
-   },
-   "recalledOn": "2026-11-08",
-   "from": "Rockford",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-08",
-     "type": "up",
-     "club": "Rockford"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 7,
-     "wins": 2,
-     "losses": 4,
-     "otLosses": 1,
-     "shutouts": 1,
-     "goalsAgainst": 19,
-     "shotsAgainst": 172,
-     "team": "Rockford IceHogs",
-     "savePct": 0.89,
-     "gaa": 2.74
-    },
-    "last": {
-     "gamesPlayed": 37,
-     "wins": 13,
-     "losses": 20,
-     "otLosses": 2,
-     "shutouts": 1,
-     "goalsAgainst": 107,
-     "shotsAgainst": 1077,
-     "team": "Rockford IceHogs",
-     "savePct": 0.901,
-     "gaa": 3.08
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 2,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 1,
-     "goalsAgainst": 7,
-     "shotsAgainst": 85,
-     "team": "Chicago Blackhawks",
-     "savePct": 0.918,
-     "gaa": 2.31
-    },
-    "careerGp": 5,
-    "careerG": 0,
-    "careerP": null
    }
   },
   {
@@ -1041,6 +1353,85 @@
    }
   },
   {
+   "playerId": 8485468,
+   "name": "Trey Taylor",
+   "team": "DAL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2002-02-04",
+   "sweater": 27,
+   "draft": null,
+   "recalledOn": "2026-11-03",
+   "from": "minors",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": "2026-11-09",
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-10-29",
+     "type": "up",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-11-03",
+     "type": "up",
+     "club": "minors"
+    },
+    {
+     "date": "2026-11-09",
+     "type": "down",
+     "club": "Texas"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": -6,
+     "pim": 6,
+     "team": "Texas Stars"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 8,
+     "assists": 18,
+     "points": 26,
+     "plusMinus": -2,
+     "pim": 34,
+     "team": "Texas Stars"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 1,
+     "team": "Dallas Stars"
+    },
+    "last": null,
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "team": "PIT",
    "recalledOn": "2026-11-03",
    "from": "minors",
@@ -1101,80 +1492,6 @@
     "season": null,
     "last": null,
     "careerGp": 0
-   }
-  },
-  {
-   "playerId": 8485468,
-   "name": "Trey Taylor",
-   "team": "DAL",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2002-02-04",
-   "sweater": 27,
-   "draft": null,
-   "recalledOn": "2026-11-03",
-   "from": "minors",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-10-29",
-     "type": "up",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-11-01",
-     "type": "down",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-11-03",
-     "type": "up",
-     "club": "minors"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 1,
-     "assists": 3,
-     "points": 4,
-     "plusMinus": -6,
-     "pim": 6,
-     "team": "Texas Stars"
-    },
-    "last": {
-     "gamesPlayed": 70,
-     "goals": 8,
-     "assists": 18,
-     "points": 26,
-     "plusMinus": -2,
-     "pim": 34,
-     "team": "Texas Stars"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 1,
-     "team": "Dallas Stars"
-    },
-    "last": null,
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -1782,6 +2099,84 @@
    }
   },
   {
+   "playerId": 8484188,
+   "name": "Theo Lindstein",
+   "team": "STL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2005-01-05",
+   "sweater": 4,
+   "draft": {
+    "year": 2023,
+    "teamAbbrev": "STL",
+    "round": 1,
+    "overallPick": 29
+   },
+   "recalledOn": "2026-10-30",
+   "from": "Springfield",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-09",
+   "events": [
+    {
+     "date": "2026-10-30",
+     "type": "up",
+     "club": "Springfield"
+    },
+    {
+     "date": "2026-11-09",
+     "type": "down",
+     "club": "Springfield"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 1,
+     "pim": 0,
+     "team": "Springfield Thunderbirds"
+    },
+    "last": {
+     "gamesPlayed": 59,
+     "goals": 6,
+     "assists": 8,
+     "points": 14,
+     "plusMinus": -20,
+     "pim": 18,
+     "team": "Springfield Thunderbirds"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 0,
+     "assists": 2,
+     "points": 2,
+     "plusMinus": -1,
+     "pim": 2,
+     "shots": 6,
+     "team": "St. Louis Blues"
+    },
+    "last": {
+     "gamesPlayed": 17,
+     "goals": 2,
+     "assists": 2,
+     "points": 4,
+     "plusMinus": 6,
+     "pim": 6,
+     "shots": 20,
+     "team": "St. Louis Blues"
+    },
+    "careerGp": 23,
+    "careerG": 2,
+    "careerP": 6
+   }
+  },
+  {
    "playerId": 8482949,
    "name": "Arsenii Sergeev",
    "team": "CGY",
@@ -2029,79 +2424,6 @@
     "careerGp": 27,
     "careerG": 1,
     "careerP": 4
-   }
-  },
-  {
-   "playerId": 8484188,
-   "name": "Theo Lindstein",
-   "team": "STL",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2005-01-05",
-   "sweater": 4,
-   "draft": {
-    "year": 2023,
-    "teamAbbrev": "STL",
-    "round": 1,
-    "overallPick": 29
-   },
-   "recalledOn": "2026-10-30",
-   "from": "Springfield",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-30",
-     "type": "up",
-     "club": "Springfield"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 2,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": 1,
-     "pim": 0,
-     "team": "Springfield Thunderbirds"
-    },
-    "last": {
-     "gamesPlayed": 59,
-     "goals": 6,
-     "assists": 8,
-     "points": 14,
-     "plusMinus": -20,
-     "pim": 18,
-     "team": "Springfield Thunderbirds"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 0,
-     "assists": 2,
-     "points": 2,
-     "plusMinus": -1,
-     "pim": 2,
-     "shots": 6,
-     "team": "St. Louis Blues"
-    },
-    "last": {
-     "gamesPlayed": 17,
-     "goals": 2,
-     "assists": 2,
-     "points": 4,
-     "plusMinus": 6,
-     "pim": 6,
-     "shots": 20,
-     "team": "St. Louis Blues"
-    },
-    "careerGp": 23,
-    "careerG": 2,
-    "careerP": 6
    }
   },
   {
@@ -2430,6 +2752,75 @@
    }
   },
   {
+   "playerId": 8483428,
+   "name": "Filip Bystedt",
+   "team": "SJS",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "2004-02-04",
+   "sweater": 18,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "SJS",
+    "round": 1,
+    "overallPick": 27
+   },
+   "recalledOn": "2026-10-28",
+   "from": "San Jose",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-09",
+   "events": [
+    {
+     "date": "2026-10-28",
+     "type": "up",
+     "club": "San Jose"
+    },
+    {
+     "date": "2026-11-09",
+     "type": "down",
+     "club": "San Jose"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "goals": 4,
+     "assists": 4,
+     "points": 8,
+     "plusMinus": -8,
+     "pim": 6,
+     "team": "San Jose Barracuda"
+    },
+    "last": {
+     "gamesPlayed": 65,
+     "goals": 22,
+     "assists": 38,
+     "points": 60,
+     "plusMinus": -2,
+     "pim": 22,
+     "team": "San Jose Barracuda"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -3,
+     "pim": 2,
+     "shots": 6,
+     "team": "San Jose Sharks"
+    },
+    "last": null,
+    "careerGp": 5,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "playerId": 8479333,
    "name": "Libor Hajek",
    "team": "SJS",
@@ -2479,70 +2870,6 @@
     "careerGp": 110,
     "careerG": 4,
     "careerP": 12
-   }
-  },
-  {
-   "playerId": 8483428,
-   "name": "Filip Bystedt",
-   "team": "SJS",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "2004-02-04",
-   "sweater": 18,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "SJS",
-    "round": 1,
-    "overallPick": 27
-   },
-   "recalledOn": "2026-10-28",
-   "from": "San Jose",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-28",
-     "type": "up",
-     "club": "San Jose"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 8,
-     "goals": 4,
-     "assists": 4,
-     "points": 8,
-     "plusMinus": -8,
-     "pim": 6,
-     "team": "San Jose Barracuda"
-    },
-    "last": {
-     "gamesPlayed": 65,
-     "goals": 22,
-     "assists": 38,
-     "points": 60,
-     "plusMinus": -2,
-     "pim": 22,
-     "team": "San Jose Barracuda"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -3,
-     "pim": 2,
-     "shots": 6,
-     "team": "San Jose Sharks"
-    },
-    "last": null,
-    "careerGp": 5,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -5732,84 +6059,6 @@
     "careerGp": 487,
     "careerG": 84,
     "careerP": 178
-   }
-  },
-  {
-   "playerId": 8475718,
-   "name": "Justin Holl",
-   "team": "WSH",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "1992-01-30",
-   "sweater": 4,
-   "draft": {
-    "year": 2010,
-    "teamAbbrev": "CHI",
-    "round": 2,
-    "overallPick": 54
-   },
-   "recalledOn": "2026-10-12",
-   "from": "Hershey",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-18",
-   "events": [
-    {
-     "date": "2026-10-12",
-     "type": "up",
-     "club": "Hershey"
-    },
-    {
-     "date": "2026-10-18",
-     "type": "down",
-     "club": "Hershey"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 0,
-     "assists": 3,
-     "points": 3,
-     "plusMinus": 0,
-     "pim": 0,
-     "team": "Hershey Bears"
-    },
-    "last": {
-     "gamesPlayed": 41,
-     "goals": 2,
-     "assists": 12,
-     "points": 14,
-     "plusMinus": 19,
-     "pim": 10,
-     "team": "Grand Rapids Griffins"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 2,
-     "assists": 0,
-     "points": 2,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 2,
-     "team": "Washington Capitals"
-    },
-    "last": {
-     "gamesPlayed": 9,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": 5,
-     "pim": 6,
-     "shots": 7,
-     "team": "St. Louis Blues"
-    },
-    "careerGp": 408,
-    "careerG": 16,
-    "careerP": 99
    }
   },
   {

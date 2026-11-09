@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-11-09",
+  "lockedAt": "2026-11-09T22:34:54.559Z",
+  "poolGenerated": "2026-11-09 17:31",
+  "eligible": 113,
+  "confirmed": 0,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 2% of tonight's slate by the grade model (51.6% to score), facing NYI (#2 softest defense of 6 tonight, 3.4 expected goals allowed a game). Matchup-adjusted chance 39.4%.",
+   "playerId": 8484801,
+   "name": "Macklin Celebrini",
+   "team": "SJS",
+   "opp": "NYI",
+   "position": "C",
+   "isHome": true,
+   "opponentGoalie": "Ilya Sorokin",
+   "opponentGoalieId": 8478009,
+   "goalieGrade": "A",
+   "grade": "A+",
+   "lineupStatus": null,
+   "modelGoalPct": 51.6,
+   "adjGoalPct": 39.4,
+   "oppXga": 3.4,
+   "softRank": 2,
+   "sogL5": 4.2,
+   "sogPg": 3.6
+  },
+  {
+   "tier": "mid",
+   "fallback": false,
+   "why": "1.4 shots a game over the last 5 games vs 1 on the season, into VAN (#1 softest defense of 6 tonight, 3.5 expected goals allowed a game) — the combination that scored 14-24% above the model last season. 18% to score.",
+   "playerId": 8484142,
+   "name": "Denver Barkey",
+   "team": "PHI",
+   "opp": "VAN",
+   "position": "C",
+   "isHome": false,
+   "opponentGoalie": "Leevi Merilinen",
+   "opponentGoalieId": 8482447,
+   "goalieGrade": "D",
+   "grade": "C",
+   "lineupStatus": null,
+   "modelGoalPct": 13.6,
+   "adjGoalPct": 18,
+   "oppXga": 3.5,
+   "softRank": 1,
+   "sogL5": 1.4,
+   "sogPg": 1
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
