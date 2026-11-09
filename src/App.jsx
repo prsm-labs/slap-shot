@@ -20,6 +20,8 @@ import CheatSheetsTab from "./tabs/CheatSheetsTab.jsx";
 import Top3Tab from "./tabs/Top3Tab.jsx";
 import MyPicksTab from "./tabs/MyPicksTab.jsx";
 import AboutTab from "./tabs/AboutTab.jsx";
+import DegenPicksTab from "./tabs/DegenPicksTab.jsx"; // 2026-11-09 🪙 play-money mini game (CourtIQ's)
+import { useCoinSettler, useSlip } from "./lib/coins.js";
 import TabMenu from "./components/TabMenu.jsx";
 import { OfflineBanner, OfflineMenuButton } from "./components/Offline.jsx";
 import offlineConfig from "./lib/offlineConfig.js";
@@ -45,6 +47,7 @@ const TABS = [
   { key: "gamesim", label: "🎬 Game Sim", Component: GameHubTab, group: "Research" }, // 2026-10-29: RotoBot-style simulated games (replay + 10,000-game box score)
   { key: "firstgoal", label: "🥇 First Goal", Component: FirstGoalTab, group: "Research" },
   { key: "calledup", label: "🆙 Called Up", Component: CalledUpTab, group: "Research" },
+  { key: "coins", label: "🪙 Degen Picks", Component: DegenPicksTab, group: "Research" },
   { key: "track", label: "📈 Track Record", Component: TrackRecordTab, group: "Track Record" },
   { key: "about", label: "📌 About", Component: AboutTab, group: "App" },
 ];
@@ -59,6 +62,8 @@ export default function App() {
   // 2026-10-23: a Schedule row / slideout matchup asks for the Live tab (lib/nav.js openGame)
   const tabReq = tabRequest.use();
   useEffect(() => { if (tabReq) setTab(tabReq.tab); }, [tabReq]);
+  useCoinSettler(); // 🪙 Degen Picks: settles open picks from the NHL box scores
+  const slip = useSlip();
 
   return (
     <div className="app">
@@ -100,6 +105,8 @@ export default function App() {
       </div>
 
       <PlayerSlideout />
+      {/* 2026-11-09: the Degen Picks slip follows you while you research (filled from the skater slideout's 🪙 section) */}
+      {slip.length > 0 && tab !== "coins" && <button type="button" className="dp-float" onClick={() => setTab("coins")}>🧾 Slip · {slip.length}</button>}
     </div>
   );
 }

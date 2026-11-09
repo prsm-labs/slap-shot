@@ -1,0 +1,82 @@
+/* 🪙 Degen Picks (tabs/DegenPicks.jsx) -- play-money mini game. Uses the app's tokens (each app keeps its own accent). */
+.coin-good { color: var(--green); }
+.coin-bad { color: var(--red); }
+.coin-bal { margin-left: auto; color: var(--gold-text); font-variant-numeric: tabular-nums; }
+.coin-x { background: none; border: 0; color: var(--muted); font-size: 15px; cursor: pointer; padding: 0 2px; }
+.coin-stakes { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.coin-place { background: var(--accent); color: #fff; border: 0; border-radius: 10px; padding: 10px; font-weight: 700; font-size: 15px; cursor: pointer; width: 100%; }
+.coin-place:disabled { opacity: .5; cursor: default; }
+
+.coin-hero-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.coin-big { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.coin-chart { width: 100%; height: 70px; margin-top: 8px; display: block; }
+.coin-chart polyline { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.coin-chart-up { stroke: var(--green); }
+.coin-chart-down { stroke: var(--red); }
+.coin-chart-base { stroke: var(--border); stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+
+/* make picks */
+.dp-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
+.dp-controls select, .dp-controls input { background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; font: inherit; min-width: 0; }
+.dp-controls input { flex: 1 1 140px; }
+.dp-stats { display: flex; flex-wrap: wrap; gap: 6px; }
+.dp-board { padding: 4px 12px; }
+.dp-row { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto auto auto; gap: 8px; align-items: center; padding: 8px 0; border-top: 1px solid var(--border); }
+.dp-row:first-child { border-top: 0; }
+.dp-who { display: flex; flex-direction: column; min-width: 0; }
+.dp-who b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dp-step { display: flex; align-items: center; gap: 4px; font-variant-numeric: tabular-nums; }
+.dp-step b { min-width: 30px; text-align: center; }
+.dp-step button { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface2); color: var(--text); cursor: pointer; line-height: 1; }
+.dp-step button:disabled { opacity: .35; cursor: default; }
+.dp-ch { display: flex; flex-direction: column; align-items: flex-end; min-width: 44px; font-variant-numeric: tabular-nums; }
+.dp-ch b { color: var(--accent); }
+.dp-add { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--accent); background: transparent; color: var(--accent); font-size: 17px; font-weight: 700; cursor: pointer; }
+.dp-add.on { background: var(--accent); color: #fff; }
+.dp-add:disabled { border-color: var(--gold-text); background: transparent; color: var(--gold-text); cursor: default; }
+@media (max-width: 420px) { .dp-who .small { font-size: 11px; } .dp-row { gap: 6px; } }
+
+/* the slip: sticks to the bottom of the screen while it has picks */
+.dp-slip { position: sticky; bottom: 8px; z-index: 20; background: var(--surface); border: 1px solid var(--accent); border-radius: 12px; padding: 10px 12px; display: grid; gap: 8px; box-shadow: 0 6px 24px rgba(0, 0, 0, .35); margin: 10px 0; }
+.dp-slip-head { display: flex; gap: 10px; align-items: center; }
+.dp-leg { display: flex; gap: 8px; align-items: center; justify-content: space-between; font-size: 14px; }
+.dp-leg > span:first-child { flex: 1; min-width: 0; }
+
+/* slips (tickets) + record */
+.dp-tickets { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin: 8px 0; }
+.dp-ticket { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 10px 12px; display: grid; gap: 6px; }
+.dp-ticket.won { border-left-color: var(--green); }
+.dp-ticket.lost { border-left-color: var(--red); }
+.dp-ticket.void { border-left-color: var(--muted); opacity: .75; }
+.dp-ticket-top { display: flex; gap: 8px; align-items: center; }
+.dp-ticket-top .dp-who { flex: 1; }
+.dp-ticket-line, .dp-ticket-foot { display: flex; justify-content: space-between; gap: 8px; font-variant-numeric: tabular-nums; }
+.dp-stamp { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; color: var(--muted); white-space: nowrap; }
+.dp-stamp.won { color: var(--green); border-color: var(--green); }
+.dp-stamp.lost { color: var(--red); border-color: var(--red); }
+.dp-bystat { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; }
+.dp-reset { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+
+/* parlays (2026-11-09) */
+.dp-mode { display: flex; gap: 6px; }
+.dp-parlay { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; border-top: 1px dashed var(--border); padding-top: 8px; font-variant-numeric: tabular-nums; }
+.dp-pleg { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
+
+/* slideout 🪙 section + floating slip chip + Gambly row (2026-11-09) */
+.dp-gambly { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.dp-ticket-foot { align-items: center; }
+.dp-float { position: fixed; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 900; background: var(--accent); color: #fff; border: 0; border-radius: 999px; padding: 9px 14px; font-weight: 700; box-shadow: 0 4px 18px rgba(0, 0, 0, .4); cursor: pointer; }
+.cl-stats { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.cl-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cl-chip { display: flex; flex-direction: column; align-items: center; min-width: 52px; padding: 4px 6px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: var(--text); cursor: pointer; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.cl-chip b { font-size: 13px; }
+.cl-chip span { font-size: 11px; color: var(--muted); }
+.cl-chip.on { border-color: var(--accent); background: var(--accent); color: #fff; }
+.cl-chip.on span { color: #fff; }
+.cl-chip:disabled { opacity: .5; cursor: default; }
+
+/* Slap Shot extras: the app has no global muted / small / link helpers */
+.dp-muted { color: var(--muted); }
+.dp-small { font-size: 12px; }
+.dp-link { background: none; border: 0; padding: 0; color: var(--accent2); cursor: pointer; font-size: 12px; text-decoration: underline; }
+.coins-page .card { margin-top: 10px; }

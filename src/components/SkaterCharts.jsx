@@ -42,7 +42,8 @@ export default function SkaterCharts({ player, tonight = null }) {
   // Poisson means): goals / points from the 1+ chance, shots on goal from the 3+ SOG chance
   const lam1 = (pc) => (pc == null ? null : -Math.log(Math.max(1e-6, 1 - Math.min(pc / 100, 0.999))));
   const sog3 = live.modelProbs?.sog3 ?? (live.modelSog3Pct != null ? live.modelSog3Pct / 100 : null);
-  const proj = { goal: lam1(live.anytimeGoalPct), point: lam1(live.anytimePointPct), sog3: sog3 != null ? lamFor(sog3, 3) : null };
+  const proj = { goal: lam1(live.anytimeGoalPct), point: lam1(live.anytimePointPct), sog3: sog3 != null ? lamFor(sog3, 3) : null,
+    assist: live.modelProbs?.assist != null ? lam1(live.modelProbs.assist * 100) : null }; // 2026-11-09 assist chart
 
   const btn = (key, label) => (
     <button key={key} className={`pill-btn ${active === key ? "active" : ""}`} onClick={() => setMode(key)}>{label}</button>

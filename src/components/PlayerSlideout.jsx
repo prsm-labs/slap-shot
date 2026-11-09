@@ -20,6 +20,7 @@ import TonightCard from "./TonightCard.jsx";
 import MatchupChip from "./MatchupChip.jsx";
 import HitRateCard from "./HitRateCard.jsx";
 import Fold from "./Fold.jsx";
+import CoinLadder from "./CoinLadder.jsx"; // 2026-11-09 🪙 Degen Picks from the slideout
 import { useHitGames } from "../lib/hitGames.js";
 import LinedUp from "./LinedUp.jsx";
 
@@ -247,6 +248,7 @@ export default function PlayerSlideout() {
               <>
                 <SkaterStats p={player} />
                 <SkaterHitRates p={player} hit={hit} />
+                <CoinLadder p={player} />
                 <SkaterCharts player={skaterView || player} tonight={tonight} />
               </>
             )}

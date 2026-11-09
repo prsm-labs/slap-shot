@@ -9,6 +9,8 @@ import { rolling, TrendKey, TrendProj, TrendSeg } from "./Trend.jsx";
 const SKATER_VIEWS = [
   ["goal", "🚨 Goal", (g) => g.goals || 0, 1],
   ["point", "🎯 Point", (g) => g.points ?? g.goals ?? 0, 1], // real points from MoneyPuck's game lines
+  // 2026-11-09 (user: assists were missing): rows without an assists field (H2H / home-road) use points - goals
+  ["assist", "🅰️ Assist", (g) => g.assists ?? Math.max(0, (g.points ?? 0) - (g.goals ?? 0)), 1],
   ["sog3", "⚡ 3+ SOG", (g) => g.sog || 0, 3],
 ];
 
@@ -31,9 +33,14 @@ const GOALIE_VIEWS = [
 // views / showYear / emptyText: optional, for the H2H views in the skater slideout.
 // trend (2026-11-07): last-5 rolling average through the bars + proj = { goal, point, sog3 } tonight's expected count (dashed),
 // only on the skater's recent-games view (SkaterCharts passes them there)
+// 2026-11-09 (user: picking Points then switching Last 7 / H2H / Home-Road reset to Goal): the picked stat is remembered per role
+// across every chart (and the next player opened); a view set without that stat (e.g. vs-goalie: no assists) shows its first.
+const picked = { skater: null, goalie: null };
+
 export default function L7Chart({ games, role = "skater", views: customViews, showYear = false, emptyText, trend = false, proj = null }) {
   const views = customViews || (role === "goalie" ? GOALIE_VIEWS : SKATER_VIEWS);
-  const [viewKey, setViewKey] = useState(views[0][0]);
+  const [viewKey, setViewKeyRaw] = useState(() => (views.some((v) => v[0] === picked[role]) ? picked[role] : views[0][0]));
+  const setViewKey = (k) => { picked[role] = k; setViewKeyRaw(k); };
   const view = views.find((v) => v[0] === viewKey) || views[0];
   const [, , getValue, threshold] = view;
 
