@@ -148,7 +148,8 @@ export default function AppleLabTab() {
         ℹ️ "An apple" = an assist. Point % = the grade model's chance of a goal or assist (first week: 35.5% said vs 33.9% happened),
         nudged for tonight's opponent. +3 SOG % is the calibrated grade model's chance (10/2-10/24: 22.3% said vs 21.2% happened;
         said 50-65% → 53%). Until 10/26 it came from a 10,000-run shot simulation that ran high at the top (said 50-65%, 41% happened).
-        ★ Point Signal = point % in tonight's top 15% AND +3 SOG ≥40% — 66% of those got a point over the first week (base 35%).
+        ★ Point Signal = tonight's top 8 point chances (since 11/08; before: top 15% with +3 SOG ≥40%, ~28 a night) — live this
+        season the top 8 got a point 71.3% of the time (said 71.6%, base 35%). A shortcut to the best chances, not an extra edge.
         2+ / 3+ Pts % are fit on 4 seasons (plain Poisson over-states multi-point nights by ~15-40%). 🍎 PTS DUE = no point in 2+ games
         while the team's expected goals with them on the ice ran 1.2x+ their season rate, outside the top 25% — 12-14% more points than
         expected over 4 seasons; after calibration their point % is raised x1.04 (x1.05 at 3+ games). Point % also reads the last ~120 minutes

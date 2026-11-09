@@ -11,6 +11,7 @@ import { useMatchup, inScope } from "../lib/matchupFilter.js";
 import { FIRST_GOAL } from "../lib/goalBadges.js";
 import { matchesSearch } from "../lib/teamSearch.js";
 import { useListFilters } from "../lib/listFilters.js";
+import { SIGNAL_N } from "../lib/signals.js";
 
 // 2026-27 Track Record — Going Yard style: every skater's saved pre-game projection (grade, Slap
 // Score, tier, sim odds) next to their real box line. Data: public/data/track_record_2026.json,
@@ -25,8 +26,8 @@ const CARD_FILTERS = {
   goals: { label: "🚨 Scored", fn: (r) => r.scored },
   hat: { label: "🎩 Hat tricks", fn: (r) => r.g >= 3 },
   top10: { label: "Top 10 Slap", fn: (r) => r.slapRank != null && r.slapRank <= 10 },
-  goalSig: { label: "★ Goal Signal", fn: (r) => r.goalSignal },
-  pointSig: { label: "★ Point Signal", fn: (r) => r.pointSignal },
+  goalSig: { label: "★ Goal Signal (top 8)", fn: (r) => r.goalSignal },
+  pointSig: { label: "★ Point Signal (top 8)", fn: (r) => r.pointSignal },
   sog3: { label: "3+ SOG", fn: (r) => r.sog >= 3 },
   firstGoal: { label: `${FIRST_GOAL} First goal`, fn: (r) => r.firstGoal },
 };
@@ -55,6 +56,20 @@ function flatten(r) {
     scored: (a.g || 0) > 0,
     firstGoal: Boolean(a.firstGoal),
   };
+}
+
+// 2026-11-08: Goal / Point Signal = each night's top SIGNAL_N by the frozen goal / point chance (lib/signals.js v3), re-ranked
+// here for every night so the season's record uses one rule (the snapshots' own flags were the v2 rule before 11/09).
+function signalTop(rows) {
+  const byDate = new Map();
+  for (const r of rows) if (r.inPool) (byDate.get(r.date) || byDate.set(r.date, []).get(r.date)).push(r);
+  const top = (list, get) => new Set([...list].filter((r) => get(r) != null).sort((a, b) => get(b) - get(a)).slice(0, SIGNAL_N));
+  const g = new Set(), pt = new Set();
+  for (const list of byDate.values()) {
+    top(list, (r) => r.simGoal).forEach((r) => g.add(r));
+    top(list, (r) => r.proj?.anytimePointPct).forEach((r) => pt.add(r));
+  }
+  return rows.map((r) => ({ ...r, goalSignal: g.has(r), pointSignal: pt.has(r) }));
 }
 
 function StatCard({ label, value, sub, onClick, active }) {
@@ -134,7 +149,7 @@ export default function TrackRecordLive() {
       .catch((e) => setError(String(e.message || e)));
   }, []);
 
-  const all = useMemo(() => (data ? data.rows.map(flatten) : []), [data]);
+  const all = useMemo(() => (data ? signalTop(data.rows.map(flatten)) : []), [data]);
   const dates = data?._meta.dates || [];
   const dayRows = useMemo(() => (date ? all.filter((r) => r.date === date) : all), [all, date]);
   const dayGames = useMemo(

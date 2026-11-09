@@ -27,10 +27,20 @@
 // >= 40 cut: top-15% point skaters 9/29-10/24, sim >= 40 589 rows / 62.5% got a point, calibrated >= 40 630 / 62.2%.
 // 2026-11-02: past-night snapshots carry the calibrated chance as modelSog3Pct (no modelProbs) -- use it before the raw sim
 const sog3Pct = (p) => (p.modelProbs?.sog3 != null ? p.modelProbs.sog3 * 100 : p.modelSog3Pct ?? p.plus3SogPct);
+// v3 (2026-11-08, user: how are the signals doing; "do it all"): live 9/29-11/07 both v2 signals hit what their chance said
+// (Goal 32.3% vs 33.4, Point 64.6% vs 63.7) but no more -- the night's top N by chance did as well -- and they fired on ~21 / ~28
+// skaters a night. Tested held out Feb-Apr 2022-26 (live stack) + live: soft defense, softest third, a 3-leg gate (+ xG/60 rising),
+// a 3+ SOG leg -- none beat the chance itself in every season. So a signal is now simply tonight's top SIGNAL_N by the chance:
+// goal top 8 held out 40.5% (said 39.4), live 35.1% (said 36.4); point top 8 live 71.3% (said 71.6). A shortcut, not an extra edge.
+// Past nights keep the flag frozen in their snapshot (goalSignal / pointSignal booleans).
+export const SIGNAL_N = 8;
 export function isGoalSignal(p) {
-  return (p.slapScore ?? 0) >= 85 && (p.oppSoftPct ?? 0) >= 0.5;
+  if (typeof p.goalSignal === "boolean") return p.goalSignal;
+  return (p.goalOrder ?? Infinity) <= SIGNAL_N;
 }
 
 export function isPointSignal(p) {
-  return (p.pointPct ?? 0) >= 0.85 && (sog3Pct(p) ?? 0) >= 40;
+  if (typeof p.pointSignal === "boolean") return p.pointSignal;
+  return (p.pointOrder ?? Infinity) <= SIGNAL_N;
 }
+export const sog3Chance = sog3Pct;

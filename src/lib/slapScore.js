@@ -91,6 +91,10 @@ export function applySlateScores(players) {
   const goalRank = pctRank(scored, (p) => adj.get(p.playerId).goal);
   const pointRank = pctRank(scored, (p) => adj.get(p.playerId).point);
   const softRank = pctRank(scored, (p) => p.opponentTeamxGA60 ?? mean);
+  // 2026-11-08: 1 = tonight's best goal / point chance (lib/signals.js: Goal / Point Signal = top 8)
+  const order = (get) => new Map([...scored].sort((x, y) => get(y) - get(x)).map((p, i) => [p.playerId, i + 1]));
+  const goalOrder = order((p) => adj.get(p.playerId).goal);
+  const pointOrder = order((p) => adj.get(p.playerId).point);
   return players.map((p) => {
     const a = adj.get(p.playerId);
     if (!a) return { ...p, slapScore: null, tier: null, gGoal: null, anytimeGoalPct: null, goalLadderPct: null, anytimePointPct: null, multiGoalPct: null, multiPoint2Pct: null, multiPoint3Pct: null, dueHeat: null, pointHeat: null };
@@ -108,6 +112,8 @@ export function applySlateScores(players) {
       multiPoint3Pct: pct1(multiPointChance(a.pointUncal, 3)),
       pointPct: pointRank.get(p.playerId),
       oppSoftPct: softRank.get(p.playerId),
+      goalOrder: goalOrder.get(p.playerId),
+      pointOrder: pointOrder.get(p.playerId),
       dueHeat: due.get(p.playerId) || null,
       pointHeat: ptDue.get(p.playerId) || null,
     };

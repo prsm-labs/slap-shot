@@ -126,7 +126,7 @@ export function buildGroups(ctx = {}) {
       { v: "b2b", label: "B2B", title: "His team played yesterday — second night of a back-to-back" },
       { v: "b2bnext", label: "B2B tmrw", title: "His team plays again tomorrow" },
       { v: "limited", label: "⚠️ Data limited", title: "Fewer than 10 games this season — his numbers lean on last season" },
-      { v: "signal", label: signal === "point" ? "★ Point Signal" : "★ Goal Signal", title: signal === "point" ? "Point % in tonight's top 15% and 3+ SOG 40%+" : "Slap Score 85+ into a softer-half defense" },
+      { v: "signal", label: signal === "point" ? "★ Point Signal" : "★ Goal Signal", title: signal === "point" ? "Tonight's top 8 point chances (hits what the % says; a shortcut, not an extra edge)" : "Tonight's top 8 goal chances (hits what the % says; a shortcut, not an extra edge)" },
       { v: "soft", label: "▲ Softer third tonight", title: "Opponent in tonight's softest third by expected goals allowed — the matchup factor that tested real" },
       { v: "breakout", label: "🚀 Breakout Watch", title: "Rising expected goals into a soft defense, outside the model's top 15%" },
       { v: "due", label: "🔥 Due + heating up", title: "No goal in 2+ games, expected goals last 5 at 1.3x+ the season rate, soft defense tonight, not a top-25% scorer — scored 6-13% above the model over 4 seasons" },
