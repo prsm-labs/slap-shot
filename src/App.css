@@ -564,3 +564,6 @@ html { zoom: var(--z); }
 .day-chip .dc-n { font-size: 10.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .day-chip .dc-n.live { color: var(--red, #e5484d); font-weight: 700; }
 @media (max-width: 420px) { .day-rail { gap: 3px; } .day-chip { padding: 6px 1px; } .day-chip .dc-wd { font-size: 10px; } }
+
+/* 2026-11-10: footer 'Data updated' stamp (DataStamp.jsx) */
+.footer .data-stamp { display: block; margin-top: 4px; }

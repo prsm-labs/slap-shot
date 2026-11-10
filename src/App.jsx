@@ -23,11 +23,12 @@ import AboutTab from "./tabs/AboutTab.jsx";
 import DegenPicksTab from "./tabs/DegenPicksTab.jsx"; // 2026-11-09 🪙 play-money mini game (CourtIQ's)
 import { useCoinSettler, useSlip } from "./lib/coins.js";
 import TabMenu from "./components/TabMenu.jsx";
+import DataStamp from "./components/DataStamp.jsx";
 import { OfflineBanner, OfflineMenuButton } from "./components/Offline.jsx";
 import offlineConfig from "./lib/offlineConfig.js";
 import AppRefresh from "./components/AppRefresh.jsx";
 
-const BUILD_TIMESTAMP = "2026-07-31 13:28 ET";
+// 2026-11-10: the hardcoded 7/31 build stamp is gone from the footer -- it now shows when the pipeline last updated the data.
 
 // Odds Calculator removed per direct user feedback ("we don't need the odds calculator") —
 // OddsCalculatorTab.jsx / lib/odds.js are left on disk, unreferenced, same convention as other
@@ -101,7 +102,8 @@ export default function App() {
       </main>
 
       <div className="footer">
-        <span>Slap Shot · Build {BUILD_TIMESTAMP} · prsm-labs</span>
+        <span>Slap Shot · prsm-labs</span>
+        <DataStamp url="/data/todays_pool.json" pick={(d) => d._meta?.generated} />
       </div>
 
       <PlayerSlideout />
