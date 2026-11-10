@@ -1,13 +1,180 @@
 {
  "_meta": {
-  "generated": "2026-11-10 12:04",
+  "generated": "2026-11-10 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 113,
-  "up": 52,
+  "count": 116,
+  "up": 53,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482525,
+   "name": "Ryan Tverberg",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2002-01-30",
+   "sweater": 77,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "TOR",
+    "round": 7,
+    "overallPick": 213
+   },
+   "recalledOn": "2026-11-10",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-10",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 14,
+     "goals": 4,
+     "assists": 3,
+     "points": 7,
+     "plusMinus": -1,
+     "pim": 8,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 15,
+     "assists": 21,
+     "points": 36,
+     "plusMinus": 18,
+     "pim": 36,
+     "team": "Toronto Marlies"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 2,
+     "shots": 1,
+     "team": "Toronto Maple Leafs"
+    },
+    "careerGp": 2,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
+   "playerId": 8484770,
+   "name": "Sam O'Reilly",
+   "team": "TBL",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2006-03-30",
+   "sweater": 23,
+   "draft": {
+    "year": 2024,
+    "teamAbbrev": "EDM",
+    "round": 1,
+    "overallPick": 32
+   },
+   "recalledOn": "2026-11-10",
+   "from": "Syracuse",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-10",
+     "type": "up",
+     "club": "Syracuse"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 2,
+     "assists": 2,
+     "points": 4,
+     "plusMinus": 0,
+     "pim": 6,
+     "team": "Syracuse Crunch"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8485142,
+   "name": "Jackson Parsons",
+   "team": "OTT",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2004-11-23",
+   "sweater": 32,
+   "draft": null,
+   "recalledOn": "2026-11-10",
+   "from": "Belleville",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-10",
+     "type": "up",
+     "club": "Belleville"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "wins": 4,
+     "losses": 3,
+     "otLosses": 1,
+     "shutouts": 0,
+     "goalsAgainst": 21,
+     "shotsAgainst": 249,
+     "team": "Belleville Senators",
+     "savePct": 0.916,
+     "gaa": 2.64
+    },
+    "last": {
+     "gamesPlayed": 14,
+     "wins": 6,
+     "losses": 5,
+     "otLosses": 2,
+     "shutouts": 1,
+     "goalsAgainst": 39,
+     "shotsAgainst": 366,
+     "team": "Belleville Senators",
+     "savePct": 0.893,
+     "gaa": 3.22
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
   {
    "playerId": 8481708,
    "name": "Zac Jones",
@@ -396,6 +563,75 @@
    }
   },
   {
+   "playerId": 8479968,
+   "name": "Vinni Lettieri",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "1995-02-06",
+   "sweater": 71,
+   "draft": null,
+   "recalledOn": "2026-11-08",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": "2026-11-10",
+   "events": [
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-10",
+     "type": "down",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 3,
+     "assists": 6,
+     "points": 9,
+     "plusMinus": 3,
+     "pim": 0,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 14,
+     "assists": 28,
+     "points": 42,
+     "plusMinus": 1,
+     "pim": 32,
+     "team": "Toronto Marlies"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": -2,
+     "pim": 14,
+     "shots": 9,
+     "team": "Toronto Maple Leafs"
+    },
+    "last": null,
+    "careerGp": 164,
+    "careerG": 16,
+    "careerP": 33
+   }
+  },
+  {
    "playerId": 8483012,
    "name": "Logan Morrison",
    "team": "SEA",
@@ -507,70 +743,6 @@
     "careerGp": 6,
     "careerG": 0,
     "careerP": 0
-   }
-  },
-  {
-   "playerId": 8479968,
-   "name": "Vinni Lettieri",
-   "team": "TOR",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "1995-02-06",
-   "sweater": 71,
-   "draft": null,
-   "recalledOn": "2026-11-08",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-18",
-     "type": "up",
-     "club": "Toronto"
-    },
-    {
-     "date": "2026-11-08",
-     "type": "up",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 3,
-     "assists": 6,
-     "points": 9,
-     "plusMinus": 3,
-     "pim": 0,
-     "team": "Toronto Marlies"
-    },
-    "last": {
-     "gamesPlayed": 55,
-     "goals": 14,
-     "assists": 28,
-     "points": 42,
-     "plusMinus": 1,
-     "pim": 32,
-     "team": "Toronto Marlies"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 1,
-     "assists": 0,
-     "points": 1,
-     "plusMinus": -2,
-     "pim": 14,
-     "shots": 9,
-     "team": "Toronto Maple Leafs"
-    },
-    "last": null,
-    "careerGp": 164,
-    "careerG": 16,
-    "careerP": 33
    }
   },
   {
@@ -836,6 +1008,75 @@
    }
   },
   {
+   "playerId": 8481567,
+   "name": "Henry Thrun",
+   "team": "WPG",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2001-03-12",
+   "sweater": 8,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "ANA",
+    "round": 4,
+    "overallPick": 101
+   },
+   "recalledOn": "2026-11-07",
+   "from": "Manitoba (AHL) under emergency conditions",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-10",
+   "events": [
+    {
+     "date": "2026-11-07",
+     "type": "up",
+     "club": "Manitoba (AHL) under emergency conditions"
+    },
+    {
+     "date": "2026-11-10",
+     "type": "down",
+     "club": "Manitoba"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 13,
+     "goals": 1,
+     "assists": 6,
+     "points": 7,
+     "plusMinus": 2,
+     "pim": 4,
+     "team": "Manitoba Moose"
+    },
+    "last": {
+     "gamesPlayed": 55,
+     "goals": 5,
+     "assists": 18,
+     "points": 23,
+     "plusMinus": -1,
+     "pim": 37,
+     "team": "Toronto Marlies"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 4,
+     "team": "Toronto Maple Leafs"
+    },
+    "careerGp": 123,
+    "careerG": 5,
+    "careerP": 25
+   }
+  },
+  {
    "playerId": 8482515,
    "name": "Artur Akhtyamov",
    "team": "TOR",
@@ -955,70 +1196,6 @@
    }
   },
   {
-   "playerId": 8481567,
-   "name": "Henry Thrun",
-   "team": "WPG",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2001-03-12",
-   "sweater": 8,
-   "draft": {
-    "year": 2019,
-    "teamAbbrev": "ANA",
-    "round": 4,
-    "overallPick": 101
-   },
-   "recalledOn": "2026-11-07",
-   "from": "Manitoba (AHL) under emergency conditions",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-07",
-     "type": "up",
-     "club": "Manitoba (AHL) under emergency conditions"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 13,
-     "goals": 1,
-     "assists": 6,
-     "points": 7,
-     "plusMinus": 2,
-     "pim": 4,
-     "team": "Manitoba Moose"
-    },
-    "last": {
-     "gamesPlayed": 55,
-     "goals": 5,
-     "assists": 18,
-     "points": 23,
-     "plusMinus": -1,
-     "pim": 37,
-     "team": "Toronto Marlies"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 4,
-     "team": "Toronto Maple Leafs"
-    },
-    "careerGp": 123,
-    "careerG": 5,
-    "careerP": 25
-   }
-  },
-  {
    "playerId": 8479591,
    "name": "Michael Eyssimont",
    "team": "BOS",
@@ -1132,11 +1309,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 13,
+     "gamesPlayed": 14,
      "goals": 4,
      "assists": 7,
      "points": 11,
-     "plusMinus": 0,
+     "plusMinus": -1,
      "pim": 22,
      "team": "Iowa Wild"
     },
@@ -2132,11 +2309,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": 2,
      "pim": 0,
      "team": "Springfield Thunderbirds"
     },
@@ -4794,12 +4971,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 3,
-     "assists": 3,
-     "points": 6,
+     "assists": 4,
+     "points": 7,
      "plusMinus": 1,
-     "pim": 12,
+     "pim": 14,
      "team": "Iowa Wild"
     },
     "last": {
@@ -4858,11 +5035,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 2,
      "assists": 3,
      "points": 5,
-     "plusMinus": -7,
+     "plusMinus": -9,
      "pim": 2,
      "team": "Springfield Thunderbirds"
     },
@@ -5337,11 +5514,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
-     "goals": 3,
-     "assists": 4,
-     "points": 7,
-     "plusMinus": 1,
+     "gamesPlayed": 9,
+     "goals": 4,
+     "assists": 6,
+     "points": 10,
+     "plusMinus": 2,
      "pim": 2,
      "team": "Hartford Wolf Pack"
     },
@@ -5636,10 +5813,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 3,
-     "assists": 7,
-     "points": 10,
+     "assists": 8,
+     "points": 11,
      "plusMinus": -2,
      "pim": 4,
      "team": "Hartford Wolf Pack"
@@ -6095,11 +6272,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": 4,
+     "plusMinus": 3,
      "pim": 15,
      "team": "Springfield Thunderbirds"
     },
@@ -6139,7 +6316,7 @@
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -6491,11 +6668,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 15,
+     "gamesPlayed": 16,
      "goals": 3,
-     "assists": 4,
-     "points": 7,
-     "plusMinus": -2,
+     "assists": 5,
+     "points": 8,
+     "plusMinus": -1,
      "pim": 4,
      "team": "Hartford Wolf Pack"
     },
@@ -6565,11 +6742,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 3,
      "assists": 2,
      "points": 5,
-     "plusMinus": 3,
+     "plusMinus": 2,
      "pim": 4,
      "team": "Iowa Wild"
     },
