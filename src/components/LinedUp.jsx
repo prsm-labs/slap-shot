@@ -3,6 +3,7 @@ import { useScoredPool } from "../lib/data.js";
 import { setListFilter } from "../lib/listFilters.js";
 import { tabRequest } from "../lib/nav.js";
 import { closeAllSlides } from "../slideouts.js";
+import Fold from "./Fold.jsx";
 
 // 2026-11-03 (user: write the narrative -- "look out for this player tonight" -- and one tap for every player who looks like
 // this; CourtIQ's twin). Only the tested edges (lib/edges.js) speak, each with its held-out number; nothing changes a chance.
@@ -23,6 +24,8 @@ export default function LinedUp({ p: p1 }) {
   return (
     <div className="lined-up">
       <div className="section-title" style={{ fontSize: 15 }}>🔗 Lined up tonight</div>
+      {/* 2026-11-11: the Quick read above carries these in one line each; the full notes + buttons fold here */}
+      <Fold summary={<span className="section-sub">{[...keys.map((k) => EDGES.find((x) => x.v === k)?.label).filter(Boolean), ...(sc ? [STREAK.label] : [])].join(" · ")}</span>}>
       {keys.map((k) => {
         const e = EDGES.find((x) => x.v === k);
         if (!e) return null;
@@ -43,6 +46,7 @@ export default function LinedUp({ p: p1 }) {
         </div>
       )}
       {keys.length > 1 && <button className="pill-btn lu-btn" onClick={() => likeThis(keys)}>🔎 Players with all {keys.length} of these</button>}
+      </Fold>
       <div className="section-sub">Context only — his chances already count tonight's matchup and his recent form.{keys.length ? " The edges above beat (or missed) those chances in every season tested." : ""}</div>
     </div>
   );

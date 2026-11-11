@@ -1,0 +1,15 @@
+/* 2026-11-11 Quick read box at the top of the player / driver slideout (QuickRead.jsx; same file in all four apps) */
+.qr { margin: 10px 0 12px; padding: 10px 12px; border-radius: 10px; text-align: left;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.qr-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.qr-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.qr-lines li { display: flex; gap: 8px; align-items: baseline; font-size: 13.5px; line-height: 1.35; }
+.qr-mark { flex: 0 0 auto; font-size: 11px; width: 12px; text-align: center; }
+.qr-up .qr-mark { color: #2ea043; }
+.qr-down .qr-mark { color: #d1242f; }
+.qr-warn .qr-mark { color: #d29922; }
+.qr-empty { font-size: 13px; opacity: .8; }
+.qr-chances { margin-top: 8px; padding-top: 6px; font-size: 13.5px; font-weight: 700;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+.qr-note { margin-top: 4px; font-size: 11px; opacity: .7; line-height: 1.35; }

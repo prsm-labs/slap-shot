@@ -23,6 +23,8 @@ import Fold from "./Fold.jsx";
 import CoinLadder from "./CoinLadder.jsx"; // 2026-11-09 🪙 Degen Picks from the slideout
 import { useHitGames } from "../lib/hitGames.js";
 import LinedUp from "./LinedUp.jsx";
+import QuickRead from "./QuickRead.jsx"; // 2026-11-11 short "why" box (lib/quickRead.js)
+import { quickReadSkater } from "../lib/quickRead.js";
 
 // 2026-10-28 hit-rate card: goals / assists / points at 1+, shots on goal at his per-game average (where a book line sits)
 const HR_STATS = (p) => [
@@ -86,6 +88,14 @@ function MatchupCard({ p }) {
 // Season stat line branches by role — skater vs goalie — per slap-shot-build.md §6, the hockey
 // equivalent of Six Points' QB/RB/WR branching (a goalie's stat line shares nothing with a
 // skater's).
+// 2026-11-11 (user: the matchup write-up read like a run-on sentence): Quick read from the pool's own row (tested factors only)
+function SkaterQuickRead({ p: p1 }) {
+  const pool = useScoredPool({ includeStarted: true });
+  const p = pool?.players?.find((x) => x.playerId === p1.playerId) || p1;
+  const q = quickReadSkater(p, pool?.meta);
+  return q ? <QuickRead {...q} /> : null;
+}
+
 function SkaterStats({ p }) {
   const meta = useScoredPool({ includeStarted: true })?.meta;
   const dvp = dvpFor(meta, p);
@@ -238,6 +248,7 @@ export default function PlayerSlideout() {
             <MatchupChip player={player} t={tonight} />
             <TonightCard t={tonight} p={player} role={role} />
 
+            {role === "skater" && <SkaterQuickRead p={player} />}
             {role === "skater" && <MatchupCard p={player} />}
             {role === "skater" && <LinedUp p={player} />}
 
