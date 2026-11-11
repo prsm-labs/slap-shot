@@ -52,7 +52,8 @@ export function useLineups(date) {
 }
 
 // Flatten the API response into lookups the pages use.
-//   skaters: playerId -> { dressed, pp: 1|2|null, out: "IR"|"DTD"|...|null }
+//   skaters: playerId -> { dressed, pp: 1|2|null, out: "IR"|"DTD"|...|null, ev: "L1".."L4"|"D1".."D3"|null }
+//   lines: team -> { source, updated, ppPosted }   (2026-11-11 DailyFaceoff projected lines; ppPosted = PP units known for the team)
 //   goalies: team -> { name, playerId, status }   (RotoWire's starter)
 //   officialTeams: teams whose dressed lineup is in
 //   inNet: team -> { name, playerId }   (the goalie who actually started, once the game is on)
@@ -75,6 +76,7 @@ export function lineupMaps(data) {
   const gameState = new Map();
   const starting = new Set();      // playerIds in tonight's official starting lineups
   const startersTeams = new Set(); // teams whose game has posted starting lineups
+  const lines = new Map();
   for (const g of data?.games || []) {
     if (g.startersPosted) {
       startersTeams.add(g.away);
@@ -84,13 +86,22 @@ export function lineupMaps(data) {
     gameState.set(g.home, g.state);
     for (const [team, t] of Object.entries(g.teams)) {
       const entry = (id) => {
-        if (!skaters.has(id)) skaters.set(id, { dressed: false, pp: null, out: null });
+        if (!skaters.has(id)) skaters.set(id, { dressed: false, pp: null, out: null, ev: null });
         return skaters.get(id);
       };
       if (t.dressed.length) officialTeams.add(team);
       for (const p of t.dressed) entry(p.playerId).dressed = true;
       for (const p of t.pp1) if (p.playerId) entry(p.playerId).pp = 1;
       for (const p of t.pp2) if (p.playerId) entry(p.playerId).pp ??= 2;
+      // 2026-11-11 DailyFaceoff lines: even-strength line / pair for everyone; its PP units only when RotoWire has none for the team
+      const rwPP = t.pp1.length + t.pp2.length > 0;
+      for (const p of t.lines?.players || []) {
+        if (!p.playerId) continue;
+        const e = entry(p.playerId);
+        if (p.ev) e.ev = p.ev;
+        if (!rwPP && p.pp) e.pp ??= p.pp;
+      }
+      if (t.lines || rwPP) lines.set(team, { source: t.lines?.source || null, updated: t.lines?.updated || null, ppPosted: rwPP || (t.lines?.players || []).some((p) => p.pp) });
       for (const p of t.injuries) {
         if (p.playerId) entry(p.playerId).out = p.tag || "OUT";
         outByName.set(`${team}|${normName(p.name)}`, { dressed: false, pp: null, out: p.tag || "OUT" });
@@ -100,7 +111,7 @@ export function lineupMaps(data) {
       for (const p of t.startingLineup || []) starting.add(p.playerId);
     }
   }
-  return { skaters, goalies, officialTeams, outByName, inNet, gameState, starting, startersTeams };
+  return { skaters, goalies, officialTeams, outByName, inNet, gameState, starting, startersTeams, lines };
 }
 
 // Starting goalie for a team tonight, best source first: the goalie actually in net once the game

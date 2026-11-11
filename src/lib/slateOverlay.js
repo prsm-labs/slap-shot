@@ -68,6 +68,12 @@ export function applyLineups(data, lu, lineupsAt = null) {
 
     // on the ice for the opening faceoff (official starting lineup) — null until that game's starters are posted
     const q = { ...p, lineupStatus, startingLineup: maps.startersTeams?.has(p.team) ? Boolean(maps.starting?.has(p.playerId)) : null };
+    // 2026-11-11 line badge: projected line / pair + PP unit (DailyFaceoff + RotoWire), confirmed once the official lineup dresses him
+    const tl = maps.lines?.get(p.team);
+    if (tl || st?.ev || st?.pp) {
+      q.line = { ev: st?.ev || null, pp: st?.pp || null, ppPosted: Boolean(tl?.ppPosted || st?.pp), confirmed: lineupStatus === "dressed",
+        source: tl?.source || null, updated: tl?.updated || null };
+    }
     const s = starters.get(p.opponentTeam);
     if (s?.playerId != null && s.playerId !== p.opponentGoalieId) {
       const g = goaliesById.get(s.playerId);

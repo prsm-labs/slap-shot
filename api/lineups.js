@@ -119,6 +119,51 @@ async function startingLineups(g, dressed) {
   return out;
 }
 
+// 2026-11-11 line badges (user: show each skater's projected line / PP unit before lineups are confirmed, so picks can start
+// early). DailyFaceoff's team line-combination pages carry the full projected lineup (forward lines 1-4, defense pairs 1-3,
+// PP1 / PP2) with a status + updated time; one page per team playing, kept 10 minutes. RotoWire's PP units still win where the
+// two disagree (lib/lineups.js). Context only -- no chance uses it.
+const DFO_SLUG = { ANA: "anaheim-ducks", BOS: "boston-bruins", BUF: "buffalo-sabres", CGY: "calgary-flames", CAR: "carolina-hurricanes",
+  CHI: "chicago-blackhawks", COL: "colorado-avalanche", CBJ: "columbus-blue-jackets", DAL: "dallas-stars", DET: "detroit-red-wings",
+  EDM: "edmonton-oilers", FLA: "florida-panthers", LAK: "los-angeles-kings", MIN: "minnesota-wild", MTL: "montreal-canadiens",
+  NSH: "nashville-predators", NJD: "new-jersey-devils", NYI: "new-york-islanders", NYR: "new-york-rangers", OTT: "ottawa-senators",
+  PHI: "philadelphia-flyers", PIT: "pittsburgh-penguins", SJS: "san-jose-sharks", SEA: "seattle-kraken", STL: "st-louis-blues",
+  TBL: "tampa-bay-lightning", TOR: "toronto-maple-leafs", UTA: "utah-mammoth", VAN: "vancouver-canucks", VGK: "vegas-golden-knights",
+  WSH: "washington-capitals", WPG: "winnipeg-jets" };
+const DFO_TTL_MS = 10 * 60_000;
+const dfoCache = new Map(); // team -> { at, lines }
+const EV_GROUP = { f1: "L1", f2: "L2", f3: "L3", f4: "L4", d1: "D1", d2: "D2", d3: "D3" };
+
+export function parseDfo(html) {
+  const m = String(html).match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/);
+  if (!m) return null;
+  const c = JSON.parse(m[1])?.props?.pageProps?.combinations;
+  if (!c?.players?.length) return null;
+  const by = new Map();
+  for (const p of c.players) {
+    const g = p.groupIdentifier;
+    const e = by.get(p.name) || { name: p.name, ev: null, pp: null };
+    if (EV_GROUP[g]) e.ev = EV_GROUP[g];
+    else if (g === "pp1" || g === "pp2") e.pp = e.pp ?? Number(g[2]);
+    else continue;
+    by.set(p.name, e);
+  }
+  // source = who reported them: "Projected", a beat reporter / team account, or "Last Game (date)"
+  return { source: c.sourceName || "Projected", updated: c.updatedAt || null, players: [...by.values()] };
+}
+
+async function dfoLines(team) {
+  const hit = dfoCache.get(team);
+  if (hit && Date.now() - hit.at < DFO_TTL_MS) return hit.lines;
+  const slug = DFO_SLUG[team];
+  if (!slug) return null;
+  const res = await fetch(`https://www.dailyfaceoff.com/teams/${slug}/line-combinations`, { headers: { "User-Agent": "Mozilla/5.0 (compatible; SlapShot/1.0)" } });
+  if (!res.ok) throw new Error(`DailyFaceoff ${res.status}`);
+  const lines = parseDfo(await res.text());
+  dfoCache.set(team, { at: Date.now(), lines });
+  return lines;
+}
+
 // Kept in memory while the function instance is warm, to stay well under the NHL API's rate limit:
 // rosters for 30 minutes, and a finished game's dressed list + starting goalies for good.
 const ROSTER_TTL_MS = 30 * 60_000;
@@ -205,8 +250,9 @@ export async function buildLineups(date) {
     const teams = {};
     for (const team of [away, home]) {
       const t = rwGame[team] || { goalie: null, pp1: [], pp2: [], injuries: [] };
-      // Roster lookups only matter for RotoWire names.
-      const find = rwGame[team] ? await rosterIndex(team).catch(() => () => null) : () => null;
+      const dfo = date >= today && !DONE.has(g.gameState) ? await dfoLines(team).catch(() => null) : null;
+      // Roster lookups only matter for RotoWire / DailyFaceoff names.
+      const find = rwGame[team] || dfo ? await rosterIndex(team).catch(() => () => null) : () => null;
       const withId = (list) => list.map((p) => ({ ...p, playerId: find(p.name) }));
       teams[team] = {
         goalie: t.goalie ? { ...t.goalie, playerId: find(t.goalie.name) } : null,
@@ -216,6 +262,7 @@ export async function buildLineups(date) {
         dressed: dressed[team] || [],
         inNet: inNet[team] || null,
         startingLineup: starting?.[team] || [],   // official starting 5 + goalie (bold in the NHL roster report)
+        lines: dfo ? { ...dfo, players: withId(dfo.players) } : null, // DailyFaceoff lines: { source, updated, players: [{ name, ev, pp, playerId }] }
       };
     }
     return {

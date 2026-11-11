@@ -8,6 +8,7 @@ import { useSort } from "../lib/useSort.js";
 import PlayerAvatar from "../components/PlayerAvatar.jsx";
 import PickButton from "../components/PickButton.jsx";
 import DueTag, { StreakTag } from "../components/DueTag.jsx";
+import { LineTag } from "../components/LineupBadge.jsx";
 import GradeBadge from "../components/GradeBadge.jsx";
 import OpponentGoalieCell from "../components/OpponentGoalieCell.jsx";
 import MatchupFilter from "../components/MatchupFilter.jsx";
@@ -87,7 +88,7 @@ export default function BreakoutTab() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /><DueTag due={p.dueHeat} /><StreakTag p={p} />
+                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "goal")} /><LineTag line={p.line} starting={p.startingLineup} /><DueTag due={p.dueHeat} /><StreakTag p={p} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>
                           {p.team} · {positionLabel(p.position)} · xG {p.xgL5.toFixed(2)}/gm last {p.recentGames} vs {p.xgSeason.toFixed(2)}
                         </div>

@@ -143,6 +143,12 @@ export function buildGroups(ctx = {}) {
       hint: "Pick the exact letters — his effective grade (own form vs the goalie he faces)" },
     { key: "h2h", label: "H2H grade", chip: "H2H", type: "multi", get: (p) => h2h?.get(p.playerId)?.letter, options: LETTERS.map((l) => ({ v: l, label: l })),
       hint: "History vs tonight's opponent against his own norm — context, not a prediction" },
+    // 2026-11-11 projected line / PP unit (lib/slateOverlay.js p.line) -- context only
+    { key: "line", label: "Line / PP unit", chip: "Line", type: "tags",
+      get: (p) => { const l = p.line; if (!l) return []; const v = []; if (l.ev) v.push(l.ev); if (l.pp) v.push(`PP${l.pp}`); else if (l.ppPosted) v.push("noPP"); if (l.ev && /^L[12]$/.test(l.ev)) v.push("top6"); return v; },
+      options: [{ v: "L1", label: "L1" }, { v: "L2", label: "L2" }, { v: "L3", label: "L3" }, { v: "L4", label: "L4" }, { v: "top6", label: "Top 6 F" },
+        { v: "D1", label: "D1" }, { v: "D2", label: "D2" }, { v: "D3", label: "D3" }, { v: "PP1", label: "PP1" }, { v: "PP2", label: "PP2" }, { v: "noPP", label: "No PP" }],
+      hint: "Projected forward line / defense pair (DailyFaceoff) and power-play unit (RotoWire, else DailyFaceoff), shown before lineups are confirmed (tap twice = without; Match all for e.g. L1 + PP1); the badge turns solid once he's in the official lineup. Context only: line spot and PP time are already in his chances through ice time" },
     { key: "oppd", label: "Opponent defense", chip: "Opp D", type: "multi", get: (p) => oppDefOf(p, meta).tier, options: DEF_TIERS,
       hint: "Tonight's opponent among the league's defenses by expected goals allowed — Soft = 10 softest, Tough = 10 stingiest" },
   ];
