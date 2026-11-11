@@ -152,14 +152,35 @@ export function parseDfo(html) {
   return { source: c.sourceName || "Projected", updated: c.updatedAt || null, players: [...by.values()] };
 }
 
-async function dfoLines(team) {
+// DailyFaceoff refuses Vercel's servers (2026-11-11: every team came back empty live, fine from the PC), so the NHL pipeline
+// also saves the same data as /data/lines.json (nhl_project/build_lines.py, 7:00 / 7:45 / 12:00 / 5:30) -- used when the live
+// read fails. linesError says which one answered.
+const LINES_FILE = "https://nhl.degenlabs.app/data/lines.json";
+let fileCache = null; // { at, doc }
+async function fileLines(team, date) {
+  if (!fileCache || Date.now() - fileCache.at > DFO_TTL_MS) {
+    const res = await fetch(`${LINES_FILE}?t=${Math.floor(Date.now() / DFO_TTL_MS)}`);
+    fileCache = { at: Date.now(), doc: res.ok ? await res.json() : null };
+  }
+  const doc = fileCache.doc;
+  return doc?.date === date ? doc.teams?.[team] || null : null;
+}
+export let linesError = null;
+async function dfoLines(team, date) {
   const hit = dfoCache.get(team);
-  if (hit && Date.now() - hit.at < DFO_TTL_MS) return hit.lines;
+  if (hit && Date.now() - hit.at < DFO_TTL_MS && hit.lines) return hit.lines;
   const slug = DFO_SLUG[team];
   if (!slug) return null;
-  const res = await fetch(`https://www.dailyfaceoff.com/teams/${slug}/line-combinations`, { headers: { "User-Agent": "Mozilla/5.0 (compatible; SlapShot/1.0)" } });
-  if (!res.ok) throw new Error(`DailyFaceoff ${res.status}`);
-  const lines = parseDfo(await res.text());
+  let lines = null;
+  try {
+    const res = await fetch(`https://www.dailyfaceoff.com/teams/${slug}/line-combinations`, { headers: { "User-Agent": "Mozilla/5.0 (compatible; SlapShot/1.0)" } });
+    if (!res.ok) throw new Error(`DailyFaceoff ${res.status}`);
+    lines = parseDfo(await res.text());
+    if (!lines) throw new Error("DailyFaceoff: no lines in page");
+  } catch (e) {
+    linesError = `${e.message}; using the pipeline's lines.json`;
+    lines = await fileLines(team, date).catch(() => null);
+  }
   dfoCache.set(team, { at: Date.now(), lines });
   return lines;
 }
@@ -208,6 +229,7 @@ export async function buildLineups(date) {
   // RotoWire only shows the current/upcoming slate.
   let rw = {};
   let rotowireError = null;
+  linesError = null;
   if (date >= today) {
     try {
       const res = await fetch(ROTOWIRE, { headers: { "User-Agent": "Mozilla/5.0 (compatible; SlapShot/1.0)" } });
@@ -250,7 +272,7 @@ export async function buildLineups(date) {
     const teams = {};
     for (const team of [away, home]) {
       const t = rwGame[team] || { goalie: null, pp1: [], pp2: [], injuries: [] };
-      const dfo = date >= today && !DONE.has(g.gameState) ? await dfoLines(team).catch(() => null) : null;
+      const dfo = date >= today && !DONE.has(g.gameState) ? await dfoLines(team, date).catch(() => null) : null;
       // Roster lookups only matter for RotoWire / DailyFaceoff names.
       const find = rwGame[team] || dfo ? await rosterIndex(team).catch(() => () => null) : () => null;
       const withId = (list) => list.map((p) => ({ ...p, playerId: find(p.name) }));
@@ -273,7 +295,7 @@ export async function buildLineups(date) {
     };
   }));
 
-  return { date, generated: new Date().toISOString(), rotowireError, games: out };
+  return { date, generated: new Date().toISOString(), rotowireError, linesError, games: out };
 }
 
 // From 15 minutes before a game's scheduled start to 10 minutes after it.
