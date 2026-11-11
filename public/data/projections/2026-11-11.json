@@ -1,9 +1,9 @@
 {
  "_meta": {
   "slateDate": "2026-11-11",
-  "snapshotAt": "2026-11-11T17:05:16.166Z",
+  "snapshotAt": "2026-11-11T22:35:27.316Z",
   "firstSnapshotAt": "2026-11-11T12:06:33.544Z",
-  "poolGenerated": "2026-11-11 12:01",
+  "poolGenerated": "2026-11-11 17:31",
   "games": [
    {
     "gameId": 2026020293,
@@ -11,11 +11,11 @@
     "home": "BUF",
     "startTimeUTC": "2026-11-12T00:00:00Z",
     "awayGoalie": "Andrei Vasilevskiy",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Likely",
     "homeGoalie": "Ukko-Pekka Luukkonen",
     "homeGoalieStatus": "Likely",
-    "frozenAt": "2026-11-11T17:05:16.166Z",
-    "poolGenerated": "2026-11-11 12:01"
+    "frozenAt": "2026-11-11T22:35:27.316Z",
+    "poolGenerated": "2026-11-11 17:31"
    },
    {
     "gameId": 2026020294,
@@ -26,8 +26,8 @@
     "awayGoalieStatus": "Likely",
     "homeGoalie": "Devin Cooley",
     "homeGoalieStatus": "Confirmed",
-    "frozenAt": "2026-11-11T17:05:16.166Z",
-    "poolGenerated": "2026-11-11 12:01"
+    "frozenAt": "2026-11-11T22:35:27.316Z",
+    "poolGenerated": "2026-11-11 17:31"
    },
    {
     "gameId": 2026020295,
@@ -35,11 +35,11 @@
     "home": "EDM",
     "startTimeUTC": "2026-11-12T02:00:00Z",
     "awayGoalie": "Dan Vladar",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Likely",
     "homeGoalie": "Tristan Jarry",
-    "homeGoalieStatus": "Unconfirmed",
-    "frozenAt": "2026-11-11T17:05:16.166Z",
-    "poolGenerated": "2026-11-11 12:01"
+    "homeGoalieStatus": "Confirmed",
+    "frozenAt": "2026-11-11T22:35:27.316Z",
+    "poolGenerated": "2026-11-11 17:31"
    },
    {
     "gameId": 2026020296,
@@ -47,11 +47,11 @@
     "home": "VGK",
     "startTimeUTC": "2026-11-12T02:30:00Z",
     "awayGoalie": "Sebastian Cossa",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Likely",
     "homeGoalie": "Carter Hart",
-    "homeGoalieStatus": "Unconfirmed",
-    "frozenAt": "2026-11-11T17:05:16.166Z",
-    "poolGenerated": "2026-11-11 12:01"
+    "homeGoalieStatus": "Confirmed",
+    "frozenAt": "2026-11-11T22:35:27.316Z",
+    "poolGenerated": "2026-11-11 17:31"
    },
    {
     "gameId": 2026020297,
@@ -61,9 +61,9 @@
     "awayGoalie": "Justus Annunen",
     "awayGoalieStatus": "Unconfirmed",
     "homeGoalie": "Laurent Brossoit",
-    "homeGoalieStatus": "Unconfirmed",
-    "frozenAt": "2026-11-11T17:05:16.166Z",
-    "poolGenerated": "2026-11-11 12:01"
+    "homeGoalieStatus": "Confirmed",
+    "frozenAt": "2026-11-11T22:35:27.316Z",
+    "poolGenerated": "2026-11-11 17:31"
    },
    {
     "gameId": 2026020298,
@@ -71,11 +71,11 @@
     "home": "SJS",
     "startTimeUTC": "2026-11-12T03:00:00Z",
     "awayGoalie": "Sergei Murashov",
-    "awayGoalieStatus": "Unconfirmed",
+    "awayGoalieStatus": "Confirmed",
     "homeGoalie": "Yaroslav Askarov",
-    "homeGoalieStatus": "Unconfirmed",
-    "frozenAt": "2026-11-11T17:05:16.166Z",
-    "poolGenerated": "2026-11-11 12:01"
+    "homeGoalieStatus": "Confirmed",
+    "frozenAt": "2026-11-11T22:35:27.316Z",
+    "poolGenerated": "2026-11-11 17:31"
    }
   ],
   "scoreVersion": 5,
@@ -12923,20 +12923,20 @@
    "team": "NYR",
    "opp": "CGY",
    "isHome": false,
-   "goalieId": 8482193,
-   "goalie": "Dylan Garand",
-   "confirmed": false,
-   "status": "Expected",
+   "goalieId": 8476914,
+   "goalie": "Joonas Korpisalo",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 28,
-   "saves": 25.1,
-   "goalsAllowed": 2.85,
-   "savePct": 0.898,
+   "saves": 24.9,
+   "goalsAllowed": 3.05,
+   "savePct": 0.8909,
    "lines": {
-    "20": 82.2,
-    "25": 54,
-    "30": 23.4,
-    "35": 6.1
+    "20": 81.3,
+    "25": 52.7,
+    "30": 22.5,
+    "35": 5.7
    },
    "teamsDataPresent": true
   },
@@ -12971,8 +12971,8 @@
    "isHome": false,
    "goalieId": 8478435,
    "goalie": "Dan Vladar",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 26.9,
    "saves": 24,
@@ -12992,20 +12992,20 @@
    "team": "EDM",
    "opp": "PHI",
    "isHome": true,
-   "goalieId": 8482221,
-   "goalie": "Devon Levi",
-   "confirmed": false,
-   "status": "Expected",
+   "goalieId": 8477465,
+   "goalie": "Tristan Jarry",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 24.3,
-   "saves": 21.7,
-   "goalsAllowed": 2.63,
-   "savePct": 0.8919,
+   "saves": 21.5,
+   "goalsAllowed": 2.8,
+   "savePct": 0.8848,
    "lines": {
-    "20": 64.2,
-    "25": 32.2,
-    "30": 9.9,
-    "35": 1.7
+    "20": 63.1,
+    "25": 31.2,
+    "30": 9.5,
+    "35": 1.6
    },
    "teamsDataPresent": true
   },
@@ -13015,20 +13015,20 @@
    "team": "UTA",
    "opp": "VGK",
    "isHome": false,
-   "goalieId": 8478872,
-   "goalie": "Karel Vejmelka",
+   "goalieId": 8482657,
+   "goalie": "Sebastian Cossa",
    "confirmed": false,
    "status": "Expected",
    "source": "RotoWire",
    "shots": 26.8,
-   "saves": 23.8,
-   "goalsAllowed": 2.99,
-   "savePct": 0.8885,
+   "saves": 23.7,
+   "goalsAllowed": 3.07,
+   "savePct": 0.8854,
    "lines": {
-    "20": 76,
-    "25": 45.3,
-    "30": 17.3,
-    "35": 3.9
+    "20": 75.6,
+    "25": 44.8,
+    "30": 17,
+    "35": 3.8
    },
    "teamsDataPresent": true
   },
@@ -13040,8 +13040,8 @@
    "isHome": true,
    "goalieId": 8479394,
    "goalie": "Carter Hart",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 25.1,
    "saves": 22.3,
@@ -13086,8 +13086,8 @@
    "isHome": true,
    "goalieId": 8476316,
    "goalie": "Laurent Brossoit",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 27.4,
    "saves": 24.2,
@@ -13107,20 +13107,20 @@
    "team": "PIT",
    "opp": "SJS",
    "isHome": false,
-   "goalieId": 8481668,
-   "goalie": "Arturs Silovs",
-   "confirmed": false,
-   "status": "Expected",
+   "goalieId": 8483703,
+   "goalie": "Sergei Murashov",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 25.6,
-   "saves": 22.7,
-   "goalsAllowed": 3,
-   "savePct": 0.8831,
+   "saves": 22.8,
+   "goalsAllowed": 2.89,
+   "savePct": 0.8874,
    "lines": {
-    "20": 69.8,
-    "25": 38,
-    "30": 13,
-    "35": 2.5
+    "20": 70.4,
+    "25": 38.7,
+    "30": 13.3,
+    "35": 2.7
    },
    "teamsDataPresent": true
   },
@@ -13132,8 +13132,8 @@
    "isHome": true,
    "goalieId": 8482137,
    "goalie": "Yaroslav Askarov",
-   "confirmed": false,
-   "status": "Expected",
+   "confirmed": true,
+   "status": "Confirmed",
    "source": "RotoWire",
    "shots": 29.3,
    "saves": 25.9,
@@ -13169,15 +13169,15 @@
    "matchup": "NYR@CGY",
    "away": "NYR",
    "home": "CGY",
-   "awayGoalieId": 8482193,
+   "awayGoalieId": 8476914,
    "homeGoalieId": 8482445,
    "xgAway": 3.033,
-   "xgHome": 2.671,
-   "winAway": 0.571,
-   "winHome": 0.429,
-   "ot": 0.225,
+   "xgHome": 2.749,
+   "winAway": 0.556,
+   "winHome": 0.444,
+   "ot": 0.224,
    "likely": "3-2",
-   "over55": 0.505
+   "over55": 0.518
   },
   {
    "gameId": 2026020295,
@@ -13185,29 +13185,29 @@
    "away": "PHI",
    "home": "EDM",
    "awayGoalieId": 8478435,
-   "homeGoalieId": 8482221,
-   "xgAway": 2.547,
+   "homeGoalieId": 8477465,
+   "xgAway": 2.609,
    "xgHome": 3.386,
-   "winAway": 0.342,
-   "winHome": 0.658,
-   "ot": 0.21,
+   "winAway": 0.354,
+   "winHome": 0.646,
+   "ot": 0.211,
    "likely": "2-3",
-   "over55": 0.543
+   "over55": 0.553
   },
   {
    "gameId": 2026020296,
    "matchup": "UTA@VGK",
    "away": "UTA",
    "home": "VGK",
-   "awayGoalieId": 8478872,
+   "awayGoalieId": 8482657,
    "homeGoalieId": 8479394,
    "xgAway": 2.925,
-   "xgHome": 3.147,
-   "winAway": 0.458,
-   "winHome": 0.542,
-   "ot": 0.219,
+   "xgHome": 3.254,
+   "winAway": 0.438,
+   "winHome": 0.562,
+   "ot": 0.216,
    "likely": "2-3",
-   "over55": 0.565
+   "over55": 0.582
   },
   {
    "gameId": 2026020297,
@@ -13229,15 +13229,15 @@
    "matchup": "PIT@SJS",
    "away": "PIT",
    "home": "SJS",
-   "awayGoalieId": 8481668,
+   "awayGoalieId": 8483703,
    "homeGoalieId": 8482137,
    "xgAway": 3.639,
-   "xgHome": 3.321,
-   "winAway": 0.556,
-   "winHome": 0.444,
+   "xgHome": 3.251,
+   "winAway": 0.569,
+   "winHome": 0.431,
    "ot": 0.204,
    "likely": "4-3",
-   "over55": 0.694
+   "over55": 0.685
   }
  ]
 }

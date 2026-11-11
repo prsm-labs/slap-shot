@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-11-11 12:04",
+  "generated": "2026-11-11 17:35",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 116,
@@ -8,6 +8,90 @@
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8485468,
+   "name": "Trey Taylor",
+   "team": "DAL",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2002-02-04",
+   "sweater": 27,
+   "draft": null,
+   "recalledOn": "2026-11-11",
+   "from": "Texas",
+   "fromLeague": "AHL",
+   "timesRecalled": 3,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-10-29",
+     "type": "up",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-11-03",
+     "type": "up",
+     "club": "minors"
+    },
+    {
+     "date": "2026-11-09",
+     "type": "down",
+     "club": "Texas"
+    },
+    {
+     "date": "2026-11-11",
+     "type": "up",
+     "club": "Texas"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": -7,
+     "pim": 6,
+     "team": "Texas Stars"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 8,
+     "assists": 18,
+     "points": 26,
+     "plusMinus": -2,
+     "pim": 34,
+     "team": "Texas Stars"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 1,
+     "team": "Dallas Stars"
+    },
+    "last": null,
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
   {
    "playerId": 8482525,
    "name": "Ryan Tverberg",
@@ -1552,85 +1636,6 @@
    }
   },
   {
-   "playerId": 8485468,
-   "name": "Trey Taylor",
-   "team": "DAL",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2002-02-04",
-   "sweater": 27,
-   "draft": null,
-   "recalledOn": "2026-11-03",
-   "from": "minors",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": "2026-11-09",
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-10-29",
-     "type": "up",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-11-01",
-     "type": "down",
-     "club": "Texas"
-    },
-    {
-     "date": "2026-11-03",
-     "type": "up",
-     "club": "minors"
-    },
-    {
-     "date": "2026-11-09",
-     "type": "down",
-     "club": "Texas"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 10,
-     "goals": 1,
-     "assists": 3,
-     "points": 4,
-     "plusMinus": -7,
-     "pim": 6,
-     "team": "Texas Stars"
-    },
-    "last": {
-     "gamesPlayed": 70,
-     "goals": 8,
-     "assists": 18,
-     "points": 26,
-     "plusMinus": -2,
-     "pim": 34,
-     "team": "Texas Stars"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 1,
-     "team": "Dallas Stars"
-    },
-    "last": null,
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": 0
-   }
-  },
-  {
    "team": "PIT",
    "recalledOn": "2026-11-03",
    "from": "minors",
@@ -1915,10 +1920,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 6,
-     "goals": 5,
-     "assists": 2,
-     "points": 7,
+     "gamesPlayed": 7,
+     "goals": 8,
+     "assists": 3,
+     "points": 11,
      "plusMinus": 1,
      "pim": 2,
      "team": "Grand Rapids Griffins"
