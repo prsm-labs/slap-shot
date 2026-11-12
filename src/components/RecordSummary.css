@@ -94,3 +94,13 @@
 .rs-day-row em { font-style: normal; font-size: 11px; color: var(--accent); }
 .rs-extra { opacity: .5; font-size: 12px; }
 @media (max-width: 420px) { .rs-model-row { grid-template-columns: 1fr auto; } .rs-model-m { grid-column: 1; grid-row: 1; } .rs-model-n { grid-column: 2; grid-row: 1; } .rs-model-s { grid-column: 1 / -1; } }
+.rs-ytitle { display: flex; justify-content: space-between; gap: 8px; font-size: 11px; opacity: .75; margin: 4px 0 2px; }
+.rs-plot { position: relative; padding-left: 36px; }
+.rs-yaxis { position: absolute; left: 0; top: 0; bottom: 0; width: 32px; border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent); }
+.rs-yaxis span { position: absolute; right: 4px; transform: translateY(-50%); font-size: 10.5px; opacity: .7; font-variant-numeric: tabular-nums; }
+.rs-xaxis { padding-left: 36px; border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding-top: 2px; }
+.rs-xtitle { text-align: center; font-size: 11px; opacity: .65; }
+.rs-chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 2px; }
+.rs-chip { font: inherit; font-size: 12px; padding: 4px 9px; border-radius: 999px; cursor: pointer; color: inherit; background: transparent;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+.rs-chip.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); font-weight: 700; }

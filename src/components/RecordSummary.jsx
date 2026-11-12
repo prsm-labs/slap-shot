@@ -22,7 +22,7 @@ function stats(picks) {
 // (1-3); only rank 1 counts in every number and on the chart, #2 / #3 show in the day view for context. A list with `solo` is shown on its own row but
 // left out of "All lists". `markers` = tested model upgrades drawn on the chart; `modelCheck` = every projection by month.
 // `fmtDay` (date -> label) and `ranges` let a weekly app show "Week 9" and week-sized ranges (Six Points).
-export default function RecordSummary({ lists, liveSince, unit = "picks", markers = [], modelCheck, fmtDay = dayLabel, ranges = RANGES, children }) {
+export default function RecordSummary({ lists, liveSince, unit = "picks", markers = [], modelCheck, fmtDay = dayLabel, ranges = RANGES, xLabel = "Date", children }) {
   const all = useMemo(() => lists.flatMap((l) => l.picks.map((p) => ({ ...p, list: l.key, listLabel: l.label, solo: l.solo }))), [lists]);
   const dates = useMemo(() => [...new Set(all.filter((p) => p.hit != null).map((p) => p.date))].sort(), [all]);
   const last = dates[dates.length - 1], first = dates[0];
@@ -59,10 +59,6 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
       <div className="card rs-card">
         <div className="rs-controls">
           <div className="rs-ranges">{ranges.map(([k, l]) => <button key={k} type="button" className={`rs-pill ${range === k ? "on" : ""}`} onClick={() => { setRange(k); setDay(null); }}>{l}</button>)}</div>
-          <select value={list} onChange={(e) => setList(e.target.value)} aria-label="List">
-            <option value="all">All lists</option>
-            {lists.map((l) => <option key={l.key} value={l.key}>{l.label}</option>)}
-          </select>
         </div>
         {range === "custom" && (
           <div className="rs-custom">
@@ -78,6 +74,12 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
               <div><b>{pct(s.said / s.n)}</b><span>we said</span></div>
               <div className={s.above >= 0 ? "rs-up" : "rs-down"}><b>{sgn(s.above)}</b><span>{unit === "picks" ? "hits vs our chances" : unit}</span></div>
             </div>
+            {/* 2026-11-12 (user: no axis labels): y title + value ticks, dates + title on x */}
+            <div className="rs-ytitle"><span>↕ Hits above / below our chances (running total)</span><span className="rs-axis-mid">tap a dot for that {xLabel.toLowerCase()}</span></div>
+            <div className="rs-plot">
+              <div className="rs-yaxis" aria-hidden="true">
+                {[ymax, 0, ymin].filter((v, i, a) => i === 1 || Math.abs(v) > span * 0.12).map((v) => <span key={v} style={{ top: `${(Y(v) / H) * 100}%` }}>{v === 0 ? "0" : sgn(v)}</span>)}
+              </div>
             <svg className="rs-chart" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="Hits above what we said, running total">
               {band && <path d={band} className="rs-band" />}
               <line x1={P} x2={W - P} y1={zero} y2={zero} className="rs-zero" />
@@ -90,8 +92,17 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
                 </line>
               ))}
             </svg>
+            </div>
+            <div className="rs-axis rs-xaxis"><span>{fmtDay(days[0])}</span>{days.length > 2 && <span>{fmtDay(days[Math.floor((days.length - 1) / 2)])}</span>}<span>{fmtDay(days[days.length - 1])}</span></div>
+            <div className="rs-xtitle">{xLabel} →</div>
+            {/* 2026-11-12 (user: the graphs should let you single out one category): tap a chip = that list's line only; tap it again = all lists */}
+            <div className="rs-chips" role="group" aria-label="Show one list">
+              <button type="button" className={`rs-chip ${list === "all" ? "on" : ""}`} onClick={() => { setList("all"); setDay(null); }}>All lists</button>
+              {lists.filter((l) => !l.solo).map((l) => (
+                <button key={l.key} type="button" className={`rs-chip ${list === l.key ? "on" : ""}`} onClick={() => { setList(list === l.key ? "all" : l.key); setDay(null); }}>{l.label.split(" · ")[0]}</button>
+              ))}
+            </div>
             {marks.length > 0 && <div className="rs-marks">{marks.map((m) => <span key={m.date}>┆ {fmtDay(m.date)}: {m.label}</span>)}</div>}
-            <div className="rs-axis"><span>{fmtDay(days[0])}</span><span className="rs-axis-mid">tap a dot for that day</span><span>{fmtDay(days[days.length - 1])}</span></div>
           </>
         ) : <div className="rs-empty">No graded picks in this range.</div>}
         {day && (
