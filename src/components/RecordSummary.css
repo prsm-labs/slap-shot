@@ -89,3 +89,8 @@
 .rs-model-s { grid-column: 2; }
 .rs-model-n { grid-column: 3; grid-row: 1; text-align: right; }
 @media (max-width: 420px) { .rs-axis-mid { display: none; } }
+.rs-dl { padding: 4px 0 6px; }
+.rs-day-lh { font-size: 11.5px; font-weight: 700; opacity: .75; margin: 2px 0; }
+.rs-day-row em { font-style: normal; font-size: 11px; color: var(--accent); }
+.rs-extra { opacity: .5; font-size: 12px; }
+@media (max-width: 420px) { .rs-model-row { grid-template-columns: 1fr auto; } .rs-model-m { grid-column: 1; grid-row: 1; } .rs-model-n { grid-column: 2; grid-row: 1; } .rs-model-s { grid-column: 1 / -1; } }

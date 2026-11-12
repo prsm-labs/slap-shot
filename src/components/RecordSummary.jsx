@@ -13,13 +13,14 @@ const dayLabel = (d) => new Date(`${d}T12:00:00`).toLocaleDateString([], { month
 const shift = (d, n) => { const x = new Date(`${d}T12:00:00`); x.setDate(x.getDate() + n); return x.toISOString().slice(0, 10); };
 
 function stats(picks) {
-  const g = picks.filter((p) => p.hit === true || p.hit === false);
+  const g = picks.filter((p) => (p.rank || 1) === 1 && (p.hit === true || p.hit === false)); // only each list's #1 a night is graded
   const hits = g.filter((p) => p.hit).length, said = g.reduce((s, p) => s + p.chance, 0);
   return { n: g.length, hits, said, above: hits - said, v: g.reduce((s, p) => s + p.chance * (1 - p.chance), 0) };
 }
 
-// 2026-11-12 (user: grade the top 1-3 a night, not all 5; show honesty + progress): a list with `solo` (Tonight's pick) is shown on its own row but
-// left out of "All lists" (it's also the #1 of PRISM Picks). `markers` = tested model upgrades drawn on the chart; `modelCheck` = every projection by month.
+// 2026-11-12 (user: one per category -- list 3 for each, grade only the #1 for the track record; show honesty + progress): picks carry `rank`
+// (1-3); only rank 1 counts in every number and on the chart, #2 / #3 show in the day view for context. A list with `solo` is shown on its own row but
+// left out of "All lists". `markers` = tested model upgrades drawn on the chart; `modelCheck` = every projection by month.
 export default function RecordSummary({ lists, liveSince, unit = "picks", markers = [], modelCheck, children }) {
   const all = useMemo(() => lists.flatMap((l) => l.picks.map((p) => ({ ...p, list: l.key, listLabel: l.label, solo: l.solo }))), [lists]);
   const dates = useMemo(() => [...new Set(all.filter((p) => p.hit != null).map((p) => p.date))].sort(), [all]);
@@ -37,7 +38,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
   const shown = list === "all" ? inRange.filter((p) => !p.solo) : inRange.filter((p) => p.list === list);
   const s = stats(shown);
   // cumulative "above what we said", one point per graded day
-  const days = [...new Set(shown.filter((p) => p.hit != null).map((p) => p.date))].sort();
+  const days = [...new Set(shown.filter((p) => p.hit != null && (p.rank || 1) === 1).map((p) => p.date))].sort();
   // the shaded band = normal luck: 9 times in 10 a right-on model's running total stays inside +-1.64 x sqrt(sum p(1-p))
   let run = 0, vr = 0;
   const pts = days.map((d) => { const x = stats(shown.filter((p) => p.date === d)); run += x.above; vr += x.v; return { d, y: run, b: 1.64 * Math.sqrt(vr), n: x.n, hits: x.hits }; });
@@ -94,23 +95,22 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
         ) : <div className="rs-empty">No graded picks in this range.</div>}
         {day && (
           <div className="rs-day">
-            <div className="rs-day-h">{dayLabel(day)} · {dayPicks.filter((p) => p.hit).length} of {dayPicks.filter((p) => p.hit != null).length} hit</div>
-            {list === "all" ? lists.filter((l) => !l.solo).map((l) => {
-              const x = stats(dayPicks.filter((p) => p.list === l.key));
-              return x.n ? (
-                <button key={l.key} type="button" className="rs-list" onClick={() => setList(l.key)}>
-                  <span className="rs-list-name">{l.label}</span>
-                  <span className="rs-list-rec">{x.hits} of {x.n} · said {x.said.toFixed(1)}</span>
-                  <span className={x.above >= 0 ? "rs-up" : "rs-down"}>{sgn(x.above)}</span>
-                </button>
+            <div className="rs-day-h">{dayLabel(day)} · #1 picks: {stats(dayPicks).hits} of {stats(dayPicks).n} hit</div>
+            {lists.filter((l) => (list === "all" ? !l.solo : l.key === list)).map((l) => {
+              const lp = dayPicks.filter((p) => p.list === l.key).sort((a, b) => (a.rank || 1) - (b.rank || 1));
+              return lp.length ? (
+                <div key={l.key} className="rs-dl">
+                  <div className="rs-day-lh">{l.label}</div>
+                  {lp.map((p, i) => (
+                    <div key={i} className={`rs-day-row ${(p.rank || 1) > 1 ? "rs-extra" : ""}`}>
+                      <span className={p.hit ? "rs-hit" : p.hit === false ? "rs-miss" : "rs-void"}>{p.hit ? "✓" : p.hit === false ? "✗" : "–"}</span>
+                      <span className="rs-day-who"><b>{p.name}</b> {p.label}{(p.rank || 1) === 1 ? <em> · graded</em> : null}</span>
+                      <span className="rs-day-ch">{pct(p.chance)}</span>
+                    </div>
+                  ))}
+                </div>
               ) : null;
-            }) : dayPicks.map((p, i) => (
-              <div key={i} className="rs-day-row">
-                <span className={p.hit ? "rs-hit" : p.hit === false ? "rs-miss" : "rs-void"}>{p.hit ? "✓" : p.hit === false ? "✗" : "–"}</span>
-                <span className="rs-day-who"><b>{p.name}</b> {p.label}</span>
-                <span className="rs-day-ch">{pct(p.chance)}</span>
-              </div>
-            ))}
+            })}
           </div>
         )}
         {list === "all" && perList.length > 1 && (
@@ -137,7 +137,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
           </div>
         )}
         <div className="rs-note">
-          Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${dayLabel(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
+          Each list's #1 pick a night is graded (#2 and #3 show in the day view, not counted). Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${dayLabel(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
         </div>
       </div>
       {children && (
