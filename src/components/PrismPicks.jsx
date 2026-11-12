@@ -5,6 +5,7 @@ import PickButton from "./PickButton.jsx";
 import PlayerAvatar from "./PlayerAvatar.jsx";
 import GamblyButton from "./GamblyButton.jsx";
 import { prismPicks, tierPicks } from "../lib/prismPicks.js";
+import { rec1 } from "../lib/listMax.js";
 
 // 💎 PRISM Picks card (top of Cheat Sheets), v2 real lines: tonight's best looks on lines a skater only clears about half
 // the time (lib/prismPicks.js on the live pool; form, calibration, bands and graded nights from public/data/prism_picks.json).
@@ -46,6 +47,7 @@ export default function PrismPicks({ players, date }) {
   const bt = data.backtest;
   const live = data.live;
   const past = [...data.nights].slice(-1);
+  const r1 = rec1(data.nights, (n) => (level === "safe" ? n.picks : n.tiers?.[level])); // 2026-11-12: graded = each night's #1 only
   return (
     <div className={`card prism-card ${open ? 'open' : 'collapsed'}`}>
       <div className="prism-head">
@@ -101,7 +103,7 @@ export default function PrismPicks({ players, date }) {
       {tier && (
         <div className="prism-foot mono">
           Track record: backtest {tier.backtest.hits.toLocaleString()} of {tier.backtest.n.toLocaleString()} hit ({share(tier.backtest.hits, tier.backtest.n)}, the model said {pct(tier.backtest.said)}) over {tier.backtest.nights} nights, 2023-24 to 2025-26
-          {tier.live.n ? ` · this season (rebuilt from the locked pre-game snapshots since ${live.since.slice(5).replace("-", "/")}): ${tier.live.hits} of ${tier.live.n} (${share(tier.live.hits, tier.live.n)})` : ""}.
+          {r1.n ? ` · this season, each night's #1 (from the locked pre-game snapshots): ${r1.hits} of ${r1.n} (${share(r1.hits, r1.n)}, we said ${pct(r1.said)})` : ""}.
           {" "}On those same lines the skaters' own last-20 rate was {Math.round(tier.backtest.own * 1000) / 10}%{level === "long" ? " — lines they had barely touched lately, and still about 1 in 7 came in." : "."}
           {" "}Rule: shots on goal (at least {tier.rule.min_line.SOG}), points (at least {tier.rule.min_line.PTS}) or goals he hit in {pct(tier.rule.real)} or fewer of his last {data.rule.last_n} games, where the model gives him {pct(tier.rule.floor)} to {pct(tier.rule.cap)}
           {level === "long" ? ", ranked by how far the model sits above his own recent rate" : ", highest chance first"}; one prop per player, {data.rule.per_game} per game, {tier.rule.stat_cap} per stat, nobody in two levels. The chance is calibrated on held-out games against how often he hit the line lately. Follows lineup and goalie news until puck drop.
@@ -109,7 +111,7 @@ export default function PrismPicks({ players, date }) {
       )}
       {!tier && <div className="prism-foot mono">
         Track record: backtest {bt.hits.toLocaleString()} of {bt.n.toLocaleString()} hit ({share(bt.hits, bt.n)}) over {bt.nights} nights, 2023-24 to 2025-26
-        {live.n ? ` · this season (rebuilt from the locked pre-game snapshots since ${live.since.slice(5).replace("-", "/")}): ${live.hits} of ${live.n} (${share(live.hits, live.n)})` : ""}.
+        {r1.n ? ` · this season, each night's #1 (from the locked pre-game snapshots): ${r1.hits} of ${r1.n} (${share(r1.hits, r1.n)}, we said ${pct(r1.said)})` : ""}.
         Rule: real lines only — shots on goal around his own median, or a point — that he hit in {pct(data.rule.real)} or fewer of his last {data.rule.last_n} games,
         where the model gives him {pct(data.rule.floor)} to {pct(data.rule.cap)}; one prop per player, {data.rule.per_game} per game. Follows lineup and goalie news until puck drop.
       </div>}

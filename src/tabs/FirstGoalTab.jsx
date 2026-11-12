@@ -21,6 +21,7 @@ import StarterTag from "../components/StarterTag.jsx";
 import { setListFilter, useListFilters } from "../lib/listFilters.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
+import { LIST_MAX } from "../lib/listMax.js";
 
 // Soft defense = opponent in tonight's softest third by expected goals allowed (oppSoftPct, lib/slapScore.js) —
 // the same app-wide toggle as the list filters on All Matchups / Lamp / Apple. Display only: the first-goal and
@@ -199,7 +200,7 @@ export default function FirstGoalTab() {
                   <span style={{ color: "var(--muted)" }}> — our #{actualRank || "—"} of {g.ranked.length}</span>
                 </div>
               )}
-              {filterPositions(g.ranked, position).filter((p) => !soft || isSoft(p)).slice(0, 5).map((p, i) => (
+              {filterPositions(g.ranked, position).filter((p) => !soft || isSoft(p)).slice(0, LIST_MAX).map((p, i) => (
                 <div
                   key={p.playerId}
                   className="clickable"

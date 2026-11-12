@@ -28,6 +28,7 @@ import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { HitStrip } from "../components/RiskBoard.jsx";
 import { useLabBand } from "../lib/labBand.jsx";
+import { LIST_MAX } from "../lib/listMax.js";
 
 // Structural port of Going Yard's real BarrelLabTab (mlb_project/going-yard/src/App.jsx:
 // 32419-33537, researched in full this session): toolbar + aggregate card + Signal Board tiles
@@ -105,7 +106,7 @@ export default function LampLabTab() {
   }, [filtered]);
 
   const topReads = useMemo(
-    () => [...filtered].sort((a, b) => b.anytimeGoalPct - a.anytimeGoalPct).slice(0, 5),
+    () => [...filtered].sort((a, b) => b.anytimeGoalPct - a.anytimeGoalPct).slice(0, LIST_MAX),
     [filtered]
   );
 
@@ -118,9 +119,8 @@ export default function LampLabTab() {
 
       <div className="note">
         ℹ️ "Light the lamp" = score a goal. Goal % is the grade model's chance to score (its odds matched reality over the first week:
-        15.7% said vs 14.7% happened), nudged for how many expected goals tonight's opponent allows. ★ Goal Signal = tonight's top 8
-        goal chances (since 11/08; before: top 15% into a softer-half defense, ~21 a night). Held out 2022-26 the top 8 scored 40.5%
-        (said 39.4%); live this season 35.1% (said 36.4%). It hits what the % says — a shortcut to the best chances, not an extra edge
+        15.7% said vs 14.7% happened), nudged for how many expected goals tonight's opponent allows. ★ Goal Signal = tonight's top 3
+        goal chances (3 at most since 11/12; the top 8 before that held out 2022-26 scored 40.5%, said 39.4%). It hits what the % says — a shortcut to the best chances, not an extra edge
         (soft defense, rising xG and a 3-way gate were tested and added nothing beyond the chance).
       </div>
 

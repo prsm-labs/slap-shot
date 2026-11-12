@@ -26,8 +26,8 @@ const CARD_FILTERS = {
   goals: { label: "🚨 Scored", fn: (r) => r.scored },
   hat: { label: "🎩 Hat tricks", fn: (r) => r.g >= 3 },
   top10: { label: "Top 10 Slap", fn: (r) => r.slapRank != null && r.slapRank <= 10 },
-  goalSig: { label: "★ Goal Signal (top 8)", fn: (r) => r.goalSignal },
-  pointSig: { label: "★ Point Signal (top 8)", fn: (r) => r.pointSignal },
+  goalSig: { label: "★ Goal Signal (#1 each night)", fn: (r) => r.goalSignal },
+  pointSig: { label: "★ Point Signal (#1 each night)", fn: (r) => r.pointSignal },
   sog3: { label: "3+ SOG", fn: (r) => r.sog >= 3 },
   firstGoal: { label: `${FIRST_GOAL} First goal`, fn: (r) => r.firstGoal },
 };
@@ -63,7 +63,7 @@ function flatten(r) {
 function signalTop(rows) {
   const byDate = new Map();
   for (const r of rows) if (r.inPool) (byDate.get(r.date) || byDate.set(r.date, []).get(r.date)).push(r);
-  const top = (list, get) => new Set([...list].filter((r) => get(r) != null).sort((a, b) => get(b) - get(a)).slice(0, SIGNAL_N));
+  const top = (list, get) => new Set([...list].filter((r) => get(r) != null).sort((a, b) => get(b) - get(a)).slice(0, 1)); // 2026-11-12: graded = the #1 only (SIGNAL_N flags 3)
   const g = new Set(), pt = new Set();
   for (const list of byDate.values()) {
     top(list, (r) => r.simGoal).forEach((r) => g.add(r));

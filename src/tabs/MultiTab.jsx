@@ -76,11 +76,11 @@ export default function MultiTab() {
       </div>
       <div className="note">
         🎯 A point is an everyday line for the regulars — the price is in the <b>2+ points</b> and <b>2+ assists</b>. These lists take every
-        skater's 2+ line on the 🎚️ Risk Slider and keep the 5 where tonight's chance beats how often he hit it in his last 20 by the most.
+        skater's 2+ line on the 🎚️ Risk Slider and keep the 3 where tonight's chance beats how often he hit it in his last 20 by the most.
         {data?.lists && ["PTS", "A"].map((k) => {
           const bt = data.lists[k].backtest, r = data.record?.[k]?.all;
           return <span key={k}> <b>{TITLE[k]}</b>: backtest 2023-24 to 2025-26 {pct(bt.hits / bt.n)} of {bt.n.toLocaleString()} hit (said {pct(bt.said)}) vs their own {pct(bt.own)} and a league rate of {pct(bt.league)}
-            {r?.n > 0 && <>; this season (replayed from the locked snapshots) {r.hits}/{r.n} (said {pct(r.said)})</>}.</span>;
+            {r?.n > 0 && <>; this season, each night's #1 (replayed from the locked snapshots) {r.hits}/{r.n} (said {pct(r.said)})</>}.</span>;
         })}
         {" "}Ranked by the top chance instead, it's the stars, who hit these about as often as they always do. Not a lock.
       </div>

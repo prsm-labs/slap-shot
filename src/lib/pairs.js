@@ -36,7 +36,7 @@ export const LEVELS = [
 ];
 export const LEVEL_KEYS = LEVELS.map((l) => l.key);
 
-export const MAX_PAIRS = 10;
+export const MAX_PAIRS = 3; // 2026-11-12 (user): 3 max in any list
 const LEGS_PER_PROP = 40; // candidates per prop (by chance); keeps the search small
 // A player can appear in at most this many pairs. Balanced uses 1 so the board isn't the same few stars in
 // every section (they crowded out e.g. Chychrun, an A grade vs a soft defense, on 10/14).
@@ -66,7 +66,7 @@ export const MODE_KEYS = MODES.map((m) => m.key);
 //   + value   = 0.3 x expected return at the book (goal+goal with a price only; clipped -50%..+100%)
 //   + lineups = 0.05 per leg already in an official lineup (no void risk)
 // Matchup, form, grade, due boosts are already inside each leg's chance, so they aren't counted twice.
-export const STAR_TOP = 5;
+export const STAR_TOP = 3;
 export const PROP_FILTERS = [
   { key: null, label: "All props" },
   { key: "goal", label: "🚨 Goal pairs" },

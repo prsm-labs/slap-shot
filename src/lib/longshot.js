@@ -7,6 +7,7 @@
 // 20.6%), 37% defensemen. The xG is already in his chance -- this list finds him, it doesn't beat the price.
 import { useMemo } from "react";
 import { useJson } from "./multi.js";
+import { LIST_MAX, rec1 } from "./listMax.js";
 
 const WINDOW = 7200, MIN = 5400; // same window as lib/last120.js / build_longshot.py
 
@@ -28,7 +29,7 @@ export function useLongshot(all, players, past, date) {
     if (past) {
       const byId = new Map(players.map((p) => [p.playerId, p]));
       const night = data.nights?.find((n) => n.date === date);
-      return (night?.picks || []).filter((f) => ids.has(f.playerId)).map((f) => ({ ...f, p: byId.get(f.playerId) }));
+      return (night?.picks || []).filter((f) => ids.has(f.playerId)).slice(0, LIST_MAX).map((f) => ({ ...f, p: byId.get(f.playerId) }));
     }
     const R = data.rule;
     const rows = [];
@@ -46,9 +47,11 @@ export function useLongshot(all, players, past, date) {
       .map((r) => ({ ...r, playerId: r.p.playerId, pos: r.p.position, chance: (r.p.anytimeGoalPct ?? 0) / 100 }))
       .filter((f) => f.chance >= R.minChance && f.chance <= R.maxChance)
       .sort((a, b) => b.pct - a.pct || b.chance - a.chance)
-      .slice(0, R.top);
+      .slice(0, Math.min(R.top, LIST_MAX));
   }, [all, players, data, past, date]);
-  return { picks, data, loading: data === undefined };
+  // 2026-11-12: the record shown = each night's #1 only
+  const shown = useMemo(() => { if (!data?.nights) return data; const all = rec1(data.nights, (n) => n.picks); return { ...data, record: { all, card: all, live: rec1(data.nights, (n) => n.picks, data.liveSince) } }; }, [data]);
+  return { picks, data: shown, loading: data === undefined };
 }
 
 export const posWord = (f) => (f.pos === "D" ? "D-men" : "forwards");

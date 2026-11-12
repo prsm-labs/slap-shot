@@ -5,6 +5,7 @@
 // his own rate. Held out 2023-26: hit 46.5% of 2,302 (said 45.9%) vs their own 28.4%.
 import { useEffect, useMemo, useState } from "react";
 import { formBefore, ladderFor } from "./lineBoard.js";
+import { LIST_MAX, rec1 } from "./listMax.js";
 
 const STAT_NAME = { PTS: "point", G: "goal", A: "assist" };
 export const radarLabel = (f) => `${f.line}+ ${STAT_NAME[f.stat]}${f.line > 1 ? "s" : ""}`;
@@ -29,7 +30,7 @@ export function useRadar(players, past, date) {
     const byId = new Map(players.map((p) => [p.playerId, p]));
     if (past) {
       const night = data.nights?.find((n) => n.date === date);
-      return (night?.picks || []).filter((f) => byId.has(f.playerId)).map((f) => ({ ...f, p: byId.get(f.playerId) }));
+      return (night?.picks || []).filter((f) => byId.has(f.playerId)).slice(0, LIST_MAX).map((f) => ({ ...f, p: byId.get(f.playerId) }));
     }
     if (!board?.form) return [];
     const rule = data.rule, out = [];
@@ -53,7 +54,9 @@ export function useRadar(players, past, date) {
       }
       if (best) out.push(best);
     }
-    return out.sort((a, b) => b.lift - a.lift).slice(0, rule.top);
+    return out.sort((a, b) => b.lift - a.lift).slice(0, Math.min(rule.top, LIST_MAX));
   }, [players, board, data, past, date]);
-  return { picks, data, loading: board === undefined || data === undefined };
+  // 2026-11-12: the record shown = each night's #1 only
+  const shown = useMemo(() => (data?.nights ? { ...data, record: { ...data.record, all: rec1(data.nights, (n) => n.picks), live: rec1(data.nights, (n) => n.picks, data.liveSince) } } : data), [data]);
+  return { picks, data: shown, loading: board === undefined || data === undefined };
 }

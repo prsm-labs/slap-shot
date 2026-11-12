@@ -110,7 +110,7 @@ export default function TrackRecordPairs() {
       .catch((e) => setError(String(e.message || e)));
   }, []);
 
-  const all = useMemo(() => data?.pairRows || [], [data]);
+  const all = useMemo(() => (data?.pairRows || []).filter((r) => r.rank === 1), [data]); // 2026-11-12: graded = each board's #1 pair only
   const dates = useMemo(() => [...new Set(all.map((r) => r.date))].sort().reverse(), [all]);
   const locks = data?.pairLocks || {};
   const modeScope = useMemo(() => all.filter((r) => (mode === "all" || r.mode === mode) && (date === "all" || r.date === date)), [all, mode, date]);

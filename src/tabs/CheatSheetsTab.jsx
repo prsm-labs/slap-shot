@@ -31,6 +31,7 @@ import { prismPicks, tierPicks } from "../lib/prismPicks.js";
 import { radarLabel } from "../lib/radar.js";
 import { PickCard } from "../components/RecordSummary.jsx";
 import { quickReadSkater } from "../lib/quickRead.js";
+import { LIST_MAX } from "../lib/listMax.js";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -153,7 +154,7 @@ function CheatSheetMain() {
       action: <><PickButton player={c.p} /> <GamblyButton text={`${c.p.name} (${c.p.team}) — ${c.label}`} /></> };
     const listItem = (f, tag, cls, label) => f && { key: `${cls}-${f.playerId}`, tag, tagCls: cls, name: f.p.name, team: vs(f.p), line: label(f), big: pct(f.chance),
       bigSub: `his ${pct(f.own)}`, why: `had it in ${f.hits} of his last ${f.n}`, onOpen: () => openSkaterSlide(f.p), action: <PickButton player={f.p} /> };
-    const top5 = (arr, fn) => (arr || []).slice(0, 5).map(fn);
+    const top5 = (arr, fn) => (arr || []).slice(0, LIST_MAX).map(fn);
     // 2026-11-09 🔎 Today's finds (user: reveal the edge in 2-3 clicks -- only the lists that add value, not the obvious favorites): Under the
     // radar and Multi-point / Multi-assist (each beats the players' own rates; Long-shot creators hit exactly our chance -> left out; PRISM Picks /
     // mid-range / long shots stay in their own card). ShortList takes the first unseen player from each entry: 2 radar, 2 multi-point, 1 multi-assist.
@@ -161,7 +162,7 @@ function CheatSheetMain() {
     const radarRows = top5(radar.picks, (f) => listItem(f, "🔦 Under the radar", "radar", radarLabel));
     const ptsRows = top5(multi.lists?.PTS, (f) => listItem(f, "🎯 Multi-point", "edge", (x) => `${x.line}+ points`));
     const aRows = top5(multi.lists?.A, (f) => listItem(f, "🍎 Multi-assist", "edge", (x) => `${x.line}+ assists`));
-    return [radarRows, radarRows, ptsRows, ptsRows, aRows];
+    return [radarRows, ptsRows, aRows]; // 2026-11-12: 3 max -- one per list
   }, [radarPool, players, ppData, ppOdds, radar.picks, multi.lists, pool?.past, meta?.slateDate]);
   // 2026-11-12 (user: a dead-simple "here's the pick"): tonight's #1 PRISM Pick (55-75% lines he hasn't been routinely clearing), its tested
   // reasons from the quick read, and the list's last-30-nights record vs our own chances. Past nights show that night's #1 with its result.
@@ -222,16 +223,16 @@ function CheatSheetMain() {
 
   const inGame = filterPositions(filterPlayers(players, selected), position).filter(passesLineup);
   // Goal / point odds from Slap Score v2 (lib/slapScore.js): the grade model, adjusted for the opponent.
-  const goalCandidates = [...inGame].sort((a, b) => (b.anytimeGoalPct ?? 0) - (a.anytimeGoalPct ?? 0)).slice(0, 5);
+  const goalCandidates = [...inGame].sort((a, b) => (b.anytimeGoalPct ?? 0) - (a.anytimeGoalPct ?? 0)).slice(0, LIST_MAX);
   const pointCandidates = [...inGame]
     .sort((a, b) => (b.anytimePointPct ?? 0) - (a.anytimePointPct ?? 0))
-    .slice(0, 5);
-  const shotCandidates = [...inGame].sort((a, b) => (b.ShotsOnGoalPerGame || 0) - (a.ShotsOnGoalPerGame || 0)).slice(0, 5);
+    .slice(0, LIST_MAX);
+  const shotCandidates = [...inGame].sort((a, b) => (b.ShotsOnGoalPerGame || 0) - (a.ShotsOnGoalPerGame || 0)).slice(0, LIST_MAX);
   // Our goal % vs the best sportsbook anytime-goal price (lib/data.js): biggest gaps either way. 2026-10-26: context lists with
   // the market check, no longer value / fade -- where we disagreed, the book was closer (lib/market.js).
   const priced = inGame.filter((p) => p.edge != null);
-  const bestValue = [...priced].filter((p) => p.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5);
-  const overvalued = [...priced].filter((p) => p.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5);
+  const bestValue = [...priced].filter((p) => p.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, LIST_MAX);
+  const overvalued = [...priced].filter((p) => p.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, LIST_MAX);
   const edgeRow = (p) => (
     <span title={`${edgeText(p)}
 ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
@@ -243,7 +244,8 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   const attackable = starters
     .filter((g) => inScope(g.matchup, selected))
     .filter((g) => lineupFilter !== "official" || g.confirmed)
-    .sort((a, b) => (a.grade?.score ?? 999) - (b.grade?.score ?? 999));
+    .sort((a, b) => (a.grade?.score ?? 999) - (b.grade?.score ?? 999))
+    .slice(0, LIST_MAX); // 2026-11-12: 3 max
 
   const officialCount = maps.officialTeams.size;
   const confirmedGoalies = starters.filter((g) => g.confirmed).length;
@@ -254,7 +256,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
       <PickCard title={pool?.past ? "That night's pick" : "Tonight's pick"} pick={tonightPick} />
       <ShortList items={shortItems} past={pool?.past} title={`🔎 ${pool?.past ? "That night's finds" : "Today's finds"}`}
         sub={(() => { const r = radar.data?.record?.all, mp = multi.data?.record?.PTS?.all, ma = multi.data?.record?.A?.all, f = (x) => (x?.n ? `${x.hits}/${x.n} (said ${Math.round(x.said * 100)}%)` : "—");
-          return `Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${f(r)} · 🎯 2+ pts ${f(mp)} · 🍎 2+ ast ${f(ma)}. Tap a name for his card.`; })()} />
+          return `Players our tested lists like that their own numbers don't show — not the obvious favorites. Record, each list's #1 a night: 🔦 ${f(r)} · 🎯 2+ pts ${f(mp)} · 🍎 2+ ast ${f(ma)}. Tap a name for his card.`; })()} />
       <PrismPicks players={players} date={pool?.past ? pool.meta.slateDate : null} />
 
       <div className="note">

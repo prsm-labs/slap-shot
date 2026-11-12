@@ -6,6 +6,7 @@
 // Held out 2023-26: 2+ points hit 24.5% of 2,197 (said 25.4%) vs their own 16.4%; 2+ assists 15.4% of 2,091 (said 15.6%) vs 11.2%.
 import { useEffect, useMemo, useState } from "react";
 import { ladderFor } from "./lineBoard.js";
+import { LIST_MAX, rec1 } from "./listMax.js";
 
 export const multiLabel = (f) => `${f.line}+ ${f.stat === "A" ? "assists" : "points"}`;
 
@@ -29,7 +30,7 @@ export function useMulti(players, past, date) {
     const byId = new Map(players.map((p) => [p.playerId, p]));
     if (past) {
       const night = data.nights?.find((n) => n.date === date);
-      for (const k of Object.keys(out)) out[k] = (night?.[k] || []).filter((f) => byId.has(f.playerId)).map((f) => ({ ...f, p: byId.get(f.playerId) }));
+      for (const k of Object.keys(out)) out[k] = (night?.[k] || []).filter((f) => byId.has(f.playerId)).slice(0, LIST_MAX).map((f) => ({ ...f, p: byId.get(f.playerId) }));
       return out;
     }
     if (!board?.form) return out;
@@ -49,9 +50,11 @@ export function useMulti(players, past, date) {
           rows.push({ playerId: p.playerId, p, stat: R.stat, line: T, chance: ch, hits, n: form.s.length, own, lift: ch - own });
         }
       }
-      out[k] = rows.sort((a, b) => b.lift - a.lift).slice(0, R.top);
+      out[k] = rows.sort((a, b) => b.lift - a.lift).slice(0, Math.min(R.top, LIST_MAX));
     }
     return out;
   }, [players, board, data, past, date]);
-  return { lists, data, loading: board === undefined || data === undefined };
+  // 2026-11-12: the record shown = each night's #1 only
+  const shown = useMemo(() => (data?.nights ? { ...data, record: Object.fromEntries(["PTS", "A"].map((k) => [k, { all: rec1(data.nights, (n) => n[k]), live: rec1(data.nights, (n) => n[k], data.liveSince) }])) } : data), [data]);
+  return { lists, data: shown, loading: board === undefined || data === undefined };
 }

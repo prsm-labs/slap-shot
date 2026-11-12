@@ -1,3 +1,4 @@
+import { LIST_MAX } from "./listMax.js";
 // 💎 PRISM Picks v2 "real lines" (2026-10-20): tonight's best looks on lines a skater only clears about half the time (v1
 // picked lines like 2+ SOG that books price at -1000). Rule, calibration and backtest: nhl_project/build_prism_picks.py
 // (which also rebuilds every past night from the locked snapshots and writes public/data/prism_picks.json: last-20 form,
@@ -120,7 +121,7 @@ export function tierPicks(players, data, odds, key, exclude = new Set()) {
     per[c.game] = (per[c.game] || 0) + 1;
     ps[c.stat] = (ps[c.stat] || 0) + 1;
     out.push({ ...c, track: tierTrack(c.chance, t), book: c.stat === "G" ? null : bookFor(odds, c.p.name, c.stat, c.line) });
-    if (out.length === R.picks) break;
+    if (out.length === Math.min(R.picks, LIST_MAX)) break;
   }
   return out;
 }
@@ -149,7 +150,7 @@ export function prismPicks(players, data, odds) {
     seen.add(c.p.playerId);
     per[c.game] = (per[c.game] || 0) + 1;
     out.push({ ...c, track: trackRate(c.chance, data), book: bookFor(odds, c.p.name, c.stat, c.line) });
-    if (out.length === R.picks) break;
+    if (out.length === Math.min(R.picks, LIST_MAX)) break;
   }
   return out;
 }

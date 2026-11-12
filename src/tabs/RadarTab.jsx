@@ -75,11 +75,11 @@ export default function RadarTab() {
       </div>
       <div className="note">
         🔦 A <b>point, goal or assist</b> a skater has had in <b>35% or fewer of his last 20 games</b> — so it doesn't jump off his game log —
-        that Slap Shot gives a <b>40%+ chance tonight</b>. One line per skater, the 5 where tonight beats his usual by the most.
+        that Slap Shot gives a <b>40%+ chance tonight</b>. One line per skater, the 3 where tonight beats his usual by the most.
         {bt && <> Backtest 2023-24 to 2025-26: <b>{pct(bt.hits / bt.n)}</b> of {bt.n.toLocaleString()} hit (said {pct(bt.said)}) while those skaters
           had cleared the same line {pct(bt.own)} of the time; the top-5 goal list hit {pct(bt.oldList.hits / bt.oldList.n)} vs their own {pct(bt.oldList.own)}.</>}
         {" "}Rising ice time / PP time are already in the chance (a boost on top didn't hold). Shown % = the 🎚️ Risk Slider chance.
-        {rec?.all?.n > 0 && <> Since 10/5 (replayed from the locked snapshots, points and goals only): <b>{rec.all.hits}/{rec.all.n}</b> (said {pct(rec.all.said)}, their own {pct(rec.all.own)}).</>}
+        {rec?.all?.n > 0 && <> Each night's #1 since 10/5 (replayed from the locked snapshots, points and goals only): <b>{rec.all.hits}/{rec.all.n}</b> (said {pct(rec.all.said)}, their own {pct(rec.all.own)}).</>}
         {rec?.live?.n > 0 && <> Live since 11/3: <b>{rec.live.hits}/{rec.live.n}</b>.</>} Not a lock.
       </div>
       <PositionFilter />

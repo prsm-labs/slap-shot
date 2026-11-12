@@ -17,6 +17,7 @@ import PickButton from "../components/PickButton.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { useListFilters } from "../lib/listFilters.js";
+import { LIST_MAX } from "../lib/listMax.js";
 
 // 🤝 Pairs (Scouting): up to 10 auto-built 2-leg pairs from the live slate (lib/pairs.js). Rebuilt whenever the
 // live pool changes (lineups, goalie news, scratches), and pairs that are new since the last build get a NEW tag.
@@ -51,7 +52,7 @@ function fromRecord(r, byId, boost) {
 function BlindSpots({ list }) {
   const [open, setOpen] = useState(false);
   if (!list.length) return null;
-  const shown = open ? list : list.slice(0, 8);
+  const shown = open ? list : list.slice(0, LIST_MAX);
   const pc = (v) => (v == null ? "—" : `${v.toFixed(1)}%`);
   return (
     <div style={{ marginTop: 16, border: "1px dashed var(--border)", borderRadius: 12, padding: 12 }}>

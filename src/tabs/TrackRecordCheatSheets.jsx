@@ -15,7 +15,7 @@ import { fmtAmerican } from "../lib/bookOdds.js";
 const shortDate = (d) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}`;
 const muted = { color: "var(--muted)" };
 const VALUE_EDGE = 3;
-const TOP = 5;
+const TOP = 1; // 2026-11-12 (user): the track record grades only each list's #1
 const edgeOf = (r) => (r.proj.anytimeGoalPct != null && r.proj.bookImplied != null ? r.proj.anytimeGoalPct - r.proj.bookImplied : null);
 const decimal = (a) => (a > 0 ? 1 + a / 100 : 1 + 100 / -a);
 

@@ -33,7 +33,7 @@ const sog3Pct = (p) => (p.modelProbs?.sog3 != null ? p.modelProbs.sog3 * 100 : p
 // a 3+ SOG leg -- none beat the chance itself in every season. So a signal is now simply tonight's top SIGNAL_N by the chance:
 // goal top 8 held out 40.5% (said 39.4), live 35.1% (said 36.4); point top 8 live 71.3% (said 71.6). A shortcut, not an extra edge.
 // Past nights keep the flag frozen in their snapshot (goalSignal / pointSignal booleans).
-export const SIGNAL_N = 8;
+export const SIGNAL_N = 3; // 2026-11-12 (user): 3 max in any list; the track record grades only the #1
 export function isGoalSignal(p) {
   if (typeof p.goalSignal === "boolean") return p.goalSignal;
   return (p.goalOrder ?? Infinity) <= SIGNAL_N;

@@ -20,6 +20,7 @@ import { L120_COLS } from "../lib/last120.js";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { useListFilters } from "../lib/listFilters.js";
+import { LIST_MAX } from "../lib/listMax.js";
 
 // Cheat Sheets -> Breakout Watch: not the usual top scorers, but skaters whose shot quality is
 // rising into a soft matchup (lib/breakout.js has the backtest behind every rule).
@@ -82,7 +83,7 @@ export default function BreakoutTab() {
               </tr>
             </thead>
             <tbody>
-              {list.map((p) => (
+              {list.slice(0, LIST_MAX).map((p) => ( /* 2026-11-12: 3 max */
                 <tr key={p.playerId}>
                   <td className="clickable" onClick={() => openSkaterSlide(p)}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>

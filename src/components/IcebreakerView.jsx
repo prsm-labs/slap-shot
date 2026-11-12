@@ -12,6 +12,7 @@ import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import IcebreakerPayoutChart from "./IcebreakerPayoutChart.jsx";
 import { PAYOUT, promoGroup, promoRows, setPromoOverride, usePromo } from "../lib/iceBreakerPromo.js";
+import { LIST_MAX } from "../lib/listMax.js";
 
 // First Goal page -> 🧊 Icebreaker: who scores the fastest goal (game clock) among the games that start
 // together — the night's earliest start by default (lib/icebreaker.js has the model + backtest).
@@ -391,7 +392,7 @@ function IcebreakerTracker({ games, liveGames, goals, actual, rows, promoHere, o
   });
   const aliveIds = new Set(lines.filter((l) => l.alive).map((l) => l.g.gameId));
   const leaderRow = actual ? rows.find((r) => r.playerId === actual.scorerId) : null;
-  const contenders = rows.filter((r) => aliveIds.has(r.game.gameId)).sort((a, b) => b.iceP - a.iceP).slice(0, 5);
+  const contenders = rows.filter((r) => aliveIds.has(r.game.gameId)).sort((a, b) => b.iceP - a.iceP).slice(0, LIST_MAX);
   const decided = lead != null && aliveIds.size === 0;
   return (
     <div className="card" style={{ padding: 10, marginBottom: 12, borderColor: "#d4af37" }}>
