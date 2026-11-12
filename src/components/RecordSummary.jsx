@@ -21,11 +21,12 @@ function stats(picks) {
 // 2026-11-12 (user: one per category -- list 3 for each, grade only the #1 for the track record; show honesty + progress): picks carry `rank`
 // (1-3); only rank 1 counts in every number and on the chart, #2 / #3 show in the day view for context. A list with `solo` is shown on its own row but
 // left out of "All lists". `markers` = tested model upgrades drawn on the chart; `modelCheck` = every projection by month.
-export default function RecordSummary({ lists, liveSince, unit = "picks", markers = [], modelCheck, children }) {
+// `fmtDay` (date -> label) and `ranges` let a weekly app show "Week 9" and week-sized ranges (Six Points).
+export default function RecordSummary({ lists, liveSince, unit = "picks", markers = [], modelCheck, fmtDay = dayLabel, ranges = RANGES, children }) {
   const all = useMemo(() => lists.flatMap((l) => l.picks.map((p) => ({ ...p, list: l.key, listLabel: l.label, solo: l.solo }))), [lists]);
   const dates = useMemo(() => [...new Set(all.filter((p) => p.hit != null).map((p) => p.date))].sort(), [all]);
   const last = dates[dates.length - 1], first = dates[0];
-  const [range, setRange] = useState("30");
+  const [range, setRange] = useState(ranges.some((r) => r[0] === "30") ? "30" : ranges[0][0]);
   const [from, setFrom] = useState(null);
   const [to, setTo] = useState(null);
   const [list, setList] = useState("all");
@@ -57,7 +58,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
     <div className="rs">
       <div className="card rs-card">
         <div className="rs-controls">
-          <div className="rs-ranges">{RANGES.map(([k, l]) => <button key={k} type="button" className={`rs-pill ${range === k ? "on" : ""}`} onClick={() => { setRange(k); setDay(null); }}>{l}</button>)}</div>
+          <div className="rs-ranges">{ranges.map(([k, l]) => <button key={k} type="button" className={`rs-pill ${range === k ? "on" : ""}`} onClick={() => { setRange(k); setDay(null); }}>{l}</button>)}</div>
           <select value={list} onChange={(e) => setList(e.target.value)} aria-label="List">
             <option value="all">All lists</option>
             {lists.map((l) => <option key={l.key} value={l.key}>{l.label}</option>)}
@@ -80,22 +81,22 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
             <svg className="rs-chart" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="Hits above what we said, running total">
               {band && <path d={band} className="rs-band" />}
               <line x1={P} x2={W - P} y1={zero} y2={zero} className="rs-zero" />
-              {marks.map((m, k) => <line key={m.date} x1={X(m.i)} x2={X(m.i)} y1={P - 6} y2={H - P + 6} className="rs-mark"><title>{`${dayLabel(m.date)}: ${m.label}`}</title></line>)}
+              {marks.map((m, k) => <line key={m.date} x1={X(m.i)} x2={X(m.i)} y1={P - 6} y2={H - P + 6} className="rs-mark"><title>{`${fmtDay(m.date)}: ${m.label}`}</title></line>)}
               <path d={line} className={run >= 0 ? "rs-line up" : "rs-line down"} />
               {pts.map((p, i) => (
                 // a zero-length line with round caps + non-scaling stroke stays a round dot however wide the chart stretches
                 <line key={p.d} x1={X(i)} x2={X(i)} y1={Y(p.y)} y2={Y(p.y)} className={`rs-dot ${day === p.d ? "on" : ""}`} onClick={() => setDay(day === p.d ? null : p.d)}>
-                  <title>{`${dayLabel(p.d)}: ${p.hits} of ${p.n} hit · running ${sgn(p.y)}`}</title>
+                  <title>{`${fmtDay(p.d)}: ${p.hits} of ${p.n} hit · running ${sgn(p.y)}`}</title>
                 </line>
               ))}
             </svg>
-            {marks.length > 0 && <div className="rs-marks">{marks.map((m) => <span key={m.date}>┆ {dayLabel(m.date)}: {m.label}</span>)}</div>}
-            <div className="rs-axis"><span>{dayLabel(days[0])}</span><span className="rs-axis-mid">tap a dot for that day</span><span>{dayLabel(days[days.length - 1])}</span></div>
+            {marks.length > 0 && <div className="rs-marks">{marks.map((m) => <span key={m.date}>┆ {fmtDay(m.date)}: {m.label}</span>)}</div>}
+            <div className="rs-axis"><span>{fmtDay(days[0])}</span><span className="rs-axis-mid">tap a dot for that day</span><span>{fmtDay(days[days.length - 1])}</span></div>
           </>
         ) : <div className="rs-empty">No graded picks in this range.</div>}
         {day && (
           <div className="rs-day">
-            <div className="rs-day-h">{dayLabel(day)} · #1 picks: {stats(dayPicks).hits} of {stats(dayPicks).n} hit</div>
+            <div className="rs-day-h">{fmtDay(day)} · #1 picks: {stats(dayPicks).hits} of {stats(dayPicks).n} hit</div>
             {lists.filter((l) => (list === "all" ? !l.solo : l.key === list)).map((l) => {
               const lp = dayPicks.filter((p) => p.list === l.key).sort((a, b) => (a.rank || 1) - (b.rank || 1));
               return lp.length ? (
@@ -126,7 +127,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
         )}
         {modelCheck?.length > 0 && (
           <div className="rs-model">
-            <div className="rs-model-h">Model check · every projection, every night</div>
+            <div className="rs-model-h">Model check · every projection we made, by month</div>
             {modelCheck.map((m) => (
               <div key={m.month} className="rs-model-row">
                 <span className="rs-model-m">{m.label}</span>
@@ -137,7 +138,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
           </div>
         )}
         <div className="rs-note">
-          Each list's #1 pick a night is graded (#2 and #3 show in the day view, not counted). Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${dayLabel(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
+          Only each list's #1 pick is graded (#2 and #3 show when you tap a dot, not counted). Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${fmtDay(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
         </div>
       </div>
       {children && (
