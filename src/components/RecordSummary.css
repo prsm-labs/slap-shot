@@ -104,3 +104,6 @@
 .rs-chip { font: inherit; font-size: 12px; padding: 4px 9px; border-radius: 999px; cursor: pointer; color: inherit; background: transparent;
   border: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
 .rs-chip.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); font-weight: 700; }
+.rs-list.on { background: color-mix(in srgb, var(--accent) 16%, transparent); box-shadow: inset 3px 0 0 var(--accent); }
+.rs-list.on .rs-list-name { color: var(--accent); font-weight: 700; }
+.rs-list.dim { opacity: .55; }

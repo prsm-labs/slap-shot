@@ -95,13 +95,6 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
             </div>
             <div className="rs-axis rs-xaxis"><span>{fmtDay(days[0])}</span>{days.length > 2 && <span>{fmtDay(days[Math.floor((days.length - 1) / 2)])}</span>}<span>{fmtDay(days[days.length - 1])}</span></div>
             <div className="rs-xtitle">{xLabel} →</div>
-            {/* 2026-11-12 (user: the graphs should let you single out one category): tap a chip = that list's line only; tap it again = all lists */}
-            <div className="rs-chips" role="group" aria-label="Show one list">
-              <button type="button" className={`rs-chip ${list === "all" ? "on" : ""}`} onClick={() => { setList("all"); setDay(null); }}>All lists</button>
-              {lists.filter((l) => !l.solo).map((l) => (
-                <button key={l.key} type="button" className={`rs-chip ${list === l.key ? "on" : ""}`} onClick={() => { setList(list === l.key ? "all" : l.key); setDay(null); }}>{l.label.split(" · ")[0]}</button>
-              ))}
-            </div>
             {marks.length > 0 && <div className="rs-marks">{marks.map((m) => <span key={m.date}>┆ {fmtDay(m.date)}: {m.label}</span>)}</div>}
           </>
         ) : <div className="rs-empty">No graded picks in this range.</div>}
@@ -125,10 +118,12 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
             })}
           </div>
         )}
-        {list === "all" && perList.length > 1 && (
+        {/* 2026-11-12 (user: no extra buttons -- the list itself is the selector): tap a row = only its line, highlighted; tap it again = all lists */}
+        {perList.length > 1 && (
           <div className="rs-lists">
             {perList.map((l) => (
-              <button key={l.key} type="button" className={`rs-list ${l.solo ? "solo" : ""}`} onClick={() => { setList(l.key); setDay(null); }}>
+              <button key={l.key} type="button" aria-pressed={list === l.key} className={`rs-list ${l.solo ? "solo" : ""} ${list === l.key ? "on" : ""} ${list !== "all" && list !== l.key ? "dim" : ""}`}
+                onClick={() => { setList(list === l.key ? "all" : l.key); setDay(null); }}>
                 <span className="rs-list-name">{l.label}</span>
                 <span className="rs-list-rec">{l.hits}/{l.n} · {pct(l.hits / l.n)} vs {pct(l.said / l.n)} said</span>
                 <span className={l.above >= 0 ? "rs-up" : "rs-down"}>{sgn(l.above)}</span>
