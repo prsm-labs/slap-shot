@@ -152,7 +152,7 @@ export default function TrackRecordTab() {
         <div className="section-title">📈 Track Record</div>
         <div className="section-sub">What we projected before each game vs. what actually happened — who scored, their box score, and how they were graded</div>
       </div>
-      {rec?.lists?.length ? <RecordSummary lists={rec.lists} liveSince={rec.liveSince}>{full}</RecordSummary> : full}
+      {rec?.lists?.length ? <RecordSummary lists={rec.lists} liveSince={rec.liveSince} markers={rec.markers} modelCheck={rec.modelCheck}>{full}</RecordSummary> : full}
     </div>
   );
 }

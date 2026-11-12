@@ -8,18 +8,20 @@ import "./RecordSummary.css";
 // them; falling = fewer. It reads like a units chart without any odds.
 const RANGES = [["7", "7 days"], ["30", "30 days"], ["season", "Season"], ["custom", "Custom"]];
 const pct = (v) => `${Math.round(v * 100)}%`;
-const sgn = (v) => `${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(1)}`;
+const sgn = (v) => (Math.abs(v) < 0.05 ? "0.0" : `${v > 0 ? "+" : "−"}${Math.abs(v).toFixed(1)}`);
 const dayLabel = (d) => new Date(`${d}T12:00:00`).toLocaleDateString([], { month: "short", day: "numeric" });
 const shift = (d, n) => { const x = new Date(`${d}T12:00:00`); x.setDate(x.getDate() + n); return x.toISOString().slice(0, 10); };
 
 function stats(picks) {
   const g = picks.filter((p) => p.hit === true || p.hit === false);
   const hits = g.filter((p) => p.hit).length, said = g.reduce((s, p) => s + p.chance, 0);
-  return { n: g.length, hits, said, above: hits - said };
+  return { n: g.length, hits, said, above: hits - said, v: g.reduce((s, p) => s + p.chance * (1 - p.chance), 0) };
 }
 
-export default function RecordSummary({ lists, liveSince, unit = "picks", children }) {
-  const all = useMemo(() => lists.flatMap((l) => l.picks.map((p) => ({ ...p, list: l.key, listLabel: l.label }))), [lists]);
+// 2026-11-12 (user: grade the top 1-3 a night, not all 5; show honesty + progress): a list with `solo` (Tonight's pick) is shown on its own row but
+// left out of "All lists" (it's also the #1 of PRISM Picks). `markers` = tested model upgrades drawn on the chart; `modelCheck` = every projection by month.
+export default function RecordSummary({ lists, liveSince, unit = "picks", markers = [], modelCheck, children }) {
+  const all = useMemo(() => lists.flatMap((l) => l.picks.map((p) => ({ ...p, list: l.key, listLabel: l.label, solo: l.solo }))), [lists]);
   const dates = useMemo(() => [...new Set(all.filter((p) => p.hit != null).map((p) => p.date))].sort(), [all]);
   const last = dates[dates.length - 1], first = dates[0];
   const [range, setRange] = useState("30");
@@ -32,18 +34,21 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", childr
   const lo = range === "season" ? first : range === "custom" ? from || first : shift(last, -(+range - 1));
   const hi = range === "custom" ? to || last : last;
   const inRange = all.filter((p) => p.date >= lo && p.date <= hi);
-  const shown = list === "all" ? inRange : inRange.filter((p) => p.list === list);
+  const shown = list === "all" ? inRange.filter((p) => !p.solo) : inRange.filter((p) => p.list === list);
   const s = stats(shown);
   // cumulative "above what we said", one point per graded day
   const days = [...new Set(shown.filter((p) => p.hit != null).map((p) => p.date))].sort();
-  let run = 0;
-  const pts = days.map((d) => { const x = stats(shown.filter((p) => p.date === d)); run += x.above; return { d, y: run, n: x.n, hits: x.hits }; });
+  // the shaded band = normal luck: 9 times in 10 a right-on model's running total stays inside +-1.64 x sqrt(sum p(1-p))
+  let run = 0, vr = 0;
+  const pts = days.map((d) => { const x = stats(shown.filter((p) => p.date === d)); run += x.above; vr += x.v; return { d, y: run, b: 1.64 * Math.sqrt(vr), n: x.n, hits: x.hits }; });
   const W = 600, H = 150, P = 10;
-  const ys = [0, ...pts.map((p) => p.y)], ymax = Math.max(...ys), ymin = Math.min(...ys), span = ymax - ymin || 1;
+  const ys = [0, ...pts.flatMap((p) => [p.y, p.b, -p.b])], ymax = Math.max(...ys), ymin = Math.min(...ys), span = ymax - ymin || 1;
   const X = (i) => P + (pts.length < 2 ? (W - 2 * P) / 2 : (i * (W - 2 * P)) / (pts.length - 1));
   const Y = (v) => P + ((ymax - v) * (H - 2 * P)) / span;
   const line = pts.map((p, i) => `${i ? "L" : "M"}${X(i).toFixed(1)},${Y(p.y).toFixed(1)}`).join(" ");
   const zero = Y(0);
+  const band = pts.length > 1 ? `M${pts.map((p, i) => `${X(i).toFixed(1)},${Y(p.b).toFixed(1)}`).join(" L")} L${pts.map((p, i) => `${X(i).toFixed(1)},${Y(-p.b).toFixed(1)}`).reverse().join(" L")} Z` : "";
+  const marks = markers.map((m) => ({ ...m, i: pts.findIndex((p) => p.d >= m.date) })).filter((m) => m.i > 0);
   const perList = lists.map((l) => ({ ...l, ...stats(inRange.filter((p) => p.list === l.key)) })).filter((l) => l.n);
   const dayPicks = day ? shown.filter((p) => p.date === day) : [];
   const replayIn = liveSince && lo < liveSince;
@@ -72,7 +77,9 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", childr
               <div className={s.above >= 0 ? "rs-up" : "rs-down"}><b>{sgn(s.above)}</b><span>{unit === "picks" ? "hits vs our chances" : unit}</span></div>
             </div>
             <svg className="rs-chart" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="Hits above what we said, running total">
+              {band && <path d={band} className="rs-band" />}
               <line x1={P} x2={W - P} y1={zero} y2={zero} className="rs-zero" />
+              {marks.map((m, k) => <line key={m.date} x1={X(m.i)} x2={X(m.i)} y1={P - 6} y2={H - P + 6} className="rs-mark"><title>{`${dayLabel(m.date)}: ${m.label}`}</title></line>)}
               <path d={line} className={run >= 0 ? "rs-line up" : "rs-line down"} />
               {pts.map((p, i) => (
                 // a zero-length line with round caps + non-scaling stroke stays a round dot however wide the chart stretches
@@ -81,13 +88,14 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", childr
                 </line>
               ))}
             </svg>
-            <div className="rs-axis"><span>{dayLabel(days[0])}</span><span>dashed = right on our chances · tap a dot</span><span>{dayLabel(days[days.length - 1])}</span></div>
+            {marks.length > 0 && <div className="rs-marks">{marks.map((m) => <span key={m.date}>┆ {dayLabel(m.date)}: {m.label}</span>)}</div>}
+            <div className="rs-axis"><span>{dayLabel(days[0])}</span><span className="rs-axis-mid">tap a dot for that day</span><span>{dayLabel(days[days.length - 1])}</span></div>
           </>
         ) : <div className="rs-empty">No graded picks in this range.</div>}
         {day && (
           <div className="rs-day">
             <div className="rs-day-h">{dayLabel(day)} · {dayPicks.filter((p) => p.hit).length} of {dayPicks.filter((p) => p.hit != null).length} hit</div>
-            {list === "all" ? lists.map((l) => {
+            {list === "all" ? lists.filter((l) => !l.solo).map((l) => {
               const x = stats(dayPicks.filter((p) => p.list === l.key));
               return x.n ? (
                 <button key={l.key} type="button" className="rs-list" onClick={() => setList(l.key)}>
@@ -108,7 +116,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", childr
         {list === "all" && perList.length > 1 && (
           <div className="rs-lists">
             {perList.map((l) => (
-              <button key={l.key} type="button" className="rs-list" onClick={() => { setList(l.key); setDay(null); }}>
+              <button key={l.key} type="button" className={`rs-list ${l.solo ? "solo" : ""}`} onClick={() => { setList(l.key); setDay(null); }}>
                 <span className="rs-list-name">{l.label}</span>
                 <span className="rs-list-rec">{l.hits}/{l.n} · {pct(l.hits / l.n)} vs {pct(l.said / l.n)} said</span>
                 <span className={l.above >= 0 ? "rs-up" : "rs-down"}>{sgn(l.above)}</span>
@@ -116,8 +124,20 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", childr
             ))}
           </div>
         )}
+        {modelCheck?.length > 0 && (
+          <div className="rs-model">
+            <div className="rs-model-h">Model check · every projection, every night</div>
+            {modelCheck.map((m) => (
+              <div key={m.month} className="rs-model-row">
+                <span className="rs-model-m">{m.label}</span>
+                {m.stats.map((x) => <span key={x.label} className="rs-model-s">{x.label}: said <b>{(x.said * 100).toFixed(1)}%</b>, happened <b>{(x.hit * 100).toFixed(1)}%</b></span>)}
+                <span className="rs-model-n">{m.n.toLocaleString()} games</span>
+              </div>
+            ))}
+          </div>
+        )}
         <div className="rs-note">
-          Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. {replayIn ? `Before ${dayLabel(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
+          Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${dayLabel(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
         </div>
       </div>
       {children && (
