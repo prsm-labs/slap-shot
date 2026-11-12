@@ -13,6 +13,8 @@ import { prismPicks, tierPicks } from "./prismPicks.js";
 import { applyGroups } from "../components/FilterPanel.jsx";
 import { DEF_TIERS, oppDefOf } from "./oppDef.jsx";
 import { EDGES, STREAK, edgeKeys } from "./edges.js";
+import { useRadar } from "./radar.js";
+import { useMulti } from "./multi.js";
 
 export const TIER_OPTIONS = [
   { key: null, label: "All tiers" },
@@ -24,7 +26,7 @@ export const GOAL_OPTIONS = [null, 10, 20, 30];
 const LETTERS = ["A+", "A", "B", "C", "D", "F"];
 
 // `soft` stays readable / settable on its own (First Goal's soft-defense pill) -- it's the "soft" tag underneath
-const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", edge: [], edgeNot: [], edgeMode: "all", top: [], prism: [], grades: [], h2h: [], oppd: [], search: "" };
+const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", edge: [], edgeNot: [], edgeMode: "all", top: [], prism: [], find: [], grades: [], h2h: [], oppd: [], search: "" };
 const withSoft = (s) => ({ ...s, soft: s.tags.includes("soft") });
 let state = withSoft({ ...DEFAULTS });
 const listeners = new Set();
@@ -58,6 +60,9 @@ export function usePickSets(pool) {
   const date = pool?.meta?.slateDate;
   const past = Boolean(pool?.meta?.past);
   const [src, setSrc] = useState(null);
+  // 2026-11-12 tested lists for the one-tap filter buttons (ListFilters.jsx): Under the radar + Multi-point, same as the Cheat Sheets cards
+  const radar = useRadar(pool?.players || null, past, date);
+  const multi = useMulti(pool?.players || null, past, date);
   useEffect(() => {
     let alive = true;
     if (!date) return undefined;
@@ -67,7 +72,9 @@ export function usePickSets(pool) {
   }, [date]);
   return useMemo(() => {
     const ix = new Map();
-    const add = (id, k, v) => { if (id == null) return; const e = ix.get(id) || { top: [], prism: [] }; if (!e[k].includes(v)) e[k].push(v); ix.set(id, e); };
+    const add = (id, k, v) => { if (id == null) return; const e = ix.get(id) || { top: [], prism: [], find: [] }; if (!e[k].includes(v)) e[k].push(v); ix.set(id, e); };
+    for (const f of radar.picks || []) add(f.playerId, "find", "radar");
+    for (const f of multi.lists?.PTS || []) add(f.playerId, "find", "multi");
     if (!pool?.players || !src || src.date !== date) return ix;
     const top = src.lock?.picks || (past ? [] : selectTop3(eligibleForTop3(pool.players, pool.meta.slate)).picks.map((c) => ({ tier: c.tier, playerId: c.player?.playerId })));
     for (const t of top) add(t.playerId, "top", t.tier);
@@ -82,7 +89,7 @@ export function usePickSets(pool) {
       for (const [lv, list] of [["safe", safe], ["mid", mid], ["long", long]]) for (const c of list) add(c.p.playerId, "prism", lv);
     }
     return ix;
-  }, [pool, src, date, past]);
+  }, [pool, src, date, past, radar.picks, multi.lists]);
 }
 
 // ctx: { slate: every eligible skater tonight (Breakout Watch), signal: "goal" | "point" (what "Signals" means on this page),
@@ -122,6 +129,18 @@ export function buildGroups(ctx = {}) {
       hint: "Skaters listed on tonight's Top 3 (one per tier, locked at the 5:30 PM run)" },
     { key: "prism", label: "PRISM Picks", chip: "PRISM", type: "multi", get: (p) => picks?.get(p.playerId)?.prism || [],
       options: [{ v: "safe", label: "💎 PRISM Pick" }, { v: "mid", label: "⚖️ Mid-range" }, { v: "long", label: "🌠 Long shot" }] },
+    // 2026-11-12 tested lists (one-tap buttons next to 🔒 Locked in): Under the radar / Multi-point (graded lists), Moving up = ice time up 10%+
+    // over his last 3 (ROLE term), Soft goalie = tonight's starter clearly below average (GSAx z <= -0.5; GOALIE_COEF term). Context: the last two
+    // are already inside the %, the buttons just show who they lift.
+    { key: "find", label: "Tested lists", chip: "", type: "multi", get: (p) => {
+        const v = [...(picks?.get(p.playerId)?.find || [])], pr = p.effectiveGrade?.probs || {};
+        if ((pr.role || 0) >= Math.log(1.1)) v.push("moving");
+        if ((pr.goalieZ || 0) <= -0.5) v.push("goalie");
+        return v; },
+      options: [{ v: "radar", label: "🔦 Under the radar", title: "Lines he rarely clears that the model likes tonight (Cheat Sheets list; graded nightly)" },
+        { v: "multi", label: "🎯 Multi-point", title: "2+ points beyond his usual (graded nightly)" },
+        { v: "moving", label: "📈 Moving up", title: "Ice time up 10%+ over his last 3 games — the strongest tested points / assists signal; already in the %" },
+        { v: "goalie", label: "🧤 Soft goalie", title: "Facing a starter clearly below average by goals saved above expected; already in the %" }] },
     { key: "tags", label: "Tags", chip: "", type: "tags", get: tagKeys, options: [
       { v: "b2b", label: "B2B", title: "His team played yesterday — second night of a back-to-back" },
       { v: "b2bnext", label: "B2B tmrw", title: "His team plays again tomorrow" },

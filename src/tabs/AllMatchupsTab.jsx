@@ -23,10 +23,6 @@ import { L120_COLS } from "../lib/last120.js";
 import { OppDefCell, OPP_DEF_NOTE, oppDefSort } from "../lib/oppDef.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
-import Lenses from "../components/Lenses.jsx";
-import { useLenses } from "../lib/lenses.jsx";
-import { useRadar } from "../lib/radar.js";
-import { useMulti } from "../lib/multi.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -87,10 +83,6 @@ export default function AllMatchupsTab() {
     return { ...p, dvp, dvpSoft: dvp ? dvp.of + 1 - dvp.rank : null, oppD: oppDefSort(p, meta) };
   });
   const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, "slapScore", "desc");
-  // 2026-11-12 🔭 Tonight's lenses (lib/lenses.jsx): one tap to each tested angle, reason on every row
-  const radar = useRadar(base, Boolean(pool?.past), meta?.slateDate);
-  const multi = useMulti(base, Boolean(pool?.past), meta?.slateDate);
-  const lenses = useLenses(base, meta, radar, multi);
 
   return (
     <div>
@@ -110,7 +102,6 @@ export default function AllMatchupsTab() {
       </div>
       {meta?.slate?.length > 0 && <MatchupFilter label={slateHeading(meta)} />}
       <PositionFilter />
-      {players && <Lenses lenses={lenses} />}
       <ListFilters shown={shown?.length} total={players?.length} base={base} ctx={fctx} />
       {!players && <div className="mono" style={{ color: "var(--muted)", fontSize: 12 }}>Loading and scoring pool…</div>}
 

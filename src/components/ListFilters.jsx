@@ -7,7 +7,12 @@ import { usePosition } from "../lib/positionFilter.js";
 // out, 16.6k skater-nights): 17.9% hit vs 16.6% said on rows scored WITHOUT the opponent; the soft-D lift (~+1.2 pts) is about what the
 // live matchup factor (0.114 / SD of opp xGA) already adds, so on the app's own % they hit about what it says. H2H added nothing, left out.
 const LOCKED_IN = [{ key: "locked", label: "🔒 Locked in", set: { grades: ["A+", "A", "B", "C"], oppd: ["soft"] },
-  title: "Grade A+ to C facing one of the league's 10 softest defenses — the strong skaters in good spots. The soft defense is already in our %, so trust the chance shown — this is a shortcut, not an extra edge." }];
+  title: "Grade A+ to C facing one of the league's 10 softest defenses — the strong skaters in good spots. The soft defense is already in our %, so trust the chance shown — this is a shortcut, not an extra edge." },
+  // 2026-11-12 (user: one-tap buttons that show those players in the table, not another card): the tested lists, one each
+  { key: "radar", label: "🔦 Under the radar", set: { find: ["radar"] }, title: "Lines he rarely clears that the model likes tonight — beats the players' own rates (graded nightly; Cheat Sheets has the record)." },
+  { key: "multi", label: "🎯 Multi-point", set: { find: ["multi"] }, title: "2+ points beyond what he usually does (graded nightly)." },
+  { key: "moving", label: "📈 Moving up", set: { find: ["moving"] }, title: "Ice time up 10%+ over his last 3 games — the strongest tested signal for points and assists. Already in the %; this shows who it lifts." },
+  { key: "goalie", label: "🧤 Soft goalie", set: { find: ["goalie"] }, title: "Facing a starter clearly below average (goals saved above expected). Tested every season for points; already in the %." }];
 
 // Collapsible filter panel for the long skater lists (lib/listFilters.js holds the shared state and the groups).
 // 2026-10-25: the shared FilterPanel (tags, Top 3 / PRISM Picks, grade + H2H letter scales); base = the list before these

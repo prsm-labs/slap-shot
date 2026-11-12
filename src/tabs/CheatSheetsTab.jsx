@@ -27,8 +27,6 @@ import { MultiCard } from "./MultiTab.jsx";
 import { useLongshot } from "../lib/longshot.js";
 import { LongshotCard } from "./LongshotTab.jsx";
 import ShortList from "../components/ShortList.jsx";
-import Lenses from "../components/Lenses.jsx";
-import { useLenses } from "../lib/lenses.jsx";
 import { prismPicks, tierPicks } from "../lib/prismPicks.js";
 import { radarLabel } from "../lib/radar.js";
 
@@ -123,8 +121,6 @@ function CheatSheetMain() {
   const radar = useRadar(radarPool, Boolean(pool?.past), meta?.slateDate);
   // 2026-11-03 🎯 / 🍎 multi-point + multi-assist lists (lib/multi.js), right after the point card
   const multi = useMulti(radarPool, Boolean(pool?.past), meta?.slateDate);
-  // 2026-11-12 🔭 Tonight's lenses (lib/lenses.jsx), above the finds card
-  const lenses = useLenses(radarPool, meta, radar, multi);
   // 2026-11-07 🎯 Long-shot creators (lib/longshot.js): 12-30% goal chances ranked by recent own xG/60 vs his position
   const longshot = useLongshot(players, radarPool, Boolean(pool?.past), meta?.slateDate);
   // 2026-11-05 ⚡ Today's short list: PRISM Pick, mid-range, under the radar, multi-point, long shot -- the top of each tested list,
@@ -231,7 +227,6 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   return (
     <div>
       <SlateStatus />
-      {players && <Lenses lenses={lenses} />}
       <ShortList items={shortItems} past={pool?.past} title={`🔎 ${pool?.past ? "That night's finds" : "Today's finds"}`}
         sub={(() => { const r = radar.data?.record?.all, mp = multi.data?.record?.PTS?.all, ma = multi.data?.record?.A?.all, f = (x) => (x?.n ? `${x.hits}/${x.n} (said ${Math.round(x.said * 100)}%)` : "—");
           return `Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${f(r)} · 🎯 2+ pts ${f(mp)} · 🍎 2+ ast ${f(ma)}. Tap a name for his card.`; })()} />
