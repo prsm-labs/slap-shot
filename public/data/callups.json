@@ -1,13 +1,141 @@
 {
  "_meta": {
-  "generated": "2026-11-12 12:06",
+  "generated": "2026-11-12 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 117,
-  "up": 55,
+  "count": 119,
+  "up": 56,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482153,
+   "name": "Brendan Brisson",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "2001-10-22",
+   "sweater": 90,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "VGK",
+    "round": 1,
+    "overallPick": 29
+   },
+   "recalledOn": "2026-11-12",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-12",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 14,
+     "goals": 8,
+     "assists": 9,
+     "points": 17,
+     "plusMinus": -2,
+     "pim": 2,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 66,
+     "goals": 19,
+     "assists": 18,
+     "points": 37,
+     "plusMinus": -32,
+     "pim": 63,
+     "team": "Hartford Wolf Pack"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 2,
+     "team": "New York Rangers"
+    },
+    "careerGp": 27,
+    "careerG": 2,
+    "careerP": 9
+   }
+  },
+  {
+   "playerId": 8481609,
+   "name": "Vladislav Kolyachonok",
+   "team": "NJD",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2001-05-26",
+   "sweater": 18,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "FLA",
+    "round": 2,
+    "overallPick": 52
+   },
+   "recalledOn": "2026-11-12",
+   "from": "Utica",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-12",
+     "type": "up",
+     "club": "Utica"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 0,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 2,
+     "pim": 6,
+     "team": "Utica Comets"
+    },
+    "last": {
+     "gamesPlayed": 34,
+     "goals": 1,
+     "assists": 8,
+     "points": 9,
+     "plusMinus": 2,
+     "pim": 14,
+     "team": "Texas Stars"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 13,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": 2,
+     "pim": 4,
+     "shots": 12,
+     "team": "Dallas Stars / Boston Bruins"
+    },
+    "careerGp": 87,
+    "careerG": 5,
+    "careerP": 17
+   }
+  },
   {
    "playerId": 8484388,
    "name": "Daniil But",
@@ -878,25 +1006,11 @@
    }
   },
   {
-   "playerId": 8483433,
-   "name": "Jack Devine",
    "team": "FLA",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2003-10-01",
-   "sweater": 38,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "FLA",
-    "round": 7,
-    "overallPick": 221
-   },
    "recalledOn": "2026-11-08",
    "from": "Charlotte",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
    "events": [
     {
      "date": "2026-11-08",
@@ -904,50 +1018,20 @@
      "club": "Charlotte"
     }
    ],
+   "playerId": null,
+   "name": "Jack Devine",
+   "position": "RW",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
    "ahl": {
-    "season": {
-     "gamesPlayed": 13,
-     "goals": 9,
-     "assists": 3,
-     "points": 12,
-     "plusMinus": 4,
-     "pim": 2,
-     "team": "Charlotte Checkers"
-    },
-    "last": {
-     "gamesPlayed": 63,
-     "goals": 18,
-     "assists": 25,
-     "points": 43,
-     "plusMinus": 16,
-     "pim": 57,
-     "team": "Charlotte Checkers"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 2,
-     "team": "Florida Panthers"
-    },
-    "last": {
-     "gamesPlayed": 6,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -3,
-     "pim": 2,
-     "shots": 6,
-     "team": "Florida Panthers"
-    },
-    "careerGp": 7,
-    "careerG": 0,
-    "careerP": 0
+    "season": null,
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -3808,13 +3892,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 4,
+     "shots": 5,
      "team": "Seattle Kraken"
     },
     "last": {
@@ -3827,7 +3911,7 @@
      "shots": 33,
      "team": "Seattle Kraken"
     },
-    "careerGp": 43,
+    "careerGp": 44,
     "careerG": 7,
     "careerP": 13
    }
