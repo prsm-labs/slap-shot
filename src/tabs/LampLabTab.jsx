@@ -22,6 +22,8 @@ import { booksText, edgeColor, edgeText, fmtEdge } from "../lib/bookOdds.js";
 import { BestPriceLink } from "../components/BetLink.jsx";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
+// 2026-11-12 (user): HD/60 + SOG/60 L120 show on the phone cards (not folded under More)
+const SHOWN = new Set(["sog120x", "hd120x"]);
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { HitStrip } from "../components/RiskBoard.jsx";
@@ -181,7 +183,7 @@ export default function LampLabTab() {
                 <th title="Shots on goal per game, last season + this season" className={sortKey === "sogPg" ? "sorted" : ""} onClick={() => toggleSort("sogPg")}>SOG/GP{sortKey === "sogPg" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Shots on goal per 60 minutes of ice time" className={`tc-more ${sortKey === "sog60" ? "sorted" : ""}`} onClick={() => toggleSort("sog60")}>SOG/60{sortKey === "sog60" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {L120_COLS.map(([k, label, title]) => (
-                  <th key={k} title={title} className={`tc-more ${sortKey === k ? "sorted" : ""}`} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                  <th key={k} title={title} className={`${SHOWN.has(k) ? "" : "tc-more"} ${sortKey === k ? "sorted" : ""}`} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 ))}
                 <th title="H2H grade vs tonight's opponent — hover a grade for the history (context, not a prediction)" className={`tc-more ${sortKey === "h2hScore" ? "sorted" : ""}`} onClick={() => toggleSort("h2hScore")}>H2H{sortKey === "h2hScore" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {SKATER_H2H_COLS.map(([k, , label, title]) => (
@@ -217,7 +219,7 @@ export default function LampLabTab() {
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono tc-more">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
-                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} className="tc-more" />)}
+                  {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} className={SHOWN.has(k) ? "" : "tc-more"} />)}
                   <td className="tc-more"><H2HCell playerId={p.playerId} /></td>
                   {SKATER_H2H_COLS.map(([k, stat]) => <td key={k} className="tc-more"><H2HStatCell playerId={p.playerId} stat={stat} /></td>)}
                 </tr>
