@@ -107,3 +107,4 @@
 .rs-list.on { background: color-mix(in srgb, var(--accent) 16%, transparent); box-shadow: inset 3px 0 0 var(--accent); }
 .rs-list.on .rs-list-name { color: var(--accent); font-weight: 700; }
 .rs-list.dim { opacity: .55; }
+.rs-flag { font-size: 11px; font-weight: 700; color: #d29922; white-space: nowrap; }

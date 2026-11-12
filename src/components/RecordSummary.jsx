@@ -51,7 +51,22 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
   const zero = Y(0);
   const band = pts.length > 1 ? `M${pts.map((p, i) => `${X(i).toFixed(1)},${Y(p.b).toFixed(1)}`).join(" L")} L${pts.map((p, i) => `${X(i).toFixed(1)},${Y(-p.b).toFixed(1)}`).reverse().join(" L")} Z` : "";
   const marks = markers.map((m) => ({ ...m, i: pts.findIndex((p) => p.d >= m.date) })).filter((m) => m.i > 0);
-  const perList = lists.map((l) => ({ ...l, ...stats(inRange.filter((p) => p.list === l.key)) })).filter((l) => l.n);
+  // 2026-11-12 (user: transparency + model learning): ⚠ "needs a look" = a list's last 30 graded #1 picks (any range) sit outside the 90% luck
+  // band -- the cue for a held-out test, never an automatic change. "Since <last fix>" = the list's record after the latest tested upgrade.
+  const fixes = markers.map((m) => m.date).filter((d) => d <= last).sort().reverse();
+  // per list: the latest fix with 8+ graded #1 picks after it (a newer fix with only a few picks says nothing yet)
+  const sinceOf = (key) => {
+    const g = all.filter((p) => p.list === key && (p.rank || 1) === 1 && p.hit != null);
+    const d = fixes.find((x) => g.filter((p) => p.date >= x).length >= 8);
+    return d ? { date: d, ...stats(g.filter((p) => p.date >= d)) } : null;
+  };
+  const watch = (key) => {
+    const g = all.filter((p) => p.list === key && (p.rank || 1) === 1 && p.hit != null).sort((a, b) => (a.date < b.date ? -1 : 1)).slice(-30);
+    const x = stats(g);
+    return x.n >= 15 && Math.abs(x.above) > 1.64 * Math.sqrt(x.v) ? (x.above > 0 ? "up" : "down") : null;
+  };
+  const perList = lists.map((l) => ({ ...l, ...stats(inRange.filter((p) => p.list === l.key)), flag: watch(l.key),
+    since: sinceOf(l.key) })).filter((l) => l.n);
   const dayPicks = day ? shown.filter((p) => p.date === day) : [];
   const replayIn = liveSince && lo < liveSince;
   return (
@@ -124,8 +139,9 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
             {perList.map((l) => (
               <button key={l.key} type="button" aria-pressed={list === l.key} className={`rs-list ${l.solo ? "solo" : ""} ${list === l.key ? "on" : ""} ${list !== "all" && list !== l.key ? "dim" : ""}`}
                 onClick={() => { setList(list === l.key ? "all" : l.key); setDay(null); }}>
-                <span className="rs-list-name">{l.label}</span>
-                <span className="rs-list-rec">{l.hits}/{l.n} · {pct(l.hits / l.n)} vs {pct(l.said / l.n)} said</span>
+                <span className="rs-list-name">{l.label}{l.flag && <span className={`rs-flag ${l.flag}`} title={`Its last 30 graded #1 picks ran ${l.flag === "down" ? "below" : "above"} our chances by more than normal luck -- flagged for a held-out test (nothing changes until a fix passes one)`}> ⚠ needs a look</span>}</span>
+                <span className="rs-list-rec">{l.hits}/{l.n} · {pct(l.hits / l.n)} vs {pct(l.said / l.n)} said
+                  {l.since?.n > 0 && <><br />since the {fmtDay(l.since.date)} fix: {l.since.hits}/{l.since.n} · said {l.since.said.toFixed(1)}</>}</span>
                 <span className={l.above >= 0 ? "rs-up" : "rs-down"}>{sgn(l.above)}</span>
               </button>
             ))}
@@ -144,7 +160,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
           </div>
         )}
         <div className="rs-note">
-          Only each list's #1 pick is graded. Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${fmtDay(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
+          Only each list's #1 pick is graded. ⚠ = its last 30 graded picks ran outside normal luck: flagged for a held-out test, nothing changes until a fix passes one. Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${fmtDay(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
         </div>
       </div>
       {children && (
