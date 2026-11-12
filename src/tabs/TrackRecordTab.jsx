@@ -5,6 +5,8 @@ import TrackRecordLive from "./TrackRecordLive.jsx";
 import TrackRecordGoalies from "./TrackRecordGoalies.jsx";
 import TrackRecordPairs from "./TrackRecordPairs.jsx";
 import TrackRecordCheatSheets from "./TrackRecordCheatSheets.jsx";
+import RecordSummary from "../components/RecordSummary.jsx";
+import { useRecordLists } from "../lib/recordLists.js";
 
 const TIER_CLASS = {
   "Elite Add-On": "tier-elite",
@@ -133,18 +135,24 @@ function PbixBacktest() {
 
 export default function TrackRecordTab() {
   const [view, setView] = useState("live");
-  return (
-    <div>
-      <div className="section-header">
-        <div className="section-title">📈 Track Record</div>
-        <div className="section-sub">What we projected before each game vs. what actually happened — who scored, their box score, and how they were graded</div>
-      </div>
+  const rec = useRecordLists(); // 2026-11-12 (user): one chart + three numbers first, the full records folded under it
+  const full = (
+    <>
       {/* 2026-11-05: one dropdown for the record shown (was five buttons) */}
       <div className="vp-row">
         <ViewPicker select compact label="Record" value={view} onChange={setView} options={[["live", "🏒 2026-27 Skaters"], ["goalies", "🥅 2026-27 Goalies (Crease Lab)"],
           ["pairs", "🤝 Pairs"], ["cheat", "📋 Cheat Sheets"], ["pbix", "Mar 2026 backtest (Power BI model)"]]} />
       </div>
       {view === "live" ? <TrackRecordLive /> : view === "goalies" ? <TrackRecordGoalies /> : view === "pairs" ? <TrackRecordPairs /> : view === "cheat" ? <TrackRecordCheatSheets /> : <PbixBacktest />}
+    </>
+  );
+  return (
+    <div>
+      <div className="section-header">
+        <div className="section-title">📈 Track Record</div>
+        <div className="section-sub">What we projected before each game vs. what actually happened — who scored, their box score, and how they were graded</div>
+      </div>
+      {rec?.lists?.length ? <RecordSummary lists={rec.lists} liveSince={rec.liveSince}>{full}</RecordSummary> : full}
     </div>
   );
 }

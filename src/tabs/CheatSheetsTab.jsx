@@ -29,6 +29,8 @@ import { LongshotCard } from "./LongshotTab.jsx";
 import ShortList from "../components/ShortList.jsx";
 import { prismPicks, tierPicks } from "../lib/prismPicks.js";
 import { radarLabel } from "../lib/radar.js";
+import { PickCard } from "../components/RecordSummary.jsx";
+import { quickReadSkater } from "../lib/quickRead.js";
 
 // Home page: top-5 lists off the scored pool, plus today's starting goalies ranked by how
 // attackable they are, all with tonight's lineup status (lib/lineups.js).
@@ -161,6 +163,28 @@ function CheatSheetMain() {
     const aRows = top5(multi.lists?.A, (f) => listItem(f, "🍎 Multi-assist", "edge", (x) => `${x.line}+ assists`));
     return [radarRows, radarRows, ptsRows, ptsRows, aRows];
   }, [radarPool, players, ppData, ppOdds, radar.picks, multi.lists, pool?.past, meta?.slateDate]);
+  // 2026-11-12 (user: a dead-simple "here's the pick"): tonight's #1 PRISM Pick (55-75% lines he hasn't been routinely clearing), its tested
+  // reasons from the quick read, and the list's last-30-nights record vs our own chances. Past nights show that night's #1 with its result.
+  const tonightPick = useMemo(() => {
+    if (!ppData?.knots || !players) return null;
+    const nights = ppData.nights || [];
+    const g = nights.slice(-30).flatMap((n) => n.picks || []).filter((c) => c.result === "hit" || c.result === "miss");
+    const said = g.reduce((s, c) => s + c.chance, 0), hits = g.filter((c) => c.result === "hit").length;
+    const record = g.length ? `PRISM Picks, last 30 nights: ${hits} of ${g.length} hit (our chances said ${Math.round(said)})` : "";
+    const byId = new Map(players.map((p) => [p.playerId, p]));
+    let c, result = null;
+    if (pool?.past) {
+      const n0 = nights.find((x) => x.date === meta?.slateDate)?.picks?.[0];
+      if (!n0) return null;
+      c = { ...n0, p: byId.get(n0.playerId) || { name: n0.name, team: n0.team, opponentTeam: n0.opp } };
+      result = n0.result;
+    } else c = prismPicks(players, ppData, ppOdds)[0];
+    if (!c) return null;
+    const qr = c.p?.effectiveGrade ? quickReadSkater(c.p, meta) : null;
+    const lines = [...(qr?.lines || []).slice(0, 2), ...(c.last ? [{ dir: "info", text: `Had it in ${c.last[1]} of his last ${c.last[0]}` }] : [])];
+    return { name: c.p.name, label: c.label, matchup: `${c.p.team} ${c.p.isHome === false ? "@" : "vs"} ${c.p.opponentTeam}`, chance: c.chance, sub: "our chance",
+      lines, result, record, onOpen: () => c.p.playerId && openSkaterSlide(c.p), action: c.p.playerId ? <PickButton player={c.p} /> : null };
+  }, [players, ppData, ppOdds, pool?.past, meta]);
   const slateByTeam = useMemo(() => {
     const m = new Map();
     for (const g of meta?.slate || []) { m.set(g.away, g); m.set(g.home, g); }
@@ -227,6 +251,7 @@ ${booksText(p.book)}`} style={{ textAlign: "right", display: "inline-block" }}>
   return (
     <div>
       <SlateStatus />
+      <PickCard title={pool?.past ? "That night's pick" : "Tonight's pick"} pick={tonightPick} />
       <ShortList items={shortItems} past={pool?.past} title={`🔎 ${pool?.past ? "That night's finds" : "Today's finds"}`}
         sub={(() => { const r = radar.data?.record?.all, mp = multi.data?.record?.PTS?.all, ma = multi.data?.record?.A?.all, f = (x) => (x?.n ? `${x.hits}/${x.n} (said ${Math.round(x.said * 100)}%)` : "—");
           return `Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${f(r)} · 🎯 2+ pts ${f(mp)} · 🍎 2+ ast ${f(ma)}. Tap a name for his card.`; })()} />
