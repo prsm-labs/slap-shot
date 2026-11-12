@@ -98,14 +98,14 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
           <div className="rs-day">
             <div className="rs-day-h">{fmtDay(day)} · #1 picks: {stats(dayPicks).hits} of {stats(dayPicks).n} hit</div>
             {lists.filter((l) => (list === "all" ? !l.solo : l.key === list)).map((l) => {
-              const lp = dayPicks.filter((p) => p.list === l.key).sort((a, b) => (a.rank || 1) - (b.rank || 1));
+              const lp = dayPicks.filter((p) => p.list === l.key && (p.rank || 1) === 1); // user 2026-11-12: show only the graded #1
               return lp.length ? (
                 <div key={l.key} className="rs-dl">
                   <div className="rs-day-lh">{l.label}</div>
                   {lp.map((p, i) => (
                     <div key={i} className={`rs-day-row ${(p.rank || 1) > 1 ? "rs-extra" : ""}`}>
                       <span className={p.hit ? "rs-hit" : p.hit === false ? "rs-miss" : "rs-void"}>{p.hit ? "✓" : p.hit === false ? "✗" : "–"}</span>
-                      <span className="rs-day-who"><b>{p.name}</b> {p.label}{(p.rank || 1) === 1 ? <em> · graded</em> : null}</span>
+                      <span className="rs-day-who"><b>{p.name}</b> {p.label}</span>
                       <span className="rs-day-ch">{pct(p.chance)}</span>
                     </div>
                   ))}
@@ -138,7 +138,7 @@ export default function RecordSummary({ lists, liveSince, unit = "picks", marker
           </div>
         )}
         <div className="rs-note">
-          Only each list's #1 pick is graded (#2 and #3 show when you tap a dot, not counted). Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${fmtDay(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
+          Only each list's #1 pick is graded. Measured against our own chances, not betting odds. "+3.0" = 3 more hits than our chances added up to. Dashed line = right on our chances; shaded = normal luck (a model that is exactly right stays inside it 9 times in 10). {replayIn ? `Before ${fmtDay(liveSince)} some lists are replayed from the frozen pre-game numbers.` : ""}
         </div>
       </div>
       {children && (
