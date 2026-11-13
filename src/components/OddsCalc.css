@@ -62,11 +62,17 @@
 .oc-table tr.on td { background: color-mix(in srgb, var(--accent) 16%, transparent); font-weight: 700; }
 .oc-num { color: var(--accent); font-weight: 700; }
 .oc-learn { text-align: left; margin: 6px 0 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--oc-bg2, var(--surface2, transparent)); }
-.oc-learn summary { cursor: pointer; padding: 10px 12px; font-weight: 700; list-style: none; }
+.oc-learn summary { cursor: pointer; padding: 10px 12px; font-weight: 700; list-style: none; display: flex; align-items: center; gap: 10px; }
 .oc-learn summary::-webkit-details-marker { display: none; }
-.oc-learn summary::after { content: '▾'; float: right; color: var(--muted); }
-.oc-learn[open] summary::after { content: '▴'; }
-.oc-learn summary small { font-weight: 400; color: var(--muted); margin-left: 6px; }
+.oc-learn summary > span { flex: 1; min-width: 0; }
+.oc-learn summary small { display: block; font-weight: 400; color: var(--muted); font-size: 11px; margin-top: 2px; }
+/* 2026-11-13 (user): a clear More / Less button; the guide starts folded so the slideout isn't crowded */
+.oc-more { flex: 0 0 auto; font-style: normal; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--accent); color: var(--accent); white-space: nowrap; }
+.oc-more::after { content: 'More ▾'; }
+.oc-learn[open] .oc-more::after { content: 'Less ▴'; }
+.oc-books { margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; border: 1px dashed var(--border); }
+.oc-books ul { margin-top: 6px; }
 .oc-learn-body { padding: 0 12px 10px; font-size: 12.5px; line-height: 1.55; }
 .oc-learn-body p { margin: 0 0 9px; }
 .oc-learn-body ul { margin: 4px 0 0; padding-left: 18px; }

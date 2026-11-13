@@ -73,7 +73,7 @@ export function BankrollGuide({ bankroll, rate = 3, ccy = 'USD' }) {
   const yours = b > 0 ? b : null
   return (
     <details className="oc-learn">
-      <summary>📘 Bankroll basics <small>how much a bet should be</small></summary>
+      <summary><span>📘 Bankroll basics <small>how much a bet should be, across all your books</small></span><em className="oc-more" aria-hidden="true" /></summary>
       <div className="oc-learn-body">
         <p><b>Your bankroll</b> is money set aside only for betting -- money you could lose all of without it touching rent, bills
           or savings. If it's spread over a few sportsbooks, add it up: $100 in three books is <b>one $300 bankroll</b>.</p>
@@ -92,6 +92,20 @@ export function BankrollGuide({ bankroll, rate = 3, ccy = 'USD' }) {
             )}
           </tbody>
         </table>
+        <div className="oc-books">
+          <b>Using more than one sportsbook?</b> Manage it all as one bankroll:
+          <ul>
+            <li><b>Add up every book.</b> $100 + $100 + $100 is a $300 bankroll. Your unit comes from the total ($9 at 3%), and it's the
+              same $9 in every book.</li>
+            <li><b>One limit across all of them.</b> A daily or weekly limit counts every book together. Three books with their own
+              budgets quietly triples what you can lose in a night.</li>
+            <li><b>Moving money between books changes nothing.</b> It's the same bankroll. A book running low isn't a reason to deposit
+              more -- re-figure the unit from what's left in total.</li>
+            <li><b>One log for every book.</b> Write down each bet, wherever it was placed, so you see your real total -- not three
+              separate pictures that each look fine.</li>
+            <li>The point of several books is shopping for the best price on the same bet, not getting more to bet with.</li>
+          </ul>
+        </div>
         <p className="oc-ex"><b>Example:</b> a $300 bankroll at 3% = a <b>$9 unit</b>. A normal bet is $9. A long shot or a parlay is a
           piece of a unit ($2-5), never more. {yours ? <>Yours: {money(yours, ccy)} at {r}% = <b>{money(yours * r / 100, ccy)}</b> a unit.</> : null}</p>
         <p><b>Why so small?</b> Cold streaks are normal, even for good picks. Eight losses in a row at 3% a unit costs about a quarter of
