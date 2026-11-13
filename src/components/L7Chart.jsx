@@ -46,7 +46,7 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
   if (pc) charts = [{ ...pc, line: pick.line, mine: true }, ...charts.filter((c) => c !== pc)];
   return (
     <div className="card" style={{ marginTop: 12 }}>
-      <StatGrid charts={charts} games={games.slice(-7)} all={games} trend={trend} projLabel="tonight's expected count (from our chance)"
+      <StatGrid charts={charts} games={games.slice(-10)} all={games} trend={trend} projLabel="tonight's expected count (from our chance)"
         labels={(g) => [g.today ? (g.live ? "LIVE" : "Tonight") : barDate(g, showYear), barOpp(g)]} />
     </div>
   );

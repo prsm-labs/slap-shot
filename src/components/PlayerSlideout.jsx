@@ -212,13 +212,19 @@ export default function PlayerSlideout() {
   const cutoff = pool?.meta?.past ? pool.meta.slateDate : null;
   const hitRaw = useHitGames(skater?.playerId, seasonOf(cutoff || new Date().toISOString().slice(0, 10)));
   const hit = useMemo(() => ({ ...hitRaw, games: hitRaw.games && cutoff ? hitRaw.games.filter((g) => g.date < cutoff) : hitRaw.games }), [hitRaw, cutoff]);
+  // 2026-11-13 (user: last 10 in the charts, like CourtIQ): last10 = season logs + the pool's last7 (pool rows win on a date),
+  // before tonight's slate; the pool's last7 itself stays 7 (model features read it)
+  const slateDay = cutoff || pool?.meta?.slateDate || null;
   const skaterView = useMemo(() => {
-    if (!skater || skater.last7?.length || !hit.games?.length) return skater;
-    const last7 = [...hit.games].sort((a, b) => (a.date < b.date ? -1 : 1)).slice(-7).map((g) => ({
+    if (!skater || !hit.games?.length) return skater;
+    const rows = [...hit.games].sort((a, b) => (a.date < b.date ? -1 : 1)).map((g) => ({
       gameId: g.date, date: g.date, opp: g.opp, home: g.home, goals: g.v.G, assists: g.v.A, points: g.v.PTS, sog: g.v.SOG,
       shotAttempts: g.att, xg: g.xg, icetime: Math.round(g.played * 60) }));
-    return { ...skater, last7 };
-  }, [skater, hit.games]);
+    const byDate = new Map(rows.map((g) => [g.date, g]));
+    for (const g of skater.last7 || []) byDate.set(g.date, g);
+    const all = [...byDate.values()].filter((g) => !slateDay || g.date < slateDay).sort((a, b) => (a.date < b.date ? -1 : 1));
+    return { ...skater, last7: skater.last7?.length ? skater.last7 : all.slice(-7), last10: all.slice(-10) };
+  }, [skater, hit.games, slateDay]);
 
   return (
     <>

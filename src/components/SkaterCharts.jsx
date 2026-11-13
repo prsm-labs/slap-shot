@@ -58,7 +58,7 @@ export default function SkaterCharts({ player, tonight = null, pick = null }) { 
 
       {active !== "onoff" && (vsTeam || vsGoalie || venue) && (
         <div className="pill-row" style={{ display: "inline-flex", flexWrap: "wrap", marginBottom: 6 }}>
-          {btn("l7", "Last 7")}
+          {btn("l7", "Last 10")}
           {venue && btn("venue", `${vLabel} (tonight)`)}
           {vsTeam && btn("team", `H2H vs ${vsTeam.opp}`)}
           {vsGoalie && btn("goalie", `H2H vs ${vsGoalie.goalie}`)}
@@ -67,7 +67,7 @@ export default function SkaterCharts({ player, tonight = null, pick = null }) { 
 
       {/* 2026-10-20: tonight's game (live or final) is the last bar once he's in the box score */}
       {active === "l7" && <L7Chart key="l7" games={[
-        ...(live.last7 || player.last7 || []).filter((g) => !tonight?.skater || String(g.gameId) !== String(tonight.gameId)),
+        ...(player.last10 || live.last7 || player.last7 || []).filter((g) => !tonight?.skater || String(g.gameId) !== String(tonight.gameId)),
         ...(tonight?.started && tonight.skater ? [{ ...tonight.skater, gameId: tonight.gameId, opp: tonight.them.abbrev, home: tonight.home.abbrev === tonight.us.abbrev, today: true, live: tonight.live }] : []),
       ]} role="skater" trend proj={proj} pick={pick} />}
 
