@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { rolling, TrendKey, TrendProj, TrendSeg } from "./Trend.jsx";
+import { useEffect, useState } from "react";
+import { PickLine, rolling, TrendKey, TrendProj, TrendSeg } from "./Trend.jsx";
 
 // Plain-div, no-library bar chart — direct analogue of Going Yard's real Last7HRChart
 // (mlb_project/going-yard/src/App.jsx:19921), confirmed this session to have zero chart
@@ -37,12 +37,19 @@ const GOALIE_VIEWS = [
 // across every chart (and the next player opened); a view set without that stat (e.g. vs-goalie: no assists) shows its first.
 const picked = { skater: null, goalie: null };
 
-export default function L7Chart({ games, role = "skater", views: customViews, showYear = false, emptyText, trend = false, proj = null }) {
+// pick (2026-11-13, user): { view, line } from the Hit rates card -- that view moves first, switches on and uses the picked line
+export default function L7Chart({ games, role = "skater", views: customViews, showYear = false, emptyText, trend = false, proj = null, pick = null }) {
   const views = customViews || (role === "goalie" ? GOALIE_VIEWS : SKATER_VIEWS);
   const [viewKey, setViewKeyRaw] = useState(() => (views.some((v) => v[0] === picked[role]) ? picked[role] : views[0][0]));
   const setViewKey = (k) => { picked[role] = k; setViewKeyRaw(k); };
   const view = views.find((v) => v[0] === viewKey) || views[0];
-  const [, , getValue, threshold] = view;
+  const pv = pick && views.some((v) => v[0] === pick.view) ? pick.view : null;
+  useEffect(() => { if (pv) { picked[role] = pv; setViewKeyRaw(pv); } }, [pv, pick?.line]); // eslint-disable-line react-hooks/exhaustive-deps
+  const mine = pv != null && view[0] === pv;
+  const [, , getValue, baseTh] = view;
+  const threshold = mine ? pick.line : baseTh;
+  const shown = pv ? [views.find((v) => v[0] === pv), ...views.filter((v) => v[0] !== pv)] : views;
+  const pillLabel = (key, lbl) => (key === pv ? lbl.replace(/^(\S+)\s+(\d+\+\s+)?/, `$1 ${pick.line}+ `) : lbl);
 
   if (!games || games.length === 0) {
     return <div className="mono" style={{ fontSize: 11, color: "var(--muted)", padding: "8px 0" }}>{emptyText || "No recent game log available."}</div>;
@@ -60,12 +67,12 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
   const pj = trend && proj?.[viewKey] != null ? proj[viewKey] : null;
 
   return (
-    <div className="card" style={{ marginTop: 12 }}>
+    <div className={`card ${mine ? "chart-mine" : ""}`} style={{ marginTop: 12 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
         <div className="pill-row">
-          {views.map(([key, lbl]) => (
+          {shown.map(([key, lbl]) => (
             <button key={key} className={`pill-btn ${viewKey === key ? "active" : ""}`} onClick={() => setViewKey(key)}>
-              {lbl}
+              {pillLabel(key, lbl)}
             </button>
           ))}
         </div>
@@ -83,6 +90,7 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
           return (
             <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-end", height: "100%", gap: 2, position: "relative" }}>
               <TrendSeg y={tr[i]} next={tr[i + 1]} gap={4} title={tr[i] != null ? `Last-5 average: ${((tr[i] / 100) * maxVal).toFixed(2)}` : undefined} />
+              <PickLine y={mine ? Math.min(100, (threshold / maxVal) * 100) : null} gap={4} title={mine ? `Your hit-rate line: ${threshold}+` : undefined} />
               <TrendProj y={pj != null ? Math.min(100, (pj / maxVal) * 100) : null} gap={4} title={pj != null ? `Tonight's projection: ${pj.toFixed(2)}` : undefined} />
               <span className="mono" style={{ fontSize: 10, fontWeight: 700, color: isHit ? "var(--accent2)" : "var(--red)" }}>{val}</span>
               <div style={{
@@ -103,7 +111,7 @@ export default function L7Chart({ games, role = "skater", views: customViews, sh
           </div>
         ))}
       </div>
-      {trend && <TrendKey proj={pj != null} projLabel="tonight's expected count (from our chance)" />}
+      {(trend || mine) && <TrendKey proj={trend && pj != null} projLabel="tonight's expected count (from our chance)" pick={mine ? "your hit-rate line" : null} />}
     </div>
   );
 }

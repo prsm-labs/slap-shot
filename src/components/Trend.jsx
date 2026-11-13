@@ -36,11 +36,18 @@ export function TrendProj({ y, gap = 3, title }) {
   return <span className="trend-proj" style={{ bottom: `${clamp(y)}%`, left: -gap / 2, right: -gap / 2 }} title={title} />
 }
 
-export function TrendKey({ avgLabel = 'his last-5-game average', projLabel = "tonight's projection", proj = true }) {
+// 2026-11-13 (user): the line picked in the Hit rates card, drawn solid in the accent on the chart that follows it
+export function PickLine({ y, gap = 3, title }) {
+  if (y == null) return null
+  return <span className="trend-pick" style={{ bottom: `${clamp(y)}%`, left: -gap / 2, right: -gap / 2 }} title={title} />
+}
+
+export function TrendKey({ avgLabel = 'his last-5-game average', projLabel = "tonight's projection", proj = true, pick = null }) {
   return (
     <p className="trend-key">
       <span className="trend-key-solid" /> {avgLabel}
       {proj && <><span className="trend-key-dash" /> {projLabel}</>}
+      {pick && <><span className="trend-key-pick" /> {pick}</>}
       <span className="trend-key-note"> · context only</span>
     </p>
   )

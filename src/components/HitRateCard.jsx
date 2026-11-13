@@ -18,7 +18,8 @@ const fmt = (v) => (v == null ? '—' : Math.abs(v) >= 100 || Number.isInteger(v
 const fmtAvg = (v) => (v == null ? '—' : Math.abs(v) >= 100 ? String(Math.round(v)) : v.toFixed(1))
 const TIER_LABELS = ['🟢 Soft (10 softest)', 'Average', '🔴 Tough (10 toughest)']
 
-export default function HitRateCard({ games, ready, stats, opp, rest, played, seasonLabels = ['This season', 'Last season'], note, tierLabels = TIER_LABELS }) {
+// onPick (2026-11-13, user): ({ k, line, unit }) whenever the stat or line changes -- the slideout charts follow it
+export default function HitRateCard({ games, ready, stats, opp, rest, played, seasonLabels = ['This season', 'Last season'], note, tierLabels = TIER_LABELS, onPick }) {
   const [k, setK] = useState(stats[0].k)
   const stat = stats.find((s) => s.k === k) || stats[0]
   // default line: the stat's def, else his average this season (last season under 3 games) rounded to the step
@@ -34,6 +35,7 @@ export default function HitRateCard({ games, ready, stats, opp, rest, played, se
   const [line, setLine] = useState(autoDef)
   const [open, setOpen] = useState(false)
   useEffect(() => { setLine(autoDef) }, [stat.k, autoDef])
+  useEffect(() => { onPick?.({ k, line, unit: stat.unit }) }, [k, line]) // eslint-disable-line react-hooks/exhaustive-deps
   const list = useMemo(() => (games || []).filter((g) => g.v[k] != null).sort((a, b) => (a.date < b.date ? 1 : -1)), [games, k])
   const rate = (gs) => { const h = gs.filter((g) => g.v[k] >= line).length; return { h, n: gs.length, r: pctOf(h, gs.length) } }
   const avg = (gs) => (gs.length ? gs.reduce((s, g) => s + g.v[k], 0) / gs.length : null)

@@ -8,3 +8,7 @@
 .trend-key-dash { border-top: 1.5px dashed var(--fg, var(--text, #ddd)); opacity: .6; margin-left: 6px; }
 .trend-key-note { opacity: .8; }
 .bar-v { position: relative; z-index: 3; } /* bar value numbers draw over the trend line */
+/* 2026-11-13 hit-rate line on the chart that follows the Hit rates card */
+.trend-pick { position: absolute; height: 0; border-top: 2px solid var(--accent); opacity: .9; pointer-events: none; z-index: 1; }
+.trend-key-pick { display: inline-block; width: 16px; height: 0; border-top: 2px solid var(--accent); margin-left: 6px; }
+.chart-mine { box-shadow: inset 0 0 0 1px var(--accent); border-radius: 8px; }

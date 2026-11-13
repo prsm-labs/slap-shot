@@ -16,7 +16,7 @@ const GOALIE_VIEWS = [
 ];
 const pct = (v) => (v == null ? "—" : `${(v * 100).toFixed(1)}%`);
 
-export default function SkaterCharts({ player, tonight = null }) {
+export default function SkaterCharts({ player, tonight = null, pick = null }) { // pick: Hit rates card -> charts (2026-11-13)
   const h2h = useH2H();
   const pool = useScoredPool({ includeStarted: true });
   const [mode, setMode] = useState("l7");
@@ -53,7 +53,7 @@ export default function SkaterCharts({ player, tonight = null }) {
     <div style={{ marginTop: 12 }}>
       {onoff?.team === live.team && <OnOffPicker d={onoff} player={player} maps={lineups ? lineupMaps(lineups) : null} sel={sel} setSel={setSel} how={how} setHow={setHow} />}
       {active === "onoff" && (oo.match.length
-        ? <L7Chart key={`onoff-${how}-${sel.join("-")}`} games={oo.match.slice(-10)} role="skater" showYear />
+        ? <L7Chart key={`onoff-${how}-${sel.join("-")}`} games={oo.match.slice(-10)} role="skater" showYear pick={pick} />
         : <div className="mono" style={{ fontSize: 10, color: "var(--muted)" }}>No games match that pick.</div>)}
 
       {active !== "onoff" && (vsTeam || vsGoalie || venue) && (
@@ -69,7 +69,7 @@ export default function SkaterCharts({ player, tonight = null }) {
       {active === "l7" && <L7Chart key="l7" games={[
         ...(live.last7 || player.last7 || []).filter((g) => !tonight?.skater || String(g.gameId) !== String(tonight.gameId)),
         ...(tonight?.started && tonight.skater ? [{ ...tonight.skater, gameId: tonight.gameId, opp: tonight.them.abbrev, home: tonight.home.abbrev === tonight.us.abbrev, today: true, live: tonight.live }] : []),
-      ]} role="skater" trend proj={proj} />}
+      ]} role="skater" trend proj={proj} pick={pick} />}
 
       {active === "venue" && (
         <>
@@ -78,7 +78,7 @@ export default function SkaterCharts({ player, tonight = null }) {
             {venue.games.reduce((a, g) => a + g.goals, 0)} G, {venue.games.reduce((a, g) => a + g.points, 0)} P,{" "}
             {venue.games.reduce((a, g) => a + g.sog, 0)} SOG. Tonight he plays {venue.side === "home" ? "at home" : "on the road"}.
           </div>
-          <L7Chart key="venue" games={venue.games} role="skater" showYear />
+          <L7Chart key="venue" games={venue.games} role="skater" showYear pick={pick} />
         </>
       )}
 
@@ -91,7 +91,7 @@ export default function SkaterCharts({ player, tonight = null }) {
             {vsTeam.games.some((g) => g.po) ? " (includes playoffs)" : ""}. Goalie faced:{" "}
             {vsTeam.games.map((g) => g.goalies[0] || "?").join(", ")}.
           </div>
-          <L7Chart key="team" games={vsTeam.games} role="skater" showYear />
+          <L7Chart key="team" games={vsTeam.games} role="skater" showYear pick={pick} />
         </>
       )}
 
@@ -106,6 +106,7 @@ export default function SkaterCharts({ player, tonight = null }) {
             key="goalie"
             games={vsGoalie.games.map((g) => ({ ...g, goals: g.goalsOn, sog: g.sogOn }))}
             views={GOALIE_VIEWS}
+            pick={pick}
             showYear
           />
         </>

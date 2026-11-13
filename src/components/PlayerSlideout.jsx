@@ -33,6 +33,8 @@ const HR_STATS = (p) => [
   { k: "PTS", label: "Points", unit: "points", step: 1, min: 1, def: 1 },
   { k: "SOG", label: "SOG", unit: "SOG", step: 1, min: 1, def: Math.max(1, Math.round(p.ShotsOnGoalPerGame ?? 2)) },
 ];
+// 2026-11-13 (user): Hit rates stat -> chart view
+const HR_VIEW = { G: "goal", A: "assist", PTS: "point", SOG: "sog3" };
 const HR_REST = [{ label: "Back-to-back", test: (r) => r === 0 }, { label: "1 day off", test: (r) => r === 1 }, { label: "2+ days off", test: (r) => r >= 2 }];
 const seasonOf = (d) => { const [y, m] = String(d).split("-").map(Number); return m >= 8 ? `${y}-${String(y + 1).slice(2)}` : `${y - 1}-${String(y).slice(2)}`; };
 
@@ -181,12 +183,12 @@ ${MARKET_NOTE}`}>{fmtAmerican(p.book.best)} {p.book.bestBook} · {p.book.bestImp
   );
 }
 
-function SkaterHitRates({ p, hit }) {
+function SkaterHitRates({ p, hit, onPick }) {
   return (
     <div className="card">
       <div className="mono" style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6, textTransform: "uppercase", letterSpacing: 1 }}>Hit rates</div>
       <HitRateCard games={hit.games} ready={hit.ready} stats={HR_STATS(p)} opp={p.opponentTeam} rest={HR_REST}
-        played={{ label: "Ice time", unit: "min", round: (m) => Math.round(m) }} tierLabels={["🟢 Soft (10 softest)", "Average", "🔴 Stingy (10 stingiest)"]} />
+        played={{ label: "Ice time", unit: "min", round: (m) => Math.round(m) }} tierLabels={["🟢 Soft (10 softest)", "Average", "🔴 Stingy (10 stingiest)"]} onPick={onPick} />
     </div>
   );
 }
@@ -194,6 +196,7 @@ function SkaterHitRates({ p, hit }) {
 export default function PlayerSlideout() {
   const [skater, setSkater] = useState(null);
   const [goalie, setGoalie] = useState(null);
+  const [hrPick, setHrPick] = useState(null);
 
   useEffect(() => registerSlide("skater", setSkater), []);
   useEffect(() => registerSlide("goalie", setGoalie), []);
@@ -258,9 +261,9 @@ export default function PlayerSlideout() {
             ) : (
               <>
                 <SkaterStats p={player} />
-                <SkaterHitRates p={player} hit={hit} />
+                <SkaterHitRates p={player} hit={hit} onPick={setHrPick} />
                 <CoinLadder p={player} />
-                <SkaterCharts player={skaterView || player} tonight={tonight} />
+                <SkaterCharts player={skaterView || player} tonight={tonight} pick={hrPick && HR_VIEW[hrPick.k] ? { view: HR_VIEW[hrPick.k], line: hrPick.line } : null} />
               </>
             )}
           </div>
