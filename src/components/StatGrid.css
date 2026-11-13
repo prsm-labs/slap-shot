@@ -1,0 +1,19 @@
+/* 2026-11-13 slideout stat charts, one per prop (StatGrid.jsx; same file in Slap Shot and Six Points; mirrors CourtIQ's .stat-chart) */
+.sg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 16px; margin: 8px 0 10px; }
+.sg-chart { min-width: 0; padding: 4px 6px; }
+.sg-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; flex-wrap: wrap; font-size: 0.8rem; margin-bottom: 2px; color: var(--text, var(--fg)); }
+.sg-head span { font-size: 0.7rem; color: var(--muted); }
+.sg-head .sg-mine { font-weight: 400; }
+.sg-bars { display: flex; align-items: flex-end; gap: 3px; height: 70px; position: relative; border-bottom: 1px solid var(--border, rgba(127, 127, 127, .3)); }
+.sg-bar { flex: 1; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative; }
+.sg-fill { width: 100%; background: color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 3px 3px 0 0; }
+.sg-fill.hit { background: var(--accent); }
+.sg-fill.today { outline: 1.5px solid var(--text, var(--fg)); outline-offset: -1.5px; }
+.sg-fill.today.live { outline-color: var(--green, var(--good, #2fae5c)); }
+.sg-v { position: relative; z-index: 3; font-size: 0.65rem; line-height: 1.2; color: var(--muted); }
+.sg-v.today { color: var(--text, var(--fg)); font-weight: 700; }
+.sg-proj { position: absolute; left: 0; right: 0; border-top: 1.5px dashed var(--text, var(--fg)); opacity: .5; z-index: 1; pointer-events: none; }
+.sg-labels { display: flex; gap: 3px; margin-top: 2px; }
+.sg-labels span { flex: 1; min-width: 0; text-align: center; font-size: 0.55rem; line-height: 1.15; color: var(--muted); white-space: nowrap; overflow: hidden; }
+.sg-labels span i { display: block; font-style: normal; opacity: 0.8; }
+.sg-labels span.today { color: var(--text, var(--fg)); font-weight: 700; }
