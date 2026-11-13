@@ -27,6 +27,7 @@ import DataStamp from "./components/DataStamp.jsx";
 import { OfflineBanner, OfflineMenuButton } from "./components/Offline.jsx";
 import offlineConfig from "./lib/offlineConfig.js";
 import AppRefresh from "./components/AppRefresh.jsx";
+import OddsCalc from "./components/OddsCalc.jsx";
 
 // 2026-11-10: the hardcoded 7/31 build stamp is gone from the footer -- it now shows when the pipeline last updated the data.
 
@@ -76,6 +77,8 @@ export default function App() {
         <div className="badges">
           {/* 2026-10-25 (user): app refresh button -- reloads the page with fresh data */}
           <AppRefresh />
+          {/* 2026-11-13 (user): 🧮 odds calculator + bankroll basics, Going Yard's math */}
+          <OddsCalc />
           <AlertBell />
           <div className="badge live">
             <div className="badge-dot" />

@@ -1,0 +1,76 @@
+/* 2026-11-13 🧮 Odds Calculator + 📘 Bankroll basics (OddsCalc.jsx). Same file in every app; colors come from each app's own tokens
+   (--text or --fg, --surface or --bg, --surface2, --border, --muted, --accent), so each app keeps its accent. */
+.oc-btn { flex: 0 0 auto; display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface, transparent); color: var(--text, var(--fg)); cursor: pointer; font-size: 16px; line-height: 1; }
+.oc-btn:hover { border-color: var(--accent); }
+.oc-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, .55); z-index: 1200; }
+.oc-panel { --oc-fg: var(--text, var(--fg, #e8e8ec)); --oc-bg: var(--surface, var(--bg, #15171c)); --oc-bg2: var(--surface2, color-mix(in srgb, var(--oc-fg) 6%, var(--oc-bg)));
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(400px, 100%); z-index: 1201; display: flex; flex-direction: column;
+  background: var(--oc-bg); color: var(--oc-fg); border-left: 1px solid var(--border); box-shadow: -4px 0 24px rgba(0, 0, 0, .45);
+  font-size: 13px; text-align: left; }
+.oc-head { display: flex; align-items: center; gap: 8px; padding: 14px 16px; border-bottom: 1px solid var(--border); background: var(--oc-bg2); }
+.oc-head b { font-size: 15px; }
+.oc-x { margin-left: auto; background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); cursor: pointer; padding: 3px 9px; }
+.oc-body { flex: 1; overflow-y: auto; padding: 14px 16px 24px; overscroll-behavior: contain; }
+.oc-modes { display: flex; gap: 3px; padding: 3px; border-radius: 8px; border: 1px solid var(--border); background: var(--oc-bg2); }
+.oc-modes button { flex: 1; padding: 6px 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted); cursor: pointer;
+  font: inherit; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+.oc-modes button.on { background: var(--accent); color: var(--accent-fg, #fff); font-weight: 700; }
+.oc-hint { margin: 8px 0 14px; font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+.oc-field { display: block; margin-bottom: 14px; }
+.oc-lbl { display: block; margin-bottom: 6px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.oc-lblrow { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.oc-lblrow .oc-lbl { margin: 0; }
+.oc-panel input:not([type=checkbox]), .oc-panel select { width: 100%; box-sizing: border-box; padding: 8px 10px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--oc-bg2); color: var(--oc-fg); font: inherit; font-size: 14px; outline: none; }
+.oc-panel input:focus, .oc-panel select:focus { border-color: var(--accent); }
+.oc-rate { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--muted); white-space: nowrap; }
+.oc-panel .oc-rate input { width: 54px; padding: 3px 6px; font-size: 12px; text-align: right; }
+.oc-chips { display: flex; gap: 8px; margin-top: 8px; }
+.oc-chips div { flex: 1; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--oc-bg2); text-align: center; }
+.oc-chips small { display: block; font-size: 9px; text-transform: uppercase; color: var(--muted); }
+.oc-chips b { font-size: 15px; color: var(--accent); }
+.oc-ccy { display: flex; flex-wrap: wrap; gap: 4px; }
+.oc-ccy button { padding: 4px 10px; border-radius: 5px; border: 1px solid var(--border); background: var(--oc-bg2); color: var(--muted); cursor: pointer; font: inherit; font-size: 11px; }
+.oc-ccy button.on { background: var(--accent); color: var(--accent-fg, #fff); font-weight: 700; }
+.oc-warn { margin-top: 6px; font-size: 11.5px; color: var(--gold-text, #d99a1e); }
+.oc-link { background: none; border: 0; padding: 0; color: var(--accent); cursor: pointer; text-decoration: underline; font: inherit; font-size: 11px; }
+.oc-check { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; cursor: pointer; }
+.oc-check.off { opacity: .45; cursor: not-allowed; }
+.oc-check small { color: var(--muted); }
+.oc-leg { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.oc-leg span { width: 14px; font-size: 11px; color: var(--muted); }
+.oc-leg em { width: 44px; text-align: right; font-style: normal; font-size: 11px; color: var(--muted); }
+.oc-leg em.ok { color: var(--accent); }
+.oc-go { width: 100%; margin: 2px 0 14px; padding: 10px; border: 0; border-radius: 7px; background: var(--accent); color: var(--accent-fg, #fff);
+  font: inherit; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .5px; cursor: pointer; }
+.oc-go:disabled { background: var(--oc-bg2); color: var(--muted); opacity: .6; cursor: default; }
+.oc-result { margin-bottom: 14px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--oc-bg2); }
+.oc-rtitle { margin-bottom: 6px; font-size: 10px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); }
+.oc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.oc-row span { font-size: 11.5px; color: var(--muted); }
+.oc-row b { font-size: 14px; }
+.oc-good { color: var(--good, var(--green, var(--accent))); }
+.oc-a2 { color: var(--accent); }
+.oc-risk { margin-top: 10px; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border); font-size: 11px; color: var(--muted); }
+.oc-risk b { color: var(--oc-fg); }
+.oc-note { margin-top: 8px; font-size: 11px; line-height: 1.5; color: var(--muted); }
+.oc-table { width: 100%; margin: 8px 0; border-collapse: collapse; font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.oc-table th, .oc-table td { padding: 5px 8px; border-bottom: 1px solid var(--border); text-align: right; }
+.oc-table th:first-child, .oc-table td:first-child { text-align: left; }
+.oc-table th { color: var(--muted); font-weight: 600; }
+.oc-table tr.on td { background: color-mix(in srgb, var(--accent) 16%, transparent); font-weight: 700; }
+.oc-num { color: var(--accent); font-weight: 700; }
+.oc-learn { text-align: left; margin: 6px 0 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--oc-bg2, var(--surface2, transparent)); }
+.oc-learn summary { cursor: pointer; padding: 10px 12px; font-weight: 700; list-style: none; }
+.oc-learn summary::-webkit-details-marker { display: none; }
+.oc-learn summary::after { content: '▾'; float: right; color: var(--muted); }
+.oc-learn[open] summary::after { content: '▴'; }
+.oc-learn summary small { font-weight: 400; color: var(--muted); margin-left: 6px; }
+.oc-learn-body { padding: 0 12px 10px; font-size: 12.5px; line-height: 1.55; }
+.oc-learn-body p { margin: 0 0 9px; }
+.oc-learn-body ul { margin: 4px 0 0; padding-left: 18px; }
+.oc-learn-body li { margin-bottom: 6px; }
+.oc-ex { padding: 8px 10px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); border-radius: 0 6px 6px 0; }
+.oc-disc { text-align: left; margin: 4px 0 0; padding-top: 10px; border-top: 1px solid var(--border); font-size: 10.5px; line-height: 1.5; color: var(--muted); }
+.oc-disc a { color: var(--accent); font-weight: 700; }
