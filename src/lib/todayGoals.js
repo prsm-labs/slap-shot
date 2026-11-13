@@ -38,6 +38,12 @@ function summarize(goals, games) {
     if (n === 2 && live.has(g.gameId)) p.hatWatch = true;
     byPlayer.set(g.scorerId, p);
   }
+  // 2026-11-12 (user): assists too -> 🅰️ badge for skaters with points but no goal (a point is a goal or an assist)
+  for (const g of goals) for (const id of g.assistIds || []) {
+    const p = byPlayer.get(id) || { goals: 0, hatTrick: false, hatWatch: false, opp: g.oppTeam, gameId: g.gameId, team: g.scorerTeam };
+    p.assists = (p.assists || 0) + 1;
+    byPlayer.set(id, p);
+  }
   return byPlayer;
 }
 
@@ -84,6 +90,7 @@ export function goalBadgeFor(byPlayer, playerId) {
 // { icon, text, title, count } for a player's badge (see components/PlayerAvatar.jsx).
 export function goalBadgeLabel(b, date) {
   if (!b) return null;
+  if (!b.goals && b.assists) return { icon: "🅰️", text: b.assists > 1 ? `${b.assists} assists` : "Assist", title: `${b.assists > 1 ? `${b.assists} assists` : "An assist"}, no goal (${date})`, count: b.assists };
   if (b.hatTrick) return { icon: "🎩", text: "Hat trick", title: `Hat trick (${date})`, count: b.goals };
   if (b.hatWatch) return { icon: "👀", text: "Hat watch", title: "HAT WATCH — 2 goals tonight, game still on", count: b.goals };
   return { icon: "🚨", text: b.goals > 1 ? `${b.goals} goals` : "Goal", title: `Scored ${b.goals > 1 ? `${b.goals} goals` : "a goal"} (${date})`, count: b.goals };

@@ -212,6 +212,7 @@ function goalRow(pbp, play, teams, roster) {
     scorerId: d.scoringPlayerId,
     scorerName: roster[d.scoringPlayerId]?.name || "",
     scorerTeam: team.abbrev,
+    assistIds: [d.assist1PlayerId, d.assist2PlayerId].filter(Boolean), // 2026-11-12: 🅰️ assist badges
     seasonGoalNum: d.scoringPlayerTotal ?? null,
     goalieId: d.goalieInNetId || 0,
     goalieName: d.goalieInNetId ? roster[d.goalieInNetId]?.name || "" : "Empty Net",

@@ -9,7 +9,7 @@ import { goalBadgeFor, goalBadgeLabel, useTodayGoals } from "../lib/todayGoals.j
 //
 // Goal badge (lib/todayGoals.js), like Going Yard's "gone yard" badge — shown on the photo
 // everywhere a skater appears: 🚨 scored today (×2 for two), 🎩 hat trick, and a pulsing ring + 👀
-// for HAT WATCH (2 goals in a game still going). Resets at the next day's first goal.
+// for HAT WATCH (2 goals in a game still going); 🅰️ (×2 ...) for assists with no goal. Resets at the next day's first goal.
 const NHL_SEASON_ID = "20262027"; // current season, so players who changed teams get this year's photo
 
 function headshotUrl(playerId, team) {
@@ -69,7 +69,7 @@ export default function PlayerAvatar({ playerId, name, team, size = 40 }) {
         }}
       >
         {badge.icon}
-        {badge.count > 1 && badge.icon === "🚨" ? <span className="mono" style={{ fontSize: Math.max(8, fs * 0.6), fontWeight: 800, color: "#fff" }}>×{badge.count}</span> : null}
+        {badge.count > 1 && (badge.icon === "🚨" || badge.icon === "🅰️") ? <span className="mono" style={{ fontSize: Math.max(8, fs * 0.6), fontWeight: 800, color: "#fff" }}>×{badge.count}</span> : null}
       </span>
     </div>
   );
