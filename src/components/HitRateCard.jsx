@@ -10,6 +10,9 @@ import './HitRateCard.css'
 // folded under "Splits", one compact table. Context only -- nothing here feeds a projection.
 //   stats: [{ k, label, unit, step, min, def (default line; omit = his average rounded to the step) }]
 //   rest: [{ label, test(rest) }]  played: { label, unit } (the minutes-style split, his own median as the cut)
+// 2026-11-13 (Final Lap): stat.lower = lower is better (finish / start: a hit = at or better than the line), stat.lineLabel(line)
+//   = how the line reads ("Top 5"), stat.max caps the + button; splits(stat) -> [[title, [[label, test]]]] replaces the default
+//   split groups; oppLabel replaces the "vs <opp>" tile label (e.g. "At Phoenix").
 const pctOf = (h, n) => (n ? Math.round((h / n) * 100) : null)
 // green / red = clearly above / below HIS OWN rate at this line over every game shown (a 40% goal rate can be great, a 60%
 // points rate can be cold), not a fixed cut
@@ -19,7 +22,7 @@ const fmtAvg = (v) => (v == null ? '—' : Math.abs(v) >= 100 ? String(Math.roun
 const TIER_LABELS = ['🟢 Soft (10 softest)', 'Average', '🔴 Tough (10 toughest)']
 
 // onPick (2026-11-13, user): ({ k, line, unit }) whenever the stat or line changes -- the slideout charts follow it
-export default function HitRateCard({ games, ready, stats, opp, rest, played, seasonLabels = ['This season', 'Last season'], note, tierLabels = TIER_LABELS, onPick }) {
+export default function HitRateCard({ games, ready, stats, opp, rest, played, seasonLabels = ['This season', 'Last season'], note, tierLabels = TIER_LABELS, onPick, splits, oppLabel }) {
   const [k, setK] = useState(stats[0].k)
   const stat = stats.find((s) => s.k === k) || stats[0]
   // default line: the stat's def, else his average this season (last season under 3 games) rounded to the step
@@ -35,9 +38,11 @@ export default function HitRateCard({ games, ready, stats, opp, rest, played, se
   const [line, setLine] = useState(autoDef)
   const [open, setOpen] = useState(false)
   useEffect(() => { setLine(autoDef) }, [stat.k, autoDef])
-  useEffect(() => { onPick?.({ k, line, unit: stat.unit }) }, [k, line]) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { onPick?.({ k, line, unit: stat.unit, lower: !!stat.lower }) }, [k, line]) // eslint-disable-line react-hooks/exhaustive-deps
   const list = useMemo(() => (games || []).filter((g) => g.v[k] != null).sort((a, b) => (a.date < b.date ? 1 : -1)), [games, k])
-  const rate = (gs) => { const h = gs.filter((g) => g.v[k] >= line).length; return { h, n: gs.length, r: pctOf(h, gs.length) } }
+  const hitOf = (x) => (stat.lower ? x <= line : x >= line)
+  const lineTxt = stat.lineLabel ? stat.lineLabel(line) : `${fmt(line)}+ ${stat.unit}`
+  const rate = (gs) => { const h = gs.filter((g) => hitOf(g.v[k])).length; return { h, n: gs.length, r: pctOf(h, gs.length) } }
   const avg = (gs) => (gs.length ? gs.reduce((s, g) => s + g.v[k], 0) / gs.length : null)
   const all = rate(list)
   const tone = toneOf(all.r)
@@ -46,12 +51,12 @@ export default function HitRateCard({ games, ready, stats, opp, rest, played, se
   const vsOpp = list.filter((g) => g.opp === opp)
   const tiles = [
     ['L5', list.slice(0, 5)], ['L10', list.slice(0, 10)], ['L20', list.slice(0, 20)],
-    [seasonLabels[0], cur], [seasonLabels[1], prev], [`vs ${opp}`, vsOpp],
+    [seasonLabels[0], cur], [seasonLabels[1], prev], [oppLabel || `vs ${opp}`, vsOpp],
   ]
   // splits: this season + last season together (small samples otherwise)
   const med = (() => { const xs = list.map((g) => g.played).filter((x) => x != null).sort((a, b) => a - b); return xs.length ? xs[Math.floor(xs.length / 2)] : null })()
   const medCut = med == null ? null : played?.round ? played.round(med) : Math.round(med)
-  const groups = [
+  const groups = splits ? splits(stat) : [
     ['Where', [['Home', (g) => g.home], ['Road', (g) => !g.home]]],
     ['Last game', [['After a win', (g) => g.afterLoss === false], ['After a loss', (g) => g.afterLoss === true]]],
     ['Rest', (rest || []).map((r) => [r.label, (g) => g.rest != null && r.test(g.rest)])],
@@ -67,15 +72,15 @@ export default function HitRateCard({ games, ready, stats, opp, rest, played, se
         </select>
         <div className="hr-line">
           <button type="button" aria-label="Lower line" onClick={() => setLine((l) => Math.max(stat.min ?? 1, +(l - stat.step).toFixed(2)))}>−</button>
-          <b>{fmt(line)}+ {stat.unit}</b>
-          <button type="button" aria-label="Raise line" onClick={() => setLine((l) => +(l + stat.step).toFixed(2))}>+</button>
+          <b>{lineTxt}</b>
+          <button type="button" aria-label="Raise line" onClick={() => setLine((l) => Math.min(stat.max ?? Infinity, +(l + stat.step).toFixed(2)))}>+</button>
         </div>
       </div>
       {!ready ? <p className="muted small hr-wait">Loading his game logs…</p> : !list.length ? <p className="muted small hr-wait">No games yet.</p> : (
         <>
           <div className="hr-tiles">
             {tiles.map(([label, gs]) => { const x = rate(gs); return (
-              <div key={label} className={`hr-tile ${tone(x.r, x.n)}`} title={x.n ? `${label}: ${x.h} of ${x.n} games at ${fmt(line)}+ · average ${fmtAvg(avg(gs))}` : `${label}: no games`}>
+              <div key={label} className={`hr-tile ${tone(x.r, x.n)}`} title={x.n ? `${label}: ${x.h} of ${x.n} games at ${lineTxt} · average ${fmtAvg(avg(gs))}` : `${label}: no games`}>
                 <b>{x.r == null ? '—' : `${x.r}%`}</b><span>{label}</span><i>{x.n ? `${x.h}/${x.n}` : '0 g'}</i>
               </div>) })}
           </div>
@@ -83,7 +88,7 @@ export default function HitRateCard({ games, ready, stats, opp, rest, played, se
           {open && (
             <div className="hr-splits">
               <table className="mini">
-                <thead><tr><th /><th>Games</th><th>Avg</th><th>{fmt(line)}+</th></tr></thead>
+                <thead><tr><th /><th>Games</th><th>Avg</th><th>{stat.lineLabel ? stat.lineLabel(line) : `${fmt(line)}+`}</th></tr></thead>
                 <tbody>
                   {groups.filter(([, rows]) => rows.length).map(([title, rows]) => [
                     <tr key={title} className="hr-group"><td colSpan={4}>{title}</td></tr>,
