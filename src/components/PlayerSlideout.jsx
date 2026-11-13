@@ -230,21 +230,25 @@ export default function PlayerSlideout() {
     <>
       <div className={`slide-backdrop ${isOpen ? "open" : ""}`} onClick={closeAllSlides} />
       <div className={`slide-panel ${isOpen ? "open" : ""}`}>
-        <button className="slide-close" onClick={closeAllSlides}>✕ Close</button>
+        {/* 2026-11-13 (user: CourtIQ's slideout flow): the header stays put while the body scrolls */}
         {player && (
-          <div style={{ marginTop: 28 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-              <PlayerAvatar playerId={player.playerId} name={player.name} team={player.team} size={56} />
-              <div>
-                <div className="section-title" style={{ fontSize: 20 }}>{player.name}<ProfileLinks p={player} /></div>
-                <div className="section-sub">
-                  {player.team} · {role === "goalie" ? "Goaltender" : (player.position || "Skater")}
-                </div>
-                {/* 2026-10-22 early-season role check (build_player_pool.role_check) */}
-                {player.roleFlag === "noPP" && <div className="section-sub" style={{ color: "var(--gold)" }} title="Kept out of Top 3 and PRISM Picks">🪑? Not on {player.team}'s power-play units tonight (RotoWire), with {player.teamGp ?? 0} game{player.teamGp === 1 ? "" : "s"} for them — his PP-driven chances lean on last season's role.</div>}
-                {!player.roleFlag && player.teamGp === 0 && <div className="section-sub" title="Stats blend last season + this">📅 No games with {player.team} yet{player.lastTeam && player.lastTeam !== player.team ? ` (last season: ${player.lastTeam})` : ""} — his numbers lean on last season until he plays.</div>}
+          <div className="slide-head">
+            <PlayerAvatar playerId={player.playerId} name={player.name} team={player.team} size={56} />
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div className="section-title" style={{ fontSize: 20 }}>{player.name}<ProfileLinks p={player} /></div>
+              <div className="section-sub">
+                {player.team} · {role === "goalie" ? "Goaltender" : (player.position || "Skater")}
               </div>
+              <MatchupChip player={player} t={tonight} />
             </div>
+            <button className="slide-close" onClick={closeAllSlides} aria-label="Close">✕</button>
+          </div>
+        )}
+        {player && (
+          <div className="slide-scroll">
+            {/* 2026-10-22 early-season role check (build_player_pool.role_check) */}
+            {player.roleFlag === "noPP" && <div className="section-sub" style={{ color: "var(--gold)" }} title="Kept out of Top 3 and PRISM Picks">🪑? Not on {player.team}'s power-play units tonight (RotoWire), with {player.teamGp ?? 0} game{player.teamGp === 1 ? "" : "s"} for them — his PP-driven chances lean on last season's role.</div>}
+            {!player.roleFlag && player.teamGp === 0 && <div className="section-sub" title="Stats blend last season + this">📅 No games with {player.team} yet{player.lastTeam && player.lastTeam !== player.team ? ` (last season: ${player.lastTeam})` : ""} — his numbers lean on last season until he plays.</div>}
 
             {role === "skater" && player.tier && (
               <div style={{ display: "flex", gap: 10, margin: "12px 0", flexWrap: "wrap" }}>
@@ -254,7 +258,6 @@ export default function PlayerSlideout() {
               </div>
             )}
 
-            <MatchupChip player={player} t={tonight} />
             <TonightCard t={tonight} p={player} role={role} />
 
             {role === "skater" && <SkaterQuickRead p={player} />}

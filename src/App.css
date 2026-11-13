@@ -302,8 +302,14 @@ tr.signal-row{--row-bg:rgba(47,125,174,.05);}
   position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);
   background:var(--surface);border-left:1px solid var(--border);
   z-index:900;transform:translateX(100%);transition:transform .25s ease;
-  overflow-y:auto;padding:20px;
+  /* 2026-11-13 (user: CourtIQ's flow): fixed header + scrolling body instead of the whole panel scrolling */
+  overflow:hidden;padding:0;display:flex;flex-direction:column;
 }
+.slide-head{flex:0 0 auto;display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--border);background:var(--surface);}
+.slide-head .slide-close{position:static;align-self:flex-start;}
+/* the game strip's .matchup-chip rule (column, max 170 px) also matched the slideout chip -- one row here, like CourtIQ */
+.slide-head .matchup-chip{flex-direction:row;max-width:100%;min-width:0;margin:6px 0 0;text-align:left;}
+.slide-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:14px 16px 24px;}
 .slide-panel.open{transform:translateX(0);}
 .slide-close{
   position:absolute;top:14px;right:14px;background:var(--surface2);border:1px solid var(--border);
