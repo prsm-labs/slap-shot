@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-12 17:35",
+  "generated": "2026-11-13 07:05",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 119,
-  "up": 56,
+  "up": 55,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -120,7 +120,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": 2,
+     "pim": 0,
+     "shots": 2,
+     "team": "New Jersey Devils"
+    },
     "last": {
      "gamesPlayed": 13,
      "goals": 1,
@@ -131,9 +140,9 @@
      "shots": 12,
      "team": "Dallas Stars / Boston Bruins"
     },
-    "careerGp": 87,
-    "careerG": 5,
-    "careerP": 17
+    "careerGp": 88,
+    "careerG": 6,
+    "careerP": 18
    }
   },
   {
@@ -190,7 +199,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 2,
      "assists": 2,
      "points": 4,
@@ -209,7 +218,7 @@
      "shots": 43,
      "team": "Utah Mammoth"
     },
-    "careerGp": 43,
+    "careerGp": 44,
     "careerG": 5,
     "careerP": 11
    }
@@ -270,13 +279,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 5,
-     "goals": 1,
+     "gamesPlayed": 6,
+     "goals": 2,
      "assists": 2,
-     "points": 3,
-     "plusMinus": 0,
+     "points": 4,
+     "plusMinus": 2,
      "pim": 0,
-     "shots": 6,
+     "shots": 7,
      "team": "New Jersey Devils"
     },
     "last": {
@@ -289,9 +298,9 @@
      "shots": 52,
      "team": "New Jersey Devils"
     },
-    "careerGp": 487,
-    "careerG": 84,
-    "careerP": 178
+    "careerGp": 488,
+    "careerG": 85,
+    "careerP": 179
    }
   },
   {
@@ -363,17 +372,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 0,
+     "plusMinus": -1,
      "pim": 0,
-     "shots": 1,
+     "shots": 2,
      "team": "Dallas Stars"
     },
     "last": null,
-    "careerGp": 3,
+    "careerGp": 4,
     "careerG": 0,
     "careerP": 0
    }
@@ -427,12 +436,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -2,
-     "pim": 0,
+     "pim": 2,
      "shots": 2,
      "team": "Toronto Maple Leafs"
     },
@@ -446,7 +455,7 @@
      "shots": 1,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 3,
+    "careerGp": 4,
     "careerG": 0,
     "careerP": 0
    }
@@ -492,7 +501,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 1,
      "points": 1,
@@ -502,7 +511,7 @@
      "team": "Tampa Bay Lightning"
     },
     "last": null,
-    "careerGp": 1,
+    "careerGp": 2,
     "careerG": 0,
     "careerP": 1
    }
@@ -680,9 +689,18 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 2,
+     "team": "Utah Mammoth"
+    },
     "last": null,
-    "careerGp": 115,
+    "careerGp": 116,
     "careerG": 4,
     "careerP": 28
    }
@@ -956,6 +974,40 @@
    }
   },
   {
+   "team": "FLA",
+   "recalledOn": "2026-11-08",
+   "from": "Charlotte",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "Charlotte"
+    },
+    {
+     "date": "2026-11-12",
+     "type": "down",
+     "club": "Charlotte"
+    }
+   ],
+   "playerId": null,
+   "name": "Jack Devine",
+   "position": "F",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-11-12",
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
+   }
+  },
+  {
    "playerId": 8483012,
    "name": "Logan Morrison",
    "team": "SEA",
@@ -1003,35 +1055,6 @@
     "careerGp": 4,
     "careerG": 0,
     "careerP": 0
-   }
-  },
-  {
-   "team": "FLA",
-   "recalledOn": "2026-11-08",
-   "from": "Charlotte",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "events": [
-    {
-     "date": "2026-11-08",
-     "type": "up",
-     "club": "Charlotte"
-    }
-   ],
-   "playerId": null,
-   "name": "Jack Devine",
-   "position": "RW",
-   "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
-   "ahl": {
-    "season": null,
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0
    }
   },
   {
@@ -1147,13 +1170,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 0,
+     "plusMinus": 1,
      "pim": 0,
-     "shots": 0,
+     "shots": 1,
      "team": "Toronto Maple Leafs"
     },
     "last": {
@@ -1166,7 +1189,7 @@
      "shots": 1,
      "team": "New York Islanders"
     },
-    "careerGp": 10,
+    "careerGp": 11,
     "careerG": 1,
     "careerP": 1
    }
@@ -1589,13 +1612,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 1,
      "assists": 0,
      "points": 1,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 3,
+     "plusMinus": -1,
+     "pim": 2,
+     "shots": 6,
      "team": "Boston Bruins"
     },
     "last": {
@@ -1608,7 +1631,7 @@
      "shots": 109,
      "team": "Boston Bruins"
     },
-    "careerGp": 270,
+    "careerGp": 271,
     "careerG": 34,
     "careerP": 75
    }
@@ -1729,7 +1752,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 1,
+     "gamesPlayed": 2,
      "goals": 0,
      "assists": 0,
      "points": 0,
@@ -1748,7 +1771,7 @@
      "shots": 81,
      "team": "St. Louis Blues"
     },
-    "careerGp": 76,
+    "careerGp": 77,
     "careerG": 7,
     "careerP": 18
    }
@@ -1867,13 +1890,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 1,
-     "assists": 0,
-     "points": 1,
-     "plusMinus": 0,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 1,
      "pim": 0,
-     "shots": 5,
+     "shots": 8,
      "team": "Winnipeg Jets"
     },
     "last": {
@@ -1886,9 +1909,9 @@
      "shots": 2,
      "team": "Winnipeg Jets"
     },
-    "careerGp": 7,
+    "careerGp": 8,
     "careerG": 1,
-    "careerP": 1
+    "careerP": 2
    }
   },
   {
@@ -2323,9 +2346,18 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 0,
+     "team": "Utah Mammoth"
+    },
     "last": null,
-    "careerGp": 2,
+    "careerGp": 3,
     "careerG": 0,
     "careerP": 0
    }
@@ -2368,7 +2400,7 @@
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 5,
+     "plusMinus": 6,
      "pim": 2,
      "team": "Hamilton Hammers"
     },
@@ -3222,7 +3254,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 13,
+     "gamesPlayed": 14,
      "goals": 0,
      "assists": 1,
      "points": 1,
@@ -3241,7 +3273,7 @@
      "shots": 2,
      "team": "Detroit Red Wings"
     },
-    "careerGp": 140,
+    "careerGp": 141,
     "careerG": 16,
     "careerP": 27
    }
@@ -3501,13 +3533,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 0,
      "assists": 1,
      "points": 1,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 6,
+     "shots": 7,
      "team": "Toronto Maple Leafs"
     },
     "last": {
@@ -3520,7 +3552,7 @@
      "shots": 52,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 301,
+    "careerGp": 302,
     "careerG": 50,
     "careerP": 97
    }
@@ -3741,13 +3773,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 17,
+     "gamesPlayed": 18,
      "goals": 2,
      "assists": 0,
      "points": 2,
      "plusMinus": -4,
      "pim": 4,
-     "shots": 16,
+     "shots": 19,
      "team": "Dallas Stars"
     },
     "last": {
@@ -3760,7 +3792,7 @@
      "shots": 83,
      "team": "Dallas Stars"
     },
-    "careerGp": 103,
+    "careerGp": 104,
     "careerG": 16,
     "careerP": 33
    }
@@ -4027,13 +4059,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 18,
+     "gamesPlayed": 19,
      "goals": 5,
      "assists": 18,
      "points": 23,
-     "plusMinus": 5,
+     "plusMinus": 4,
      "pim": 2,
-     "shots": 47,
+     "shots": 49,
      "team": "Colorado Avalanche"
     },
     "last": {
@@ -4046,7 +4078,7 @@
      "shots": 199,
      "team": "Colorado Avalanche"
     },
-    "careerGp": 488,
+    "careerGp": 489,
     "careerG": 141,
     "careerP": 530
    }
@@ -4168,11 +4200,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 5,
+     "gamesPlayed": 6,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 0,
+     "plusMinus": 1,
      "pim": 4,
      "shots": 6,
      "team": "Toronto Maple Leafs"
@@ -4187,7 +4219,7 @@
      "shots": 5,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 94,
+    "careerGp": 95,
     "careerG": 5,
     "careerP": 14
    }
@@ -4792,17 +4824,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -4,
-     "pim": 0,
-     "shots": 6,
+     "pim": 2,
+     "shots": 7,
      "team": "Utah Mammoth"
     },
     "last": null,
-    "careerGp": 4,
+    "careerGp": 5,
     "careerG": 0,
     "careerP": 0
    }
@@ -5011,13 +5043,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -5,
+     "plusMinus": -4,
      "pim": 0,
-     "shots": 5,
+     "shots": 6,
      "team": "Florida Panthers"
     },
     "last": {
@@ -5030,7 +5062,7 @@
      "shots": 25,
      "team": "Florida Panthers"
     },
-    "careerGp": 88,
+    "careerGp": 89,
     "careerG": 6,
     "careerP": 15
    }
@@ -5148,13 +5180,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 9,
+     "gamesPlayed": 10,
      "goals": 1,
-     "assists": 0,
-     "points": 1,
+     "assists": 1,
+     "points": 2,
      "plusMinus": -2,
-     "pim": 12,
-     "shots": 8,
+     "pim": 14,
+     "shots": 9,
      "team": "New York Islanders"
     },
     "last": {
@@ -7064,11 +7096,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": 6,
+     "plusMinus": 7,
      "pim": 0,
      "shots": 12,
      "team": "Minnesota Wild"
@@ -7083,7 +7115,7 @@
      "shots": 4,
      "team": "Minnesota Wild"
     },
-    "careerGp": 57,
+    "careerGp": 58,
     "careerG": 2,
     "careerP": 9
    }
@@ -7731,13 +7763,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 17,
-     "goals": 4,
+     "gamesPlayed": 18,
+     "goals": 5,
      "assists": 2,
-     "points": 6,
+     "points": 7,
      "plusMinus": 0,
      "pim": 9,
-     "shots": 33,
+     "shots": 34,
      "team": "Dallas Stars"
     },
     "last": {
@@ -7750,9 +7782,9 @@
      "shots": 24,
      "team": "Dallas Stars"
     },
-    "careerGp": 42,
-    "careerG": 7,
-    "careerP": 12
+    "careerGp": 43,
+    "careerG": 8,
+    "careerP": 13
    }
   },
   {
