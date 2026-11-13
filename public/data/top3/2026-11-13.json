@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-11-13",
+  "lockedAt": "2026-11-13T22:34:46.118Z",
+  "poolGenerated": "2026-11-13 17:31",
+  "eligible": 73,
+  "confirmed": 0,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 1% of tonight's slate by the grade model (40.7% to score), facing NSH (#2 softest defense of 4 tonight, 3.3 expected goals allowed a game). Matchup-adjusted chance 34.1%.",
+   "playerId": 8478403,
+   "name": "Jack Eichel",
+   "team": "VGK",
+   "opp": "NSH",
+   "position": "C",
+   "isHome": true,
+   "opponentGoalie": "Juuse Saros",
+   "opponentGoalieId": 8477424,
+   "goalieGrade": "B",
+   "grade": "A+",
+   "lineupStatus": null,
+   "modelGoalPct": 40.7,
+   "adjGoalPct": 34.1,
+   "oppXga": 3.3,
+   "softRank": 2,
+   "sogL5": 2.6,
+   "sogPg": 3.3
+  },
+  {
+   "tier": "mid",
+   "fallback": false,
+   "why": "2 shots a game over the last 5 games vs 1.6 on the season, into VAN (#1 softest defense of 4 tonight, 3.6 expected goals allowed a game) — the combination that scored 14-24% above the model last season. 21.5% to score.",
+   "playerId": 8479323,
+   "name": "Adam Fox",
+   "team": "NYR",
+   "opp": "VAN",
+   "position": "D",
+   "isHome": false,
+   "opponentGoalie": "Leevi Merilinen",
+   "opponentGoalieId": 8482447,
+   "goalieGrade": "D",
+   "grade": "A",
+   "lineupStatus": null,
+   "modelGoalPct": 14.7,
+   "adjGoalPct": 21.5,
+   "oppXga": 3.6,
+   "softRank": 1,
+   "sogL5": 2,
+   "sogPg": 1.6
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
