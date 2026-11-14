@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-13 17:34",
+  "generated": "2026-11-14 07:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 122,
-  "up": 58,
+  "up": 57,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -1360,10 +1360,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 5,
-     "goals": 3,
+     "gamesPlayed": 6,
+     "goals": 5,
      "assists": 6,
-     "points": 9,
+     "points": 11,
      "plusMinus": 3,
      "pim": 0,
      "team": "Toronto Marlies"
@@ -1701,16 +1701,16 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
-     "wins": 2,
+     "gamesPlayed": 8,
+     "wins": 3,
      "losses": 3,
      "otLosses": 1,
      "shutouts": 0,
-     "goalsAgainst": 21,
-     "shotsAgainst": 169,
+     "goalsAgainst": 23,
+     "shotsAgainst": 185,
      "team": "Toronto Marlies",
      "savePct": 0.876,
-     "gaa": 2.97
+     "gaa": 2.85
     },
     "last": {
      "gamesPlayed": 37,
@@ -1890,11 +1890,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 4,
      "assists": 7,
      "points": 11,
-     "plusMinus": -1,
+     "plusMinus": -2,
      "pim": 22,
      "team": "Iowa Wild"
     },
@@ -2404,11 +2404,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
-     "goals": 8,
+     "gamesPlayed": 8,
+     "goals": 10,
      "assists": 3,
-     "points": 11,
-     "plusMinus": 1,
+     "points": 13,
+     "plusMinus": 3,
      "pim": 2,
      "team": "Grand Rapids Griffins"
     },
@@ -2568,75 +2568,6 @@
    }
   },
   {
-   "playerId": 8483448,
-   "name": "Isaiah George",
-   "team": "NYI",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2004-02-15",
-   "sweater": 36,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "NYI",
-    "round": 4,
-    "overallPick": 98
-   },
-   "recalledOn": "2026-10-31",
-   "from": "Hamilton",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-01",
-   "events": [
-    {
-     "date": "2026-10-31",
-     "type": "up",
-     "club": "Hamilton"
-    },
-    {
-     "date": "2026-11-01",
-     "type": "down",
-     "club": "Hamilton"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 6,
-     "pim": 2,
-     "team": "Hamilton Hammers"
-    },
-    "last": {
-     "gamesPlayed": 47,
-     "goals": 2,
-     "assists": 16,
-     "points": 18,
-     "plusMinus": 10,
-     "pim": 20,
-     "team": "Bridgeport Islanders"
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 2,
-     "team": "New York Islanders"
-    },
-    "careerGp": 37,
-    "careerG": 1,
-    "careerP": 6
-   }
-  },
-  {
    "playerId": 8476316,
    "name": "Laurent Brossoit",
    "team": "ANA",
@@ -2654,12 +2585,17 @@
    "from": "San Diego",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-11-13",
    "events": [
     {
      "date": "2026-10-31",
      "type": "up",
+     "club": "San Diego"
+    },
+    {
+     "date": "2026-11-13",
+     "type": "down",
      "club": "San Diego"
     }
    ],
@@ -2726,6 +2662,75 @@
    }
   },
   {
+   "playerId": 8483448,
+   "name": "Isaiah George",
+   "team": "NYI",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2004-02-15",
+   "sweater": 36,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "NYI",
+    "round": 4,
+    "overallPick": 98
+   },
+   "recalledOn": "2026-10-31",
+   "from": "Hamilton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-01",
+   "events": [
+    {
+     "date": "2026-10-31",
+     "type": "up",
+     "club": "Hamilton"
+    },
+    {
+     "date": "2026-11-01",
+     "type": "down",
+     "club": "Hamilton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 4,
+     "pim": 4,
+     "team": "Hamilton Hammers"
+    },
+    "last": {
+     "gamesPlayed": 47,
+     "goals": 2,
+     "assists": 16,
+     "points": 18,
+     "plusMinus": 10,
+     "pim": 20,
+     "team": "Bridgeport Islanders"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 2,
+     "team": "New York Islanders"
+    },
+    "careerGp": 37,
+    "careerG": 1,
+    "careerP": 6
+   }
+  },
+  {
    "playerId": 8481525,
    "name": "Matthew Robertson",
    "team": "NYR",
@@ -2771,13 +2776,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 1,
+     "plusMinus": 1,
+     "pim": 2,
+     "shots": 2,
      "team": "New York Rangers"
     },
     "last": {
@@ -2790,7 +2795,7 @@
      "shots": 79,
      "team": "New York Rangers"
     },
-    "careerGp": 77,
+    "careerGp": 78,
     "careerG": 6,
     "careerP": 18
    }
@@ -2829,7 +2834,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 1,
      "assists": 2,
      "points": 3,
@@ -3375,11 +3380,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 1,
      "assists": 3,
      "points": 4,
-     "plusMinus": -2,
+     "plusMinus": -4,
      "pim": 11,
      "team": "Iowa Wild"
     },
@@ -3648,11 +3653,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 5,
      "assists": 5,
      "points": 10,
-     "plusMinus": -8,
+     "plusMinus": -7,
      "pim": 4,
      "team": "Lehigh Valley Phantoms"
     },
@@ -3796,7 +3801,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 16,
+     "gamesPlayed": 17,
      "goals": 0,
      "assists": 4,
      "points": 4,
@@ -3848,11 +3853,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 16,
+     "gamesPlayed": 17,
      "goals": 5,
      "assists": 8,
      "points": 13,
-     "plusMinus": -1,
+     "plusMinus": -3,
      "pim": 10,
      "team": "Hamilton Hammers"
     },
@@ -4036,12 +4041,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 11,
-     "goals": 7,
+     "gamesPlayed": 12,
+     "goals": 8,
      "assists": 4,
-     "points": 11,
+     "points": 12,
      "plusMinus": 6,
-     "pim": 2,
+     "pim": 7,
      "team": "Wilkes-Barre/Scranton Penguins"
     },
     "last": {
@@ -5163,7 +5168,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 9,
      "assists": 1,
      "points": 10,
@@ -5443,11 +5448,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 1,
-     "assists": 2,
-     "points": 3,
-     "plusMinus": -1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": 0,
      "pim": 2,
      "team": "Lehigh Valley Phantoms"
     },
@@ -5526,11 +5531,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 15,
+     "gamesPlayed": 16,
      "goals": 3,
      "assists": 4,
      "points": 7,
-     "plusMinus": 1,
+     "plusMinus": 0,
      "pim": 14,
      "team": "Iowa Wild"
     },
@@ -5590,12 +5595,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 2,
      "assists": 3,
      "points": 5,
-     "plusMinus": -9,
-     "pim": 2,
+     "plusMinus": -8,
+     "pim": 4,
      "team": "Springfield Thunderbirds"
     },
     "last": {
@@ -5814,10 +5819,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 5,
-     "assists": 6,
-     "points": 11,
+     "assists": 7,
+     "points": 12,
      "plusMinus": 2,
      "pim": 4,
      "team": "Hershey Bears"
@@ -5944,10 +5949,10 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 5,
-     "assists": 6,
-     "points": 11,
+     "assists": 7,
+     "points": 12,
      "plusMinus": 2,
      "pim": 4,
      "team": "Hershey Bears"
@@ -6300,11 +6305,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 13,
+     "gamesPlayed": 14,
      "goals": 3,
      "assists": 4,
      "points": 7,
-     "plusMinus": 8,
+     "plusMinus": 9,
      "pim": 20,
      "team": "Laval Rocket"
     },
@@ -6456,7 +6461,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 2,
      "points": 2,
@@ -6752,7 +6757,7 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 13,
+     "gamesPlayed": 14,
      "goals": 0,
      "assists": 1,
      "points": 1,
@@ -6817,12 +6822,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 1,
      "assists": 2,
      "points": 3,
      "plusMinus": 3,
-     "pim": 2,
+     "pim": 4,
      "team": "Iowa Wild"
     },
     "last": {
@@ -7222,11 +7227,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 8,
+     "gamesPlayed": 9,
      "goals": 3,
      "assists": 2,
      "points": 5,
-     "plusMinus": 2,
+     "plusMinus": 1,
      "pim": 4,
      "team": "Iowa Wild"
     },
@@ -7744,13 +7749,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 1,
      "assists": 1,
      "points": 2,
      "plusMinus": -1,
      "pim": 4,
-     "shots": 11,
+     "shots": 12,
      "team": "Nashville Predators"
     },
     "last": null,
@@ -7898,19 +7903,19 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 0,
      "assists": 0,
      "pim": 0,
-     "wins": 6,
+     "wins": 7,
      "losses": 7,
      "otLosses": 1,
      "shutouts": 1,
-     "goalsAgainst": 31,
-     "shotsAgainst": 328,
+     "goalsAgainst": 32,
+     "shotsAgainst": 356,
      "team": "New York Rangers",
-     "savePct": 0.905,
-     "gaa": 2.48
+     "savePct": 0.91,
+     "gaa": 2.37
     },
     "last": {
      "gamesPlayed": 3,
@@ -7927,7 +7932,7 @@
      "savePct": 0.948,
      "gaa": 1.62
     },
-    "careerGp": 17,
+    "careerGp": 18,
     "careerG": 0,
     "careerP": null
    }
