@@ -92,8 +92,14 @@ export function projectGame(ratings, { away, home, awayGoalieId, homeGoalieId })
     .map(([k, p]) => { const [a, h] = k.split("-").map(Number); return { away: a, home: h, p }; })
     .sort((x, y) => y.p - x.p);
   const overs = Object.fromEntries([4.5, 5.5, 6.5].map((line) => [line, scores.filter((s) => s.away + s.home > line).reduce((t, s) => t + s.p, 0)]));
-  const homeBy2 = scores.filter((s) => s.home - s.away >= 2).reduce((t, s) => t + s.p, 0);
-  const awayBy2 = scores.filter((s) => s.away - s.home >= 2).reduce((t, s) => t + s.p, 0);
+  // 2026-11-14: independent Poisson says 28% of games are regulation one-goal games; 2023-26 actual 17.5 / 17.8 / 18.4 / 19.0% (empty
+  // netters turn one-goal leads into two). 36% of the grid's regulation one-goal wins are moved to 2+ (fit 2023-25: .366 / .375 / .359;
+  // 2026 .326). Win %, ties / OT and totals unchanged; only the margin split and -1.5.
+  const ENG_SHIFT = 0.36;
+  const homeBy2Raw = scores.filter((s) => s.home - s.away >= 2).reduce((t, s) => t + s.p, 0);
+  const awayBy2Raw = scores.filter((s) => s.away - s.home >= 2).reduce((t, s) => t + s.p, 0);
+  const homeBy2 = homeBy2Raw + ENG_SHIFT * (hReg * scale - homeBy2Raw);
+  const awayBy2 = awayBy2Raw + ENG_SHIFT * (aReg * scale - awayBy2Raw);
 
   // 2026-11-02 win chance stretched (weekend review: 60%+ favorites said 63-71%, won 73-83%). Walk-forward ratings + Poisson
   // refit leave-one-season-out, 2023-26: favorites 62%+ said 65%, won 71-81% every season; logit x 1.15 log loss -13 / -16 / +5 /
@@ -111,6 +117,11 @@ export function projectGame(ratings, { away, home, awayGoalieId, homeGoalieId })
     otWinHome: otH / (otH + otA),
     scores, overs,
     puckLine: { home: homeBy2, away: awayBy2 }, // win by 2+ (-1.5)
+    // how each side wins (2026-11-14): regulation by 1, regulation by 2+, OT / shootout -- stretched like the win chance, adds up to it
+    margin: {
+      home: { by2: homeBy2 * kH, by1: hReg * scale * kH - homeBy2 * kH, ot: otH },
+      away: { by2: awayBy2 * kA, by1: aReg * scale * kA - awayBy2 * kA, ot: otA },
+    },
     expTotal: scores.reduce((t, s) => t + (s.away + s.home) * s.p, 0),
     gsax: {
       away: awayGoalieId != null ? ratings.goalies[String(awayGoalieId)] ?? null : null,

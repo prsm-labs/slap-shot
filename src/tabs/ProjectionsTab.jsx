@@ -102,14 +102,17 @@ function GameCard({ g, open, onToggle, players, goaliesById, meta }) {
           </div>
         ))}
         <div style={{ order: 2, textAlign: "center" }}>
-          <div className="mono" style={{ fontSize: 9, ...muted }}>MOST LIKELY</div>
-          <div style={{ ...big, fontSize: 20 }}>{top.away}-{top.home}</div>
-          <div className="mono" style={{ fontSize: 9, ...muted }}>{pct(top.p, 1)} · proj {f1(xg.away)}-{f1(xg.home)}</div>
+          <div className="mono" style={{ fontSize: 9, ...muted }}>PROJECTED GOALS</div>
+          <div style={{ ...big, fontSize: 20 }}>{f1(xg.away)}-{f1(xg.home)}</div>
+          <div className="mono" style={{ fontSize: 9, ...muted }} title="The single most common exact score -- only a small share of games end exactly this way">top score {top.away}-{top.home} · {pct(top.p, 1)}</div>
         </div>
       </div>
       <WinBar away={g.away} home={g.home} pAway={proj.winAway} />
       <div className="mono" style={{ fontSize: 10, ...muted, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6 }}>
         <span>{fav} favored · {pct(favP)}</span>
+        <span title="How the favorite wins: regulation by 1 goal, regulation by 2+ (incl. empty-netters), or overtime / shootout. Adds up to its win chance.">
+          {fav} wins: by 1 {pct(proj.margin[fav === g.home ? "home" : "away"].by1)} · by 2+ {pct(proj.margin[fav === g.home ? "home" : "away"].by2)} · in OT/SO {pct(proj.margin[fav === g.home ? "home" : "away"].ot)}
+        </span>
         <span>Goalies: {gl.away.name} vs {gl.home.name}</span>
       </div>
       <button className="btn" style={{ marginTop: 8 }} onClick={onToggle}>{open ? "▲ Hide projected box score" : "▼ Projected box score"}</button>

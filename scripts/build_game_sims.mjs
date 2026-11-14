@@ -56,8 +56,10 @@ function teamIn(team, opp, isHome, gm) {
   const lu = luGame(gm.away, gm.home)?.teams?.[team]
   const dressed = new Set((lu?.dressed || []).map((d) => d.playerId))
   let rows = pool.players.filter((p) => p.team === team)
-  if (dressed.size >= 18) rows = rows.filter((p) => dressed.has(p.playerId))
-  rows = rows.map((p) => ({ p, toi: estimatedToi(p) || 10, pp: ppToiPerGame(p) || 0, w: dressed.size >= 18 ? 1 : dress.get(p.playerId) ?? 0.5 }))
+  // dressed list posted: dressed players first; if the pool is missing some of them (call-ups), the rest are filled from the pool
+  // (2026-11-14: a strict filter dropped BUF @ DAL from the slate)
+  rows = rows.map((p) => ({ p, toi: estimatedToi(p) || 10, pp: ppToiPerGame(p) || 0,
+    w: dressed.size >= 18 ? (dressed.has(p.playerId) ? 1 : 0.01) : dress.get(p.playerId) ?? 0.5 }))
   const F = rows.filter((r) => r.p.position !== 'D').sort((a, b) => b.w * b.toi - a.w * a.toi).slice(0, 12).sort((a, b) => b.toi - a.toi)
   const D = rows.filter((r) => r.p.position === 'D').sort((a, b) => b.w * b.toi - a.w * a.toi).slice(0, 6).sort((a, b) => b.toi - a.toi)
   if (F.length < 12 || D.length < 6) return null
@@ -139,7 +141,11 @@ for (const gm of slate) {
     continue
   }
   const home = teamIn(gm.home, gm.away, true, gm), away = teamIn(gm.away, gm.home, false, gm)
-  if (!home || !away) { console.log(`${gm.away} @ ${gm.home}: not enough skaters, skipped`); continue }
+  if (!home || !away) {
+    console.log(`${gm.away} @ ${gm.home}: not enough skaters, skipped`)
+    if (fs.existsSync(file)) { const old = read(file); if (old.slateDate === meta.slateDate) index.push(old.indexRow) } // keep the last good sim
+    continue
+  }
   const lineupKey = String(hash(JSON.stringify([meta.generated, ...[home, away].map((T) => [T.goalie.id, T.lines, T.pairs, T.pp1, T.pp2])])))
   if (WATCH && fs.existsSync(file)) {
     const old = read(file)
@@ -171,7 +177,7 @@ for (const gm of slate) {
     summary: { homeWin: r3(res.homeWin), otRate: r3(res.otRate), home: { mean: r1(res.home.mean), median: res.home.median, p10: res.home.p10, p90: res.home.p90, sog: r1(res.home.sog) },
       away: { mean: r1(res.away.mean), median: res.away.median, p10: res.away.p10, p90: res.away.p90, sog: r1(res.away.sog) }, medTotal: res.medTotal },
     lines: { home: { lines: home.lines, pairs: home.pairs, pp1: home.pp1, pp2: home.pp2 }, away: { lines: away.lines, pairs: away.pairs, pp1: away.pp1, pp2: away.pp2 } },
-    players, typical: { index: res.typicalIndex, score: tg.score, ot: tg.ot, plays: tg.log },
+    players, typical: { index: res.typicalIndex, score: tg.score, ot: tg.ot, plays: tg.log, kind: res.typicalKind },
   }
   fs.writeFileSync(file, JSON.stringify(out))
   index.push(indexRow)

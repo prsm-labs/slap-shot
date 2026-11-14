@@ -162,6 +162,6 @@ export default function NhlSimReplay({ sim }) {
   }, [sim])
   return (
     <SimShell teams={teams} frames={frames} Surface={Surface} panels={panels} periods={periods}
-      footnote={`Simulated game, not a prediction · sim ${(sim.typical.index + 1).toLocaleString()} of ${sim.n.toLocaleString()}`} />
+      footnote={`Simulated game, not a prediction · sim ${(sim.typical.index + 1).toLocaleString()} of ${sim.n.toLocaleString()}${sim.typical.kind ? ` · the favorite's most common winning score (${Math.round(100 * sim.typical.kind.share)}% of sims; it wins by 1 in regulation ${Math.round(100 * sim.typical.kind.shares.by1)}%, by 2+ ${Math.round(100 * sim.typical.kind.shares.by2)}%, in OT / SO ${Math.round(100 * sim.typical.kind.shares.ot)}%)` : ''}`} />
   )
 }

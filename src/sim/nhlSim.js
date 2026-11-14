@@ -186,13 +186,13 @@ export function runMany(game, n, seed0 = 1, withTypical = true) {
   const gls = [{ sa: 0, ga: 0 }, { sa: 0, ga: 0 }]
   const H = new Int16Array(n), A = new Int16Array(n)
   let regH = 0, regA = 0
-  const SH = new Int16Array(n), SA = new Int16Array(n)
+  const SH = new Int16Array(n), SA = new Int16Array(n), OTf = new Uint8Array(n)
   let hw = 0, ot = 0, regTie = 0
   const topIds = [0, 1].map((t) => { const sk = (t ? game.away : game.home).sk; return Object.keys(sk).sort((a, b) => sk[b].shotW - sk[a].shotW).slice(0, 2) })
   const keyS = []
   for (let i = 0; i < n; i++) {
     const g = simulateGame(game, rng(seed0 + i), false)
-    H[i] = g.score[0]; A[i] = g.score[1]; SH[i] = g.sog[0]; SA[i] = g.sog[1]
+    H[i] = g.score[0]; A[i] = g.score[1]; SH[i] = g.sog[0]; SA[i] = g.sog[1]; OTf[i] = g.ot ? 1 : 0
     regH += g.reg[0]; regA += g.reg[1]
     if (g.score[0] > g.score[1]) hw++
     if (g.ot) ot++
@@ -221,15 +221,28 @@ export function runMany(game, n, seed0 = 1, withTypical = true) {
     goalies: [{ sa: gls[0].sa / n, ga: gls[0].ga / n }, { sa: gls[1].sa / n, ga: gls[1].ga / n }] }
   out.medTotal = med(Array.from(H, (h, i) => h + A[i]))
   if (!withTypical) return out
+  // 2026-11-14: the replay is the favorite's most common exact winning score (e.g. 3-1, 4-2, 3-2 OT), then the game with that score
+  // closest to its average shots -- the plain closest-to-average game was a one-goal game almost every time.
   const favHome = hw >= n / 2
-  const ks = keyS[0].map((_, j) => mean(keyS.map((k) => k[j])))
-  let best = 0, bd = Infinity
+  const kindOf = (i) => ((H[i] > A[i]) !== favHome ? null : OTf[i] ? 'ot' : Math.abs(H[i] - A[i]) >= 2 ? 'by2' : 'by1')
+  const kinds = { by1: [], by2: [], ot: [] }, byScore = new Map()
   for (let i = 0; i < n; i++) {
-    if ((H[i] > A[i]) !== favHome) continue
-    let d = Math.abs(H[i] - out.home.mean) + Math.abs(A[i] - out.away.mean) + Math.abs(SH[i] - out.home.sog) / 6 + Math.abs(SA[i] - out.away.sog) / 6
+    const k = kindOf(i); if (!k) continue
+    kinds[k].push(i)
+    const key = `${H[i]}-${A[i]}-${OTf[i]}`; if (!byScore.has(key)) byScore.set(key, []); byScore.get(key).push(i)
+  }
+  const idx = [...byScore.values()].sort((a, b) => b.length - a.length)[0] || []
+  const kind = idx.length ? kindOf(idx[0]) : 'by1'
+  const avg = (arr) => idx.reduce((t, i) => t + arr[i], 0) / idx.length
+  const mH = avg(H), mA = avg(A), mSH = avg(SH), mSA = avg(SA)
+  const ks = keyS[0].map((_, j) => idx.reduce((t, i) => t + keyS[i][j], 0) / idx.length)
+  let best = idx[0] ?? 0, bd = Infinity
+  for (const i of idx) {
+    let d = Math.abs(H[i] - mH) + Math.abs(A[i] - mA) + Math.abs(SH[i] - mSH) / 6 + Math.abs(SA[i] - mSA) / 6
     for (let j = 0; j < ks.length; j++) d += Math.abs(keyS[i][j] - ks[j]) / 4
     if (d < bd) { bd = d; best = i }
   }
+  out.typicalKind = { kind, share: idx.length / n, favHome, shares: { by1: kinds.by1.length / n, by2: kinds.by2.length / n, ot: kinds.ot.length / n } }
   out.typicalIndex = best
   out.typical = simulateGame(game, rng(seed0 + best), true)
   return out
