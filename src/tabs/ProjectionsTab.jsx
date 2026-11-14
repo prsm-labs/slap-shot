@@ -34,7 +34,7 @@ function WinBar({ away, home, pAway }) {
 function SkaterLines({ players, team }) {
   const rows = players.filter((p) => p.team === team).sort((a, b) => (b.anytimeGoalPct ?? 0) - (a.anytimeGoalPct ?? 0)).slice(0, 6);
   return (
-    <table className="data-table" style={{ fontSize: 11 }}>
+    <table className="data-table no-cards" style={{ fontSize: 11 }}>
       <thead><tr><th>{team} skaters</th><th title="Model chance to score (matchup-adjusted)">Goal</th><th title="Chance of 2+ goals (model + opponent defense)">2+ G</th><th title="Chance of 1+ point">Point</th><th title="Chance of 3+ shots on goal">3+ SOG</th><th title="Season shots on goal per game">SOG/gm</th><th title="Shots on goal per 60 minutes of ice time">SOG/60</th><th /></tr></thead>
       <tbody>
         {rows.map((p) => (
@@ -115,9 +115,9 @@ function GameCard({ g, open, onToggle, players, goaliesById, meta }) {
       <button className="btn" style={{ marginTop: 8 }} onClick={onToggle}>{open ? "▲ Hide projected box score" : "▼ Projected box score"}</button>
 
       {open && (
-        <div style={{ marginTop: 10, display: "grid", gap: 12 }}>
+        <div style={{ marginTop: 10, display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 12 }}>
           <div className="table-wrap">
-            <table className="data-table" style={{ fontSize: 11 }}>
+            <table className="data-table no-cards" style={{ fontSize: 11 }}>
               <thead><tr><th>Team</th><th title="Expected regulation goals (incl. empty net) + OT">Proj goals</th><th>Proj SOG</th><th>Win</th><th>Reg win</th><th title="Win in OT / shootout">OT/SO win</th><th title="Win by 2+ goals">-1.5</th><th>Fair ML</th></tr></thead>
               <tbody>
                 {["away", "home"].map((side) => (
@@ -137,7 +137,7 @@ function GameCard({ g, open, onToggle, players, goaliesById, meta }) {
           </div>
 
           <div className="table-wrap">
-            <table className="data-table" style={{ fontSize: 11 }}>
+            <table className="data-table no-cards" style={{ fontSize: 11 }}>
               <thead><tr><th>Goalie</th><th>Status</th><th>Proj saves</th><th>Shots against</th><th>Proj GA</th><th>Proj SV%</th><th title="Goals saved above expected per 100 shots since 2022-23 (feeds the model)">GSAx/100</th></tr></thead>
               <tbody>
                 {["away", "home"].map((side) => {
@@ -175,7 +175,7 @@ function GameCard({ g, open, onToggle, players, goaliesById, meta }) {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 12 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: 12 }}>
             <div className="table-wrap"><SkaterLines players={players} team={g.away} /></div>
             <div className="table-wrap"><SkaterLines players={players} team={g.home} /></div>
           </div>
@@ -223,7 +223,7 @@ function ModelView({ ratings, slateTeams }) {
           {bt.seasons}. Picked the winner {pct(bt.accuracy, 1)} (always picking the home team: {pct(bt.homeOnlyAccuracy, 1)}). Log loss {bt.logLoss} (home team only {bt.homeOnlyLogLoss}; lower is better).
           Inputs tried: {bt.inputsTested}.
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 12 }}>
           <table className="data-table" style={{ fontSize: 11 }}>
             <thead><tr><th>Home win chance said</th><th>Games</th><th>Avg said</th><th>Happened</th></tr></thead>
             <tbody>{bt.calibration.map((c) => <tr key={c.bucket}><td>{c.bucket}</td><td>{c.n}</td><td>{pct(c.said, 1)}</td><td style={{ fontWeight: 700 }}>{pct(c.act, 1)}</td></tr>)}</tbody>
