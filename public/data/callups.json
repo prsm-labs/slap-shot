@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-14 07:50",
+  "generated": "2026-11-14 12:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 122,
-  "up": 57,
+  "up": 56,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -1282,20 +1282,11 @@
    }
   },
   {
-   "playerId": 8483012,
-   "name": "Logan Morrison",
    "team": "SEA",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2002-07-09",
-   "sweater": 96,
-   "draft": null,
    "recalledOn": "2026-11-08",
    "from": "Coachella Valley",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
    "events": [
     {
      "date": "2026-11-08",
@@ -1303,32 +1294,20 @@
      "club": "Coachella Valley"
     }
    ],
+   "playerId": null,
+   "name": "Logan Morrison",
+   "position": "C",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
    "ahl": {
-    "season": {
-     "gamesPlayed": 12,
-     "goals": 3,
-     "assists": 7,
-     "points": 10,
-     "plusMinus": -2,
-     "pim": 0,
-     "team": "Coachella Valley Firebirds"
-    },
-    "last": {
-     "gamesPlayed": 68,
-     "goals": 29,
-     "assists": 32,
-     "points": 61,
-     "plusMinus": 23,
-     "pim": 42,
-     "team": "Coachella Valley Firebirds"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
     "season": null,
     "last": null,
-    "careerGp": 4,
-    "careerG": 0,
-    "careerP": 0
+    "careerGp": 0
    }
   },
   {
@@ -5657,7 +5636,7 @@
    "from": "Wilkes-Barre/Scranton",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
