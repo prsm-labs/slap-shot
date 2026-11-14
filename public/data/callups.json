@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-14 12:06",
+  "generated": "2026-11-14 17:37",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 122,
-  "up": 56,
+  "up": 55,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -1119,7 +1119,7 @@
    "position": "D",
    "shoots": "L",
    "birthDate": "2002-08-12",
-   "sweater": 45,
+   "sweater": 28,
    "draft": {
     "year": 2021,
     "teamAbbrev": "TBL",
@@ -1248,6 +1248,40 @@
    }
   },
   {
+   "team": "SEA",
+   "recalledOn": "2026-11-08",
+   "from": "Coachella Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "events": [
+    {
+     "date": "2026-11-08",
+     "type": "up",
+     "club": "Coachella Valley"
+    },
+    {
+     "date": "2026-11-14",
+     "type": "down",
+     "club": "Coachella Valley"
+    }
+   ],
+   "playerId": null,
+   "name": "Logan Morrison",
+   "position": "F",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-11-14",
+   "ahl": {
+    "season": null,
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0
+   }
+  },
+  {
    "team": "FLA",
    "recalledOn": "2026-11-08",
    "from": "Charlotte",
@@ -1271,35 +1305,6 @@
    "noProfile": true,
    "status": "down",
    "sentDownOn": "2026-11-12",
-   "ahl": {
-    "season": null,
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0
-   }
-  },
-  {
-   "team": "SEA",
-   "recalledOn": "2026-11-08",
-   "from": "Coachella Valley",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "events": [
-    {
-     "date": "2026-11-08",
-     "type": "up",
-     "club": "Coachella Valley"
-    }
-   ],
-   "playerId": null,
-   "name": "Logan Morrison",
-   "position": "C",
-   "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
    "ahl": {
     "season": null,
     "last": null
@@ -2008,7 +2013,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 0,
+     "team": "Seattle Kraken"
+    },
     "last": null,
     "careerGp": 0,
     "careerG": null,
@@ -5394,6 +5408,84 @@
    }
   },
   {
+   "playerId": 8482470,
+   "name": "Ilya Solovyov",
+   "team": "PIT",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2000-07-20",
+   "sweater": 7,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "CGY",
+    "round": 7,
+    "overallPick": 205
+   },
+   "recalledOn": "2026-10-18",
+   "from": "Wilkes-Barre/Scranton",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-14",
+   "events": [
+    {
+     "date": "2026-10-18",
+     "type": "up",
+     "club": "Wilkes-Barre/Scranton"
+    },
+    {
+     "date": "2026-11-14",
+     "type": "down",
+     "club": "WB/S"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 6,
+     "pim": 4,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    },
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "team": "Colorado Eagles"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 3,
+     "team": "Pittsburgh Penguins"
+    },
+    "last": {
+     "gamesPlayed": 30,
+     "goals": 1,
+     "assists": 7,
+     "points": 8,
+     "plusMinus": 0,
+     "pim": 16,
+     "shots": 23,
+     "team": "Colorado Avalanche / Pittsburgh Penguins"
+    },
+    "careerGp": 48,
+    "careerG": 1,
+    "careerP": 12
+   }
+  },
+  {
    "playerId": 8483760,
    "name": "Hunter McDonald",
    "team": "PHI",
@@ -5616,79 +5708,6 @@
     "careerGp": 35,
     "careerG": 3,
     "careerP": 11
-   }
-  },
-  {
-   "playerId": 8482470,
-   "name": "Ilya Solovyov",
-   "team": "PIT",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2000-07-20",
-   "sweater": 7,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "CGY",
-    "round": 7,
-    "overallPick": 205
-   },
-   "recalledOn": "2026-10-18",
-   "from": "Wilkes-Barre/Scranton",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-18",
-     "type": "up",
-     "club": "Wilkes-Barre/Scranton"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 6,
-     "pim": 4,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    },
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 0,
-     "team": "Colorado Eagles"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 3,
-     "team": "Pittsburgh Penguins"
-    },
-    "last": {
-     "gamesPlayed": 30,
-     "goals": 1,
-     "assists": 7,
-     "points": 8,
-     "plusMinus": 0,
-     "pim": 16,
-     "shots": 23,
-     "team": "Colorado Avalanche / Pittsburgh Penguins"
-    },
-    "careerGp": 48,
-    "careerG": 1,
-    "careerP": 12
    }
   },
   {
