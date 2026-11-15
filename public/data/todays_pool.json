@@ -75,9 +75,9 @@
       2025,
       2026
     ],
-    "generated": "2026-11-15 07:46",
+    "generated": "2026-11-15 12:01",
     "player_count": 225,
-    "goalie_count": 64,
+    "goalie_count": 65,
     "skipped_no_history": 0,
     "teams": {
       "ANA": {
@@ -46094,6 +46094,102 @@
           "savePct": 1.0,
           "win": true,
           "shutout": true
+        }
+      ]
+    },
+    {
+      "playerId": 8484268,
+      "name": "Nikita Tolopilo",
+      "team": "VAN",
+      "position": "G",
+      "games_played": 21,
+      "icetime": 68741,
+      "wins": 6,
+      "shutouts": 0,
+      "shotsFaced": 890,
+      "sogFaced": 579,
+      "goalsAllowed": 69,
+      "savePct": 0.881,
+      "GA60_proxy": 3.61,
+      "xGA60_proxy": 3.21,
+      "highDangerSavePct": 0.89,
+      "last7": [
+        {
+          "gameId": 2025021055,
+          "date": "2026-03-14",
+          "opp": "SEA",
+          "home": true,
+          "goalsAllowed": 5,
+          "sogFaced": 33,
+          "savePct": 0.848,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021165,
+          "date": "2026-03-28",
+          "opp": "CGY",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 11,
+          "savePct": 0.636,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021199,
+          "date": "2026-04-02",
+          "opp": "MIN",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 38,
+          "savePct": 0.895,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021216,
+          "date": "2026-04-04",
+          "opp": "UTA",
+          "home": true,
+          "goalsAllowed": 6,
+          "sogFaced": 23,
+          "savePct": 0.739,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021242,
+          "date": "2026-04-07",
+          "opp": "VGK",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 28,
+          "savePct": 0.929,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021260,
+          "date": "2026-04-09",
+          "opp": "LAK",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 26,
+          "savePct": 0.846,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2025021280,
+          "date": "2026-04-12",
+          "opp": "ANA",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 27,
+          "savePct": 0.889,
+          "win": true,
+          "shutout": false
         }
       ]
     }
