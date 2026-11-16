@@ -1,13 +1,132 @@
 {
  "_meta": {
-  "generated": "2026-11-16 12:05",
+  "generated": "2026-11-16 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 123,
-  "up": 58,
+  "count": 125,
+  "up": 62,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482674,
+   "name": "Tyler Boucher",
+   "team": "OTT",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2003-01-16",
+   "sweater": 54,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "OTT",
+    "round": 1,
+    "overallPick": 10
+   },
+   "recalledOn": "2026-11-16",
+   "from": "Belleville",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-16",
+     "type": "up",
+     "club": "Belleville"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 17,
+     "goals": 5,
+     "assists": 5,
+     "points": 10,
+     "plusMinus": -1,
+     "pim": 10,
+     "team": "Belleville Senators"
+    },
+    "last": {
+     "gamesPlayed": 47,
+     "goals": 12,
+     "assists": 14,
+     "points": 26,
+     "plusMinus": 7,
+     "pim": 68,
+     "team": "Belleville Senators"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8482132,
+   "name": "Brett Berard",
+   "team": "MTL",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2002-09-09",
+   "sweater": 37,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "NYR",
+    "round": 5,
+    "overallPick": 134
+   },
+   "recalledOn": "2026-11-16",
+   "from": "Laval",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-16",
+     "type": "up",
+     "club": "Laval"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 17,
+     "goals": 7,
+     "assists": 4,
+     "points": 11,
+     "plusMinus": 2,
+     "pim": 12,
+     "team": "Laval Rocket"
+    },
+    "last": {
+     "gamesPlayed": 41,
+     "goals": 6,
+     "assists": 16,
+     "points": 22,
+     "plusMinus": -16,
+     "pim": 53,
+     "team": "Hartford Wolf Pack"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 13,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 6,
+     "shots": 10,
+     "team": "New York Rangers"
+    },
+    "careerGp": 48,
+    "careerG": 6,
+    "careerP": 10
+   }
+  },
   {
    "playerId": 8484268,
    "name": "Nikita Tolopilo",
@@ -1104,7 +1223,7 @@
    "from": "Tucson",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -2738,7 +2857,7 @@
    "from": "Tucson",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -3412,25 +3531,11 @@
    }
   },
   {
-   "playerId": 8482766,
-   "name": "William Stromgren",
    "team": "CGY",
-   "position": "L",
-   "shoots": "L",
-   "birthDate": "2003-06-07",
-   "sweater": 65,
-   "draft": {
-    "year": 2021,
-    "teamAbbrev": "CGY",
-    "round": 2,
-    "overallPick": 45
-   },
    "recalledOn": "2026-10-30",
    "from": "Calgary",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
    "events": [
     {
      "date": "2026-10-30",
@@ -3438,50 +3543,20 @@
      "club": "Calgary"
     }
    ],
+   "playerId": null,
+   "name": "William Str\u00f6mgren",
+   "position": "F",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
    "ahl": {
-    "season": {
-     "gamesPlayed": 11,
-     "goals": 3,
-     "assists": 8,
-     "points": 11,
-     "plusMinus": -4,
-     "pim": 14,
-     "team": "Calgary Wranglers"
-    },
-    "last": {
-     "gamesPlayed": 66,
-     "goals": 11,
-     "assists": 36,
-     "points": 47,
-     "plusMinus": -2,
-     "pim": 52,
-     "team": "Calgary Wranglers"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 2,
-     "assists": 0,
-     "points": 2,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 4,
-     "team": "Calgary Flames"
-    },
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 2,
-     "team": "Calgary Flames"
-    },
-    "careerGp": 9,
-    "careerG": 2,
-    "careerP": 2
+    "season": null,
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -5190,7 +5265,7 @@
    "from": "Tucson",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
