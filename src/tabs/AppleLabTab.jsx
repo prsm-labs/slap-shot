@@ -18,6 +18,7 @@ import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { isPointSignal } from "../lib/signals.js";
 import PointDueTag from "../components/PointDueTag.jsx";
 import { LineTag } from "../components/LineupBadge.jsx";
+import { StyleTag } from "../components/DueTag.jsx";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
 // 2026-11-12 (user): A/60 + P/60 L120 show on the phone cards (not folded under More)
@@ -243,7 +244,7 @@ export default function AppleLabTab() {
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
                         {isPointSignal(p) && <span className="signal-star">★ </span>}
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={betLine(p, "point")} /><LineTag line={p.line} starting={p.startingLineup} /><PointDueTag heat={p.pointHeat} />
+                        <span className="player-name-link">{p.name}</span><StyleTag p={p} /> <PickButton player={p} /> <GamblyButton text={betLine(p, "point")} /><LineTag line={p.line} starting={p.startingLineup} /><PointDueTag heat={p.pointHeat} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI</div>
                       </div>
                     </div>

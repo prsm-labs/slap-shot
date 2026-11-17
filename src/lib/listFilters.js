@@ -13,6 +13,7 @@ import { prismPicks, tierPicks } from "./prismPicks.js";
 import { applyGroups } from "../components/FilterPanel.jsx";
 import { DEF_TIERS, oppDefOf } from "./oppDef.jsx";
 import { EDGES, STREAK, edgeKeys } from "./edges.js";
+import { assistShare } from "./calibration.js";
 import { useRadar } from "./radar.js";
 import { useMulti } from "./multi.js";
 
@@ -26,7 +27,7 @@ export const GOAL_OPTIONS = [null, 10, 20, 30];
 const LETTERS = ["A+", "A", "B", "C", "D", "F"];
 
 // `soft` stays readable / settable on its own (First Goal's soft-defense pill) -- it's the "soft" tag underneath
-const DEFAULTS = { tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", edge: [], edgeNot: [], edgeMode: "all", top: [], prism: [], find: [], grades: [], h2h: [], oppd: [], search: "" };
+const DEFAULTS = { style: [], tier: null, minGoal: null, tags: [], tagsNot: [], tagsMode: "all", edge: [], edgeNot: [], edgeMode: "all", top: [], prism: [], find: [], grades: [], h2h: [], oppd: [], search: "" };
 const withSoft = (s) => ({ ...s, soft: s.tags.includes("soft") });
 let state = withSoft({ ...DEFAULTS });
 const listeners = new Set();
@@ -141,6 +142,11 @@ export function buildGroups(ctx = {}) {
         { v: "multi", label: "🎯 Multi-point", title: "2+ points beyond his usual (graded nightly)" },
         { v: "moving", label: "📈 Moving up", title: "Ice time up 10%+ over his last 3 games — the strongest tested points / assists signal; already in the %" },
         { v: "goalie", label: "🧤 Soft goalie", title: "Facing a starter clearly below average by goals saved above expected; already in the %" }] },
+    // 2026-11-17 style (user): playmaker / pure shooter by assist share of his points vs his position (lib/calibration.js assistShare)
+    { key: "style", label: "Style", chip: "", type: "multi", get: (p) => (p.modelProbs?.aSpec ?? assistShare(p))?.kind || null,
+      options: [{ v: "playmaker", label: "🅰️ Playmaker", title: "Assists are a big share of his points (top third of his position) -- his assist chance is nudged up above 30%" },
+        { v: "shooter", label: "🎯 Pure shooter", title: "Goals are a big share of his points (top third of his position) -- a label; his goal chance is unchanged" }],
+      hint: "Assist share of his points, last season + this season, vs his position (forwards and D separately)" },
     { key: "tags", label: "Tags", chip: "", type: "tags", get: tagKeys, options: [
       { v: "b2b", label: "B2B", title: "His team played yesterday — second night of a back-to-back" },
       { v: "b2bnext", label: "B2B tmrw", title: "His team plays again tomorrow" },

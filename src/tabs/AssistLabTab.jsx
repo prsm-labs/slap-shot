@@ -15,6 +15,7 @@ import { fmtToi } from "../lib/toi.js";
 import { filterPlayers, useMatchup } from "../lib/matchupFilter.js";
 import { useH2HGrades, withH2H } from "../lib/h2h.js";
 import { LineTag } from "../components/LineupBadge.jsx";
+import { StyleTag } from "../components/DueTag.jsx";
 import L120Cell from "../components/L120Cell.jsx";
 import GamblyButton from "../components/GamblyButton.jsx";
 import { HitStrip } from "../components/RiskBoard.jsx";
@@ -256,7 +257,7 @@ export default function AssistLabTab() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={28} />
                       <div>
-                        <span className="player-name-link">{p.name}</span> <PickButton player={p} /> <GamblyButton text={`${p.name} (${p.team}) — 1+ Assist`} /><LineTag line={p.line} starting={p.startingLineup} />
+                        <span className="player-name-link">{p.name}</span><StyleTag p={p} /> <PickButton player={p} /> <GamblyButton text={`${p.name} (${p.team}) — 1+ Assist`} /><LineTag line={p.line} starting={p.startingLineup} />
                         <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} · {positionLabel(p.position)} · {fmtToi(p.estToi)} TOI · {p.assistTier}</div>
                       </div>
                     </div>

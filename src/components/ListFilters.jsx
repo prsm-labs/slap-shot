@@ -12,7 +12,10 @@ const LOCKED_IN = [{ key: "locked", label: "🔒 Locked in", set: { grades: ["A+
   { key: "radar", label: "🔦 Under the radar", set: { find: ["radar"] }, title: "Lines he rarely clears that the model likes tonight — beats the players' own rates (graded nightly; Cheat Sheets has the record)." },
   { key: "multi", label: "🎯 Multi-point", set: { find: ["multi"] }, title: "2+ points beyond what he usually does (graded nightly)." },
   { key: "moving", label: "📈 Moving up", set: { find: ["moving"] }, title: "Ice time up 10%+ over his last 3 games — the strongest tested signal for points and assists. Already in the %; this shows who it lifts." },
-  { key: "goalie", label: "🧤 Soft goalie", set: { find: ["goalie"] }, title: "Facing a starter clearly below average (goals saved above expected). Tested every season for points; already in the %." }];
+  { key: "goalie", label: "🧤 Soft goalie", set: { find: ["goalie"] }, title: "Facing a starter clearly below average (goals saved above expected). Tested every season for points; already in the %." },
+  // 2026-11-17 (user): style buttons -- assist share of his points vs his position
+  { key: "playmaker", label: "🅰️ Playmakers", set: { style: ["playmaker"] }, title: "Assists are a big share of his points (top third of his position). Above a 30% assist chance his assist % is nudged up (tested every season)." },
+  { key: "shooter", label: "🎯 Shooters", set: { style: ["shooter"] }, title: "Goals are a big share of his points (top third of his position). A label: his goal % is unchanged." }];
 
 // Collapsible filter panel for the long skater lists (lib/listFilters.js holds the shared state and the groups).
 // 2026-10-25: the shared FilterPanel (tags, Top 3 / PRISM Picks, grade + H2H letter scales); base = the list before these
