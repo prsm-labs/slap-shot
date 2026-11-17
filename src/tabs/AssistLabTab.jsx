@@ -21,6 +21,7 @@ import { HitStrip } from "../components/RiskBoard.jsx";
 import { useLabBand } from "../lib/labBand.jsx";
 import { formBefore, ladderFor, recentOf } from "../lib/lineBoard.js";
 import { tierFor } from "../lib/slapScore.js";
+import { assistShare } from "../lib/calibration.js";
 import { LIST_MAX } from "../lib/listMax.js";
 
 // 🅰️ Assist Lab (2026-11-17, user: a dedicated assist page in Scouting -- A/60 L120 plus season A/60 and A/GP, singling out the best
@@ -68,10 +69,10 @@ function seasonAssists(S, date) {
 }
 
 function exportCsv(rows, filename) {
-  const header = ["name", "team", "position", "opponentGoalie", "assistScore", "assist1Pct", "assist2Pct", "assist3Pct", "aGp", "a60", "a60L120", "seasonGp"];
+  const header = ["name", "team", "position", "opponentGoalie", "assistScore", "assistShare", "assist1Pct", "assist2Pct", "assist3Pct", "aGp", "a60", "a60L120", "seasonGp"];
   const lines = [header.join(",")];
   for (const p of rows) {
-    lines.push([p.name, p.team, p.position, p.opponentGoalie || "", p.assistScore, p.a1, p.a2 ?? "", p.a3 ?? "", p.aGp?.toFixed(2) ?? "", p.a60?.toFixed(2) ?? "", p.a120 ?? "", p.sGp ?? ""]
+    lines.push([p.name, p.team, p.position, p.opponentGoalie || "", p.assistScore, p.aShare ?? "", p.a1, p.a2 ?? "", p.a3 ?? "", p.aGp?.toFixed(2) ?? "", p.a60?.toFixed(2) ?? "", p.a120 ?? "", p.sGp ?? ""]
       .map((v) => `"${v}"`).join(","));
   }
   const blob = new Blob([lines.join("\n")], { type: "text/csv" });
@@ -112,7 +113,9 @@ export default function AssistLabTab() {
       const at = (T) => { const r = lad.find(([t]) => t === T); return r ? r[1] : null; };
       const own2 = form?.a?.length ? form.a.filter((v) => v >= 2).length : null;
       const s = sa.get(p.playerId);
+      const spec = p.modelProbs?.aSpec ?? assistShare(p);
       return {
+        aShare: spec ? Math.round(spec.share * 100) : null, kind: spec?.kind || null,
         ...p, _a1: a1, a1: pct1(a1), a2: pct1(at(2)), a3: pct1(at(3)), own2, ownN: form?.a?.length || 0,
         sGp: s?.gp ?? null, aGp: s?.aGp ?? null, a60: s?.a60 ?? null, ppp: s?.ppp ?? null,
         recentA: form ? recentOf(form).slice(-10) : [],
@@ -133,8 +136,12 @@ export default function AssistLabTab() {
   const { sorted, sortKey, sortDir, toggleSort } = useSort(banded, "a1", "desc");
   const stripLine = sortKey === "a3" ? 3 : sortKey === "a2" ? 2 : 1;
 
-  const top1 = useMemo(() => [...filtered].sort((a, b) => b._a1 - a._a1).slice(0, LIST_MAX), [filtered]);
-  const top2 = useMemo(() => [...filtered].filter((p) => p.a2 != null).sort((a, b) => b.a2 - a.a2).slice(0, LIST_MAX), [filtered]);
+  // 2026-11-17 (user: the lab tops were the same stars as Lamp / Apple): the cards show playmakers only -- assists 2/3+ of his points
+  // for a forward (D: ~5/6), the top third of his position. Live 46 nights: top 3 a night got an assist 71.0% (said 65.2%, n 138);
+  // never the same players as Lamp Lab's pure shooters.
+  const plays = useMemo(() => filtered.filter((p) => p.kind === "playmaker"), [filtered]);
+  const top1 = useMemo(() => [...plays].sort((a, b) => b._a1 - a._a1).slice(0, LIST_MAX), [plays]);
+  const top2 = useMemo(() => [...plays].filter((p) => p.a2 != null).sort((a, b) => b.a2 - a.a2).slice(0, LIST_MAX), [plays]);
   const tiles = useMemo(() => {
     if (!filtered.length) return null;
     return {
@@ -177,7 +184,10 @@ export default function AssistLabTab() {
         priced on the Risk Slider ladder with his own last-20 record. This season so far (46 nights): assist chance said 24.7%, happened 24.4%;
         2+ A said 5.5% / happened 5.2%, 3+ A 3.6% / 3.1%. Assist Score = where tonight's slate ranks his 1+ A %, 0-99, like the Slap Score:
         90+ got an assist 52% of the time (2+ assists 16%), 70-89 31% (6%), 50-69 23% (3%), under 50 15% (1%). A/GP, A/60 and A/60 L120 are
-        context: recent assist rates added nothing over the chance when tested. The top cards are a shortcut to the best chances, not an extra edge.
+        context: recent assist rates added nothing over the chance when tested. Since 11/17 the assist chance also knows his style: above 30%, playmakers
+        (assists are a big share of their points) move up and pure shooters down -- held out it was better in every season 2022-26 and this season
+        (at 30%+ shooters had been said 39.8% / got 37.0%, playmakers 45.0% / 47.9%). The top cards show 🅰️ playmakers only, so they aren't Lamp
+        Lab's shooters again: this season the top 3 playmakers a night got an assist 71% of the time (said 65%).
       </div>
 
       <PositionFilter />
@@ -202,15 +212,15 @@ export default function AssistLabTab() {
 
       {top1.length > 0 && (
         <>
-          <div className="mono" style={{ fontSize: 11, color: "var(--muted)", margin: "4px 0 6px" }}>Best for 1+ assist</div>
+          <div className="mono" style={{ fontSize: 11, color: "var(--muted)", margin: "4px 0 6px" }}>🅰️ Best playmakers · 1+ assist</div>
           <div className="top-reads">
-            {top1.map((p) => <ReadCard key={p.playerId} p={p} big={`${p.a1}%`} sub={`Assist Score ${p.assistScore} · 2+ ${fmtPct(p.a2)} · ${p.aGp != null ? `${p.aGp.toFixed(2)} A/GP` : ""}`} />)}
+            {top1.map((p) => <ReadCard key={p.playerId} p={p} big={`${p.a1}%`} sub={`${p.aShare}% of his points are assists · 2+ ${fmtPct(p.a2)} · ${p.aGp != null ? `${p.aGp.toFixed(2)} A/GP` : ""}`} />)}
           </div>
         </>
       )}
       {top2.length > 0 && (
         <>
-          <div className="mono" style={{ fontSize: 11, color: "var(--muted)", margin: "4px 0 6px" }}>Best for 2+ assists</div>
+          <div className="mono" style={{ fontSize: 11, color: "var(--muted)", margin: "4px 0 6px" }}>🅰️ Best playmakers · 2+ assists</div>
           <div className="top-reads">
             {top2.map((p) => <ReadCard key={p.playerId} p={p} big={`${p.a2}%`} sub={`2+ A in ${p.own2 ?? "—"} of his last ${p.ownN} · 3+ ${fmtPct(p.a3)} · 1+ ${p.a1}%`} />)}
           </div>
@@ -230,6 +240,7 @@ export default function AssistLabTab() {
                 <Th k="a2" title="Chance of 2+ assists tonight (Risk Slider ladder)">2+ A %</Th>
                 <Th k="a3" title="Chance of 3+ assists tonight (Risk Slider ladder)" className="tc-more">3+ A %</Th>
                 <Th k="assistScore" title="Where tonight's slate ranks his 1+ A %, 0-99 (90+ = top 10%)">Assist Score</Th>
+                <Th k="aShare" title="Assists as a share of his points, last season + this season. 🅰️ = playmaker (top third of his position), 🎯 = pure shooter (bottom third)">A share</Th>
                 <Th k="aGp" title="Assists per game this season">A/GP</Th>
                 <Th k="a60" title="Assists per 60 minutes this season">A/60</Th>
                 <Th k="a120" title="Assists per 60 over the last ~120 minutes on ice, and vs the season rate" className={SHOWN.has("a120") ? "" : "tc-more"}>A/60 L120</Th>
@@ -257,6 +268,7 @@ export default function AssistLabTab() {
                   <td>{fmtPct(p.a2)}</td>
                   <td className="tc-more">{fmtPct(p.a3)}</td>
                   <td className="mono">{p.assistScore}</td>
+                  <td className="mono" style={{ whiteSpace: "nowrap" }}>{p.aShare != null ? `${p.aShare}%` : "—"}{p.kind === "playmaker" ? " 🅰️" : p.kind === "shooter" ? " 🎯" : ""}</td>
                   <td className="mono">{p.aGp != null ? p.aGp.toFixed(2) : "—"}</td>
                   <td className="mono">{p.a60 != null ? p.a60.toFixed(2) : "—"}</td>
                   <L120Cell p={p} kind="a" className={SHOWN.has("a120") ? "" : "tc-more"} />

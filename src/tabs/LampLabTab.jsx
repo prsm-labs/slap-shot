@@ -29,6 +29,7 @@ import { betLine } from "../lib/gambly.js";
 import { HitStrip } from "../components/RiskBoard.jsx";
 import { useLabBand } from "../lib/labBand.jsx";
 import { LIST_MAX } from "../lib/listMax.js";
+import { assistShare } from "../lib/calibration.js";
 
 // Structural port of Going Yard's real BarrelLabTab (mlb_project/going-yard/src/App.jsx:
 // 32419-33537, researched in full this session): toolbar + aggregate card + Signal Board tiles
@@ -109,6 +110,11 @@ export default function LampLabTab() {
     () => [...filtered].sort((a, b) => b.anytimeGoalPct - a.anytimeGoalPct).slice(0, LIST_MAX),
     [filtered]
   );
+  // 2026-11-17 🎯 Pure shooters (user: the lab tops were the same stars as Apple / Assist Lab): goals are a big share of his points
+  // (bottom third of his position by assist share, lib/calibration.js assistShare). Context list: live 46 nights the top 3 a night
+  // scored 38.4% (said 40.2%, n 138) -- on our chance; never the same players as the Assist Lab's playmakers.
+  const shooters = useMemo(() => [...filtered].map((p) => ({ p, s: p.modelProbs?.aSpec ?? assistShare(p) }))
+    .filter((x) => x.s?.kind === "shooter").sort((a, b) => b.p.anytimeGoalPct - a.p.anytimeGoalPct).slice(0, LIST_MAX), [filtered]);
 
   return (
     <div>
@@ -161,6 +167,26 @@ export default function LampLabTab() {
             </div>
           ))}
         </div>
+      )}
+      {shooters.length > 0 && (
+        <>
+          <div className="mono" style={{ fontSize: 11, color: "var(--muted)", margin: "4px 0 6px" }}>🎯 Best pure shooters · goals are most of his points (hits what the % says)</div>
+          <div className="top-reads">
+            {shooters.map(({ p, s }) => (
+              <div key={p.playerId} className="read-card" onClick={() => openSkaterSlide(p)}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                  <PlayerAvatar playerId={p.playerId} name={p.name} team={p.team} size={36} />
+                  <div>
+                    <div className="mono" style={{ fontSize: 12, fontWeight: 700 }}>{p.name}</div>
+                    <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{p.team} vs {p.opponentGoalie || "—"}</div>
+                  </div>
+                </div>
+                <div style={{ fontFamily: "'Oswald',sans-serif", fontWeight: 800, fontSize: 24 }}>{p.anytimeGoalPct}%</div>
+                <div className="mono" style={{ fontSize: 9, color: "var(--muted)" }}>{Math.round((1 - s.share) * 100)}% of his points are goals · Slap {p.slapScore}</div>
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       {sortedWithSignalFirst.length > 0 && (

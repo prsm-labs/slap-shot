@@ -65,6 +65,28 @@ export function formRatios(p, lg) {
 // in 4 of 4 held-out seasons (-49 / -31 / -18 / -55e-5) and live 2026-27 (-6.7e-5). 35% -> 33, 40 -> 36, 45 -> 39, 50 -> 42.
 // Applied last (after role + goalie); the line ladders keep the chance before it (goalLadderPct) -- they calibrate their own top.
 export const GOAL_TOP = { knot: 0.3, c: -0.371 };
+
+// 2026-11-17 assist specialty (user: the Lamp / Apple / Assist Lab tops were the same stars; playmakers who don't score much get
+// the assists). Assist share = assists / (goals + assists), last season + this season (8+ G+A), as a z-score vs his position
+// (forwards .580 +- .097, D .748 +- .087 -- Feb-Apr 2022-26). Above a 30% assist chance: logit + 0.12 x z x (logit - logit .30).
+// Held out by season (live stack, beyond a top-end slope): -8.7 / -14.5 / -23.4 / -16.0e-5 log loss (4 of 4); live 2026-27
+// (46 nights, 9,730): -19.8e-5. At 30%+ shooters said 39.8% / got 37.0%, playmakers 45.0 / 47.9 before it. The same test on goals
+// (goal share) won 3 of 4 -> goals unchanged. Playmaker / pure shooter = |z| >= 0.43 (about a third of each position each way).
+export const ASSIST_SPEC = { knot: 0.3, c: 0.12, minGA: 8, fwd: [0.5797, 0.0973], d: [0.748, 0.0873], tag: 0.43 };
+export function assistShare(p) {
+  if (p?.I_F_primaryAssists == null || (p?.I_F_goals == null && p?.I_F_points == null)) return null;
+  const A = p.I_F_primaryAssists + (p.I_F_secondaryAssists || 0), G = p.I_F_goals ?? p.I_F_points - A; // pool carries points, not goals
+  if (A + G < ASSIST_SPEC.minGA) return null;
+  const share = A / (A + G);
+  const [m, s] = p.position === "D" ? ASSIST_SPEC.d : ASSIST_SPEC.fwd;
+  const z = (share - m) / s;
+  return { share, z, kind: z >= ASSIST_SPEC.tag ? "playmaker" : z <= -ASSIST_SPEC.tag ? "shooter" : null };
+}
+export function assistSpec(p, z) {
+  if (p == null || !z) return p;
+  const L = logit(Math.min(Math.max(p, 1e-4), 1 - 1e-4)), K = logit(ASSIST_SPEC.knot);
+  return L > K ? sigmoid(L + ASSIST_SPEC.c * z * (L - K)) : p;
+}
 export function goalTop(p) {
   const L = logit(Math.min(Math.max(p, 1e-4), 1 - 1e-4)), K = logit(GOAL_TOP.knot);
   return L > K ? sigmoid(L + GOAL_TOP.c * (L - K)) : p;

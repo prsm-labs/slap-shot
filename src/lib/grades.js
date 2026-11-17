@@ -108,7 +108,7 @@ export const GOALIE_GSAX = { mean: 0.00292, sd: 0.00618 };
 // Since 2026-10-14 goal and point are then calibrated (top end was over-confident, middle under) and the point
 // chance uses last-120-minutes form — lib/calibration.js. uncal = with matchup, before calibration.
 // 3+ SOG calibrated too since 2026-10-14 (same top-end over-confidence; calibration.js header).
-import { applyRole, calibrateGoal, goalTop, calibratePoint, calibrateSog3, formRatios, roleTrend, slateRates } from "./calibration.js";
+import { applyRole, assistShare, assistSpec, calibrateGoal, goalTop, calibratePoint, calibrateSog3, formRatios, roleTrend, slateRates } from "./calibration.js";
 
 const GRADE_BANDS = [[0.95, "A+"], [0.85, "A"], [0.65, "B"], [0.35, "C"], [0.15, "D"], [0, "F"]];
 
@@ -212,6 +212,9 @@ export function gradeSlate(players, goalies = null) {
     // 2026-11-08 top-end goal fix (calibration.js GOAL_TOP); goalPre = the chance before it, for the line ladders
     probs.goalPre = probs.goal;
     probs.goal = goalTop(probs.goal);
+    // 2026-11-17 assist specialty (calibration.js ASSIST_SPEC): playmakers up / pure shooters down above a 30% assist chance
+    probs.aSpec = assistShare(p);
+    probs.assist = assistSpec(probs.assist, probs.aSpec?.z);
     return { id: p.playerId, probs };
   });
   const n = rows.length;
