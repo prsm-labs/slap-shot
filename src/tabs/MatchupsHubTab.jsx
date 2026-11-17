@@ -3,6 +3,7 @@ import ViewPicker from "../components/ViewPicker.jsx";
 import AllMatchupsTab from "./AllMatchupsTab.jsx";
 import LampLabTab from "./LampLabTab.jsx";
 import AppleLabTab from "./AppleLabTab.jsx";
+import AssistLabTab from "./AssistLabTab.jsx";
 import CreaseLabTab from "./CreaseLabTab.jsx";
 import PairsTab from "./PairsTab.jsx";
 import LadderTab from "./LadderTab.jsx";
@@ -22,6 +23,7 @@ const VIEWS = [
   { key: "longshot", label: "🎯 Long-shot creators", Component: LongshotTab },  // 2026-11-07: 12-30% goal chances ranked by recent own xG/60 vs position
   { key: "lamp", label: "💡 Lamp Lab", Component: LampLabTab },
   { key: "apple", label: "🍎 Apple Lab", Component: AppleLabTab },
+  { key: "assist", label: "🅰️ Assist Lab", Component: AssistLabTab },  // 2026-11-17: 1+ / 2+ / 3+ assists, Assist Score, A/GP + A/60
   { key: "crease", label: "🥅 Crease Lab", Component: CreaseLabTab },
   { key: "pairs", label: "🤝 Pairs", Component: PairsTab },
   { key: "ladder", label: "🪜 Game Ladder", Component: LadderTab },
