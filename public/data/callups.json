@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-11-16 17:34",
+  "generated": "2026-11-17 07:05",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 125,
@@ -176,7 +176,21 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 1,
+     "losses": 0,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 2,
+     "shotsAgainst": 36,
+     "team": "Vancouver Canucks",
+     "savePct": 0.944,
+     "gaa": 2.0
+    },
     "last": {
      "gamesPlayed": 21,
      "goals": 0,
@@ -192,7 +206,7 @@
      "savePct": 0.881,
      "gaa": 3.61
     },
-    "careerGp": 23,
+    "careerGp": 24,
     "careerG": 0,
     "careerP": null
    }
@@ -758,12 +772,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 16,
+     "gamesPlayed": 17,
      "goals": 2,
      "assists": 2,
      "points": 4,
      "plusMinus": 1,
-     "pim": 0,
+     "pim": 2,
      "shots": 17,
      "team": "Utah Mammoth"
     },
@@ -777,7 +791,7 @@
      "shots": 43,
      "team": "Utah Mammoth"
     },
-    "careerGp": 45,
+    "careerGp": 46,
     "careerG": 5,
     "careerP": 11
    }
@@ -1254,17 +1268,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 2,
      "assists": 0,
      "points": 2,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 6,
+     "shots": 7,
      "team": "Utah Mammoth"
     },
     "last": null,
-    "careerGp": 117,
+    "careerGp": 118,
     "careerG": 6,
     "careerP": 30
    }
@@ -1547,11 +1561,20 @@
    }
   },
   {
+   "playerId": 8483012,
+   "name": "Logan Morrison",
    "team": "SEA",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2002-07-09",
+   "sweater": 96,
+   "draft": null,
    "recalledOn": "2026-11-08",
    "from": "Coachella Valley",
    "fromLeague": "AHL",
    "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-14",
    "events": [
     {
      "date": "2026-11-08",
@@ -1564,20 +1587,32 @@
      "club": "Coachella Valley"
     }
    ],
-   "playerId": null,
-   "name": "Logan Morrison",
-   "position": "C",
-   "noProfile": true,
-   "status": "down",
-   "sentDownOn": "2026-11-14",
    "ahl": {
-    "season": null,
-    "last": null
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 3,
+     "assists": 7,
+     "points": 10,
+     "plusMinus": -2,
+     "pim": 0,
+     "team": "Coachella Valley Firebirds"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 29,
+     "assists": 32,
+     "points": 61,
+     "plusMinus": 23,
+     "pim": 42,
+     "team": "Coachella Valley Firebirds"
+    }
    },
    "nhl": {
     "season": null,
     "last": null,
-    "careerGp": 0
+    "careerGp": 4,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -2456,11 +2491,20 @@
    }
   },
   {
+   "playerId": 8486169,
+   "name": "Jake Livanavage",
    "team": "PIT",
+   "position": "D",
+   "shoots": null,
+   "birthDate": "2004-05-06",
+   "sweater": 4,
+   "draft": null,
    "recalledOn": "2026-11-03",
    "from": "minors",
    "fromLeague": "AHL",
    "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-06",
    "events": [
     {
      "date": "2026-11-03",
@@ -2473,20 +2517,33 @@
      "club": "Wilkes-Barre/Scranton"
     }
    ],
-   "playerId": null,
-   "name": "Jake Livanavage",
-   "position": "D",
-   "noProfile": true,
-   "status": "down",
-   "sentDownOn": "2026-11-06",
    "ahl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 3,
+     "assists": 8,
+     "points": 11,
+     "plusMinus": 0,
+     "pim": 6,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    },
     "last": null
    },
    "nhl": {
     "season": null,
-    "last": null,
-    "careerGp": 0
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -2,
+     "pim": 0,
+     "shots": 0,
+     "team": "Pittsburgh Penguins"
+    },
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -3112,12 +3169,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 4,
+     "gamesPlayed": 5,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": 1,
-     "pim": 2,
+     "plusMinus": 2,
+     "pim": 6,
      "shots": 2,
      "team": "New York Rangers"
     },
@@ -3131,7 +3188,7 @@
      "shots": 79,
      "team": "New York Rangers"
     },
-    "careerGp": 78,
+    "careerGp": 79,
     "careerG": 6,
     "careerP": 18
    }
@@ -3595,8 +3652,8 @@
     "season": {
      "gamesPlayed": 11,
      "goals": 7,
-     "assists": 4,
-     "points": 11,
+     "assists": 3,
+     "points": 10,
      "plusMinus": -1,
      "pim": 6,
      "team": "Ontario Reign"
@@ -3629,11 +3686,25 @@
    }
   },
   {
+   "playerId": 8482781,
+   "name": "Carson Lambos",
    "team": "MIN",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2003-01-14",
+   "sweater": 55,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "MIN",
+    "round": 1,
+    "overallPick": 26
+   },
    "recalledOn": "2026-10-29",
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 3,
+   "status": "down",
+   "sentDownOn": "2026-10-30",
    "events": [
     {
      "date": "2026-10-15",
@@ -3661,20 +3732,41 @@
      "club": "Iowa"
     }
    ],
-   "playerId": null,
-   "name": "Carson Lambos",
-   "position": "D",
-   "noProfile": true,
-   "status": "down",
-   "sentDownOn": "2026-10-30",
    "ahl": {
-    "season": null,
-    "last": null
+    "season": {
+     "gamesPlayed": 16,
+     "goals": 1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": -5,
+     "pim": 13,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 70,
+     "goals": 8,
+     "assists": 11,
+     "points": 19,
+     "plusMinus": -4,
+     "pim": 48,
+     "team": "Iowa Wild"
+    }
    },
    "nhl": {
     "season": null,
-    "last": null,
-    "careerGp": 0
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
@@ -4896,12 +4988,12 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 1,
      "assists": 2,
      "points": 3,
      "plusMinus": 0,
-     "pim": 5,
+     "pim": 7,
      "shots": 6,
      "team": "Montr\u00e9al Canadiens"
     },
@@ -4915,7 +5007,7 @@
      "shots": 11,
      "team": "Montr\u00e9al Canadiens"
     },
-    "careerGp": 34,
+    "careerGp": 35,
     "careerG": 2,
     "careerP": 5
    }
