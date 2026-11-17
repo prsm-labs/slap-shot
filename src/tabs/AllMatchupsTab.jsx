@@ -41,6 +41,8 @@ const COLUMNS = [
   ["estToi", "Est. TOI"],
   ["sogPg", "SOG/GP", "Shots on goal per game, last season + this season"],
   ["sog60", "SOG/60", "Shots on goal per 60 minutes of ice time"],
+  ["saPg", "SA/GP", "Shot attempts per game (unblocked: on goal + missed), last season + this season"],
+  ["ICF", "ICF", "Individual shot attempts (unblocked), total over last season + this season"],
   ...L120_COLS,
   ["gradeScore", "Grade"],
   ["slapScore", "Slap Score"],
@@ -134,6 +136,8 @@ export default function AllMatchupsTab() {
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
                   <td className="mono">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
+                  <td className="mono">{p.saPg != null ? p.saPg.toFixed(2) : "—"}</td>
+                  <td className="mono">{p.ICF ?? "—"}</td>
                   {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} />)}
                   <td><GradeBadge grade={p.effectiveGrade} /></td>
                   <td>{p.slapScore}</td>

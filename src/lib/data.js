@@ -69,6 +69,7 @@ function build() {
       modelProbs: grade?.probs ?? null, estToi: estimatedToi(p), ppToi: ppToiPerGame(p),
       // shots on goal per game and per 60 minutes of ice time (icetime = total seconds), last season + this season
       sogPg: p.ShotsOnGoalPerGame ?? null,
+      saPg: p.ShotAttemptsPerGame ?? null, // 2026-11-17 SA/GP + ICF columns (unblocked attempts, last season + this season)
       sog60: p.icetime > 0 && p.ShotsOnGoalPerGame != null ? Math.round(((p.ShotsOnGoalPerGame * p.games_played * 3600) / p.icetime) * 100) / 100 : null,
       ...last120(p),
     };

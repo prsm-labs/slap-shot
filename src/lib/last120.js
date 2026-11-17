@@ -6,15 +6,16 @@ import { CALIBRATION } from "./calibration.js";
 // (the danger-weighted version, own xG, already feeds the point %). Assists / points over ~120 min are a handful of
 // events, so their rise ("2.5x") swings a lot — those two columns sort by the rate itself, not the rise.
 export function last120(p) {
-  const out = { l120Min: null, sog120: null, sog120x: null, hd120: null, hd120x: null, a120: null, a120x: null, p120: null, p120x: null };
-  let sec = 0, sog = 0, hd = 0, ast = 0, pts = 0;
+  const out = { l120Min: null, sog120: null, sog120x: null, sa120: null, sa120x: null, hd120: null, hd120x: null, a120: null, a120x: null, p120: null, p120x: null };
+  let sec = 0, sog = 0, sa = 0, hd = 0, ast = 0, pts = 0;
   for (const g of [...(p.last7 || [])].reverse()) {
     if (sec >= CALIBRATION.windowSec) break;
-    sec += g.icetime || 0; sog += g.sog || 0; hd += g.hd || 0; ast += g.assists || 0; pts += g.points || 0;
+    sec += g.icetime || 0; sog += g.sog || 0; sa += g.shotAttempts || 0; hd += g.hd || 0; ast += g.assists || 0; pts += g.points || 0;
   }
   if (sec < CALIBRATION.minSec || !(p.icetime > 0)) return out;
   const seasonSog = p.ShotsOnGoalPerGame != null ? (p.ShotsOnGoalPerGame * p.games_played * 3600) / p.icetime : null;
   const seasonHd = p.HDCF != null ? (p.HDCF * 3600) / p.icetime : null;
+  const seasonSa = p.ICF != null ? (p.ICF * 3600) / p.icetime : null; // 2026-11-17 shot attempts (unblocked, = ICF)
   const assists = p.I_F_primaryAssists != null ? p.I_F_primaryAssists + (p.I_F_secondaryAssists || 0) : null;
   const seasonA = assists != null ? (assists * 3600) / p.icetime : null;
   const seasonP = p.I_F_points != null ? (p.I_F_points * 3600) / p.icetime : null;
@@ -26,6 +27,7 @@ export function last120(p) {
     sog60Season: seasonSog, hd60Season: seasonHd,
     sog120x: seasonSog > 0 ? Math.round(((sog * 3600) / sec / seasonSog) * 100) / 100 : null,
     hd120x: seasonHd > 0 ? Math.round(((hd * 3600) / sec / seasonHd) * 100) / 100 : null,
+    sa120Count: sa, sa120: per60(sa), sa60Season: seasonSa, sa120x: rise(sa, seasonSa),
     a120Count: ast, a120: per60(ast), a60Season: seasonA, a120x: rise(ast, seasonA),
     p120Count: pts, p120: per60(pts), p60Season: seasonP, p120x: rise(pts, seasonP),
   };
@@ -34,6 +36,7 @@ export function last120(p) {
 // Table columns for components/L120Cell.jsx (key, label, header tooltip, cell kind).
 export const L120_COLS = [
   ["sog120x", "SOG/60 L120", "Shots on goal per 60 over the last ~120 minutes on ice, and vs the season rate (sorts by the rise). Context — not an extra input to the scores", "sog"],
+  ["sa120x", "SA/60 L120", "Shot attempts (unblocked) per 60 over the last ~120 minutes on ice, and vs the season rate (sorts by the rise). Context — shot volume is already in the goal / 3+ SOG chances", "sa"],
   ["hd120x", "HD/60 L120", "High-danger shot attempts (within 20 ft) per 60 over the last ~120 minutes on ice, and vs the season rate (sorts by the rise). Context — not an extra input to the scores", "hd"],
   ["a120", "A/60 L120", "Assists per 60 over the last ~120 minutes on ice, and vs the season rate. Sorts by the rate (a few assists swing the rise a lot). Context — not an extra input to the scores", "a"],
   ["p120", "P/60 L120", "Points per 60 over the last ~120 minutes on ice, and vs the season rate. Sorts by the rate (a few points swing the rise a lot). Context — not an extra input to the scores", "p"],

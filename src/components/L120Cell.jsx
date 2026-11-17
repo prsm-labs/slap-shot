@@ -3,6 +3,7 @@
 // Columns: lib/last120.js L120_COLS (4th field = kind).
 const KINDS = {
   sog: ["sog120", "sog120x", "sog120Count", "sog60Season", "shots on goal"],
+  sa: ["sa120", "sa120x", "sa120Count", "sa60Season", "shot attempts"],
   hd: ["hd120", "hd120x", "hd120Count", "hd60Season", "high-danger attempts"],
   a: ["a120", "a120x", "a120Count", "a60Season", "assists"],
   p: ["p120", "p120x", "p120Count", "p60Season", "points"],

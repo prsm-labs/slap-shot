@@ -23,7 +23,7 @@ import { BestPriceLink } from "../components/BetLink.jsx";
 import L120Cell from "../components/L120Cell.jsx";
 import { L120_COLS } from "../lib/last120.js";
 // 2026-11-12 (user): HD/60 + SOG/60 L120 show on the phone cards (not folded under More)
-const SHOWN = new Set(["sog120x", "hd120x"]);
+const SHOWN = new Set(["sog120x", "sa120x", "hd120x"]);
 import GamblyButton from "../components/GamblyButton.jsx";
 import { betLine } from "../lib/gambly.js";
 import { HitStrip } from "../components/RiskBoard.jsx";
@@ -207,6 +207,8 @@ export default function LampLabTab() {
                 <th className={`tc-more ${sortKey === "tier" ? "sorted" : ""}`} onClick={() => toggleSort("tier")}>Tier{sortKey === "tier" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th className={sortKey === "estToi" ? "sorted" : ""} onClick={() => toggleSort("estToi")}>Est. TOI{sortKey === "estToi" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Shots on goal per game, last season + this season" className={sortKey === "sogPg" ? "sorted" : ""} onClick={() => toggleSort("sogPg")}>SOG/GP{sortKey === "sogPg" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Shot attempts per game (unblocked: on goal + missed), last season + this season" className={sortKey === "saPg" ? "sorted" : ""} onClick={() => toggleSort("saPg")}>SA/GP{sortKey === "saPg" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
+                <th title="Individual shot attempts (unblocked), total over last season + this season" className={`tc-more ${sortKey === "ICF" ? "sorted" : ""}`} onClick={() => toggleSort("ICF")}>ICF{sortKey === "ICF" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 <th title="Shots on goal per 60 minutes of ice time" className={`tc-more ${sortKey === "sog60" ? "sorted" : ""}`} onClick={() => toggleSort("sog60")}>SOG/60{sortKey === "sog60" ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
                 {L120_COLS.map(([k, label, title]) => (
                   <th key={k} title={title} className={`${SHOWN.has(k) ? "" : "tc-more"} ${sortKey === k ? "sorted" : ""}`} onClick={() => toggleSort(k)}>{label}{sortKey === k ? (sortDir === "desc" ? " ↓" : " ↑") : ""}</th>
@@ -244,6 +246,8 @@ export default function LampLabTab() {
                   <td className="tc-more">{p.tier}</td>
                   <td className="mono">{fmtToi(p.estToi)}</td>
                   <td className="mono">{p.sogPg != null ? p.sogPg.toFixed(2) : "—"}</td>
+                  <td className="mono">{p.saPg != null ? p.saPg.toFixed(2) : "—"}</td>
+                  <td className="mono tc-more">{p.ICF ?? "—"}</td>
                   <td className="mono tc-more">{p.sog60 != null ? p.sog60.toFixed(2) : "—"}</td>
                   {L120_COLS.map(([k, , , kind]) => <L120Cell key={k} p={p} kind={kind} className={SHOWN.has(k) ? "" : "tc-more"} />)}
                   <td className="tc-more"><H2HCell playerId={p.playerId} /></td>
