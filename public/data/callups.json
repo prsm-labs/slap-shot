@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-17 07:51",
+  "generated": "2026-11-17 12:05",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 125,
-  "up": 62,
+  "up": 60,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -140,7 +140,7 @@
    "from": "Abbotsford",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -186,9 +186,9 @@
      "otLosses": 0,
      "shutouts": 0,
      "goalsAgainst": 2,
-     "shotsAgainst": 36,
+     "shotsAgainst": 37,
      "team": "Vancouver Canucks",
-     "savePct": 0.944,
+     "savePct": 0.946,
      "gaa": 2.0
     },
     "last": {
@@ -1274,7 +1274,7 @@
      "points": 2,
      "plusMinus": 0,
      "pim": 0,
-     "shots": 7,
+     "shots": 8,
      "team": "Utah Mammoth"
     },
     "last": null,
@@ -1931,7 +1931,7 @@
    "from": "Hartford",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
