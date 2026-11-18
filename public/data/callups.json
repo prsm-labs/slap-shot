@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "generated": "2026-11-17 17:35",
+  "generated": "2026-11-18 07:05",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 126,
@@ -56,7 +56,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Winnipeg Jets"
+    },
     "last": {
      "gamesPlayed": 6,
      "goals": 0,
@@ -67,7 +76,7 @@
      "shots": 4,
      "team": "Winnipeg Jets"
     },
-    "careerGp": 6,
+    "careerGp": 7,
     "careerG": 0,
     "careerP": 1
    }
@@ -120,11 +129,20 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Ottawa Senators"
+    },
     "last": null,
-    "careerGp": 0,
-    "careerG": null,
-    "careerP": null
+    "careerGp": 1,
+    "careerG": 1,
+    "careerP": 1
    }
   },
   {
@@ -421,7 +439,16 @@
     }
    },
    "nhl": {
-    "season": null,
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 0,
+     "team": "Winnipeg Jets"
+    },
     "last": {
      "gamesPlayed": 4,
      "goals": 0,
@@ -432,7 +459,7 @@
      "shots": 4,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 123,
+    "careerGp": 124,
     "careerG": 5,
     "careerP": 25
    }
@@ -635,7 +662,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 2,
+     "gamesPlayed": 3,
      "goals": 0,
      "assists": 0,
      "points": 0,
@@ -1014,13 +1041,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -1,
+     "plusMinus": 0,
      "pim": 2,
-     "shots": 3,
+     "shots": 4,
      "team": "Dallas Stars"
     },
     "last": null,
@@ -1139,7 +1166,7 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 0,
      "assists": 0,
      "points": 0,
@@ -1158,7 +1185,7 @@
      "shots": 1,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 5,
+    "careerGp": 6,
     "careerG": 0,
     "careerP": 0
    }
@@ -1204,19 +1231,19 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
+     "gamesPlayed": 4,
+     "goals": 1,
      "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
+     "points": 2,
+     "plusMinus": 2,
      "pim": 0,
-     "shots": 2,
+     "shots": 4,
      "team": "Tampa Bay Lightning"
     },
     "last": null,
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": 1
+    "careerGp": 4,
+    "careerG": 1,
+    "careerP": 2
    }
   },
   {
@@ -1630,20 +1657,11 @@
    }
   },
   {
-   "playerId": 8483012,
-   "name": "Logan Morrison",
    "team": "SEA",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2002-07-09",
-   "sweater": 96,
-   "draft": null,
    "recalledOn": "2026-11-08",
    "from": "Coachella Valley",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-14",
    "events": [
     {
      "date": "2026-11-08",
@@ -1656,54 +1674,28 @@
      "club": "Coachella Valley"
     }
    ],
+   "playerId": null,
+   "name": "Logan Morrison",
+   "position": "C",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-11-14",
    "ahl": {
-    "season": {
-     "gamesPlayed": 12,
-     "goals": 3,
-     "assists": 7,
-     "points": 10,
-     "plusMinus": -2,
-     "pim": 0,
-     "team": "Coachella Valley Firebirds"
-    },
-    "last": {
-     "gamesPlayed": 68,
-     "goals": 29,
-     "assists": 32,
-     "points": 61,
-     "plusMinus": 23,
-     "pim": 42,
-     "team": "Coachella Valley Firebirds"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
     "season": null,
     "last": null,
-    "careerGp": 4,
-    "careerG": 0,
-    "careerP": 0
+    "careerGp": 0
    }
   },
   {
-   "playerId": 8483433,
-   "name": "Jack Devine",
    "team": "FLA",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2003-10-01",
-   "sweater": 38,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "FLA",
-    "round": 7,
-    "overallPick": 221
-   },
    "recalledOn": "2026-11-08",
    "from": "Charlotte",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-12",
    "events": [
     {
      "date": "2026-11-08",
@@ -1716,50 +1708,20 @@
      "club": "Charlotte"
     }
    ],
+   "playerId": null,
+   "name": "Jack Devine",
+   "position": "F",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-11-12",
    "ahl": {
-    "season": {
-     "gamesPlayed": 16,
-     "goals": 10,
-     "assists": 6,
-     "points": 16,
-     "plusMinus": 4,
-     "pim": 10,
-     "team": "Charlotte Checkers"
-    },
-    "last": {
-     "gamesPlayed": 63,
-     "goals": 18,
-     "assists": 25,
-     "points": 43,
-     "plusMinus": 16,
-     "pim": 57,
-     "team": "Charlotte Checkers"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 0,
-     "shots": 2,
-     "team": "Florida Panthers"
-    },
-    "last": {
-     "gamesPlayed": 6,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -3,
-     "pim": 2,
-     "shots": 6,
-     "team": "Florida Panthers"
-    },
-    "careerGp": 7,
-    "careerG": 0,
-    "careerP": 0
+    "season": null,
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -2248,13 +2210,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
+     "gamesPlayed": 4,
      "goals": 1,
      "assists": 0,
      "points": 1,
      "plusMinus": -2,
      "pim": 2,
-     "shots": 9,
+     "shots": 10,
      "team": "Boston Bruins"
     },
     "last": {
@@ -2267,7 +2229,7 @@
      "shots": 109,
      "team": "Boston Bruins"
     },
-    "careerGp": 272,
+    "careerGp": 273,
     "careerG": 34,
     "careerP": 75
    }
@@ -2388,13 +2350,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 4,
+     "gamesPlayed": 4,
+     "goals": 1,
+     "assists": 3,
+     "points": 4,
+     "plusMinus": 2,
+     "pim": 2,
+     "shots": 7,
      "team": "St. Louis Blues"
     },
     "last": {
@@ -2407,9 +2369,9 @@
      "shots": 81,
      "team": "St. Louis Blues"
     },
-    "careerGp": 78,
-    "careerG": 7,
-    "careerP": 19
+    "careerGp": 79,
+    "careerG": 8,
+    "careerP": 22
    }
   },
   {
@@ -2535,13 +2497,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 6,
+     "gamesPlayed": 7,
      "goals": 1,
      "assists": 1,
      "points": 2,
      "plusMinus": 1,
      "pim": 2,
-     "shots": 8,
+     "shots": 9,
      "team": "Winnipeg Jets"
     },
     "last": {
@@ -2554,26 +2516,17 @@
      "shots": 2,
      "team": "Winnipeg Jets"
     },
-    "careerGp": 9,
+    "careerGp": 10,
     "careerG": 1,
     "careerP": 2
    }
   },
   {
-   "playerId": 8486169,
-   "name": "Jake Livanavage",
    "team": "PIT",
-   "position": "D",
-   "shoots": null,
-   "birthDate": "2004-05-06",
-   "sweater": 4,
-   "draft": null,
    "recalledOn": "2026-11-03",
    "from": "minors",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-06",
    "events": [
     {
      "date": "2026-11-03",
@@ -2586,33 +2539,20 @@
      "club": "Wilkes-Barre/Scranton"
     }
    ],
+   "playerId": null,
+   "name": "Jake Livanavage",
+   "position": "D",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-11-06",
    "ahl": {
-    "season": {
-     "gamesPlayed": 12,
-     "goals": 3,
-     "assists": 8,
-     "points": 11,
-     "plusMinus": 0,
-     "pim": 6,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    },
+    "season": null,
     "last": null
    },
    "nhl": {
     "season": null,
-    "last": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -2,
-     "pim": 0,
-     "shots": 0,
-     "team": "Pittsburgh Penguins"
-    },
-    "careerGp": 1,
-    "careerG": 0,
-    "careerP": 0
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -2736,7 +2676,7 @@
      "goals": 1,
      "assists": 2,
      "points": 3,
-     "plusMinus": -2,
+     "plusMinus": -1,
      "pim": 7,
      "team": "Colorado Eagles"
     },
@@ -3157,12 +3097,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 3,
-     "pim": 4,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 6,
      "team": "Hamilton Hammers"
     },
     "last": {
@@ -4166,13 +4106,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": 0,
+     "plusMinus": -1,
      "pim": 0,
-     "shots": 7,
+     "shots": 8,
      "team": "Toronto Maple Leafs"
     },
     "last": {
@@ -4185,7 +4125,7 @@
      "shots": 52,
      "team": "Toronto Maple Leafs"
     },
-    "careerGp": 303,
+    "careerGp": 304,
     "careerG": 50,
     "careerP": 97
    }
@@ -4224,11 +4164,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 18,
-     "goals": 0,
+     "gamesPlayed": 19,
+     "goals": 1,
      "assists": 5,
-     "points": 5,
-     "plusMinus": -8,
+     "points": 6,
+     "plusMinus": -9,
      "pim": 43,
      "team": "Hamilton Hammers"
     },
@@ -4276,11 +4216,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 18,
-     "goals": 7,
-     "assists": 8,
-     "points": 15,
-     "plusMinus": -2,
+     "gamesPlayed": 19,
+     "goals": 8,
+     "assists": 9,
+     "points": 17,
+     "plusMinus": -3,
      "pim": 10,
      "team": "Hamilton Hammers"
     },
@@ -4406,13 +4346,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 20,
+     "gamesPlayed": 21,
      "goals": 2,
      "assists": 1,
      "points": 3,
      "plusMinus": -3,
      "pim": 4,
-     "shots": 21,
+     "shots": 22,
      "team": "Dallas Stars"
     },
     "last": {
@@ -5286,11 +5226,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 13,
-     "goals": 2,
+     "gamesPlayed": 14,
+     "goals": 3,
      "assists": 3,
-     "points": 5,
-     "plusMinus": -9,
+     "points": 6,
+     "plusMinus": -8,
      "pim": 6,
      "team": "Chicago Wolves"
     },
@@ -5364,11 +5304,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 11,
      "assists": 5,
      "points": 16,
-     "plusMinus": 3,
+     "plusMinus": 4,
      "pim": 6,
      "team": "Calgary Wranglers"
     },
@@ -5676,13 +5616,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 13,
+     "gamesPlayed": 14,
      "goals": 0,
      "assists": 0,
      "points": 0,
      "plusMinus": -4,
      "pim": 0,
-     "shots": 6,
+     "shots": 7,
      "team": "Florida Panthers"
     },
     "last": {
@@ -5695,7 +5635,7 @@
      "shots": 25,
      "team": "Florida Panthers"
     },
-    "careerGp": 91,
+    "careerGp": 92,
     "careerG": 6,
     "careerP": 15
    }
@@ -5754,19 +5694,19 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 4,
-     "assists": 0,
-     "points": 4,
-     "plusMinus": -5,
-     "pim": 0,
-     "shots": 18,
+     "assists": 1,
+     "points": 5,
+     "plusMinus": -3,
+     "pim": 2,
+     "shots": 19,
      "team": "Philadelphia Flyers"
     },
     "last": null,
-    "careerGp": 10,
+    "careerGp": 11,
     "careerG": 4,
-    "careerP": 4
+    "careerP": 5
    }
   },
   {
@@ -5813,13 +5753,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 2,
      "assists": 1,
      "points": 3,
-     "plusMinus": -2,
+     "plusMinus": -1,
      "pim": 14,
-     "shots": 10,
+     "shots": 12,
      "team": "New York Islanders"
     },
     "last": {
@@ -5832,7 +5772,7 @@
      "shots": 9,
      "team": "Tampa Bay Lightning"
     },
-    "careerGp": 120,
+    "careerGp": 121,
     "careerG": 18,
     "careerP": 29
    }
@@ -6447,11 +6387,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 14,
-     "goals": 1,
+     "gamesPlayed": 15,
+     "goals": 2,
      "assists": 5,
-     "points": 6,
-     "plusMinus": 0,
+     "points": 7,
+     "plusMinus": -1,
      "pim": 12,
      "team": "Coachella Valley Firebirds"
     },
@@ -6655,11 +6595,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
+     "gamesPlayed": 13,
      "goals": 2,
-     "assists": 6,
-     "points": 8,
-     "plusMinus": -6,
+     "assists": 8,
+     "points": 10,
+     "plusMinus": -4,
      "pim": 8,
      "team": "Chicago Wolves"
     },
@@ -7058,17 +6998,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 16,
+     "gamesPlayed": 17,
      "goals": 2,
      "assists": 1,
      "points": 3,
-     "plusMinus": -6,
+     "plusMinus": -7,
      "pim": 15,
-     "shots": 20,
+     "shots": 21,
      "team": "Anaheim Ducks"
     },
     "last": null,
-    "careerGp": 16,
+    "careerGp": 17,
     "careerG": 2,
     "careerP": 3
    }
@@ -7416,13 +7356,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 16,
+     "gamesPlayed": 17,
      "goals": 1,
      "assists": 6,
      "points": 7,
      "plusMinus": -10,
      "pim": 6,
-     "shots": 17,
+     "shots": 20,
      "team": "Philadelphia Flyers"
     },
     "last": {
@@ -7435,7 +7375,7 @@
      "shots": 1,
      "team": "Philadelphia Flyers"
     },
-    "careerGp": 17,
+    "careerGp": 18,
     "careerG": 2,
     "careerP": 9
    }
@@ -7656,13 +7596,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 13,
+     "gamesPlayed": 14,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": 7,
+     "plusMinus": 8,
      "pim": 0,
-     "shots": 12,
+     "shots": 15,
      "team": "Minnesota Wild"
     },
     "last": {
@@ -7675,7 +7615,7 @@
      "shots": 4,
      "team": "Minnesota Wild"
     },
-    "careerGp": 58,
+    "careerGp": 59,
     "careerG": 2,
     "careerP": 9
    }
@@ -7729,25 +7669,11 @@
    }
   },
   {
-   "playerId": 8476952,
-   "name": "Dominic Toninato",
    "team": "CHI",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1994-03-09",
-   "sweater": 25,
-   "draft": {
-    "year": 2012,
-    "teamAbbrev": "TOR",
-    "round": 5,
-    "overallPick": 126
-   },
    "recalledOn": "2026-10-07",
    "from": "Rockford",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-18",
    "events": [
     {
      "date": "2026-10-07",
@@ -7760,50 +7686,20 @@
      "club": "Rockford"
     }
    ],
+   "playerId": null,
+   "name": "Dominic Toninato",
+   "position": "C",
+   "noProfile": true,
+   "status": "down",
+   "sentDownOn": "2026-10-18",
    "ahl": {
-    "season": {
-     "gamesPlayed": 12,
-     "goals": 4,
-     "assists": 6,
-     "points": 10,
-     "plusMinus": -9,
-     "pim": 8,
-     "team": "Rockford IceHogs"
-    },
-    "last": {
-     "gamesPlayed": 52,
-     "goals": 16,
-     "assists": 27,
-     "points": 43,
-     "plusMinus": -8,
-     "pim": 57,
-     "team": "Rockford IceHogs"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -3,
-     "pim": 0,
-     "shots": 1,
-     "team": "Chicago Blackhawks"
-    },
-    "last": {
-     "gamesPlayed": 8,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 0,
-     "pim": 6,
-     "shots": 8,
-     "team": "Chicago Blackhawks"
-    },
-    "careerGp": 200,
-    "careerG": 13,
-    "careerP": 36
+    "season": null,
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -7847,19 +7743,19 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 18,
-     "goals": 0,
+     "gamesPlayed": 19,
+     "goals": 2,
      "assists": 3,
-     "points": 3,
-     "plusMinus": -4,
+     "points": 5,
+     "plusMinus": -3,
      "pim": 14,
-     "shots": 13,
+     "shots": 16,
      "team": "Calgary Flames"
     },
     "last": null,
-    "careerGp": 18,
-    "careerG": 0,
-    "careerP": 3
+    "careerGp": 19,
+    "careerG": 2,
+    "careerP": 5
    }
   },
   {
@@ -7911,13 +7807,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 18,
+     "gamesPlayed": 19,
      "goals": 4,
-     "assists": 2,
-     "points": 6,
-     "plusMinus": -6,
+     "assists": 3,
+     "points": 7,
+     "plusMinus": -5,
      "pim": 6,
-     "shots": 26,
+     "shots": 29,
      "team": "Calgary Flames"
     },
     "last": {
@@ -7930,9 +7826,9 @@
      "shots": 9,
      "team": "Calgary Flames"
     },
-    "careerGp": 25,
+    "careerGp": 26,
     "careerG": 4,
-    "careerP": 7
+    "careerP": 8
    }
   },
   {
@@ -8367,13 +8263,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 20,
+     "gamesPlayed": 21,
      "goals": 5,
      "assists": 2,
      "points": 7,
-     "plusMinus": 0,
+     "plusMinus": -1,
      "pim": 9,
-     "shots": 39,
+     "shots": 40,
      "team": "Dallas Stars"
     },
     "last": {
@@ -8424,11 +8320,11 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 0,
      "assists": 1,
      "points": 1,
-     "plusMinus": -5,
+     "plusMinus": -6,
      "pim": 2,
      "shots": 16,
      "team": "Dallas Stars"
@@ -8489,17 +8385,17 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 21,
+     "gamesPlayed": 22,
      "goals": 0,
      "assists": 6,
      "points": 6,
-     "plusMinus": -2,
+     "plusMinus": -3,
      "pim": 19,
-     "shots": 14,
+     "shots": 15,
      "team": "Anaheim Ducks"
     },
     "last": null,
-    "careerGp": 21,
+    "careerGp": 22,
     "careerG": 0,
     "careerP": 6
    }
@@ -8545,13 +8441,13 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 21,
+     "gamesPlayed": 22,
      "goals": 4,
      "assists": 10,
      "points": 14,
-     "plusMinus": 3,
+     "plusMinus": 1,
      "pim": 2,
-     "shots": 30,
+     "shots": 31,
      "team": "Anaheim Ducks"
     },
     "last": {
@@ -8564,7 +8460,7 @@
      "shots": 2,
      "team": "Anaheim Ducks"
     },
-    "careerGp": 35,
+    "careerGp": 36,
     "careerG": 6,
     "careerP": 18
    }
