@@ -1,13 +1,276 @@
 {
  "_meta": {
-  "generated": "2026-11-19 12:04",
+  "generated": "2026-11-19 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 126,
-  "up": 61,
+  "count": 129,
+  "up": 63,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8475752,
+   "name": "Tyler Pitlick",
+   "team": "MIN",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "1991-11-01",
+   "sweater": 19,
+   "draft": {
+    "year": 2010,
+    "teamAbbrev": "EDM",
+    "round": 2,
+    "overallPick": 31
+   },
+   "recalledOn": "2026-11-19",
+   "from": "Iowa",
+   "fromLeague": "AHL",
+   "timesRecalled": 3,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-07",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-09",
+     "type": "down",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-10-12",
+     "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "up",
+     "club": "Iowa"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": 3,
+     "pim": 6,
+     "team": "Iowa Wild"
+    },
+    "last": {
+     "gamesPlayed": 20,
+     "goals": 10,
+     "assists": 5,
+     "points": 15,
+     "plusMinus": -6,
+     "pim": 0,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 4,
+     "shots": 11,
+     "team": "Minnesota Wild"
+    },
+    "last": {
+     "gamesPlayed": 32,
+     "goals": 2,
+     "assists": 0,
+     "points": 2,
+     "plusMinus": -4,
+     "pim": 24,
+     "shots": 26,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 464,
+    "careerG": 58,
+    "careerP": 111
+   }
+  },
+  {
+   "playerId": 8484859,
+   "name": "Stian Solberg",
+   "team": "ANA",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2005-12-29",
+   "sweater": 50,
+   "draft": {
+    "year": 2024,
+    "teamAbbrev": "ANA",
+    "round": 1,
+    "overallPick": 23
+   },
+   "recalledOn": "2026-11-19",
+   "from": "San Diego",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-19",
+     "type": "up",
+     "club": "San Diego"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 17,
+     "goals": 3,
+     "assists": 8,
+     "points": 11,
+     "plusMinus": 10,
+     "pim": 14,
+     "team": "San Diego Gulls"
+    },
+    "last": {
+     "gamesPlayed": 71,
+     "goals": 12,
+     "assists": 12,
+     "points": 24,
+     "plusMinus": -16,
+     "pim": 102,
+     "team": "San Diego Gulls"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8478424,
+   "name": "Jansen Harkins",
+   "team": "TBL",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1997-05-23",
+   "sweater": 10,
+   "draft": {
+    "year": 2015,
+    "teamAbbrev": "WPG",
+    "round": 2,
+    "overallPick": 47
+   },
+   "recalledOn": "2026-11-19",
+   "from": "Syracuse",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-19",
+     "type": "up",
+     "club": "Syracuse"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 11,
+     "goals": 3,
+     "assists": 3,
+     "points": 6,
+     "plusMinus": -3,
+     "pim": 4,
+     "team": "Syracuse Crunch"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 1,
+     "team": "Tampa Bay Lightning"
+    },
+    "last": {
+     "gamesPlayed": 44,
+     "goals": 3,
+     "assists": 5,
+     "points": 8,
+     "plusMinus": -6,
+     "pim": 28,
+     "shots": 37,
+     "team": "Anaheim Ducks"
+    },
+    "careerGp": 306,
+    "careerG": 18,
+    "careerP": 45
+   }
+  },
+  {
+   "playerId": 8481550,
+   "name": "Adam Beckman",
+   "team": "COL",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2001-05-10",
+   "sweater": 34,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "MIN",
+    "round": 3,
+    "overallPick": 75
+   },
+   "recalledOn": "2026-11-19",
+   "from": "Colorado",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-19",
+     "type": "up",
+     "club": "Colorado"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 19,
+     "goals": 8,
+     "assists": 6,
+     "points": 14,
+     "plusMinus": 5,
+     "pim": 6,
+     "team": "Colorado Eagles"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 30,
+     "assists": 21,
+     "points": 51,
+     "plusMinus": 3,
+     "pim": 36,
+     "team": "Bridgeport Islanders"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 23,
+    "careerG": 0,
+    "careerP": 3
+   }
+  },
   {
    "playerId": 8483526,
    "name": "Danil Zhilkin",
@@ -578,11 +841,6 @@
    "sentDownOn": null,
    "events": [
     {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Utica"
-    },
-    {
      "date": "2026-11-13",
      "type": "up",
      "club": "Utica"
@@ -638,11 +896,6 @@
    "status": "up",
    "sentDownOn": null,
    "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Texas"
-    },
     {
      "date": "2026-11-13",
      "type": "up",
@@ -997,11 +1250,6 @@
    "status": "up",
    "sentDownOn": null,
    "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Texas"
-    },
     {
      "date": "2026-10-29",
      "type": "up",
@@ -2842,11 +3090,6 @@
    "sentDownOn": "2026-11-08",
    "events": [
     {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Grand Rapids"
-    },
-    {
      "date": "2026-11-01",
      "type": "up",
      "club": "Grand Rapids"
@@ -3822,11 +4065,6 @@
    "sentDownOn": null,
    "events": [
     {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Grand Rapids"
-    },
-    {
      "date": "2026-10-29",
      "type": "up",
      "club": "Grand Rapids"
@@ -4283,11 +4521,6 @@
    "sentDownOn": "2026-10-30",
    "events": [
     {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Texas"
-    },
-    {
      "date": "2026-10-25",
      "type": "up",
      "club": "Texas"
@@ -4398,6 +4631,84 @@
    }
   },
   {
+   "playerId": 8483497,
+   "name": "Jani Nyman",
+   "team": "SEA",
+   "position": "R",
+   "shoots": "L",
+   "birthDate": "2004-07-30",
+   "sweater": 38,
+   "draft": {
+    "year": 2022,
+    "teamAbbrev": "SEA",
+    "round": 2,
+    "overallPick": 49
+   },
+   "recalledOn": "2026-10-24",
+   "from": "Coachella Valley",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-19",
+   "events": [
+    {
+     "date": "2026-10-24",
+     "type": "up",
+     "club": "Coachella Valley"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "down",
+     "club": "Coachella Valley"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 9,
+     "assists": 2,
+     "points": 11,
+     "plusMinus": 3,
+     "pim": 12,
+     "team": "Coachella Valley Firebirds"
+    },
+    "last": {
+     "gamesPlayed": 39,
+     "goals": 21,
+     "assists": 12,
+     "points": 33,
+     "plusMinus": 19,
+     "pim": 33,
+     "team": "Coachella Valley Firebirds"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 5,
+     "team": "Seattle Kraken"
+    },
+    "last": {
+     "gamesPlayed": 28,
+     "goals": 4,
+     "assists": 3,
+     "points": 7,
+     "plusMinus": -5,
+     "pim": 6,
+     "shots": 33,
+     "team": "Seattle Kraken"
+    },
+    "careerGp": 44,
+    "careerG": 7,
+    "careerP": 13
+   }
+  },
+  {
    "playerId": 8482993,
    "name": "Avery Hayes",
    "team": "PIT",
@@ -4473,79 +4784,6 @@
     "careerGp": 17,
     "careerG": 5,
     "careerP": 5
-   }
-  },
-  {
-   "playerId": 8483497,
-   "name": "Jani Nyman",
-   "team": "SEA",
-   "position": "R",
-   "shoots": "L",
-   "birthDate": "2004-07-30",
-   "sweater": 38,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "SEA",
-    "round": 2,
-    "overallPick": 49
-   },
-   "recalledOn": "2026-10-24",
-   "from": "Coachella Valley",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-24",
-     "type": "up",
-     "club": "Coachella Valley"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "goals": 9,
-     "assists": 2,
-     "points": 11,
-     "plusMinus": 3,
-     "pim": 12,
-     "team": "Coachella Valley Firebirds"
-    },
-    "last": {
-     "gamesPlayed": 39,
-     "goals": 21,
-     "assists": 12,
-     "points": 33,
-     "plusMinus": 19,
-     "pim": 33,
-     "team": "Coachella Valley Firebirds"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 5,
-     "team": "Seattle Kraken"
-    },
-    "last": {
-     "gamesPlayed": 28,
-     "goals": 4,
-     "assists": 3,
-     "points": 7,
-     "plusMinus": -5,
-     "pim": 6,
-     "shots": 33,
-     "team": "Seattle Kraken"
-    },
-    "careerGp": 44,
-    "careerG": 7,
-    "careerP": 13
    }
   },
   {
@@ -7098,89 +7336,6 @@
     "careerGp": 0,
     "careerG": null,
     "careerP": null
-   }
-  },
-  {
-   "playerId": 8475752,
-   "name": "Tyler Pitlick",
-   "team": "MIN",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "1991-11-01",
-   "sweater": 19,
-   "draft": {
-    "year": 2010,
-    "teamAbbrev": "EDM",
-    "round": 2,
-    "overallPick": 31
-   },
-   "recalledOn": "2026-10-12",
-   "from": "Iowa",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-10-07",
-     "type": "up",
-     "club": "Iowa"
-    },
-    {
-     "date": "2026-10-09",
-     "type": "down",
-     "club": "Iowa"
-    },
-    {
-     "date": "2026-10-12",
-     "type": "up",
-     "club": "Iowa"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 6,
-     "goals": 1,
-     "assists": 2,
-     "points": 3,
-     "plusMinus": 3,
-     "pim": 6,
-     "team": "Iowa Wild"
-    },
-    "last": {
-     "gamesPlayed": 20,
-     "goals": 10,
-     "assists": 5,
-     "points": 15,
-     "plusMinus": -6,
-     "pim": 0,
-     "team": "Iowa Wild"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 12,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 4,
-     "shots": 11,
-     "team": "Minnesota Wild"
-    },
-    "last": {
-     "gamesPlayed": 32,
-     "goals": 2,
-     "assists": 0,
-     "points": 2,
-     "plusMinus": -4,
-     "pim": 24,
-     "shots": 26,
-     "team": "Minnesota Wild"
-    },
-    "careerGp": 464,
-    "careerG": 58,
-    "careerP": 111
    }
   },
   {
