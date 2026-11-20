@@ -1,13 +1,146 @@
 {
  "_meta": {
-  "generated": "2026-11-20 12:38",
+  "generated": "2026-11-20 17:36",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 129,
-  "up": 62,
+  "count": 130,
+  "up": 63,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482141,
+   "name": "Lukas Cormier",
+   "team": "VGK",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2002-03-27",
+   "sweater": 51,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "VGK",
+    "round": 3,
+    "overallPick": 68
+   },
+   "recalledOn": "2026-11-20",
+   "from": "Henderson",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-20",
+     "type": "up",
+     "club": "Henderson"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 10,
+     "goals": 4,
+     "assists": 5,
+     "points": 9,
+     "plusMinus": 7,
+     "pim": 4,
+     "team": "Henderson Silver Knights"
+    },
+    "last": {
+     "gamesPlayed": 49,
+     "goals": 8,
+     "assists": 39,
+     "points": 47,
+     "plusMinus": 2,
+     "pim": 32,
+     "team": "Henderson Silver Knights"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 2,
+    "careerG": 0,
+    "careerP": 1
+   }
+  },
+  {
+   "playerId": 8482993,
+   "name": "Avery Hayes",
+   "team": "PIT",
+   "position": "R",
+   "shoots": "R",
+   "birthDate": "2002-10-10",
+   "sweater": 85,
+   "draft": null,
+   "recalledOn": "2026-11-20",
+   "from": "Wilkes-Barre/Scranton",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-24",
+     "type": "up",
+     "club": "Wilkes-Barre/Scranton"
+    },
+    {
+     "date": "2026-10-28",
+     "type": "down",
+     "club": "Wilkes-Barre/Scranton"
+    },
+    {
+     "date": "2026-11-20",
+     "type": "up",
+     "club": "Wilkes-Barre/Scranton"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 15,
+     "goals": 9,
+     "assists": 7,
+     "points": 16,
+     "plusMinus": 9,
+     "pim": 7,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    },
+    "last": {
+     "gamesPlayed": 42,
+     "goals": 24,
+     "assists": 15,
+     "points": 39,
+     "plusMinus": 10,
+     "pim": 48,
+     "team": "Wilkes-Barre/Scranton Penguins"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 5,
+     "team": "Pittsburgh Penguins"
+    },
+    "last": {
+     "gamesPlayed": 16,
+     "goals": 5,
+     "assists": 0,
+     "points": 5,
+     "plusMinus": -4,
+     "pim": 12,
+     "shots": 25,
+     "team": "Pittsburgh Penguins"
+    },
+    "careerGp": 17,
+    "careerG": 5,
+    "careerP": 5
+   }
+  },
   {
    "playerId": 8475752,
    "name": "Tyler Pitlick",
@@ -26,8 +159,8 @@
    "from": "Iowa",
    "fromLeague": "AHL",
    "timesRecalled": 3,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-11-20",
    "events": [
     {
      "date": "2026-10-07",
@@ -47,6 +180,11 @@
     {
      "date": "2026-11-19",
      "type": "up",
+     "club": "Iowa"
+    },
+    {
+     "date": "2026-11-20",
+     "type": "down",
      "club": "Iowa"
     }
    ],
@@ -114,7 +252,7 @@
    "from": "San Diego",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -672,6 +810,72 @@
    }
   },
   {
+   "playerId": 8484987,
+   "name": "Anton Silaev",
+   "team": "NJD",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2006-04-11",
+   "sweater": 52,
+   "draft": {
+    "year": 2024,
+    "teamAbbrev": "NJD",
+    "round": 1,
+    "overallPick": 10
+   },
+   "recalledOn": "2026-11-13",
+   "from": "Utica",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-20",
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Utica"
+    },
+    {
+     "date": "2026-11-13",
+     "type": "up",
+     "club": "Utica"
+    },
+    {
+     "date": "2026-11-20",
+     "type": "down",
+     "club": "Utica"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 0,
+     "assists": 4,
+     "points": 4,
+     "plusMinus": 8,
+     "pim": 2,
+     "team": "Utica Comets"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 2,
+     "team": "New Jersey Devils"
+    },
+    "last": null,
+    "careerGp": 1,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "playerId": 8481567,
    "name": "Henry Thrun",
    "team": "WPG",
@@ -835,67 +1039,6 @@
     "careerGp": 64,
     "careerG": 6,
     "careerP": 14
-   }
-  },
-  {
-   "playerId": 8484987,
-   "name": "Anton Silaev",
-   "team": "NJD",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "2006-04-11",
-   "sweater": 52,
-   "draft": {
-    "year": 2024,
-    "teamAbbrev": "NJD",
-    "round": 1,
-    "overallPick": 10
-   },
-   "recalledOn": "2026-11-13",
-   "from": "Utica",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Utica"
-    },
-    {
-     "date": "2026-11-13",
-     "type": "up",
-     "club": "Utica"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 12,
-     "goals": 0,
-     "assists": 4,
-     "points": 4,
-     "plusMinus": 8,
-     "pim": 2,
-     "team": "Utica Comets"
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 2,
-     "team": "New Jersey Devils"
-    },
-    "last": null,
-    "careerGp": 1,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -4801,84 +4944,6 @@
    }
   },
   {
-   "playerId": 8482993,
-   "name": "Avery Hayes",
-   "team": "PIT",
-   "position": "R",
-   "shoots": "R",
-   "birthDate": "2002-10-10",
-   "sweater": 85,
-   "draft": null,
-   "recalledOn": "2026-10-24",
-   "from": "Wilkes-Barre/Scranton",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-28",
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Wilkes-Barre/Scranton"
-    },
-    {
-     "date": "2026-10-24",
-     "type": "up",
-     "club": "Wilkes-Barre/Scranton"
-    },
-    {
-     "date": "2026-10-28",
-     "type": "down",
-     "club": "Wilkes-Barre/Scranton"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 15,
-     "goals": 9,
-     "assists": 7,
-     "points": 16,
-     "plusMinus": 9,
-     "pim": 7,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    },
-    "last": {
-     "gamesPlayed": 42,
-     "goals": 24,
-     "assists": 15,
-     "points": 39,
-     "plusMinus": 10,
-     "pim": 48,
-     "team": "Wilkes-Barre/Scranton Penguins"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 5,
-     "team": "Pittsburgh Penguins"
-    },
-    "last": {
-     "gamesPlayed": 16,
-     "goals": 5,
-     "assists": 0,
-     "points": 5,
-     "plusMinus": -4,
-     "pim": 12,
-     "shots": 25,
-     "team": "Pittsburgh Penguins"
-    },
-    "careerGp": 17,
-    "careerG": 5,
-    "careerP": 5
-   }
-  },
-  {
    "playerId": 8483510,
    "name": "Elias Salomonsson",
    "team": "WPG",
@@ -7361,7 +7426,7 @@
      "points": 3,
      "plusMinus": -7,
      "pim": 15,
-     "shots": 22,
+     "shots": 23,
      "team": "Anaheim Ducks"
     },
     "last": null,
