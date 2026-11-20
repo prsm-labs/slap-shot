@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-20 07:38",
+  "generated": "2026-11-20 12:06",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 129,
-  "up": 63,
+  "up": 62,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -243,7 +243,7 @@
    "from": "Colorado",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -380,7 +380,7 @@
    "from": "Belleville",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -1820,7 +1820,7 @@
    "from": "Colorado",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -2890,11 +2890,25 @@
    }
   },
   {
+   "playerId": 8478104,
+   "name": "Sammy Blais",
    "team": "OTT",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "1996-06-17",
+   "sweater": 79,
+   "draft": {
+    "year": 2014,
+    "teamAbbrev": "STL",
+    "round": 6,
+    "overallPick": 176
+   },
    "recalledOn": "2026-11-03",
    "from": "minors",
    "fromLeague": "AHL",
    "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
    "events": [
     {
      "date": "2026-11-03",
@@ -2902,20 +2916,50 @@
      "club": "minors"
     }
    ],
-   "playerId": null,
-   "name": "Samuel Blais",
-   "position": "F",
-   "noProfile": true,
-   "status": "up",
-   "sentDownOn": null,
    "ahl": {
-    "season": null,
-    "last": null
+    "season": {
+     "gamesPlayed": 9,
+     "goals": 3,
+     "assists": 4,
+     "points": 7,
+     "plusMinus": -5,
+     "pim": 30,
+     "team": "Belleville Senators"
+    },
+    "last": {
+     "gamesPlayed": 35,
+     "goals": 14,
+     "assists": 24,
+     "points": 38,
+     "plusMinus": 0,
+     "pim": 62,
+     "team": "Laval Rocket"
+    }
    },
    "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0
+    "season": {
+     "gamesPlayed": 6,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 2,
+     "shots": 6,
+     "team": "Ottawa Senators"
+    },
+    "last": {
+     "gamesPlayed": 21,
+     "goals": 3,
+     "assists": 5,
+     "points": 8,
+     "plusMinus": 2,
+     "pim": 10,
+     "shots": 18,
+     "team": "Toronto Maple Leafs / Montr\u00e9al Canadiens"
+    },
+    "careerGp": 284,
+    "careerG": 30,
+    "careerP": 79
    }
   },
   {
