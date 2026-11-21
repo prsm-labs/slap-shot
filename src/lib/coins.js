@@ -229,3 +229,28 @@ export const toggleSlip = (t) => setSlip((cur) => (cur.some((x) => betKey(x) ===
 // Gambly text ("Name (TEAM) — Anytime Goal Scorer" like the app's other Gambly buttons)
 const GAMBLY_WORD = { G: "Goals", PTS: "Points", A: "Assists", SOG: "Shots on Goal" };
 export const gamblyLeg = (l) => `${l.name}${l.team ? ` (${l.team})` : ""} — ${l.stat === "G" && l.line === 1 ? "Anytime Goal Scorer" : `${l.line}+ ${GAMBLY_WORD[l.stat]}`}`;
+
+// ---- 🔁 Reuse (2026-11-21, user: re-add a placed slip's selection to a new slip) --------------------------------------
+// Each leg is rebuilt on the current slate: same player, stat and line, priced at the current chance. A line we no longer
+// price moves to his nearest priced line; a player with no open game is left out. find(leg) -> { ladder, make(T, ch) } | null.
+export function reuseLegs(b, find) {
+  const out = { tickets: [], moved: [], missing: [] }
+  for (const l of b.type === 'parlay' ? b.legs : [b]) {
+    const r = find(l)
+    if (!r || !r.ladder.length) { out.missing.push(l.name); continue }
+    const exact = r.ladder.find(([T]) => T === l.line)
+    const [T, ch] = exact || r.ladder.reduce((a, x) => (Math.abs(x[0] - l.line) < Math.abs(a[0] - l.line) ? x : a))
+    const t = r.make(T, ch)
+    if (!t) { out.missing.push(l.name); continue }
+    if (!exact) out.moved.push(`${l.name} ${l.line}+ to ${T}+`)
+    out.tickets.push(t)
+  }
+  return out
+}
+export function reuseNote(r, replaced, when = 'tonight') {
+  const n = r.tickets.length
+  return [`🔁 ${n} pick${n === 1 ? '' : 's'} on a new slip at ${when}'s chances.`,
+    r.moved.length ? `Line moved (no longer priced): ${r.moved.join(', ')}.` : '',
+    r.missing.length ? `No open game ${when}: ${r.missing.join(', ')}.` : '',
+    replaced ? `Replaced the ${replaced} pick${replaced === 1 ? '' : 's'} that were on your slip.` : ''].filter(Boolean).join(' ')
+}

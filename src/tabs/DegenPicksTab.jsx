@@ -3,7 +3,7 @@ import { useScoredPool } from "../lib/data.js";
 import { inScope, useMatchup } from "../lib/matchupFilter.js";
 import {
   START, STAKES, STATS, STAT_LABEL, SHORT, betKey, cancelBet, clampChance, gamblyLeg, gameOf, isOpenPick, laddersOf, parlayChance, parlayPayout,
-  parlayProblem, payoutFor, placeBet, placeParlay, resetCoins, setSlip, summarize, ticket, useCoins, useLineBoard, useSlip,
+  parlayProblem, payoutFor, placeBet, placeParlay, resetCoins, reuseLegs, reuseNote, setSlip, summarize, ticket, useCoins, useLineBoard, useSlip,
 } from "../lib/coins.js";
 import { betText } from "../lib/gambly.js";
 import ViewPicker from "../components/ViewPicker.jsx";
@@ -91,10 +91,9 @@ function Board({ pool, board, slip }) {
   );
 }
 
-function Slip({ slip }) {
+function Slip({ slip, mode, setMode, notice }) {
   const coins = useCoins();
   const [stake, setStake] = useState(25);
-  const [mode, setMode] = useState("single");
   const [msg, setMsg] = useState(null);
   if (!slip.length) return null;
   const parlay = mode === "parlay" && slip.length > 1;
@@ -114,6 +113,7 @@ function Slip({ slip }) {
   return (
     <div className="dp-slip">
       <div className="dp-slip-head"><b>🧾 Slip · {slip.length}</b><span className="coin-bal">{fmt(coins.balance)} coins</span><button type="button" className="dp-link" onClick={() => setSlip([])}>clear</button></div>
+      {notice && <div className="dp-small dp-notice">{notice}</div>}
       {slip.length > 1 && (
         <div className="dp-mode">
           <button type="button" className={`pill-btn ${!parlay ? "active" : ""}`} onClick={() => setMode("single")}>Singles</button>
@@ -146,7 +146,18 @@ function Slip({ slip }) {
 
 const legMark = (l) => (l.status === "won" ? "✅" : l.status === "lost" ? "❌" : l.status === "void" ? "➖" : "⏳");
 const stamp = (b) => (b.status === "open" ? (isOpenPick(b.tip) ? `drops ${tipLabel(b.tip)}` : "in play") : b.status === "void" ? "void" : b.status === "won" ? "hit" : "miss");
-function SlipCard({ b }) {
+// 🔁 Reuse (2026-11-21, user): put this slip's picks back on a new slip at the current chances.
+function ReuseBtn({ b, reuse }) {
+  if (!reuse) return null;
+  const n = reuse.count(b), all = b.type === "parlay" ? b.legs.length : 1;
+  return (
+    <button type="button" className="dp-reuse" disabled={!n} onClick={() => reuse.go(b)}
+      title={n ? `Add ${n === all ? (all === 1 ? "this pick" : "these legs") : `${n} of ${all} legs`} to a new slip at the current chances` : reuse.why}>
+      🔁 Reuse{n && n < all ? ` ${n}/${all}` : ""}
+    </button>
+  );
+}
+function SlipCard({ b, reuse }) {
   const open = b.status === "open";
   const delta = b.status === "won" ? b.payout - b.stake : b.status === "lost" ? -b.stake : 0;
   const par = b.type === "parlay";
@@ -173,6 +184,7 @@ function SlipCard({ b }) {
           : <span className="dp-muted dp-small">{par ? "settles leg by leg" : "settles at the final"}</span>)
           : b.status === "void" ? <span className="dp-muted dp-small">{par ? "no legs played" : "scratched"} · coins back</span>
           : <><span className="dp-small">{par ? (b.status === "won" ? "Every leg hit" : "A leg missed") : `Finished with ${b.actual}`}</span><b className={delta >= 0 ? "coin-good" : "coin-bad"}>{signed(delta)}</b></>}
+        <ReuseBtn b={b} reuse={reuse} />
       </div>
     </div>
   );
@@ -196,7 +208,7 @@ function BalanceLine({ coins }) {
   );
 }
 
-function Record({ coins }) {
+function Record({ coins, reuse }) {
   const [confirm, setConfirm] = useState(false);
   const s = summarize(coins);
   const start = coins.start || START;
@@ -216,7 +228,7 @@ function Record({ coins }) {
           {byStat.length > 1 && <div className="dp-bystat">{byStat.map(([k, n, w, said]) => <span key={k}><b>{SHORT[k]}</b> {w}/{n} <span className="dp-muted">said {said.toFixed(1)}</span></span>)}</div>}
         </div>
       ) : <div className="dp-muted dp-small">After 5 settled picks this shows how you're doing against our chances.</div>}
-      <div className="card"><b>Settled</b>{settled.length ? <div className="dp-tickets">{settled.map((b) => <SlipCard key={b.id} b={b} />)}</div> : <div className="dp-muted dp-small">Nothing settled yet.</div>}</div>
+      <div className="card"><b>Settled</b>{settled.length ? <div className="dp-tickets">{settled.map((b) => <SlipCard key={b.id} b={b} reuse={reuse} />)}</div> : <div className="dp-muted dp-small">Nothing settled yet.</div>}</div>
       <div className="card dp-reset">
         <span className="dp-small">Run #{coins.run || 1} · started {dayLabel(coins.startedAt.slice(0, 10))} with {fmt(start)} coins</span>
         <button type="button" className={`pill-btn ${confirm ? "active" : ""}`} onClick={reset}>{confirm ? `Tap again: back to ${fmt(start)}, all slips cleared` : "↺ Reset coins"}</button>
@@ -234,6 +246,31 @@ export default function DegenPicksTab() {
   const [view, setView] = useState("pick");
   const open = coins.bets.filter((b) => b.status === "open").sort((a, b) => (a.tip || "").localeCompare(b.tip || ""));
   const tonight = pool && !pool.meta?.past;
+  const [mode, setMode] = useState("single");
+  const [notice, setNotice] = useState(null);
+  // 🔁 Reuse (2026-11-21, user): any placed slip (open or settled) back on a NEW slip -- same players / stats / lines, priced now.
+  const find = (l) => {
+    if (!tonight || !board) return null;
+    const p = (pool.players || []).find((x) => x.playerId === l.playerId);
+    if (!p || p.lineupStatus === "out" || p.lineupStatus === "scratched") return null;
+    const g = gameOf(pool.meta, p.team);
+    if (!g || !isOpenPick(g.startTimeUTC)) return null;
+    return { ladder: (laddersOf(p, board)[l.stat] || []).filter(([, ch]) => ch >= 0.02 && ch <= 0.97), make: (T, ch) => ticket(pool, p, l.stat, T, ch) };
+  };
+  const reuse = {
+    why: "No open game tonight for these players",
+    count: (b) => reuseLegs(b, find).tickets.length,
+    go: (b) => {
+      const r = reuseLegs(b, find);
+      if (!r.tickets.length) return;
+      const replaced = slip.length;
+      setSlip(r.tickets);
+      setMode(b.type === "parlay" && r.tickets.length > 1 ? "parlay" : "single");
+      setNotice(reuseNote(r, replaced, "tonight"));
+      setTimeout(() => setNotice(null), 8000);
+      setView("pick");
+    },
+  };
   return (
     <div className="coins-page">
       <div className="section-header">
@@ -250,10 +287,10 @@ export default function DegenPicksTab() {
       </div>
       <ViewPicker pillClass="pill-btn" value={view} onChange={setView} options={[["pick", "🎯 Make picks"], ["slips", `🧾 My slips${open.length ? ` (${open.length})` : ""}`], ["record", "📈 Track record"]]} />
       {view === "pick" && (!pool ? <div className="dp-muted">Loading the slate…</div> : tonight
-        ? <><Board pool={pool} board={board} slip={slip} /><Slip slip={slip} /></>
+        ? <><Board pool={pool} board={board} slip={slip} /><Slip slip={slip} mode={mode} setMode={setMode} notice={notice} /></>
         : <div className="note">Picks are made on tonight's slate. Switch the date back to tonight to make picks.</div>)}
-      {view === "slips" && (open.length ? <div className="dp-tickets">{open.map((b) => <SlipCard key={b.id} b={b} />)}</div> : <div className="dp-muted">No open slips. Build one under 🎯 Make picks.</div>)}
-      {view === "record" && <Record coins={coins} />}
+      {view === "slips" && (open.length ? <div className="dp-tickets">{open.map((b) => <SlipCard key={b.id} b={b} reuse={reuse} />)}</div> : <div className="dp-muted">No open slips. Build one under 🎯 Make picks.</div>)}
+      {view === "record" && <Record coins={coins} reuse={reuse} />}
       <div className="note" style={{ marginTop: 12 }}>
         <b>How it works.</b> Everyone starts with {fmt(START)} free coins. Pick any skater line we price (goals, points, assists, shots), add it to
         your slip and choose the coins. A hit returns your coins divided by our chance, so a 25% line returns 4x and a 75% line 1.33x; a miss

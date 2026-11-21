@@ -80,3 +80,10 @@
 .dp-small { font-size: 12px; }
 .dp-link { background: none; border: 0; padding: 0; color: var(--accent2); cursor: pointer; font-size: 12px; text-decoration: underline; }
 .coins-page .card { margin-top: 10px; }
+
+/* 🔁 Reuse on every slip (2026-11-21) */
+.dp-reuse { background: none; border: 1px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 2px 9px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+.dp-reuse:disabled { opacity: .4; cursor: default; border-style: dashed; }
+.dp-ticket-foot:has(.dp-reuse) { justify-content: flex-end; }
+.dp-ticket-foot:has(.dp-reuse) > :first-child { margin-right: auto; }
+.dp-notice { padding: 6px 8px; border-radius: 8px; background: color-mix(in srgb, var(--accent) 12%, transparent); }
