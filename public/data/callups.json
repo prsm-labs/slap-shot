@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-22 07:49",
+  "generated": "2026-11-22 12:04",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 135,
-  "up": 71,
+  "up": 69,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -1021,7 +1021,7 @@
    "from": "Laval",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -1094,7 +1094,7 @@
    "from": "Laval",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -3711,11 +3711,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 15,
+     "gamesPlayed": 16,
      "goals": 0,
      "assists": 4,
      "points": 4,
-     "plusMinus": 3,
+     "plusMinus": 4,
      "pim": 10,
      "team": "Henderson Silver Knights"
     },
@@ -5843,11 +5843,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 13,
-     "goals": 7,
-     "assists": 6,
-     "points": 13,
-     "plusMinus": 0,
+     "gamesPlayed": 14,
+     "goals": 9,
+     "assists": 7,
+     "points": 16,
+     "plusMinus": 2,
      "pim": 6,
      "team": "Henderson Silver Knights"
     },
@@ -7217,11 +7217,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "goals": 1,
-     "assists": 4,
-     "points": 5,
-     "plusMinus": -1,
+     "assists": 6,
+     "points": 7,
+     "plusMinus": 0,
      "pim": 8,
      "team": "Henderson Silver Knights"
     },
