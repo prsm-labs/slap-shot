@@ -1,13 +1,161 @@
 {
  "_meta": {
-  "generated": "2026-11-22 12:04",
+  "generated": "2026-11-22 17:34",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 135,
-  "up": 69,
+  "count": 136,
+  "up": 70,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482691,
+   "name": "Aatu R\u00e4ty",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "2002-11-14",
+   "sweater": 26,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "NYI",
+    "round": 2,
+    "overallPick": 52
+   },
+   "recalledOn": "2026-11-22",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-22",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "goals": 1,
+     "assists": 5,
+     "points": 6,
+     "plusMinus": -3,
+     "pim": 6,
+     "team": "Toronto Marlies"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": -2,
+     "pim": 2,
+     "shots": 4,
+     "team": "Vancouver Canucks"
+    },
+    "last": {
+     "gamesPlayed": 66,
+     "goals": 4,
+     "assists": 10,
+     "points": 14,
+     "plusMinus": -4,
+     "pim": 22,
+     "shots": 65,
+     "team": "Vancouver Canucks"
+    },
+    "careerGp": 118,
+    "careerG": 14,
+    "careerP": 29
+   }
+  },
+  {
+   "playerId": 8476952,
+   "name": "Dominic Toninato",
+   "team": "CHI",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1994-03-09",
+   "sweater": 25,
+   "draft": {
+    "year": 2012,
+    "teamAbbrev": "TOR",
+    "round": 5,
+    "overallPick": 126
+   },
+   "recalledOn": "2026-11-22",
+   "from": "Rockford",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-07",
+     "type": "up",
+     "club": "Rockford"
+    },
+    {
+     "date": "2026-10-18",
+     "type": "down",
+     "club": "Rockford"
+    },
+    {
+     "date": "2026-11-22",
+     "type": "up",
+     "club": "Rockford"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 14,
+     "goals": 4,
+     "assists": 7,
+     "points": 11,
+     "plusMinus": -10,
+     "pim": 12,
+     "team": "Rockford IceHogs"
+    },
+    "last": {
+     "gamesPlayed": 52,
+     "goals": 16,
+     "assists": 27,
+     "points": 43,
+     "plusMinus": -8,
+     "pim": 57,
+     "team": "Rockford IceHogs"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -3,
+     "pim": 0,
+     "shots": 1,
+     "team": "Chicago Blackhawks"
+    },
+    "last": {
+     "gamesPlayed": 8,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 0,
+     "pim": 6,
+     "shots": 8,
+     "team": "Chicago Blackhawks"
+    },
+    "careerGp": 200,
+    "careerG": 13,
+    "careerP": 36
+   }
+  },
   {
    "playerId": 8485010,
    "name": "Gregor Biber",
@@ -940,6 +1088,84 @@
    }
   },
   {
+   "playerId": 8482132,
+   "name": "Brett Berard",
+   "team": "MTL",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2002-09-09",
+   "sweater": 37,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "NYR",
+    "round": 5,
+    "overallPick": 134
+   },
+   "recalledOn": "2026-11-16",
+   "from": "Laval",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-22",
+   "events": [
+    {
+     "date": "2026-11-16",
+     "type": "up",
+     "club": "Laval"
+    },
+    {
+     "date": "2026-11-22",
+     "type": "down",
+     "club": "Laval"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 17,
+     "goals": 7,
+     "assists": 4,
+     "points": 11,
+     "plusMinus": 2,
+     "pim": 12,
+     "team": "Laval Rocket"
+    },
+    "last": {
+     "gamesPlayed": 41,
+     "goals": 6,
+     "assists": 16,
+     "points": 22,
+     "plusMinus": -16,
+     "pim": 53,
+     "team": "Hartford Wolf Pack"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": 1,
+     "pim": 0,
+     "shots": 2,
+     "team": "Montr\u00e9al Canadiens"
+    },
+    "last": {
+     "gamesPlayed": 13,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 6,
+     "shots": 10,
+     "team": "New York Rangers"
+    },
+    "careerGp": 51,
+    "careerG": 6,
+    "careerP": 11
+   }
+  },
+  {
    "playerId": 8482674,
    "name": "Tyler Boucher",
    "team": "OTT",
@@ -1004,79 +1230,6 @@
    }
   },
   {
-   "playerId": 8482132,
-   "name": "Brett Berard",
-   "team": "MTL",
-   "position": "L",
-   "shoots": "L",
-   "birthDate": "2002-09-09",
-   "sweater": 37,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "NYR",
-    "round": 5,
-    "overallPick": 134
-   },
-   "recalledOn": "2026-11-16",
-   "from": "Laval",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-16",
-     "type": "up",
-     "club": "Laval"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 17,
-     "goals": 7,
-     "assists": 4,
-     "points": 11,
-     "plusMinus": 2,
-     "pim": 12,
-     "team": "Laval Rocket"
-    },
-    "last": {
-     "gamesPlayed": 41,
-     "goals": 6,
-     "assists": 16,
-     "points": 22,
-     "plusMinus": -16,
-     "pim": 53,
-     "team": "Hartford Wolf Pack"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
-     "pim": 0,
-     "shots": 2,
-     "team": "Montr\u00e9al Canadiens"
-    },
-    "last": {
-     "gamesPlayed": 13,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 6,
-     "shots": 10,
-     "team": "New York Rangers"
-    },
-    "careerGp": 51,
-    "careerG": 6,
-    "careerP": 11
-   }
-  },
-  {
    "playerId": 8484220,
    "name": "David Reinbacher",
    "team": "MTL",
@@ -1095,7 +1248,7 @@
    "fromLeague": "AHL",
    "timesRecalled": 2,
    "status": "down",
-   "sentDownOn": null,
+   "sentDownOn": "2026-11-22",
    "events": [
     {
      "date": "2026-10-14",
@@ -1110,6 +1263,11 @@
     {
      "date": "2026-11-15",
      "type": "up",
+     "club": "Laval"
+    },
+    {
+     "date": "2026-11-22",
+     "type": "down",
      "club": "Laval"
     }
    ],
@@ -3429,7 +3587,7 @@
    "from": "minors",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -8281,40 +8439,6 @@
    }
   },
   {
-   "team": "CHI",
-   "recalledOn": "2026-10-07",
-   "from": "Rockford",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "events": [
-    {
-     "date": "2026-10-07",
-     "type": "up",
-     "club": "Rockford"
-    },
-    {
-     "date": "2026-10-18",
-     "type": "down",
-     "club": "Rockford"
-    }
-   ],
-   "playerId": null,
-   "name": "Dominic Toninato",
-   "position": "C",
-   "noProfile": true,
-   "status": "down",
-   "sentDownOn": "2026-10-18",
-   "ahl": {
-    "season": null,
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 0
-   }
-  },
-  {
    "playerId": 8484154,
    "name": "Jonathan Castagna",
    "team": "CGY",
@@ -8805,19 +8929,19 @@
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 15,
+     "gamesPlayed": 16,
      "goals": 0,
      "assists": 0,
      "pim": 0,
      "wins": 7,
-     "losses": 7,
+     "losses": 8,
      "otLosses": 1,
      "shutouts": 1,
-     "goalsAgainst": 32,
-     "shotsAgainst": 356,
+     "goalsAgainst": 36,
+     "shotsAgainst": 396,
      "team": "New York Rangers",
-     "savePct": 0.91,
-     "gaa": 2.37
+     "savePct": 0.909,
+     "gaa": 2.49
     },
     "last": {
      "gamesPlayed": 3,
@@ -8834,7 +8958,7 @@
      "savePct": 0.948,
      "gaa": 1.62
     },
-    "careerGp": 18,
+    "careerGp": 19,
     "careerG": 0,
     "careerP": null
    }
