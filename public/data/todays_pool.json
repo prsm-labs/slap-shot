@@ -16,7 +16,7 @@
         "awayGoalieStatus": "Unconfirmed",
         "homeGoalieId": 8476945,
         "homeGoalie": "Connor Hellebuyck",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020379,
@@ -24,12 +24,12 @@
         "gameState": "FUT",
         "away": "LAK",
         "home": "MTL",
-        "awayGoalieId": 8476341,
-        "awayGoalie": "Anton Forsberg",
+        "awayGoalieId": 8475311,
+        "awayGoalie": "Darcy Kuemper",
         "awayGoalieStatus": "Unconfirmed",
-        "homeGoalieId": 8484170,
-        "homeGoalie": "Jacob Fowler",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieId": 8482487,
+        "homeGoalie": "Jakub Dobes",
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020380,
@@ -37,12 +37,12 @@
         "gameState": "FUT",
         "away": "CGY",
         "home": "OTT",
-        "awayGoalieId": 8481692,
-        "awayGoalie": "Dustin Wolf",
-        "awayGoalieStatus": "Unconfirmed",
+        "awayGoalieId": 8482445,
+        "awayGoalie": "Devin Cooley",
+        "awayGoalieStatus": "Confirmed",
         "homeGoalieId": 8476999,
         "homeGoalie": "Linus Ullmark",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Confirmed"
       },
       {
         "gameId": 2026020381,
@@ -55,7 +55,7 @@
         "awayGoalieStatus": "Unconfirmed",
         "homeGoalieId": 8478009,
         "homeGoalie": "Ilya Sorokin",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Likely"
       },
       {
         "gameId": 2026020382,
@@ -68,7 +68,7 @@
         "awayGoalieStatus": "Unconfirmed",
         "homeGoalieId": 8479973,
         "homeGoalie": "Stuart Skinner",
-        "homeGoalieStatus": "Unconfirmed"
+        "homeGoalieStatus": "Likely"
       },
       {
         "gameId": 2026020383,
@@ -76,8 +76,8 @@
         "gameState": "FUT",
         "away": "ANA",
         "home": "SEA",
-        "awayGoalieId": 8478024,
-        "awayGoalie": "Ville Husso",
+        "awayGoalieId": 8480843,
+        "awayGoalie": "Lukas Dostal",
         "awayGoalieStatus": "Unconfirmed",
         "homeGoalieId": 8475831,
         "homeGoalie": "Philipp Grubauer",
@@ -92,8 +92,8 @@
         "awayGoalieId": 8482661,
         "awayGoalie": "Jesper Wallstedt",
         "awayGoalieStatus": "Unconfirmed",
-        "homeGoalieId": 8477968,
-        "homeGoalie": "Alex Nedeljkovic",
+        "homeGoalieId": 8482137,
+        "homeGoalie": "Yaroslav Askarov",
         "homeGoalieStatus": "Unconfirmed"
       }
     ],
@@ -101,9 +101,9 @@
       2025,
       2026
     ],
-    "generated": "2026-11-23 07:46",
-    "player_count": 319,
-    "goalie_count": 68,
+    "generated": "2026-11-23 12:01",
+    "player_count": 322,
+    "goalie_count": 67,
     "skipped_no_history": 2,
     "teams": {
       "ANA": {
@@ -121,18 +121,18 @@
         "goalsAgainst": 2.84
       },
       "BUF": {
-        "gp": 105,
+        "gp": 106,
         "sogFor": 27.52,
-        "sogAgainst": 28.51,
-        "goalsFor": 3.08,
-        "goalsAgainst": 2.9
+        "sogAgainst": 28.54,
+        "goalsFor": 3.1,
+        "goalsAgainst": 2.89
       },
       "CAR": {
-        "gp": 105,
-        "sogFor": 32.06,
-        "sogAgainst": 23.17,
+        "gp": 106,
+        "sogFor": 32.13,
+        "sogAgainst": 23.21,
         "goalsFor": 3.49,
-        "goalsAgainst": 2.61
+        "goalsAgainst": 2.6
       },
       "CBJ": {
         "gp": 103,
@@ -149,10 +149,10 @@
         "goalsAgainst": 2.97
       },
       "CHI": {
-        "gp": 105,
-        "sogFor": 24.15,
-        "sogAgainst": 29.89,
-        "goalsFor": 2.44,
+        "gp": 106,
+        "sogFor": 24.21,
+        "sogAgainst": 29.84,
+        "goalsFor": 2.47,
         "goalsAgainst": 3.24
       },
       "COL": {
@@ -163,11 +163,11 @@
         "goalsAgainst": 2.38
       },
       "DAL": {
-        "gp": 104,
-        "sogFor": 25.32,
-        "sogAgainst": 25.47,
-        "goalsFor": 3.12,
-        "goalsAgainst": 2.52
+        "gp": 105,
+        "sogFor": 25.3,
+        "sogAgainst": 25.54,
+        "goalsFor": 3.1,
+        "goalsAgainst": 2.5
       },
       "DET": {
         "gp": 105,
@@ -177,11 +177,11 @@
         "goalsAgainst": 2.9
       },
       "EDM": {
-        "gp": 107,
-        "sogFor": 28.25,
+        "gp": 108,
+        "sogFor": 28.27,
         "sogAgainst": 26.49,
         "goalsFor": 3.31,
-        "goalsAgainst": 3.01
+        "goalsAgainst": 3.02
       },
       "FLA": {
         "gp": 106,
@@ -233,11 +233,11 @@
         "goalsAgainst": 2.68
       },
       "NYR": {
-        "gp": 104,
-        "sogFor": 25.02,
-        "sogAgainst": 28.05,
-        "goalsFor": 2.72,
-        "goalsAgainst": 2.69
+        "gp": 105,
+        "sogFor": 25.04,
+        "sogAgainst": 28.16,
+        "goalsFor": 2.71,
+        "goalsAgainst": 2.7
       },
       "OTT": {
         "gp": 106,
@@ -254,11 +254,11 @@
         "goalsAgainst": 2.91
       },
       "PIT": {
-        "gp": 104,
-        "sogFor": 28.0,
-        "sogAgainst": 27.24,
-        "goalsFor": 3.24,
-        "goalsAgainst": 3.07
+        "gp": 105,
+        "sogFor": 28.05,
+        "sogAgainst": 27.2,
+        "goalsFor": 3.21,
+        "goalsAgainst": 3.05
       },
       "SEA": {
         "gp": 102,
@@ -275,18 +275,18 @@
         "goalsAgainst": 3.31
       },
       "STL": {
-        "gp": 105,
-        "sogFor": 25.52,
-        "sogAgainst": 27.99,
-        "goalsFor": 2.75,
-        "goalsAgainst": 2.96
+        "gp": 106,
+        "sogFor": 25.54,
+        "sogAgainst": 28.01,
+        "goalsFor": 2.76,
+        "goalsAgainst": 2.97
       },
       "TBL": {
-        "gp": 104,
-        "sogFor": 27.98,
+        "gp": 105,
+        "sogFor": 28.01,
         "sogAgainst": 26.12,
-        "goalsFor": 3.32,
-        "goalsAgainst": 2.63
+        "goalsFor": 3.3,
+        "goalsAgainst": 2.67
       },
       "TOR": {
         "gp": 107,
@@ -303,11 +303,11 @@
         "goalsAgainst": 2.87
       },
       "VAN": {
-        "gp": 107,
+        "gp": 108,
         "sogFor": 24.94,
         "sogAgainst": 29.82,
-        "goalsFor": 2.52,
-        "goalsAgainst": 3.67
+        "goalsFor": 2.53,
+        "goalsAgainst": 3.69
       },
       "VGK": {
         "gp": 107,
@@ -335,9 +335,9 @@
       "sogPerTeamGame": 27.49,
       "savePct": 0.8936,
       "now": {
-        "sogPerTeamGame": 27.24,
-        "savePct": 0.8896,
-        "games": 372,
+        "sogPerTeamGame": 27.26,
+        "savePct": 0.8897,
+        "games": 377,
         "priorGames": 100
       }
     },
@@ -389,49 +389,49 @@
         }
       },
       "BUF": {
-        "gp": 105,
+        "gp": 106,
         "C": {
-          "g": 1.267,
-          "p": 3.01,
-          "sog": 9.61
+          "g": 1.264,
+          "p": 3.009,
+          "sog": 9.59
         },
         "D": {
-          "g": 0.352,
-          "p": 2.029,
-          "sog": 7.7
+          "g": 0.349,
+          "p": 2.028,
+          "sog": 7.72
         },
         "L": {
-          "g": 0.629,
-          "p": 1.4,
-          "sog": 5.65
+          "g": 0.623,
+          "p": 1.387,
+          "sog": 5.6
         },
         "R": {
-          "g": 0.8,
-          "p": 1.714,
-          "sog": 5.83
+          "g": 0.802,
+          "p": 1.708,
+          "sog": 5.89
         }
       },
       "CAR": {
-        "gp": 105,
+        "gp": 106,
         "C": {
-          "g": 1.19,
-          "p": 2.914,
+          "g": 1.198,
+          "p": 2.915,
           "sog": 8.9
         },
         "D": {
-          "g": 0.381,
-          "p": 1.619,
-          "sog": 5.68
+          "g": 0.377,
+          "p": 1.623,
+          "sog": 5.67
         },
         "L": {
-          "g": 0.476,
-          "p": 1.295,
-          "sog": 4.09
+          "g": 0.472,
+          "p": 1.283,
+          "sog": 4.14
         },
         "R": {
-          "g": 0.695,
-          "p": 1.581,
-          "sog": 4.7
+          "g": 0.689,
+          "p": 1.566,
+          "sog": 4.69
         }
       },
       "CBJ": {
@@ -481,26 +481,26 @@
         }
       },
       "CHI": {
-        "gp": 105,
+        "gp": 106,
         "C": {
-          "g": 1.229,
-          "p": 3.248,
-          "sog": 9.95
+          "g": 1.226,
+          "p": 3.236,
+          "sog": 9.92
         },
         "D": {
-          "g": 0.657,
-          "p": 2.457,
-          "sog": 8.45
+          "g": 0.66,
+          "p": 2.453,
+          "sog": 8.41
         },
         "L": {
-          "g": 0.781,
-          "p": 1.724,
-          "sog": 5.95
+          "g": 0.783,
+          "p": 1.736,
+          "sog": 5.99
         },
         "R": {
-          "g": 0.781,
-          "p": 1.838,
-          "sog": 5.79
+          "g": 0.774,
+          "p": 1.83,
+          "sog": 5.78
         }
       },
       "COL": {
@@ -527,26 +527,26 @@
         }
       },
       "DAL": {
-        "gp": 104,
+        "gp": 105,
         "C": {
-          "g": 1.135,
-          "p": 2.587,
-          "sog": 8.46
+          "g": 1.124,
+          "p": 2.562,
+          "sog": 8.45
         },
         "D": {
-          "g": 0.452,
-          "p": 1.846,
-          "sog": 7.55
+          "g": 0.448,
+          "p": 1.829,
+          "sog": 7.58
         },
         "L": {
-          "g": 0.567,
-          "p": 1.375,
-          "sog": 4.77
+          "g": 0.562,
+          "p": 1.362,
+          "sog": 4.72
         },
         "R": {
-          "g": 0.5,
-          "p": 1.327,
-          "sog": 4.88
+          "g": 0.495,
+          "p": 1.314,
+          "sog": 4.97
         }
       },
       "DET": {
@@ -573,26 +573,26 @@
         }
       },
       "EDM": {
-        "gp": 107,
+        "gp": 108,
         "C": {
-          "g": 1.196,
-          "p": 2.963,
-          "sog": 8.71
+          "g": 1.185,
+          "p": 2.954,
+          "sog": 8.69
         },
         "D": {
-          "g": 0.43,
-          "p": 2.075,
-          "sog": 6.99
+          "g": 0.435,
+          "p": 2.083,
+          "sog": 7.06
         },
         "L": {
-          "g": 0.636,
-          "p": 1.542,
-          "sog": 5.46
+          "g": 0.639,
+          "p": 1.537,
+          "sog": 5.44
         },
         "R": {
-          "g": 0.869,
-          "p": 1.664,
-          "sog": 5.58
+          "g": 0.88,
+          "p": 1.685,
+          "sog": 5.56
         }
       },
       "FLA": {
@@ -757,26 +757,26 @@
         }
       },
       "NYR": {
-        "gp": 104,
+        "gp": 105,
         "C": {
-          "g": 1.154,
-          "p": 2.894,
-          "sog": 8.97
+          "g": 1.143,
+          "p": 2.895,
+          "sog": 8.96
         },
         "D": {
-          "g": 0.471,
-          "p": 1.923,
-          "sog": 8.49
+          "g": 0.486,
+          "p": 1.933,
+          "sog": 8.55
         },
         "L": {
-          "g": 0.587,
-          "p": 1.317,
-          "sog": 5.12
+          "g": 0.6,
+          "p": 1.352,
+          "sog": 5.14
         },
         "R": {
-          "g": 0.74,
-          "p": 1.75,
-          "sog": 5.74
+          "g": 0.743,
+          "p": 1.752,
+          "sog": 5.78
         }
       },
       "OTT": {
@@ -826,26 +826,26 @@
         }
       },
       "PIT": {
-        "gp": 104,
+        "gp": 105,
         "C": {
-          "g": 1.096,
-          "p": 3.106,
-          "sog": 9.31
+          "g": 1.086,
+          "p": 3.086,
+          "sog": 9.3
         },
         "D": {
-          "g": 0.5,
-          "p": 2.048,
-          "sog": 7.38
+          "g": 0.495,
+          "p": 2.029,
+          "sog": 7.37
         },
         "L": {
-          "g": 0.856,
-          "p": 1.75,
-          "sog": 5.46
+          "g": 0.857,
+          "p": 1.743,
+          "sog": 5.45
         },
         "R": {
-          "g": 0.788,
-          "p": 1.683,
-          "sog": 5.45
+          "g": 0.781,
+          "p": 1.676,
+          "sog": 5.44
         }
       },
       "SEA": {
@@ -895,49 +895,49 @@
         }
       },
       "STL": {
-        "gp": 105,
+        "gp": 106,
         "C": {
-          "g": 1.21,
-          "p": 3.086,
-          "sog": 9.24
+          "g": 1.226,
+          "p": 3.104,
+          "sog": 9.27
         },
         "D": {
-          "g": 0.448,
-          "p": 2.19,
-          "sog": 8.68
+          "g": 0.443,
+          "p": 2.189,
+          "sog": 8.72
         },
         "L": {
-          "g": 0.733,
-          "p": 1.562,
-          "sog": 5.14
+          "g": 0.726,
+          "p": 1.547,
+          "sog": 5.1
         },
         "R": {
-          "g": 0.724,
-          "p": 1.571,
-          "sog": 5.1
+          "g": 0.726,
+          "p": 1.594,
+          "sog": 5.08
         }
       },
       "TBL": {
-        "gp": 104,
+        "gp": 105,
         "C": {
-          "g": 1.038,
-          "p": 2.5,
-          "sog": 8.56
+          "g": 1.067,
+          "p": 2.543,
+          "sog": 8.59
         },
         "D": {
-          "g": 0.394,
-          "p": 1.817,
-          "sog": 7.83
+          "g": 0.39,
+          "p": 1.829,
+          "sog": 7.8
         },
         "L": {
-          "g": 0.769,
-          "p": 1.692,
-          "sog": 4.8
+          "g": 0.771,
+          "p": 1.705,
+          "sog": 4.82
         },
         "R": {
-          "g": 0.577,
-          "p": 1.298,
-          "sog": 5.18
+          "g": 0.581,
+          "p": 1.295,
+          "sog": 5.17
         }
       },
       "TOR": {
@@ -987,26 +987,26 @@
         }
       },
       "VAN": {
-        "gp": 107,
+        "gp": 108,
         "C": {
-          "g": 1.551,
-          "p": 3.794,
-          "sog": 10.67
+          "g": 1.556,
+          "p": 3.796,
+          "sog": 10.69
         },
         "D": {
-          "g": 0.542,
-          "p": 2.71,
-          "sog": 7.97
+          "g": 0.537,
+          "p": 2.694,
+          "sog": 7.94
         },
         "L": {
           "g": 0.935,
-          "p": 2.047,
-          "sog": 5.6
+          "p": 2.065,
+          "sog": 5.59
         },
         "R": {
-          "g": 0.916,
-          "p": 2.234,
-          "sog": 5.93
+          "g": 0.935,
+          "p": 2.278,
+          "sog": 5.94
         }
       },
       "VGK": {
@@ -1135,7 +1135,7 @@
     "defRank": {
       "VAN": {
         "rank": 1,
-        "xga": 3.73
+        "xga": 3.72
       },
       "SJS": {
         "rank": 2,
@@ -1143,7 +1143,7 @@
       },
       "CHI": {
         "rank": 3,
-        "xga": 3.48
+        "xga": 3.49
       },
       "MTL": {
         "rank": 4,
@@ -1169,11 +1169,11 @@
         "rank": 9,
         "xga": 3.34
       },
-      "PIT": {
-        "rank": 10,
-        "xga": 3.31
-      },
       "CGY": {
+        "rank": 10,
+        "xga": 3.3
+      },
+      "PIT": {
         "rank": 11,
         "xga": 3.3
       },
@@ -1185,13 +1185,13 @@
         "rank": 13,
         "xga": 3.25
       },
-      "CBJ": {
-        "rank": 14,
-        "xga": 3.23
-      },
       "BUF": {
+        "rank": 14,
+        "xga": 3.24
+      },
+      "CBJ": {
         "rank": 15,
-        "xga": 3.22
+        "xga": 3.23
       },
       "BOS": {
         "rank": 16,
@@ -1211,7 +1211,7 @@
       },
       "NYR": {
         "rank": 20,
-        "xga": 3.05
+        "xga": 3.08
       },
       "PHI": {
         "rank": 21,
@@ -1219,7 +1219,7 @@
       },
       "EDM": {
         "rank": 22,
-        "xga": 3.0
+        "xga": 2.99
       },
       "UTA": {
         "rank": 23,
@@ -1235,11 +1235,11 @@
       },
       "DAL": {
         "rank": 26,
-        "xga": 2.86
+        "xga": 2.87
       },
       "TBL": {
         "rank": 27,
-        "xga": 2.86
+        "xga": 2.87
       },
       "NJD": {
         "rank": 28,
@@ -1259,7 +1259,7 @@
       },
       "CAR": {
         "rank": 32,
-        "xga": 2.68
+        "xga": 2.69
       }
     }
   },
@@ -3170,6 +3170,150 @@
       "teamGp": 21,
       "seasonGp": 21,
       "newTeam": false
+    },
+    {
+      "playerId": 8482451,
+      "name": "Mikael Pyyhtia",
+      "team": "CBJ",
+      "position": "L",
+      "games_played": 5,
+      "icetime": 3078,
+      "ppIcetime": 0,
+      "shifts": 68,
+      "ICF": 12,
+      "HDCF": 5,
+      "TotalGoals": 1,
+      "P1Attempts": 3,
+      "P1SOG": 2,
+      "xG": 0.69,
+      "onIceXgf": 2.11,
+      "I_F_primaryAssists": 0,
+      "I_F_secondaryAssists": 0,
+      "I_F_points": 1,
+      "I_F_highDangerShots": 1,
+      "I_F_mediumDangerShots": 1,
+      "RecentGoals": 1,
+      "RecentIntentScore": 0.417,
+      "RecentHighDangerShots": 5,
+      "RecentShotVolume": 12,
+      "HighDangerRate": 0.417,
+      "OnGoalIntentRate": 0.5,
+      "RecentIntentScoreLast5Games": 0.417,
+      "RecentShotVolumeLast5Games": 12,
+      "iSCF_5G": 12,
+      "iHDCF_5G": 5,
+      "Goals_Last5": 1,
+      "Assists_Last5": 0,
+      "Points_Last5": 1,
+      "Intent_Last5": 0.417,
+      "ShotsOnGoalPerGame": 1.2,
+      "ShotAttemptsPerGame": 2.4,
+      "AvgShotDistance": 30.0,
+      "iSCF": 12,
+      "iHDCF": 5,
+      "DaysSinceLastGoal": 2,
+      "onIce_corsiPercentage": 0.55,
+      "onIce_fenwickPercentage": 0.553,
+      "onIce_xGoalsPercentage": 0.469,
+      "oZoneShiftStarts": 5,
+      "dZoneShiftStarts": 9,
+      "neutralZoneShiftStarts": 10,
+      "oZoneStartPct": 0.357,
+      "isHome": false,
+      "opponentTeam": "NJD",
+      "opponentTeamGA60": 3.1,
+      "opponentTeamxGA60": 2.84,
+      "opponentTeamxGAGp": 23,
+      "opponentTeamHDCFAllowedPer60": 12.95,
+      "opponentXGoalsAgainst": 306.2,
+      "opponentGoalieId": 8476945,
+      "opponentGoalie": "Connor Hellebuyck",
+      "opponentGoalieGA60": 2.83,
+      "opponentGoalieXGA60": 2.92,
+      "opponentGoalieHighDangerSavePct": 0.887,
+      "isEligible": true,
+      "last7": [
+        {
+          "gameId": 2025020692,
+          "date": "2026-01-08",
+          "opp": "VGK",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 0,
+          "shotAttempts": 1,
+          "hd": 0,
+          "xg": 0.032,
+          "oxg": 0.21,
+          "icetime": 567
+        },
+        {
+          "gameId": 2025020699,
+          "date": "2026-01-10",
+          "opp": "COL",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 2,
+          "shotAttempts": 5,
+          "hd": 3,
+          "xg": 0.485,
+          "oxg": 1.006,
+          "icetime": 699
+        },
+        {
+          "gameId": 2025020714,
+          "date": "2026-01-11",
+          "opp": "UTA",
+          "home": false,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "sog": 3,
+          "shotAttempts": 3,
+          "hd": 0,
+          "xg": 0.076,
+          "oxg": 0.592,
+          "icetime": 714
+        },
+        {
+          "gameId": 2025020728,
+          "date": "2026-01-13",
+          "opp": "CGY",
+          "home": true,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 0,
+          "shotAttempts": 0,
+          "hd": 0,
+          "xg": 0.0,
+          "oxg": 0.127,
+          "icetime": 443
+        },
+        {
+          "gameId": 2025020743,
+          "date": "2026-01-15",
+          "opp": "VAN",
+          "home": true,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 1,
+          "shotAttempts": 3,
+          "hd": 2,
+          "xg": 0.098,
+          "oxg": 0.172,
+          "icetime": 655
+        }
+      ],
+      "missedStreak": 21,
+      "teamGp": 0,
+      "seasonGp": 0,
+      "newTeam": false,
+      "lastTeam": "CBJ"
     },
     {
       "playerId": 8482705,
@@ -8594,11 +8738,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -8767,11 +8911,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -8940,11 +9084,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -9113,11 +9257,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -9287,11 +9431,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -9460,11 +9604,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -9633,11 +9777,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -9806,11 +9950,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -9980,11 +10124,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -10153,11 +10297,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -10326,11 +10470,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -10500,11 +10644,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -10673,11 +10817,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -10846,11 +10990,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -11020,11 +11164,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -11193,11 +11337,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -11366,11 +11510,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -11539,11 +11683,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -11712,11 +11856,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -11885,11 +12029,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -12058,11 +12202,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 13.75,
       "opponentXGoalsAgainst": 354.5,
-      "opponentGoalieId": 8484170,
-      "opponentGoalie": "Jacob Fowler",
-      "opponentGoalieGA60": 2.35,
-      "opponentGoalieXGA60": 2.97,
-      "opponentGoalieHighDangerSavePct": 0.898,
+      "opponentGoalieId": 8482487,
+      "opponentGoalie": "Jakub Dobes",
+      "opponentGoalieGA60": 2.92,
+      "opponentGoalieXGA60": 3.18,
+      "opponentGoalieHighDangerSavePct": 0.884,
       "isEligible": true,
       "last7": [
         {
@@ -12232,11 +12376,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -12405,11 +12549,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -12578,11 +12722,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -12751,11 +12895,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -12924,11 +13068,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -13097,11 +13241,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -13270,11 +13414,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -13443,11 +13587,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -13616,11 +13760,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -13736,6 +13880,180 @@
       "lastTeam": "ANA"
     },
     {
+      "playerId": 8477946,
+      "name": "Dylan Larkin",
+      "team": "MTL",
+      "position": "C",
+      "games_played": 84,
+      "icetime": 102644,
+      "ppIcetime": 16190,
+      "shifts": 2028,
+      "ICF": 390,
+      "HDCF": 156,
+      "TotalGoals": 36,
+      "P1Attempts": 114,
+      "P1SOG": 69,
+      "xG": 36.04,
+      "onIceXgf": 118.1,
+      "I_F_primaryAssists": 19,
+      "I_F_secondaryAssists": 18,
+      "I_F_points": 73,
+      "I_F_highDangerShots": 42,
+      "I_F_mediumDangerShots": 97,
+      "RecentGoals": 1,
+      "RecentIntentScore": 0.304,
+      "RecentHighDangerShots": 7,
+      "RecentShotVolume": 23,
+      "HighDangerRate": 0.4,
+      "OnGoalIntentRate": 0.664,
+      "RecentIntentScoreLast5Games": 0.304,
+      "RecentShotVolumeLast5Games": 23,
+      "iSCF_5G": 23,
+      "iHDCF_5G": 7,
+      "Goals_Last5": 1,
+      "Assists_Last5": 2,
+      "Points_Last5": 3,
+      "Intent_Last5": 0.304,
+      "ShotsOnGoalPerGame": 3.08,
+      "ShotAttemptsPerGame": 4.64,
+      "AvgShotDistance": 27.7,
+      "iSCF": 390,
+      "iHDCF": 156,
+      "DaysSinceLastGoal": 0,
+      "onIce_corsiPercentage": 0.553,
+      "onIce_fenwickPercentage": 0.56,
+      "onIce_xGoalsPercentage": 0.568,
+      "oZoneShiftStarts": 353,
+      "dZoneShiftStarts": 375,
+      "neutralZoneShiftStarts": 360,
+      "oZoneStartPct": 0.485,
+      "isHome": true,
+      "opponentTeam": "LAK",
+      "opponentTeamGA60": 2.99,
+      "opponentTeamxGA60": 2.93,
+      "opponentTeamxGAGp": 21,
+      "opponentTeamHDCFAllowedPer60": 12.99,
+      "opponentXGoalsAgainst": 300.1,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
+      "isEligible": true,
+      "last7": [
+        {
+          "gameId": 2026020090,
+          "date": "2026-10-13",
+          "opp": "NJD",
+          "home": true,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 2,
+          "shotAttempts": 3,
+          "hd": 0,
+          "xg": 0.141,
+          "oxg": 0.788,
+          "icetime": 1278
+        },
+        {
+          "gameId": 2026020110,
+          "date": "2026-10-15",
+          "opp": "PHI",
+          "home": true,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "sog": 2,
+          "shotAttempts": 3,
+          "hd": 0,
+          "xg": 0.186,
+          "oxg": 1.794,
+          "icetime": 1395
+        },
+        {
+          "gameId": 2026020127,
+          "date": "2026-10-17",
+          "opp": "SJS",
+          "home": true,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 1,
+          "shotAttempts": 1,
+          "hd": 0,
+          "xg": 0.051,
+          "oxg": 1.777,
+          "icetime": 1479
+        },
+        {
+          "gameId": 2026020149,
+          "date": "2026-10-20",
+          "opp": "SEA",
+          "home": false,
+          "goals": 0,
+          "assists": 2,
+          "points": 2,
+          "sog": 6,
+          "shotAttempts": 8,
+          "hd": 1,
+          "xg": 0.28,
+          "oxg": 1.593,
+          "icetime": 1382
+        },
+        {
+          "gameId": 2026020165,
+          "date": "2026-10-22",
+          "opp": "VAN",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 2,
+          "shotAttempts": 3,
+          "hd": 0,
+          "xg": 0.082,
+          "oxg": 1.96,
+          "icetime": 1209
+        },
+        {
+          "gameId": 2026020178,
+          "date": "2026-10-24",
+          "opp": "CGY",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 6,
+          "shotAttempts": 6,
+          "hd": 3,
+          "xg": 0.585,
+          "oxg": 1.442,
+          "icetime": 1174
+        },
+        {
+          "gameId": 2026020187,
+          "date": "2026-10-26",
+          "opp": "EDM",
+          "home": false,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "sog": 4,
+          "shotAttempts": 5,
+          "hd": 3,
+          "xg": 0.567,
+          "oxg": 1.223,
+          "icetime": 1396
+        }
+      ],
+      "missedStreak": 13,
+      "teamGp": 0,
+      "seasonGp": 10,
+      "newTeam": true,
+      "lastTeam": "DET"
+    },
+    {
       "playerId": 8481618,
       "name": "Alex Newhook",
       "team": "MTL",
@@ -13790,11 +14108,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -13963,11 +14281,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -14136,11 +14454,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -14309,11 +14627,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -14482,11 +14800,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -14655,11 +14973,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -14828,11 +15146,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -15001,11 +15319,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -15174,11 +15492,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -15347,11 +15665,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -15520,11 +15838,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -15693,11 +16011,11 @@
       "opponentTeamxGAGp": 21,
       "opponentTeamHDCFAllowedPer60": 12.99,
       "opponentXGoalsAgainst": 300.1,
-      "opponentGoalieId": 8476341,
-      "opponentGoalie": "Anton Forsberg",
-      "opponentGoalieGA60": 2.57,
-      "opponentGoalieXGA60": 2.77,
-      "opponentGoalieHighDangerSavePct": 0.901,
+      "opponentGoalieId": 8475311,
+      "opponentGoalie": "Darcy Kuemper",
+      "opponentGoalieGA60": 2.87,
+      "opponentGoalieXGA60": 2.68,
+      "opponentGoalieHighDangerSavePct": 0.882,
       "isEligible": true,
       "last7": [
         {
@@ -17195,6 +17513,120 @@
       "teamGp": 24,
       "seasonGp": 24,
       "newTeam": false
+    },
+    {
+      "playerId": 8484821,
+      "name": "Sam Morton",
+      "team": "CGY",
+      "position": "C",
+      "games_played": 3,
+      "icetime": 1680,
+      "ppIcetime": 8,
+      "shifts": 39,
+      "ICF": 5,
+      "HDCF": 2,
+      "TotalGoals": 0,
+      "P1Attempts": 2,
+      "P1SOG": 0,
+      "xG": 0.99,
+      "onIceXgf": 1.2,
+      "I_F_primaryAssists": 0,
+      "I_F_secondaryAssists": 0,
+      "I_F_points": 0,
+      "I_F_highDangerShots": 2,
+      "I_F_mediumDangerShots": 0,
+      "RecentGoals": 0,
+      "RecentIntentScore": 0.4,
+      "RecentHighDangerShots": 2,
+      "RecentShotVolume": 5,
+      "HighDangerRate": 0.4,
+      "OnGoalIntentRate": 0.6,
+      "RecentIntentScoreLast5Games": 0.4,
+      "RecentShotVolumeLast5Games": 5,
+      "iSCF_5G": 5,
+      "iHDCF_5G": 2,
+      "Goals_Last5": 0,
+      "Assists_Last5": 0,
+      "Points_Last5": 0,
+      "Intent_Last5": 0.4,
+      "ShotsOnGoalPerGame": 1.0,
+      "ShotAttemptsPerGame": 1.67,
+      "AvgShotDistance": 29.2,
+      "iSCF": 5,
+      "iHDCF": 2,
+      "DaysSinceLastGoal": 3,
+      "onIce_corsiPercentage": 0.44,
+      "onIce_fenwickPercentage": 0.441,
+      "onIce_xGoalsPercentage": 0.607,
+      "oZoneShiftStarts": 0,
+      "dZoneShiftStarts": 4,
+      "neutralZoneShiftStarts": 10,
+      "oZoneStartPct": 0.0,
+      "isHome": false,
+      "opponentTeam": "OTT",
+      "opponentTeamGA60": 2.97,
+      "opponentTeamxGA60": 2.77,
+      "opponentTeamxGAGp": 24,
+      "opponentTeamHDCFAllowedPer60": 11.84,
+      "opponentXGoalsAgainst": 288.0,
+      "opponentGoalieId": 8476999,
+      "opponentGoalie": "Linus Ullmark",
+      "opponentGoalieGA60": 2.48,
+      "opponentGoalieXGA60": 2.45,
+      "opponentGoalieHighDangerSavePct": 0.875,
+      "isEligible": true,
+      "last7": [
+        {
+          "gameId": 2025020312,
+          "date": "2025-11-18",
+          "opp": "CHI",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 0,
+          "shotAttempts": 2,
+          "hd": 1,
+          "xg": 0.46,
+          "oxg": 0.541,
+          "icetime": 665
+        },
+        {
+          "gameId": 2025020316,
+          "date": "2025-11-19",
+          "opp": "BUF",
+          "home": false,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 1,
+          "shotAttempts": 1,
+          "hd": 0,
+          "xg": 0.01,
+          "oxg": 0.105,
+          "icetime": 625
+        },
+        {
+          "gameId": 2025020345,
+          "date": "2025-11-22",
+          "opp": "DAL",
+          "home": true,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "sog": 2,
+          "shotAttempts": 2,
+          "hd": 1,
+          "xg": 0.519,
+          "oxg": 0.55,
+          "icetime": 390
+        }
+      ],
+      "missedStreak": 24,
+      "teamGp": 0,
+      "seasonGp": 0,
+      "newTeam": false,
+      "lastTeam": "CGY"
     },
     {
       "playerId": 8482747,
@@ -19680,11 +20112,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -19853,11 +20285,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -20026,11 +20458,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -20200,11 +20632,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -20298,11 +20730,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -20472,11 +20904,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -20645,11 +21077,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -20818,11 +21250,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -20992,11 +21424,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -21166,11 +21598,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -21339,11 +21771,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -21512,11 +21944,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -21685,11 +22117,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -21858,11 +22290,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -22031,11 +22463,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -22204,11 +22636,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -22378,11 +22810,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -22551,11 +22983,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -22724,11 +23156,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -22897,11 +23329,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -23070,11 +23502,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -23243,11 +23675,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -23416,11 +23848,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -23589,11 +24021,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.01,
       "opponentXGoalsAgainst": 348.6,
-      "opponentGoalieId": 8481692,
-      "opponentGoalie": "Dustin Wolf",
-      "opponentGoalieGA60": 3.1,
-      "opponentGoalieXGA60": 2.96,
-      "opponentGoalieHighDangerSavePct": 0.859,
+      "opponentGoalieId": 8482445,
+      "opponentGoalie": "Devin Cooley",
+      "opponentGoalieGA60": 2.74,
+      "opponentGoalieXGA60": 3.23,
+      "opponentGoalieHighDangerSavePct": 0.898,
       "isEligible": true,
       "last7": [
         {
@@ -44855,11 +45287,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -45028,11 +45460,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -45201,11 +45633,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -45375,11 +45807,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -45548,11 +45980,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -45721,11 +46153,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -45894,11 +46326,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -46067,11 +46499,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -46241,11 +46673,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -46414,11 +46846,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -46587,11 +47019,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -46761,11 +47193,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -46934,11 +47366,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -47107,11 +47539,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -47281,11 +47713,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -47454,11 +47886,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -47627,11 +48059,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -47800,11 +48232,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -47973,11 +48405,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -48146,11 +48578,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -48319,11 +48751,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -48492,11 +48924,11 @@
       "opponentTeamxGAGp": 24,
       "opponentTeamHDCFAllowedPer60": 14.68,
       "opponentXGoalsAgainst": 356.8,
-      "opponentGoalieId": 8478024,
-      "opponentGoalie": "Ville Husso",
-      "opponentGoalieGA60": 3.37,
-      "opponentGoalieXGA60": 3.07,
-      "opponentGoalieHighDangerSavePct": 0.856,
+      "opponentGoalieId": 8480843,
+      "opponentGoalie": "Lukas Dostal",
+      "opponentGoalieGA60": 3.26,
+      "opponentGoalieXGA60": 3.11,
+      "opponentGoalieHighDangerSavePct": 0.888,
       "isEligible": true,
       "last7": [
         {
@@ -48665,10 +49097,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -48838,10 +49270,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -49012,10 +49444,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -49186,10 +49618,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -49359,10 +49791,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -49532,10 +49964,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -49706,10 +50138,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -49879,10 +50311,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -50052,10 +50484,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -50226,10 +50658,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -50400,10 +50832,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -50573,10 +51005,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -50746,10 +51178,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -50919,10 +51351,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -51092,10 +51524,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -51265,10 +51697,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -51438,10 +51870,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -51611,10 +52043,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -51784,10 +52216,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -51958,10 +52390,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -52131,10 +52563,10 @@
       "opponentTeamxGAGp": 25,
       "opponentTeamHDCFAllowedPer60": 14.87,
       "opponentXGoalsAgainst": 359.0,
-      "opponentGoalieId": 8477968,
-      "opponentGoalie": "Alex Nedeljkovic",
-      "opponentGoalieGA60": 2.93,
-      "opponentGoalieXGA60": 3.04,
+      "opponentGoalieId": 8482137,
+      "opponentGoalie": "Yaroslav Askarov",
+      "opponentGoalieGA60": 3.54,
+      "opponentGoalieXGA60": 3.26,
       "opponentGoalieHighDangerSavePct": 0.885,
       "isEligible": true,
       "last7": [
@@ -57312,6 +57744,198 @@
       ]
     },
     {
+      "playerId": 8479979,
+      "name": "Jake Oettinger",
+      "team": "DAL",
+      "position": "G",
+      "games_played": 72,
+      "icetime": 255917,
+      "wins": 48,
+      "shutouts": 9,
+      "shotsFaced": 2720,
+      "sogFaced": 1788,
+      "goalsAllowed": 177,
+      "savePct": 0.901,
+      "GA60_proxy": 2.49,
+      "xGA60_proxy": 2.69,
+      "highDangerSavePct": 0.894,
+      "last7": [
+        {
+          "gameId": 2026020243,
+          "date": "2026-11-03",
+          "opp": "WSH",
+          "home": false,
+          "goalsAllowed": 5,
+          "sogFaced": 25,
+          "savePct": 0.8,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020272,
+          "date": "2026-11-07",
+          "opp": "SJS",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 23,
+          "savePct": 0.87,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020306,
+          "date": "2026-11-12",
+          "opp": "WPG",
+          "home": true,
+          "goalsAllowed": 6,
+          "sogFaced": 27,
+          "savePct": 0.778,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020322,
+          "date": "2026-11-14",
+          "opp": "BUF",
+          "home": true,
+          "goalsAllowed": 0,
+          "sogFaced": 22,
+          "savePct": 1.0,
+          "win": true,
+          "shutout": true
+        },
+        {
+          "gameId": 2026020342,
+          "date": "2026-11-17",
+          "opp": "VGK",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 27,
+          "savePct": 0.889,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020358,
+          "date": "2026-11-19",
+          "opp": "VGK",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 30,
+          "savePct": 0.9,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020376,
+          "date": "2026-11-22",
+          "opp": "PIT",
+          "home": true,
+          "goalsAllowed": 0,
+          "sogFaced": 33,
+          "savePct": 1.0,
+          "win": true,
+          "shutout": true
+        }
+      ]
+    },
+    {
+      "playerId": 8480981,
+      "name": "Joel Hofer",
+      "team": "STL",
+      "position": "G",
+      "games_played": 63,
+      "icetime": 218755,
+      "wins": 34,
+      "shutouts": 8,
+      "shotsFaced": 2708,
+      "sogFaced": 1748,
+      "goalsAllowed": 154,
+      "savePct": 0.912,
+      "GA60_proxy": 2.53,
+      "xGA60_proxy": 2.89,
+      "highDangerSavePct": 0.884,
+      "last7": [
+        {
+          "gameId": 2026020240,
+          "date": "2026-11-03",
+          "opp": "NYR",
+          "home": false,
+          "goalsAllowed": 2,
+          "sogFaced": 30,
+          "savePct": 0.933,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020266,
+          "date": "2026-11-07",
+          "opp": "NSH",
+          "home": false,
+          "goalsAllowed": 2,
+          "sogFaced": 28,
+          "savePct": 0.929,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020290,
+          "date": "2026-11-10",
+          "opp": "DET",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 32,
+          "savePct": 0.938,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020307,
+          "date": "2026-11-12",
+          "opp": "UTA",
+          "home": false,
+          "goalsAllowed": 0,
+          "sogFaced": 29,
+          "savePct": 1.0,
+          "win": true,
+          "shutout": true
+        },
+        {
+          "gameId": 2026020320,
+          "date": "2026-11-14",
+          "opp": "FLA",
+          "home": true,
+          "goalsAllowed": 4,
+          "sogFaced": 28,
+          "savePct": 0.857,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020350,
+          "date": "2026-11-19",
+          "opp": "PIT",
+          "home": false,
+          "goalsAllowed": 2,
+          "sogFaced": 33,
+          "savePct": 0.939,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020375,
+          "date": "2026-11-22",
+          "opp": "EDM",
+          "home": true,
+          "goalsAllowed": 4,
+          "sogFaced": 30,
+          "savePct": 0.867,
+          "win": true,
+          "shutout": false
+        }
+      ]
+    },
+    {
       "playerId": 8476945,
       "name": "Connor Hellebuyck",
       "team": "NJD",
@@ -57403,198 +58027,6 @@
           "sogFaced": 6,
           "savePct": 0.333,
           "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8479979,
-      "name": "Jake Oettinger",
-      "team": "DAL",
-      "position": "G",
-      "games_played": 71,
-      "icetime": 252317,
-      "wins": 47,
-      "shutouts": 8,
-      "shotsFaced": 2673,
-      "sogFaced": 1755,
-      "goalsAllowed": 177,
-      "savePct": 0.899,
-      "GA60_proxy": 2.53,
-      "xGA60_proxy": 2.68,
-      "highDangerSavePct": 0.892,
-      "last7": [
-        {
-          "gameId": 2026020225,
-          "date": "2026-10-31",
-          "opp": "CBJ",
-          "home": true,
-          "goalsAllowed": 1,
-          "sogFaced": 25,
-          "savePct": 0.96,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020243,
-          "date": "2026-11-03",
-          "opp": "WSH",
-          "home": false,
-          "goalsAllowed": 5,
-          "sogFaced": 25,
-          "savePct": 0.8,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020272,
-          "date": "2026-11-07",
-          "opp": "SJS",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 23,
-          "savePct": 0.87,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020306,
-          "date": "2026-11-12",
-          "opp": "WPG",
-          "home": true,
-          "goalsAllowed": 6,
-          "sogFaced": 27,
-          "savePct": 0.778,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020322,
-          "date": "2026-11-14",
-          "opp": "BUF",
-          "home": true,
-          "goalsAllowed": 0,
-          "sogFaced": 22,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2026020342,
-          "date": "2026-11-17",
-          "opp": "VGK",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 27,
-          "savePct": 0.889,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020358,
-          "date": "2026-11-19",
-          "opp": "VGK",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 30,
-          "savePct": 0.9,
-          "win": true,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8480981,
-      "name": "Joel Hofer",
-      "team": "STL",
-      "position": "G",
-      "games_played": 62,
-      "icetime": 214876,
-      "wins": 33,
-      "shutouts": 8,
-      "shotsFaced": 2656,
-      "sogFaced": 1718,
-      "goalsAllowed": 150,
-      "savePct": 0.913,
-      "GA60_proxy": 2.51,
-      "xGA60_proxy": 2.88,
-      "highDangerSavePct": 0.884,
-      "last7": [
-        {
-          "gameId": 2026020218,
-          "date": "2026-10-31",
-          "opp": "DET",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 28,
-          "savePct": 0.857,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020240,
-          "date": "2026-11-03",
-          "opp": "NYR",
-          "home": false,
-          "goalsAllowed": 2,
-          "sogFaced": 30,
-          "savePct": 0.933,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020266,
-          "date": "2026-11-07",
-          "opp": "NSH",
-          "home": false,
-          "goalsAllowed": 2,
-          "sogFaced": 28,
-          "savePct": 0.929,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020290,
-          "date": "2026-11-10",
-          "opp": "DET",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 32,
-          "savePct": 0.938,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020307,
-          "date": "2026-11-12",
-          "opp": "UTA",
-          "home": false,
-          "goalsAllowed": 0,
-          "sogFaced": 29,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2026020320,
-          "date": "2026-11-14",
-          "opp": "FLA",
-          "home": true,
-          "goalsAllowed": 4,
-          "sogFaced": 28,
-          "savePct": 0.857,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020350,
-          "date": "2026-11-19",
-          "opp": "PIT",
-          "home": false,
-          "goalsAllowed": 2,
-          "sogFaced": 33,
-          "savePct": 0.939,
-          "win": true,
           "shutout": false
         }
       ]
@@ -58276,29 +58708,18 @@
       "name": "Kevin Lankinen",
       "team": "VAN",
       "position": "G",
-      "games_played": 56,
-      "icetime": 181201,
+      "games_played": 57,
+      "icetime": 184009,
       "wins": 12,
       "shutouts": 0,
-      "shotsFaced": 2260,
-      "sogFaced": 1501,
-      "goalsAllowed": 203,
+      "shotsFaced": 2290,
+      "sogFaced": 1520,
+      "goalsAllowed": 205,
       "savePct": 0.865,
-      "GA60_proxy": 4.03,
-      "xGA60_proxy": 3.34,
-      "highDangerSavePct": 0.855,
+      "GA60_proxy": 4.01,
+      "xGA60_proxy": 3.33,
+      "highDangerSavePct": 0.854,
       "last7": [
-        {
-          "gameId": 2026020039,
-          "date": "2026-10-04",
-          "opp": "VGK",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 28,
-          "savePct": 0.893,
-          "win": false,
-          "shutout": false
-        },
         {
           "gameId": 2026020061,
           "date": "2026-10-08",
@@ -58362,6 +58783,17 @@
           "goalsAllowed": 5,
           "sogFaced": 22,
           "savePct": 0.773,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020377,
+          "date": "2026-11-22",
+          "opp": "CHI",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 19,
+          "savePct": 0.895,
           "win": false,
           "shutout": false
         }
@@ -58656,6 +59088,102 @@
       ]
     },
     {
+      "playerId": 8481668,
+      "name": "Arturs Silovs",
+      "team": "PIT",
+      "position": "G",
+      "games_played": 53,
+      "icetime": 184675,
+      "wins": 24,
+      "shutouts": 4,
+      "shotsFaced": 2127,
+      "sogFaced": 1387,
+      "goalsAllowed": 161,
+      "savePct": 0.884,
+      "GA60_proxy": 3.14,
+      "xGA60_proxy": 2.86,
+      "highDangerSavePct": 0.851,
+      "last7": [
+        {
+          "gameId": 2026020172,
+          "date": "2026-10-24",
+          "opp": "NSH",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 26,
+          "savePct": 0.923,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020205,
+          "date": "2026-10-29",
+          "opp": "UTA",
+          "home": true,
+          "goalsAllowed": 4,
+          "sogFaced": 34,
+          "savePct": 0.882,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020242,
+          "date": "2026-11-03",
+          "opp": "VGK",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 23,
+          "savePct": 0.87,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020257,
+          "date": "2026-11-05",
+          "opp": "BOS",
+          "home": true,
+          "goalsAllowed": 6,
+          "sogFaced": 24,
+          "savePct": 0.75,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020282,
+          "date": "2026-11-08",
+          "opp": "ANA",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 24,
+          "savePct": 0.833,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020350,
+          "date": "2026-11-19",
+          "opp": "STL",
+          "home": true,
+          "goalsAllowed": 5,
+          "sogFaced": 33,
+          "savePct": 0.848,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020376,
+          "date": "2026-11-22",
+          "opp": "DAL",
+          "home": false,
+          "goalsAllowed": 1,
+          "sogFaced": 23,
+          "savePct": 0.957,
+          "win": false,
+          "shutout": false
+        }
+      ]
+    },
+    {
       "playerId": 8474593,
       "name": "Jacob Markstrom",
       "team": "FLA",
@@ -58842,102 +59370,6 @@
           "goalsAllowed": 3,
           "sogFaced": 28,
           "savePct": 0.893,
-          "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8481668,
-      "name": "Arturs Silovs",
-      "team": "PIT",
-      "position": "G",
-      "games_played": 52,
-      "icetime": 181224,
-      "wins": 24,
-      "shutouts": 4,
-      "shotsFaced": 2095,
-      "sogFaced": 1364,
-      "goalsAllowed": 160,
-      "savePct": 0.883,
-      "GA60_proxy": 3.18,
-      "xGA60_proxy": 2.86,
-      "highDangerSavePct": 0.85,
-      "last7": [
-        {
-          "gameId": 2026020158,
-          "date": "2026-10-22",
-          "opp": "FLA",
-          "home": true,
-          "goalsAllowed": 0,
-          "sogFaced": 26,
-          "savePct": 1.0,
-          "win": true,
-          "shutout": true
-        },
-        {
-          "gameId": 2026020172,
-          "date": "2026-10-24",
-          "opp": "NSH",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 26,
-          "savePct": 0.923,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020205,
-          "date": "2026-10-29",
-          "opp": "UTA",
-          "home": true,
-          "goalsAllowed": 4,
-          "sogFaced": 34,
-          "savePct": 0.882,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020242,
-          "date": "2026-11-03",
-          "opp": "VGK",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 23,
-          "savePct": 0.87,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020257,
-          "date": "2026-11-05",
-          "opp": "BOS",
-          "home": true,
-          "goalsAllowed": 6,
-          "sogFaced": 24,
-          "savePct": 0.75,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020282,
-          "date": "2026-11-08",
-          "opp": "ANA",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 24,
-          "savePct": 0.833,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020350,
-          "date": "2026-11-19",
-          "opp": "STL",
-          "home": true,
-          "goalsAllowed": 5,
-          "sogFaced": 33,
-          "savePct": 0.848,
           "win": false,
           "shutout": false
         }
@@ -59136,6 +59568,102 @@
       ]
     },
     {
+      "playerId": 8480045,
+      "name": "Ukko-Pekka Luukkonen",
+      "team": "BUF",
+      "position": "G",
+      "games_played": 49,
+      "icetime": 169870,
+      "wins": 29,
+      "shutouts": 1,
+      "shotsFaced": 1972,
+      "sogFaced": 1290,
+      "goalsAllowed": 131,
+      "savePct": 0.898,
+      "GA60_proxy": 2.78,
+      "xGA60_proxy": 2.93,
+      "highDangerSavePct": 0.881,
+      "last7": [
+        {
+          "gameId": 2026020152,
+          "date": "2026-10-21",
+          "opp": "PHI",
+          "home": true,
+          "goalsAllowed": 3,
+          "sogFaced": 26,
+          "savePct": 0.885,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020173,
+          "date": "2026-10-24",
+          "opp": "WSH",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 34,
+          "savePct": 0.882,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020221,
+          "date": "2026-10-31",
+          "opp": "LAK",
+          "home": false,
+          "goalsAllowed": 2,
+          "sogFaced": 29,
+          "savePct": 0.931,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020262,
+          "date": "2026-11-06",
+          "opp": "CBJ",
+          "home": true,
+          "goalsAllowed": 2,
+          "sogFaced": 26,
+          "savePct": 0.923,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020293,
+          "date": "2026-11-11",
+          "opp": "TBL",
+          "home": true,
+          "goalsAllowed": 5,
+          "sogFaced": 14,
+          "savePct": 0.643,
+          "win": false,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020351,
+          "date": "2026-11-19",
+          "opp": "WSH",
+          "home": false,
+          "goalsAllowed": 3,
+          "sogFaced": 36,
+          "savePct": 0.917,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020374,
+          "date": "2026-11-22",
+          "opp": "TBL",
+          "home": false,
+          "goalsAllowed": 2,
+          "sogFaced": 31,
+          "savePct": 0.935,
+          "win": true,
+          "shutout": false
+        }
+      ]
+    },
+    {
       "playerId": 8475809,
       "name": "Scott Wedgewood",
       "team": "COL",
@@ -59228,102 +59756,6 @@
           "savePct": 1.0,
           "win": true,
           "shutout": true
-        }
-      ]
-    },
-    {
-      "playerId": 8480045,
-      "name": "Ukko-Pekka Luukkonen",
-      "team": "BUF",
-      "position": "G",
-      "games_played": 48,
-      "icetime": 166270,
-      "wins": 28,
-      "shutouts": 1,
-      "shotsFaced": 1922,
-      "sogFaced": 1259,
-      "goalsAllowed": 129,
-      "savePct": 0.898,
-      "GA60_proxy": 2.79,
-      "xGA60_proxy": 2.92,
-      "highDangerSavePct": 0.878,
-      "last7": [
-        {
-          "gameId": 2026020126,
-          "date": "2026-10-17",
-          "opp": "MTL",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 34,
-          "savePct": 0.882,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020152,
-          "date": "2026-10-21",
-          "opp": "PHI",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 26,
-          "savePct": 0.885,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020173,
-          "date": "2026-10-24",
-          "opp": "WSH",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 34,
-          "savePct": 0.882,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020221,
-          "date": "2026-10-31",
-          "opp": "LAK",
-          "home": false,
-          "goalsAllowed": 2,
-          "sogFaced": 29,
-          "savePct": 0.931,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020262,
-          "date": "2026-11-06",
-          "opp": "CBJ",
-          "home": true,
-          "goalsAllowed": 2,
-          "sogFaced": 26,
-          "savePct": 0.923,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020293,
-          "date": "2026-11-11",
-          "opp": "TBL",
-          "home": true,
-          "goalsAllowed": 5,
-          "sogFaced": 14,
-          "savePct": 0.643,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2026020351,
-          "date": "2026-11-19",
-          "opp": "WSH",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 36,
-          "savePct": 0.917,
-          "win": true,
-          "shutout": false
         }
       ]
     },
@@ -59716,29 +60148,18 @@
       "name": "Tristan Jarry",
       "team": "EDM",
       "position": "G",
-      "games_played": 43,
-      "icetime": 143129,
+      "games_played": 44,
+      "icetime": 146979,
       "wins": 22,
       "shutouts": 4,
-      "shotsFaced": 1725,
-      "sogFaced": 1105,
-      "goalsAllowed": 123,
-      "savePct": 0.889,
-      "GA60_proxy": 3.09,
-      "xGA60_proxy": 3.07,
-      "highDangerSavePct": 0.891,
+      "shotsFaced": 1760,
+      "sogFaced": 1132,
+      "goalsAllowed": 127,
+      "savePct": 0.888,
+      "GA60_proxy": 3.11,
+      "xGA60_proxy": 3.05,
+      "highDangerSavePct": 0.887,
       "last7": [
-        {
-          "gameId": 2026020176,
-          "date": "2026-10-24",
-          "opp": "TOR",
-          "home": true,
-          "goalsAllowed": 6,
-          "sogFaced": 31,
-          "savePct": 0.806,
-          "win": false,
-          "shutout": false
-        },
         {
           "gameId": 2026020187,
           "date": "2026-10-26",
@@ -59803,6 +60224,17 @@
           "sogFaced": 36,
           "savePct": 0.944,
           "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020375,
+          "date": "2026-11-22",
+          "opp": "STL",
+          "home": false,
+          "goalsAllowed": 4,
+          "sogFaced": 27,
+          "savePct": 0.852,
+          "win": false,
           "shutout": false
         }
       ]
@@ -60196,29 +60628,18 @@
       "name": "Brandon Bussi",
       "team": "CAR",
       "position": "G",
-      "games_played": 47,
-      "icetime": 170877,
-      "wins": 35,
+      "games_played": 48,
+      "icetime": 174477,
+      "wins": 36,
       "shutouts": 2,
-      "shotsFaced": 1623,
-      "sogFaced": 1092,
-      "goalsAllowed": 121,
-      "savePct": 0.889,
-      "GA60_proxy": 2.55,
-      "xGA60_proxy": 2.54,
-      "highDangerSavePct": 0.882,
+      "shotsFaced": 1665,
+      "sogFaced": 1119,
+      "goalsAllowed": 123,
+      "savePct": 0.89,
+      "GA60_proxy": 2.54,
+      "xGA60_proxy": 2.56,
+      "highDangerSavePct": 0.883,
       "last7": [
-        {
-          "gameId": 2026020018,
-          "date": "2026-10-02",
-          "opp": "WSH",
-          "home": true,
-          "goalsAllowed": 5,
-          "sogFaced": 27,
-          "savePct": 0.815,
-          "win": false,
-          "shutout": false
-        },
         {
           "gameId": 2026020045,
           "date": "2026-10-06",
@@ -60282,6 +60703,17 @@
           "goalsAllowed": 1,
           "sogFaced": 13,
           "savePct": 0.923,
+          "win": true,
+          "shutout": false
+        },
+        {
+          "gameId": 2026020373,
+          "date": "2026-11-22",
+          "opp": "NYR",
+          "home": false,
+          "goalsAllowed": 2,
+          "sogFaced": 27,
+          "savePct": 0.926,
           "win": true,
           "shutout": false
         }
@@ -62191,102 +62623,6 @@
           "goalsAllowed": 2,
           "sogFaced": 11,
           "savePct": 0.818,
-          "win": false,
-          "shutout": false
-        }
-      ]
-    },
-    {
-      "playerId": 8478470,
-      "name": "Samuel Montembeault",
-      "team": "MTL",
-      "position": "G",
-      "games_played": 25,
-      "icetime": 85092,
-      "wins": 10,
-      "shutouts": 0,
-      "shotsFaced": 968,
-      "sogFaced": 636,
-      "goalsAllowed": 81,
-      "savePct": 0.873,
-      "GA60_proxy": 3.43,
-      "xGA60_proxy": 3.2,
-      "highDangerSavePct": 0.873,
-      "last7": [
-        {
-          "gameId": 2025020727,
-          "date": "2026-01-13",
-          "opp": "WSH",
-          "home": false,
-          "goalsAllowed": 3,
-          "sogFaced": 43,
-          "savePct": 0.93,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020758,
-          "date": "2026-01-17",
-          "opp": "OTT",
-          "home": false,
-          "goalsAllowed": 5,
-          "sogFaced": 34,
-          "savePct": 0.853,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020795,
-          "date": "2026-01-22",
-          "opp": "BUF",
-          "home": true,
-          "goalsAllowed": 3,
-          "sogFaced": 16,
-          "savePct": 0.812,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020812,
-          "date": "2026-01-24",
-          "opp": "BOS",
-          "home": false,
-          "goalsAllowed": 4,
-          "sogFaced": 21,
-          "savePct": 0.81,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020895,
-          "date": "2026-02-04",
-          "opp": "WPG",
-          "home": false,
-          "goalsAllowed": 1,
-          "sogFaced": 37,
-          "savePct": 0.973,
-          "win": true,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020919,
-          "date": "2026-02-26",
-          "opp": "NYI",
-          "home": true,
-          "goalsAllowed": 4,
-          "sogFaced": 26,
-          "savePct": 0.846,
-          "win": false,
-          "shutout": false
-        },
-        {
-          "gameId": 2025020987,
-          "date": "2026-03-06",
-          "opp": "ANA",
-          "home": false,
-          "goalsAllowed": 5,
-          "sogFaced": 33,
-          "savePct": 0.848,
           "win": false,
           "shutout": false
         }
