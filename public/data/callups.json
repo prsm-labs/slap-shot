@@ -1,13 +1,193 @@
 {
  "_meta": {
-  "generated": "2026-11-23 12:05",
+  "generated": "2026-11-23 17:35",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 136,
-  "up": 67,
+  "count": 138,
+  "up": 69,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8482451,
+   "name": "Mikael Pyyhtia",
+   "team": "CBJ",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2001-12-17",
+   "sweater": 82,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "CBJ",
+    "round": 4,
+    "overallPick": 114
+   },
+   "recalledOn": "2026-11-23",
+   "from": "Cleveland",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-23",
+     "type": "up",
+     "club": "Cleveland"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 14,
+     "goals": 3,
+     "assists": 6,
+     "points": 9,
+     "plusMinus": 0,
+     "pim": 8,
+     "team": "Cleveland Monsters"
+    },
+    "last": {
+     "gamesPlayed": 59,
+     "goals": 21,
+     "assists": 28,
+     "points": 49,
+     "plusMinus": 0,
+     "pim": 22,
+     "team": "Cleveland Monsters"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 5,
+     "goals": 1,
+     "assists": 0,
+     "points": 1,
+     "plusMinus": -1,
+     "pim": 0,
+     "shots": 6,
+     "team": "Columbus Blue Jackets"
+    },
+    "careerGp": 71,
+    "careerG": 5,
+    "careerP": 11
+   }
+  },
+  {
+   "playerId": 8479333,
+   "name": "Libor Hajek",
+   "team": "SJS",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "1998-02-04",
+   "sweater": 24,
+   "draft": {
+    "year": 2016,
+    "teamAbbrev": "TBL",
+    "round": 2,
+    "overallPick": 37
+   },
+   "recalledOn": "2026-11-23",
+   "from": "San Jose",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-28",
+     "type": "up",
+     "club": "San Jose"
+    },
+    {
+     "date": "2026-11-04",
+     "type": "down",
+     "club": "San Jose"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "up",
+     "club": "San Jose"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 15,
+     "goals": 1,
+     "assists": 1,
+     "points": 2,
+     "plusMinus": 0,
+     "pim": 13,
+     "team": "San Jose Barracuda"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 110,
+    "careerG": 4,
+    "careerP": 12
+   }
+  },
+  {
+   "playerId": 8484821,
+   "name": "Sam Morton",
+   "team": "CGY",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1999-07-28",
+   "sweater": 45,
+   "draft": null,
+   "recalledOn": "2026-11-23",
+   "from": "Calgary",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-23",
+     "type": "up",
+     "club": "Calgary"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 20,
+     "goals": 3,
+     "assists": 3,
+     "points": 6,
+     "plusMinus": -3,
+     "pim": 8,
+     "team": "Calgary Wranglers"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 17,
+     "assists": 21,
+     "points": 38,
+     "plusMinus": -15,
+     "pim": 30,
+     "team": "Calgary Wranglers"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 10,
+     "shots": 3,
+     "team": "Calgary Flames"
+    },
+    "careerGp": 4,
+    "careerG": 1,
+    "careerP": 1
+   }
+  },
   {
    "playerId": 8482691,
    "name": "Aatu R\u00e4ty",
@@ -154,6 +334,105 @@
     "careerGp": 201,
     "careerG": 14,
     "careerP": 37
+   }
+  },
+  {
+   "playerId": 8484268,
+   "name": "Nikita Tolopilo",
+   "team": "VAN",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2000-04-06",
+   "sweater": 60,
+   "draft": null,
+   "recalledOn": "2026-11-21",
+   "from": "Abbotsford",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": "2026-11-23",
+   "events": [
+    {
+     "date": "2026-11-15",
+     "type": "up",
+     "club": "Abbotsford"
+    },
+    {
+     "date": "2026-11-17",
+     "type": "down",
+     "club": "Abbotsford"
+    },
+    {
+     "date": "2026-11-21",
+     "type": "up",
+     "club": "Abbotsford"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "down",
+     "club": "Abbotsford"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 12,
+     "wins": 7,
+     "losses": 3,
+     "otLosses": 2,
+     "shutouts": 0,
+     "goalsAgainst": 33,
+     "shotsAgainst": 298,
+     "team": "Abbotsford Canucks",
+     "savePct": 0.889,
+     "gaa": 2.74
+    },
+    "last": {
+     "gamesPlayed": 19,
+     "wins": 8,
+     "losses": 8,
+     "otLosses": 3,
+     "shutouts": 0,
+     "goalsAgainst": 58,
+     "shotsAgainst": 561,
+     "team": "Abbotsford Canucks",
+     "savePct": 0.897,
+     "gaa": 3.07
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 1,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 6,
+     "shotsAgainst": 48,
+     "team": "Vancouver Canucks",
+     "savePct": 0.875,
+     "gaa": 4.95
+    },
+    "last": {
+     "gamesPlayed": 21,
+     "goals": 0,
+     "assists": 0,
+     "pim": 2,
+     "wins": 6,
+     "losses": 11,
+     "otLosses": 2,
+     "shutouts": 0,
+     "goalsAgainst": 69,
+     "shotsAgainst": 582,
+     "team": "Vancouver Canucks",
+     "savePct": 0.881,
+     "gaa": 3.61
+    },
+    "careerGp": 25,
+    "careerG": 0,
+    "careerP": null
    }
   },
   {
@@ -371,7 +650,7 @@
      "points": 0,
      "plusMinus": -2,
      "pim": 2,
-     "shots": 1,
+     "shots": 2,
      "team": "Vancouver Canucks"
     },
     "last": {
@@ -465,100 +744,6 @@
     "careerGp": 29,
     "careerG": 1,
     "careerP": 5
-   }
-  },
-  {
-   "playerId": 8484268,
-   "name": "Nikita Tolopilo",
-   "team": "VAN",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2000-04-06",
-   "sweater": 60,
-   "draft": null,
-   "recalledOn": "2026-11-21",
-   "from": "Abbotsford",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-15",
-     "type": "up",
-     "club": "Abbotsford"
-    },
-    {
-     "date": "2026-11-17",
-     "type": "down",
-     "club": "Abbotsford"
-    },
-    {
-     "date": "2026-11-21",
-     "type": "up",
-     "club": "Abbotsford"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 12,
-     "wins": 7,
-     "losses": 3,
-     "otLosses": 2,
-     "shutouts": 0,
-     "goalsAgainst": 33,
-     "shotsAgainst": 298,
-     "team": "Abbotsford Canucks",
-     "savePct": 0.889,
-     "gaa": 2.74
-    },
-    "last": {
-     "gamesPlayed": 19,
-     "wins": 8,
-     "losses": 8,
-     "otLosses": 3,
-     "shutouts": 0,
-     "goalsAgainst": 58,
-     "shotsAgainst": 561,
-     "team": "Abbotsford Canucks",
-     "savePct": 0.897,
-     "gaa": 3.07
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 1,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 6,
-     "shotsAgainst": 48,
-     "team": "Vancouver Canucks",
-     "savePct": 0.875,
-     "gaa": 4.95
-    },
-    "last": {
-     "gamesPlayed": 21,
-     "goals": 0,
-     "assists": 0,
-     "pim": 2,
-     "wins": 6,
-     "losses": 11,
-     "otLosses": 2,
-     "shutouts": 0,
-     "goalsAgainst": 69,
-     "shotsAgainst": 582,
-     "team": "Vancouver Canucks",
-     "savePct": 0.881,
-     "gaa": 3.61
-    },
-    "careerGp": 25,
-    "careerG": 0,
-    "careerP": null
    }
   },
   {
@@ -729,6 +914,76 @@
    }
   },
   {
+   "playerId": 8478424,
+   "name": "Jansen Harkins",
+   "team": "TBL",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1997-05-23",
+   "sweater": 10,
+   "draft": {
+    "year": 2015,
+    "teamAbbrev": "WPG",
+    "round": 2,
+    "overallPick": 47
+   },
+   "recalledOn": "2026-11-19",
+   "from": "Syracuse",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-23",
+   "events": [
+    {
+     "date": "2026-11-19",
+     "type": "up",
+     "club": "Syracuse"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "down",
+     "club": "Syracuse"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 11,
+     "goals": 3,
+     "assists": 3,
+     "points": 6,
+     "plusMinus": -3,
+     "pim": 4,
+     "team": "Syracuse Crunch"
+    },
+    "last": null
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 3,
+     "team": "Tampa Bay Lightning"
+    },
+    "last": {
+     "gamesPlayed": 44,
+     "goals": 3,
+     "assists": 5,
+     "points": 8,
+     "plusMinus": -6,
+     "pim": 28,
+     "shots": 37,
+     "team": "Anaheim Ducks"
+    },
+    "careerGp": 308,
+    "careerG": 18,
+    "careerP": 45
+   }
+  },
+  {
    "playerId": 8475752,
    "name": "Tyler Pitlick",
    "team": "MIN",
@@ -883,71 +1138,6 @@
     "careerGp": 2,
     "careerG": 0,
     "careerP": 0
-   }
-  },
-  {
-   "playerId": 8478424,
-   "name": "Jansen Harkins",
-   "team": "TBL",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1997-05-23",
-   "sweater": 10,
-   "draft": {
-    "year": 2015,
-    "teamAbbrev": "WPG",
-    "round": 2,
-    "overallPick": 47
-   },
-   "recalledOn": "2026-11-19",
-   "from": "Syracuse",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-19",
-     "type": "up",
-     "club": "Syracuse"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 11,
-     "goals": 3,
-     "assists": 3,
-     "points": 6,
-     "plusMinus": -3,
-     "pim": 4,
-     "team": "Syracuse Crunch"
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 3,
-     "team": "Tampa Bay Lightning"
-    },
-    "last": {
-     "gamesPlayed": 44,
-     "goals": 3,
-     "assists": 5,
-     "points": 8,
-     "plusMinus": -6,
-     "pim": 28,
-     "shots": 37,
-     "team": "Anaheim Ducks"
-    },
-    "careerGp": 308,
-    "careerG": 18,
-    "careerP": 45
    }
   },
   {
@@ -4610,6 +4800,84 @@
    }
   },
   {
+   "playerId": 8480326,
+   "name": "Sheldon Dries",
+   "team": "DET",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1994-04-23",
+   "sweater": 15,
+   "draft": null,
+   "recalledOn": "2026-10-29",
+   "from": "Grand Rapids",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-23",
+   "events": [
+    {
+     "date": "2026-09-25",
+     "type": "down",
+     "club": "Grand Rapids"
+    },
+    {
+     "date": "2026-10-29",
+     "type": "up",
+     "club": "Grand Rapids"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "down",
+     "club": "Grand Rapids"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 4,
+     "goals": 5,
+     "assists": 3,
+     "points": 8,
+     "plusMinus": 4,
+     "pim": 6,
+     "team": "Grand Rapids Griffins"
+    },
+    "last": {
+     "gamesPlayed": 57,
+     "goals": 23,
+     "assists": 22,
+     "points": 45,
+     "plusMinus": 20,
+     "pim": 13,
+     "team": "Grand Rapids Griffins"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 16,
+     "goals": 0,
+     "assists": 1,
+     "points": 1,
+     "plusMinus": -1,
+     "pim": 2,
+     "shots": 13,
+     "team": "Detroit Red Wings"
+    },
+    "last": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 2,
+     "team": "Detroit Red Wings"
+    },
+    "careerGp": 143,
+    "careerG": 16,
+    "careerP": 27
+   }
+  },
+  {
    "playerId": 8482160,
    "name": "Martin Chromiak",
    "team": "LAK",
@@ -4728,79 +4996,6 @@
    }
   },
   {
-   "playerId": 8480326,
-   "name": "Sheldon Dries",
-   "team": "DET",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1994-04-23",
-   "sweater": 15,
-   "draft": null,
-   "recalledOn": "2026-10-29",
-   "from": "Grand Rapids",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-25",
-     "type": "down",
-     "club": "Grand Rapids"
-    },
-    {
-     "date": "2026-10-29",
-     "type": "up",
-     "club": "Grand Rapids"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 5,
-     "assists": 3,
-     "points": 8,
-     "plusMinus": 4,
-     "pim": 6,
-     "team": "Grand Rapids Griffins"
-    },
-    "last": {
-     "gamesPlayed": 57,
-     "goals": 23,
-     "assists": 22,
-     "points": 45,
-     "plusMinus": 20,
-     "pim": 13,
-     "team": "Grand Rapids Griffins"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 16,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": -1,
-     "pim": 2,
-     "shots": 13,
-     "team": "Detroit Red Wings"
-    },
-    "last": {
-     "gamesPlayed": 5,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 2,
-     "team": "Detroit Red Wings"
-    },
-    "careerGp": 143,
-    "careerG": 16,
-    "careerP": 27
-   }
-  },
-  {
    "playerId": 8483428,
    "name": "Filip Bystedt",
    "team": "SJS",
@@ -4867,58 +5062,6 @@
     "careerGp": 5,
     "careerG": 0,
     "careerP": 0
-   }
-  },
-  {
-   "playerId": 8479333,
-   "name": "Libor Hajek",
-   "team": "SJS",
-   "position": "D",
-   "shoots": "L",
-   "birthDate": "1998-02-04",
-   "sweater": 24,
-   "draft": {
-    "year": 2016,
-    "teamAbbrev": "TBL",
-    "round": 2,
-    "overallPick": 37
-   },
-   "recalledOn": "2026-10-28",
-   "from": "San Jose",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-04",
-   "events": [
-    {
-     "date": "2026-10-28",
-     "type": "up",
-     "club": "San Jose"
-    },
-    {
-     "date": "2026-11-04",
-     "type": "down",
-     "club": "San Jose"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 15,
-     "goals": 1,
-     "assists": 1,
-     "points": 2,
-     "plusMinus": 0,
-     "pim": 13,
-     "team": "San Jose Barracuda"
-    },
-    "last": null
-   },
-   "nhl": {
-    "season": null,
-    "last": null,
-    "careerGp": 110,
-    "careerG": 4,
-    "careerP": 12
    }
   },
   {
@@ -7117,7 +7260,7 @@
    "from": "Charlotte",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
