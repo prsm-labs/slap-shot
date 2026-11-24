@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-24 12:04",
+  "generated": "2026-11-24 17:34",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 138,
-  "up": 68,
+  "up": 67,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -1800,12 +1800,17 @@
    "from": "Toronto",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-11-24",
    "events": [
     {
      "date": "2026-11-12",
      "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-24",
+     "type": "down",
      "club": "Toronto"
     }
    ],
@@ -2162,6 +2167,84 @@
    }
   },
   {
+   "playerId": 8482525,
+   "name": "Ryan Tverberg",
+   "team": "TOR",
+   "position": "C",
+   "shoots": "R",
+   "birthDate": "2002-01-30",
+   "sweater": 77,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "TOR",
+    "round": 7,
+    "overallPick": 213
+   },
+   "recalledOn": "2026-11-10",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-24",
+   "events": [
+    {
+     "date": "2026-11-10",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-24",
+     "type": "down",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 14,
+     "goals": 4,
+     "assists": 3,
+     "points": 7,
+     "plusMinus": -1,
+     "pim": 8,
+     "team": "Toronto Marlies"
+    },
+    "last": {
+     "gamesPlayed": 63,
+     "goals": 15,
+     "assists": 21,
+     "points": 36,
+     "plusMinus": 18,
+     "pim": 36,
+     "team": "Toronto Marlies"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 7,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -4,
+     "pim": 4,
+     "shots": 4,
+     "team": "Toronto Maple Leafs"
+    },
+    "last": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 1,
+     "pim": 2,
+     "shots": 1,
+     "team": "Toronto Maple Leafs"
+    },
+    "careerGp": 9,
+    "careerG": 0,
+    "careerP": 0
+   }
+  },
+  {
    "playerId": 8485142,
    "name": "Jackson Parsons",
    "team": "OTT",
@@ -2220,79 +2303,6 @@
     "careerGp": 0,
     "careerG": null,
     "careerP": null
-   }
-  },
-  {
-   "playerId": 8482525,
-   "name": "Ryan Tverberg",
-   "team": "TOR",
-   "position": "C",
-   "shoots": "R",
-   "birthDate": "2002-01-30",
-   "sweater": 77,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "TOR",
-    "round": 7,
-    "overallPick": 213
-   },
-   "recalledOn": "2026-11-10",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-10",
-     "type": "up",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 14,
-     "goals": 4,
-     "assists": 3,
-     "points": 7,
-     "plusMinus": -1,
-     "pim": 8,
-     "team": "Toronto Marlies"
-    },
-    "last": {
-     "gamesPlayed": 63,
-     "goals": 15,
-     "assists": 21,
-     "points": 36,
-     "plusMinus": 18,
-     "pim": 36,
-     "team": "Toronto Marlies"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 7,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -4,
-     "pim": 4,
-     "shots": 4,
-     "team": "Toronto Maple Leafs"
-    },
-    "last": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 2,
-     "shots": 1,
-     "team": "Toronto Maple Leafs"
-    },
-    "careerGp": 9,
-    "careerG": 0,
-    "careerP": 0
    }
   },
   {
@@ -4018,11 +4028,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 12,
-     "goals": 16,
-     "assists": 5,
-     "points": 21,
-     "plusMinus": 6,
+     "gamesPlayed": 13,
+     "goals": 18,
+     "assists": 6,
+     "points": 24,
+     "plusMinus": 7,
      "pim": 4,
      "team": "Grand Rapids Griffins"
     },
@@ -7018,7 +7028,7 @@
    "from": "Springfield",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "down",
+   "status": "up",
    "sentDownOn": null,
    "events": [
     {
@@ -9238,7 +9248,7 @@
    "from": "San Diego",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {

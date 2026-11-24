@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "slateDate": "2026-11-24",
+  "lockedAt": "2026-11-24T22:34:52.648Z",
+  "poolGenerated": "2026-11-24 17:31",
+  "eligible": 37,
+  "confirmed": 0,
+  "lineupsLoaded": true,
+  "note": "Locked Top 3 (src/lib/top3.js). Never recomputed after this file is written."
+ },
+ "picks": [
+  {
+   "tier": "chalk",
+   "fallback": false,
+   "why": "Top 6% of tonight's slate by the grade model (43% to score), facing EDM (#1 softest defense of 2 tonight, 3 expected goals allowed a game). Matchup-adjusted chance 37.3%.",
+   "playerId": 8478403,
+   "name": "Jack Eichel",
+   "team": "VGK",
+   "opp": "EDM",
+   "position": "C",
+   "isHome": false,
+   "opponentGoalie": "Devon Levi",
+   "opponentGoalieId": 8482221,
+   "goalieGrade": "B",
+   "grade": "A",
+   "lineupStatus": null,
+   "modelGoalPct": 43,
+   "adjGoalPct": 37.3,
+   "oppXga": 3,
+   "softRank": 1,
+   "sogL5": 3.6,
+   "sogPg": 3.3
+  },
+  {
+   "tier": "mid",
+   "fallback": true,
+   "why": "No mid-tier skater cleared tonight's bar (soft matchup + shots trending up), so this is the best remaining mid-tier chance: 22.2% vs VGK (#2 softest defense of 2 tonight, 2.8 expected goals allowed a game).",
+   "playerId": 8480803,
+   "name": "Evan Bouchard",
+   "team": "EDM",
+   "opp": "VGK",
+   "position": "D",
+   "isHome": true,
+   "opponentGoalie": "Carter Hart",
+   "opponentGoalieId": 8479394,
+   "goalieGrade": "B",
+   "grade": "A",
+   "lineupStatus": null,
+   "modelGoalPct": 21.8,
+   "adjGoalPct": 22.2,
+   "oppXga": 2.8,
+   "softRank": 2,
+   "sogL5": 2.2,
+   "sogPg": 2.7
+  },
+  {
+   "tier": "breakout",
+   "player": null
+  }
+ ]
+}
