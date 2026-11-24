@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-24 07:49",
+  "generated": "2026-11-24 12:04",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 138,
-  "up": 69,
+  "up": 68,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -1223,25 +1223,11 @@
    }
   },
   {
-   "playerId": 8483526,
-   "name": "Danil Zhilkin",
    "team": "WPG",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "2003-12-19",
-   "sweater": 53,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "WPG",
-    "round": 3,
-    "overallPick": 77
-   },
    "recalledOn": "2026-11-17",
    "from": "Manitoba",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
    "events": [
     {
      "date": "2026-11-17",
@@ -1249,50 +1235,20 @@
      "club": "Manitoba"
     }
    ],
+   "playerId": null,
+   "name": "Danny Zhilkin",
+   "position": "F",
+   "noProfile": true,
+   "status": "up",
+   "sentDownOn": null,
    "ahl": {
-    "season": {
-     "gamesPlayed": 18,
-     "goals": 8,
-     "assists": 11,
-     "points": 19,
-     "plusMinus": 6,
-     "pim": 12,
-     "team": "Manitoba Moose"
-    },
-    "last": {
-     "gamesPlayed": 62,
-     "goals": 12,
-     "assists": 12,
-     "points": 24,
-     "plusMinus": -11,
-     "pim": 21,
-     "team": "Manitoba Moose"
-    }
+    "season": null,
+    "last": null
    },
    "nhl": {
-    "season": {
-     "gamesPlayed": 4,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -2,
-     "pim": 0,
-     "shots": 2,
-     "team": "Winnipeg Jets"
-    },
-    "last": {
-     "gamesPlayed": 6,
-     "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 3,
-     "pim": 0,
-     "shots": 4,
-     "team": "Winnipeg Jets"
-    },
-    "careerGp": 10,
-    "careerG": 0,
-    "careerP": 1
+    "season": null,
+    "last": null,
+    "careerGp": 0
    }
   },
   {
@@ -2284,7 +2240,7 @@
    "from": "Toronto",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
