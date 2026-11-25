@@ -1,13 +1,419 @@
 {
  "_meta": {
-  "generated": "2026-11-25 12:06",
+  "generated": "2026-11-25 17:36",
   "since": "2026-09-01",
   "season": 20262027,
-  "count": 139,
-  "up": 69,
+  "count": 138,
+  "up": 70,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
+  {
+   "playerId": 8476316,
+   "name": "Laurent Brossoit",
+   "team": "ANA",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "1993-03-23",
+   "sweater": 31,
+   "draft": {
+    "year": 2011,
+    "teamAbbrev": "CGY",
+    "round": 6,
+    "overallPick": 164
+   },
+   "recalledOn": "2026-11-25",
+   "from": "San Diego",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-31",
+     "type": "up",
+     "club": "San Diego"
+    },
+    {
+     "date": "2026-11-13",
+     "type": "down",
+     "club": "San Diego"
+    },
+    {
+     "date": "2026-11-25",
+     "type": "up",
+     "club": "San Diego"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 8,
+     "wins": 4,
+     "losses": 4,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 17,
+     "shotsAgainst": 216,
+     "team": "San Diego Gulls",
+     "savePct": 0.921,
+     "gaa": 2.16
+    },
+    "last": {
+     "gamesPlayed": 28,
+     "wins": 15,
+     "losses": 11,
+     "otLosses": 2,
+     "shutouts": 0,
+     "goalsAgainst": 84,
+     "shotsAgainst": 848,
+     "team": "Rockford IceHogs / San Jose Barracuda",
+     "savePct": 0.901,
+     "gaa": 3.17
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 5,
+     "goals": 0,
+     "assists": 0,
+     "pim": 2,
+     "wins": 4,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 17,
+     "shotsAgainst": 128,
+     "team": "Anaheim Ducks",
+     "savePct": 0.867,
+     "gaa": 3.42
+    },
+    "last": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 0,
+     "losses": 1,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 6,
+     "shotsAgainst": 23,
+     "team": "San Jose Sharks",
+     "savePct": 0.739,
+     "gaa": 6.09
+    },
+    "careerGp": 146,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8482515,
+   "name": "Artur Akhtyamov",
+   "team": "TOR",
+   "position": "G",
+   "shoots": "L",
+   "birthDate": "2001-10-31",
+   "sweater": 70,
+   "draft": {
+    "year": 2020,
+    "teamAbbrev": "TOR",
+    "round": 4,
+    "overallPick": 106
+   },
+   "recalledOn": "2026-11-25",
+   "from": "Toronto",
+   "fromLeague": "AHL",
+   "timesRecalled": 3,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-19",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "down",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-07",
+     "type": "up",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-08",
+     "type": "down",
+     "club": "Toronto"
+    },
+    {
+     "date": "2026-11-25",
+     "type": "up",
+     "club": "Toronto"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 9,
+     "wins": 3,
+     "losses": 3,
+     "otLosses": 2,
+     "shutouts": 0,
+     "goalsAgainst": 24,
+     "shotsAgainst": 211,
+     "team": "Toronto Marlies",
+     "savePct": 0.886,
+     "gaa": 2.62
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "wins": 21,
+     "losses": 12,
+     "otLosses": 4,
+     "shutouts": 1,
+     "goalsAgainst": 103,
+     "shotsAgainst": 1073,
+     "team": "Toronto Marlies",
+     "savePct": 0.904,
+     "gaa": 2.88
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "pim": 0,
+     "wins": 0,
+     "losses": 2,
+     "otLosses": 0,
+     "shutouts": 0,
+     "goalsAgainst": 11,
+     "shotsAgainst": 81,
+     "team": "Toronto Maple Leafs",
+     "savePct": 0.864,
+     "gaa": 5.24
+    },
+    "careerGp": 3,
+    "careerG": 0,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8481550,
+   "name": "Adam Beckman",
+   "team": "COL",
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2001-05-10",
+   "sweater": 34,
+   "draft": {
+    "year": 2019,
+    "teamAbbrev": "MIN",
+    "round": 3,
+    "overallPick": 75
+   },
+   "recalledOn": "2026-11-25",
+   "from": "Colorado",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-11-19",
+     "type": "up",
+     "club": "Colorado"
+    },
+    {
+     "date": "2026-11-25",
+     "type": "up",
+     "club": "Colorado"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 21,
+     "goals": 8,
+     "assists": 8,
+     "points": 16,
+     "plusMinus": 5,
+     "pim": 8,
+     "team": "Colorado Eagles"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 30,
+     "assists": 21,
+     "points": 51,
+     "plusMinus": 3,
+     "pim": 36,
+     "team": "Bridgeport Islanders"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 1,
+     "team": "Colorado Avalanche"
+    },
+    "last": null,
+    "careerGp": 24,
+    "careerG": 0,
+    "careerP": 3
+   }
+  },
+  {
+   "playerId": 8482922,
+   "name": "Kirill Kirsanov",
+   "team": "LAK",
+   "position": "D",
+   "shoots": "L",
+   "birthDate": "2002-09-19",
+   "sweater": 78,
+   "draft": {
+    "year": 2021,
+    "teamAbbrev": "LAK",
+    "round": 3,
+    "overallPick": 84
+   },
+   "recalledOn": "2026-11-25",
+   "from": "Ontario",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "up",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-09-24",
+     "type": "down",
+     "club": "Ontario"
+    },
+    {
+     "date": "2026-11-25",
+     "type": "up",
+     "club": "Ontario"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 20,
+     "goals": 2,
+     "assists": 10,
+     "points": 12,
+     "plusMinus": 3,
+     "pim": 4,
+     "team": "Ontario Reign"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 4,
+     "assists": 9,
+     "points": 13,
+     "plusMinus": 9,
+     "pim": 10,
+     "team": "Ontario Reign"
+    }
+   },
+   "nhl": {
+    "season": null,
+    "last": null,
+    "careerGp": 0,
+    "careerG": null,
+    "careerP": null
+   }
+  },
+  {
+   "playerId": 8480259,
+   "name": "Ben Jones",
+   "team": "CGY",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1999-02-26",
+   "sweater": 18,
+   "draft": {
+    "year": 2017,
+    "teamAbbrev": "VGK",
+    "round": 7,
+    "overallPick": 189
+   },
+   "recalledOn": "2026-11-25",
+   "from": "Calgary",
+   "fromLeague": "AHL",
+   "timesRecalled": 2,
+   "status": "down",
+   "sentDownOn": null,
+   "events": [
+    {
+     "date": "2026-10-20",
+     "type": "up",
+     "club": "Calgary"
+    },
+    {
+     "date": "2026-10-27",
+     "type": "down",
+     "club": "Calgary"
+    },
+    {
+     "date": "2026-11-25",
+     "type": "up",
+     "club": "Calgary"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 18,
+     "goals": 12,
+     "assists": 5,
+     "points": 17,
+     "plusMinus": 5,
+     "pim": 8,
+     "team": "Calgary Wranglers"
+    },
+    "last": {
+     "gamesPlayed": 37,
+     "goals": 12,
+     "assists": 20,
+     "points": 32,
+     "plusMinus": 1,
+     "pim": 26,
+     "team": "Iowa Wild"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 0,
+     "shots": 0,
+     "team": "Calgary Flames"
+    },
+    "last": {
+     "gamesPlayed": 28,
+     "goals": 1,
+     "assists": 2,
+     "points": 3,
+     "plusMinus": -10,
+     "pim": 0,
+     "shots": 26,
+     "team": "Minnesota Wild"
+    },
+    "careerGp": 58,
+    "careerG": 1,
+    "careerP": 3
+   }
+  },
   {
    "playerId": 8484534,
    "name": "Djibril Toure",
@@ -235,6 +641,79 @@
    }
   },
   {
+   "playerId": 8484821,
+   "name": "Sam Morton",
+   "team": "CGY",
+   "position": "C",
+   "shoots": "L",
+   "birthDate": "1999-07-28",
+   "sweater": 45,
+   "draft": null,
+   "recalledOn": "2026-11-23",
+   "from": "Calgary",
+   "fromLeague": "AHL",
+   "timesRecalled": 1,
+   "status": "down",
+   "sentDownOn": "2026-11-25",
+   "events": [
+    {
+     "date": "2026-11-23",
+     "type": "up",
+     "club": "Calgary"
+    },
+    {
+     "date": "2026-11-25",
+     "type": "down",
+     "club": "Calgary"
+    }
+   ],
+   "ahl": {
+    "season": {
+     "gamesPlayed": 20,
+     "goals": 3,
+     "assists": 3,
+     "points": 6,
+     "plusMinus": -3,
+     "pim": 8,
+     "team": "Calgary Wranglers"
+    },
+    "last": {
+     "gamesPlayed": 68,
+     "goals": 17,
+     "assists": 21,
+     "points": 38,
+     "plusMinus": -15,
+     "pim": 30,
+     "team": "Calgary Wranglers"
+    }
+   },
+   "nhl": {
+    "season": {
+     "gamesPlayed": 1,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 2,
+     "shots": 1,
+     "team": "Calgary Flames"
+    },
+    "last": {
+     "gamesPlayed": 3,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": -1,
+     "pim": 10,
+     "shots": 3,
+     "team": "Calgary Flames"
+    },
+    "careerGp": 5,
+    "careerG": 1,
+    "careerP": 1
+   }
+  },
+  {
    "playerId": 8482451,
    "name": "Mikael Pyyhtia",
    "team": "CBJ",
@@ -362,74 +841,6 @@
     "careerGp": 110,
     "careerG": 4,
     "careerP": 12
-   }
-  },
-  {
-   "playerId": 8484821,
-   "name": "Sam Morton",
-   "team": "CGY",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1999-07-28",
-   "sweater": 45,
-   "draft": null,
-   "recalledOn": "2026-11-23",
-   "from": "Calgary",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-23",
-     "type": "up",
-     "club": "Calgary"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 20,
-     "goals": 3,
-     "assists": 3,
-     "points": 6,
-     "plusMinus": -3,
-     "pim": 8,
-     "team": "Calgary Wranglers"
-    },
-    "last": {
-     "gamesPlayed": 68,
-     "goals": 17,
-     "assists": 21,
-     "points": 38,
-     "plusMinus": -15,
-     "pim": 30,
-     "team": "Calgary Wranglers"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 2,
-     "shots": 1,
-     "team": "Calgary Flames"
-    },
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": -1,
-     "pim": 10,
-     "shots": 3,
-     "team": "Calgary Flames"
-    },
-    "careerGp": 5,
-    "careerG": 1,
-    "careerP": 1
    }
   },
   {
@@ -1008,12 +1419,17 @@
    "from": "Henderson",
    "fromLeague": "AHL",
    "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
+   "status": "down",
+   "sentDownOn": "2026-11-25",
    "events": [
     {
      "date": "2026-11-20",
      "type": "up",
+     "club": "Henderson"
+    },
+    {
+     "date": "2026-11-25",
+     "type": "down",
      "club": "Henderson"
     }
    ],
@@ -1191,12 +1607,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 11,
+     "gamesPlayed": 12,
      "goals": 3,
      "assists": 3,
      "points": 6,
      "plusMinus": -3,
-     "pim": 4,
+     "pim": 8,
      "team": "Syracuse Crunch"
     },
     "last": null
@@ -1382,70 +1798,6 @@
     "careerGp": 3,
     "careerG": 0,
     "careerP": 1
-   }
-  },
-  {
-   "playerId": 8481550,
-   "name": "Adam Beckman",
-   "team": "COL",
-   "position": "L",
-   "shoots": "L",
-   "birthDate": "2001-05-10",
-   "sweater": 34,
-   "draft": {
-    "year": 2019,
-    "teamAbbrev": "MIN",
-    "round": 3,
-    "overallPick": 75
-   },
-   "recalledOn": "2026-11-19",
-   "from": "Colorado",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-11-19",
-     "type": "up",
-     "club": "Colorado"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 21,
-     "goals": 8,
-     "assists": 8,
-     "points": 16,
-     "plusMinus": 5,
-     "pim": 8,
-     "team": "Colorado Eagles"
-    },
-    "last": {
-     "gamesPlayed": 68,
-     "goals": 30,
-     "assists": 21,
-     "points": 51,
-     "plusMinus": 3,
-     "pim": 36,
-     "team": "Bridgeport Islanders"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 1,
-     "team": "Colorado Avalanche"
-    },
-    "last": null,
-    "careerGp": 24,
-    "careerG": 0,
-    "careerP": 3
    }
   },
   {
@@ -1876,11 +2228,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 14,
-     "goals": 8,
+     "gamesPlayed": 15,
+     "goals": 9,
      "assists": 9,
-     "points": 17,
-     "plusMinus": -2,
+     "points": 18,
+     "plusMinus": -1,
      "pim": 2,
      "team": "Toronto Marlies"
     },
@@ -2260,12 +2612,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 14,
+     "gamesPlayed": 15,
      "goals": 4,
-     "assists": 3,
-     "points": 7,
-     "plusMinus": -1,
-     "pim": 8,
+     "assists": 4,
+     "points": 8,
+     "plusMinus": 0,
+     "pim": 10,
      "team": "Toronto Marlies"
     },
     "last": {
@@ -2333,16 +2685,16 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 10,
+     "gamesPlayed": 11,
      "wins": 6,
-     "losses": 3,
+     "losses": 4,
      "otLosses": 1,
      "shutouts": 1,
-     "goalsAgainst": 22,
-     "shotsAgainst": 291,
+     "goalsAgainst": 28,
+     "shotsAgainst": 309,
      "team": "Belleville Senators",
-     "savePct": 0.924,
-     "gaa": 2.21
+     "savePct": 0.909,
+     "gaa": 2.56
     },
     "last": {
      "gamesPlayed": 14,
@@ -2986,11 +3338,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 9,
-     "goals": 7,
-     "assists": 7,
-     "points": 14,
-     "plusMinus": 6,
+     "gamesPlayed": 10,
+     "goals": 9,
+     "assists": 9,
+     "points": 18,
+     "plusMinus": 8,
      "pim": 0,
      "team": "Toronto Marlies"
     },
@@ -3281,96 +3633,6 @@
     "careerGp": 177,
     "careerG": 6,
     "careerP": 28
-   }
-  },
-  {
-   "playerId": 8482515,
-   "name": "Artur Akhtyamov",
-   "team": "TOR",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "2001-10-31",
-   "sweater": 70,
-   "draft": {
-    "year": 2020,
-    "teamAbbrev": "TOR",
-    "round": 4,
-    "overallPick": 106
-   },
-   "recalledOn": "2026-11-07",
-   "from": "Toronto",
-   "fromLeague": "AHL",
-   "timesRecalled": 2,
-   "status": "down",
-   "sentDownOn": "2026-11-08",
-   "events": [
-    {
-     "date": "2026-10-19",
-     "type": "up",
-     "club": "Toronto"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "down",
-     "club": "Toronto"
-    },
-    {
-     "date": "2026-11-07",
-     "type": "up",
-     "club": "Toronto"
-    },
-    {
-     "date": "2026-11-08",
-     "type": "down",
-     "club": "Toronto"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 9,
-     "wins": 3,
-     "losses": 3,
-     "otLosses": 2,
-     "shutouts": 0,
-     "goalsAgainst": 24,
-     "shotsAgainst": 211,
-     "team": "Toronto Marlies",
-     "savePct": 0.886,
-     "gaa": 2.62
-    },
-    "last": {
-     "gamesPlayed": 37,
-     "wins": 21,
-     "losses": 12,
-     "otLosses": 4,
-     "shutouts": 1,
-     "goalsAgainst": 103,
-     "shotsAgainst": 1073,
-     "team": "Toronto Marlies",
-     "savePct": 0.904,
-     "gaa": 2.88
-    }
-   },
-   "nhl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 3,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 0,
-     "losses": 2,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 11,
-     "shotsAgainst": 81,
-     "team": "Toronto Maple Leafs",
-     "savePct": 0.864,
-     "gaa": 5.24
-    },
-    "careerGp": 3,
-    "careerG": 0,
-    "careerP": null
    }
   },
   {
@@ -4252,100 +4514,6 @@
    }
   },
   {
-   "playerId": 8476316,
-   "name": "Laurent Brossoit",
-   "team": "ANA",
-   "position": "G",
-   "shoots": "L",
-   "birthDate": "1993-03-23",
-   "sweater": 31,
-   "draft": {
-    "year": 2011,
-    "teamAbbrev": "CGY",
-    "round": 6,
-    "overallPick": 164
-   },
-   "recalledOn": "2026-10-31",
-   "from": "San Diego",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-13",
-   "events": [
-    {
-     "date": "2026-10-31",
-     "type": "up",
-     "club": "San Diego"
-    },
-    {
-     "date": "2026-11-13",
-     "type": "down",
-     "club": "San Diego"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 8,
-     "wins": 4,
-     "losses": 4,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 17,
-     "shotsAgainst": 216,
-     "team": "San Diego Gulls",
-     "savePct": 0.921,
-     "gaa": 2.16
-    },
-    "last": {
-     "gamesPlayed": 28,
-     "wins": 15,
-     "losses": 11,
-     "otLosses": 2,
-     "shutouts": 0,
-     "goalsAgainst": 84,
-     "shotsAgainst": 848,
-     "team": "Rockford IceHogs / San Jose Barracuda",
-     "savePct": 0.901,
-     "gaa": 3.17
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 5,
-     "goals": 0,
-     "assists": 0,
-     "pim": 2,
-     "wins": 4,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 17,
-     "shotsAgainst": 128,
-     "team": "Anaheim Ducks",
-     "savePct": 0.867,
-     "gaa": 3.42
-    },
-    "last": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "pim": 0,
-     "wins": 0,
-     "losses": 1,
-     "otLosses": 0,
-     "shutouts": 0,
-     "goalsAgainst": 6,
-     "shotsAgainst": 23,
-     "team": "San Jose Sharks",
-     "savePct": 0.739,
-     "gaa": 6.09
-    },
-    "careerGp": 146,
-    "careerG": 0,
-    "careerP": null
-   }
-  },
-  {
    "playerId": 8483448,
    "name": "Isaiah George",
    "team": "NYI",
@@ -4379,11 +4547,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 13,
+     "gamesPlayed": 14,
      "goals": 0,
-     "assists": 1,
-     "points": 1,
-     "plusMinus": 1,
+     "assists": 3,
+     "points": 3,
+     "plusMinus": 0,
      "pim": 8,
      "team": "Hamilton Hammers"
     },
@@ -5352,12 +5520,12 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 20,
-     "goals": 8,
+     "gamesPlayed": 21,
+     "goals": 9,
      "assists": 9,
-     "points": 17,
-     "plusMinus": -4,
-     "pim": 10,
+     "points": 18,
+     "plusMinus": -7,
+     "pim": 12,
      "team": "Hamilton Hammers"
     },
     "last": null
@@ -5731,15 +5899,10 @@
    "recalledOn": "2026-10-23",
    "from": "San Diego",
    "fromLeague": "AHL",
-   "timesRecalled": 2,
+   "timesRecalled": 1,
    "status": "up",
    "sentDownOn": null,
    "events": [
-    {
-     "date": "2026-09-30",
-     "type": "up",
-     "club": "San Diego"
-    },
     {
      "date": "2026-10-23",
      "type": "up",
@@ -6331,84 +6494,6 @@
     "careerGp": 8,
     "careerG": 1,
     "careerP": 1
-   }
-  },
-  {
-   "playerId": 8480259,
-   "name": "Ben Jones",
-   "team": "CGY",
-   "position": "C",
-   "shoots": "L",
-   "birthDate": "1999-02-26",
-   "sweater": 18,
-   "draft": {
-    "year": 2017,
-    "teamAbbrev": "VGK",
-    "round": 7,
-    "overallPick": 189
-   },
-   "recalledOn": "2026-10-20",
-   "from": "Calgary",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-10-27",
-   "events": [
-    {
-     "date": "2026-10-20",
-     "type": "up",
-     "club": "Calgary"
-    },
-    {
-     "date": "2026-10-27",
-     "type": "down",
-     "club": "Calgary"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 18,
-     "goals": 12,
-     "assists": 5,
-     "points": 17,
-     "plusMinus": 5,
-     "pim": 8,
-     "team": "Calgary Wranglers"
-    },
-    "last": {
-     "gamesPlayed": 37,
-     "goals": 12,
-     "assists": 20,
-     "points": 32,
-     "plusMinus": 1,
-     "pim": 26,
-     "team": "Iowa Wild"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 2,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 0,
-     "pim": 0,
-     "shots": 0,
-     "team": "Calgary Flames"
-    },
-    "last": {
-     "gamesPlayed": 28,
-     "goals": 1,
-     "assists": 2,
-     "points": 3,
-     "plusMinus": -10,
-     "pim": 0,
-     "shots": 26,
-     "team": "Minnesota Wild"
-    },
-    "careerGp": 58,
-    "careerG": 1,
-    "careerP": 3
    }
   },
   {
@@ -7961,16 +8046,16 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 10,
-     "wins": 4,
+     "gamesPlayed": 11,
+     "wins": 5,
      "losses": 4,
      "otLosses": 1,
      "shutouts": 2,
-     "goalsAgainst": 24,
-     "shotsAgainst": 227,
+     "goalsAgainst": 26,
+     "shotsAgainst": 254,
      "team": "Syracuse Crunch",
-     "savePct": 0.894,
-     "gaa": 2.64
+     "savePct": 0.898,
+     "gaa": 2.58
     },
     "last": {
      "gamesPlayed": 27,
@@ -8028,11 +8113,6 @@
    "status": "up",
    "sentDownOn": null,
    "events": [
-    {
-     "date": "2026-09-30",
-     "type": "down",
-     "club": "San Diego"
-    },
     {
      "date": "2026-10-13",
      "type": "up",
@@ -8170,11 +8250,11 @@
    ],
    "ahl": {
     "season": {
-     "gamesPlayed": 7,
+     "gamesPlayed": 8,
      "goals": 0,
      "assists": 0,
      "points": 0,
-     "plusMinus": -2,
+     "plusMinus": -3,
      "pim": 2,
      "team": "Belleville Senators"
     },
@@ -9288,140 +9368,6 @@
     "careerGp": 383,
     "careerG": 45,
     "careerP": 107
-   }
-  },
-  {
-   "playerId": 8483521,
-   "name": "Noah Warren",
-   "team": "ANA",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "2004-07-15",
-   "sweater": 47,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "ANA",
-    "round": 2,
-    "overallPick": 42
-   },
-   "recalledOn": "2026-09-30",
-   "from": "San Diego",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "down",
-   "sentDownOn": "2026-11-24",
-   "events": [
-    {
-     "date": "2026-09-30",
-     "type": "up",
-     "club": "San Diego"
-    },
-    {
-     "date": "2026-11-24",
-     "type": "down",
-     "club": "San Diego"
-    }
-   ],
-   "ahl": {
-    "season": {
-     "gamesPlayed": 1,
-     "goals": 0,
-     "assists": 0,
-     "points": 0,
-     "plusMinus": 1,
-     "pim": 5,
-     "team": "San Diego Gulls"
-    },
-    "last": {
-     "gamesPlayed": 61,
-     "goals": 2,
-     "assists": 10,
-     "points": 12,
-     "plusMinus": 0,
-     "pim": 26,
-     "team": "San Diego Gulls"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 23,
-     "goals": 0,
-     "assists": 6,
-     "points": 6,
-     "plusMinus": -3,
-     "pim": 21,
-     "shots": 15,
-     "team": "Anaheim Ducks"
-    },
-    "last": null,
-    "careerGp": 23,
-    "careerG": 0,
-    "careerP": 6
-   }
-  },
-  {
-   "playerId": 8483482,
-   "name": "Tristan Luneau",
-   "team": "ANA",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "2004-01-12",
-   "sweater": 67,
-   "draft": {
-    "year": 2022,
-    "teamAbbrev": "ANA",
-    "round": 2,
-    "overallPick": 53
-   },
-   "recalledOn": "2026-09-30",
-   "from": "San Diego",
-   "fromLeague": "AHL",
-   "timesRecalled": 1,
-   "status": "up",
-   "sentDownOn": null,
-   "events": [
-    {
-     "date": "2026-09-30",
-     "type": "up",
-     "club": "San Diego"
-    }
-   ],
-   "ahl": {
-    "season": null,
-    "last": {
-     "gamesPlayed": 70,
-     "goals": 10,
-     "assists": 31,
-     "points": 41,
-     "plusMinus": -4,
-     "pim": 29,
-     "team": "San Diego Gulls"
-    }
-   },
-   "nhl": {
-    "season": {
-     "gamesPlayed": 25,
-     "goals": 4,
-     "assists": 10,
-     "points": 14,
-     "plusMinus": -1,
-     "pim": 6,
-     "shots": 37,
-     "team": "Anaheim Ducks"
-    },
-    "last": {
-     "gamesPlayed": 1,
-     "goals": 1,
-     "assists": 0,
-     "points": 1,
-     "plusMinus": 2,
-     "pim": 0,
-     "shots": 2,
-     "team": "Anaheim Ducks"
-    },
-    "careerGp": 39,
-    "careerG": 6,
-    "careerP": 18
    }
   }
  ]
