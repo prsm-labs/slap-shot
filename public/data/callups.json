@@ -1,10 +1,10 @@
 {
  "_meta": {
-  "generated": "2026-11-26 12:06",
+  "generated": "2026-11-26 12:39",
   "since": "2026-09-01",
   "season": 20262027,
   "count": 140,
-  "up": 71,
+  "up": 70,
   "source": "ESPN NHL transactions (recalls / assignments), NHL rosters + player landing (AHL / NHL lines). build_callups.py"
  },
  "players": [
@@ -804,7 +804,7 @@
    "from": "San Jose",
    "fromLeague": "AHL",
    "timesRecalled": 2,
-   "status": "up",
+   "status": "down",
    "sentDownOn": null,
    "events": [
     {
@@ -5826,18 +5826,18 @@
    }
   },
   {
-   "playerId": 8480069,
-   "name": "Cale Makar",
+   "playerId": 8482953,
+   "name": "Taylor Makar",
    "team": "COL",
-   "position": "D",
-   "shoots": "R",
-   "birthDate": "1998-10-30",
-   "sweater": 8,
+   "position": "L",
+   "shoots": "L",
+   "birthDate": "2001-03-13",
+   "sweater": 16,
    "draft": {
-    "year": 2017,
+    "year": 2021,
     "teamAbbrev": "COL",
-    "round": 1,
-    "overallPick": 4
+    "round": 7,
+    "overallPick": 220
    },
    "recalledOn": "2026-10-23",
    "from": "Colorado",
@@ -5858,33 +5858,49 @@
     }
    ],
    "ahl": {
-    "season": null,
-    "last": null
+    "season": {
+     "gamesPlayed": 19,
+     "goals": 6,
+     "assists": 5,
+     "points": 11,
+     "plusMinus": 2,
+     "pim": 35,
+     "team": "Colorado Eagles"
+    },
+    "last": {
+     "gamesPlayed": 52,
+     "goals": 14,
+     "assists": 10,
+     "points": 24,
+     "plusMinus": 12,
+     "pim": 56,
+     "team": "Colorado Eagles"
+    }
    },
    "nhl": {
     "season": {
-     "gamesPlayed": 20,
-     "goals": 5,
-     "assists": 21,
-     "points": 26,
-     "plusMinus": 7,
+     "gamesPlayed": 2,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
      "pim": 2,
-     "shots": 53,
+     "shots": 1,
      "team": "Colorado Avalanche"
     },
     "last": {
-     "gamesPlayed": 75,
-     "goals": 20,
-     "assists": 59,
-     "points": 79,
-     "plusMinus": 32,
-     "pim": 24,
-     "shots": 199,
+     "gamesPlayed": 12,
+     "goals": 0,
+     "assists": 0,
+     "points": 0,
+     "plusMinus": 0,
+     "pim": 4,
+     "shots": 7,
      "team": "Colorado Avalanche"
     },
-    "careerGp": 490,
-    "careerG": 141,
-    "careerP": 533
+    "careerGp": 14,
+    "careerG": 0,
+    "careerP": 0
    }
   },
   {
